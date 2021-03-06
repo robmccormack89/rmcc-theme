@@ -1,7 +1,7 @@
 <?php
 /**
 * The front page template (when backend settings for front page display are set to static or latest posts)
-* @package Rmcc_Woo_Theme
+* @package Urban_Carnival_Theme
 */
 
 // get the context

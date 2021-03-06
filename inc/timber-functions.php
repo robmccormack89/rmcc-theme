@@ -2,7 +2,7 @@
 /**
  * Timber theme class & other functions for Twig.
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
 
 // Define paths to Twig templates
@@ -24,8 +24,8 @@ Timber::$dirname = array(
 // set the $autoescape value
 Timber::$autoescape = false;
 
-// Define Rmcc_Woo_Theme Child Class
-class RmccWooTheme extends Timber\Site
+// Define Urban_Carnival_Theme Child Class
+class UrbanCarnivalTheme extends Timber\Site
 {
   public function __construct()
   {
@@ -33,13 +33,13 @@ class RmccWooTheme extends Timber\Site
     add_filter('timber_context', array( $this, 'add_to_context' ));
     add_filter('get_twig', array( $this, 'add_to_twig' ));
     add_action('after_setup_theme', array( $this, 'theme_supports' ));
-    add_action('wp_enqueue_scripts', array( $this, 'rmcc_woo_theme_enqueue_assets'));
-    add_action('widgets_init', array( $this, 'rmcc_woo_custom_uikit_widgets_init'));
+    add_action('wp_enqueue_scripts', array( $this, 'urban_carnival_theme_enqueue_assets'));
+    add_action('widgets_init', array( $this, 'urban_carnival_theme_custom_uikit_widgets_init'));
     add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
     add_filter( 'timber/context', array( $this, 'add_to_context' ) );
     add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-    add_filter( 'query_vars', array( $this, 'rmcc_gridlist_query_vars_filter'));
-    // add_filter( 'query_vars', array( $this, 'rmcc_series_query_vars_filter'));
+    add_filter( 'query_vars', array( $this, 'urban_carnival_theme_gridlist_query_vars_filter'));
+    // add_filter( 'query_vars', array( $this, 'urban_carnival_theme_series_query_vars_filter'));
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action('init', array( $this, 'register_widget_areas' ));
@@ -103,26 +103,26 @@ class RmccWooTheme extends Timber\Site
   public function register_taxonomies()
   {
   	$labels_series = array(
-  		'name'                       => _x( 'Series/Models', 'Taxonomy General Name', 'rmcc-woo-theme' ),
-  		'singular_name'              => _x( 'Series/Model', 'Taxonomy Singular Name', 'rmcc-woo-theme' ),
-  		'menu_name'                  => __( 'Series/Models', 'rmcc-woo-theme' ),
-  		'all_items'                  => __( 'All Series/Models', 'rmcc-woo-theme' ),
-  		'parent_item'                => __( 'Parent (Series)', 'rmcc-woo-theme' ),
-  		'parent_item_colon'          => __( 'Parent (Series):', 'rmcc-woo-theme' ),
-  		'new_item_name'              => __( 'New Series/Model Name', 'rmcc-woo-theme' ),
-  		'add_new_item'               => __( 'Add New Series/Model', 'rmcc-woo-theme' ),
-  		'edit_item'                  => __( 'Edit Series/Model', 'rmcc-woo-theme' ),
-  		'update_item'                => __( 'Update Series/Model', 'rmcc-woo-theme' ),
-  		'view_item'                  => __( 'View Series/Model', 'rmcc-woo-theme' ),
-  		'separate_items_with_commas' => __( 'Separate items with commas', 'rmcc-woo-theme' ),
-  		'add_or_remove_items'        => __( 'Add or remove Series/Model', 'rmcc-woo-theme' ),
-  		'choose_from_most_used'      => __( 'Choose from the most used', 'rmcc-woo-theme' ),
-  		'popular_items'              => __( 'Popular Series/Models', 'rmcc-woo-theme' ),
-  		'search_items'               => __( 'Search Series/Models', 'rmcc-woo-theme' ),
-  		'not_found'                  => __( 'Not Found', 'rmcc-woo-theme' ),
-  		'no_terms'                   => __( 'No items', 'rmcc-woo-theme' ),
-  		'items_list'                 => __( 'Items list', 'rmcc-woo-theme' ),
-  		'items_list_navigation'      => __( 'Items list navigation', 'rmcc-woo-theme' ),
+  		'name'                       => _x( 'Series/Models', 'Taxonomy General Name', 'urban-carnival-theme' ),
+  		'singular_name'              => _x( 'Series/Model', 'Taxonomy Singular Name', 'urban-carnival-theme' ),
+  		'menu_name'                  => __( 'Series/Models', 'urban-carnival-theme' ),
+  		'all_items'                  => __( 'All Series/Models', 'urban-carnival-theme' ),
+  		'parent_item'                => __( 'Parent (Series)', 'urban-carnival-theme' ),
+  		'parent_item_colon'          => __( 'Parent (Series):', 'urban-carnival-theme' ),
+  		'new_item_name'              => __( 'New Series/Model Name', 'urban-carnival-theme' ),
+  		'add_new_item'               => __( 'Add New Series/Model', 'urban-carnival-theme' ),
+  		'edit_item'                  => __( 'Edit Series/Model', 'urban-carnival-theme' ),
+  		'update_item'                => __( 'Update Series/Model', 'urban-carnival-theme' ),
+  		'view_item'                  => __( 'View Series/Model', 'urban-carnival-theme' ),
+  		'separate_items_with_commas' => __( 'Separate items with commas', 'urban-carnival-theme' ),
+  		'add_or_remove_items'        => __( 'Add or remove Series/Model', 'urban-carnival-theme' ),
+  		'choose_from_most_used'      => __( 'Choose from the most used', 'urban-carnival-theme' ),
+  		'popular_items'              => __( 'Popular Series/Models', 'urban-carnival-theme' ),
+  		'search_items'               => __( 'Search Series/Models', 'urban-carnival-theme' ),
+  		'not_found'                  => __( 'Not Found', 'urban-carnival-theme' ),
+  		'no_terms'                   => __( 'No items', 'urban-carnival-theme' ),
+  		'items_list'                 => __( 'Items list', 'urban-carnival-theme' ),
+  		'items_list_navigation'      => __( 'Items list navigation', 'urban-carnival-theme' ),
   	);
   	$rewrite_series = array(
   		'slug'                       => 'product-series-model',
@@ -150,9 +150,9 @@ class RmccWooTheme extends Timber\Site
     // Register widget areas
     if (function_exists('register_sidebar')) {
       register_sidebar(array(
-        'name' => esc_html__('Footer Left Area', 'rmcc-woo-theme'),
+        'name' => esc_html__('Footer Left Area', 'urban-carnival-theme'),
         'id' => 'sidebar-footer-left',
-        'description' => esc_html__('Main Footer Widget Area; works best with the current widget only.', 'rmcc-woo-theme'),
+        'description' => esc_html__('Main Footer Widget Area; works best with the current widget only.', 'urban-carnival-theme'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<span hidden>',
@@ -165,13 +165,13 @@ class RmccWooTheme extends Timber\Site
   {
     // This theme uses wp_nav_menu() in one locations.
     register_nav_menus(array(
-      'categories' => __('Categories Menu', 'rmcc-woo-theme'),
-      'main_menu' => __('Main Menu', 'rmcc-woo-theme'),
-      'mobile_menu' => __('Mobile Menu', 'rmcc-woo-theme'),
-      'accessories_menu' => __('Accessories Menu', 'rmcc-woo-theme'),
-      'parts_menu' => __('Parts Menu', 'rmcc-woo-theme'),
-      'footer_nav_menu' => __('Footer Nav Menu', 'rmcc-woo-theme'),
-      'footer_customers_menu' => __('Footer Customers Menu', 'rmcc-woo-theme'),
+      'categories' => __('Categories Menu', 'urban-carnival-theme'),
+      'main_menu' => __('Main Menu', 'urban-carnival-theme'),
+      'mobile_menu' => __('Mobile Menu', 'urban-carnival-theme'),
+      'accessories_menu' => __('Accessories Menu', 'urban-carnival-theme'),
+      'parts_menu' => __('Parts Menu', 'urban-carnival-theme'),
+      'footer_nav_menu' => __('Footer Nav Menu', 'urban-carnival-theme'),
+      'footer_customers_menu' => __('Footer Customers Menu', 'urban-carnival-theme'),
     ));
   }
 
@@ -270,27 +270,27 @@ class RmccWooTheme extends Timber\Site
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
     // custom thumbnail sizes
-    add_image_size('rmcc-woo-theme-featured-image-archive', 800, 300, true);
-    add_image_size('rmcc-woo-theme-featured-image-single-post', 1200, 450, true);
-    add_image_size('rmcc-woo-theme-product-main-image', 1200, 700, true);
-    add_image_size('rmcc-woo-theme-cart-image', 80, 80, true);
+    add_image_size('urban-carnival-theme-featured-image-archive', 800, 300, true);
+    add_image_size('urban-carnival-theme-featured-image-single-post', 1200, 450, true);
+    add_image_size('urban-carnival-theme-product-main-image', 1200, 700, true);
+    add_image_size('urban-carnival-theme-cart-image', 80, 80, true);
     // stop the br tag madness in the content editor
     remove_filter( 'the_content', 'wpautop' );
     remove_filter( 'the_excerpt', 'wpautop' );
   }
   
   // add grid-list url paramater key
-  public function rmcc_gridlist_query_vars_filter($vars)
+  public function urban_carnival_theme_gridlist_query_vars_filter($vars)
   {
     $vars[] .= 'grid_list';
     return $vars;
   }
   
-  public function rmcc_woo_theme_enqueue_assets()
+  public function urban_carnival_theme_enqueue_assets()
   {
     // theme base scripts
     wp_enqueue_script(
-      'rmcc-woo-theme',
+      'urban-carnival-theme',
       get_template_directory_uri() . '/assets/js/base.js',
       '',
       '',
@@ -357,18 +357,18 @@ class RmccWooTheme extends Timber\Site
     );
     // theme base css
     wp_enqueue_style(
-      'rmcc-woo-theme',
+      'urban-carnival-theme',
       get_template_directory_uri() . '/assets/css/base.css'
     );
     // theme stylesheet
     wp_enqueue_style(
-      'rmcc-woo-theme-styles', get_stylesheet_uri()
+      'urban-carnival-theme-styles', get_stylesheet_uri()
     );
   }
   
-  public function rmcc_woo_custom_uikit_widgets_init()
+  public function urban_carnival_theme_custom_uikit_widgets_init()
   {
-    register_widget("Rmcc_Woo_Theme_Custom_UIKIT_Widget_Class");
+    register_widget("Urban_Carnival_Theme_Custom_UIKIT_Widget_Class");
   }
 
   public function add_to_twig($twig)
@@ -380,4 +380,4 @@ class RmccWooTheme extends Timber\Site
   
 }
 
-new RmccWooTheme();
+new UrbanCarnivalTheme();

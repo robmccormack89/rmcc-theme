@@ -2,7 +2,7 @@
 /**
  * The search
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
 
 // render the template hierarchy with search.twig first

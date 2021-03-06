@@ -2,7 +2,7 @@
 /**
  * Template Name: Parts by Category Template
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
 
 $context = Timber::context();

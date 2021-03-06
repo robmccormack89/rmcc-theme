@@ -2,7 +2,7 @@
 /**
  * The template for displaying general archive pages
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
 
 // sets the template hierarchy

@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all pages
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
 
 // get the main context

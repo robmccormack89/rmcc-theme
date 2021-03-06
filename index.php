@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
 
 // get the main context

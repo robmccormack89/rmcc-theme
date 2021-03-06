@@ -2,7 +2,7 @@
 /**
  * Theme functions & bits
  *
- * @package Rmcc_Woo_Theme
+ * @package Urban_Carnival_Theme
  */
  
 add_filter( 'body_class','theme_body_classes' );
