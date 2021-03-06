@@ -19,15 +19,15 @@
                 <h3>Email us:</h3>
               
                 <ul uk-tab uk-switcher>
-                  <li><a href="#">General Information</a></li>
-                  <li><a href="#">Orders</a></li>
-                  <li><a href="#">Deliveries</a></li>
+                  <li><a href="#">General Enquiries</a></li>
+                  <li><a href="#">Current Customers</a></li>
+                  <li><a href="#">Support</a></li>
                 </ul>
                 
                 <ul class="uk-switcher uk-margin">
-                  <li>{{ function('do_shortcode', '[contact-form-7 id="14" title="Information"]') }}</li>
-                  <li>{{ function('do_shortcode', '[contact-form-7 id="8307" title="Orders"]') }}</li>
-                  <li>{{ function('do_shortcode', '[contact-form-7 id="8308" title="Deliveries"]') }}</li>
+                  <li>{{ function('do_shortcode', '[contact-form-7 title="General Enquiries"]') }}</li>
+                  <li>{{ function('do_shortcode', '[contact-form-7 title="Current Customers"]') }}</li>
+                  <li>{{ function('do_shortcode', '[contact-form-7 title="Support"]') }}</li>
                 </ul>
               
               </div>
@@ -37,15 +37,15 @@
                 <h4>Our Office:</h4>
               
                 <p>
-                  {{base_address|e('esc_html')}}, {{base_address_2|e('esc_html')}},<br>
-                  {{base_city|e('esc_html')}}, {{base_county|e('esc_html')}},<br>
-                  {{base_eircode|e('esc_html')}}.
+                  {{base_address|e('esc_html')|default('Some Street')}}, {{base_address_2|e('esc_html')|default('Some Place')}},<br>
+                  {{base_city|e('esc_html')|default('Some City')}}, {{base_county|e('esc_html')|default('Some County')}},<br>
+                  {{base_eircode|e('esc_html')|default('Some Eircode')}}.
                 </p>
                 
                 <h4>Contact Info:</h4>
               
                 <p>
-                  <a href="mailto:{{display_email|e('html_attr')}}">{{display_email|e('html_attr')}}</a>
+                  <a href="mailto:{{display_email|e('html_attr')|default('info@hello.com')}}">{{display_email|e('html_attr')|default('info@hello.com')}}</a>
                 </p>
               
               </div>
