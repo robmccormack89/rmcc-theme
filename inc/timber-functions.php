@@ -449,6 +449,11 @@ class UrbanCarnivalTheme extends Timber\Site
     $file = get_field('pdf_upload');
     $context['pdf_upload_url'] = $file['url'];
     
+    $context['overflow_class'] = 'no-overflow';
+    if (is_tax('live_draws')) {
+      $context['overflow_class'] = 'overflow-off';
+    };
+    
     // get the woo cart url
     global $woocommerce;
     $context['cart_url'] = $woocommerce->cart->get_cart_url();

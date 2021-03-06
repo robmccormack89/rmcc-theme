@@ -236,8 +236,10 @@
 
 {% block bodywrap %}
 
-  <body class="{{body_class|e('html_attr')}} no-overflow" data-template="base.twig">
-    <div id="ThemePreload" class="theme-preload"></div>
+  <body class="{{body_class|e('html_attr')}} {{overflow_class|e('html_attr')}} no-overflow" data-template="base.twig">
+    {% block theme_preload_markup %}
+      <div id="ThemePreload" class="theme-preload"></div>
+    {% endblock %}
 
     {% block header %}
       {% include 'header.twig' %}
@@ -319,13 +321,15 @@
     {% block spec_scripts %}
     {% endblock %}
     
-    <script>
-      // website preloader animation
-      window.onload = function(){
-        document.getElementById("ThemePreload").classList.add("hidden");
-        document.getElementsByTagName("BODY")[0].classList.remove("no-overflow");
-      }
-    </script>
+    {% block theme_preload_script %}
+      <script>
+        // website preloader animation
+        window.onload = function(){
+          document.getElementById("ThemePreload").classList.add("hidden");
+          document.getElementsByTagName("BODY")[0].classList.remove("no-overflow");
+        }
+      </script>
+    {% endblock %}
     
   </body>
 
