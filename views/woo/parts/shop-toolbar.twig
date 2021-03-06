@@ -15,12 +15,6 @@
             </a>
           </div>
         {% endif %}
-        {% if fn('current_product_series_var') or fn('is_product_series') %}
-          <div class="uk-navbar-item min-height-40">
-            <a class="uk-badge badge-series close-icon" data-link="{{ fn('remove_query_arg_product_series_for_filters')|e('esc_url') }}" onclick="quickLoad(event);">
-            </a>
-          </div>
-        {% endif %}
         {% if fn('current_product_gridlist_var') %}
         <div class="uk-navbar-item min-height-40">
           <a class="uk-badge badge-view close-icon" data-link="{{ fn('remove_query_arg', ['grid_list'])|e('esc_url') }}" onclick="quickLoad(event);">

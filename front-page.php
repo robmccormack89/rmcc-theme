@@ -21,45 +21,5 @@ if ( is_home() && is_front_page() ) {
 	$context['title'] =  get_the_title( $post->ID );
 };
 
-$featured_ids = get_field('homepage_product_selection', 'option');
-$featured_args = array(
-   'post_type'             => 'product',
-   'post_status'           => 'publish',
-	 'post__in'      				 => $featured_ids,
-   'posts_per_page'        => '12',
-);
-$context['featured_products'] = new Timber\PostQuery($featured_args);
-
-// get & set home_slides
-$slides_args = array(
-   'post_type' => 'slide',
-   'post_status' => 'publish',
-   'orderby' => 'date',
-   'order' => 'asc',
-);
-$context['home_slides'] = new Timber\PostQuery($slides_args);
-
-// get & set recent_products
-$args = array(
-   'post_type'             => 'product',
-   'post_status'           => 'publish',
-   'posts_per_page'        => '8',
-);
-$context['recent_products'] = new Timber\PostQuery($args);
-
-$context['product_series'] = get_terms([
-	'taxonomy'    => 'product_series',
-	'hide_empty'  => false,
-	'parent'   => 0
-]);
-
-$context['product_cats'] = get_terms([
-	'taxonomy'    => 'product_cat',
-	'hide_empty'  => true,
-	'parent'   => 0,
-	'number' => 9,
-	'exclude' => '15', // excludes uncategorized
-]);
-
 // render the context with template
 Timber::render( array('front-page.twig'), $context );

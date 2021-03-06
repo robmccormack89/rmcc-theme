@@ -39,7 +39,6 @@ class UrbanCarnivalTheme extends Timber\Site
     add_filter( 'timber/context', array( $this, 'add_to_context' ) );
     add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
     add_filter( 'query_vars', array( $this, 'urban_carnival_theme_gridlist_query_vars_filter'));
-    // add_filter( 'query_vars', array( $this, 'urban_carnival_theme_series_query_vars_filter'));
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action('init', array( $this, 'register_widget_areas' ));
@@ -49,8 +48,9 @@ class UrbanCarnivalTheme extends Timber\Site
 
   public function register_post_types()
   {
+    // banner slide
     $labels_one = array(
-  		'name'                  => _x( 'Banner Slides', 'Post Type General Name', 'text_domain' ),
+      'name'                  => _x( 'Banner Slides', 'Post Type General Name', 'text_domain' ),
   		'singular_name'         => _x( 'Banner Slide', 'Post Type Singular Name', 'text_domain' ),
   		'menu_name'             => __( 'Home Banner Slides', 'text_domain' ),
   		'name_admin_bar'        => __( 'Banner Slide', 'text_domain' ),
@@ -77,7 +77,7 @@ class UrbanCarnivalTheme extends Timber\Site
   		'items_list'            => __( 'Items list', 'text_domain' ),
   		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
   		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
-  	);
+    );
   	$args_one = array(
   		'label'                 => __( 'Banner Slide', 'text_domain' ),
   		'description'           => __( 'Banner Slides for the Home Page Banner', 'text_domain' ),
@@ -102,52 +102,11 @@ class UrbanCarnivalTheme extends Timber\Site
 
   public function register_taxonomies()
   {
-  	$labels_series = array(
-  		'name'                       => _x( 'Series/Models', 'Taxonomy General Name', 'urban-carnival-theme' ),
-  		'singular_name'              => _x( 'Series/Model', 'Taxonomy Singular Name', 'urban-carnival-theme' ),
-  		'menu_name'                  => __( 'Series/Models', 'urban-carnival-theme' ),
-  		'all_items'                  => __( 'All Series/Models', 'urban-carnival-theme' ),
-  		'parent_item'                => __( 'Parent (Series)', 'urban-carnival-theme' ),
-  		'parent_item_colon'          => __( 'Parent (Series):', 'urban-carnival-theme' ),
-  		'new_item_name'              => __( 'New Series/Model Name', 'urban-carnival-theme' ),
-  		'add_new_item'               => __( 'Add New Series/Model', 'urban-carnival-theme' ),
-  		'edit_item'                  => __( 'Edit Series/Model', 'urban-carnival-theme' ),
-  		'update_item'                => __( 'Update Series/Model', 'urban-carnival-theme' ),
-  		'view_item'                  => __( 'View Series/Model', 'urban-carnival-theme' ),
-  		'separate_items_with_commas' => __( 'Separate items with commas', 'urban-carnival-theme' ),
-  		'add_or_remove_items'        => __( 'Add or remove Series/Model', 'urban-carnival-theme' ),
-  		'choose_from_most_used'      => __( 'Choose from the most used', 'urban-carnival-theme' ),
-  		'popular_items'              => __( 'Popular Series/Models', 'urban-carnival-theme' ),
-  		'search_items'               => __( 'Search Series/Models', 'urban-carnival-theme' ),
-  		'not_found'                  => __( 'Not Found', 'urban-carnival-theme' ),
-  		'no_terms'                   => __( 'No items', 'urban-carnival-theme' ),
-  		'items_list'                 => __( 'Items list', 'urban-carnival-theme' ),
-  		'items_list_navigation'      => __( 'Items list navigation', 'urban-carnival-theme' ),
-  	);
-  	$rewrite_series = array(
-  		'slug'                       => 'product-series-model',
-  		'with_front'                 => true,
-  		'hierarchical'               => true,
-  	);
-  	$args_series = array(
-  		'labels'                     => $labels_series,
-  		'hierarchical'               => true,
-  		'public'                     => true,
-  		'show_ui'                    => true,
-  		'show_admin_column'          => true,
-  		'show_in_nav_menus'          => true,
-  		'show_tagcloud'              => true,
-  		'rewrite'                    => $rewrite_series,
-  		'update_count_callback'      => 'count_product_series',
-  		'show_in_rest'               => true,
-      'update_count_callback' => '_update_post_term_count',
-  	);
-  	register_taxonomy( 'product_series', array( 'product' ), $args_series );
+    // none
   }
 
   public function register_widget_areas()
   {
-    // Register widget areas
     if (function_exists('register_sidebar')) {
       register_sidebar(array(
         'name' => esc_html__('Footer Left Area', 'urban-carnival-theme'),

@@ -5,30 +5,6 @@
 *
 * @package Urban_Carnival_Theme
 */
-
-function bbloomer_remove_product_tabs( $tabs ) {
-    unset( $tabs['additional_information'] ); 
-    return $tabs;
-}
-add_filter( 'woocommerce_product_tabs', 'bbloomer_remove_product_tabs', 9999 );
-
-// custom data tab
-function parts_custom_tab( $tabs ) {
- 
-	$tabs['parts_custom_tab'] = array(
-		'title'    => 'Parts Information',
-		'callback' => 'parts_custom_tab_content', // the function name, which is on line 15
-		'priority' => 50,
-	);
- 
-	return $tabs;
-}
-add_filter( 'woocommerce_product_tabs', 'parts_custom_tab' );
-// custom data tab content
-function parts_custom_tab_content( $slug, $tab ) {
-  // get the additonal information tab template, a part of which has been modified in our theme; see wooocmmerce->single-product->product-attributes.php
-	wc_get_template('single-product/tabs/additional-information.php');
-}
   
 // remove woo scripts and styles selectively
 function theme_woo_script_styles() {

@@ -16,7 +16,7 @@
           			<a href="#" title="Submit search" class="uk-search-icon-flip uk-icon uk-search-icon">
           				<i class="fas fa-search fa-2x"></i>
           			</a>
-          			<input class="form-control uk-search-input uk-input" type="text" name="search" maxlength="300" pattern=".*\S+.*" id="input_search" value="" placeholder="Start searching for parts..." required="" autocomplete="off"
+          			<input class="form-control uk-search-input uk-input" type="text" name="search" maxlength="300" pattern=".*\S+.*" id="input_search" value="" placeholder="Start typing to search..." required="" autocomplete="off"
                   aria-invalid="true">
           			<input type="hidden" name="post_type" value="product" />
           		</div>
@@ -29,8 +29,8 @@
           <ul class="uk-navbar-nav">
             <li>
               <a href="{{shop_url|e('esc_url')}}">
-                <i class="fas fa-tractor fa-2x uk-margin-small-right"></i>
-                Parts
+                <i class="far fa-star fa-2x uk-margin-small-right"></i>
+                Play
               </a>
             </li>
             <li>
@@ -195,7 +195,7 @@
                 
               </ul>
             {% else %}
-              <p class="uk-margin-remove uk-light">Add a menu to the Main Menu slot in Appearance > Menus</p>
+              <p class="uk-margin-remove uk-light uk-visible@m">Add a menu to the Main Menu slot in Appearance > Menus</p>
             {% endif %}
   
           </div>
@@ -205,19 +205,19 @@
       <div class="uk-width-auto uk-section-primary uk-light uk-padding-small">
         <div class="uk-child-width-auto" uk-grid>
           <div class="">
-            <a href="tel:{{company_phone_number|e('esc_html')}}" class="uk-h5 dont-underline uk-margin-remove">
+            <a href="tel:{{company_phone_number|e('esc_html')|default('+01 234 5678')}}" class="uk-h5 dont-underline uk-margin-remove">
               <i class="fas fa-phone-alt"></i>
-              <span class="uk-margin-small-left uk-visible@xl">Call us on <span class="uk-text-underline">{{company_phone_number|e('esc_html')}}</span></span>
+              <span class="uk-margin-small-left uk-visible@xl">Call us on <span class="uk-text-underline">{{company_phone_number|e('esc_html')|default('+01 234 5678')}}</span></span>
             </a>
           </div>
           <div class="">
-            <a href="mailto:{{display_email|e('esc_html')}}" class="uk-h5 dont-underline uk-margin-remove">
+            <a href="mailto:{{display_email|e('esc_html')|default('info@hello.com')}}" class="uk-h5 dont-underline uk-margin-remove">
               <i class="far fa-envelope"></i>
-              <span class="uk-margin-small-left uk-visible@xl">Email us at <span class="uk-text-underline">{{display_email|e('esc_html')}}</span></span>
+              <span class="uk-margin-small-left uk-visible@xl">Email us at <span class="uk-text-underline">{{display_email|e('esc_html')|default('info@hello.com')}}</span></span>
             </a>
           </div>
           <div class="">
-            <a href="{{facebook_link|e('esc_url')}}" target="_blank" class="uk-h5 dont-underline uk-margin-remove">
+            <a href="{{facebook_link|e('esc_url')|default('#')}}" target="_blank" class="uk-h5 dont-underline uk-margin-remove">
               <i class="fab fa-facebook-f"></i>
               <span class="uk-margin-small-left uk-visible@xl">Find us on <span class="uk-text-underline">Facebook</span></span>
             </a>
