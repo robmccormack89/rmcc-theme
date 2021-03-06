@@ -1,21 +1,21 @@
 // woo archive ajax loader
-.loader-ajax:before {
-  height: 1em;
-  width: 1em;
-  display: block;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  content: "";
-  -webkit-animation: spin 1s ease-in-out infinite;
-  animation: spin 1s ease-in-out infinite;
-  background: url(/wp-content/themes/organicwp-theme/assets/images/loader.svg) 50%;
-  background-size: cover;
-  line-height: 1;
-  text-align: center;
-  font-size: 2em;
-  color: $dark_font_colour;
-}
+// .loader-ajax:before {
+//   height: 1em;
+//   width: 1em;
+//   display: block;
+//   position: absolute;
+//   top: 45%;
+//   left: 50%;
+//   content: "";
+//   -webkit-animation: spin 1s ease-in-out infinite;
+//   animation: spin 1s ease-in-out infinite;
+//   background: url(/wp-content/themes/organicwp-theme/assets/images/loader.svg) 50%;
+//   background-size: cover;
+//   line-height: 1;
+//   text-align: center;
+//   font-size: 2em;
+//   color: $dark_font_colour;
+// }
 // site preloader
 .no-js #loader {
   display: none;
