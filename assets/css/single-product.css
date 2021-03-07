@@ -1,3 +1,41 @@
+.lottery-ajax-change {
+    padding-bottom: 15px;
+}
+.ticket-tab-bar .ticket-tab-bar-item {
+    padding: 8px 16px;
+    font-weight: 800;
+    opacity: 0.5;
+}
+ul.lottery-pn-answers {
+    padding: 0;
+}
+ul.tickets_numbers {
+    margin: 1em 0 1em -4px;
+    padding: 0;
+}
+ul.tickets_numbers li.tn {
+    border: 1px solid #e5e5e5;
+    padding: .5em;
+    width: 50px;
+    height: auto;
+    text-align: center;
+    margin: 0.3em;
+    font-size: 1em;
+    font-weight: 700;
+}
+ul.lottery-pn-answers li {
+    border: 1px solid #e5e5e5;
+    padding: 0.8em;
+    width: 90%;
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    font-weight: 700;
+}
+ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn-answers li.selected.false {
+    color: #fff;
+}
+
+
 /* general swiper css */
 .swiper-container {
   width: 100%;
