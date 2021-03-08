@@ -4,6 +4,12 @@
   {% include 'header-page.twig' %}
 {% endblock %}
 
+{% block breads %}
+  <div class="breads-container uk-container uk-container-large">
+    {% include 'breads.twig' %} 
+  </div>
+{% endblock %}
+
 {% block contentwrap %}
   <div class="uk-container uk-container-large">
     {{ post.content|e('wp_kses_post') }}

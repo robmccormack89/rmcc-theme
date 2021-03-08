@@ -6,21 +6,13 @@
 
 {% block contentwrap %}
   <div class="blog-wrap uk-container" data-block="content-wrap" data-template="archive-entry_lists.twig">
-      
-    <div uk-grid>
-      
-      <div class="uk-width-auto@s">
-        <h1 class="uk-text-bold dark-text" hidden>{{ title }}</h1>
-      </div>
-      
-    </div>
     
     <div class="uk-child-width-1-2@s uk-child-width-1-3@m archive-posts margin-top-30" uk-grid="masonry: true">
       {% for post in posts %}
         {% include ['tease-entry_lists.twig'] %}
       {% endfor %}
       {% if posts is empty %}
-      <p class="uk-text-emphasis">Nothing posted here yet....</p>
+      <p class="uk-text-emphasis">{{ __('No Entry Lists posted yet...', 'urban-carnival-theme') }}</p>
       {% endif %}
     </div>
 

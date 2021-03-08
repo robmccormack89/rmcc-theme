@@ -6,6 +6,33 @@
 * @package Urban_Carnival_Theme
 */
   
+function nk_get_cpt_labels($single,$plural){
+   $arr = array(
+    'name' => $plural,
+    'singular_name' => $single,
+    'menu_name' => $plural,
+    'add_new' => 'Add '.$single,
+    'add_new_item' => 'Add New '.$single,
+    'edit' => 'Edit',
+    'edit_item' => 'Edit '.$single,
+    'new_item' => 'New '.$single,
+    'view' => 'View '.$plural,
+    'view_item' => 'View '.$single,
+    'search_items' => 'Search '.$plural,
+    'not_found' => 'No '.$plural.' Found',
+    'not_found_in_trash' => 'No '.$plural.' Found in Trash',
+    'parent' => 'Parent '.$single
+ );
+   return $arr;
+}
+// change the post type labels for the Competition cpt
+function nk_custom_post_type_label_woo( $args ){
+  $labels = nk_get_cpt_labels('Competition','Competitions');
+  $args['labels'] = $labels;
+  return $args;
+}
+add_filter( 'woocommerce_register_post_type_product', 'nk_custom_post_type_label_woo' );
+  
 // remove woo scripts and styles selectively
 function theme_woo_script_styles() {
   remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
@@ -23,6 +50,9 @@ function theme_woo_script_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_woo_script_styles', 99 );
 
+// stop redirecting search when only one result
+add_filter( 'woocommerce_redirect_single_search_result', '__return_false' );
+
 // ajax result count
 function cart_ajax_result_count() {
   echo '<span class="header-cart-count">';
@@ -38,21 +68,21 @@ function cart_ajax_subtotal() {
 }
 add_action( 'cart_ajax_subtotal', 'cart_ajax_subtotal' );
 
-function custom_stock_quantity() {
-  global $product; 
-  $numleft  = $product->get_stock_quantity(); 
-  if($numleft==0) {
-     // out of stock
-      echo "<span class='uk-text-danger'>0 in stock.</span>"; 
-  }
-  else if($numleft==1) {
-      echo "<span class='uk-text-warning'>Just ".$numleft ." in stock.</span>";
-  }
-  else {
-      echo "<span class='uk-text-success'>".$numleft ." in stock.</span>";
-  }
-}
-add_action( 'custom_stock_quantity', 'custom_stock_quantity' );
+// custom stock quantity; woo template functions
+function custom_store_notice () { 
+  if ( ! is_store_notice_showing() ) { 
+    return; 
+  } 
+
+  $notice = get_option( 'woocommerce_demo_store_notice' ); 
+
+  if ( empty( $notice ) ) { 
+    $notice = __( 'This is a demo store for testing purposes — no orders shall be fulfilled.', 'woocommerce' ); 
+  } 
+
+  echo apply_filters( 'woocommerce_demo_store', '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>', $notice ); 
+} 
+add_action( 'custom_store_notice', 'custom_store_notice' );
 
 function custom_filter_wc_cart_item_remove_link( $sprintf, $cart_item_key ) {
   if ( is_admin() && ! defined( 'DOING_AJAX' ) )
@@ -76,6 +106,7 @@ function iconic_subtotal_fragments( $fragments ) {
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_subtotal_fragments', 10, 1 );
 
+remove_action( 'wp_footer', 'woocommerce_demo_store' ); // remove store notice; uses custom notice above
 // archive
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 ); // remove woo breads
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -93,3 +124,5 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 // single product
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+// Remove cross-sells at cart
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );

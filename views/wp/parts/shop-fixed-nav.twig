@@ -1,0 +1,39 @@
+<div class="shop-fixednav shop-fixednav-label-show">
+  <div class="uk-container">
+    <div class="uk-child-width-1-4 uk-grid-small" uk-grid>
+      <div class="uk-text-center">
+        <a class="uk-link-text" href="{{shop_url|e('esc_url')}}">
+          <i class="far fa-star fa-lg"></i>
+          <div class="uk-text-small">{{ __('Competitions', 'urban-carnival-theme') }}</div>
+        </a>
+      </div>
+      <div class="uk-text-center">
+        <a class="uk-link-text" href="/contact">
+          <i class="far fa-envelope fa-lg"></i>
+          <div class="uk-text-small">{{ __('Contact', 'urban-carnival-theme') }}</div>
+        </a>
+      </div>
+      <div class="uk-text-center">
+        <a class="uk-link-text" href="{{dashboard_endpoint|e('esc_url')}}">
+          <i class="far fa-user fa-lg"></i>
+          <div class="uk-text-small">
+            {% if not user %}
+              {{ __('Login/Signup', 'urban-carnival-theme') }}
+            {% else %}
+              {{ __('Account', 'urban-carnival-theme') }}
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      <div class="uk-text-center">
+        <a class="uk-link-text" href="/basket">
+          <i class="fas fa-shopping-cart fa-lg"></i>
+          <span class="">
+            {% do action('cart_ajax_result_count') %}
+          </span>
+          <div class="uk-text-small">{{ __('Basket', 'urban-carnival-theme') }}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

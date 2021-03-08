@@ -15,8 +15,8 @@
                   <div class="uk-text-center uk-position-center">
                     <h1 class="uk-text-bold">{{ post.title }}</h1>
                     <p class="uk-article-meta">
-                      Written on {{post.date | date}}.
-                      Posted in 
+                      {{ __('Written on', 'urban-carnival-theme') }} {{post.date | date}}.
+                      {{ __('Posted in', 'urban-carnival-theme') }} 
                       {% for category in post.categories %}
                         {% if not loop.last %}
                           <a title="{{ category }}" href="{{ category.link }}">{{ category }}</a>,

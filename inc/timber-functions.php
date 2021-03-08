@@ -389,7 +389,6 @@ class UrbanCarnivalTheme extends Timber\Site
     // global site context
     $context['site'] = $this;
     // general conditionals
-    $context['is_user_logged_in'] = is_user_logged_in();
     $context['is_shop'] = is_shop();
     $context['is_category'] = is_category();
     $context['is_single_product'] = is_singular( 'product' );
@@ -439,6 +438,7 @@ class UrbanCarnivalTheme extends Timber\Site
     // acf data globals
     $context['company_phone_number'] = get_field('company_phone_number', 'option');
     $context['facebook_link'] = get_field('facebook_link', 'option');
+    $context['insta_link'] = get_field('facebook_link', 'option');
     $context['display_email'] = get_field('display_email', 'option');
     $context['above_footer_text'] = get_field('above_footer_text', 'option');
     
@@ -449,6 +449,7 @@ class UrbanCarnivalTheme extends Timber\Site
     $file = get_field('pdf_upload');
     $context['pdf_upload_url'] = $file['url'];
     
+    // for disabling theme-preload on live_draws archive
     $context['overflow_class'] = 'no-overflow';
     if (is_tax('live_draws')) {
       $context['overflow_class'] = 'overflow-off';
@@ -508,8 +509,8 @@ class UrbanCarnivalTheme extends Timber\Site
     add_image_size('urban-carnival-theme-product-main-image', 1200, 700, true);
     add_image_size('urban-carnival-theme-cart-image', 80, 80, true);
     // stop the br tag madness in the content editor
-    remove_filter( 'the_content', 'wpautop' );
-    remove_filter( 'the_excerpt', 'wpautop' );
+    // remove_filter( 'the_content', 'wpautop' );
+    // remove_filter( 'the_excerpt', 'wpautop' );
   }
   
   // add grid-list url paramater key

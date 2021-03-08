@@ -8,7 +8,7 @@
             <a href="#" title="Submit search" class="uk-search-icon-flip uk-icon uk-search-icon">
               <i class="fas fa-search fa-lg"></i>
             </a>
-            <input class="form-control uk-search-input uk-input" type="text" name="search" maxlength="300" pattern=".*\S+.*" id="input_search_mobile" value="" placeholder="Start typing to search..." required="" autocomplete="off"
+            <input class="form-control uk-search-input uk-input" type="text" name="s" maxlength="300" pattern=".*\S+.*" id="input_search_mobile" value="" placeholder="{{ __('Start typing to search...', 'urban-carnival-theme') }}" required="" autocomplete="off"
               aria-invalid="true">
             <input type="hidden" name="post_type" value="product" />
           </div>
@@ -17,8 +17,8 @@
       </div>
       
       <ul class="uk-subnav uk-subnav-pill uk-text-center" uk-switcher>
-        <li><a href="#">MENU</a></li>
-        <li><a href="#">CATEGORIES</a></li>
+        <li><a href="#">{{ __('Menu', 'urban-carnival-theme') }}</a></li>
+        <li><a href="#">{{ __('Categories', 'urban-carnival-theme') }}</a></li>
       </ul>
       
       <ul class="uk-switcher">

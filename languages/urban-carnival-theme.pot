@@ -1,0 +1,550 @@
+# Copyright (C) 2021 urban-carnival-theme
+# This file is distributed under the same license as the urban-carnival-theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: urban-carnival-theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/timber-functions.php:64
+msgctxt "Post Type General Name"
+msgid "Competition Winners"
+msgstr ""
+
+#: inc/timber-functions.php:65
+msgctxt "Post Type Singular Name"
+msgid "Competition Winner"
+msgstr ""
+
+#: inc/timber-functions.php:66, inc/timber-functions.php:68
+msgid "Competition Winners"
+msgstr ""
+
+#: inc/timber-functions.php:67
+msgid "Competition Winner"
+msgstr ""
+
+#: inc/timber-functions.php:69
+msgid "Winner Attributes"
+msgstr ""
+
+#: inc/timber-functions.php:70, inc/timber-functions.php:121, inc/timber-functions.php:172, inc/timber-functions.php:222, inc/timber-functions.php:272, inc/timber-functions.php:324
+msgid "Parent Item:"
+msgstr ""
+
+#: inc/timber-functions.php:71
+msgid "All Winners"
+msgstr ""
+
+#: inc/timber-functions.php:72
+msgid "Add New Winner"
+msgstr ""
+
+#: inc/timber-functions.php:73, inc/timber-functions.php:124, inc/timber-functions.php:175, inc/timber-functions.php:225, inc/timber-functions.php:275
+msgid "Add New"
+msgstr ""
+
+#: inc/timber-functions.php:74, inc/timber-functions.php:125, inc/timber-functions.php:176, inc/timber-functions.php:226, inc/timber-functions.php:276
+msgid "New Item"
+msgstr ""
+
+#: inc/timber-functions.php:75, inc/timber-functions.php:126, inc/timber-functions.php:177, inc/timber-functions.php:227, inc/timber-functions.php:277, inc/timber-functions.php:327
+msgid "Edit Item"
+msgstr ""
+
+#: inc/timber-functions.php:76, inc/timber-functions.php:127, inc/timber-functions.php:178, inc/timber-functions.php:228, inc/timber-functions.php:278, inc/timber-functions.php:328
+msgid "Update Item"
+msgstr ""
+
+#: inc/timber-functions.php:77, inc/timber-functions.php:128, inc/timber-functions.php:179, inc/timber-functions.php:229, inc/timber-functions.php:279, inc/timber-functions.php:329
+msgid "View Item"
+msgstr ""
+
+#: inc/timber-functions.php:78, inc/timber-functions.php:129, inc/timber-functions.php:180, inc/timber-functions.php:230, inc/timber-functions.php:280
+msgid "View Items"
+msgstr ""
+
+#: inc/timber-functions.php:79, inc/timber-functions.php:130, inc/timber-functions.php:181, inc/timber-functions.php:231, inc/timber-functions.php:281
+msgid "Search Item"
+msgstr ""
+
+#: inc/timber-functions.php:80, inc/timber-functions.php:131, inc/timber-functions.php:182, inc/timber-functions.php:232, inc/timber-functions.php:282
+msgid "Not found"
+msgstr ""
+
+#: inc/timber-functions.php:81, inc/timber-functions.php:132, inc/timber-functions.php:183, inc/timber-functions.php:233, inc/timber-functions.php:283
+msgid "Not found in Trash"
+msgstr ""
+
+#: inc/timber-functions.php:82, inc/timber-functions.php:133, inc/timber-functions.php:184, inc/timber-functions.php:234, inc/timber-functions.php:284
+msgid "Featured Image"
+msgstr ""
+
+#: inc/timber-functions.php:83, inc/timber-functions.php:134, inc/timber-functions.php:185, inc/timber-functions.php:235, inc/timber-functions.php:285
+msgid "Set featured image"
+msgstr ""
+
+#: inc/timber-functions.php:84, inc/timber-functions.php:135, inc/timber-functions.php:186, inc/timber-functions.php:236, inc/timber-functions.php:286
+msgid "Remove featured image"
+msgstr ""
+
+#: inc/timber-functions.php:85, inc/timber-functions.php:136, inc/timber-functions.php:187, inc/timber-functions.php:237, inc/timber-functions.php:287
+msgid "Use as featured image"
+msgstr ""
+
+#: inc/timber-functions.php:86, inc/timber-functions.php:137, inc/timber-functions.php:188, inc/timber-functions.php:238, inc/timber-functions.php:288
+msgid "Insert into item"
+msgstr ""
+
+#: inc/timber-functions.php:87, inc/timber-functions.php:138, inc/timber-functions.php:189, inc/timber-functions.php:239, inc/timber-functions.php:289
+msgid "Uploaded to this item"
+msgstr ""
+
+#: inc/timber-functions.php:88, inc/timber-functions.php:139, inc/timber-functions.php:190, inc/timber-functions.php:240, inc/timber-functions.php:290, inc/timber-functions.php:337
+msgid "Items list"
+msgstr ""
+
+#: inc/timber-functions.php:89, inc/timber-functions.php:140, inc/timber-functions.php:191, inc/timber-functions.php:241, inc/timber-functions.php:291, inc/timber-functions.php:338
+msgid "Items list navigation"
+msgstr ""
+
+#: inc/timber-functions.php:90, inc/timber-functions.php:141, inc/timber-functions.php:192, inc/timber-functions.php:242, inc/timber-functions.php:292
+msgid "Filter items list"
+msgstr ""
+
+#: inc/timber-functions.php:93
+msgid "Winner"
+msgstr ""
+
+#: inc/timber-functions.php:94
+msgid "Winners content type"
+msgstr ""
+
+#: inc/timber-functions.php:115
+msgctxt "Post Type General Name"
+msgid "Entry Lists"
+msgstr ""
+
+#: inc/timber-functions.php:116
+msgctxt "Post Type Singular Name"
+msgid "Entry List"
+msgstr ""
+
+#: inc/timber-functions.php:117, inc/timber-functions.php:119
+msgid "Entry Lists"
+msgstr ""
+
+#: inc/timber-functions.php:118, inc/timber-functions.php:144
+msgid "Entry List"
+msgstr ""
+
+#: inc/timber-functions.php:120
+msgid "Entry List Attributes"
+msgstr ""
+
+#: inc/timber-functions.php:122
+msgid "All Entry Lists"
+msgstr ""
+
+#: inc/timber-functions.php:123, inc/timber-functions.php:174, inc/timber-functions.php:224, inc/timber-functions.php:274, inc/timber-functions.php:326
+msgid "Add New Item"
+msgstr ""
+
+#: inc/timber-functions.php:145
+msgid "Entry List Description"
+msgstr ""
+
+#: inc/timber-functions.php:166
+msgctxt "Post Type General Name"
+msgid "Competition Draws"
+msgstr ""
+
+#: inc/timber-functions.php:167
+msgctxt "Post Type Singular Name"
+msgid "Competition Draw"
+msgstr ""
+
+#: inc/timber-functions.php:168, inc/timber-functions.php:170
+msgid "Competition Draws"
+msgstr ""
+
+#: inc/timber-functions.php:169, inc/timber-functions.php:195
+msgid "Competition Draw"
+msgstr ""
+
+#: inc/timber-functions.php:171
+msgid "Competition Draw Attributes"
+msgstr ""
+
+#: inc/timber-functions.php:173
+msgid "All Live Draws"
+msgstr ""
+
+#: inc/timber-functions.php:196
+msgid "Competition Draws Description"
+msgstr ""
+
+#: inc/timber-functions.php:216
+msgctxt "Post Type General Name"
+msgid "Banner Slides"
+msgstr ""
+
+#: inc/timber-functions.php:217
+msgctxt "Post Type Singular Name"
+msgid "Banner Slide"
+msgstr ""
+
+#: inc/timber-functions.php:218
+msgid "Home Banner Slides"
+msgstr ""
+
+#: inc/timber-functions.php:219, inc/timber-functions.php:245
+msgid "Banner Slide"
+msgstr ""
+
+#: inc/timber-functions.php:220
+msgid "Banner Slide Archives"
+msgstr ""
+
+#: inc/timber-functions.php:221, inc/timber-functions.php:271
+msgid "Item Attributes"
+msgstr ""
+
+#: inc/timber-functions.php:223
+msgid "All Slides"
+msgstr ""
+
+#: inc/timber-functions.php:246
+msgid "Banner Slides for the Home Page Banner"
+msgstr ""
+
+#: inc/timber-functions.php:266
+msgctxt "Post Type General Name"
+msgid "Info Slides"
+msgstr ""
+
+#: inc/timber-functions.php:267
+msgctxt "Post Type Singular Name"
+msgid "Info Slide"
+msgstr ""
+
+#: inc/timber-functions.php:268
+msgid "Home Info Slides"
+msgstr ""
+
+#: inc/timber-functions.php:269
+msgid "Info Slide"
+msgstr ""
+
+#: inc/timber-functions.php:270
+msgid "Info Slides Archives"
+msgstr ""
+
+#: inc/timber-functions.php:273, inc/timber-functions.php:322
+msgid "All Items"
+msgstr ""
+
+#: inc/timber-functions.php:295
+msgid "Home Info Slide"
+msgstr ""
+
+#: inc/timber-functions.php:296
+msgid "Home Info Slides for Homepage (under banner)"
+msgstr ""
+
+#: inc/timber-functions.php:319
+msgctxt "Taxonomy General Name"
+msgid "Draw Status"
+msgstr ""
+
+#: inc/timber-functions.php:320
+msgctxt "Taxonomy Singular Name"
+msgid "Draw Status"
+msgstr ""
+
+#: inc/timber-functions.php:321
+msgid "Draw Status"
+msgstr ""
+
+#: inc/timber-functions.php:323
+msgid "Parent Item"
+msgstr ""
+
+#: inc/timber-functions.php:325
+msgid "New Item Name"
+msgstr ""
+
+#: inc/timber-functions.php:330
+msgid "Separate items with commas"
+msgstr ""
+
+#: inc/timber-functions.php:331
+msgid "Add or remove items"
+msgstr ""
+
+#: inc/timber-functions.php:332
+msgid "Choose from the most used"
+msgstr ""
+
+#: inc/timber-functions.php:333
+msgid "Popular Items"
+msgstr ""
+
+#: inc/timber-functions.php:334
+msgid "Search Items"
+msgstr ""
+
+#: inc/timber-functions.php:335
+msgid "Not Found"
+msgstr ""
+
+#: inc/timber-functions.php:336
+msgid "No items"
+msgstr ""
+
+#: inc/timber-functions.php:362
+msgid "Footer Left Area"
+msgstr ""
+
+#: inc/timber-functions.php:364
+msgid "Main Footer Widget Area; works best with the current widget only."
+msgstr ""
+
+#: inc/timber-functions.php:377
+msgid "Categories Menu"
+msgstr ""
+
+#: inc/timber-functions.php:378
+msgid "Main Menu"
+msgstr ""
+
+#: inc/timber-functions.php:379
+msgid "Mobile Menu"
+msgstr ""
+
+#: inc/timber-functions.php:380
+msgid "Accessories Menu"
+msgstr ""
+
+#: inc/timber-functions.php:381
+msgid "Parts Menu"
+msgstr ""
+
+#: inc/timber-functions.php:382
+msgid "Footer Nav Menu"
+msgstr ""
+
+#: inc/timber-functions.php:383
+msgid "Footer Customers Menu"
+msgstr ""
+
+#: inc/woo/live-search.php:94, inc/woo/live-search.php:239
+msgid "Category"
+msgstr ""
+
+#: inc/woo/live-search.php:116, inc/woo/live-search.php:138, inc/woo/live-search.php:261, inc/woo/live-search.php:283
+msgid "Competition"
+msgstr ""
+
+#: page-templates/account-template.php:3
+msgid "My Account Template"
+msgstr ""
+
+#: page-templates/basket-template.php:3
+msgid "Basket Template"
+msgstr ""
+
+#: page-templates/checkout-template.php:3
+msgid "Checkout Template"
+msgstr ""
+
+#: page-templates/contact-template.php:3
+msgid "Contact Page Template"
+msgstr ""
+
+#: page-templates/expand-template.php:3
+msgid "Expanded Width Template"
+msgstr ""
+
+#: page-templates/full-width-template.php:3
+msgid "Full Width Template"
+msgstr ""
+
+#: page-templates/narrow-template.php:3
+msgid "Narrow Template"
+msgstr ""
+
+#: page-templates/wide-template.php:3
+msgid "Wide Template"
+msgstr ""
+
+#: views/temp/base.php:300
+msgid "Sorry, nothing to display here..."
+msgstr ""
+
+#: views/temp/front-page.php:48
+msgid "Content"
+msgstr ""
+
+#: views/temp/templates/contact.php:25
+msgid "Email us:"
+msgstr ""
+
+#: views/temp/templates/contact.php:28
+msgid "General Enquiries"
+msgstr ""
+
+#: views/temp/templates/contact.php:29
+msgid "Current Customers"
+msgstr ""
+
+#: views/temp/templates/contact.php:30
+msgid "Support"
+msgstr ""
+
+#: views/temp/templates/contact.php:43
+msgid "Our Office:"
+msgstr ""
+
+#: views/temp/templates/contact.php:51
+msgid "Contact Info:"
+msgstr ""
+
+#: views/temp/woo/parts/shop-filters.php:4
+msgid "Sorting:"
+msgstr ""
+
+#: views/temp/woo/parts/shop-filters.php:13
+msgid "Filter by Category:"
+msgstr ""
+
+#: views/temp/woo/parts/shop-toolbar.php:44
+msgid "Filter"
+msgstr ""
+
+#: views/temp/woo/parts/tease/tease-product-list.php:37
+msgid "Category:"
+msgstr ""
+
+#: views/temp/wp/archive/archive-entry_lists.php:15
+msgid "No Entry Lists posted yet..."
+msgstr ""
+
+#: views/temp/wp/archive/archive-live_draws.php:61
+msgid "No Competiton Live Draws posted yet..."
+msgstr ""
+
+#: views/temp/wp/archive/archive-winners.php:15
+msgid "No Competiton Winners posted yet..."
+msgstr ""
+
+#: views/temp/wp/archive/index.php:71
+msgid "No Items posted yet..."
+msgstr ""
+
+#: views/temp/wp/parts/footer/footer-secondary.php:4
+msgid "Receive our Latest Offers & Advice"
+msgstr ""
+
+#: views/temp/wp/parts/footer/footer-secondary.php:8
+msgid "Independent Customer Reveiews"
+msgstr ""
+
+#: views/temp/wp/parts/footer/footer.php:73
+msgid "Sales & Suppport"
+msgstr ""
+
+#: views/temp/wp/parts/footer/footer.php:80
+msgid "Email us"
+msgstr ""
+
+#: views/temp/wp/parts/header/header-mobile.php:11, views/temp/wp/parts/header/header.php:19
+msgid "Start typing to search..."
+msgstr ""
+
+#: views/temp/wp/parts/header/header-mobile.php:20, views/temp/wp/parts/header/header.php:78
+msgid "Menu"
+msgstr ""
+
+#: views/temp/wp/parts/header/header-mobile.php:21
+msgid "Categories"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:33
+msgid "Competitons"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:39, views/temp/wp/parts/shop-fixed-nav.php:13
+msgid "Contact"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:46, views/temp/wp/parts/shop-fixed-nav.php:21
+msgid "Login/Signup"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:48, views/temp/wp/parts/shop-fixed-nav.php:23
+msgid "Account"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:55, views/temp/wp/parts/shop-fixed-nav.php:34
+msgid "Basket"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:125
+msgid "Email us at"
+msgstr ""
+
+#: views/temp/wp/parts/header/header.php:131, views/temp/wp/parts/header/header.php:137
+msgid "Like us on"
+msgstr ""
+
+#: views/temp/wp/parts/pagination.php:8
+msgid "Previous Page"
+msgstr ""
+
+#: views/temp/wp/parts/pagination.php:22
+msgid "Next Page"
+msgstr ""
+
+#: views/temp/wp/parts/pagination.php:37
+msgid "no more items"
+msgstr ""
+
+#: views/temp/wp/parts/pagination.php:38
+msgid "No items to load"
+msgstr ""
+
+#: views/temp/wp/parts/shop-fixed-nav.php:7
+msgid "Competitions"
+msgstr ""
+
+#: views/temp/wp/parts/tease/tease-entry_lists.php:5
+msgid "Published Date:"
+msgstr ""
+
+#: views/temp/wp/parts/tease/tease-entry_lists.php:6
+msgid "Draw Date:"
+msgstr ""
+
+#: views/temp/wp/parts/tease/tease-entry_lists.php:7
+msgid "Download"
+msgstr ""
+
+#: views/temp/wp/parts/tease/tease-live_draws.php:6
+msgid "View Draw"
+msgstr ""
+
+#: views/temp/wp/singular/single.php:18
+msgid "Written on"
+msgstr ""
+
+#: views/temp/wp/singular/single.php:19
+msgid "Posted in"
+msgstr ""

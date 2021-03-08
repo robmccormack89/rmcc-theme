@@ -1,5 +1,7 @@
+/* lottery */
 .lottery-ajax-change {
     padding-bottom: 15px;
+    margin-top: 20px;
 }
 .ticket-tab-bar .ticket-tab-bar-item {
     padding: 8px 16px;
@@ -35,6 +37,9 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
     color: #fff;
 }
 
+.is-wc_lotery_countdown {
+    color: #fc4c02;
+}
 
 /* general swiper css */
 .swiper-container {

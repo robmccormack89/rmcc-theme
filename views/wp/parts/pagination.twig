@@ -5,7 +5,7 @@
       <ul class="uk-pagination uk-flex-center">
         {% if pagination.prev %}
           <li>
-            <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}"><i uk-icon="icon: chevron-left"></i> Previous Page</a>
+            <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}"><i uk-icon="icon: chevron-left"></i> {{ __('Previous Page', 'urban-carnival-theme') }}</a>
           </li>
         {% endif %}
         {% for page in pagination.pages %}
@@ -19,7 +19,7 @@
         {% endfor %}
         {% if pagination.next %}
           <li>
-            <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">Next Page <i uk-icon="icon: chevron-right"></i></a>
+            <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">{{ __('Next Page', 'urban-carnival-theme') }} <i uk-icon="icon: chevron-right"></i></a>
           </li>
         {% endif %}
       </ul>
@@ -34,11 +34,10 @@
             <span class="loader-ellips__dot"></span>
             <span class="loader-ellips__dot"></span>
           </div>
-          <p class="infinite-scroll-last">No more items</p>
-          <p class="infinite-scroll-error">No items to load</p>
+          <p class="infinite-scroll-last">{{ __('no more items', 'urban-carnival-theme') }}</p>
+          <p class="infinite-scroll-error">{{ __('No items to load', 'urban-carnival-theme') }}</p>
         </div>
       </div>
-      <button class="view-more-button uk-button uk-align-center uk-margin-remove-bottom uk-margin-remove-top" hidden>View more</button>
     {% endif %}
     
   </div>

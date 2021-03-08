@@ -34,7 +34,7 @@
 					
 					<div id="ProductMeta" class="uk-article-meta uk-position-center-right uk-text-right">
 						<div>
-							<span class="uk-text-bold uk-text-emphasis">Category:</span> {{ post.terms( {query:{taxonomy:'product_cat', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ')|e('esc_html') }}
+							<span class="uk-text-bold uk-text-emphasis">{{ __('Category:', 'urban-carnival-theme') }}</span> {{ post.terms( {query:{taxonomy:'product_cat', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ')|e('esc_html') }}
 						</div>
 					</div>
 
