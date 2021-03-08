@@ -82,7 +82,7 @@ if ( is_singular( 'product' ) ) {
   // if is main shop archive page
   if (is_shop()) {
     // set shop page archive title
-    $context['title'] = 'Our Competitions';
+    $context['title'] = __( 'Our Competitions', 'woocommerce' );
     // then Restore the context and loop back to the main query loop.
     wp_reset_postdata();
   };

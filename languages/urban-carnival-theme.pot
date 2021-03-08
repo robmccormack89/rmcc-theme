@@ -514,7 +514,7 @@ msgid "Next Page"
 msgstr ""
 
 #: views/temp/wp/parts/pagination.php:37
-msgid "no more items"
+msgid "No more items"
 msgstr ""
 
 #: views/temp/wp/parts/pagination.php:38
