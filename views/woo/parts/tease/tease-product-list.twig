@@ -37,10 +37,28 @@
 							<span class="uk-text-bold uk-text-emphasis">{{ __('Category:', 'urban-carnival-theme') }}</span> {{ post.terms( {query:{taxonomy:'product_cat', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ')|e('esc_html') }}
 						</div>
 					</div>
-
-  				<div id="ProductReadmore" class="uk-position-bottom-left">
-						<p class="uk-text-small uk-margin-remove">{{ post.preview.length(8).force|e('wp_kses_post') }}</p>
-  				</div>
+					
+					{% if not post._lottery_closed %}
+			      <div class="uk-article-meta uk-position-bottom-left">
+			        <div>
+			          <span class="uk-text-bold uk-text-emphasis">Competition finishes on:</span> {{post._lottery_dates_to}}
+			        </div>
+			        <div>
+			          <span class="uk-text-bold uk-text-emphasis">People entered already:</span> {{post._lottery_participants_count}}
+			        </div>
+			        <div>
+			          <span class="uk-text-bold uk-text-emphasis">Max. entries for this Competition:</span> {{post._max_tickets}}
+			        </div>
+			      </div>
+			    {% endif %}
+			    
+			    {% if post._lottery_closed %}
+			      <div class="uk-article-meta uk-position-bottom-left">
+			        <div>
+			          <span class="uk-text-warning">This competition has finished</span>
+			        </div>
+			      </div>
+			    {% endif %}
           
   				<div id="ProductButtons" class="tease-product-buttons uk-position-bottom-right">
   					{% do	action( 'woocommerce_after_shop_loop_item' ) %}

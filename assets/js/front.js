@@ -17,19 +17,38 @@ jQuery(function(){
   // banner swiper
   var slider_swiper = new Swiper('#slideshow_banner', {
     centeredSlides: true,
-    // autoplay: {
-    //   delay: 4000,
-    //   disableOnInteraction: true,
-    // },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+  
+  // featured products swiper
+  var winners_swiper = new Swiper('#slideshow_winners', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
     pagination: {
       el: '.swiper-pagination',
-      type: 'progressbar',
-      clickable: true,
+      dynamicBullets: true,
     },
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      960: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+    }
   });
   
 });

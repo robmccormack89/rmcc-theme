@@ -35,7 +35,7 @@ msgstr ""
 msgid "Winner Attributes"
 msgstr ""
 
-#: inc/timber-functions.php:70, inc/timber-functions.php:121, inc/timber-functions.php:172, inc/timber-functions.php:222, inc/timber-functions.php:272, inc/timber-functions.php:324
+#: inc/timber-functions.php:70, inc/timber-functions.php:121, inc/timber-functions.php:172, inc/timber-functions.php:225
 msgid "Parent Item:"
 msgstr ""
 
@@ -47,75 +47,75 @@ msgstr ""
 msgid "Add New Winner"
 msgstr ""
 
-#: inc/timber-functions.php:73, inc/timber-functions.php:124, inc/timber-functions.php:175, inc/timber-functions.php:225, inc/timber-functions.php:275
+#: inc/timber-functions.php:73, inc/timber-functions.php:124, inc/timber-functions.php:175
 msgid "Add New"
 msgstr ""
 
-#: inc/timber-functions.php:74, inc/timber-functions.php:125, inc/timber-functions.php:176, inc/timber-functions.php:226, inc/timber-functions.php:276
+#: inc/timber-functions.php:74, inc/timber-functions.php:125, inc/timber-functions.php:176
 msgid "New Item"
 msgstr ""
 
-#: inc/timber-functions.php:75, inc/timber-functions.php:126, inc/timber-functions.php:177, inc/timber-functions.php:227, inc/timber-functions.php:277, inc/timber-functions.php:327
+#: inc/timber-functions.php:75, inc/timber-functions.php:126, inc/timber-functions.php:177, inc/timber-functions.php:228
 msgid "Edit Item"
 msgstr ""
 
-#: inc/timber-functions.php:76, inc/timber-functions.php:127, inc/timber-functions.php:178, inc/timber-functions.php:228, inc/timber-functions.php:278, inc/timber-functions.php:328
+#: inc/timber-functions.php:76, inc/timber-functions.php:127, inc/timber-functions.php:178, inc/timber-functions.php:229
 msgid "Update Item"
 msgstr ""
 
-#: inc/timber-functions.php:77, inc/timber-functions.php:128, inc/timber-functions.php:179, inc/timber-functions.php:229, inc/timber-functions.php:279, inc/timber-functions.php:329
+#: inc/timber-functions.php:77, inc/timber-functions.php:128, inc/timber-functions.php:179, inc/timber-functions.php:230
 msgid "View Item"
 msgstr ""
 
-#: inc/timber-functions.php:78, inc/timber-functions.php:129, inc/timber-functions.php:180, inc/timber-functions.php:230, inc/timber-functions.php:280
+#: inc/timber-functions.php:78, inc/timber-functions.php:129, inc/timber-functions.php:180
 msgid "View Items"
 msgstr ""
 
-#: inc/timber-functions.php:79, inc/timber-functions.php:130, inc/timber-functions.php:181, inc/timber-functions.php:231, inc/timber-functions.php:281
+#: inc/timber-functions.php:79, inc/timber-functions.php:130, inc/timber-functions.php:181
 msgid "Search Item"
 msgstr ""
 
-#: inc/timber-functions.php:80, inc/timber-functions.php:131, inc/timber-functions.php:182, inc/timber-functions.php:232, inc/timber-functions.php:282
+#: inc/timber-functions.php:80, inc/timber-functions.php:131, inc/timber-functions.php:182
 msgid "Not found"
 msgstr ""
 
-#: inc/timber-functions.php:81, inc/timber-functions.php:132, inc/timber-functions.php:183, inc/timber-functions.php:233, inc/timber-functions.php:283
+#: inc/timber-functions.php:81, inc/timber-functions.php:132, inc/timber-functions.php:183
 msgid "Not found in Trash"
 msgstr ""
 
-#: inc/timber-functions.php:82, inc/timber-functions.php:133, inc/timber-functions.php:184, inc/timber-functions.php:234, inc/timber-functions.php:284
+#: inc/timber-functions.php:82, inc/timber-functions.php:133, inc/timber-functions.php:184
 msgid "Featured Image"
 msgstr ""
 
-#: inc/timber-functions.php:83, inc/timber-functions.php:134, inc/timber-functions.php:185, inc/timber-functions.php:235, inc/timber-functions.php:285
+#: inc/timber-functions.php:83, inc/timber-functions.php:134, inc/timber-functions.php:185
 msgid "Set featured image"
 msgstr ""
 
-#: inc/timber-functions.php:84, inc/timber-functions.php:135, inc/timber-functions.php:186, inc/timber-functions.php:236, inc/timber-functions.php:286
+#: inc/timber-functions.php:84, inc/timber-functions.php:135, inc/timber-functions.php:186
 msgid "Remove featured image"
 msgstr ""
 
-#: inc/timber-functions.php:85, inc/timber-functions.php:136, inc/timber-functions.php:187, inc/timber-functions.php:237, inc/timber-functions.php:287
+#: inc/timber-functions.php:85, inc/timber-functions.php:136, inc/timber-functions.php:187
 msgid "Use as featured image"
 msgstr ""
 
-#: inc/timber-functions.php:86, inc/timber-functions.php:137, inc/timber-functions.php:188, inc/timber-functions.php:238, inc/timber-functions.php:288
+#: inc/timber-functions.php:86, inc/timber-functions.php:137, inc/timber-functions.php:188
 msgid "Insert into item"
 msgstr ""
 
-#: inc/timber-functions.php:87, inc/timber-functions.php:138, inc/timber-functions.php:189, inc/timber-functions.php:239, inc/timber-functions.php:289
+#: inc/timber-functions.php:87, inc/timber-functions.php:138, inc/timber-functions.php:189
 msgid "Uploaded to this item"
 msgstr ""
 
-#: inc/timber-functions.php:88, inc/timber-functions.php:139, inc/timber-functions.php:190, inc/timber-functions.php:240, inc/timber-functions.php:290, inc/timber-functions.php:337
+#: inc/timber-functions.php:88, inc/timber-functions.php:139, inc/timber-functions.php:190, inc/timber-functions.php:238
 msgid "Items list"
 msgstr ""
 
-#: inc/timber-functions.php:89, inc/timber-functions.php:140, inc/timber-functions.php:191, inc/timber-functions.php:241, inc/timber-functions.php:291, inc/timber-functions.php:338
+#: inc/timber-functions.php:89, inc/timber-functions.php:140, inc/timber-functions.php:191, inc/timber-functions.php:239
 msgid "Items list navigation"
 msgstr ""
 
-#: inc/timber-functions.php:90, inc/timber-functions.php:141, inc/timber-functions.php:192, inc/timber-functions.php:242, inc/timber-functions.php:292
+#: inc/timber-functions.php:90, inc/timber-functions.php:141, inc/timber-functions.php:192
 msgid "Filter items list"
 msgstr ""
 
@@ -153,7 +153,7 @@ msgstr ""
 msgid "All Entry Lists"
 msgstr ""
 
-#: inc/timber-functions.php:123, inc/timber-functions.php:174, inc/timber-functions.php:224, inc/timber-functions.php:274, inc/timber-functions.php:326
+#: inc/timber-functions.php:123, inc/timber-functions.php:174, inc/timber-functions.php:227
 msgid "Add New Item"
 msgstr ""
 
@@ -191,157 +191,81 @@ msgstr ""
 msgid "Competition Draws Description"
 msgstr ""
 
-#: inc/timber-functions.php:216
-msgctxt "Post Type General Name"
-msgid "Banner Slides"
-msgstr ""
-
-#: inc/timber-functions.php:217
-msgctxt "Post Type Singular Name"
-msgid "Banner Slide"
-msgstr ""
-
-#: inc/timber-functions.php:218
-msgid "Home Banner Slides"
-msgstr ""
-
-#: inc/timber-functions.php:219, inc/timber-functions.php:245
-msgid "Banner Slide"
-msgstr ""
-
 #: inc/timber-functions.php:220
-msgid "Banner Slide Archives"
-msgstr ""
-
-#: inc/timber-functions.php:221, inc/timber-functions.php:271
-msgid "Item Attributes"
-msgstr ""
-
-#: inc/timber-functions.php:223
-msgid "All Slides"
-msgstr ""
-
-#: inc/timber-functions.php:246
-msgid "Banner Slides for the Home Page Banner"
-msgstr ""
-
-#: inc/timber-functions.php:266
-msgctxt "Post Type General Name"
-msgid "Info Slides"
-msgstr ""
-
-#: inc/timber-functions.php:267
-msgctxt "Post Type Singular Name"
-msgid "Info Slide"
-msgstr ""
-
-#: inc/timber-functions.php:268
-msgid "Home Info Slides"
-msgstr ""
-
-#: inc/timber-functions.php:269
-msgid "Info Slide"
-msgstr ""
-
-#: inc/timber-functions.php:270
-msgid "Info Slides Archives"
-msgstr ""
-
-#: inc/timber-functions.php:273, inc/timber-functions.php:322
-msgid "All Items"
-msgstr ""
-
-#: inc/timber-functions.php:295
-msgid "Home Info Slide"
-msgstr ""
-
-#: inc/timber-functions.php:296
-msgid "Home Info Slides for Homepage (under banner)"
-msgstr ""
-
-#: inc/timber-functions.php:319
 msgctxt "Taxonomy General Name"
 msgid "Draw Status"
 msgstr ""
 
-#: inc/timber-functions.php:320
+#: inc/timber-functions.php:221
 msgctxt "Taxonomy Singular Name"
 msgid "Draw Status"
 msgstr ""
 
-#: inc/timber-functions.php:321
+#: inc/timber-functions.php:222
 msgid "Draw Status"
 msgstr ""
 
-#: inc/timber-functions.php:323
+#: inc/timber-functions.php:223
+msgid "All Items"
+msgstr ""
+
+#: inc/timber-functions.php:224
 msgid "Parent Item"
 msgstr ""
 
-#: inc/timber-functions.php:325
+#: inc/timber-functions.php:226
 msgid "New Item Name"
 msgstr ""
 
-#: inc/timber-functions.php:330
+#: inc/timber-functions.php:231
 msgid "Separate items with commas"
 msgstr ""
 
-#: inc/timber-functions.php:331
+#: inc/timber-functions.php:232
 msgid "Add or remove items"
 msgstr ""
 
-#: inc/timber-functions.php:332
+#: inc/timber-functions.php:233
 msgid "Choose from the most used"
 msgstr ""
 
-#: inc/timber-functions.php:333
+#: inc/timber-functions.php:234
 msgid "Popular Items"
 msgstr ""
 
-#: inc/timber-functions.php:334
+#: inc/timber-functions.php:235
 msgid "Search Items"
 msgstr ""
 
-#: inc/timber-functions.php:335
+#: inc/timber-functions.php:236
 msgid "Not Found"
 msgstr ""
 
-#: inc/timber-functions.php:336
+#: inc/timber-functions.php:237
 msgid "No items"
 msgstr ""
 
-#: inc/timber-functions.php:362
+#: inc/timber-functions.php:263
 msgid "Footer Left Area"
 msgstr ""
 
-#: inc/timber-functions.php:364
+#: inc/timber-functions.php:265
 msgid "Main Footer Widget Area; works best with the current widget only."
 msgstr ""
 
-#: inc/timber-functions.php:377
-msgid "Categories Menu"
-msgstr ""
-
-#: inc/timber-functions.php:378
+#: inc/timber-functions.php:278
 msgid "Main Menu"
 msgstr ""
 
-#: inc/timber-functions.php:379
+#: inc/timber-functions.php:279
 msgid "Mobile Menu"
 msgstr ""
 
-#: inc/timber-functions.php:380
-msgid "Accessories Menu"
-msgstr ""
-
-#: inc/timber-functions.php:381
-msgid "Parts Menu"
-msgstr ""
-
-#: inc/timber-functions.php:382
+#: inc/timber-functions.php:280
 msgid "Footer Nav Menu"
 msgstr ""
 
-#: inc/timber-functions.php:383
+#: inc/timber-functions.php:281
 msgid "Footer Customers Menu"
 msgstr ""
 
@@ -385,12 +309,20 @@ msgstr ""
 msgid "Wide Template"
 msgstr ""
 
-#: views/temp/base.php:300
+#: views/temp/base.php:305
 msgid "Sorry, nothing to display here..."
 msgstr ""
 
-#: views/temp/front-page.php:48
-msgid "Content"
+#: views/temp/front-page.php:23
+msgid "Participate"
+msgstr ""
+
+#: views/temp/front-page.php:44
+msgid "Latest Competitions"
+msgstr ""
+
+#: views/temp/front-page.php:61
+msgid "Latest Competition Winners"
 msgstr ""
 
 #: views/temp/templates/contact.php:25
@@ -469,12 +401,8 @@ msgstr ""
 msgid "Start typing to search..."
 msgstr ""
 
-#: views/temp/wp/parts/header/header-mobile.php:20, views/temp/wp/parts/header/header.php:78
-msgid "Menu"
-msgstr ""
-
-#: views/temp/wp/parts/header/header-mobile.php:21
-msgid "Categories"
+#: views/temp/wp/parts/header/header-mobile.php:40, views/temp/wp/parts/header/header-mobile.php:46, views/temp/wp/parts/header/header.php:131, views/temp/wp/parts/header/header.php:137
+msgid "Like us on"
 msgstr ""
 
 #: views/temp/wp/parts/header/header.php:33
@@ -497,12 +425,12 @@ msgstr ""
 msgid "Basket"
 msgstr ""
 
-#: views/temp/wp/parts/header/header.php:125
-msgid "Email us at"
+#: views/temp/wp/parts/header/header.php:78
+msgid "Menu"
 msgstr ""
 
-#: views/temp/wp/parts/header/header.php:131, views/temp/wp/parts/header/header.php:137
-msgid "Like us on"
+#: views/temp/wp/parts/header/header.php:125
+msgid "Email us at"
 msgstr ""
 
 #: views/temp/wp/parts/pagination.php:8

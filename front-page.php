@@ -21,5 +21,25 @@ if ( is_home() && is_front_page() ) {
 	$context['title'] =  get_the_title( $post->ID );
 };
 
+$args = array(
+   'post_type'             => 'product',
+   'post_status'           => 'publish',
+   'posts_per_page'        => '8',
+	 'meta_query' => array(
+		 array(
+			 'key' => '_stock_status',
+			 'value' => 'instock'
+		 ),
+	 ),
+);
+$context['recent_products'] = new Timber\PostQuery($args);
+
+$args = array(
+   'post_type'             => 'winners',
+   'post_status'           => 'publish',
+   'posts_per_page'        => '8',
+);
+$context['comp_winners'] = new Timber\PostQuery($args);
+
 // render the context with template
 Timber::render( array('front-page.twig'), $context );

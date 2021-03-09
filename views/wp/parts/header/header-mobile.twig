@@ -16,61 +16,40 @@
         </form>
       </div>
       
-      <ul class="uk-subnav uk-subnav-pill uk-text-center" uk-switcher>
-        <li><a href="#">{{ __('Menu', 'urban-carnival-theme') }}</a></li>
-        <li><a href="#">{{ __('Categories', 'urban-carnival-theme') }}</a></li>
-      </ul>
-      
-      <ul class="uk-switcher">
-        <li>
-          {% if has_menu_mobile %}
-            <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative" uk-nav>
-              {% for item in menu_mobile.get_items %}
-                {% if item.get_children %}
-                  <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }} uk-parent">
-                    <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
-                    <ul class="uk-nav-sub">
-                      {% for child in item.get_children %}
-                        <li class="theme-border-top">
-                          <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                {% else %}
-                  <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }}"><a title="{{ item.title|e('html_attr') }}" href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p class="uk-margin-remove">Add a menu to the Mobile Menu slot in Appearance > Menus</p>
-          {% endif %}
-        </li>
-        <li>
-          {% if has_menu_cats %}
-            <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative" uk-nav>
-              {% for item in menu_cats.get_items %}
-                {% if item.get_children %}
-                  <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }} uk-parent">
-                    <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
-                    <ul class="uk-nav-sub">
-                      {% for child in item.get_children %}
-                        <li class="theme-border-top">
-                          <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                {% else %}
-                  <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }}"><a title="{{ item.title|e('html_attr') }}" href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p class="uk-margin-remove">Add a menu to the Categories menu slot in Appearance > Menus</p>
-          {% endif %}
-        </li>
-      </ul>
+      {% if has_menu_mobile %}
+        <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative theme-border-top" uk-nav>
+          {% for item in menu_mobile.get_items %}
+            {% if item.get_children %}
+              <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }} uk-parent">
+                <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+                <ul class="uk-nav-sub">
+                  {% for child in item.get_children %}
+                    <li class="theme-border-top">
+                      <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }}"><a title="{{ item.title|e('html_attr') }}" href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+            {% endif %}
+          {% endfor %}
+          <li class="theme-border-bottom">
+            <a href="{{facebook_link|e('esc_url')|default('#')}}" target="_blank" class="">
+              <i class="fab fa-facebook-f"></i>
+              <span class="uk-margin-small-left">{{ __('Like us on', 'urban-carnival-theme') }} <span class="uk-text-underline">Facebook</span></span>
+            </a>
+          </li>
+          <li class="theme-border-bottom">
+            <a href="{{insta_link|e('esc_url')|default('#')}}" target="_blank" class="">
+              <i class="fab fa-instagram"></i>
+              <span class="uk-margin-small-left">{{ __('Like us on', 'urban-carnival-theme') }} <span class="uk-text-underline">Instagram</span></span>
+            </a>
+          </li>
+        </ul>
+      {% else %}
+        <p class="uk-margin-remove">Add a menu to the Mobile Menu slot in Appearance > Menus</p>
+      {% endif %}
       
     </div>
   </div>

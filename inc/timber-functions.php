@@ -212,105 +212,6 @@ class UrbanCarnivalTheme extends Timber\Site
   	);
   	register_post_type( 'live_draws', $args_draws );
     
-    $labels_banner = array(
-      'name'                  => _x( 'Banner Slides', 'Post Type General Name', 'urban-carnival-theme' ),
-  		'singular_name'         => _x( 'Banner Slide', 'Post Type Singular Name', 'urban-carnival-theme' ),
-  		'menu_name'             => __( 'Home Banner Slides', 'urban-carnival-theme' ),
-  		'name_admin_bar'        => __( 'Banner Slide', 'urban-carnival-theme' ),
-  		'archives'              => __( 'Banner Slide Archives', 'urban-carnival-theme' ),
-  		'attributes'            => __( 'Item Attributes', 'urban-carnival-theme' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'urban-carnival-theme' ),
-  		'all_items'             => __( 'All Slides', 'urban-carnival-theme' ),
-  		'add_new_item'          => __( 'Add New Item', 'urban-carnival-theme' ),
-  		'add_new'               => __( 'Add New', 'urban-carnival-theme' ),
-  		'new_item'              => __( 'New Item', 'urban-carnival-theme' ),
-  		'edit_item'             => __( 'Edit Item', 'urban-carnival-theme' ),
-  		'update_item'           => __( 'Update Item', 'urban-carnival-theme' ),
-  		'view_item'             => __( 'View Item', 'urban-carnival-theme' ),
-  		'view_items'            => __( 'View Items', 'urban-carnival-theme' ),
-  		'search_items'          => __( 'Search Item', 'urban-carnival-theme' ),
-  		'not_found'             => __( 'Not found', 'urban-carnival-theme' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'urban-carnival-theme' ),
-  		'featured_image'        => __( 'Featured Image', 'urban-carnival-theme' ),
-  		'set_featured_image'    => __( 'Set featured image', 'urban-carnival-theme' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'urban-carnival-theme' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'urban-carnival-theme' ),
-  		'insert_into_item'      => __( 'Insert into item', 'urban-carnival-theme' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'urban-carnival-theme' ),
-  		'items_list'            => __( 'Items list', 'urban-carnival-theme' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'urban-carnival-theme' ),
-  		'filter_items_list'     => __( 'Filter items list', 'urban-carnival-theme' ),
-    );
-    $args_banner = array(
-      'label'                 => __( 'Banner Slide', 'urban-carnival-theme' ),
-  		'description'           => __( 'Banner Slides for the Home Page Banner', 'urban-carnival-theme' ),
-  		'labels'                => $labels_banner,
-  		'supports'              => array( 'title', 'editor', 'thumbnail' ),
-  		'hierarchical'          => false,
-  		'public'                => true,
-  		'show_ui'               => true,
-  		'show_in_menu'          => true,
-  		'menu_position'         => 2,
-  		'show_in_admin_bar'     => true,
-  		'show_in_nav_menus'     => false,
-  		'can_export'            => true,
-  		'has_archive'           => false,
-  		'exclude_from_search'   => true,
-  		'publicly_queryable'    => false,
-  		'capability_type'       => 'page',
-  		'show_in_rest'          => false,
-    );
-  	register_post_type( 'slide', $args_banner );
-    
-    $labels_info = array(
-      'name'                  => _x( 'Info Slides', 'Post Type General Name', 'urban-carnival-theme' ),
-  		'singular_name'         => _x( 'Info Slide', 'Post Type Singular Name', 'urban-carnival-theme' ),
-  		'menu_name'             => __( 'Home Info Slides', 'urban-carnival-theme' ),
-  		'name_admin_bar'        => __( 'Info Slide', 'urban-carnival-theme' ),
-  		'archives'              => __( 'Info Slides Archives', 'urban-carnival-theme' ),
-  		'attributes'            => __( 'Item Attributes', 'urban-carnival-theme' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'urban-carnival-theme' ),
-  		'all_items'             => __( 'All Items', 'urban-carnival-theme' ),
-  		'add_new_item'          => __( 'Add New Item', 'urban-carnival-theme' ),
-  		'add_new'               => __( 'Add New', 'urban-carnival-theme' ),
-  		'new_item'              => __( 'New Item', 'urban-carnival-theme' ),
-  		'edit_item'             => __( 'Edit Item', 'urban-carnival-theme' ),
-  		'update_item'           => __( 'Update Item', 'urban-carnival-theme' ),
-  		'view_item'             => __( 'View Item', 'urban-carnival-theme' ),
-  		'view_items'            => __( 'View Items', 'urban-carnival-theme' ),
-  		'search_items'          => __( 'Search Item', 'urban-carnival-theme' ),
-  		'not_found'             => __( 'Not found', 'urban-carnival-theme' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'urban-carnival-theme' ),
-  		'featured_image'        => __( 'Featured Image', 'urban-carnival-theme' ),
-  		'set_featured_image'    => __( 'Set featured image', 'urban-carnival-theme' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'urban-carnival-theme' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'urban-carnival-theme' ),
-  		'insert_into_item'      => __( 'Insert into item', 'urban-carnival-theme' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'urban-carnival-theme' ),
-  		'items_list'            => __( 'Items list', 'urban-carnival-theme' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'urban-carnival-theme' ),
-  		'filter_items_list'     => __( 'Filter items list', 'urban-carnival-theme' ),
-    );
-    $args_info = array(
-      'label'                 => __( 'Home Info Slide', 'urban-carnival-theme' ),
-  		'description'           => __( 'Home Info Slides for Homepage (under banner)', 'urban-carnival-theme' ),
-  		'labels'                => $labels_info,
-  		'supports'              => array( 'title', 'editor' ),
-  		'hierarchical'          => false,
-  		'public'                => true,
-  		'show_ui'               => true,
-  		'show_in_menu'          => true,
-  		'menu_position'         => 2,
-  		'show_in_admin_bar'     => true,
-  		'show_in_nav_menus'     => false,
-  		'can_export'            => true,
-  		'has_archive'           => false,
-  		'exclude_from_search'   => true,
-  		'publicly_queryable'    => false,
-  		'capability_type'       => 'page',
-  		'show_in_rest'          => false,
-    );
-  	register_post_type( 'info_slide', $args_info );
   }
 
   public function register_taxonomies()
@@ -374,11 +275,8 @@ class UrbanCarnivalTheme extends Timber\Site
   {
     // This theme uses wp_nav_menu() in one locations.
     register_nav_menus(array(
-      'categories' => __('Categories Menu', 'urban-carnival-theme'),
       'main_menu' => __('Main Menu', 'urban-carnival-theme'),
       'mobile_menu' => __('Mobile Menu', 'urban-carnival-theme'),
-      'accessories_menu' => __('Accessories Menu', 'urban-carnival-theme'),
-      'parts_menu' => __('Parts Menu', 'urban-carnival-theme'),
       'footer_nav_menu' => __('Footer Nav Menu', 'urban-carnival-theme'),
       'footer_customers_menu' => __('Footer Customers Menu', 'urban-carnival-theme'),
     ));
@@ -406,8 +304,6 @@ class UrbanCarnivalTheme extends Timber\Site
     $context['theme_logo_url'] = $theme_logo_url;
     // menu register & args
     $main_menu_args = array( 'depth' => 3 );
-    $context['menu_cats'] = new \Timber\Menu( 'categories' );
-    $context['has_menu_cats'] = has_nav_menu( 'categories' );
     $context['menu_main'] = new Timber\Menu( 'main_menu' );
     $context['has_menu_main'] = has_nav_menu( 'main_menu' );
     $context['menu_mobile'] = new Timber\Menu('mobile_menu');

@@ -1,3 +1,15 @@
+.winners img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#slideshow_banner .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* swiper-js css */
 
 /* general swiper css */
@@ -38,21 +50,30 @@
 }
 
 
-#slideshow_info {
+#slideshow_winners {
   margin-bottom: -25px;
 }
-#slideshow_info .swiper-wrapper {
+#slideshow_winners .swiper-wrapper {
   padding-bottom: 30px;
 }
-#slideshow_info .swiper-pagination {
+#slideshow_winners .swiper-pagination {
   z-index: 99999;
   bottom: 16px!important;
   /* left: 49.7%!important; */
 }
 
 
-#slideshow_cats.swiper-container-horizontal>.swiper-pagination-bullets, #slideshow_featured .swiper-pagination, #slideshow_recent .swiper-pagination  {
+#slideshow_winners.swiper-container-horizontal>.swiper-pagination-bullets, #slideshow_featured .swiper-pagination, #slideshow_recent .swiper-pagination  {
   bottom: 0px;
+}
+
+
+@media (max-width: 959px) {
+  .winners img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+  }
 }
 
 /* #slideshow_featured .swiper-slide, #slideshow_recent .swiper-slide {
@@ -99,4 +120,10 @@
   .home-cats .uk-padding-small {
     padding: 10px;
   }
+}
+
+img.single-product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }

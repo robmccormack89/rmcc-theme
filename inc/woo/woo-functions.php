@@ -31,7 +31,7 @@ function nk_custom_post_type_label_woo( $args ){
   $args['labels'] = $labels;
   return $args;
 }
-add_filter( 'woocommerce_register_post_type_product', 'nk_custom_post_type_label_woo' );
+add_filter( 'woocommerce_register_post_type_product', 'nk_custom_post_type_label_woo');
   
 // remove woo scripts and styles selectively
 function theme_woo_script_styles() {
@@ -48,10 +48,10 @@ function theme_woo_script_styles() {
   wp_dequeue_script( 'select2' );
   wp_deregister_script( 'select2' );
 }
-add_action( 'wp_enqueue_scripts', 'theme_woo_script_styles', 99 );
+add_action( 'wp_enqueue_scripts', 'theme_woo_script_styles', 99);
 
 // stop redirecting search when only one result
-add_filter( 'woocommerce_redirect_single_search_result', '__return_false' );
+add_filter( 'woocommerce_redirect_single_search_result', '__return_false');
 
 // ajax result count
 function cart_ajax_result_count() {
@@ -59,14 +59,14 @@ function cart_ajax_result_count() {
   echo WC()->cart->get_cart_contents_count();
   echo '</span>';
 }
-add_action( 'cart_ajax_result_count', 'cart_ajax_result_count' );
+add_action( 'cart_ajax_result_count', 'cart_ajax_result_count');
 // ajax subtotal
 function cart_ajax_subtotal() {
   echo '<span class="subtotal-cart">';
   echo WC()->cart->get_cart_subtotal();
   echo '</span>';
 }
-add_action( 'cart_ajax_subtotal', 'cart_ajax_subtotal' );
+add_action( 'cart_ajax_subtotal', 'cart_ajax_subtotal');
 
 // custom stock quantity; woo template functions
 function custom_store_notice () { 
@@ -82,7 +82,7 @@ function custom_store_notice () {
 
   echo apply_filters( 'woocommerce_demo_store', '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>', $notice ); 
 } 
-add_action( 'custom_store_notice', 'custom_store_notice' );
+add_action( 'custom_store_notice', 'custom_store_notice');
 
 function custom_filter_wc_cart_item_remove_link( $sprintf, $cart_item_key ) {
   if ( is_admin() && ! defined( 'DOING_AJAX' ) )
@@ -90,21 +90,21 @@ function custom_filter_wc_cart_item_remove_link( $sprintf, $cart_item_key ) {
   $sprintf = str_replace('&times;', '<i class="fas fa-times"></i>', $sprintf);
   return $sprintf;
 };
-add_filter( 'woocommerce_cart_item_remove_link', 'custom_filter_wc_cart_item_remove_link', 10, 2 );
+add_filter( 'woocommerce_cart_item_remove_link', 'custom_filter_wc_cart_item_remove_link', 10, 2);
 
 // filters the mini-cart results count for ajax; see php file
 function iconic_cart_count_fragments( $fragments ) {
   $fragments['span.header-cart-count'] = '<span class="header-cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
   return $fragments;
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1 );
+add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1);
 
 // filters the mini-cart subtotal for ajax; she php file
 function iconic_subtotal_fragments( $fragments ) {
   $fragments['span.subtotal-cart'] = '<span class="subtotal-cart">' . WC()->cart->get_cart_subtotal() . '</span>';
   return $fragments;
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_subtotal_fragments', 10, 1 );
+add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_subtotal_fragments', 10, 1);
 
 remove_action( 'wp_footer', 'woocommerce_demo_store' ); // remove store notice; uses custom notice above
 // archive
@@ -125,4 +125,4 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 // Remove cross-sells at cart
-remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
