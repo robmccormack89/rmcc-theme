@@ -23,13 +23,13 @@
     {% if not post._lottery_closed %}
       <div id="ProductMeta" class="uk-article-meta push-down-5">
         <div>
-          <span class="uk-text-bold uk-text-emphasis">Competition finishes on:</span> {{post._lottery_dates_to}}
+          <span class="uk-text-bold uk-text-emphasis">{{ __('Competition finishes on:', 'urban-carnival-theme') }}</span> {{post._lottery_dates_to}}
         </div>
         <div>
-          <span class="uk-text-bold uk-text-emphasis">People entered already:</span> {{post._lottery_participants_count}}
+          <span class="uk-text-bold uk-text-emphasis">{{ __('People entered already:', 'urban-carnival-theme') }}</span> {{post._lottery_participants_count}}
         </div>
         <div>
-          <span class="uk-text-bold uk-text-emphasis">Max. entries for this Competition:</span> {{post._max_tickets}}
+          <span class="uk-text-bold uk-text-emphasis">{{ __('Max. entries for this Competition:', 'urban-carnival-theme') }}</span> {{post._max_tickets}}
         </div>
       </div>
     {% endif %}
@@ -37,7 +37,7 @@
     {% if post._lottery_closed %}
       <div class="uk-article-meta push-down-5">
         <div>
-          <span class="uk-text-warning">This competition has finished</span>
+          <span class="uk-text-warning">{{ __('This competition has finished', 'urban-carnival-theme') }}</span>
         </div>
       </div>
     {% endif %}

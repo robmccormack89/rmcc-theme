@@ -365,6 +365,22 @@ msgstr ""
 msgid "Category:"
 msgstr ""
 
+#: views/temp/woo/parts/tease/tease-product-list.php:44, views/temp/woo/parts/tease/tease-product.php:26
+msgid "Competition finishes on:"
+msgstr ""
+
+#: views/temp/woo/parts/tease/tease-product-list.php:47, views/temp/woo/parts/tease/tease-product.php:29
+msgid "People entered already:"
+msgstr ""
+
+#: views/temp/woo/parts/tease/tease-product-list.php:50, views/temp/woo/parts/tease/tease-product.php:32
+msgid "Max. entries for this Competition:"
+msgstr ""
+
+#: views/temp/woo/parts/tease/tease-product-list.php:58, views/temp/woo/parts/tease/tease-product.php:40
+msgid "This competition has finished"
+msgstr ""
+
 #: views/temp/wp/archive/archive-entry_lists.php:15
 msgid "No Entry Lists posted yet..."
 msgstr ""
