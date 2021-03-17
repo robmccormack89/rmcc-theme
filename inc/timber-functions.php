@@ -407,6 +407,7 @@ class UrbanCarnivalTheme extends Timber\Site
     // stop the br tag madness in the content editor
     // remove_filter( 'the_content', 'wpautop' );
     // remove_filter( 'the_excerpt', 'wpautop' );
+    load_theme_textdomain('urban-carnival-theme', get_template_directory() . '/languages');
   }
   
   // add grid-list url paramater key
