@@ -80,7 +80,7 @@ function custom_store_notice () {
     $notice = __( 'This is a demo store for testing purposes — no orders shall be fulfilled.', 'woocommerce' ); 
   } 
 
-  echo apply_filters( 'woocommerce_demo_store', '<p class="woocommerce-store-notice demo_store">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . '</a></p>', $notice ); 
+  echo apply_filters( 'woocommerce_demo_store', '<div class="woocommerce-store-notice demo_store"><div class="store-notice-wrap">' . wp_kses_post( $notice ) . ' <a href="#" class="woocommerce-store-notice__dismiss-link">' . esc_html__( 'Dismiss', 'woocommerce' ) . ' <i class="fas fa-times"></i></a></div></div>', $notice ); 
 } 
 add_action( 'custom_store_notice', 'custom_store_notice');
 

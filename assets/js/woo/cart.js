@@ -2,8 +2,8 @@ jQuery(function($) {
 
   // cart
   function WooCart() {
-    $(".woocommerce-cart-form").addClass("uk-overflow-auto");
-    $(".woocommerce-cart-form .shop_table").addClass("uk-table uk-table-justify uk-table-divider");
+    $(".woocommerce-cart-form").addClass("cart-table-wrap");
+    $(".woocommerce-cart-form .shop_table").addClass("uk-table uk-table-justify uk-table-responsive uk-table-divider");
     $(".woocommerce-cart-form .product-thumbnail").addClass("uk-width-small");
     $(".woocommerce-cart-form .product-thumbnail img").addClass("uk-preserve-width");
     $(".woocommerce-cart-form .product-quantity").addClass("uk-width-small");

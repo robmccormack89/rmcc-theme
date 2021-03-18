@@ -19,6 +19,17 @@ Urban Carnival Theme is built using Timber WP https://github.com/timber/timber
 
 */
 
+/* demo store notice */
+.woocommerce-store-notice {
+    text-align: center;
+}
+.store-notice-wrap {
+    position: relative;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
 .tab-content h2 {
   margin-bottom: 10px!important;
 }
