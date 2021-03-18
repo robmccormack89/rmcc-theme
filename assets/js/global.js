@@ -1,8 +1,4 @@
 jQuery(function($) {
-  
-  $(window).bind("popstate", function() {
-    window.location = location.href;
-  });
 
   // site wide pagination with conditional
   if ($(".uk-pagination").length) {
