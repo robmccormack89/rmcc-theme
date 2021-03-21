@@ -27,6 +27,29 @@ jQuery(function(){
     },
   });
   
+  var winners_recent = new Swiper('#slideshow_rrecent', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      dynamicBullets: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+    }
+  });
+  
   // featured products swiper
   var winners_swiper = new Swiper('#slideshow_winners', {
     slidesPerView: 2,
