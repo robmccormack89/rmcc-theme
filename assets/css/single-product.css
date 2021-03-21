@@ -1,3 +1,41 @@
+.lSAction>a {
+  /* border: 5px solid #fc4c02; */
+  border-radius: 100%;
+  /* width: 29px;
+  display: block;
+  top: 50%;
+  height: 29px;
+  color: #fff;
+  background-image: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  margin-top: -10px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.35s linear 0s;
+  transition: opacity 0.35s linear 0s; */
+}
+/* .lSAction>.lSPrev {
+  left: 10px;
+}
+.lSAction>.lSNext {
+  right: 10px;
+}
+.lSPrev .fas {
+  margin-left: 6px;
+}
+.lSNext .fas {
+  margin-left: 8px;
+} */
+
+.lSSlideOuter .lSPager.lSGallery li img {
+  transition: width 2s;
+}
+.lSSlideOuter .lSPager.lSGallery li.active img,
+.lSSlideOuter .lSPager.lSGallery li:hover img {
+  border: 5px solid #fc4c02;
+}
+
 iframe {
     max-width: 100%;
 }

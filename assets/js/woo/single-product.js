@@ -1,3 +1,14 @@
+// for the product image gallery
+jQuery('#lightSlider').lightSlider({
+  gallery: true,
+  item: 1,
+  loop: true,
+  slideMargin: 0,
+  thumbItem: 6,
+  galleryMargin: 10,
+  thumbMargin: 10,
+});
+
 jQuery(function($) {
   // $("#countdown").addClass("uk-box-shadow-medium uk-padding-small");
   // add-to-cart
