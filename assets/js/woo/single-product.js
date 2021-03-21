@@ -1,4 +1,5 @@
 jQuery(function($) {
+  // $("#countdown").addClass("uk-box-shadow-medium uk-padding-small");
   // add-to-cart
   $(".variations_form table").addClass("uk-table-small uk-table-divider uk-table-middle uk-table-justify uk-position-relative");
   $(".variations_form .button").addClass("uk-button-primary");
