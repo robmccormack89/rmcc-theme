@@ -1,3 +1,10 @@
+.pick-number h3 {
+    color: #fc4c02;
+}
+select#lottery_answer_drop {
+    border-color: #fc4c02;
+}
+
 .lSAction>a {
   /* border: 5px solid #fc4c02; */
   border-radius: 100%;
