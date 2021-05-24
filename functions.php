@@ -55,16 +55,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 	}
 	// woo functions
 	require get_template_directory() . '/inc/woo/woo-functions.php';
-	// live product search
-	require get_template_directory() . '/inc/woo/live-search.php';
-	// shop filters
-	require get_template_directory() . '/inc/woo/shop-filters.php';
 }
 
-// if ACF class exists, do some stuff
-if ( class_exists( 'ACF' ) ) {
-	require get_template_directory() . '/inc/acf/acf-functions.php';
-}
-
-// load the Custom Widget
-require get_template_directory() . '/inc/widgets/uikit-html-widget.php';
+add_action('template_redirect', function() {
+  if(!is_user_logged_in()) {
+    if (is_page('coming-soon')) {
+      return;
+    }
+    wp_redirect( esc_url_raw( home_url( 'coming-soon' ) ) );
+    exit;
+  }
+});

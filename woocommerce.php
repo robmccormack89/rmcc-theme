@@ -43,23 +43,6 @@ if ( is_singular( 'product' ) ) {
   $posts = new Timber\PostQuery();
   $context['products'] = $posts;
   
-  // define our archive & tease templates as arrays, which can be unshifted later depending on context
-  $templates = array('shop.twig');
-  $tease_template = array('tease-product.twig');
-  
-  // gets the woocommerce columns per row setting
-  $context['products_grid_columns'] = wc_get_loop_prop('columns');
-  
-  // if is list-view
-  if (get_query_var('grid_list') == 'list-view') {
-    // reset the woo archive columns setting
-    $context['products_grid_columns'] = '1';
-    // unshit the tease template variable with the new list tease template
-  	array_unshift( $tease_template, 'tease-product-list.twig' );
-    // then Restore the context and loop back to the main query loop.
-    wp_reset_postdata();
-  };
-  
   // if is any new taxonomy, see is_tax wp dev handbook for details
   if (is_tax('')) {
     // get queried object stuff
@@ -88,7 +71,6 @@ if ( is_singular( 'product' ) ) {
     // then Restore the context and loop back to the main query loop.
     wp_reset_postdata();
   };
-  
-  $context['tease_template'] = $tease_template; 
-  Timber::render( $templates, $context );
+
+  Timber::render( 'shop.twig', $context );
 }

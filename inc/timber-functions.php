@@ -8,17 +8,9 @@
 // Define paths to Twig templates
 Timber::$dirname = array(
   'views',
-  'views/templates',
-  'views/wp',
-  'views/wp/archive',
-  'views/wp/parts',
-  'views/wp/parts/tease',
-  'views/wp/parts/footer',
-  'views/wp/parts/header',
-  'views/wp/singular',
+  'views/parts',
   'views/woo',
-  'views/woo/parts',
-  'views/woo/parts/tease',
+  'views/wp',
 );
 
 // set the $autoescape value
@@ -35,11 +27,11 @@ class CautiousOctoFiesta extends Timber\Site
     add_filter( 'pre_get_posts', array($this, 'add_custom_types_to_tax') );
     add_action('after_setup_theme', array( $this, 'theme_supports' ));
     add_action('wp_enqueue_scripts', array( $this, 'cautious_octo_fiesta_enqueue_assets'));
-    add_action('widgets_init', array( $this, 'cautious_octo_fiesta_custom_uikit_widgets_init'));
+    // add_action('widgets_init', array( $this, 'cautious_octo_fiesta_custom_uikit_widgets_init'));
     add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
     add_filter( 'timber/context', array( $this, 'add_to_context' ) );
     add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-    add_filter( 'query_vars', array( $this, 'cautious_octo_fiesta_gridlist_query_vars_filter'));
+    // add_filter( 'query_vars', array( $this, 'cautious_octo_fiesta_gridlist_query_vars_filter'));
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action('init', array( $this, 'register_widget_areas' ));
@@ -60,214 +52,205 @@ class CautiousOctoFiesta extends Timber\Site
 
   public function register_post_types()
   {
-    $labels_winners = array(
-      'name'                  => _x( 'Competition Winners', 'Post Type General Name', 'cautious-octo-fiesta' ),
-  		'singular_name'         => _x( 'Competition Winner', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
-  		'menu_name'             => __( 'Competition Winners', 'cautious-octo-fiesta' ),
-  		'name_admin_bar'        => __( 'Competition Winner', 'cautious-octo-fiesta' ),
-  		'archives'              => __( 'Competition Winners', 'cautious-octo-fiesta' ),
-  		'attributes'            => __( 'Winner Attributes', 'cautious-octo-fiesta' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
-  		'all_items'             => __( 'All Winners', 'cautious-octo-fiesta' ),
-  		'add_new_item'          => __( 'Add New Winner', 'cautious-octo-fiesta' ),
-  		'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
-  		'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
-  		'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
-  		'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
-  		'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
-  		'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
-  		'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
-  		'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
-  		'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
-  		'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
-  		'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
-  		'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
-  		'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
-    );
-  	$args_winners = array(
-  		'label'                 => __( 'Winner', 'cautious-octo-fiesta' ),
-  		'description'           => __( 'Winners content type', 'cautious-octo-fiesta' ),
-  		'labels'                => $labels_winners,
-  		'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'page-attributes' ),
-  		'hierarchical'          => false,
-  		'public'                => true,
-  		'show_ui'               => true,
-  		'show_in_menu'          => true,
-  		'menu_position'         => 3,
-  		'show_in_admin_bar'     => true,
-  		'show_in_nav_menus'     => true,
-  		'can_export'            => true,
-  		'has_archive'           => 'competition-winners',
-  		'exclude_from_search'   => true,
-  		'publicly_queryable'    => true,
-  		'query_var'             => false,
-  		'capability_type'       => 'page',
-  		'show_in_rest'          => false,
-  	);
-  	register_post_type( 'winners', $args_winners );
+    // $labels_winners = array(
+    //   'name'                  => _x( 'Competition Winners', 'Post Type General Name', 'cautious-octo-fiesta' ),
+  	// 	'singular_name'         => _x( 'Competition Winner', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
+  	// 	'menu_name'             => __( 'Competition Winners', 'cautious-octo-fiesta' ),
+  	// 	'name_admin_bar'        => __( 'Competition Winner', 'cautious-octo-fiesta' ),
+  	// 	'archives'              => __( 'Competition Winners', 'cautious-octo-fiesta' ),
+  	// 	'attributes'            => __( 'Winner Attributes', 'cautious-octo-fiesta' ),
+  	// 	'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+  	// 	'all_items'             => __( 'All Winners', 'cautious-octo-fiesta' ),
+  	// 	'add_new_item'          => __( 'Add New Winner', 'cautious-octo-fiesta' ),
+  	// 	'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
+  	// 	'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
+  	// 	'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
+  	// 	'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
+  	// 	'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
+  	// 	'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
+  	// 	'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
+  	// 	'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
+  	// 	'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
+  	// 	'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
+  	// 	'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
+  	// 	'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
+  	// 	'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
+  	// 	'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
+  	// 	'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
+  	// 	'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
+  	// 	'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+  	// 	'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
+    // );
+  	// $args_winners = array(
+  	// 	'label'                 => __( 'Winner', 'cautious-octo-fiesta' ),
+  	// 	'description'           => __( 'Winners content type', 'cautious-octo-fiesta' ),
+  	// 	'labels'                => $labels_winners,
+  	// 	'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'page-attributes' ),
+  	// 	'hierarchical'          => false,
+  	// 	'public'                => true,
+  	// 	'show_ui'               => true,
+  	// 	'show_in_menu'          => true,
+  	// 	'menu_position'         => 3,
+  	// 	'show_in_admin_bar'     => true,
+  	// 	'show_in_nav_menus'     => true,
+  	// 	'can_export'            => true,
+  	// 	'has_archive'           => 'competition-winners',
+  	// 	'exclude_from_search'   => true,
+  	// 	'publicly_queryable'    => true,
+  	// 	'query_var'             => false,
+  	// 	'capability_type'       => 'page',
+  	// 	'show_in_rest'          => false,
+  	// );
+  	// register_post_type( 'winners', $args_winners );
 
-  	$labels_lists = array(
-  		'name'                  => _x( 'Entry Lists', 'Post Type General Name', 'cautious-octo-fiesta' ),
-  		'singular_name'         => _x( 'Entry List', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
-  		'menu_name'             => __( 'Entry Lists', 'cautious-octo-fiesta' ),
-  		'name_admin_bar'        => __( 'Entry List', 'cautious-octo-fiesta' ),
-  		'archives'              => __( 'Entry Lists', 'cautious-octo-fiesta' ),
-  		'attributes'            => __( 'Entry List Attributes', 'cautious-octo-fiesta' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
-  		'all_items'             => __( 'All Entry Lists', 'cautious-octo-fiesta' ),
-  		'add_new_item'          => __( 'Add New Item', 'cautious-octo-fiesta' ),
-  		'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
-  		'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
-  		'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
-  		'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
-  		'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
-  		'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
-  		'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
-  		'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
-  		'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
-  		'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
-  		'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
-  		'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
-  		'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
-  	);
-  	$args_lists = array(
-  		'label'                 => __( 'Entry List', 'cautious-octo-fiesta' ),
-  		'description'           => __( 'Entry List Description', 'cautious-octo-fiesta' ),
-  		'labels'                => $labels_lists,
-  		'supports'              => array( 'title', 'editor', 'revisions', 'custom-fields', 'page-attributes' ),
-  		'hierarchical'          => false,
-  		'public'                => true,
-  		'show_ui'               => true,
-  		'show_in_menu'          => true,
-  		'menu_position'         => 4,
-  		'show_in_admin_bar'     => true,
-  		'show_in_nav_menus'     => true,
-  		'can_export'            => true,
-  		'has_archive'           => 'entry-lists',
-  		'exclude_from_search'   => true,
-  		'publicly_queryable'    => true,
-      'query_var'             => false,
-
-  		'capability_type'       => 'page',
-  	);
-  	register_post_type( 'entry_lists', $args_lists );
+  	// $labels_lists = array(
+  	// 	'name'                  => _x( 'Entry Lists', 'Post Type General Name', 'cautious-octo-fiesta' ),
+  	// 	'singular_name'         => _x( 'Entry List', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
+  	// 	'menu_name'             => __( 'Entry Lists', 'cautious-octo-fiesta' ),
+  	// 	'name_admin_bar'        => __( 'Entry List', 'cautious-octo-fiesta' ),
+  	// 	'archives'              => __( 'Entry Lists', 'cautious-octo-fiesta' ),
+  	// 	'attributes'            => __( 'Entry List Attributes', 'cautious-octo-fiesta' ),
+  	// 	'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+  	// 	'all_items'             => __( 'All Entry Lists', 'cautious-octo-fiesta' ),
+  	// 	'add_new_item'          => __( 'Add New Item', 'cautious-octo-fiesta' ),
+  	// 	'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
+  	// 	'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
+  	// 	'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
+  	// 	'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
+  	// 	'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
+  	// 	'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
+  	// 	'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
+  	// 	'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
+  	// 	'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
+  	// 	'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
+  	// 	'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
+  	// 	'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
+  	// 	'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
+  	// 	'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
+  	// 	'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
+  	// 	'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
+  	// 	'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+  	// 	'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
+  	// );
+  	// $args_lists = array(
+  	// 	'label'                 => __( 'Entry List', 'cautious-octo-fiesta' ),
+  	// 	'description'           => __( 'Entry List Description', 'cautious-octo-fiesta' ),
+  	// 	'labels'                => $labels_lists,
+  	// 	'supports'              => array( 'title', 'editor', 'revisions', 'custom-fields', 'page-attributes' ),
+  	// 	'hierarchical'          => false,
+  	// 	'public'                => true,
+  	// 	'show_ui'               => true,
+  	// 	'show_in_menu'          => true,
+  	// 	'menu_position'         => 4,
+  	// 	'show_in_admin_bar'     => true,
+  	// 	'show_in_nav_menus'     => true,
+  	// 	'can_export'            => true,
+  	// 	'has_archive'           => 'entry-lists',
+  	// 	'exclude_from_search'   => true,
+  	// 	'publicly_queryable'    => true,
+    //   'query_var'             => false,
+    // 
+  	// 	'capability_type'       => 'page',
+  	// );
+  	// register_post_type( 'entry_lists', $args_lists );
       
-  	$labels_draws = array(
-  		'name'                  => _x( 'Competition Draws', 'Post Type General Name', 'cautious-octo-fiesta' ),
-  		'singular_name'         => _x( 'Competition Draw', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
-  		'menu_name'             => __( 'Competition Draws', 'cautious-octo-fiesta' ),
-  		'name_admin_bar'        => __( 'Competition Draw', 'cautious-octo-fiesta' ),
-  		'archives'              => __( 'Competition Draws', 'cautious-octo-fiesta' ),
-  		'attributes'            => __( 'Competition Draw Attributes', 'cautious-octo-fiesta' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
-  		'all_items'             => __( 'All Live Draws', 'cautious-octo-fiesta' ),
-  		'add_new_item'          => __( 'Add New Item', 'cautious-octo-fiesta' ),
-  		'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
-  		'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
-  		'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
-  		'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
-  		'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
-  		'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
-  		'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
-  		'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
-  		'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
-  		'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
-  		'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
-  		'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
-  		'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
-  	);
-  	$args_draws = array(
-  		'label'                 => __( 'Competition Draw', 'cautious-octo-fiesta' ),
-  		'description'           => __( 'Competition Draws Description', 'cautious-octo-fiesta' ),
-  		'labels'                => $labels_draws,
-  		'supports'              => array( 'title', 'editor', 'custom-fields' ),
-  		'hierarchical'          => false,
-  		'public'                => true,
-  		'show_ui'               => true,
-  		'show_in_menu'          => true,
-  		'menu_position'         => 5,
-  		'show_in_admin_bar'     => true,
-  		'show_in_nav_menus'     => true,
-  		'can_export'            => true,
-  		'has_archive'           => 'competition-draws',
-  		'exclude_from_search'   => true,
-      'publicly_queryable'    => true,
-      'query_var'             => true,
-  		'capability_type'       => 'page',
-  	);
-  	register_post_type( 'live_draws', $args_draws );
-    
+  	// $labels_draws = array(
+  	// 	'name'                  => _x( 'Competition Draws', 'Post Type General Name', 'cautious-octo-fiesta' ),
+  	// 	'singular_name'         => _x( 'Competition Draw', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
+  	// 	'menu_name'             => __( 'Competition Draws', 'cautious-octo-fiesta' ),
+  	// 	'name_admin_bar'        => __( 'Competition Draw', 'cautious-octo-fiesta' ),
+  	// 	'archives'              => __( 'Competition Draws', 'cautious-octo-fiesta' ),
+  	// 	'attributes'            => __( 'Competition Draw Attributes', 'cautious-octo-fiesta' ),
+  	// 	'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+  	// 	'all_items'             => __( 'All Live Draws', 'cautious-octo-fiesta' ),
+  	// 	'add_new_item'          => __( 'Add New Item', 'cautious-octo-fiesta' ),
+  	// 	'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
+  	// 	'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
+  	// 	'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
+  	// 	'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
+  	// 	'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
+  	// 	'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
+  	// 	'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
+  	// 	'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
+  	// 	'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
+  	// 	'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
+  	// 	'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
+  	// 	'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
+  	// 	'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
+  	// 	'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
+  	// 	'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
+  	// 	'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
+  	// 	'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+  	// 	'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
+  	// );
+  	// $args_draws = array(
+  	// 	'label'                 => __( 'Competition Draw', 'cautious-octo-fiesta' ),
+  	// 	'description'           => __( 'Competition Draws Description', 'cautious-octo-fiesta' ),
+  	// 	'labels'                => $labels_draws,
+  	// 	'supports'              => array( 'title', 'editor', 'custom-fields' ),
+  	// 	'hierarchical'          => false,
+  	// 	'public'                => true,
+  	// 	'show_ui'               => true,
+  	// 	'show_in_menu'          => true,
+  	// 	'menu_position'         => 5,
+  	// 	'show_in_admin_bar'     => true,
+  	// 	'show_in_nav_menus'     => true,
+  	// 	'can_export'            => true,
+  	// 	'has_archive'           => 'competition-draws',
+  	// 	'exclude_from_search'   => true,
+    //   'publicly_queryable'    => true,
+    //   'query_var'             => true,
+  	// 	'capability_type'       => 'page',
+  	// );
+  	// register_post_type( 'live_draws', $args_draws );
   }
 
   public function register_taxonomies()
   {
-    $labels_status = array(
-      'name'                       => _x( 'Draw Status', 'Taxonomy General Name', 'cautious-octo-fiesta' ),
-      'singular_name'              => _x( 'Draw Status', 'Taxonomy Singular Name', 'cautious-octo-fiesta' ),
-      'menu_name'                  => __( 'Draw Status', 'cautious-octo-fiesta' ),
-      'all_items'                  => __( 'All Items', 'cautious-octo-fiesta' ),
-      'parent_item'                => __( 'Parent Item', 'cautious-octo-fiesta' ),
-      'parent_item_colon'          => __( 'Parent Item:', 'cautious-octo-fiesta' ),
-      'new_item_name'              => __( 'New Item Name', 'cautious-octo-fiesta' ),
-      'add_new_item'               => __( 'Add New Item', 'cautious-octo-fiesta' ),
-      'edit_item'                  => __( 'Edit Item', 'cautious-octo-fiesta' ),
-      'update_item'                => __( 'Update Item', 'cautious-octo-fiesta' ),
-      'view_item'                  => __( 'View Item', 'cautious-octo-fiesta' ),
-      'separate_items_with_commas' => __( 'Separate items with commas', 'cautious-octo-fiesta' ),
-      'add_or_remove_items'        => __( 'Add or remove items', 'cautious-octo-fiesta' ),
-      'choose_from_most_used'      => __( 'Choose from the most used', 'cautious-octo-fiesta' ),
-      'popular_items'              => __( 'Popular Items', 'cautious-octo-fiesta' ),
-      'search_items'               => __( 'Search Items', 'cautious-octo-fiesta' ),
-      'not_found'                  => __( 'Not Found', 'cautious-octo-fiesta' ),
-      'no_terms'                   => __( 'No items', 'cautious-octo-fiesta' ),
-      'items_list'                 => __( 'Items list', 'cautious-octo-fiesta' ),
-      'items_list_navigation'      => __( 'Items list navigation', 'cautious-octo-fiesta' ),
-    );
-    $rewrite_status = array(
-      'slug'                       => 'competition-draws/status',
-  		'with_front'                 => true,
-  		'hierarchical'               => false,
-    );
-  	$args_status = array(
-  		'labels'                     => $labels_status,
-  		'hierarchical'               => true,
-  		'public'                     => true,
-  		'show_ui'                    => true,
-  		'show_admin_column'          => true,
-  		'show_in_nav_menus'          => true,
-  		'show_tagcloud'              => false,
-  		'rewrite'                    => $rewrite_status,
-  	);
-  	register_taxonomy( 'status', array( 'live_draws' ), $args_status );
+    // $labels_status = array(
+    //   'name'                       => _x( 'Draw Status', 'Taxonomy General Name', 'cautious-octo-fiesta' ),
+    //   'singular_name'              => _x( 'Draw Status', 'Taxonomy Singular Name', 'cautious-octo-fiesta' ),
+    //   'menu_name'                  => __( 'Draw Status', 'cautious-octo-fiesta' ),
+    //   'all_items'                  => __( 'All Items', 'cautious-octo-fiesta' ),
+    //   'parent_item'                => __( 'Parent Item', 'cautious-octo-fiesta' ),
+    //   'parent_item_colon'          => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+    //   'new_item_name'              => __( 'New Item Name', 'cautious-octo-fiesta' ),
+    //   'add_new_item'               => __( 'Add New Item', 'cautious-octo-fiesta' ),
+    //   'edit_item'                  => __( 'Edit Item', 'cautious-octo-fiesta' ),
+    //   'update_item'                => __( 'Update Item', 'cautious-octo-fiesta' ),
+    //   'view_item'                  => __( 'View Item', 'cautious-octo-fiesta' ),
+    //   'separate_items_with_commas' => __( 'Separate items with commas', 'cautious-octo-fiesta' ),
+    //   'add_or_remove_items'        => __( 'Add or remove items', 'cautious-octo-fiesta' ),
+    //   'choose_from_most_used'      => __( 'Choose from the most used', 'cautious-octo-fiesta' ),
+    //   'popular_items'              => __( 'Popular Items', 'cautious-octo-fiesta' ),
+    //   'search_items'               => __( 'Search Items', 'cautious-octo-fiesta' ),
+    //   'not_found'                  => __( 'Not Found', 'cautious-octo-fiesta' ),
+    //   'no_terms'                   => __( 'No items', 'cautious-octo-fiesta' ),
+    //   'items_list'                 => __( 'Items list', 'cautious-octo-fiesta' ),
+    //   'items_list_navigation'      => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+    // );
+    // $rewrite_status = array(
+    //   'slug'                       => 'competition-draws/status',
+  	// 	'with_front'                 => true,
+  	// 	'hierarchical'               => false,
+    // );
+  	// $args_status = array(
+  	// 	'labels'                     => $labels_status,
+  	// 	'hierarchical'               => true,
+  	// 	'public'                     => true,
+  	// 	'show_ui'                    => true,
+  	// 	'show_admin_column'          => true,
+  	// 	'show_in_nav_menus'          => true,
+  	// 	'show_tagcloud'              => false,
+  	// 	'rewrite'                    => $rewrite_status,
+  	// );
+  	// register_taxonomy( 'status', array( 'live_draws' ), $args_status );
   }
 
   public function register_widget_areas()
   {
     if (function_exists('register_sidebar')) {
-      register_sidebar(array(
-        'name' => esc_html__('Footer Left Area', 'cautious-octo-fiesta'),
-        'id' => 'sidebar-footer-left',
-        'description' => esc_html__('Main Footer Widget Area; works best with the current widget only.', 'cautious-octo-fiesta'),
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '<span hidden>',
-        'after_title' => '</span>'
-      ));
+      // register a sidebar
     }
   }
 
@@ -277,8 +260,6 @@ class CautiousOctoFiesta extends Timber\Site
     register_nav_menus(array(
       'main_menu' => __('Main Menu', 'cautious-octo-fiesta'),
       'mobile_menu' => __('Mobile Menu', 'cautious-octo-fiesta'),
-      'footer_nav_menu' => __('Footer Nav Menu', 'cautious-octo-fiesta'),
-      'footer_customers_menu' => __('Footer Customers Menu', 'cautious-octo-fiesta'),
     ));
   }
 
@@ -295,9 +276,9 @@ class CautiousOctoFiesta extends Timber\Site
     $context['is_status'] = is_tax('status');
     /* check is post types */
     $context['is_posts'] = is_blog();
-    $context['is_winners'] = is_post_type_archive( 'winners' );
-    $context['is_entry_lists'] = is_post_type_archive( 'entry_lists' );
-    $context['is_live_draws'] = is_post_type_archive( 'live_draws' );
+    // $context['is_winners'] = is_post_type_archive( 'winners' );
+    // $context['is_entry_lists'] = is_post_type_archive( 'entry_lists' );
+    // $context['is_live_draws'] = is_post_type_archive( 'live_draws' );
     // get the wp logo
     $theme_logo_id = get_theme_mod( 'custom_logo' );
     $theme_logo_url = wp_get_attachment_image_url( $theme_logo_id , 'full' );
@@ -308,12 +289,6 @@ class CautiousOctoFiesta extends Timber\Site
     $context['has_menu_main'] = has_nav_menu( 'main_menu' );
     $context['menu_mobile'] = new Timber\Menu('mobile_menu');
     $context['has_menu_mobile'] = has_nav_menu( 'mobile_menu' );
-    $context['footer_nav_menu'] = new Timber\Menu( 'footer_nav_menu' );
-    $context['has_footer_nav_menu'] = has_nav_menu( 'footer_nav_menu' );
-    $context['footer_customers_menu'] = new Timber\Menu( 'footer_customers_menu' );
-    $context['has_footer_customers_menu'] = has_nav_menu( 'footer_customers_menu' );
-    // sidebar areas
-    $context['sidebar_footer_left'] = Timber::get_widgets('Footer Left Area');
     // woo my account endpoints
     $context['dashboard_endpoint'] = wc_get_account_endpoint_url( 'dashboard' );
     $context['address_endpoint'] = wc_get_account_endpoint_url( 'edit-address' );
@@ -332,24 +307,18 @@ class CautiousOctoFiesta extends Timber\Site
     $context['base_county'] = WC()->countries->get_base_state();
     $context['base_country'] = WC()->countries->get_base_country();
     // acf data globals
-    $context['company_phone_number'] = get_field('company_phone_number', 'option');
-    $context['facebook_link'] = get_field('facebook_link', 'option');
-    $context['insta_link'] = get_field('facebook_link', 'option');
-    $context['display_email'] = get_field('display_email', 'option');
-    $context['above_footer_text'] = get_field('above_footer_text', 'option');
+    // $context['company_phone_number'] = get_field('company_phone_number', 'option');
+    // $context['facebook_link'] = get_field('facebook_link', 'option');
+    // $context['insta_link'] = get_field('facebook_link', 'option');
+    // $context['display_email'] = get_field('display_email', 'option');
+    // $context['above_footer_text'] = get_field('above_footer_text', 'option');
     
     /* get acf options data */
-    $context['options'] = get_fields('option');
+    // $context['options'] = get_fields('option');
     
     /* get pdf upload field - entry lists */
-    $file = get_field('pdf_upload');
-    $context['pdf_upload_url'] = $file['url'];
-    
-    // for disabling theme-preload on live_draws archive
-    $context['overflow_class'] = 'no-overflow';
-    if (is_tax('live_draws')) {
-      $context['overflow_class'] = 'overflow-off';
-    };
+    // $file = get_field('pdf_upload');
+    // $context['pdf_upload_url'] = $file['url'];
     
     // get the woo cart url
     global $woocommerce;
@@ -394,16 +363,6 @@ class CautiousOctoFiesta extends Timber\Site
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
-    // add custom thumbs sizes.
-    add_image_size('sixstar-theme-featured-image-archive', 800, 300, true);
-    add_image_size('sixstar-theme-featured-image-single-post', 1200, 450, true);
-    add_image_size('sixstar-theme-product-main-image', 1200, 700, true);
-    add_image_size('sixstar-theme-cart-image', 80, 80, true);
-    // custom thumbnail sizes (new)
-    add_image_size('cautious-octo-fiesta-featured-image-archive', 800, 300, true);
-    add_image_size('cautious-octo-fiesta-featured-image-single-post', 1200, 450, true);
-    add_image_size('cautious-octo-fiesta-product-main-image', 1200, 700, true);
-    add_image_size('cautious-octo-fiesta-cart-image', 80, 80, true);
     // stop the br tag madness in the content editor
     // remove_filter( 'the_content', 'wpautop' );
     // remove_filter( 'the_excerpt', 'wpautop' );
@@ -411,11 +370,11 @@ class CautiousOctoFiesta extends Timber\Site
   }
   
   // add grid-list url paramater key
-  public function cautious_octo_fiesta_gridlist_query_vars_filter($vars)
-  {
-    $vars[] .= 'grid_list';
-    return $vars;
-  }
+  // public function cautious_octo_fiesta_gridlist_query_vars_filter($vars)
+  // {
+  //   $vars[] .= 'grid_list';
+  //   return $vars;
+  // }
   
   public function cautious_octo_fiesta_enqueue_assets()
   {
@@ -475,12 +434,6 @@ class CautiousOctoFiesta extends Timber\Site
       true
     );
     
-    wp_enqueue_style(
-      'theme-google-fonts',
-      'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap',
-      false
-    );
-    
     // font awesome
     wp_enqueue_style(
       'fontawesome-theme',
@@ -497,10 +450,10 @@ class CautiousOctoFiesta extends Timber\Site
     );
   }
   
-  public function cautious_octo_fiesta_custom_uikit_widgets_init()
-  {
-    register_widget("Cautious_Octo_Fiesta_Custom_UIKIT_Widget_Class");
-  }
+  // public function cautious_octo_fiesta_custom_uikit_widgets_init()
+  // {
+  //   register_widget("Cautious_Octo_Fiesta_Custom_UIKIT_Widget_Class");
+  // }
 
   public function add_to_twig($twig)
   {
