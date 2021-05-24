@@ -2,7 +2,7 @@
 /**
  * The template for displaying general archive pages
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
 
 // sets the template hierarchy

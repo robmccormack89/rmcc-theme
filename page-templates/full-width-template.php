@@ -2,7 +2,7 @@
 /**
  * Template Name: Full Width Template
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
 
 $context = Timber::context();

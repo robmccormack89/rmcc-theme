@@ -2,7 +2,7 @@
 /**
  * Live Search
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
  
 // support 's' -> 'search_term' matching; for ajax_live_search
@@ -91,7 +91,7 @@ function ajax_live_search() {
                  </div>
                  <div clas="uk-width-auto">
                    <div class="uk-text-meta ajax-search-meta uk-text-right">
-                    ' . __( 'Category', 'urban-carnival-theme' ) . '
+                    ' . __( 'Category', 'cautious-octo-fiesta' ) . '
                    </div>
                  </div>
                </div>
@@ -113,7 +113,7 @@ function ajax_live_search() {
                  </div>
                  <div clas="uk-width-auto">
                    <div class="uk-text-meta ajax-search-meta uk-text-right">
-                    ' . __( 'Competition', 'urban-carnival-theme' ) . '
+                    ' . __( 'Competition', 'cautious-octo-fiesta' ) . '
                   </div>
                  </div>
                </div>
@@ -135,7 +135,7 @@ function ajax_live_search() {
                  </div>
                  <div clas="uk-width-auto">
                    <div class="uk-text-meta ajax-search-meta uk-text-right">
-                    ' . __( 'Competition', 'urban-carnival-theme' ) . '
+                    ' . __( 'Competition', 'cautious-octo-fiesta' ) . '
                    </div>
                  </div>
                </div>
@@ -236,7 +236,7 @@ function ajax_live_search_mobile() {
                   </div>
                   <div clas="uk-width-auto">
                     <div class="uk-text-meta ajax-search-meta uk-text-right">
-                      ' . __( 'Category', 'urban-carnival-theme' ) . '
+                      ' . __( 'Category', 'cautious-octo-fiesta' ) . '
                     </div>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ function ajax_live_search_mobile() {
                 </div>
                 <div clas="uk-width-auto">
                   <div class="uk-text-meta ajax-search-meta uk-text-right">
-                    ' . __( 'Competition', 'urban-carnival-theme' ) . '
+                    ' . __( 'Competition', 'cautious-octo-fiesta' ) . '
                   </div>
                 </div>
               </div>
@@ -280,7 +280,7 @@ function ajax_live_search_mobile() {
                 </div>
                 <div clas="uk-width-auto">
                   <div class="uk-text-meta ajax-search-meta uk-text-right">
-                    ' . __( 'Competition', 'urban-carnival-theme' ) . '
+                    ' . __( 'Competition', 'cautious-octo-fiesta' ) . '
                   </div>
                 </div>
               </div>

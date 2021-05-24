@@ -2,7 +2,7 @@
 /**
  * Theme functions & bits
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
  
 // check if is blog or post

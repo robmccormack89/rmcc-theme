@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
  
  $GLOBALS['timberContext'] = Timber::context();

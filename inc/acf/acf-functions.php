@@ -1,7 +1,7 @@
 <?php
 /**
 * ACF Functions
-* @package Urban_Carnival_Theme
+* @package Cautious_Octo_Fiesta
 */
 
 function editor_settings( $settings ) {

@@ -7,7 +7,7 @@ const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 
 const config = {
-  "text_domain" : "urban-carnival-theme",
+  "text_domain" : "cautious-octo-fiesta",
   "twig_files"  : "views/**/*.twig",
   "php_files"   : "**/*.php",
   "cacheFolder" : "views/temp",

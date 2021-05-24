@@ -2,7 +2,7 @@
 /**
  * Timber theme class & other functions for Twig.
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
 
 // Define paths to Twig templates
@@ -24,8 +24,8 @@ Timber::$dirname = array(
 // set the $autoescape value
 Timber::$autoescape = false;
 
-// Define Urban_Carnival_Theme Child Class
-class UrbanCarnivalTheme extends Timber\Site
+// Define Cautious_Octo_Fiesta Child Class
+class CautiousOctoFiesta extends Timber\Site
 {
   public function __construct()
   {
@@ -34,12 +34,12 @@ class UrbanCarnivalTheme extends Timber\Site
     add_filter('get_twig', array( $this, 'add_to_twig' ));
     add_filter( 'pre_get_posts', array($this, 'add_custom_types_to_tax') );
     add_action('after_setup_theme', array( $this, 'theme_supports' ));
-    add_action('wp_enqueue_scripts', array( $this, 'urban_carnival_theme_enqueue_assets'));
-    add_action('widgets_init', array( $this, 'urban_carnival_theme_custom_uikit_widgets_init'));
+    add_action('wp_enqueue_scripts', array( $this, 'cautious_octo_fiesta_enqueue_assets'));
+    add_action('widgets_init', array( $this, 'cautious_octo_fiesta_custom_uikit_widgets_init'));
     add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
     add_filter( 'timber/context', array( $this, 'add_to_context' ) );
     add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-    add_filter( 'query_vars', array( $this, 'urban_carnival_theme_gridlist_query_vars_filter'));
+    add_filter( 'query_vars', array( $this, 'cautious_octo_fiesta_gridlist_query_vars_filter'));
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action('init', array( $this, 'register_widget_areas' ));
@@ -61,37 +61,37 @@ class UrbanCarnivalTheme extends Timber\Site
   public function register_post_types()
   {
     $labels_winners = array(
-      'name'                  => _x( 'Competition Winners', 'Post Type General Name', 'urban-carnival-theme' ),
-  		'singular_name'         => _x( 'Competition Winner', 'Post Type Singular Name', 'urban-carnival-theme' ),
-  		'menu_name'             => __( 'Competition Winners', 'urban-carnival-theme' ),
-  		'name_admin_bar'        => __( 'Competition Winner', 'urban-carnival-theme' ),
-  		'archives'              => __( 'Competition Winners', 'urban-carnival-theme' ),
-  		'attributes'            => __( 'Winner Attributes', 'urban-carnival-theme' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'urban-carnival-theme' ),
-  		'all_items'             => __( 'All Winners', 'urban-carnival-theme' ),
-  		'add_new_item'          => __( 'Add New Winner', 'urban-carnival-theme' ),
-  		'add_new'               => __( 'Add New', 'urban-carnival-theme' ),
-  		'new_item'              => __( 'New Item', 'urban-carnival-theme' ),
-  		'edit_item'             => __( 'Edit Item', 'urban-carnival-theme' ),
-  		'update_item'           => __( 'Update Item', 'urban-carnival-theme' ),
-  		'view_item'             => __( 'View Item', 'urban-carnival-theme' ),
-  		'view_items'            => __( 'View Items', 'urban-carnival-theme' ),
-  		'search_items'          => __( 'Search Item', 'urban-carnival-theme' ),
-  		'not_found'             => __( 'Not found', 'urban-carnival-theme' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'urban-carnival-theme' ),
-  		'featured_image'        => __( 'Featured Image', 'urban-carnival-theme' ),
-  		'set_featured_image'    => __( 'Set featured image', 'urban-carnival-theme' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'urban-carnival-theme' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'urban-carnival-theme' ),
-  		'insert_into_item'      => __( 'Insert into item', 'urban-carnival-theme' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'urban-carnival-theme' ),
-  		'items_list'            => __( 'Items list', 'urban-carnival-theme' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'urban-carnival-theme' ),
-  		'filter_items_list'     => __( 'Filter items list', 'urban-carnival-theme' ),
+      'name'                  => _x( 'Competition Winners', 'Post Type General Name', 'cautious-octo-fiesta' ),
+  		'singular_name'         => _x( 'Competition Winner', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
+  		'menu_name'             => __( 'Competition Winners', 'cautious-octo-fiesta' ),
+  		'name_admin_bar'        => __( 'Competition Winner', 'cautious-octo-fiesta' ),
+  		'archives'              => __( 'Competition Winners', 'cautious-octo-fiesta' ),
+  		'attributes'            => __( 'Winner Attributes', 'cautious-octo-fiesta' ),
+  		'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+  		'all_items'             => __( 'All Winners', 'cautious-octo-fiesta' ),
+  		'add_new_item'          => __( 'Add New Winner', 'cautious-octo-fiesta' ),
+  		'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
+  		'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
+  		'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
+  		'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
+  		'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
+  		'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
+  		'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
+  		'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
+  		'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
+  		'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
+  		'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
+  		'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
+  		'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
+  		'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
+  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
+  		'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
+  		'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+  		'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
     );
   	$args_winners = array(
-  		'label'                 => __( 'Winner', 'urban-carnival-theme' ),
-  		'description'           => __( 'Winners content type', 'urban-carnival-theme' ),
+  		'label'                 => __( 'Winner', 'cautious-octo-fiesta' ),
+  		'description'           => __( 'Winners content type', 'cautious-octo-fiesta' ),
   		'labels'                => $labels_winners,
   		'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'page-attributes' ),
   		'hierarchical'          => false,
@@ -112,37 +112,37 @@ class UrbanCarnivalTheme extends Timber\Site
   	register_post_type( 'winners', $args_winners );
 
   	$labels_lists = array(
-  		'name'                  => _x( 'Entry Lists', 'Post Type General Name', 'urban-carnival-theme' ),
-  		'singular_name'         => _x( 'Entry List', 'Post Type Singular Name', 'urban-carnival-theme' ),
-  		'menu_name'             => __( 'Entry Lists', 'urban-carnival-theme' ),
-  		'name_admin_bar'        => __( 'Entry List', 'urban-carnival-theme' ),
-  		'archives'              => __( 'Entry Lists', 'urban-carnival-theme' ),
-  		'attributes'            => __( 'Entry List Attributes', 'urban-carnival-theme' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'urban-carnival-theme' ),
-  		'all_items'             => __( 'All Entry Lists', 'urban-carnival-theme' ),
-  		'add_new_item'          => __( 'Add New Item', 'urban-carnival-theme' ),
-  		'add_new'               => __( 'Add New', 'urban-carnival-theme' ),
-  		'new_item'              => __( 'New Item', 'urban-carnival-theme' ),
-  		'edit_item'             => __( 'Edit Item', 'urban-carnival-theme' ),
-  		'update_item'           => __( 'Update Item', 'urban-carnival-theme' ),
-  		'view_item'             => __( 'View Item', 'urban-carnival-theme' ),
-  		'view_items'            => __( 'View Items', 'urban-carnival-theme' ),
-  		'search_items'          => __( 'Search Item', 'urban-carnival-theme' ),
-  		'not_found'             => __( 'Not found', 'urban-carnival-theme' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'urban-carnival-theme' ),
-  		'featured_image'        => __( 'Featured Image', 'urban-carnival-theme' ),
-  		'set_featured_image'    => __( 'Set featured image', 'urban-carnival-theme' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'urban-carnival-theme' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'urban-carnival-theme' ),
-  		'insert_into_item'      => __( 'Insert into item', 'urban-carnival-theme' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'urban-carnival-theme' ),
-  		'items_list'            => __( 'Items list', 'urban-carnival-theme' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'urban-carnival-theme' ),
-  		'filter_items_list'     => __( 'Filter items list', 'urban-carnival-theme' ),
+  		'name'                  => _x( 'Entry Lists', 'Post Type General Name', 'cautious-octo-fiesta' ),
+  		'singular_name'         => _x( 'Entry List', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
+  		'menu_name'             => __( 'Entry Lists', 'cautious-octo-fiesta' ),
+  		'name_admin_bar'        => __( 'Entry List', 'cautious-octo-fiesta' ),
+  		'archives'              => __( 'Entry Lists', 'cautious-octo-fiesta' ),
+  		'attributes'            => __( 'Entry List Attributes', 'cautious-octo-fiesta' ),
+  		'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+  		'all_items'             => __( 'All Entry Lists', 'cautious-octo-fiesta' ),
+  		'add_new_item'          => __( 'Add New Item', 'cautious-octo-fiesta' ),
+  		'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
+  		'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
+  		'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
+  		'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
+  		'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
+  		'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
+  		'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
+  		'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
+  		'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
+  		'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
+  		'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
+  		'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
+  		'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
+  		'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
+  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
+  		'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
+  		'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+  		'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
   	);
   	$args_lists = array(
-  		'label'                 => __( 'Entry List', 'urban-carnival-theme' ),
-  		'description'           => __( 'Entry List Description', 'urban-carnival-theme' ),
+  		'label'                 => __( 'Entry List', 'cautious-octo-fiesta' ),
+  		'description'           => __( 'Entry List Description', 'cautious-octo-fiesta' ),
   		'labels'                => $labels_lists,
   		'supports'              => array( 'title', 'editor', 'revisions', 'custom-fields', 'page-attributes' ),
   		'hierarchical'          => false,
@@ -163,37 +163,37 @@ class UrbanCarnivalTheme extends Timber\Site
   	register_post_type( 'entry_lists', $args_lists );
       
   	$labels_draws = array(
-  		'name'                  => _x( 'Competition Draws', 'Post Type General Name', 'urban-carnival-theme' ),
-  		'singular_name'         => _x( 'Competition Draw', 'Post Type Singular Name', 'urban-carnival-theme' ),
-  		'menu_name'             => __( 'Competition Draws', 'urban-carnival-theme' ),
-  		'name_admin_bar'        => __( 'Competition Draw', 'urban-carnival-theme' ),
-  		'archives'              => __( 'Competition Draws', 'urban-carnival-theme' ),
-  		'attributes'            => __( 'Competition Draw Attributes', 'urban-carnival-theme' ),
-  		'parent_item_colon'     => __( 'Parent Item:', 'urban-carnival-theme' ),
-  		'all_items'             => __( 'All Live Draws', 'urban-carnival-theme' ),
-  		'add_new_item'          => __( 'Add New Item', 'urban-carnival-theme' ),
-  		'add_new'               => __( 'Add New', 'urban-carnival-theme' ),
-  		'new_item'              => __( 'New Item', 'urban-carnival-theme' ),
-  		'edit_item'             => __( 'Edit Item', 'urban-carnival-theme' ),
-  		'update_item'           => __( 'Update Item', 'urban-carnival-theme' ),
-  		'view_item'             => __( 'View Item', 'urban-carnival-theme' ),
-  		'view_items'            => __( 'View Items', 'urban-carnival-theme' ),
-  		'search_items'          => __( 'Search Item', 'urban-carnival-theme' ),
-  		'not_found'             => __( 'Not found', 'urban-carnival-theme' ),
-  		'not_found_in_trash'    => __( 'Not found in Trash', 'urban-carnival-theme' ),
-  		'featured_image'        => __( 'Featured Image', 'urban-carnival-theme' ),
-  		'set_featured_image'    => __( 'Set featured image', 'urban-carnival-theme' ),
-  		'remove_featured_image' => __( 'Remove featured image', 'urban-carnival-theme' ),
-  		'use_featured_image'    => __( 'Use as featured image', 'urban-carnival-theme' ),
-  		'insert_into_item'      => __( 'Insert into item', 'urban-carnival-theme' ),
-  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'urban-carnival-theme' ),
-  		'items_list'            => __( 'Items list', 'urban-carnival-theme' ),
-  		'items_list_navigation' => __( 'Items list navigation', 'urban-carnival-theme' ),
-  		'filter_items_list'     => __( 'Filter items list', 'urban-carnival-theme' ),
+  		'name'                  => _x( 'Competition Draws', 'Post Type General Name', 'cautious-octo-fiesta' ),
+  		'singular_name'         => _x( 'Competition Draw', 'Post Type Singular Name', 'cautious-octo-fiesta' ),
+  		'menu_name'             => __( 'Competition Draws', 'cautious-octo-fiesta' ),
+  		'name_admin_bar'        => __( 'Competition Draw', 'cautious-octo-fiesta' ),
+  		'archives'              => __( 'Competition Draws', 'cautious-octo-fiesta' ),
+  		'attributes'            => __( 'Competition Draw Attributes', 'cautious-octo-fiesta' ),
+  		'parent_item_colon'     => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+  		'all_items'             => __( 'All Live Draws', 'cautious-octo-fiesta' ),
+  		'add_new_item'          => __( 'Add New Item', 'cautious-octo-fiesta' ),
+  		'add_new'               => __( 'Add New', 'cautious-octo-fiesta' ),
+  		'new_item'              => __( 'New Item', 'cautious-octo-fiesta' ),
+  		'edit_item'             => __( 'Edit Item', 'cautious-octo-fiesta' ),
+  		'update_item'           => __( 'Update Item', 'cautious-octo-fiesta' ),
+  		'view_item'             => __( 'View Item', 'cautious-octo-fiesta' ),
+  		'view_items'            => __( 'View Items', 'cautious-octo-fiesta' ),
+  		'search_items'          => __( 'Search Item', 'cautious-octo-fiesta' ),
+  		'not_found'             => __( 'Not found', 'cautious-octo-fiesta' ),
+  		'not_found_in_trash'    => __( 'Not found in Trash', 'cautious-octo-fiesta' ),
+  		'featured_image'        => __( 'Featured Image', 'cautious-octo-fiesta' ),
+  		'set_featured_image'    => __( 'Set featured image', 'cautious-octo-fiesta' ),
+  		'remove_featured_image' => __( 'Remove featured image', 'cautious-octo-fiesta' ),
+  		'use_featured_image'    => __( 'Use as featured image', 'cautious-octo-fiesta' ),
+  		'insert_into_item'      => __( 'Insert into item', 'cautious-octo-fiesta' ),
+  		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cautious-octo-fiesta' ),
+  		'items_list'            => __( 'Items list', 'cautious-octo-fiesta' ),
+  		'items_list_navigation' => __( 'Items list navigation', 'cautious-octo-fiesta' ),
+  		'filter_items_list'     => __( 'Filter items list', 'cautious-octo-fiesta' ),
   	);
   	$args_draws = array(
-  		'label'                 => __( 'Competition Draw', 'urban-carnival-theme' ),
-  		'description'           => __( 'Competition Draws Description', 'urban-carnival-theme' ),
+  		'label'                 => __( 'Competition Draw', 'cautious-octo-fiesta' ),
+  		'description'           => __( 'Competition Draws Description', 'cautious-octo-fiesta' ),
   		'labels'                => $labels_draws,
   		'supports'              => array( 'title', 'editor', 'custom-fields' ),
   		'hierarchical'          => false,
@@ -217,26 +217,26 @@ class UrbanCarnivalTheme extends Timber\Site
   public function register_taxonomies()
   {
     $labels_status = array(
-      'name'                       => _x( 'Draw Status', 'Taxonomy General Name', 'urban-carnival-theme' ),
-      'singular_name'              => _x( 'Draw Status', 'Taxonomy Singular Name', 'urban-carnival-theme' ),
-      'menu_name'                  => __( 'Draw Status', 'urban-carnival-theme' ),
-      'all_items'                  => __( 'All Items', 'urban-carnival-theme' ),
-      'parent_item'                => __( 'Parent Item', 'urban-carnival-theme' ),
-      'parent_item_colon'          => __( 'Parent Item:', 'urban-carnival-theme' ),
-      'new_item_name'              => __( 'New Item Name', 'urban-carnival-theme' ),
-      'add_new_item'               => __( 'Add New Item', 'urban-carnival-theme' ),
-      'edit_item'                  => __( 'Edit Item', 'urban-carnival-theme' ),
-      'update_item'                => __( 'Update Item', 'urban-carnival-theme' ),
-      'view_item'                  => __( 'View Item', 'urban-carnival-theme' ),
-      'separate_items_with_commas' => __( 'Separate items with commas', 'urban-carnival-theme' ),
-      'add_or_remove_items'        => __( 'Add or remove items', 'urban-carnival-theme' ),
-      'choose_from_most_used'      => __( 'Choose from the most used', 'urban-carnival-theme' ),
-      'popular_items'              => __( 'Popular Items', 'urban-carnival-theme' ),
-      'search_items'               => __( 'Search Items', 'urban-carnival-theme' ),
-      'not_found'                  => __( 'Not Found', 'urban-carnival-theme' ),
-      'no_terms'                   => __( 'No items', 'urban-carnival-theme' ),
-      'items_list'                 => __( 'Items list', 'urban-carnival-theme' ),
-      'items_list_navigation'      => __( 'Items list navigation', 'urban-carnival-theme' ),
+      'name'                       => _x( 'Draw Status', 'Taxonomy General Name', 'cautious-octo-fiesta' ),
+      'singular_name'              => _x( 'Draw Status', 'Taxonomy Singular Name', 'cautious-octo-fiesta' ),
+      'menu_name'                  => __( 'Draw Status', 'cautious-octo-fiesta' ),
+      'all_items'                  => __( 'All Items', 'cautious-octo-fiesta' ),
+      'parent_item'                => __( 'Parent Item', 'cautious-octo-fiesta' ),
+      'parent_item_colon'          => __( 'Parent Item:', 'cautious-octo-fiesta' ),
+      'new_item_name'              => __( 'New Item Name', 'cautious-octo-fiesta' ),
+      'add_new_item'               => __( 'Add New Item', 'cautious-octo-fiesta' ),
+      'edit_item'                  => __( 'Edit Item', 'cautious-octo-fiesta' ),
+      'update_item'                => __( 'Update Item', 'cautious-octo-fiesta' ),
+      'view_item'                  => __( 'View Item', 'cautious-octo-fiesta' ),
+      'separate_items_with_commas' => __( 'Separate items with commas', 'cautious-octo-fiesta' ),
+      'add_or_remove_items'        => __( 'Add or remove items', 'cautious-octo-fiesta' ),
+      'choose_from_most_used'      => __( 'Choose from the most used', 'cautious-octo-fiesta' ),
+      'popular_items'              => __( 'Popular Items', 'cautious-octo-fiesta' ),
+      'search_items'               => __( 'Search Items', 'cautious-octo-fiesta' ),
+      'not_found'                  => __( 'Not Found', 'cautious-octo-fiesta' ),
+      'no_terms'                   => __( 'No items', 'cautious-octo-fiesta' ),
+      'items_list'                 => __( 'Items list', 'cautious-octo-fiesta' ),
+      'items_list_navigation'      => __( 'Items list navigation', 'cautious-octo-fiesta' ),
     );
     $rewrite_status = array(
       'slug'                       => 'competition-draws/status',
@@ -260,9 +260,9 @@ class UrbanCarnivalTheme extends Timber\Site
   {
     if (function_exists('register_sidebar')) {
       register_sidebar(array(
-        'name' => esc_html__('Footer Left Area', 'urban-carnival-theme'),
+        'name' => esc_html__('Footer Left Area', 'cautious-octo-fiesta'),
         'id' => 'sidebar-footer-left',
-        'description' => esc_html__('Main Footer Widget Area; works best with the current widget only.', 'urban-carnival-theme'),
+        'description' => esc_html__('Main Footer Widget Area; works best with the current widget only.', 'cautious-octo-fiesta'),
         'before_widget' => '',
         'after_widget' => '',
         'before_title' => '<span hidden>',
@@ -275,10 +275,10 @@ class UrbanCarnivalTheme extends Timber\Site
   {
     // This theme uses wp_nav_menu() in one locations.
     register_nav_menus(array(
-      'main_menu' => __('Main Menu', 'urban-carnival-theme'),
-      'mobile_menu' => __('Mobile Menu', 'urban-carnival-theme'),
-      'footer_nav_menu' => __('Footer Nav Menu', 'urban-carnival-theme'),
-      'footer_customers_menu' => __('Footer Customers Menu', 'urban-carnival-theme'),
+      'main_menu' => __('Main Menu', 'cautious-octo-fiesta'),
+      'mobile_menu' => __('Mobile Menu', 'cautious-octo-fiesta'),
+      'footer_nav_menu' => __('Footer Nav Menu', 'cautious-octo-fiesta'),
+      'footer_customers_menu' => __('Footer Customers Menu', 'cautious-octo-fiesta'),
     ));
   }
 
@@ -400,28 +400,28 @@ class UrbanCarnivalTheme extends Timber\Site
     add_image_size('sixstar-theme-product-main-image', 1200, 700, true);
     add_image_size('sixstar-theme-cart-image', 80, 80, true);
     // custom thumbnail sizes (new)
-    add_image_size('urban-carnival-theme-featured-image-archive', 800, 300, true);
-    add_image_size('urban-carnival-theme-featured-image-single-post', 1200, 450, true);
-    add_image_size('urban-carnival-theme-product-main-image', 1200, 700, true);
-    add_image_size('urban-carnival-theme-cart-image', 80, 80, true);
+    add_image_size('cautious-octo-fiesta-featured-image-archive', 800, 300, true);
+    add_image_size('cautious-octo-fiesta-featured-image-single-post', 1200, 450, true);
+    add_image_size('cautious-octo-fiesta-product-main-image', 1200, 700, true);
+    add_image_size('cautious-octo-fiesta-cart-image', 80, 80, true);
     // stop the br tag madness in the content editor
     // remove_filter( 'the_content', 'wpautop' );
     // remove_filter( 'the_excerpt', 'wpautop' );
-    load_theme_textdomain('urban-carnival-theme', get_template_directory() . '/languages');
+    load_theme_textdomain('cautious-octo-fiesta', get_template_directory() . '/languages');
   }
   
   // add grid-list url paramater key
-  public function urban_carnival_theme_gridlist_query_vars_filter($vars)
+  public function cautious_octo_fiesta_gridlist_query_vars_filter($vars)
   {
     $vars[] .= 'grid_list';
     return $vars;
   }
   
-  public function urban_carnival_theme_enqueue_assets()
+  public function cautious_octo_fiesta_enqueue_assets()
   {
     // theme base scripts
     wp_enqueue_script(
-      'urban-carnival-theme',
+      'cautious-octo-fiesta',
       get_template_directory_uri() . '/assets/js/base.js',
       '',
       '',
@@ -488,18 +488,18 @@ class UrbanCarnivalTheme extends Timber\Site
     );
     // theme base css
     wp_enqueue_style(
-      'urban-carnival-theme',
+      'cautious-octo-fiesta',
       get_template_directory_uri() . '/assets/css/base.css'
     );
     // theme stylesheet
     wp_enqueue_style(
-      'urban-carnival-theme-styles', get_stylesheet_uri()
+      'cautious-octo-fiesta-styles', get_stylesheet_uri()
     );
   }
   
-  public function urban_carnival_theme_custom_uikit_widgets_init()
+  public function cautious_octo_fiesta_custom_uikit_widgets_init()
   {
-    register_widget("Urban_Carnival_Theme_Custom_UIKIT_Widget_Class");
+    register_widget("Cautious_Octo_Fiesta_Custom_UIKIT_Widget_Class");
   }
 
   public function add_to_twig($twig)
@@ -511,4 +511,4 @@ class UrbanCarnivalTheme extends Timber\Site
   
 }
 
-new UrbanCarnivalTheme();
+new CautiousOctoFiesta();

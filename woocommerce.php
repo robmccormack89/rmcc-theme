@@ -2,7 +2,7 @@
 /**
  * The template for making woocommerce work with timber/twig. sets the templates & context for woo's archive & singular views
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
 
 // make sure timber is activated first

@@ -3,7 +3,7 @@
 /**
 * Woo functions
 *
-* @package Urban_Carnival_Theme
+* @package Cautious_Octo_Fiesta
 */
   
 function nk_get_cpt_labels($single,$plural){

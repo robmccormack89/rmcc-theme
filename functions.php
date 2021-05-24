@@ -1,15 +1,15 @@
 <?php
 /**
- * Urban Carnival Theme functions and definitions
+ * Cautious Octo Fiesta functions and definitions
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
  
 // stuff to say we need timber activated!! see TGM Plugin activation library for php
 require_once get_template_directory() . '/inc/lib/class-tgm-plugin-activation.php';
 
 // register the required plugins(Timber) see TGM Plugin activation library for php
-function urban_carnival_theme_register_required_plugins()
+function cautious_octo_fiesta_register_required_plugins()
 {
  $plugins = array(
    array(
@@ -37,7 +37,7 @@ function urban_carnival_theme_register_required_plugins()
  );
  tgmpa($plugins, $config);
 }
-add_action('tgmpa_register', 'urban_carnival_theme_register_required_plugins');
+add_action('tgmpa_register', 'cautious_octo_fiesta_register_required_plugins');
 
 // load Theme functions
 require get_template_directory() . '/inc/theme-functions.php';

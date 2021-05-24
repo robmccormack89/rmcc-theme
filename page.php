@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all pages
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
 
 // get the main context

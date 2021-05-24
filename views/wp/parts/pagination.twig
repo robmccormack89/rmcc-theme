@@ -5,7 +5,7 @@
       <ul class="uk-pagination uk-flex-center">
         {% if pagination.prev %}
           <li>
-            <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}"><i uk-icon="icon: chevron-left"></i> {{ __('Previous Page', 'urban-carnival-theme') }}</a>
+            <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}"><i uk-icon="icon: chevron-left"></i> {{ __('Previous Page', 'cautious-octo-fiesta') }}</a>
           </li>
         {% endif %}
         {% for page in pagination.pages %}
@@ -19,7 +19,7 @@
         {% endfor %}
         {% if pagination.next %}
           <li>
-            <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">{{ __('Next Page', 'urban-carnival-theme') }} <i uk-icon="icon: chevron-right"></i></a>
+            <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">{{ __('Next Page', 'cautious-octo-fiesta') }} <i uk-icon="icon: chevron-right"></i></a>
           </li>
         {% endif %}
       </ul>
@@ -34,8 +34,8 @@
             <span class="loader-ellips__dot"></span>
             <span class="loader-ellips__dot"></span>
           </div>
-          <p class="infinite-scroll-last">{{ __('No more items', 'urban-carnival-theme') }}</p>
-          <p class="infinite-scroll-error">{{ __('No items to load', 'urban-carnival-theme') }}</p>
+          <p class="infinite-scroll-last">{{ __('No more items', 'cautious-octo-fiesta') }}</p>
+          <p class="infinite-scroll-error">{{ __('No items to load', 'cautious-octo-fiesta') }}</p>
         </div>
       </div>
     {% endif %}

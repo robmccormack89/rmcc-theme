@@ -2,7 +2,7 @@
 /**
 * Shop Filters
 *
-* @package Urban_Carnival_Theme
+* @package Cautious_Octo_Fiesta
 */
 
 // helper function: finding strings; see below

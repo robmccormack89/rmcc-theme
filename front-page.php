@@ -1,7 +1,7 @@
 <?php
 /**
 * The front page template (when backend settings for front page display are set to static or latest posts)
-* @package Urban_Carnival_Theme
+* @package Cautious_Octo_Fiesta
 */
 
 // get the context

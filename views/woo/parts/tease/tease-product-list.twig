@@ -34,20 +34,20 @@
 					
 					<div id="ProductMeta" class="uk-article-meta uk-position-center-right uk-text-right">
 						<div>
-							<span class="uk-text-bold uk-text-emphasis">{{ __('Category:', 'urban-carnival-theme') }}</span> {{ post.terms( {query:{taxonomy:'product_cat', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ')|e('esc_html') }}
+							<span class="uk-text-bold uk-text-emphasis">{{ __('Category:', 'cautious-octo-fiesta') }}</span> {{ post.terms( {query:{taxonomy:'product_cat', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ')|e('esc_html') }}
 						</div>
 					</div>
 					
 					{% if not post._lottery_closed %}
 			      <div class="uk-article-meta uk-position-bottom-left">
 			        <div>
-			          <span class="uk-text-bold uk-text-emphasis">{{ __('Competition finishes on:', 'urban-carnival-theme') }}</span> {{post._lottery_dates_to}}
+			          <span class="uk-text-bold uk-text-emphasis">{{ __('Competition finishes on:', 'cautious-octo-fiesta') }}</span> {{post._lottery_dates_to}}
 			        </div>
 			        <div>
-			          <span class="uk-text-bold uk-text-emphasis">{{ __('People entered already:', 'urban-carnival-theme') }}</span> {{post._lottery_participants_count}}
+			          <span class="uk-text-bold uk-text-emphasis">{{ __('People entered already:', 'cautious-octo-fiesta') }}</span> {{post._lottery_participants_count}}
 			        </div>
 			        <div>
-			          <span class="uk-text-bold uk-text-emphasis">{{ __('Max. entries for this Competition:', 'urban-carnival-theme') }}</span> {{post._max_tickets}}
+			          <span class="uk-text-bold uk-text-emphasis">{{ __('Max. entries for this Competition:', 'cautious-octo-fiesta') }}</span> {{post._max_tickets}}
 			        </div>
 			      </div>
 			    {% endif %}
@@ -55,7 +55,7 @@
 			    {% if post._lottery_closed %}
 			      <div class="uk-article-meta uk-position-bottom-left">
 			        <div>
-			          <span class="uk-text-warning">{{ __('This competition has finished', 'urban-carnival-theme') }}</span>
+			          <span class="uk-text-warning">{{ __('This competition has finished', 'cautious-octo-fiesta') }}</span>
 			        </div>
 			      </div>
 			    {% endif %}

@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Urban_Carnival_Theme
+ * @package Cautious_Octo_Fiesta
  */
 
 // get the main context
