@@ -11,6 +11,7 @@ Timber::$dirname = array(
   'views/parts',
   'views/woo',
   'views/wp',
+  'views/coming-soon',
 );
 
 // set the $autoescape value
