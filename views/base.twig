@@ -2,24 +2,250 @@
 <html {{site.language_attributes}}>
 
   <head>
-    
     <meta charset="{{site.charset}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     {{ function('wp_head') }}
     
-    {% block styles %}
+    {% block base_styles %}
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Norican&display=swap" rel="stylesheet">
+      <!-- fonts application -->
+      <style>
+        html {
+          font-family: font-family: 'Lato', sans-serif;
+          color: #3a3a3a;
+        }
+        .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+        .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Lato', sans-serif;
+        }
+        .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+          font-family: 'Lato', sans-serif;
+        }
+        .norican {
+          font-family: 'Norican', cursive;
+        }
+      </style>
+      <!-- uikit modificationss -->
+      <style>
+        .uk-overlay-primary {
+          background: rgb(10 10 10 / 60%);
+        }
+        .uk-section-primary {
+          background: #261237;
+        }
+        .uk-button-primary {
+          background-color: #261237;
+          color: #ffffff;
+        }
+        .uk-button-primary:focus, .uk-button-primary:hover {
+          background-color: #6c1a4b;
+          color: #fff;
+        }
+        .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+        .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+        h1, h2, h3, h4, h5, h6 {
+          color: #261237;
+        }
+        .uk-text-emphasis {
+          color: #261237!important;
+        }
+        .uk-light .uk-navbar-nav>li>a {
+          color: #fff;
+        }
+        .uk-container-xsmall {
+          max-width: 550px;
+        }
+        .uk-button-large {
+          font-size: .875rem;
+          line-height: 45px;
+          padding: 0 30px;
+          border-width: 2px;
+          border-style: solid;
+          font-weight: 500;
+        }
+        .uk-navbar-nav>li>a {
+          text-transform: capitalize;
+        }
+        .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+          font-size: 1rem;
+          min-height: auto;
+          padding: 0 15px;
+        }
+        .uk-logo {
+          font-size: 2.8rem;
+        }
+        @media only screen and (max-width:959px) {
+          .uk-logo {
+            font-size: 1.5rem;
+          }
+          .header-navbar.uk-navbar-container.uk-section-small {
+            padding-bottom: 20px;
+            padding-top: 20px;
+          }
+        }
+        @media (min-width: 960px){
+          .uk-container-expand {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
+      </style>
+      <!-- feature-link: custom link style -->
+      <style>
+        .feature-link {
+          font-weight: 500;
+          display: inline-block;
+          position: relative;
+        }
+        .feature-link:hover {
+          text-decoration: none;
+        }
+        .feature-link:after {
+          content: '';
+          display: block;
+          border-top: 2px solid;
+          transition: all 250ms;
+        }
+        .feature-link:hover::after {
+          transform: scaleX(0.8);
+        }
+      </style>
+      <!-- the footer styling -->
+      <style>
+        /* primary colour */
+        .the-footer .uk-nav-default>li>a:hover, 
+        .the-footer .uk-nav-default>li>a:focus, 
+        .subscribe-section .far {
+          color: #261237;
+        }
+        /* muted from primary colour */
+        .the-footer p, 
+        .the-footer .uk-nav-default>li>a {
+          color: #7e7586;
+        }
+        /* transition effects */
+        .the-footer .uk-nav-default>li>a {
+          transition: color 150ms;
+        }
+        /* nav styling */
+        .the-footer .uk-nav>li>a {
+          padding: 2px 0;
+          font-size: 1rem;
+        }
+        /* subscribe form */
+        @media (max-width: 959px){
+          .subscribe-section .uk-button {
+            margin-top: 5px;
+            width: 100%;
+          }
+        }
+        .subscribe-form {
+          height: 49px!important;
+        }
+      </style>
+      <!-- front-page header -->
+      <style>
+        /* home hero height setting */
+        .hero-img {
+          object-fit: cover;
+          width: 100%;
+          height:80vh;
+        }
+        /* header icons styles */
+        svg.user {
+          fill: transparent;
+          stroke: currentColor;
+          stroke-width: 2px;
+        }
+        svg.search, svg.search, svg.basket, svg.basket {
+          fill: currentColor;
+          vertical-align: top;
+        }
+        .header-icons .uk-navbar-item, 
+        .header-icons.uk-navbar-nav>li>a, 
+        .header-icons .uk-navbar-toggle {
+          color: #261237;
+        }
+        .header-icons .uk-navbar-item:hover, 
+        .header-icons .uk-navbar-item:focus, 
+        .header-icons.uk-navbar-nav>li>a:hover, 
+        .header-icons.uk-navbar-nav>li>a:focus, 
+        .header-icons .uk-navbar-toggle:hover,
+        .header-icons .uk-navbar-toggle:focus {
+          color: #6c1a4b;
+        }
+        .uk-light .header-icons .uk-navbar-item, 
+        .uk-light .header-icons.uk-navbar-nav>li>a, 
+        .uk-light .header-icons .uk-navbar-toggle {
+          color: #fff;
+        }
+        @media only screen and (max-width:959px) {
+          .header-icons .uk-navbar-item, .header-icons.uk-navbar-nav>li>a, .header-icons .uk-navbar-toggle {
+            padding: 0 10px;
+          }
+        }
+        /* main nav styling */
+        .main-nav a {
+          position: relative;
+        }
+        .main-nav.uk-navbar-nav>li>a {
+          color: #7e7586;
+          transition: color 150ms;
+        }
+        .uk-light .main-nav.uk-navbar-nav>li>a, .uk-light .main-nav.uk-navbar-nav>li>a:hover, .uk-light .main-nav.uk-navbar-nav>li>a:focus {
+          color: #fff;
+        }
+        .main-nav.uk-navbar-nav>li>a:hover, .main-nav.uk-navbar-nav>li>a:focus {
+          color: #261237;
+        }
+        .main-nav a:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          bottom: -3px;
+          background-color: currentColor;
+          height: 2px;
+          transition: opacity .3s, width .3s;
+          opacity: 0;
+        }
+        .main-nav.uk-navbar-nav>li>a:hover:after {
+          width: calc(100% - 2em);
+          opacity: 1;
+        }
+        /* navbar & sticky styling */
+        .uk-navbar-container:not(.uk-navbar-transparent) {
+          background: #ffffff;
+        }
+        .uk-navbar-container {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        .uk-navbar-sticky.uk-section-small {
+          padding-bottom: 20px;
+          padding-top: 20px;
+        }
+        .uk-navbar-sticky {
+          box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+        }
+      </style>
     {% endblock %}
     
+    {% block styles %}
+    {% endblock %}
   </head>
 
   {% block bodywrap %}
     <body class="{{body_class}}" data-template="base.twig">
-      
-      {# do function('custom_store_notice') #}
 
       {% block header %}
-        {% include 'header.twig' %}
+        <header class="uk-section uk-section-small uk-background-muted">
+          <div class="uk-container uk-container-expand">
+            Header: Sorry, nothing to display here...
+          </div>
+        </header>
       {% endblock %}
       
       <main role="main" id="MainContent">
@@ -27,7 +253,7 @@
           <section class="content-wrap uk-section uk-section-small">
             <div class="content-container uk-container">
               {% block content %}
-                <p>{{ __('Sorry, nothing to display here...', 'cautious-octo-fiesta') }}</p>
+                <p>Sorry, nothing to display here...</p>
               {% endblock %}
             </div>
           </section>

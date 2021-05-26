@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block styles %}
+  <style>
+    .uk-container-xsmall {
+      max-width: 650px;
+    }
+    .launch-cover-img {
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block contentwrap %}
+  <section class="uk-section">
+    <div class="uk-container uk-container-xsmall">
+      <h1 class="uk-text-center uk-text-bold uk-margin-medium-bottom">{{post.title}}</h1>
+      {{post.content}}
+    </div>
+  </section>
+{% endblock %}

@@ -1,238 +1,16 @@
 {% extends "base.twig" %}
 
-{% block styles %}
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Norican&display=swap" rel="stylesheet">
-  <!-- font styles -->
-  <style>
-    html {
-      font-family: font-family: 'Lato', sans-serif;
-    }
-    .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
-      font-family: 'Lato', sans-serif;
-    }
-    .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
-      font-family: 'Lato', sans-serif;
-    }
-    .norican {
-      font-family: 'Norican', cursive;
-    }
-  </style>
-  <style>
-    .hero-img {
-      object-fit: cover;
-      width: 100%;
-      height:80vh;
-    }
-    .img-obj-fit {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-    .uk-container-xsmall {
-      max-width: 550px;
-    }
-    .uk-button-large {
-      font-size: .875rem;
-      line-height: 45px;
-      padding: 0 30px;
-      border-width: 2px;
-      border-style: solid;
-      font-weight: 500;
-    }
-    .uk-section-primary {
-      background: #152242;
-    }
-    .uk-button-primary {
-      background-color: #152242;
-      border: 1px solid transparent;
-      color: #fff;
-    }
-    .uk-text-emphasis, .subscribe-section .far {
-      color: #152242!important;
-    }
-    .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
-        color: #152242;
-    }
-    .feature-link {
-      font-weight: 500;
-      display: inline-block;
-      position: relative;
-    }
-    .feature-link:hover {
-      text-decoration: none;
-    }
-    .feature-link:after {
-      content: '';
-      display: block;
-      border-top: 2px solid;
-      transition: all 250ms;
-    }
-    .feature-link:hover::after {
-      transform: scaleX(0.8);
-    }
-    
-    .uk-navbar-nav>li>a {
-      text-transform: capitalize;
-    }
-    .uk-light .uk-navbar-nav>li>a {
-      color: #fff;
-    }
-    .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
-      font-size: 1rem;
-      min-height: auto;
-      padding: 0 15px;
-    }
-    .uk-logo {
-      font-size: 2.8rem;
-    }
-    svg.user {
-      fill: transparent;
-      stroke: currentColor;
-      stroke-width: 2px;
-    }
-    
-    svg.search, svg.search, svg.basket, svg.basket {
-      fill: currentColor;
-      vertical-align: top;
-    }
-    
-    /* UIKit based resonsive breakpoints */
-    @media only screen and (max-width:959px) {
-      .header-icons .uk-navbar-item, .header-icons.uk-navbar-nav>li>a, .header-icons .uk-navbar-toggle {
-        padding: 0 10px;
-      }
-      .uk-logo {
-        font-size: 1.5rem;
-      }
-    }
-    
-    .main-nav.uk-navbar-nav>li>a {
-      position: relative;
-    }
-    
-    .main-nav.uk-navbar-nav>li>a:after {
-      content: "";
-      position: absolute;
-      width: 0;
-      bottom: -3px;
-      background-color: currentColor;
-      height: 2px;
-      transition: opacity .3s, width .3s;
-      opacity: 0;
-    }
-    .main-nav.uk-navbar-nav>li>a:hover:after {
-      width: calc(100% - 2em);
-      opacity: 1;
-    }
-    
-    @media (min-width: 960px){
-      .uk-container-expand {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-    }
-    
-    .uk-navbar-sticky.uk-section-small {
-      padding-bottom: 20px;
-      padding-top: 20px;
-    }
-    
-    .uk-navbar-sticky {
-      box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
-    }
-    
-    .uk-navbar-container:not(.uk-navbar-transparent) {
-      background: #ffffff;
-    }
-    
-    .uk-form-large:not(textarea):not([multiple]):not([size]) {
-      height: 49px;
-    }
-    
-    .uk-navbar-container {
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    
-    @media (max-width: 959px){
-      .subscribe-section .uk-button {
-        margin-top: 5px;
-        width: 100%;
-      }
-    }
-  </style>
-{% endblock %}
-
 {% block header %}
-  <header class="uk-position-top uk-position-z-index">
-    <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
-      <nav class="uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
-        <div class="uk-navbar-left">
-          <ul class="main-nav uk-navbar-nav uk-visible@m">
-            <li>
-              <a href="#">Competitions</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">FAQs</a>
-            </li>
-            <li>
-              <a href="#">How to Play</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-          <a class="uk-navbar-toggle uk-hidden@m uk-text-emphasis" uk-navbar-toggle-icon href="#"></a>
-        </div>
-        <div class="uk-navbar-center">
-          <a class="uk-navbar-item uk-logo norican uk-text-emphasis" href="#">{{site.title}}</a>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="header-icons uk-navbar-nav">
-            <li class="uk-visible@m">
-              <a class="uk-text-emphasis" href="#">
-                <svg class="user" cwidth="24px" height="24px" aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 24 24">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="uk-text-emphasis" href="#">
-                <svg class="search" width="24px" height="24px" viewBox="-2 -2 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <title>Search</title>
-                  <g stroke="none" fill="currentColor" fill-rule="nonzero">
-                    <path d="M29.6,27.4 L22.9,20.7 C24.6,18.6 25.6,15.9 25.6,13 C25.6,6.1 20,0.5 13.1,0.5 C6.2,0.5 0.5,6.1 0.5,13 C0.5,19.9 6.1,25.5 13,25.5 C15.9,25.5 18.6,24.5 20.7,22.8 L27.4,29.5 L29.6,27.4 Z M3.5,13 C3.5,7.8 7.8,3.5 13,3.5 C18.2,3.5 22.5,7.8 22.5,13 C22.5,18.2 18.2,22.5 13,22.5 C7.8,22.5 3.5,18.2 3.5,13 Z"></path>
-                  </g>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="uk-text-emphasis" href="#">
-                <svg class="basket" width="24px" height="24px" viewBox="0 -2 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <g transform="translate(0.500000, 0.500000)" stroke="none" fill="currentColor" fill-rule="nonzero">
-                    <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z"></path>
-                  </g>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <header class="uk-inline">
+    <div class="header-top-nav uk-position-top uk-position-z-index">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+        {% include 'main-nav.twig' %}
+      </div>
     </div>
-  </header>
-{% endblock %}
-
-{% block contentwrap %}
-  <section class="hero-section uk-inline">
-    <img class="launch-cover-img hero-img" src="{{theme.link}}/assets/images/stock5.jpg" alt="">
+    <img class="launch-cover-img hero-img" src="{{theme.link}}/assets/images/stock7.jpg" alt="">
     <div class="uk-overlay-primary uk-position-cover uk-position-cover-padded padded-outset-border">
       <div class="uk-position-center">
-        <div class="uk-text-center uk-container uk-container-xsmall">
+        <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
           <h1 class="uk-text-bold uk-margin-large-top">Lorem ipsum dolor. Duis aute irure</h1>
           <hr class="uk-divider-small">
           <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">Lorem ipsum dolor sit amet</p>
@@ -240,8 +18,10 @@
         </div>
       </div>
     </div>
-  </section>
-  
+  </header>
+{% endblock %}
+
+{% block contentwrap %}
   <section class="uk-section uk-section-primary">
     <div class="uk-text-center uk-container uk-container-small">
       <h2 class="uk-text-bold uk-h3">Lorem Ipsum Dolor</h2>
@@ -255,63 +35,4 @@
       Some Competitions will go here..
     </div>
   </section>
-  
-  <section class="subscribe-section uk-section uk-section-small uk-section-default theme-border-top">
-    <div class="uk-container uk-container-small uk-text-center">
-      <div class="uk-margin-bottom uk-text-emphasis">
-        <i class="far fa-envelope fa-2x"></i>
-      </div>
-      <h2 class="uk-margin-remove-top">Sign up for first access to new competitions, sales and events</h2>
-      <div class="uk-margin-top">
-        <div uk-form-custom="target: true">
-          <input type="text" class="uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter your email here..">
-        </div>
-        <button class="uk-button uk-button-primary uk-button-large">Subscribe</button>
-      </div>
-      <p class="uk-text-emphasis">Get notified when we launch.</p>
-    <div>
-  </section>
-{% endblock %}
-
-{% block footer %}
-  <footer class="the-footer uk-section uk-section-small uk-section-default theme-border-top">
-    <div class="uk-container">
-      <div class="uk-grid-match uk-flex uk-flex-middle uk-flex-center" uk-grid>
-        <div class="uk-width-1-1 uk-width-expand@m">
-          <div class="uk-width-2-3 uk-width-1-1@m uk-align-center uk-align-left@m uk-text-center uk-text-left@m">
-            © 2021 {{site.title}}. All rights reserved.
-          </div>
-        </div>
-        <div class="uk-width-auto">
-          <div class="payment-icons uk-grid-small uk-child-width-auto" uk-grid>
-            
-            <div>
-              <img alt="american_express" src="{{theme.link}}/assets/images/american_express.svg">
-            </div>
-            
-            <div>
-              <img alt="apple_pay" src="{{theme.link}}/assets/images/apple_pay.svg">
-            </div>
-            
-            <div>
-              <img alt="google_pay" src="{{theme.link}}/assets/images/google_pay.svg">
-            </div>
-            
-            <div>
-              <img alt="maestro" src="{{theme.link}}/assets/images/maestro.svg">
-            </div>
-            
-            <div>
-              <img alt="master" src="{{theme.link}}/assets/images/master.svg">
-            </div>
-            
-            <div>
-              <img alt="visa" src="{{theme.link}}/assets/images/visa.svg">
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 {% endblock %}

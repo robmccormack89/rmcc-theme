@@ -1,90 +1,92 @@
 {% extends "base.twig" %}
 
+{% block base_styles %}
+{% endblock %}
+
 {% block styles %}
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Molle:ital@1&family=Niconne&family=Norican&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <!-- font styles -->
-  <style>
-    html {
-      font-family: font-family: 'Lato', sans-serif;
-    }
-    .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
-      font-family: 'Lato', sans-serif;
-    }
-    .norican {
-      font-family: 'Norican', cursive;
-    }
-    .euphoria {
-      font-family: 'Euphoria Script', cursive;
-    }
-    .molle {
-      font-family: 'Molle', cursive;
-    }
-    .niconne {
-      font-family: 'Niconne', cursive;
-    }
-    .pinyon {
-      font-family: 'Pinyon Script', cursive;
-    }
-  </style>
-  <!-- general styles -->
-  <style>
-    .img-obj-fit {
-      object-fit: cover;
-      width: 100%;
-    }
-    .uk-form-width-medium {
-      width: 300px;
-    }
-    .uk-button {
-      font-weight: bold;
-    }
-    .uk-position-cover-padded {
-      bottom: 35px;
-      left: 35px;
-      right: 35px;
-      top: 35px;
-    }
-    .padded-outset-border {
-      border: 15px outset #7575751f;
-    }
-    .uk-overlay-primary .uk-button-primary {
-      background-color: #ffffff;
-      color: #292929;
-    }
-    .uk-overlay-secondary .uk-button-primary {
-      background-color: #1e87f0;
-      color: #fff;
-    }
-    
-    #Fonts.uk-section-primary {
-      background-color: #152242;
-    }
-    
-    #Launch5 .uk-button-primary {
-      background-color: #152242;
-      color: #fff;
-    }
-    .uk-overlay-primary {
-      background: rgb(30 135 240 / 80%);
-    }
-    .uk-overlay-secondary {
-      background: rgba(34,34,34,.8);
-    }
-    .img-sepia {
-      filter: sepia(1);
-    }
-    .img-grey {
-      filter: grayscale(1);
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Molle:ital@1&family=Niconne&family=Norican&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <!-- font styles -->
+    <style>
+      html {
+        font-family: font-family: 'Lato', sans-serif;
+      }
+      .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+        font-family: 'Lato', sans-serif;
+      }
+      .norican {
+        font-family: 'Norican', cursive;
+      }
+      .euphoria {
+        font-family: 'Euphoria Script', cursive;
+      }
+      .molle {
+        font-family: 'Molle', cursive;
+      }
+      .niconne {
+        font-family: 'Niconne', cursive;
+      }
+      .pinyon {
+        font-family: 'Pinyon Script', cursive;
+      }
+    </style>
+    <!-- general styles -->
+    <style>
+      .img-obj-fit {
+        object-fit: cover;
+        width: 100%;
+      }
+      .uk-form-width-medium {
+        width: 300px;
+      }
+      .uk-button {
+        font-weight: bold;
+      }
+      .uk-position-cover-padded {
+        bottom: 35px;
+        left: 35px;
+        right: 35px;
+        top: 35px;
+      }
+      .padded-outset-border {
+        border: 15px outset #7575751f;
+      }
+      .uk-overlay-primary .uk-button-primary {
+        background-color: #ffffff;
+        color: #292929;
+      }
+      .uk-overlay-secondary .uk-button-primary {
+        background-color: #1e87f0;
+        color: #fff;
+      }
+      
+      #Fonts.uk-section-primary {
+        background-color: #152242;
+      }
+      
+      #Launch5 .uk-button-primary {
+        background-color: #152242;
+        color: #fff;
+      }
+      .uk-overlay-primary {
+        background: rgb(30 135 240 / 80%);
+      }
+      .uk-overlay-secondary {
+        background: rgba(34,34,34,.8);
+      }
+      .img-sepia {
+        filter: sepia(1);
+      }
+      .img-grey {
+        filter: grayscale(1);
+      }
+    </style>
 {% endblock %}
 
 {% block header %}
 {% endblock %}
 
 {% block contentwrap %}
-
   <section data-template="coming-soon.twig">
     
     <div id="Fonts" class="uk-section uk-section-primary uk-section-large">
@@ -210,7 +212,6 @@
     </div>
     
   </section>
-  
 {% endblock %}
 
 {% block footer %}
