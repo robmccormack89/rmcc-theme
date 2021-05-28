@@ -11,6 +11,11 @@ jQuery('#lightSlider').lightSlider({
 
 jQuery(function($) {
   // $("#countdown").addClass("uk-box-shadow-medium uk-padding-small");
+  
+  $(".product_title").addClass("uk-h2");
+  
+  $("input.qty").addClass("uk-width-small");
+  
   // add-to-cart
   $(".variations_form table").addClass("uk-table-small uk-table-divider uk-table-middle uk-table-justify uk-position-relative");
   $(".variations_form .button").addClass("uk-button-primary");

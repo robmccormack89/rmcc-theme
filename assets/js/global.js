@@ -1,19 +1,19 @@
 jQuery(function($) {
 
   // site wide pagination with conditional
-  if ($(".uk-pagination").length) {
-    $('.archive-posts').infiniteScroll({
-      path: '.next',
-      append: '.item',
-      status: '.page-load-status',
-      hideNav: '.pagi',
-      history: false,
-      // button: '.view-more-button',
-      // load pages on button click
-      // scrollThreshold: false,
-      // disable loading on scroll
-    });
-  };
+  // if ($(".uk-pagination").length) {
+  //   $('.archive-posts').infiniteScroll({
+  //     path: '.next',
+  //     append: '.item',
+  //     status: '.page-load-status',
+  //     hideNav: '.pagi',
+  //     history: false,
+  //     // button: '.view-more-button',
+  //     // load pages on button click
+  //     // scrollThreshold: false,
+  //     // disable loading on scroll
+  //   });
+  // };
   
   // add to cart button triggers modal when item is added to cart
   $(document).on('added_to_cart', function(e, fragments, cart_hash, this_button) {

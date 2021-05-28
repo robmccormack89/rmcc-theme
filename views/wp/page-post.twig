@@ -1,0 +1,71 @@
+{% extends "page-default.twig" %}
+
+{% block styles %}
+  <style>
+    .uk-container-xsmall {
+      max-width: 650px;
+    }
+    .launch-cover-img {
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block header %}
+  <header>
+    <div class="header-top-nav uk-position-top uk-position-z-index">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+        {% include 'main-nav.twig' %}
+      </div>
+    </div>
+    <div class="uk-section uk-section-large uk-section-muted theme-border-bottom">
+      <div class="uk-container uk-container-xsmall uk-text-center">
+        <h1 class="uk-margin-large-top">Excepteur sint occaecat cupidatat non proident sunt</h1>
+        <hr class="uk-divider-small">
+        <p class="uk-text-emphasis">OCT 06, 2020</p>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block contentwrap %}
+  <section class="uk-section">
+    <div class="uk-container uk-container-small">
+      <figure class="uk-margin-medium-bottom">
+        <img data-src="https://picsum.photos/830/590?random=1" width="830" height="590" alt="" uk-img>
+      </figure>
+    </div>
+    <div class="single-content uk-container uk-container-xsmall">
+      {{post.content}}
+      <div class="uk-grid-match uk-flex uk-flex-middle">
+        <div class="uk-width-expand">
+          <div>
+            <span class="uk-text-meta">Written by:</span> <a href="#">Admin</a>
+          </div>
+        </div>
+        <div class="uk-width-auto">
+          <div>
+            <div class="social-icons uk-grid-small uk-child-width-auto" uk-grid>
+              <div>
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  <i class="far fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

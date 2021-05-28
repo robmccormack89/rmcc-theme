@@ -1,114 +1,149 @@
-.pick-number h3 {
-    color: #fc4c02;
+/*
+* 
+* Competition 
+*
+*/
+
+/* countdown timer padding top & bottom */
+.lottery-ajax-change {
+  padding-bottom: 15px;
+  margin-top: 10px;
 }
-select#lottery_answer_drop {
-    border-color: #fc4c02;
+/* ticket tab bar styling */
+.ticket-tab-bar .ticket-tab-bar-item {
+  padding: 10px 25px;
+  font-weight: 700;
+  opacity: 0.5;
+  text-transform: capitalize;
+  background-color: #261237;
+  color: #fff;
 }
+/* ticket numbers */
+ul.tickets_numbers {
+  margin: 1em 0 1em -4px;
+  padding: 0;
+}
+/* style one: solid colour bg with dotted border */
+/* ul.tickets_numbers li.tn {
+  border: 1px #ffffff;
+  background-color: #261237;
+  color: #ffffff;
+  border-style: dashed;
+  border-radius: 0;
+  padding: .8em;
+  width: 2rem;
+  height: auto;
+  text-align: center;
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 700;
+} */
+/* style two: white bg with double border */
+ul.tickets_numbers li.tn {
+  border: 3px #d6d6d6;
+  border-style: double;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #261237;
+  padding: .8em;
+  width: 2rem;
+  height: auto;
+  text-align: center;
+  margin: 2px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected {
+  background: #4caf50 !important;
+}
+ul.lottery-pn-answers li.selected.false {
+  background: #d26c6c !important;
+}
+/* comp answers */
+ul.lottery-pn-answers {
+  padding: 0;
+}
+ul.lottery-pn-answers li {
+  border: 3px #d6d6d6;
+  border-style: double;
+  border-radius: 0;
+  padding: 7px 22px;
+  width: fit-content;
+  color: #261237;
+  margin: 0 6px 0 0;
+  font-size: 1em;
+  font-weight: 700;
+  display: inline-block;
+}
+ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn-answers li.selected.false {
+  color: #fff;
+  border: 3px solid #fff!important;
+}
+.is-wc_lotery_countdown {
+  color: #261237;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/*
+* 
+* lightslider 
+*
+*/
 
 .lSAction>a {
-  /* border: 5px solid #fc4c02; */
   border-radius: 100%;
-  /* width: 29px;
-  display: block;
-  top: 50%;
-  height: 29px;
-  color: #fff;
-  background-image: none;
-  cursor: pointer;
-  position: absolute;
-  z-index: 99;
-  margin-top: -10px;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.35s linear 0s;
-  transition: opacity 0.35s linear 0s; */
 }
-/* .lSAction>.lSPrev {
-  left: 10px;
-}
-.lSAction>.lSNext {
-  right: 10px;
-}
-.lSPrev .fas {
-  margin-left: 6px;
-}
-.lSNext .fas {
-  margin-left: 8px;
-} */
-
 .lSSlideOuter .lSPager.lSGallery li img {
   transition: width 2s;
 }
 .lSSlideOuter .lSPager.lSGallery li.active img,
 .lSSlideOuter .lSPager.lSGallery li:hover img {
-  border: 5px solid #fc4c02;
+  border: 5px solid #f9f9f9;
 }
 
-iframe {
-    max-width: 100%;
-}
-
-img.single-product-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
+/*
+* 
+* Price 
+*
+*/
 
 .product-right bdi {
-    font-size: 1.5rem;
-    font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.price {
+  position: relative;
+  width: fit-content;
+}
+bdi {
+  color: #261237;
+}
+ins, mark {
+  background: #fff0;
+  color: #1c1d1d;
+}
+del ins {
+  position: absolute;
+  left: 0;
+}
+del bdi {
+  opacity: 0.5;
+  text-decoration: line-through;
+  position: absolute;
+  left: calc(100% + 10px);
+}
+.woocommerce-variation-price {
+  margin-bottom: 20px;
 }
 
-/* lottery */
-.lottery-ajax-change {
-    padding-bottom: 15px;
-    margin-top: 10px;
+/* swiper stylings */
+/* :root {
+  --swiper-theme-color: #fc4c0287;
 }
-.ticket-tab-bar .ticket-tab-bar-item {
-    padding: 8px 16px;
-    font-weight: 800;
-    opacity: 0.5;
-}
-ul.lottery-pn-answers {
-    padding: 0;
-}
-ul.tickets_numbers {
-    margin: 1em 0 1em -4px;
-    padding: 0;
-}
-ul.tickets_numbers li.tn {
-    border: 1px solid #e5e5e5;
-    padding: .5em;
-    width: 50px;
-    height: auto;
-    text-align: center;
-    margin: 0.3em;
-    font-size: 1em;
-    font-weight: 700;
-}
-ul.lottery-pn-answers li {
-    border: 1px solid #e5e5e5;
-    padding: 0.8em;
-    width: 90%;
-    margin: 0 0 5px 0;
-    font-size: 1em;
-    font-weight: 700;
-}
-ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn-answers li.selected.false {
-    color: #fff;
-}
-
-.is-wc_lotery_countdown {
-    color: #fc4c02;
-    font-weight: 600;
-}
-
-/* general swiper css */
 .swiper-container {
   width: 100%;
   height: 100%;
-}
-:root {
-  --swiper-theme-color: #fc4c0287;
 }
 #slideshow_related, #slideshow_upsells {
   margin-bottom: -25px;
@@ -119,33 +154,69 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
 #slideshow_related .swiper-pagination, #slideshow_upsells .swiper-pagination {
   z-index: 99999;
   bottom: 16px!important;
-}
+} */
 
+/*
+* 
+* Product meta 
+*
+*/
 
-span.sku_wrapper {
-    display: block;
+.product_meta {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 span.posted_in {
-    display: block;
+  display: block;
 }
 span.tagged_as {
-    display: block;
+  display: block;
 }
+span.sku_wrapper {
+  display: block;
+}
+
+/*
+* 
+* Onsale badge/label positioning
+*
+*/
+
 .onsale.uk-card-badge {
   top: 15px;
   left: 55px;
   right: auto;
 }
-.woocommerce #content div.product div.images,
+
+/* #RelatedGrid span.onsale.uk-card-badge.uk-label,
+#UpsellsGrid span.onsale.uk-card-badge.uk-label {
+  left: 15px;
+} */
+
+/* product images */
+/* .woocommerce #content div.product div.images,
 .woocommerce-page #content div.product div.images,
 .woocommerce-page div.product div.images,
 .woocommerce div.product div.images {
   width: 100%;
-}
-.product_meta {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+} */
+/* img.single-product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+} */
+
+/* iframe fix */
+/* iframe {
+  max-width: 100%;
+} */
+
+/*
+* 
+* Add to cart Button/s
+*
+*/
+
 .reset_variations {
   position: absolute;
   right: 15px;
@@ -158,24 +229,12 @@ span.tagged_as {
   width: fit-content;
   display: inline-block;
 }
-.pswp__caption__center {
-  text-align: center;
-  font-size: 14px;
-  padding: 10px;
-  line-height: 20px;
-  color: #ccc;
-}
-.woocommerce-variation-price {
-  margin-bottom: 20px;
-}
-.comment-form-rating {
-  margin-top: 20px;
-}
-#RelatedGrid span.onsale.uk-card-badge.uk-label,
-#UpsellsGrid span.onsale.uk-card-badge.uk-label {
-  left: 15px;
-}
-.uk-tab>*>a {
+
+/* product tabs styles */
+/* .uk-tab>*>a {
   font-size: 1rem;
   text-transform: capitalize;
 }
+.comment-form-rating {
+  margin-top: 20px;
+} */

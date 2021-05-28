@@ -1,0 +1,68 @@
+
+
+{{ fn('timber_set_product', post) }}
+
+<div id="{{ post.id }}" class="entry item grid-item product-grid-item product-tease {{ post.class }}" data-product-id="{{ post.id }}">
+  
+  <!-- woocommerce_template_loop_product_link_open fires here; this action is removed -->
+  {% do action('woocommerce_before_shop_loop_item') %}
+  
+  <!-- the product thumbnail -->
+  <div class="tease-image">
+    <a href="{{ post.link }}">
+      <!-- woocommerce_template_loop_product_thumbnail fires here; this action is removed. custom image markup is used below -->
+      {% do action('woocommerce_before_shop_loop_item_title') %}
+      <img data-src="{{ post.thumbnail.src|resize(900, 1200) }}" alt="{{ post.thumbnail.alt }}" uk-img>
+    </a>
+  </div>
+  
+  <!-- the product details -->
+  <div class="tease-details uk-margin-small-top">
+    
+    <!-- the product title -->
+    <div class="tease-title">
+      <!-- woocommerce_template_loop_product_title fires here; this action is removed. custom title markup is used below -->
+      {% do action('woocommerce_shop_loop_item_title') %}
+      <h3 class="uk-h4 uk-margin-remove">
+        <a class="uk-link-reset" href="{{ post.link }}">{{ post.title }}</a>
+      </h3>
+    </div>
+  
+    <!-- custom product meta for competitions, see docs for more info -->
+    <div class="tease-competition-meta" hidden>
+      {% if not post._lottery_closed %}
+        <div id="ProductMeta" class="uk-article-meta push-down-5">
+          <div>
+            <span class="uk-text-bold uk-text-emphasis">{{ __('Competition finishes on:', 'sixstar-theme') }}</span> {{post._lottery_dates_to}}
+          </div>
+          <div>
+            <span class="uk-text-bold uk-text-emphasis">{{ __('People entered already:', 'sixstar-theme') }}</span> {{post._lottery_participants_count}}
+          </div>
+          <div>
+            <span class="uk-text-bold uk-text-emphasis">{{ __('Max. entries for this Competition:', 'sixstar-theme') }}</span> {{post._max_tickets}}
+          </div>
+        </div>
+      {% endif %}
+      
+      {% if post._lottery_closed %}
+        <div class="uk-article-meta push-down-5">
+          <div>
+            <span class="uk-text-warning">{{ __('This competition has finished', 'sixstar-theme') }}</span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    
+    <!-- the product price & rating, uses the default action for these: woocommerce_after_shop_loop_item_title  -->
+    <div class="tease-price-rating">
+      {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+    </div>
+    
+    <!-- the product add to cart buttons, uses the default action for these: woocommerce_after_shop_loop_item -> woocommerce_template_loop_add_to_cart. woocommerce_template_loop_product_link_close has been removed -->
+    <div class="tease-buttons" hidden>
+      {% do action( 'woocommerce_after_shop_loop_item' ) %}
+    </div>
+    
+  </div>
+
+</div>

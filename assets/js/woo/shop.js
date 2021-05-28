@@ -43,8 +43,8 @@ jQuery(function($) {
   
   // on load
   $("#MainContent").load(WooShop());
-  $("#MainContent").load(WooShopFilters());
-  $("#MainContent").load(WooShopFiltersBadges());
+  // $("#MainContent").load(WooShopFilters());
+  // $("#MainContent").load(WooShopFiltersBadges());
   // dom modified
   $("body").on('DOMSubtreeModified', ".shop-container", WooShop);
   

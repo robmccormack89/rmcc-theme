@@ -40,36 +40,30 @@ if ( is_singular( 'product' ) ) {
 } else { // is not singular, then it must be an archive!
   
   // get the main posts object via the standard wp archive query & assign as variable 'products'
-  $posts = new Timber\PostQuery();
+  $posts = Timber::get_posts();
   $context['products'] = $posts;
   
-  // if is any new taxonomy, see is_tax wp dev handbook for details
+  // gets the woocommerce columns per row setting
+  $context['products_grid_columns'] = wc_get_loop_prop('columns');
+  
+  $context['pagination'] = Timber::get_pagination();
+  $context['paged'] = $paged;
+  
   if (is_tax('')) {
     // get queried object stuff
     $queried_object = get_queried_object();
     $term_id = $queried_object->term_id;
     $context['term_slug'] = $queried_object->slug;
     $context['term_id'] = $term_id;
-    // set the archive title
     $context['title'] = single_term_title( '', false );
-    // then Restore the context and loop back to the main query loop.
-    wp_reset_postdata();
-  };
-
-  // if is product category
-  if (is_product_category()) {
-    // get the category & set variable with get_term using the term id
-    $context['category'] = get_term( $term_id, 'product_cat' );
-    // then Restore the context and loop back to the main query loop.
-    wp_reset_postdata();
   };
   
-  // if is main shop archive page
+  if (is_product_category()) {
+    $context['category'] = get_term( $term_id, 'product_cat' );
+  };
+  
   if (is_shop()) {
-    // set shop page archive title
     $context['title'] = __( 'Our Competitions', 'woocommerce' );
-    // then Restore the context and loop back to the main query loop.
-    wp_reset_postdata();
   };
 
   Timber::render( 'shop.twig', $context );

@@ -1,0 +1,29 @@
+{% if (pagination.next or pagination.prev) %}
+  <div data-template="pagination.twig">
+    
+    <div class="uk-padding pagi">
+      <ul class="uk-pagination uk-flex-center">
+        {% if pagination.prev %}
+          <li>
+            <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}"><i uk-icon="icon: chevron-left"></i> {{ __('Previous Page', 'urban-carnival-theme') }}</a>
+          </li>
+        {% endif %}
+        {% for page in pagination.pages %}
+          <li>
+            {% if page.link %}
+              <a href="{{page.link|e('esc_url')}}" class="{{page.class|e('html_attr')}}">{{page.title|e('esc_html')}}</a>
+            {% else %}
+              <span class="{{page.class|e('html_attr')}}">{{page.title|e('esc_html')}}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+        {% if pagination.next %}
+          <li>
+            <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">{{ __('Next Page', 'urban-carnival-theme') }} <i uk-icon="icon: chevron-right"></i></a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+    
+  </div>
+{% endif %}

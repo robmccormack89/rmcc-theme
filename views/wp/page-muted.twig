@@ -1,5 +1,17 @@
 {% extends "page-default.twig" %}
 
+{% block styles %}
+  <style>
+    .uk-container-xsmall {
+      max-width: 650px;
+    }
+    .launch-cover-img {
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
 {% block header %}
   <header>
     <div class="header-top-nav uk-position-top uk-position-z-index">
@@ -8,14 +20,16 @@
       </div>
     </div>
     <div class="uk-section uk-section-large uk-section-muted theme-border-bottom">
-      <h1 class="uk-text-bold uk-margin-large-top uk-text-center">{{post.title}}</h1>
+      <div class="uk-container uk-container-small">
+        <h1 class="uk-text-bold uk-margin-large-top uk-text-center">{{post.title}}</h1>
+      </div>
     </div>
   </header>
 {% endblock %}
 
 {% block contentwrap %}
   <section class="uk-section">
-    <div class="uk-container uk-container-xsmall">
+    <div class="single-content uk-container uk-container-xsmall">
       {{post.content}}
     </div>
   </section>
