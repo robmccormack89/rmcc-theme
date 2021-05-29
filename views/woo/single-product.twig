@@ -8,9 +8,17 @@
   <link rel="stylesheet" href="{{theme.link|e('esc_url')}}/assets/css/lib/swiper-bundle.min.css" />
   <!-- single product styles -->
   <link rel="stylesheet" href="{{theme.link|e('esc_url')}}/assets/css/single-product.css" />
+  
+  <!-- <style>
+    .woocommerce-page img, .woocommerce img {
+      height: auto;
+      max-width: 100%;
+    }
+  </style> -->
 {% endblock %}
 
 {% block contentwrap %}
+
   <div id="product-{{ post.id }}" itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
     <div class="uk-section uk-section-default">
       <div class="uk-container">

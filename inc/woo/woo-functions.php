@@ -128,7 +128,7 @@ add_filter( 'wc_product_sku_enabled', '__return_false' );
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 10 );
+// add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 10 );
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 5 );
 
 // Remove cross-sells at cart

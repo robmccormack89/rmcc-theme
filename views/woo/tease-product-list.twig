@@ -1,0 +1,68 @@
+<div>
+  <div class="uk-grid-match uk-grid-collapse uk-flex uk-flex-middle" uk-grid>
+    <div class="uk-width-1-4@m">
+      <div class="tease-image uk-position-relative">
+        <a href="{{ post.link }}">
+          <!-- woocommerce_template_loop_product_thumbnail fires here; this action is removed. custom image markup is used below -->
+          {% do action('woocommerce_before_shop_loop_item_title') %}
+          <img data-src="{{ post.thumbnail.src|resize(900, 900) }}" alt="{{ post.thumbnail.alt }}" uk-img>
+        </a>
+      </div>
+     </div>
+    <div class="uk-width-expand@m">
+      <div class="tease-details uk-margin-medium-left">
+        {% if not post._lottery_closed %}
+          <div class="finishes uk-text-small uk-grid-collpase uk-grid-match uk-flex uk-flex-middle" uk-grid>
+      
+            <div class="completion_meta uk-width-expand@m">
+              
+              {% set days_left = fn('dates_to_days', post._lottery_dates_to) %}
+              {% set hours_left = fn('times_to_hours', post._lottery_dates_to) %}
+              {% set human_time_left = fn('human_time_diff', post._lottery_dates_to|date("U"), fn('current_time', 'timestamp')) %}
+              
+              {% if days_left > 14 %}
+                <span class="uk-text-meta">Just over {{human_time_left}} left</span>
+              {% elseif days_left <= 14 and days_left > 0 %}
+                <span class="uk-text-warning">Just over {{human_time_left}} left!</span>
+              {% elseif days_left == 0 %}
+                <span class="uk-text-danger">Just {{human_time_left}} left!</span>
+              {% endif %}
+              
+            </div>
+            <div class="tickets-meta uk-width-auto@m">
+              {% set tickets_left = post._max_tickets - post._lottery_participants_count %}
+              {% if tickets_left > 25 %}
+                <span class="uk-text-meta">{{tickets_left}} Tickets left</span>
+              {% elseif tickets_left <= 25 and time_left > 10 %}
+                <span class="uk-text-warning">Just {{tickets_left}} Left!</span>
+              {% elseif tickets_left <= 10 %}
+                <span class="uk-text-danger">Only {{tickets_left}} Left!</span>
+              {% endif %}
+            </div>
+            
+          </div>
+        {% endif %}
+        
+        <div class="tease-title">
+          {% do action('woocommerce_shop_loop_item_title') %}
+          <h3 class="uk-h3">
+            <a class="uk-link-reset" href="{{ post.link }}">{{ post.title }}</a>
+          </h3>
+        </div>
+        
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...
+        </p>
+        
+        <div class="tease-price-rating uk-margin-small-bottom">
+          <span class="uk-form-label">Price of Entry: </span>
+          {% do action('woocommerce_after_shop_loop_item_title') %}
+        </div>
+        
+        <div class="tease-buttons">
+          {% do action( 'woocommerce_after_shop_loop_item' ) %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -259,8 +259,8 @@ class CautiousOctoFiesta extends Timber\Site
   {
     // This theme uses wp_nav_menu() in one locations.
     register_nav_menus(array(
-      'main_menu' => __('Main Menu', 'cautious-octo-fiesta'),
-      'mobile_menu' => __('Mobile Menu', 'cautious-octo-fiesta'),
+      'main_menu' => 'Main Menu',
+      'mobile_menu' => 'Mobile Menu',
     ));
   }
 
@@ -427,13 +427,13 @@ class CautiousOctoFiesta extends Timber\Site
     );
     
     // theme base scripts
-    wp_enqueue_script(
-      'theme-quickload',
-      get_template_directory_uri() . '/assets/js/quickload.js',
-      '',
-      '',
-      true
-    );
+    // wp_enqueue_script(
+    //   'theme-quickload',
+    //   get_template_directory_uri() . '/assets/js/quickload.js',
+    //   '',
+    //   '',
+    //   true
+    // );
     
     // font awesome
     wp_enqueue_style(

@@ -57,6 +57,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woo/woo-functions.php';
 }
 
+// if ACF class exists, do some stuff
+if ( class_exists( 'ACF' ) ) {
+	require get_template_directory() . '/inc/acf/acf-functions.php';
+}
+
 add_action('template_redirect', function() {
   if(!is_user_logged_in()) {
     if (is_page('coming-soon')) {

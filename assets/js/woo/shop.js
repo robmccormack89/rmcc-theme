@@ -2,8 +2,7 @@ jQuery(function($) {
   
   // general shop stuff
   function WooShop() {
-    $("#ProductButtons .button").addClass("uk-button uk-button-small uk-button-primary");
-    $(".onsale").addClass("uk-card-badge uk-label");
+    $(".tease-buttons .button").addClass("uk-button-small uk-button-default");
   }
   // shop filters scroll-to-selected with animation
   function WooShopFilters() {

@@ -5,7 +5,7 @@
 
 {% block styles %}
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Molle:ital@1&family=Niconne&family=Norican&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Norican&display=swap" rel="stylesheet">
     <!-- font styles -->
     <style>
       html {
@@ -16,18 +16,6 @@
       }
       .norican {
         font-family: 'Norican', cursive;
-      }
-      .euphoria {
-        font-family: 'Euphoria Script', cursive;
-      }
-      .molle {
-        font-family: 'Molle', cursive;
-      }
-      .niconne {
-        font-family: 'Niconne', cursive;
-      }
-      .pinyon {
-        font-family: 'Pinyon Script', cursive;
       }
     </style>
     <!-- general styles -->
@@ -56,16 +44,7 @@
         color: #292929;
       }
       .uk-overlay-secondary .uk-button-primary {
-        background-color: #1e87f0;
-        color: #fff;
-      }
-      
-      #Fonts.uk-section-primary {
-        background-color: #152242;
-      }
-      
-      #Launch5 .uk-button-primary {
-        background-color: #152242;
+        background-color: #008b96;
         color: #fff;
       }
       .uk-overlay-primary {
@@ -80,6 +59,30 @@
       .img-grey {
         filter: grayscale(1);
       }
+      .uk-form-large {
+        height: 55px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+      
+      @media only screen and (max-width:768px) {
+        .uk-position-cover-padded {
+          bottom: 0;
+          left: 0;
+          right: 0;
+          top: 0;
+        }
+        .uk-form-width-medium {
+          width: 100%;
+        }
+        .uk-button-large {
+          width: 100%;
+          margin-top: 5px;
+        }
+        .padded-outset-border {
+          border: 15px solid #ffffff00;
+        }
+      }
     </style>
 {% endblock %}
 
@@ -88,49 +91,9 @@
 
 {% block contentwrap %}
   <section data-template="coming-soon.twig">
-    
-    <div id="Fonts" class="uk-section uk-section-primary uk-section-large">
-      <div class="uk-container">
-        <h1 class="uk-heading-bullet uk-heading-large norican">{{site.title}}</h1>
-        <h1 class="uk-heading-bullet uk-heading-large molle">{{site.title}}</h1>
-        <h1 class="uk-heading-bullet uk-heading-large euphoria">{{site.title}}</h1>
-        <h1 class="uk-heading-bullet uk-heading-large niconne">{{site.title}}</h1>
-        <h1 class="uk-heading-bullet uk-heading-large pinyon">{{site.title}}</h1>
-      </div>
-    </div>
-    
-    <!-- secondary-left -->
-    <div id="Launch5" class="uk-inline" hidden>
-      <img class="launch-cover-img uk-height-viewport img-obj-fit" src="{{theme.link}}/assets/images/stock5.jpg" alt="">
-      <div class="uk-overlay-secondary uk-light uk-position-cover padded-outset-border">
-        <div class="uk-position-center uk-text-center">
-          {% include 'launch-text.twig' %}
-          {% include 'launch-subscribe.twig' %}
-          <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-center uk-margin-top" uk-grid>
-            {% include 'launch-socials.twig' %}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- primary-centered -->
-    <div class="uk-inline" hidden>
-      <img class="launch-cover-img uk-height-viewport img-obj-fit img-sepia" src="{{theme.link}}/assets/images/stock1.jpg" alt="">
-      <div class="uk-overlay-default uk-position-cover uk-position-cover-padded padded-outset-border">
-        <div class="uk-position-center uk-text-center">
-          {% include 'launch-text.twig' %}
-          {% include 'launch-subscribe.twig' %}
-          <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-center uk-margin-top" uk-grid>
-            {% include 'launch-socials.twig' %}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- secondary-left -->
-    <div class="uk-inline" hidden>
+    <div class="uk-inline">
       <img class="launch-cover-img uk-height-viewport img-obj-fit" src="{{theme.link}}/assets/images/stock2.jpg" alt="">
-      <div class="uk-overlay-primary uk-light uk-position-cover uk-position-cover-padded padded-outset-border">
+      <div class="uk-overlay-secondary uk-light uk-position-cover uk-position-cover-padded padded-outset-border">
         <div class="uk-position-center uk-text-left">
           {% include 'launch-text.twig' %}
           {% include 'launch-subscribe.twig' %}
@@ -140,77 +103,6 @@
         </div>
       </div>
     </div>
-    
-    <!-- default-right -->
-    <div class="uk-inline" hidden>
-      <img class="launch-cover-img uk-height-viewport img-obj-fit" src="{{theme.link}}/assets/images/stock3.jpg" alt="">
-      <div class="uk-overlay-default uk-position-cover uk-position-cover-padded padded-outset-border">
-        <div class="uk-position-center uk-text-right">
-          {% include 'launch-text.twig' %}
-          {% include 'launch-subscribe.twig' %}
-          <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-right uk-margin-top" uk-grid>
-            {% include 'launch-socials.twig' %}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- primary-centered -->
-    <div class="uk-inline" hidden>
-      <img class="launch-cover-img uk-height-viewport img-obj-fit" src="{{theme.link}}/assets/images/stock4.jpg" alt="">
-      <div class="uk-overlay-primary uk-light uk-position-cover uk-position-cover-padded padded-outset-border">
-        <div class="uk-position-center uk-text-center">
-          {% include 'launch-text.twig' %}
-          {% include 'launch-subscribe.twig' %}
-          <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-center uk-margin-top" uk-grid>
-            {% include 'launch-socials.twig' %}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- default-right -->
-    <div class="uk-inline" hidden>
-      <img class="launch-cover-img uk-height-viewport img-obj-fit" src="{{theme.link}}/assets/images/stock6.jpg" alt="">
-      <div class="uk-overlay-secondary uk-light uk-position-cover uk-position-cover-padded padded-outset-border">
-        <div class="uk-position-center uk-text-right">
-          {% include 'launch-text.twig' %}
-          {% include 'launch-subscribe.twig' %}
-          <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-right uk-margin-top" uk-grid>
-            {% include 'launch-socials.twig' %}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- primary-centered -->
-    <div class="uk-inline" hidden>
-      <img class="launch-cover-img uk-height-viewport img-obj-fit" src="{{theme.link}}/assets/images/stock7.jpg" alt="">
-      <div class="uk-overlay-secondary uk-light uk-position-cover uk-position-cover-padded padded-outset-border">
-        <div class="uk-position-center uk-text-center">
-          {% include 'launch-text.twig' %}
-          {% include 'launch-subscribe.twig' %}
-          <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-center uk-margin-top" uk-grid>
-            {% include 'launch-socials.twig' %}
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="uk-background-primary uk-light uk-height-viewport uk-position-relative" hidden>
-      <div class="uk-text-center uk-position-center">
-        <h3 class="uk-h4 uk-text-bold uk-margin-small-bottom">Coming Soon!</h3>
-        <h1 class="uk-text-bold uk-heading-medium uk-margin-remove-top">Our new website is on its way.</h1>
-        <p class="uk-text-lead">Get notified when we launch.</p>
-        <div class="uk-margin-top">
-          <div uk-form-custom="target: true">
-            <input type="text" class="uk-input uk-form-width-medium uk-form-large" type="text" placeholder="Enter your email here..">
-          </div>
-          <button class="uk-button uk-button-primary uk-button-large">Subscribe</button>
-        </div>
-      </div>
-    </div>
-    
   </section>
 {% endblock %}
 

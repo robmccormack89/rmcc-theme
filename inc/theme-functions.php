@@ -5,6 +5,21 @@
  * @package Cautious_Octo_Fiesta
  */
  
+ 
+function dates_to_days($date) {
+  $date1 = new DateTime('now');
+  $date2 = new DateTime($date);
+  $days  = $date2->diff($date1)->format('%a');
+  return $days;
+}
+
+function times_to_hours($date) {
+  $date1 = new DateTime('now');
+  $date2 = new DateTime($date);
+  $days  = $date2->diff($date1)->format('%h');
+  return $days;
+}
+ 
 // check if is blog or post
 function is_blog () {
   return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
