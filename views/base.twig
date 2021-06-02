@@ -247,6 +247,18 @@
           box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
         }
       </style>
+      <!-- store notice -->
+      <style>
+        .woocommerce-store-notice {
+          text-align: center;
+        }
+        .store-notice-wrap {
+          position: relative;
+          background-color: #f8f8f8;
+          padding: 10px;
+          border-bottom: 1px solid #e5e5e5;
+        }
+      </style>
     {% endblock %}
     
     {% block styles %}
@@ -255,6 +267,8 @@
 
   {% block bodywrap %}
     <body class="{{body_class}}" data-template="base.twig">
+      
+      {# do function('custom_store_notice') #}
 
       {% block header %}
         <header class="uk-section uk-section-small uk-background-muted">
