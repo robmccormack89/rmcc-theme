@@ -1,0 +1,143 @@
+/* store notice */
+.woocommerce-store-notice {
+  text-align: center;
+}
+.store-notice-wrap {
+  position: relative;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* star rating color */
+.star-rating span:before {
+  color: #eeaf2e!important;
+}
+
+/* header cart icon */
+.header-cart-count {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  display: inline-block;
+  width: 15px;
+  line-height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  padding-right: 1px;
+  font-size: 10px;
+  background-color: #008b96;
+  color: #fff;
+}
+.subtotal-cart {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* mini cart modal */
+.woocommerce-mini-cart img {
+  width: 50px;
+}
+.woocommerce-mini-cart__total bdi, .mini-cart-quantity bdi {
+  color: #008b96;
+  font-weight: 700;
+}
+.woocommerce-mini-cart__empty-message {
+  padding: 20px;
+}
+li.woocommerce-mini-cart-item:before {
+  content: none;
+}
+
+/* quantity inputs */
+.qty.uk-input {
+  max-width: 80px;
+}
+
+/* turn offs */
+.added_to_cart, 
+.screen-reader-text, 
+label[for=coupon_code] {
+  display: none!important;
+}
+
+/* product teases */
+.tease-image .onsale.uk-card-badge {
+  position: absolute;
+  left: 10px;
+  right: auto;
+  top: 10px;
+  z-index: 1;
+}
+.tease-image .max-tickets.uk-card-badge {
+  position: absolute;
+  left: auto;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+.tease-image .finishes.uk-card-badge {
+  right: 10px;
+  margin-top: 4px;
+}
+.tease-image .onsale.uk-label, .tease-image .finishes.uk-label, .tease-image .max-tickets.uk-label {
+  background: #008b96;
+  border-radius: 2px;
+  color: #fff;
+  font-size: .75rem;
+  padding: 0px 6px;
+  text-transform: uppercase;
+}
+.tease-image .lottery-bage {
+  display: none;
+}
+
+.tease-title .uk-h4, .tease-title h4 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+.tease-title a, .tease-title a.uk-link-reset {
+  color: #1c1d1d!important;
+}
+.tease-title .uk-h4,
+.tease-title .uk-h3 {
+  margin-bottom: 5px;
+}
+
+.tease-price-rating .price {
+  position: relative;
+}
+.tease-price-rating .price bdi {
+  color: #1c1d1d;
+}
+.tease-price-rating .price ins, .tease-price-rating .price mark {
+  background: #fff0;
+  color: #1c1d1d;
+  font-size: 1.1rem;
+}
+.tease-price-rating .price del ins {
+  position: absolute;
+  left: 0;
+}
+.tease-price-rating .price del bdi {
+  opacity: 0.5;
+  text-decoration: line-through;
+  position: absolute;
+  left: calc(100% + 10px);
+}
+.tease-price-rating .star-rating {
+  margin: 10px 0 0!important;
+}
+
+.tease-buttons .uk-button-default {
+  background-color: transparent;
+  border-style: double;
+  border-color: #b1b1b1;
+  border-width: 3px;
+  text-transform: capitalize;
+  color: #008b96;
+  transition: border-color 150ms;
+}
+.tease-buttons .uk-button-default:hover, .tease-buttons .uk-button-default:focus {
+  border-color: #008b96;
+}

@@ -15,7 +15,7 @@
   font-weight: 700;
   opacity: 0.5;
   text-transform: capitalize;
-  background-color: #261237;
+  background-color: #008b96;
   color: #fff;
 }
 /* ticket numbers */
@@ -26,7 +26,7 @@ ul.tickets_numbers {
 /* style one: solid colour bg with dotted border */
 /* ul.tickets_numbers li.tn {
   border: 1px #ffffff;
-  background-color: #261237;
+  background-color: #008b96;
   color: #ffffff;
   border-style: dashed;
   border-radius: 0;
@@ -44,7 +44,7 @@ ul.tickets_numbers li.tn {
   border-style: double;
   border-radius: 0;
   background-color: #ffffff;
-  color: #261237;
+  color: #008b96;
   padding: .8em;
   width: 2rem;
   height: auto;
@@ -69,7 +69,7 @@ ul.lottery-pn-answers li {
   border-radius: 0;
   padding: 7px 22px;
   width: fit-content;
-  color: #261237;
+  color: #008b96;
   margin: 0 6px 0 0;
   font-size: 1em;
   font-weight: 700;
@@ -80,9 +80,14 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
   border: 3px solid #fff!important;
 }
 .is-wc_lotery_countdown {
-  color: #261237;
+  color: #008b96;
   font-weight: 700;
   margin-top: 5px;
+}
+/* anwsers dropdown option styling */
+#lottery_answer_drop {
+  width: 100%;
+  padding: 0 20px 0 10px;
 }
 
 /*
@@ -117,7 +122,7 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
   width: fit-content;
 }
 bdi {
-  color: #261237;
+  color: #008b96;
 }
 ins, mark {
   background: #fff0;

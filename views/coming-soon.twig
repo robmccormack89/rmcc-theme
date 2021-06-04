@@ -1,0 +1,82 @@
+{% extends "base.twig" %}
+
+{% block styles %}
+  <style>
+    .coming-soon .uk-form-large {
+      height: 49px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .coming-soon .uk-form-width-medium {
+      width: 300px;
+    }
+    .coming-soon .uk-button {
+      font-weight: bold;
+    }
+    @media only screen and (max-width:768px) {
+      .coming-soon .uk-form-width-medium {
+        width: 100%;
+      }
+      .coming-soon .uk-button-large {
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
+    .coming-soon .launch-msg, .social-icons-wrap {
+      display: inline-block;
+    }
+    .coming-soon .social-icons-wrap {
+      margin-left: 15px;
+    }
+  </style>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contentwrap %}
+  <section class="coming-soon" data-template="coming-soon.twig">
+    <div class="uk-inline">
+      <img class="cover-img uk-height-viewport" src="{{theme.link}}/assets/images/stock2.jpg" alt="">
+      <div class="uk-overlay-secondary uk-light uk-position-cover uk-position-cover-padded padded-outset-border">
+        <div class="uk-position-center uk-text-left">
+          <h2 class="uk-heading-medium norican">{{site.title}}</h2>
+
+          <h1 class="launch-heading uk-text-bold uk-heading-medium uk-margin-remove-top">
+            {{ __('Our new website is on its way.', 'cautious-octo-fiesta') }}
+          </h1>
+
+          <p class="launch-msg uk-margin-small-bottom uk-text-lead">
+            {{ __('Get notified when we launch', 'cautious-octo-fiesta') }}
+          </p>
+          
+          <div class="social-icons-wrap">
+            <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-left uk-margin-top" uk-grid>
+              <div>
+                <a href="{{ __('https://www.facebook.com', 'cautious-octo-fiesta') }}" target="_blank">
+                  <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+              </div>
+              <div>
+                <a href="mailto:{{ __('info@dreamwinners.ie', 'cautious-octo-fiesta') }}">
+                  <i class="far fa-envelope fa-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            {{ function('do_shortcode', '[contact-form-7 title="Subscribe"]') }}
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block subscribe %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

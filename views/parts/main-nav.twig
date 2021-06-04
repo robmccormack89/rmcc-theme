@@ -1,38 +1,89 @@
 <nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
   <div class="uk-navbar-left">
+    <!-- main menu desktop -->
     <ul class="main-nav uk-navbar-nav uk-visible@m">
-      <li>
-        <a href="/competitions">Competitions</a>
-      </li>
-      <li>
-        <a href="/sample-page">About</a>
-      </li>
-      <li>
-        <a href="/sample-page">FAQs</a>
-      </li>
-      <li>
-        <a href="/sample-page">How to Play</a>
-      </li>
-      <li>
-        <a href="/sample-page">Contact</a>
-      </li>
+      {% if has_menu_main %}
+        {% for item in menu_main.get_items %}
+          {% if item.get_children %}
+            <li>
+              <a href="{{ item.link }}">{{ item.title }}
+                <i class="fas fa-angle-down uk-margin-small-left"></i>
+              </a>
+              <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                  {% for child in item.get_children %}
+                    <li>
+                      <a href="{{ child.get_link }}">{{ child.title }}</a>
+                      {% if child.children %}
+                        <ul class="uk-nav-sub">
+                          {% for third in child.children %}
+                            <li>
+                              <a href="{{ third.get_link }}">{{ third.title }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ item.get_link }}">{{ item.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <li>
+          <a href="/competitions">Competitions</a>
+        </li>
+        <li>
+          <a href="/sample-page">About</a>
+        </li>
+        <li>
+          <a href="/sample-page">FAQs</a>
+        </li>
+        <li>
+          <a href="/sample-page">How to Play</a>
+        </li>
+        <li>
+          <a href="/sample-page">Contact</a>
+        </li>
+      {% endif %}
     </ul>
+    <!-- mobile menu toggle link -->
     <a class="uk-navbar-toggle uk-hidden@m uk-text-emphasis" uk-navbar-toggle-icon href="#"></a>
   </div>
   <div class="uk-navbar-center">
+    <!-- site logo -->
     <a class="uk-navbar-item uk-logo norican uk-text-emphasis" href="/">{{site.title}}</a>
   </div>
   <div class="uk-navbar-right">
+    <!-- header icons nav -->
     <ul class="header-icons uk-navbar-nav">
-      <li class="uk-visible@m">
-        <a class="" href="#">
+      <li class="user-icon uk-visible@m">
+        <a class="" href="{{dashboard_endpoint}}">
           <svg class="user" cwidth="24px" height="24px" aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 24 24">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
         </a>
       </li>
-      <li>
+      <li class="basket-icon uk-visible@m">
+        <a href="#MiniCartModal" uk-toggle>
+          <svg class="basket" width="24px" height="24px" viewBox="0 -2 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g transform="translate(0.500000, 0.500000)" stroke="none" fill="currentColor" fill-rule="nonzero">
+              <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z"></path>
+            </g>
+          </svg>
+          <span class="uk-margin-small-left uk-position-relative">
+            {% do action('cart_ajax_result_count') %}
+            {% do action('cart_ajax_subtotal') %}
+          </span>
+        </a>
+      </li>
+      <li class="search-icon">
         <a class="" href="#">
           <svg class="search" width="24px" height="24px" viewBox="-2 -2 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Search</title>
@@ -42,15 +93,28 @@
           </svg>
         </a>
       </li>
-      <li>
-        <a class="" href="#">
-          <svg class="basket" width="24px" height="24px" viewBox="0 -2 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g transform="translate(0.500000, 0.500000)" stroke="none" fill="currentColor" fill-rule="nonzero">
-              <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z"></path>
-            </g>
-          </svg>
-        </a>
-      </li>
     </ul>
   </div>
 </nav>
+
+<div id="MiniCartModal" class="minicart-modal" uk-modal>
+  <div class="uk-modal-dialog">
+    <div class="uk-modal-body height-content uk-padding-remove" uk-overflow-auto>
+      <div class="widget_shopping_cart_content">
+        {{fn('woocommerce_mini_cart')}}
+      </div>
+      <script>
+        jQuery(function($) {
+          function WooMiniCart() {
+            $(".woocommerce-mini-cart__buttons .button:first-child").addClass("uk-button uk-button-primary uk-button-small uk-width-1-1");
+            $(".woocommerce-mini-cart__buttons .button.checkout").addClass("uk-button uk-button-link uk-width-1-1 dont-underline");
+          };
+          // on load
+          $(".widget_shopping_cart_content").load(WooMiniCart());
+          // on dom modified
+          $("body").on('DOMSubtreeModified', ".minicart-modal", WooMiniCart);
+        });
+      </script>
+    </div>
+  </div>
+</div>

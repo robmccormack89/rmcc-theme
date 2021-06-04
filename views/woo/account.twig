@@ -1,5 +1,30 @@
 {% extends "base.twig" %}
 
-{% block content %}
-  {{post.title}}
+{% block styles %}
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/account.css" />
+{% endblock %}
+
+{% block header %}
+  <header>
+    <div class="header-top-nav uk-position-top uk-position-z-index">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+        {% include 'main-nav.twig' %}
+      </div>
+    </div>
+    <div class="uk-section uk-section-large uk-section-muted theme-border-bottom">
+      <div class="uk-container uk-container-small">
+        <h1 class="uk-text-bold uk-margin-large-top uk-text-center">{{post.title}}</h1>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block contentwrap %}
+  <div class="uk-section uk-container uk-container-small" data-template="account.twig">
+    {{ post.content }}
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script type='text/javascript' src='{{theme.link}}/assets/js/account.js'></script>
 {% endblock %}

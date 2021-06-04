@@ -1,24 +1,23 @@
 {% extends "base.twig" %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{{theme.link|e('esc_url')}}/assets/css/lib/lightslider.css" />
-  <script type="text/javascript" src="{{theme.link|e('esc_url')}}/assets/js/lib/lightslider.js"></script> 
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/lib/lightslider.css" />
+  <script type="text/javascript" src="{{theme.link}}/assets/js/lib/lightslider.js"></script> 
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/lib/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/single-product.css" />
+{% endblock %}
 
-  <!-- load in swiper-js css -->
-  <link rel="stylesheet" href="{{theme.link|e('esc_url')}}/assets/css/lib/swiper-bundle.min.css" />
-  <!-- single product styles -->
-  <link rel="stylesheet" href="{{theme.link|e('esc_url')}}/assets/css/single-product.css" />
-  
-  <!-- <style>
-    .woocommerce-page img, .woocommerce img {
-      height: auto;
-      max-width: 100%;
-    }
-  </style> -->
+{% block header %}
+  <header>
+    <div class="header-top-nav theme-border-bottom">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+        {% include 'main-nav.twig' %}
+      </div>
+    </div>
+  </header>
 {% endblock %}
 
 {% block contentwrap %}
-
   <div id="product-{{ post.id }}" itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
     <div class="uk-section uk-section-default">
       <div class="uk-container">
@@ -67,7 +66,7 @@
           
           <div class="product-tabs">
             <!-- removed related & upsells from woocommerce_after_single_product_summary. tabs remains -->
-            {% do action('woocommerce_after_single_product_summary') %}
+            {# do action('woocommerce_after_single_product_summary') #}
           </div>
           
           <div class="product-related" hidden>
@@ -118,8 +117,10 @@
   </div>
 {% endblock %}
 
+{% block subscribe %}
+{% endblock %}
+
 {% block scripts %}
-  <!-- load in swiper-js js -->
-  <script src="{{theme.link|e('esc_url')}}/assets/js/lib/swiper-bundle.min.js"></script>
-  <script type='text/javascript' src='{{theme.link|e('esc_url')}}/assets/js/woo/single-product.js'></script>
+  <script src="{{theme.link}}/assets/js/lib/swiper-bundle.min.js"></script>
+  <script type='text/javascript' src='{{theme.link}}/assets/js/product.js'></script>
 {% endblock %}

@@ -10,7 +10,7 @@
     {% block base_styles %}
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Norican&display=swap" rel="stylesheet">
-      <!-- fonts application -->
+      <!-- fonts -->
       <style>
         html {
           font-family: 'Lato', sans-serif;
@@ -28,10 +28,18 @@
           font-family: 'Norican', cursive;
         }
       </style>
-      <!-- uikit modificationss -->
+      <!-- uikit mods -->
       <style>
         .uk-overlay-primary {
           background: rgb(10 10 10 / 60%);
+          /* background: rgb(30 135 240 / 80%); */
+        }
+        .uk-overlay-secondary {
+          background: rgba(34,34,34,.8);
+        }
+        .uk-overlay-secondary .uk-button-primary {
+          background-color: #008b96;
+          color: #fff;
         }
         .uk-section-primary {
           background: #008b96;
@@ -40,8 +48,11 @@
           background-color: #008b96;
           color: #ffffff;
         }
+        .uk-input:focus, .uk-select:focus, .uk-textarea:focus {
+          border-color: #008b96;
+        }
         .uk-button-primary:focus, .uk-button-primary:hover {
-          background-color: #6c1a4b;
+          background-color: #064d52;
           color: #fff;
         }
         .uk-button-default {
@@ -62,9 +73,8 @@
           color: #fff;
         }
         .uk-container-xsmall {
-          max-width: 550px;
+          max-width: 650px;
         }
-        
         .uk-button-large {
           font-size: .875rem;
           line-height: 45px;
@@ -72,6 +82,9 @@
           border-width: 2px;
           border-style: solid;
           font-weight: 500;
+        }
+        .uk-button-link, .uk-button-link:hover, .uk-button-link:focus {
+          color: #008b96;
         }
         .uk-navbar-nav>li>a {
           text-transform: capitalize;
@@ -105,158 +118,27 @@
             padding-right: 20px;
           }
         }
-      </style>
-      <!-- feature-link: custom link style -->
-      <style>
-        .feature-link {
-          font-weight: 500;
-          display: inline-block;
-          position: relative;
-          text-decoration: none;
+        
+        /* custom additions */
+        .uk-position-cover-padded {
+          bottom: 35px;
+          left: 35px;
+          right: 35px;
+          top: 35px;
         }
-        .feature-link:hover {
-          text-decoration: none;
+        .padded-outset-border {
+          border: 15px outset #7575751f;
         }
-        .feature-link:after {
-          content: '';
-          display: block;
-          border-top: 2px solid;
-          transition: all 250ms;
-        }
-        .feature-link:hover::after {
-          transform: scaleX(0.8);
-        }
-      </style>
-      <!-- the footer styling -->
-      <style>
-        /* primary colour */
-        .the-footer .uk-nav-default>li>a:hover, 
-        .the-footer .uk-nav-default>li>a:focus, 
-        .subscribe-section .far {
-          color: #008b96;
-        }
-        /* muted from primary colour */
-        .the-footer p, 
-        .the-footer .uk-nav-default>li>a {
-          color: #7e7586;
-        }
-        /* transition effects */
-        .the-footer .uk-nav-default>li>a {
-          transition: color 150ms;
-        }
-        /* nav styling */
-        .the-footer .uk-nav>li>a {
-          padding: 2px 0;
-          font-size: 1rem;
-        }
-        /* subscribe form */
-        @media (max-width: 959px){
-          .subscribe-section .uk-button {
-            margin-top: 5px;
-            width: 100%;
+        @media only screen and (max-width:768px) {
+          .uk-position-cover-padded {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
           }
-        }
-        .subscribe-form {
-          height: 49px!important;
-        }
-      </style>
-      <!-- front-page header -->
-      <style>
-        /* home hero height setting */
-        .hero-img {
-          object-fit: cover;
-          width: 100%;
-          height:80vh;
-        }
-        /* header icons styles */
-        svg.user {
-          fill: transparent;
-          stroke: currentColor;
-          stroke-width: 2px;
-        }
-        svg.search, svg.search, svg.basket, svg.basket {
-          fill: currentColor;
-          vertical-align: top;
-        }
-        .header-icons .uk-navbar-item, 
-        .header-icons.uk-navbar-nav>li>a, 
-        .header-icons .uk-navbar-toggle {
-          color: #008b96;
-        }
-        .header-icons .uk-navbar-item:hover, 
-        .header-icons .uk-navbar-item:focus, 
-        .header-icons.uk-navbar-nav>li>a:hover, 
-        .header-icons.uk-navbar-nav>li>a:focus, 
-        .header-icons .uk-navbar-toggle:hover,
-        .header-icons .uk-navbar-toggle:focus {
-          color: #6c1a4b;
-        }
-        .uk-light .header-icons .uk-navbar-item, 
-        .uk-light .header-icons.uk-navbar-nav>li>a, 
-        .uk-light .header-icons .uk-navbar-toggle {
-          color: #fff;
-        }
-        @media only screen and (max-width:959px) {
-          .header-icons .uk-navbar-item, .header-icons.uk-navbar-nav>li>a, .header-icons .uk-navbar-toggle {
-            padding: 0 10px;
+          .padded-outset-border {
+            border: 15px solid #ffffff00;
           }
-        }
-        /* main nav styling */
-        .main-nav a {
-          position: relative;
-        }
-        .main-nav.uk-navbar-nav>li>a {
-          color: #7e7586;
-          transition: color 150ms;
-        }
-        .uk-light .main-nav.uk-navbar-nav>li>a, .uk-light .main-nav.uk-navbar-nav>li>a:hover, .uk-light .main-nav.uk-navbar-nav>li>a:focus {
-          color: #fff;
-        }
-        .main-nav.uk-navbar-nav>li>a:hover, .main-nav.uk-navbar-nav>li>a:focus {
-          color: #008b96;
-        }
-        .main-nav a:after {
-          content: "";
-          position: absolute;
-          width: 0;
-          bottom: -3px;
-          background-color: currentColor;
-          height: 2px;
-          transition: opacity .3s, width .3s;
-          opacity: 0;
-        }
-        .main-nav.uk-navbar-nav>li>a:hover:after {
-          width: calc(100% - 2em);
-          opacity: 1;
-        }
-        /* navbar & sticky styling */
-        .uk-navbar-container:not(.uk-navbar-transparent) {
-          background: #ffffff;
-        }
-        @media only screen and (max-width:959px) {
-          .uk-navbar-container {
-            padding-left: 5px;
-            padding-right: 5px;
-          }
-        }
-        .uk-navbar-sticky.uk-section-small {
-          padding-bottom: 20px;
-          padding-top: 20px;
-        }
-        .uk-navbar-sticky {
-          box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
-        }
-      </style>
-      <!-- store notice -->
-      <style>
-        .woocommerce-store-notice {
-          text-align: center;
-        }
-        .store-notice-wrap {
-          position: relative;
-          background-color: #f8f8f8;
-          padding: 10px;
-          border-bottom: 1px solid #e5e5e5;
         }
       </style>
     {% endblock %}
@@ -270,6 +152,7 @@
       
       {# do function('custom_store_notice') #}
 
+      {# dont forget to set an actual base header #}
       {% block header %}
         <header class="uk-section uk-section-small uk-background-muted">
           <div class="uk-container uk-container-expand">
@@ -289,6 +172,10 @@
           </section>
         {% endblock %}
       </main>
+      
+      {% block subscribe %}
+        {% include 'subscribe.twig' %}
+      {% endblock %}
       
       {% block footer %}
         {% include 'footer.twig' %}

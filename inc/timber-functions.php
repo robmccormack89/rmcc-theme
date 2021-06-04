@@ -11,7 +11,8 @@ Timber::$dirname = array(
   'views/parts',
   'views/woo',
   'views/wp',
-  'views/coming-soon',
+  'views/wp/archive',
+  'views/wp/single',
 );
 
 // set the $autoescape value
@@ -370,13 +371,6 @@ class CautiousOctoFiesta extends Timber\Site
     load_theme_textdomain('cautious-octo-fiesta', get_template_directory() . '/languages');
   }
   
-  // add grid-list url paramater key
-  // public function cautious_octo_fiesta_gridlist_query_vars_filter($vars)
-  // {
-  //   $vars[] .= 'grid_list';
-  //   return $vars;
-  // }
-  
   public function cautious_octo_fiesta_enqueue_assets()
   {
     // theme base scripts
@@ -420,7 +414,7 @@ class CautiousOctoFiesta extends Timber\Site
     // theme base scripts
     wp_enqueue_script(
       'theme-woo',
-      get_template_directory_uri() . '/assets/js/woo/woo.js',
+      get_template_directory_uri() . '/assets/js/woo.js',
       '',
       '',
       true
@@ -448,6 +442,10 @@ class CautiousOctoFiesta extends Timber\Site
     // theme stylesheet
     wp_enqueue_style(
       'cautious-octo-fiesta-styles', get_stylesheet_uri()
+    );
+    wp_enqueue_style(
+      'cautious-octo-fiesta-woo',
+      get_template_directory_uri() . '/assets/css/woo.css'
     );
   }
   

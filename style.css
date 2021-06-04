@@ -16,5 +16,200 @@ Cautious Octo Fiesta is based on Underscores https://underscores.me/, (C) 2012-2
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
-
 */
+
+/* 
+*
+* GENERAL STYLES 
+*
+*/
+
+/* feature-links: custom link styling */
+.feature-link {
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.feature-link:hover {
+  text-decoration: none;
+}
+.feature-link:after {
+  content: '';
+  display: block;
+  border-top: 2px solid;
+  transition: all 250ms;
+}
+.feature-link:hover::after {
+  transform: scaleX(0.8);
+}
+
+/* launch cover image */
+.cover-img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* home hero image */
+.home-cover-img {
+  height:80vh;
+}
+
+/* img modifiers */
+.img-sepia {
+  filter: sepia(1);
+}
+.img-grey {
+  filter: grayscale(1);
+}
+
+/* 
+*
+* GLOBAL HEADER 
+*
+*/
+
+/* header icons styles */
+svg.user {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 2px;
+}
+svg.search, svg.search, svg.basket, svg.basket {
+  fill: currentColor;
+  vertical-align: top;
+}
+.header-icons .uk-navbar-item, 
+.header-icons.uk-navbar-nav>li>a, 
+.header-icons .uk-navbar-toggle {
+  color: #008b96;
+}
+.header-icons .uk-navbar-item:hover, 
+.header-icons .uk-navbar-item:focus, 
+.header-icons.uk-navbar-nav>li>a:hover, 
+.header-icons.uk-navbar-nav>li>a:focus, 
+.header-icons .uk-navbar-toggle:hover,
+.header-icons .uk-navbar-toggle:focus {
+  color: #6c1a4b;
+}
+.uk-light .header-icons .uk-navbar-item, 
+.uk-light .header-icons.uk-navbar-nav>li>a, 
+.uk-light .header-icons .uk-navbar-toggle {
+  color: #fff;
+}
+@media only screen and (max-width:959px) {
+  .header-icons .uk-navbar-item, .header-icons.uk-navbar-nav>li>a, .header-icons .uk-navbar-toggle {
+    padding: 0 10px;
+  }
+}
+
+/* main nav styling */
+.main-nav a {
+  position: relative;
+}
+.main-nav.uk-navbar-nav>li>a {
+  color: #7e7586;
+  transition: color 150ms;
+}
+.uk-light .main-nav.uk-navbar-nav>li>a, .uk-light .main-nav.uk-navbar-nav>li>a:hover, .uk-light .main-nav.uk-navbar-nav>li>a:focus {
+  color: #fff;
+}
+.main-nav.uk-navbar-nav>li>a:hover, .main-nav.uk-navbar-nav>li>a:focus {
+  color: #008b96;
+}
+.main-nav a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: -3px;
+  background-color: currentColor;
+  height: 2px;
+  transition: opacity .3s, width .3s;
+  opacity: 0;
+}
+.main-nav.uk-navbar-nav>li>a:hover:after {
+  width: calc(100% - 2em);
+  opacity: 1;
+}
+
+/* navbar & sticky styling */
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background: #ffffff;
+}
+@media only screen and (max-width:959px) {
+  .uk-navbar-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.uk-navbar-sticky.uk-section-small {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.uk-navbar-sticky {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+}
+
+/* 
+*
+* GLOBAL FOOTER 
+*
+*/
+
+/* subscribe form */
+@media (max-width: 959px){
+  .subscribe-section .uk-button {
+    margin-top: 5px;
+    width: 100%;
+  }
+}
+.subscribe-form {
+  height: 49px!important;
+}
+
+/* primary colour */
+.the-footer .uk-nav-default>li>a:hover, 
+.the-footer .uk-nav-default>li>a:focus, 
+.subscribe-section .far {
+  color: #008b96;
+}
+
+/* muted from primary colour */
+.the-footer p, 
+.the-footer .uk-nav-default>li>a {
+  color: #7e7586;
+}
+
+/* transition effects */
+.the-footer .uk-nav-default>li>a {
+  transition: color 150ms;
+}
+
+/* nav styling */
+.the-footer .uk-nav>li>a {
+  padding: 2px 0;
+  font-size: 1rem;
+}
+
+/* 
+*
+* BLOG STYLES 
+*
+*/
+
+/* blog listing container */
+.blog-list.uk-container {
+  max-width: 1050px;
+}
+
+/* blog post tease */
+.tease-meta>:not(:last-child)::after {
+  content: "•";
+  margin-left: 8px;
+  position: absolute;
+  display: inline-block;
+  font-weight: 700;
+}
+.tease-meta>:not(:first-child) {
+  margin-left: 18px;
+}

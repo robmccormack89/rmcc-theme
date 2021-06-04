@@ -1,30 +1,5 @@
 {% extends "page-default.twig" %}
 
-{% block styles %}
-  <style>
-    .uk-container-xsmall {
-      max-width: 650px;
-    }
-    .launch-cover-img {
-      object-fit: cover;
-      width: 100%;
-    }
-    .blog-list.uk-container {
-      max-width: 1050px;
-    }
-    .tease-meta>:not(:last-child)::after {
-      content: "•";
-      margin-left: 8px;
-      position: absolute;
-      display: inline-block;
-      font-weight: 700;
-    }
-    .tease-meta>:not(:first-child) {
-      margin-left: 18px;
-    }
-  </style>
-{% endblock %}
-
 {% block header %}
   <header class="uk-inline">
     <div class="header-top-nav main-nav uk-position-top uk-position-z-index">
@@ -32,7 +7,7 @@
         {% include 'main-nav.twig' %}
       </div>
     </div>
-    <img class="launch-cover-img uk-height-large" src="{{theme.link}}/assets/images/stock7.jpg" alt="">
+    <img class="cover-img uk-height-large" src="{{theme.link}}/assets/images/stock7.jpg" alt="">
     <div class="uk-overlay-primary uk-position-cover uk-position-cover-padded padded-outset-border">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall">

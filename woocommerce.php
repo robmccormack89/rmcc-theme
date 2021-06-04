@@ -46,6 +46,8 @@ if ( is_singular( 'product' ) ) {
   // gets the woocommerce columns per row setting
   $context['products_grid_columns'] = wc_get_loop_prop('columns');
   
+  // $context['tease_template'] = 'tease-product.twig';
+  
   $context['pagination'] = Timber::get_pagination();
   $context['paged'] = $paged;
   
@@ -66,5 +68,5 @@ if ( is_singular( 'product' ) ) {
     $context['title'] = __( 'Our Competitions', 'woocommerce' );
   };
 
-  Timber::render( 'shop.twig', $context );
+  Timber::render('shop.twig', $context);
 }

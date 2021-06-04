@@ -17,7 +17,7 @@
   <!-- the product details -->
   <div class="tease-details uk-margin-small-top">
     
-    {% if not post._lottery_closed %}
+    {% if post._lottery_dates_to and not post._lottery_closed %}
       <div class="finishes uk-text-small uk-grid-collpase uk-grid-match uk-flex uk-flex-middle" uk-grid>
 
       <div class="completion_meta uk-width-expand@m">

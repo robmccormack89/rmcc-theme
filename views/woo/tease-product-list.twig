@@ -1,4 +1,6 @@
-<div>
+{{ fn('timber_set_product', post) }}
+
+<div id="{{ post.id }}" class="entry item list-item product-list-item product-tease {{ post.class }}" data-product-id="{{ post.id }}">
   <div class="uk-grid-match uk-grid-collapse uk-flex uk-flex-middle" uk-grid>
     <div class="uk-width-1-4@m">
       <div class="tease-image uk-position-relative">
@@ -11,7 +13,7 @@
      </div>
     <div class="uk-width-expand@m">
       <div class="tease-details uk-margin-medium-left">
-        {% if not post._lottery_closed %}
+        {% if post._lottery_dates_to and not post._lottery_closed %}
           <div class="finishes uk-text-small uk-grid-collpase uk-grid-match uk-flex uk-flex-middle" uk-grid>
       
             <div class="completion_meta uk-width-expand@m">

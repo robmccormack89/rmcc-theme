@@ -19,25 +19,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$cats_args = array(
+  'taxonomy' => 'product_cat',
+  'hide_empty' => true,
+  'orderby' => 'slug',
+  'parent' => 0,
+);
+$cats = get_terms($cats_args);
+
 ?>
+
 <form class="uk-form-stacked uk-margin-medium-bottom woocommerce-ordering uk-position-relative" method="get">
 	
 	<div class="uk-child-width-1-2 uk-child-width-auto@m uk-grid-small" uk-grid>
-		<div class="filtering-category">
+		<?php if($cats): ?>
+			<div class="filtering-category">
 			<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">Filter</label>
 			<div class="uk-form-controls uk-position-relative">
-				<select name="product_cat" class="uk-select product_cats" id="form-stacked-select" aria-label="<?php esc_attr_e( 'Shop filter', 'cautious_octo_fiesta' ); ?>">
+				<select name="product_cat" class="uk-select uk-form-width-medium product_cats" id="form-stacked-select" aria-label="<?php esc_attr_e( 'Shop filter', 'cautious_octo_fiesta' ); ?>">
 					<?php if(!($_GET['product_cat'])): ?>
 						<option selected disabled hidden>Select a category</option>
 					<?php endif; ?>
-					<option value="competitions" <?php if($_GET['product_cat'] === 'competitions'): echo 'selected'; endif; ?>>Competitions</option>
+					<?php foreach ($cats as $cat) { ?>
+						<option value="<?php echo $cat->slug?>" <?php if($_GET['product_cat'] === $cat->slug): echo 'selected'; endif; ?>>
+							<?php echo $cat->name ?>
+						</option>
+					<?php } ?>
 				</select>
 			</div>
 		</div>
+		<?php endif; ?>
 		<div class="filtering-sorting">
 			<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">Sorting</label>
 			<div class="uk-form-controls">
-				<select name="orderby" class="uk-select orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
+				<select name="orderby" class="uk-select uk-form-width-medium orderby" aria-label="<?php esc_attr_e( 'Shop order', 'woocommerce' ); ?>">
 					<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
 						<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
 					<?php endforeach; ?>
@@ -53,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<input type="hidden" name="paged" value="1" />
-	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+	<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page', 'product_cat' ) ); ?>
 	
 </form>
 
