@@ -4,11 +4,15 @@
 {% if loop.index0 % 2 == 1 %}
   {% set flip_class = 'uk-flex-last@m' %}
 {% endif %}
-<div class="tease-post">
+<article id="Post{{post.id}}" class="tease-post {{post.class}}">
   <div class="uk-grid-match uk-flex uk-flex-middle" uk-grid>
     <div class="tease-image uk-width-1-2@m {{flip_class}}">
       <a class="uk-link-reset" href="{{post.link}}">
-        <img class="uk-border-rounded square-img-to-landscape-mobile" data-src="https://picsum.photos/500/400?random={{loop.index}}" width="500" height="400" alt="" uk-img>
+        <img 
+        class="uk-border-rounded square-img-to-landscape-mobile" 
+        data-src="{{ post.thumbnail.src|resize(500, 400)|default('https://picsum.photos/500/400?random=' ~ loop.index) }}" 
+        width="500" height="400" alt="{{post.thumbnail.alt}}" 
+        uk-img>
       </a>
     </div>
     <div class="tease-content uk-width-1-2@m">
@@ -27,4 +31,4 @@
       </div>
     </div>
   </div>
-</div>
+</article>
