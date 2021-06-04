@@ -34,8 +34,7 @@
       </div>
       
       {% if products is not empty %}
-        <!-- the products grid: use products_grid_columns for controlling the grid widths via the customizer -->
-        <div class="products products-grid archive-posts uk-child-width-1-2 uk-child-width-1-{{products_grid_columns}}@m" uk-grid="masonry: true">
+        <div class="products products-grid archive-posts uk-child-width-1-{{products_grid_columns}}@m" uk-grid="masonry: true">
           {% for post in products %}
             {% if products_grid_columns == 1 %}
               {% include 'tease-product-list.twig' %}
@@ -47,12 +46,16 @@
       {% endif %}
       
       {% if products is empty %}
-        <!-- if products is empty, do the defaukt woo action for no products found -->
-        {% do action('woocommerce_no_products_found') %}
+        <div class="shop-empty">
+          {% do action('woocommerce_no_products_found') %}
+        </div>
       {% endif %}
       
-      <!-- include pagination with settings -->
-      {% include 'pagination.twig' with pagination %}
+      {% if (pagination.next or pagination.prev) %}
+        <div class="shop-paged uk-margin-large-top">
+          {% include 'pagination.twig' %}
+        </div>
+      {% endif %}
       
       {% do action('woocommerce_after_shop_loop') %}
 

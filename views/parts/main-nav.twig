@@ -5,20 +5,20 @@
       {% if has_menu_main %}
         {% for item in menu_main.get_items %}
           {% if item.get_children %}
-            <li>
-              <a href="{{ item.link }}">{{ item.title }}
+            <li class="{{ item.classes | join(' ')|e('html_attr') }}">
+              <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}
                 <i class="fas fa-angle-down uk-margin-small-left"></i>
               </a>
               <div class="uk-navbar-dropdown">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
                   {% for child in item.get_children %}
-                    <li>
-                      <a href="{{ child.get_link }}">{{ child.title }}</a>
+                    <li class="{{ child.classes | join(' ')|e('html_attr') }}">
+                      <a href="{{ child.get_link|e('esc_url') }}">{{ child.title|e('esc_html') }}</a>
                       {% if child.children %}
                         <ul class="uk-nav-sub">
                           {% for third in child.children %}
-                            <li>
-                              <a href="{{ third.get_link }}">{{ third.title }}</a>
+                            <li class="{{ third.classes | join(' ')|e('html_attr') }}">
+                              <a href="{{ third.get_link|e('esc_url') }}">{{ third.title|e('esc_html') }}</a>
                             </li>
                           {% endfor %}
                         </ul>
@@ -29,31 +29,19 @@
               </div>
             </li>
           {% else %}
-            <li>
-              <a href="{{ item.get_link }}">{{ item.title }}</a>
+            <li class="{{ item.classes | join(' ')|e('html_attr') }}">
+              <a href="{{ item.get_link }}">{{ item.title|e('esc_html') }}</a>
             </li>
           {% endif %}
         {% endfor %}
       {% else %}
         <li>
-          <a href="/competitions">Competitions</a>
-        </li>
-        <li>
-          <a href="/sample-page">About</a>
-        </li>
-        <li>
-          <a href="/sample-page">FAQs</a>
-        </li>
-        <li>
-          <a href="/sample-page">How to Play</a>
-        </li>
-        <li>
-          <a href="/sample-page">Contact</a>
+          Add a menu to the Main Menu slot in Appearance > Menus
         </li>
       {% endif %}
     </ul>
     <!-- mobile menu toggle link -->
-    <a class="uk-navbar-toggle uk-hidden@m uk-text-emphasis" uk-navbar-toggle-icon href="#"></a>
+    <a class="uk-navbar-toggle uk-hidden@m uk-text-emphasis" uk-navbar-toggle-icon href="#MobileOffCanvas" uk-toggle></a>
   </div>
   <div class="uk-navbar-center">
     <!-- site logo -->
@@ -63,7 +51,7 @@
     <!-- header icons nav -->
     <ul class="header-icons uk-navbar-nav">
       <li class="user-icon uk-visible@m">
-        <a class="" href="{{dashboard_endpoint}}">
+        <a href="{{dashboard_endpoint}}">
           <svg class="user" cwidth="24px" height="24px" aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 24 24">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
@@ -74,7 +62,8 @@
         <a href="#MiniCartModal" uk-toggle>
           <svg class="basket" width="24px" height="24px" viewBox="0 -2 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g transform="translate(0.500000, 0.500000)" stroke="none" fill="currentColor" fill-rule="nonzero">
-              <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z"></path>
+              <path d="M0.2,11 L9.5,29 L26.4,29 L35.7,11 L0.2,11 Z M24.5,26 L11.5,26 L4.8,14 L31.2,14 L24.5,26 L24.5,26 Z M18.5,3 C22.7,3 25.5,6.3 25.5,8.5 L28.5,8.5 C28.5,4.5 24.2,0 18.5,0 C12.8,0 8.5,4.5 8.5,8.5 L11.5,8.5 C11.5,6.3 14.3,3 18.5,3 Z">
+              </path>
             </g>
           </svg>
           <span class="uk-margin-small-left uk-position-relative">
@@ -88,7 +77,8 @@
           <svg class="search" width="24px" height="24px" viewBox="-2 -2 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Search</title>
             <g stroke="none" fill="currentColor" fill-rule="nonzero">
-              <path d="M29.6,27.4 L22.9,20.7 C24.6,18.6 25.6,15.9 25.6,13 C25.6,6.1 20,0.5 13.1,0.5 C6.2,0.5 0.5,6.1 0.5,13 C0.5,19.9 6.1,25.5 13,25.5 C15.9,25.5 18.6,24.5 20.7,22.8 L27.4,29.5 L29.6,27.4 Z M3.5,13 C3.5,7.8 7.8,3.5 13,3.5 C18.2,3.5 22.5,7.8 22.5,13 C22.5,18.2 18.2,22.5 13,22.5 C7.8,22.5 3.5,18.2 3.5,13 Z"></path>
+              <path d="M29.6,27.4 L22.9,20.7 C24.6,18.6 25.6,15.9 25.6,13 C25.6,6.1 20,0.5 13.1,0.5 C6.2,0.5 0.5,6.1 0.5,13 C0.5,19.9 6.1,25.5 13,25.5 C15.9,25.5 18.6,24.5 20.7,22.8 L27.4,29.5 L29.6,27.4 Z M3.5,13 C3.5,7.8 7.8,3.5 13,3.5 C18.2,3.5 22.5,7.8 22.5,13 C22.5,18.2 18.2,22.5 13,22.5 C7.8,22.5 3.5,18.2 3.5,13 Z">
+              </path>
             </g>
           </svg>
         </a>
@@ -96,6 +86,36 @@
     </ul>
   </div>
 </nav>
+
+<div id="MobileOffCanvas" class="mobile-slide-navbar" uk-offcanvas="overlay: true;">
+  <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    
+    <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative" uk-nav>
+      <li class="uk-nav-header theme-border-bottom">Menu</li>
+      {% if has_menu_mobile %}
+        {% for item in menu_mobile.get_items %}
+          {% if item.get_children %}
+            <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }} uk-parent">
+              <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+              <ul class="uk-nav-sub">
+                {% for child in item.get_children %}
+                  <li class="theme-border-top">
+                    <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="theme-border-bottom {{ item.classes | join(' ')|e('html_attr') }}"><a title="{{ item.title|e('html_attr') }}" href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+    
+  </div>
+</div>
 
 <div id="ModalNavbarSearch" class="uk-modal-full" uk-modal>
   <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>

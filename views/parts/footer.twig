@@ -61,10 +61,10 @@
           </ul>
         </div>
         <div class="footer-contact">
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ __('Contact', 'cautious-octo-fiesta')|e('esc_html') }}</h4>
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ _x('Contact', 'Footer widget no.4: title', 'cautious-octo-fiesta')|e('esc_html') }}</h4>
           <p>
-            {{ __('We’re available by phone 123-456-789', 'cautious-octo-fiesta')|e('esc_html') }}<br>
-            {{ __('Monday till Friday 10 to 6 EST', 'cautious-octo-fiesta')|e('esc_html') }}
+            {{ _x('We’re available by phone 123-456-789', 'Footer widget no.4: text line 1', 'cautious-octo-fiesta')|e('esc_html') }}<br>
+            {{ _x('Monday till Friday 10 to 6 EST', 'Footer widget no.4: text line 2', 'cautious-octo-fiesta')|e('esc_html') }}
           </p>
         </div>
       </div>
@@ -75,11 +75,13 @@
       <div class="uk-grid-match uk-flex uk-flex-middle uk-flex-center" uk-grid>
         <div class="footer-copy uk-width-1-1 uk-width-expand@m">
           <div class="uk-width-2-3 uk-width-1-1@m uk-align-center uk-align-left@m uk-text-center uk-text-left@m">
-            © {{ "now"|date("Y") }} {{site.title|e('esc_html')}}. {{ __('All rights reserved.', 'cautious-octo-fiesta')|e('esc_html') }}
+            © {{ "now"|date("Y") }} {{ _x('Dream Winners. All rights reserved.', 'Footer Copyright Text', 'cautious-octo-fiesta')|e('esc_html') }}
           </div>
         </div>
         <div class="payment-icons uk-width-auto">
-          {{ __('Payment icons HTML goes here...', 'cautious-octo-fiesta') }}
+          <div class="static-payment-icons uk-grid-small uk-child-width-auto" uk-grid>
+            {% include 'payment-icons.twig' %}
+          </div>
         </div>
       </div>
     </div>

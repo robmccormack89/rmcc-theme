@@ -1,4 +1,6 @@
 // 1. Customizing variables from uikit. These will overwrite the UIKIT imports below. 
+$offcanvas-bar-background: #fff;
+$offcanvas-bar-color-mode: none;
 
 // 2. Import variables & mixins froim uikit. You can also use the default styling scss files, I have used the theme ones.
 @import "node_modules/uikit/src/scss/variables-theme.scss";

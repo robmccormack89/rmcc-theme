@@ -14,23 +14,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: views/temp/parts/footer.php:64
+msgctxt "Footer widget no.4: title"
 msgid "Contact"
 msgstr ""
 
 #: views/temp/parts/footer.php:66
+msgctxt "Footer widget no.4: text line 1"
 msgid "We’re available by phone 123-456-789"
 msgstr ""
 
 #: views/temp/parts/footer.php:67
+msgctxt "Footer widget no.4: text line 2"
 msgid "Monday till Friday 10 to 6 EST"
 msgstr ""
 
 #: views/temp/parts/footer.php:78
-msgid "All rights reserved."
+msgctxt "Footer Copyright Text"
+msgid "Dream Winners. All rights reserved."
 msgstr ""
 
-#: views/temp/parts/footer.php:82
-msgid "Payment icons go here..."
+#: views/temp/parts/main-nav.php:99
+msgctxt "Search popup placeholder text"
+msgid "Start typing..."
 msgstr ""
 
 #: views/temp/parts/subscribe.php:6
@@ -65,32 +70,32 @@ msgstr ""
 msgid "info@dreamwinners.ie"
 msgstr ""
 
-#: views/temp/wp/front-page.php:14
+#: views/temp/wp/front-page.php:15
 msgctxt "Homepage Hero Section Heading Text"
 msgid "Lorem ipsum dolor sit amet consectetur"
 msgstr ""
 
-#: views/temp/wp/front-page.php:16
+#: views/temp/wp/front-page.php:19
 msgctxt "Homepage Hero Section Sub-heading Text"
 msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
-#: views/temp/wp/front-page.php:27
+#: views/temp/wp/front-page.php:32
 msgctxt "Homepage Featured Section Heading"
 msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
-#: views/temp/wp/front-page.php:28
-msgctxt "Homepage Featured Section text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+#: views/temp/wp/front-page.php:35
+msgctxt "Homepage Featured Section text"
 msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor."
 msgstr ""
 
-#: views/temp/wp/front-page.php:29
+#: views/temp/wp/front-page.php:37
 msgctxt "Homepage Featured Section Link"
 msgid "#"
 msgstr ""
 
-#: views/temp/wp/front-page.php:29
+#: views/temp/wp/front-page.php:38
 msgctxt "Homepage Featured Section Link Text"
 msgid "Lorem Ipsum Dolor"
 msgstr ""
