@@ -9,7 +9,8 @@ const rename = require('gulp-rename');
 const config = {
   "text_domain" : "cautious-octo-fiesta",
   "twig_files"  : "views/**/*.twig",
-  "php_files"   : "**/*.php",
+  // "php_files"   : "**/*.php", use for translations in all php files
+  "php_files"   : "views/**/*.php", // use for only translatins in twig files
   "cacheFolder" : "views/temp",
   "destFolder"  : "languages",
 };

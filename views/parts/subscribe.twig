@@ -3,13 +3,13 @@
     <div class="uk-margin-bottom uk-text-emphasis">
       <i class="far fa-envelope fa-2x"></i>
     </div>
-    <h2 class="uk-margin-remove-top">Sign up for first access to new competitions, sales & events</h2>
+    <h2 class="uk-margin-remove-top">{{ __('Sign up for first access to new competitions, sales & events', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
     <div class="uk-margin-top">
       <div uk-form-custom="target: true">
-        <input type="text" class="subscribe-form uk-input uk-form-width-large uk-form-large" type="text" placeholder="Enter your email here..">
+        <input type="text" class="subscribe-form uk-input uk-form-width-large uk-form-large" type="text" placeholder="{{ __('Enter your email here...', 'cautious-octo-fiesta')|e('esc_html') }}">
       </div>
-      <button class="uk-button uk-button-primary uk-button-large">Subscribe</button>
+      <button class="uk-button uk-button-primary uk-button-large">{{ __('Subscribe', 'cautious-octo-fiesta')|e('esc_html') }}</button>
     </div>
-    <p class="uk-text-emphasis">Get notified when we launch.</p>
+    <p class="uk-text-emphasis">{{ __('Get notified about the latest promotions & updates.', 'cautious-octo-fiesta')|e('esc_html') }}</p>
   <div>
 </section>

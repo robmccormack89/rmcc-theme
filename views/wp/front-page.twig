@@ -11,9 +11,13 @@
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">{{ __('Homepage Hero Introduction Text', 'cautious-octo-fiesta') }}</h1>
+          <h1 class="uk-margin-large-top">
+            {{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage Hero Section Heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
+          </h1>
           <hr class="uk-divider-small">
-          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ __('Homepage Hero Sub Text', 'cautious-octo-fiesta') }}</p>
+          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">
+            {{ _x('Lorem ipsum dolor sit amet', 'Homepage Hero Section Sub-heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
+          </p>
           <a href="#Next" class="uk-button uk-button-default uk-button-large" uk-scroll="offset:150">Learn more</a>
         </div>
       </div>
@@ -24,9 +28,15 @@
 {% block contentwrap %}
   <section id="Next" class="uk-section uk-section-primary">
     <div class="uk-text-center uk-container uk-container-xsmall">
-      <h2 class="uk-h3">{{ __('Homepage Featured Section', 'cautious-octo-fiesta') }}</h2>
-      <p>{{ __('Homepage Featured Section text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.', 'cautious-octo-fiesta') }}</p>
-      <a class="feature-link uk-text-uppercase" href="#">{{ __('Featured Link Text', 'cautious-octo-fiesta') }}</a>
+      <h2 class="uk-h3">
+        {{ _x('Lorem ipsum dolor sit amet', 'Homepage Featured Section Heading', 'cautious-octo-fiesta')|e('esc_html') }}
+      </h2>
+      <p>
+        {{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage Featured Section text', 'cautious-octo-fiesta')|e('esc_html') }}
+      </p>
+      <a class="feature-link uk-text-uppercase" href="{{ _x('#', 'Homepage Featured Section Link', 'cautious-octo-fiesta')|e('esc_html') }}">
+        {{ _x('Lorem Ipsum Dolor', 'Homepage Featured Section Link Text', 'cautious-octo-fiesta')|e('esc_html') }}
+      </a>
     </div>
   </section>
   <section class="content-section uk-section uk-section-large uk-section-default">

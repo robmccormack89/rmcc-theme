@@ -84,7 +84,7 @@
         </a>
       </li>
       <li class="search-icon">
-        <a class="" href="#">
+        <a href="#ModalNavbarSearch" uk-toggle>
           <svg class="search" width="24px" height="24px" viewBox="-2 -2 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Search</title>
             <g stroke="none" fill="currentColor" fill-rule="nonzero">
@@ -96,6 +96,26 @@
     </ul>
   </div>
 </nav>
+
+<div id="ModalNavbarSearch" class="uk-modal-full" uk-modal>
+  <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+    <button class="uk-modal-close-full" type="button" uk-close></button>
+    <form class="uk-search uk-search-large" role="search" method="get" action="{{site.url}}">
+      <input 
+      id="header-search" 
+      class="uk-search-input uk-text-center" 
+      type="search" 
+      name="s" 
+      placeholder="{{ _x('Start typing...', 'Search popup placeholder text', 'cautious-octo-fiesta')|e('esc_html') }}" 
+      required 
+      maxlength="100" 
+      pattern=".*\S+.*" 
+      autocomplete="off" 
+      autofocus>
+      <input type="hidden" name="post_type" value="product" />
+    </form>
+  </div>
+</div>
 
 <div id="MiniCartModal" class="minicart-modal" uk-modal>
   <div class="uk-modal-dialog">

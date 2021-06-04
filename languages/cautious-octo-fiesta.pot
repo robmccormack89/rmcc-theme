@@ -13,38 +13,84 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: page-templates/account-template.php:3
-msgid "My Account Template"
+#: views/temp/parts/footer.php:64
+msgid "Contact"
 msgstr ""
 
-#: page-templates/basket-template.php:3
-msgid "Basket Template"
+#: views/temp/parts/footer.php:66
+msgid "We’re available by phone 123-456-789"
 msgstr ""
 
-#: page-templates/checkout-template.php:3
-msgid "Checkout Template"
+#: views/temp/parts/footer.php:67
+msgid "Monday till Friday 10 to 6 EST"
 msgstr ""
 
-#: page-templates/coming-soon-template.php:3
-msgid "Coming Soon Template"
+#: views/temp/parts/footer.php:78
+msgid "All rights reserved."
 msgstr ""
 
-#: views/temp/coming-soon/launch-socials.php:2
-msgid "https://www.facebook.com"
+#: views/temp/parts/footer.php:82
+msgid "Payment icons go here..."
 msgstr ""
 
-#: views/temp/coming-soon/launch-socials.php:7
-msgid "info@dreamwinners.ie"
+#: views/temp/parts/subscribe.php:6
+msgid "Sign up for first access to new competitions, sales & events"
 msgstr ""
 
-#: views/temp/coming-soon/launch-text.php:4
-msgid "Coming Soon!"
+#: views/temp/parts/subscribe.php:9
+msgid "Enter your email here..."
 msgstr ""
 
-#: views/temp/coming-soon/launch-text.php:8
+#: views/temp/parts/subscribe.php:11
+msgid "Subscribe"
+msgstr ""
+
+#: views/temp/parts/subscribe.php:13
+msgid "Get notified about the latest promotions & updates."
+msgstr ""
+
+#: views/temp/wp/coming-soon.php:46
 msgid "Our new website is on its way."
 msgstr ""
 
-#: views/temp/coming-soon/launch-text.php:12
-msgid "Get notified when we launch."
+#: views/temp/wp/coming-soon.php:50
+msgid "Get notified when we launch"
+msgstr ""
+
+#: views/temp/wp/coming-soon.php:56
+msgid "https://www.facebook.com"
+msgstr ""
+
+#: views/temp/wp/coming-soon.php:61
+msgid "info@dreamwinners.ie"
+msgstr ""
+
+#: views/temp/wp/front-page.php:14
+msgctxt "Homepage Hero Section Heading Text"
+msgid "Lorem ipsum dolor sit amet consectetur"
+msgstr ""
+
+#: views/temp/wp/front-page.php:16
+msgctxt "Homepage Hero Section Sub-heading Text"
+msgid "Lorem ipsum dolor sit amet"
+msgstr ""
+
+#: views/temp/wp/front-page.php:27
+msgctxt "Homepage Featured Section Heading"
+msgid "Lorem ipsum dolor sit amet"
+msgstr ""
+
+#: views/temp/wp/front-page.php:28
+msgctxt "Homepage Featured Section text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor."
+msgstr ""
+
+#: views/temp/wp/front-page.php:29
+msgctxt "Homepage Featured Section Link"
+msgid "#"
+msgstr ""
+
+#: views/temp/wp/front-page.php:29
+msgctxt "Homepage Featured Section Link Text"
+msgid "Lorem Ipsum Dolor"
 msgstr ""

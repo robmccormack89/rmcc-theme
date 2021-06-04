@@ -8,11 +8,11 @@
           {% else %}
             {% set footer_menu_1_title = 'Footer Menu 1' %}
           {% endif %}
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_1_title }}</h4>
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_1_title|e('esc_html') }}</h4>
           <ul class="uk-nav uk-nav-default">
             {% if has_footer_menu_1 %}
               {% for item in footer_menu_1.get_items %}
-                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
               {% endfor %}
             {% else %}
               <li><a href="#">Lorem Ipsum</a></li>
@@ -27,11 +27,11 @@
           {% else %}
             {% set footer_menu_2_title = 'Footer Menu 2' %}
           {% endif %}
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_2_title }}</h4>
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_2_title|e('esc_html') }}</h4>
           <ul class="uk-nav uk-nav-default">
             {% if has_footer_menu_2 %}
               {% for item in footer_menu_2.get_items %}
-                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
               {% endfor %}
             {% else %}
               <li><a href="#">Lorem Ipsum</a></li>
@@ -47,11 +47,11 @@
           {% else %}
             {% set footer_menu_3_title = 'Footer Menu 3' %}
           {% endif %}
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_3_title }}</h4>
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_3_title|e('esc_html') }}</h4>
           <ul class="uk-nav uk-nav-default">
             {% if has_footer_menu_3 %}
               {% for item in footer_menu_3.get_items %}
-                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
               {% endfor %}
             {% else %}
               <li><a href="#">Lorem Ipsum</a></li>
@@ -61,10 +61,10 @@
           </ul>
         </div>
         <div class="footer-contact">
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ __('Contact', 'cautious-octo-fiesta') }}</h4>
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ __('Contact', 'cautious-octo-fiesta')|e('esc_html') }}</h4>
           <p>
-            {{ __('We’re available by phone 123-456-789', 'cautious-octo-fiesta') }}<br>
-            {{ __('Monday till Friday 10 to 6 EST', 'cautious-octo-fiesta') }}
+            {{ __('We’re available by phone 123-456-789', 'cautious-octo-fiesta')|e('esc_html') }}<br>
+            {{ __('Monday till Friday 10 to 6 EST', 'cautious-octo-fiesta')|e('esc_html') }}
           </p>
         </div>
       </div>
@@ -75,30 +75,11 @@
       <div class="uk-grid-match uk-flex uk-flex-middle uk-flex-center" uk-grid>
         <div class="footer-copy uk-width-1-1 uk-width-expand@m">
           <div class="uk-width-2-3 uk-width-1-1@m uk-align-center uk-align-left@m uk-text-center uk-text-left@m">
-            © {{ "now"|date("Y") }} {{site.title}}. {{ __('All rights reserved.', 'cautious-octo-fiesta') }}
+            © {{ "now"|date("Y") }} {{site.title|e('esc_html')}}. {{ __('All rights reserved.', 'cautious-octo-fiesta')|e('esc_html') }}
           </div>
         </div>
         <div class="payment-icons uk-width-auto">
-          <div class="uk-grid-small uk-child-width-auto" uk-grid>
-            <div>
-              <img alt="american_express" src="{{theme.link}}/assets/images/american_express.svg">
-            </div>
-            <div>
-              <img alt="apple_pay" src="{{theme.link}}/assets/images/apple_pay.svg">
-            </div>
-            <div>
-              <img alt="google_pay" src="{{theme.link}}/assets/images/google_pay.svg">
-            </div>
-            <div>
-              <img alt="maestro" src="{{theme.link}}/assets/images/maestro.svg">
-            </div>
-            <div>
-              <img alt="master" src="{{theme.link}}/assets/images/master.svg">
-            </div>
-            <div>
-              <img alt="visa" src="{{theme.link}}/assets/images/visa.svg">
-            </div>
-          </div>
+          {{ __('Payment icons HTML goes here...', 'cautious-octo-fiesta') }}
         </div>
       </div>
     </div>
