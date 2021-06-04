@@ -31,23 +31,23 @@ $cats = get_terms($cats_args);
 
 <form class="uk-form-stacked uk-margin-medium-bottom woocommerce-ordering uk-position-relative" method="get">
 	
-	<div class="uk-child-width-1-2 uk-child-width-auto@m uk-grid-small" uk-grid>
+	<div class="uk-child-width-1-2 uk-child-width-auto@s uk-grid-small" uk-grid>
 		<?php if($cats): ?>
 			<div class="filtering-category">
-			<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">Filter</label>
-			<div class="uk-form-controls uk-position-relative">
-				<select name="product_cat" class="uk-select uk-form-width-medium product_cats" id="form-stacked-select" aria-label="<?php esc_attr_e( 'Shop filter', 'cautious_octo_fiesta' ); ?>">
-					<?php if(!($_GET['product_cat'])): ?>
-						<option selected disabled hidden>Select a category</option>
-					<?php endif; ?>
-					<?php foreach ($cats as $cat) { ?>
-						<option value="<?php echo $cat->slug?>" <?php if($_GET['product_cat'] === $cat->slug): echo 'selected'; endif; ?>>
-							<?php echo $cat->name ?>
-						</option>
-					<?php } ?>
-				</select>
+				<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">Filter</label>
+				<div class="uk-form-controls uk-position-relative">
+					<select name="product_cat" class="uk-select uk-form-width-medium product_cats" id="form-stacked-select" aria-label="<?php esc_attr_e( 'Shop filter', 'cautious_octo_fiesta' ); ?>">
+						<?php if(!($_GET['product_cat'])): ?>
+							<option selected disabled hidden>Select a category</option>
+						<?php endif; ?>
+						<?php foreach ($cats as $cat) { ?>
+							<option value="<?php echo $cat->slug?>" <?php if($_GET['product_cat'] === $cat->slug): echo 'selected'; endif; ?>>
+								<?php echo $cat->name ?>
+							</option>
+						<?php } ?>
+					</select>
+				</div>
 			</div>
-		</div>
 		<?php endif; ?>
 		<div class="filtering-sorting">
 			<label class="uk-form-label uk-text-bold uk-text-emphasis uk-text-uppercase" for="form-stacked-select">Sorting</label>

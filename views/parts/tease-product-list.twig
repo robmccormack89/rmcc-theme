@@ -15,8 +15,7 @@
       <div class="tease-details uk-margin-medium-left">
         {% if post._lottery_dates_to and not post._lottery_closed %}
           <div class="finishes uk-text-small uk-grid-collpase uk-grid-match uk-flex uk-flex-middle" uk-grid>
-      
-            <div class="completion_meta uk-width-expand@m">
+            <div class="completion_meta uk-width-expand">
               
               {% set days_left = fn('dates_to_days', post._lottery_dates_to) %}
               {% set hours_left = fn('times_to_hours', post._lottery_dates_to) %}
@@ -31,7 +30,7 @@
               {% endif %}
               
             </div>
-            <div class="tickets-meta uk-width-auto@m">
+            <div class="tickets-meta uk-width-auto">
               {% set tickets_left = post._max_tickets - post._lottery_participants_count %}
               {% if tickets_left > 25 %}
                 <span class="uk-text-meta">{{tickets_left}} Tickets left</span>
@@ -41,7 +40,6 @@
                 <span class="uk-text-danger">Only {{tickets_left}} Left!</span>
               {% endif %}
             </div>
-            
           </div>
         {% endif %}
         

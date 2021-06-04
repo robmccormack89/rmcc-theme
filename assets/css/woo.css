@@ -141,3 +141,13 @@ label[for=coupon_code] {
 .tease-buttons .uk-button-default:hover, .tease-buttons .uk-button-default:focus {
   border-color: #008b96;
 }
+
+/* list tease product fixes for mobile */
+@media only screen and (max-width:959px) {
+  .product-list-item .uk-margin-medium-left {
+    margin-left: 0px!important;
+  }
+  .product-list-item .finishes {
+    margin-top: 5px;
+  }
+}

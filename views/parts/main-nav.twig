@@ -1,7 +1,7 @@
 <nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
   <div class="uk-navbar-left">
     <!-- main menu desktop -->
-    <ul class="main-nav uk-navbar-nav uk-visible@m">
+    <ul class="main-nav uk-navbar-nav uk-visible@l">
       {% if has_menu_main %}
         {% for item in menu_main.get_items %}
           {% if item.get_children %}
@@ -41,7 +41,7 @@
       {% endif %}
     </ul>
     <!-- mobile menu toggle link -->
-    <a class="uk-navbar-toggle uk-hidden@m uk-text-emphasis" uk-navbar-toggle-icon href="#MobileOffCanvas" uk-toggle></a>
+    <a class="uk-navbar-toggle uk-hidden@l uk-text-emphasis" uk-navbar-toggle-icon href="#MobileOffCanvas" uk-toggle></a>
   </div>
   <div class="uk-navbar-center">
     <!-- site logo -->
