@@ -2,36 +2,69 @@
   <div class="footer-main uk-section uk-section-default theme-border-top">
     <div class="uk-container">
       <div class="uk-child-width-1-4@m" uk-grid>
-        <div>
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">Competitions</h4>
+        <div class="footer-menu-1">
+          {% if has_footer_menu_1 %}
+            {% set footer_menu_1_title = footer_menu_1.title %}
+          {% else %}
+            {% set footer_menu_1_title = 'Footer Menu 1' %}
+          {% endif %}
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_1_title }}</h4>
           <ul class="uk-nav uk-nav-default">
-            <li><a href="#">Lorem Ipsum</a></li>
-            <li><a href="#">Sed do eiusmod</a></li>
-            <li><a href="#">Excepteur sint</a></li>
+            {% if has_footer_menu_1 %}
+              {% for item in footer_menu_1.get_items %}
+                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+              {% endfor %}
+            {% else %}
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Sed do eiusmod</a></li>
+              <li><a href="#">Excepteur sint</a></li>
+            {% endif %}
           </ul>
         </div>
-        <div>
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">About</h4>
+        <div class="footer-menu-2">
+          {% if has_footer_menu_2 %}
+            {% set footer_menu_2_title = footer_menu_2.title %}
+          {% else %}
+            {% set footer_menu_2_title = 'Footer Menu 2' %}
+          {% endif %}
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_2_title }}</h4>
           <ul class="uk-nav uk-nav-default">
-            <li><a href="#">Lorem Ipsum</a></li>
-            <li><a href="#">Sed do eiusmod</a></li>
-            <li><a href="#">Excepteur sint</a></li>
-            <li><a href="#">Duis aute irure</a></li>
+            {% if has_footer_menu_2 %}
+              {% for item in footer_menu_2.get_items %}
+                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+              {% endfor %}
+            {% else %}
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Sed do eiusmod</a></li>
+              <li><a href="#">Excepteur sint</a></li>
+              <li><a href="#">Duis aute irure</a></li>
+            {% endif %}
           </ul>
         </div>
-        <div>
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">Support</h4>
+        <div class="footer-menu-3">
+          {% if has_footer_menu_3 %}
+            {% set footer_menu_3_title = footer_menu_3.title %}
+          {% else %}
+            {% set footer_menu_3_title = 'Footer Menu 3' %}
+          {% endif %}
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_3_title }}</h4>
           <ul class="uk-nav uk-nav-default">
-            <li><a href="#">Lorem Ipsum</a></li>
-            <li><a href="#">Sed do eiusmod</a></li>
-            <li><a href="#">Excepteur sint</a></li>
+            {% if has_footer_menu_3 %}
+              {% for item in footer_menu_3.get_items %}
+                <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+              {% endfor %}
+            {% else %}
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Sed do eiusmod</a></li>
+              <li><a href="#">Excepteur sint</a></li>
+            {% endif %}
           </ul>
         </div>
-        <div>
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">Contact</h4>
+        <div class="footer-contact">
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ __('Contact', 'cautious-octo-fiesta') }}</h4>
           <p>
-            We’re available by phone 123-456-789<br>
-            Monday till Friday 10 to 6 EST
+            {{ __('We’re available by phone 123-456-789', 'cautious-octo-fiesta') }}<br>
+            {{ __('Monday till Friday 10 to 6 EST', 'cautious-octo-fiesta') }}
           </p>
         </div>
       </div>
@@ -40,13 +73,13 @@
   <div class="footer-bottom uk-section uk-section-small uk-section-default theme-border-top">
     <div class="uk-container">
       <div class="uk-grid-match uk-flex uk-flex-middle uk-flex-center" uk-grid>
-        <div class="uk-width-1-1 uk-width-expand@m">
+        <div class="footer-copy uk-width-1-1 uk-width-expand@m">
           <div class="uk-width-2-3 uk-width-1-1@m uk-align-center uk-align-left@m uk-text-center uk-text-left@m">
-            © 2021 {{site.title}}. All rights reserved.
+            © {{ "now"|date("Y") }} {{site.title}}. {{ __('All rights reserved.', 'cautious-octo-fiesta') }}
           </div>
         </div>
-        <div class="uk-width-auto">
-          <div class="payment-icons uk-grid-small uk-child-width-auto" uk-grid>
+        <div class="payment-icons uk-width-auto">
+          <div class="uk-grid-small uk-child-width-auto" uk-grid>
             <div>
               <img alt="american_express" src="{{theme.link}}/assets/images/american_express.svg">
             </div>

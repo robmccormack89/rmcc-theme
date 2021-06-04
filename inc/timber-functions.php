@@ -262,6 +262,9 @@ class CautiousOctoFiesta extends Timber\Site
     register_nav_menus(array(
       'main_menu' => 'Main Menu',
       'mobile_menu' => 'Mobile Menu',
+      'footer_menu_1' => 'Footer Menu 1',
+      'footer_menu_2' => 'Footer Menu 2',
+      'footer_menu_3' => 'Footer Menu 3',
     ));
   }
 
@@ -287,10 +290,20 @@ class CautiousOctoFiesta extends Timber\Site
     $context['theme_logo_url'] = $theme_logo_url;
     // menu register & args
     $main_menu_args = array( 'depth' => 3 );
-    $context['menu_main'] = new Timber\Menu( 'main_menu' );
+    $context['menu_main'] = new Timber\Menu( 'main_menu', $main_menu_args );
     $context['has_menu_main'] = has_nav_menu( 'main_menu' );
-    $context['menu_mobile'] = new Timber\Menu('mobile_menu');
+    $context['menu_mobile'] = new Timber\Menu( 'mobile_menu', $main_menu_args );
     $context['has_menu_mobile'] = has_nav_menu( 'mobile_menu' );
+    
+    $footer_menu_args = array( 'depth' => 1 );
+    $context['footer_menu_1'] = new Timber\Menu( 'footer_menu_1', $footer_menu_args );
+    $context['footer_menu_2'] = new Timber\Menu( 'footer_menu_2', $footer_menu_args );
+    $context['footer_menu_3'] = new Timber\Menu( 'footer_menu_3', $footer_menu_args );
+
+    $context['has_footer_menu_1'] = has_nav_menu( 'footer_menu_1' );
+    $context['has_footer_menu_2'] = has_nav_menu( 'footer_menu_2' );
+    $context['has_footer_menu_3'] = has_nav_menu( 'footer_menu_3' );
+
     // woo my account endpoints
     $context['dashboard_endpoint'] = wc_get_account_endpoint_url( 'dashboard' );
     $context['address_endpoint'] = wc_get_account_endpoint_url( 'edit-address' );

@@ -11,10 +11,10 @@
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">Lorem ipsum dolor. Duis aute irure</h1>
+          <h1 class="uk-margin-large-top">{{ __('Homepage Hero Introduction Text', 'cautious-octo-fiesta') }}</h1>
           <hr class="uk-divider-small">
-          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">Lorem ipsum dolor sit amet</p>
-          <a href="#" class="uk-button uk-button-default uk-button-large">Learn more</a>
+          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ __('Homepage Hero Sub Text', 'cautious-octo-fiesta') }}</p>
+          <a href="#Next" class="uk-button uk-button-default uk-button-large" uk-scroll="offset:150">Learn more</a>
         </div>
       </div>
     </div>
@@ -22,11 +22,11 @@
 {% endblock %}
 
 {% block contentwrap %}
-  <section class="uk-section uk-section-primary">
-    <div class="uk-text-center uk-container uk-container-small">
-      <h2 class="uk-h3">Lorem Ipsum Dolor</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-      <a class="feature-link uk-text-uppercase" href="#">View our Competitions</a>
+  <section id="Next" class="uk-section uk-section-primary">
+    <div class="uk-text-center uk-container uk-container-xsmall">
+      <h2 class="uk-h3">{{ __('Homepage Featured Section', 'cautious-octo-fiesta') }}</h2>
+      <p>{{ __('Homepage Featured Section text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.', 'cautious-octo-fiesta') }}</p>
+      <a class="feature-link uk-text-uppercase" href="#">{{ __('Featured Link Text', 'cautious-octo-fiesta') }}</a>
     </div>
   </section>
   <section class="content-section uk-section uk-section-large uk-section-default">

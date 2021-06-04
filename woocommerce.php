@@ -35,7 +35,7 @@ if ( is_singular( 'product' ) ) {
   
   wp_reset_postdata();
   
-  Timber::render( 'single-product.twig', $context );
+  Timber::render( 'product.twig', $context );
   
 } else { // is not singular, then it must be an archive!
   
