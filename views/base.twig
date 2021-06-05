@@ -193,6 +193,42 @@
           }
         }
       </style>
+      
+      <style>
+        /* shop toolbar */
+        .shop-fixednav {
+          display: none;
+          height: 53px;
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 350;
+          background-color: #FFF;
+          box-shadow: 0 0 9px rgb(0 0 0 / 12%);
+        }
+        .shop-fixednav .uk-container {
+          padding: 8px 0 0px 0;
+        }
+        .shop-fixednav .header-cart-count {
+          top: 5px;
+          left: auto;
+          right: 22px;
+          font-size: 11px;
+          line-height: 15px;
+          min-width: 15px;
+          height: 15px;
+          border-radius: 15px;
+        }
+        @media only screen and (max-width:959px) {
+          .shop-fixednav {
+            display: block;
+          }
+          footer {
+            padding-bottom: 53px;
+          }
+        }
+      </style>
     {% endblock %}
     
     {% block styles %}
@@ -231,6 +267,10 @@
       
       {% block footer %}
         {% include 'footer.twig' %}
+      {% endblock %}
+      
+      {% block shop_fixed_nav %}
+        {% include 'shop-fixed-nav.twig' %} 
       {% endblock %}
       
       {{ function('wp_footer') }}

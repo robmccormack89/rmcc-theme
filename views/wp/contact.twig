@@ -1,32 +1,12 @@
 {% extends 'page.twig' %}
 
-{% block styles %}
-  <style>
-    .uk-tab>*>a {
-      border-width: 3px;
-    }
-    .uk-tab>.uk-active>a {
-      border-color: #008b96;
-      color: #333;
-    }
-    .uk-tab:before {
-      border-bottom: 1px solid #e5e5e5;
-      bottom: 1px;
-    }
-  </style>
-{% endblock %}
-
 {% block contentwrap %}
 
   <section class="uk-section uk-container uk-container-xsmall" data-template="contact.twig">
       
     <div class="contact-page-info">
       
-      <p>Dont hesitate to get in touch!</p>
-      
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
-      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      {{contact_page_text}}
       
       <hr>
     
