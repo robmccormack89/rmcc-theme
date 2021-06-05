@@ -1,14 +1,14 @@
 <div id="post-{{post.ID}}" class="the-post item {{ post.class }}" data-template="tease-winners.twig">
-  <div class="uk-card uk-card-default">
+  <div class="uk-card uk-box-shadow-small uk-box-shadow-hover-medium">
     <div class="uk-card-media-top fat-border-bottom">
       {% if post.get_thumbnail %}
       <a title="{{ post.thumbnail.title }}" uk-toggle="target: #modal-post-{{post.ID}}">
-        <img data-src="{{ post.thumbnail.src }}" width="800" height="300" alt="{{ post.thumbnail.alt }}" uk-img>
+        <img data-src="{{ post.thumbnail.src|resize(500, 400) }}" width="500" height="400" alt="{{ post.thumbnail.alt }}" uk-img>
       </a>
       {% endif %}
     </div>
     <div class="uk-card-body uk-padding-small">
-      <h3 class="uk-card-title uk-margin-small-top">{{post.title}}</h3>
+      <h3 class="uk-h4 uk-margin-small-top">{{post.title}}</h3>
       <p>{{post.date | date}}</p>
     </div>
   </div>

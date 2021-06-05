@@ -12,6 +12,13 @@ function set_posts_per_page_for_entry_lists( $query ) {
 }
 add_action( 'pre_get_posts', 'set_posts_per_page_for_entry_lists' );
  
+function set_posts_per_page_for_winners( $query ) {
+  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'winners' ) ) {
+    $query->set( 'posts_per_page', '8' );
+  }
+}
+add_action( 'pre_get_posts', 'set_posts_per_page_for_winners' );
+ 
 function dates_to_days($date) {
   $date1 = new DateTime('now');
   $date2 = new DateTime($date);
