@@ -69,6 +69,19 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 *
 */
 
+.uk-logo, .uk-logo:hover, .uk-logo:focus {
+  color: #008b96;
+}
+.header-muted .uk-logo, .header-muted .uk-logo:hover, .header-muted .uk-logo:focus {
+  color: #1d1d1d;
+}
+.header-muted .uk-sticky-below .uk-logo, .header-muted .uk-sticky-below .uk-logo:hover, .header-muted .uk-sticky-below .uk-logo:focus {
+  color: #008b96;
+}
+.uk-light .uk-logo, .uk-light .uk-logo:hover, .uk-light .uk-logo:focus {
+  color: #fff;
+}
+
 /* header icons styles */
 svg.user {
   fill: transparent;
@@ -82,7 +95,7 @@ svg.search, svg.search, svg.basket, svg.basket {
 .header-icons .uk-navbar-item, 
 .header-icons.uk-navbar-nav>li>a, 
 .header-icons .uk-navbar-toggle {
-  color: #008b96;
+  /* color: #008b96; */
 }
 .header-icons .uk-navbar-item:hover, 
 .header-icons .uk-navbar-item:focus, 
@@ -90,7 +103,7 @@ svg.search, svg.search, svg.basket, svg.basket {
 .header-icons.uk-navbar-nav>li>a:focus, 
 .header-icons .uk-navbar-toggle:hover,
 .header-icons .uk-navbar-toggle:focus {
-  color: #6c1a4b;
+  color: #008b96;
 }
 .uk-light .header-icons .uk-navbar-item, 
 .uk-light .header-icons.uk-navbar-nav>li>a, 
@@ -167,13 +180,11 @@ svg.search, svg.search, svg.basket, svg.basket {
   color: #c1c1c1;
 }
 .mobile-slide-navbar .uk-nav-header {
-  font-size: 1rem;
   background-color: #f9f9f9;
-  font-weight: 700;
   padding: 5px 10px;
   text-transform: uppercase;
 }
-.uk-offcanvas-close {
+.mobile-slide-navbar .uk-offcanvas-close {
   padding: 10px;
   position: absolute;
   right: 5px;

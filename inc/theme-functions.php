@@ -5,7 +5,6 @@
  * @package Cautious_Octo_Fiesta
  */
  
- 
 function dates_to_days($date) {
   $date1 = new DateTime('now');
   $date2 = new DateTime($date);

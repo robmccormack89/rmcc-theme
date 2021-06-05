@@ -1,4 +1,4 @@
-{% extends "page-default.twig" %}
+{% extends "page.twig" %}
 
 {% block header %}
   <header class="uk-background-default">
@@ -6,4 +6,13 @@
       {% include 'main-nav.twig' %}
     </div>
   </header>
+{% endblock %}
+
+{% block contentwrap %}
+  <section class="uk-section">
+    <div class="single-content uk-container uk-container-xsmall">
+      <h1 class="uk-text-center uk-text-bold uk-margin-medium-bottom">{{post.title}}</h1>
+      {{post.content}}
+    </div>
+  </section>
 {% endblock %}

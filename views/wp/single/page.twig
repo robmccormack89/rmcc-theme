@@ -1,1 +1,24 @@
-{% extends "page-muted.twig" %}
+{% extends "base.twig" %}
+
+{% block header %}
+  <header class="header-muted">
+    <div class="header-top-nav uk-position-top uk-position-z-index">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+        {% include 'main-nav.twig' %}
+      </div>
+    </div>
+    <div class="uk-section uk-section-large uk-section-muted theme-border-bottom">
+      <div class="uk-container uk-container-small">
+        <h1 class="uk-text-bold uk-margin-large-top uk-text-center">{{post.title}}</h1>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block contentwrap %}
+  <section class="uk-section">
+    <div class="single-content uk-container uk-container-xsmall">
+      {{post.content}}
+    </div>
+  </section>
+{% endblock %}
