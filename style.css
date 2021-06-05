@@ -69,13 +69,15 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 *
 */
 
-.uk-logo, .uk-logo:hover, .uk-logo:focus {
-  color: #008b96;
+.uk-logo,
+.header-muted .uk-logo,
+.header-muted .uk-sticky-below .uk-logo {
+  color: #0e0e0e;
+  transition: color 150ms;
 }
-.header-muted .uk-logo, .header-muted .uk-logo:hover, .header-muted .uk-logo:focus {
-  color: #1d1d1d;
-}
-.header-muted .uk-sticky-below .uk-logo, .header-muted .uk-sticky-below .uk-logo:hover, .header-muted .uk-sticky-below .uk-logo:focus {
+.uk-logo:hover, .uk-logo:focus,
+.header-muted .uk-logo:hover, .header-muted .uk-logo:focus,
+.header-muted .uk-sticky-below .uk-logo:hover, .header-muted .uk-sticky-below .uk-logo:focus {
   color: #008b96;
 }
 .uk-light .uk-logo, .uk-light .uk-logo:hover, .uk-light .uk-logo:focus {

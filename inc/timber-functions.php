@@ -322,14 +322,14 @@ class CautiousOctoFiesta extends Timber\Site
     $context['base_county'] = WC()->countries->get_base_state();
     $context['base_country'] = WC()->countries->get_base_country();
     // acf data globals
-    // $context['company_phone_number'] = get_field('company_phone_number', 'option');
-    // $context['facebook_link'] = get_field('facebook_link', 'option');
-    // $context['insta_link'] = get_field('facebook_link', 'option');
-    // $context['display_email'] = get_field('display_email', 'option');
-    // $context['above_footer_text'] = get_field('above_footer_text', 'option');
+    $context['company_phone_number'] = get_field('company_phone_number', 'option');
+    $context['facebook_link'] = get_field('facebook_link', 'option');
+    $context['insta_link'] = get_field('facebook_link', 'option');
+    $context['display_email'] = get_field('display_email', 'option');
+    $context['above_footer_text'] = get_field('above_footer_text', 'option');
     
     /* get acf options data */
-    // $context['options'] = get_fields('option');
+    $context['options'] = get_fields('option');
     
     /* get pdf upload field - entry lists */
     // $file = get_field('pdf_upload');

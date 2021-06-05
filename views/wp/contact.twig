@@ -1,0 +1,57 @@
+{% extends 'page.twig' %}
+
+{% block styles %}
+  <style>
+    .uk-tab>*>a {
+      border-width: 3px;
+    }
+    .uk-tab>.uk-active>a {
+      border-color: #008b96;
+      color: #333;
+    }
+    .uk-tab:before {
+      border-bottom: 1px solid #e5e5e5;
+      bottom: 1px;
+    }
+  </style>
+{% endblock %}
+
+{% block contentwrap %}
+
+  <section class="uk-section uk-container uk-container-xsmall" data-template="contact.twig">
+      
+    <div class="contact-page-info">
+      
+      <p>Dont hesitate to get in touch!</p>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      
+      <hr>
+    
+      <p class="uk-text-bold uk-text-emphasis">
+        {{base_address|e('esc_html')|default('Base address 1')}},<br>
+        {{base_address_2|e('esc_html')|default('Base address 2')}},<br>
+        {{base_city|e('esc_html')|default('Base city')}},<br>
+        {{base_county|e('esc_html')|default('Base county')}},<br>
+        {{ __('Eircode:', 'cautious-octo-fiesta') }} {{base_eircode|e('esc_html')|default('Eircode')}}.
+      </p>
+      
+      <p class="uk-text-bold uk-text-emphasis">
+        Tel: {{company_phone_number|e('esc_html')}}<br>
+        Email: {{display_email|e('html_attr')}}
+      </p>
+      
+      <hr>
+    
+    </div>
+    
+    <div class="contact-page-form">
+        
+      {{ function('do_shortcode', '[contact-form-7 title="Contact"]') }}
+    
+    </div>
+
+  </section>
+{% endblock %}

@@ -9,23 +9,75 @@
     
     {% block base_styles %}
       <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Norican&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Norican&display=swap" rel="stylesheet">
       <!-- fonts -->
       <style>
         html {
-          font-family: 'Lato', sans-serif;
+          font-family: 'Nunito', sans-serif;
           color: #3a3a3a;
         }
         .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
         .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
         h1, h2, h3, h4, h5, h6 {
-          font-family: 'Lato', sans-serif;
+          font-family: 'Nunito', sans-serif;
         }
         .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
-          font-family: 'Lato', sans-serif;
+          font-family: 'Nunito', sans-serif;
         }
         .norican {
           font-family: 'Norican', cursive;
+        }
+        
+        /* font weight settings */
+        .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+        .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+        .uk-text-bold, 
+        .uk-label, 
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 600;
+        }
+        /* strong, figcaption, a:not(.uk-link-reset) {
+          font-weight: 700;
+        } */
+        
+        /* heading sizes */
+        .uk-h1, h1 {
+          font-size: 2.23125rem;
+        }
+        .uk-h2, h2 {
+          font-size: 1.7rem;
+        }
+        .uk-h3, h3 {
+          font-size: 1.5rem;
+        }
+        .uk-h4, h4 {
+          font-size: 1.25rem;
+        }
+        .uk-h5, h5 {
+          font-size: 1.125rem;
+        }
+        .uk-h5, h5 {
+          font-size: 1rem;
+        }
+        @media (min-width: 960px) {
+          .uk-h1, h1 {
+            font-size: 2.2rem;
+          }
+          .uk-h2, h2 {
+            font-size: 1.8rem;
+          }
+          .uk-h3, h3 {
+            font-size: 1.6rem;
+          }
+          .uk-h4, vh4 {
+            font-size: 1.4rem;
+          }
+          .uk-h5, h5 {
+            font-size: 1.2rem;
+          }
+          .uk-h6, h6 {
+            font-size: 1rem;
+          }
         }
       </style>
       <!-- uikit mods -->
@@ -64,7 +116,7 @@
         .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
         .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
         h1, h2, h3, h4, h5, h6 {
-          color: #1d1d1d;
+          color: #0e0e0e;
         }
         .uk-text-emphasis {
           color: #1d1d1d!important;
