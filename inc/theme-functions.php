@@ -1,9 +1,16 @@
 <?php
 /**
- * Theme functions & bits
- *
- * @package Cautious_Octo_Fiesta
- */
+* Theme functions & bits
+*
+* @package Cautious_Octo_Fiesta
+*/
+ 
+function set_posts_per_page_for_entry_lists( $query ) {
+  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'entry_lists' ) ) {
+    $query->set( 'posts_per_page', '6' );
+  }
+}
+add_action( 'pre_get_posts', 'set_posts_per_page_for_entry_lists' );
  
 function dates_to_days($date) {
   $date1 = new DateTime('now');

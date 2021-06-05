@@ -24,6 +24,10 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 *
 */
 
+.fat-border-top {
+  border-top: 3px solid #008b96;
+}
+
 /* feature-links: custom link styling */
 .feature-link {
   font-weight: 500;

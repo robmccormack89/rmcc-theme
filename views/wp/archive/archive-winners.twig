@@ -1,0 +1,22 @@
+{% extends "index.twig" %}
+
+{% block contentwrap %}
+  <section class="uk-section uk-section-large" data-template="archive-winners.twig">
+    <div class="blog-list uk-container">
+      <div class="archive-posts uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
+        {% if posts is not empty %}
+          {% for post in posts %}
+            {% include 'tease-winners.twig' %}
+          {% endfor %}
+        {% else %}
+          No posts found...
+        {% endif %}
+      </div>
+    </div>
+    {% if (pagination.next or pagination.prev) %}
+      <div class="uk-margin-xlarge-top">
+        {% include 'pagination.twig' %}
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}
