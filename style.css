@@ -197,7 +197,7 @@ svg.search, svg.search, svg.basket, svg.basket {
   border-radius: 15%;
   color: #008b96;
 }
-.mobile-slide-navbar .uk-offcanvas-bar ul.uk-nav-sub {
+.mobile-slide-navbar .uk-offcanvas-bar ul.uk-nav-scr {
   padding: 0;
 }
 .mobile-slide-navbar .uk-offcanvas-bar .uk-nav-sub a {
@@ -229,7 +229,7 @@ svg.search, svg.search, svg.basket, svg.basket {
     width: 100%;
   }
 }
-.subscribe-form {
+.subscribe-form input {
   height: 49px!important;
 }
 

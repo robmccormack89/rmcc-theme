@@ -23,16 +23,18 @@ if ( is_singular( 'product' ) ) {
   $context['attachment_ids'] = $product->get_gallery_image_ids();
   
   // Get related products
-  $related_limit = wc_get_loop_prop( 'columns' );
+  $related_limit = 12;
   $related_ids = wc_get_related_products( $context['post']->id, $related_limit );
-  $context['related_products_title'] = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
   $context['related_products'] = Timber::get_posts( $related_ids );
   
   // Get upsells
-  $upsell_ids = $product->get_upsells();
-  $context['up_sells_title'] = apply_filters( 'woocommerce_product_upsells_products_heading', __( 'You may also like&hellip;', 'woocommerce' ) );
-  $context['up_sells'] =  Timber::get_posts( $upsell_ids );
-  
+  // $upsell_ids = $context['post']->get_upsell_ids();
+  $upsell_ids = $context['post']->_upsell_ids;
+  if ($upsell_ids) {
+    $context['up_sells'] = Timber::get_posts( $upsell_ids );
+  } else {
+    $context['up_sells'] = '';
+  }
   wp_reset_postdata();
   
   Timber::render( 'product.twig', $context );

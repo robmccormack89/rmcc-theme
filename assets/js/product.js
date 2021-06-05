@@ -10,34 +10,44 @@ jQuery('#lightSlider').lightSlider({
 });
 
 jQuery(function($) {
+  // notices 
+  $(".woocommerce-notices-wrapper").addClass("uk-container uk-margin");
+  $(".woocommerce-notices-wrapper .button").addClass("uk-button uk-button-primary uk-button-small uk-small-margin-right");
+  
   // $("#countdown").addClass("uk-box-shadow-medium uk-padding-small");
+  // $(".product_title").addClass("uk-h2");
   
-  $(".product_title").addClass("uk-h2");
-  
-  $("input.qty").addClass("uk-width-small");
+  // $("input.qty").addClass("uk-width-small");
   
   // add-to-cart
   $(".variations_form table").addClass("uk-table-small uk-table-divider uk-table-middle uk-table-justify uk-position-relative");
   $(".variations_form .button").addClass("uk-button-primary");
+  
   // reviews tab
   $("ol.commentlist").addClass("uk-list uk-list-divider");
+  
   // additional info tab
   $(".woocommerce-product-attributes").addClass("uk-table-small uk-table-divider uk-table-middle uk-table-justify");
+  
   // add-to-cart
   $(".product-right .button").addClass("uk-button-primary");
   $("#ProductButtons .button").addClass("uk-button-primary");
+  
   // stock
   $(".in-stock").addClass("uk-text-success");
   $(".out-of-stock").addClass("uk-text-danger");
+  
   // tab heading
   $(".tab-content h2").addClass("uk-card-title");
+  
+  $(".tease-buttons .button").addClass("uk-button uk-button-small uk-button-default");
 });
 
 jQuery(function(){
   // related swiper
   var related_swiper = new Swiper('#slideshow_related', {
-    slidesPerView: 2,
-    spaceBetween: 10,
+    slidesPerView: 1,
+    spaceBetween: 0,
     // autoplay: {
     //   delay: 4000,
     //   disableOnInteraction: true,
@@ -47,21 +57,21 @@ jQuery(function(){
       el: '.swiper-pagination',
       dynamicBullets: true,
     },
-    breakpoints: {
-      // 960: {
-      //   slidesPerView: 3,
-      //   spaceBetween: 15,
-      // },
-      1290: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    }
+    // breakpoints: {
+    //   960: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 15,
+    //   },
+    //   1290: {
+    //     slidesPerView: 4,
+    //     spaceBetween: 20,
+    //   },
+    // }
   });
   // upsells swiper
   var upsells_swiper = new Swiper('#slideshow_upsells', {
-    slidesPerView: 2,
-    spaceBetween: 10,
+    slidesPerView: 1,
+    spaceBetween: 0,
     // autoplay: {
     //   delay: 4000,
     //   disableOnInteraction: true,
@@ -71,15 +81,15 @@ jQuery(function(){
       el: '.swiper-pagination',
       dynamicBullets: true,
     },
-    breakpoints: {
-      // 960: {
-      //   slidesPerView: 3,
-      //   spaceBetween: 15,
-      // },
-      1290: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    }
+    // breakpoints: {
+    //   960: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 15,
+    //   },
+    //   1290: {
+    //     slidesPerView: 4,
+    //     spaceBetween: 20,
+    //   },
+    // }
   });
 });

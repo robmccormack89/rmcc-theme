@@ -18,6 +18,7 @@
 {% endblock %}
 
 {% block contentwrap %}
+
   <div id="product-{{ post.id }}" itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
     <div class="uk-section uk-section-default">
       <div class="uk-container">
@@ -52,7 +53,7 @@
                 {% endfor %}
               </ul>
             </div>
-            {# do action('woocommerce_before_single_product_summary') #}
+            {% do action('woocommerce_before_single_product_summary') %}
           </div>
           
           <div class="product-right product-right-images uk-width-2-5@m">
@@ -66,46 +67,55 @@
           
           <div class="product-tabs">
             <!-- removed related & upsells from woocommerce_after_single_product_summary. tabs remains -->
-            {# do action('woocommerce_after_single_product_summary') #}
+            {% do action('woocommerce_after_single_product_summary') %}
           </div>
           
-          <div class="product-related" hidden>
-            {% if not related_products is empty %}
-              <h2>{{related_products_title|e('esc_html')}}</h2>
-              <div id="slideshow_related" class="swiper-container">
-                <div class="swiper-wrapper">
-                  
-                  {% for post in related_products %}
-                    <div class="swiper-slide">
-                      {% include 'tease-product.twig' %}
-                    </div>
-                  {% endfor %}
-                  
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-              </div>
-            {% endif %}
-          </div>
-          
-          <div class="product-upsells" hidden>
-            {% if not up_sells is empty %}
-              <h2>{{up_sells_title|e('esc_html')}}</h2>
+          {% if not up_sells is empty %}
+            <div class="product-upsells uk-margin-medium-top">
+              <h2 class="uk-h3">
+                {{up_sells_title|e('esc_html')}}
+                {{ _x('You may also like...', 'Upsell Competitions Title', 'cautious-octo-fiesta')|e('esc_html') }}
+              </h2>
               <div id="slideshow_upsells" class="swiper-container">
                 <div class="swiper-wrapper">
                   
                   {% for post in up_sells %}
                     <div class="swiper-slide">
-                      {% include 'tease-product.twig' %}
+                      {% include 'tease-product-list.twig' %}
                     </div>
                   {% endfor %}
                   
                 </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
+                {% if not up_sells > 4 %}
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination"></div>
+                {% endif %}
               </div>
-            {% endif %}
-          </div>
+            </div>
+          {% endif %}
+          
+          {% if not related_products is empty %}
+            <div class="product-related uk-margin-medium-top">
+              <h2 class="uk-h3">
+                {{ _x('Related Competitions', 'Related Competitions Title', 'cautious-octo-fiesta')|e('esc_html') }}
+              </h2>
+              <div id="slideshow_related" class="swiper-container">
+                <div class="swiper-wrapper">
+                  
+                  {% for post in related_products %}
+                    <div class="swiper-slide">
+                      {% include 'tease-product-list.twig' %}
+                    </div>
+                  {% endfor %}
+                  
+                </div>
+                {% if not related_products > 4 %}
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination"></div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
           
         </div>
         

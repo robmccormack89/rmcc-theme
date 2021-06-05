@@ -133,9 +133,10 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 // single product
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 
 // Remove cross-sells at cart
-remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
+// remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
 
 // remove skus globally
 add_filter( 'wc_product_sku_enabled', '__return_false' );

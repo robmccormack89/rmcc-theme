@@ -1,0 +1,18 @@
+<h2 class="uk-h3">
+  {{ _x('You may be interested in...', 'Cart page Cross sells title', 'cautious-octo-fiesta')|e('esc_html') }}
+</h2>
+<div id="slideshow_cross" class="swiper-container">
+  <div class="swiper-wrapper">
+    
+    {% for post in cross_sells %}
+      <div class="swiper-slide">
+        {% include 'tease-product-list.twig' %}
+      </div>
+    {% endfor %}
+    
+  </div>
+  {% if not cross_sells > 4 %}
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  {% endif %}
+</div>

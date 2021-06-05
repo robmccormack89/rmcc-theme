@@ -60,12 +60,24 @@
             {% endif %}
           </ul>
         </div>
-        <div class="footer-contact">
-          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ _x('Contact', 'Footer widget no.4: title', 'cautious-octo-fiesta')|e('esc_html') }}</h4>
-          <p>
-            {{ _x('We’re available by phone 123-456-789', 'Footer widget no.4: text line 1', 'cautious-octo-fiesta')|e('esc_html') }}<br>
-            {{ _x('Monday till Friday 10 to 6 EST', 'Footer widget no.4: text line 2', 'cautious-octo-fiesta')|e('esc_html') }}
-          </p>
+        <div class="footer-menu-3">
+          {% if has_footer_menu_4 %}
+            {% set footer_menu_4_title = footer_menu_4.title %}
+          {% else %}
+            {% set footer_menu_4_title = 'Footer Menu 4' %}
+          {% endif %}
+          <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_4_title|e('esc_html') }}</h4>
+          <ul class="uk-nav uk-nav-default">
+            {% if has_footer_menu_4 %}
+              {% for item in footer_menu_4.get_items %}
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+              {% endfor %}
+            {% else %}
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Sed do eiusmod</a></li>
+              <li><a href="#">Excepteur sint</a></li>
+            {% endif %}
+          </ul>
         </div>
       </div>
     </div>

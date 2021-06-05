@@ -4,13 +4,13 @@
       <div class="uk-text-center">
         <a class="uk-link-text" href="{{shop_url|e('esc_url')}}">
           <i class="far fa-clock fa-lg"></i>
-          <div class="uk-text-small">{{ __('Competitions', 'ned-murphy-tractors-theme') }}</div>
+          <div class="uk-text-small">{{ __('Competitions', 'cautious-octo-fiesta') }}</div>
         </a>
       </div>
       <div class="uk-text-center">
         <a class="uk-link-text" href="{{contact_page_link|e('esc_url')|default('#')}}">
           <i class="far fa-envelope fa-lg"></i>
-          <div class="uk-text-small">{{ __('Contact', 'ned-murphy-tractors-theme') }}</div>
+          <div class="uk-text-small">{{ __('Contact', 'cautious-octo-fiesta') }}</div>
         </a>
       </div>
       <div class="uk-text-center">
@@ -20,9 +20,9 @@
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
           {% if not user %}
-            <div class="uk-text-small">{{ __('Login/Signup', 'ned-murphy-tractors-theme') }}</div>
+            <div class="uk-text-small">{{ __('Login/Signup', 'cautious-octo-fiesta') }}</div>
           {% else %}
-            <div class="uk-text-small">{{ __('Account', 'ned-murphy-tractors-theme') }}</div>
+            <div class="uk-text-small">{{ __('Account', 'cautious-octo-fiesta') }}</div>
           {% endif %}
         </a>
       </div>
@@ -34,10 +34,10 @@
               </path>
             </g>
           </svg>
-          <span class="">
+          <span>
             {% do action('cart_ajax_result_count') %}
           </span>
-          <div class="uk-text-small">{{ __('Basket', 'ned-murphy-tractors-theme') }}</div>
+          <div class="uk-text-small">{{ __('Basket', 'cautious-octo-fiesta') }}</div>
         </a>
       </div>
     </div>

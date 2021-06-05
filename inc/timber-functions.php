@@ -265,6 +265,7 @@ class CautiousOctoFiesta extends Timber\Site
       'footer_menu_1' => 'Footer Menu 1',
       'footer_menu_2' => 'Footer Menu 2',
       'footer_menu_3' => 'Footer Menu 3',
+      'footer_menu_4' => 'Footer Menu 4',
     ));
   }
 
@@ -299,10 +300,12 @@ class CautiousOctoFiesta extends Timber\Site
     $context['footer_menu_1'] = new Timber\Menu( 'footer_menu_1', $footer_menu_args );
     $context['footer_menu_2'] = new Timber\Menu( 'footer_menu_2', $footer_menu_args );
     $context['footer_menu_3'] = new Timber\Menu( 'footer_menu_3', $footer_menu_args );
+    $context['footer_menu_4'] = new Timber\Menu( 'footer_menu_4', $footer_menu_args );
 
     $context['has_footer_menu_1'] = has_nav_menu( 'footer_menu_1' );
     $context['has_footer_menu_2'] = has_nav_menu( 'footer_menu_2' );
     $context['has_footer_menu_3'] = has_nav_menu( 'footer_menu_3' );
+    $context['has_footer_menu_4'] = has_nav_menu( 'footer_menu_4' );
 
     // woo my account endpoints
     $context['dashboard_endpoint'] = wc_get_account_endpoint_url( 'dashboard' );
@@ -327,6 +330,7 @@ class CautiousOctoFiesta extends Timber\Site
     $context['insta_link'] = get_field('facebook_link', 'option');
     $context['display_email'] = get_field('display_email', 'option');
     $context['above_footer_text'] = get_field('above_footer_text', 'option');
+    $context['contact_page_link'] = get_field('contact_page_link', 'option');
     
     /* get acf options data */
     $context['options'] = get_fields('option');

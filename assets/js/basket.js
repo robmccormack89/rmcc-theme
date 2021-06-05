@@ -1,4 +1,36 @@
+jQuery(function(){
+  var cross = document.getElementById("slideshow_cross");
+  if(cross){
+    var cross_swiper = new Swiper('#slideshow_cross', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      // autoplay: {
+      //   delay: 4000,
+      //   disableOnInteraction: true,
+      // },
+      // init: false,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      // breakpoints: {
+      //   960: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 15,
+      //   },
+      //   1290: {
+      //     slidesPerView: 4,
+      //     spaceBetween: 20,
+      //   },
+      // }
+    });
+  }
+});
+
 jQuery(function($) {
+  
+  $(".tease-buttons .button").addClass("uk-button uk-button-small uk-button-default");
+  // $(".onsale").addClass("uk-card-badge uk-label");
 
   // cart
   function WooCart() {

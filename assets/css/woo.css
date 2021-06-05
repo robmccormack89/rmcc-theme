@@ -62,6 +62,9 @@ label[for=coupon_code] {
 }
 
 /* product teases */
+.onsale.uk-label {
+  background: #008b96;
+}
 .tease-image .onsale.uk-card-badge {
   position: absolute;
   left: 10px;
