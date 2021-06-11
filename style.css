@@ -17,6 +17,269 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 */
+.swiper-container {
+  padding-bottom: 30px!important;
+  z-index: 0!important;
+}
+.swiper-pagination {
+  position: absolute!important;
+  bottom: 15px!important;
+}
+
+/* 
+*
+* SITE FONTS 
+*
+*/
+
+/* base/body font */
+html {
+  font-family: 'Nunito',sans-serif,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  color: #3a3a3a;
+}
+
+/* heading fonts */
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* navbar font */
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* logo font */
+.norican {
+  font-family: 'Norican', cursive;
+}
+
+/* font weight settings */
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+.uk-text-bold, 
+.uk-label, 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* strong, figcaption, a:not(.uk-link-reset) {
+  font-weight: 700;
+} */
+
+/* heading sizes */
+.uk-h1, h1 {
+  font-size: 2.23125rem;
+}
+.uk-h2, h2 {
+  font-size: 1.7rem;
+}
+.uk-h3, h3 {
+  font-size: 1.5rem;
+}
+.uk-h4, h4 {
+  font-size: 1.25rem;
+}
+.uk-h5, h5 {
+  font-size: 1.125rem;
+}
+.uk-h5, h5 {
+  font-size: 1rem;
+}
+@media (min-width: 960px) {
+  .uk-h1, h1 {
+    font-size: 2.2rem;
+  }
+  .uk-h2, h2 {
+    font-size: 1.8rem;
+  }
+  .uk-h3, h3 {
+    font-size: 1.6rem;
+  }
+  .uk-h4, vh4 {
+    font-size: 1.4rem;
+  }
+  .uk-h5, h5 {
+    font-size: 1.2rem;
+  }
+  .uk-h6, h6 {
+    font-size: 1rem;
+  }
+}
+
+/* 
+*
+* UIKIT MODS 
+*
+*/
+
+.uk-overlay-primary {
+  background: rgb(0 0 0 / 30%);
+  /* background: rgb(40 100 142 / 72%); */
+  /* background: rgb(10 10 10 / 60%); */
+  /* background: rgb(30 135 240 / 80%); */
+}
+.uk-overlay-secondary {
+  background: rgba(34,34,34,.8);
+}
+.uk-overlay-secondary .uk-button-primary {
+  background-color: #008ce1;
+  color: #fff;
+}
+.uk-section-primary {
+  background: #008ce1;
+}
+.uk-button-primary {
+  background-color: #008ce1;
+  color: #ffffff;
+}
+.uk-tab>.uk-active>a {
+  border-color: #008ce1;
+  color: #191919;
+}
+.uk-tab>*>a {
+  border-width: 3px;
+}
+.uk-tab:before {
+  bottom: 1px;
+}
+.uk-input:focus, .uk-select:focus, .uk-textarea:focus {
+  border-color: #008ce1;
+}
+.uk-button-primary:focus, .uk-button-primary:hover {
+  background-color: #064d52;
+  color: #fff;
+}
+.uk-button-default {
+  background-color: transparent;
+  border: 1px solid #008ce1;
+  color: #008ce1;
+  transition: border-color 150ms;
+}
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+  color: #0e0e0e;
+}
+.uk-text-emphasis {
+  color: #1d1d1d!important;
+}
+.uk-light .uk-navbar-nav>li>a {
+  color: #fff;
+}
+.uk-container-xsmall {
+  max-width: 650px;
+}
+.uk-button-large {
+  font-size: .875rem;
+  line-height: 45px;
+  padding: 0 30px;
+  border-width: 2px;
+  border-style: solid;
+  font-weight: 500;
+}
+.uk-button-link, .uk-button-link:hover, .uk-button-link:focus {
+  color: #008ce1;
+}
+.uk-navbar-nav>li>a {
+  text-transform: capitalize;
+}
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+  font-size: 1rem;
+  min-height: auto;
+  padding: 0 15px;
+}
+.uk-link, a, .uk-link:hover, .uk-link:focus, a:hover, a:focus {
+  color: #008ce1;
+}
+.single-content a {
+  /* text-decoration: underline; */
+}
+.uk-logo {
+  font-size: 2.8rem;
+}
+@media only screen and (max-width:959px) {
+  .uk-logo {
+    font-size: 1.5rem;
+  }
+  .header-navbar.uk-navbar-container.uk-section-small {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+@media (min-width: 960px){
+  .uk-container-expand {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* 
+*
+* CUSTOM MODS
+*
+*/
+
+.uk-position-cover-padded {
+  bottom: 35px;
+  left: 35px;
+  right: 35px;
+  top: 35px;
+}
+.padded-outset-border {
+  border: 15px outset #7575751f;
+}
+@media only screen and (max-width:768px) {
+  .uk-position-cover-padded {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .padded-outset-border {
+    border: 15px solid #ffffff00;
+  }
+}
+
+/* 
+*
+* SHOPFIXEDNAV 
+*
+*/
+
+.shop-fixednav {
+  display: none;
+  height: 53px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 350;
+  background-color: #FFF;
+  box-shadow: 0 0 9px rgb(0 0 0 / 12%);
+}
+.shop-fixednav .uk-container {
+  padding: 8px 0 0px 0;
+}
+.shop-fixednav .header-cart-count {
+  top: 5px;
+  left: auto;
+  right: 22px;
+  font-size: 11px;
+  line-height: 15px;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+@media only screen and (max-width:959px) {
+  .shop-fixednav {
+    display: block;
+  }
+  footer {
+    padding-bottom: 53px;
+  }
+}
 
 /* 
 *
@@ -25,12 +288,11 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 */
 
 .fat-border-top {
-  border-top: 3px solid #008b96;
+  border-top: 3px solid #008ce1;
 }
 .fat-border-bottom {
-  border-bottom: 3px solid #008b96;
+  border-bottom: 3px solid #008ce1;
 }
-
 /* feature-links: custom link styling */
 .feature-link {
   font-weight: 500;
@@ -51,17 +313,21 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
   transform: scaleX(0.8);
 }
 
+/* 
+*
+* IMAGE MODIFIERS
+*
+*/
+
 /* launch cover image */
 .cover-img {
   object-fit: cover;
   width: 100%;
 }
-
 /* home hero image */
 .home-cover-img {
   height:80vh;
 }
-
 /* img modifiers */
 .img-sepia {
   filter: sepia(1);
@@ -85,12 +351,11 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 .uk-logo:hover, .uk-logo:focus,
 .header-muted .uk-logo:hover, .header-muted .uk-logo:focus,
 .header-muted .uk-sticky-below .uk-logo:hover, .header-muted .uk-sticky-below .uk-logo:focus {
-  color: #008b96;
+  color: #008ce1;
 }
 .uk-light .uk-logo, .uk-light .uk-logo:hover, .uk-light .uk-logo:focus {
   color: #fff;
 }
-
 /* header icons styles */
 svg.user {
   fill: transparent;
@@ -104,7 +369,7 @@ svg.search, svg.search, svg.basket, svg.basket {
 .header-icons .uk-navbar-item, 
 .header-icons.uk-navbar-nav>li>a, 
 .header-icons .uk-navbar-toggle {
-  /* color: #008b96; */
+  /* color: #008ce1; */
 }
 .header-icons .uk-navbar-item:hover, 
 .header-icons .uk-navbar-item:focus, 
@@ -112,7 +377,7 @@ svg.search, svg.search, svg.basket, svg.basket {
 .header-icons.uk-navbar-nav>li>a:focus, 
 .header-icons .uk-navbar-toggle:hover,
 .header-icons .uk-navbar-toggle:focus {
-  color: #008b96;
+  color: #008ce1;
 }
 .uk-light .header-icons .uk-navbar-item, 
 .uk-light .header-icons.uk-navbar-nav>li>a, 
@@ -137,7 +402,7 @@ svg.search, svg.search, svg.basket, svg.basket {
   color: #fff;
 }
 .main-nav.uk-navbar-nav>li>a:hover, .main-nav.uk-navbar-nav>li>a:focus {
-  color: #008b96;
+  color: #008ce1;
 }
 .main-nav a:after {
   content: "";
@@ -179,8 +444,8 @@ svg.search, svg.search, svg.basket, svg.basket {
   max-width: 500px;
 }
 .mobile-slide-navbar .uk-offcanvas-bar .uk-nav-default>li.current-menu-item>a {
-  color: #008b96;
-  border-left: 3px solid #008b96;
+  color: #008ce1;
+  border-left: 3px solid #008ce1;
 }
 .mobile-slide-navbar .uk-offcanvas-bar .uk-nav>li>a {
   padding: 10px 10px;
@@ -202,7 +467,7 @@ svg.search, svg.search, svg.basket, svg.basket {
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 15%;
-  color: #008b96;
+  color: #008ce1;
 }
 .mobile-slide-navbar .uk-offcanvas-bar ul.uk-nav-scr {
   padding: 0;
@@ -244,7 +509,7 @@ svg.search, svg.search, svg.basket, svg.basket {
 .the-footer .uk-nav-default>li>a:hover, 
 .the-footer .uk-nav-default>li>a:focus, 
 .subscribe-section .far {
-  color: #008b96;
+  color: #008ce1;
 }
 
 /* muted from primary colour */

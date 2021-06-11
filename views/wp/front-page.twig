@@ -1,5 +1,27 @@
 {% extends "base.twig" %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/lib/swiper-bundle.min.css" />
+  <style>
+    .testimonials__star {
+      margin: 0 2px;
+      color: #eeaf2e;
+    }
+    .video-container__play svg {
+      stroke: #ffffff;
+    }
+    .video-container__play svg {
+      width: 80px;
+      height: 80px;
+      fill: transparent;
+      stroke: #fff;
+    }
+    .post.stacked .uk-grid-stack .uk-grid-margin {
+      margin-top: 10px;
+    }
+  </style>
+{% endblock %}
+
 {% block header %}
   <header class="uk-inline">
     <div class="header-top-nav uk-position-top uk-position-z-index">
@@ -7,18 +29,20 @@
         {% include 'main-nav.twig' %}
       </div>
     </div>
-    <img class="cover-img home-cover-img" src="{{theme.link}}/assets/images/stock2.jpg" alt="">
+    <img class="cover-img home-cover-img" src="{{theme.link}}/assets/images/clouds1.jpg" alt="">
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
           <h1 class="uk-margin-large-top">
-            {{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage Hero Section Heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
+            {{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage Hero Section - Heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
           </h1>
           <hr class="uk-divider-small">
           <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">
-            {{ _x('Lorem ipsum dolor sit amet', 'Homepage Hero Section Sub-heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
+            {{ _x('Lorem ipsum dolor sit amet', 'Homepage Hero Section - Sub-heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
           </p>
-          <a href="#Next" class="uk-button uk-button-default uk-button-large" uk-scroll="offset:150">Learn more</a>
+          <a href="#Next" class="uk-button uk-button-default uk-button-large" uk-scroll="offset:150">
+            {{ _x('Learn more', 'Homepage Hero Section - Button Text', 'cautious-octo-fiesta')|e('esc_html') }}
+          </a>
         </div>
       </div>
     </div>
@@ -26,22 +50,366 @@
 {% endblock %}
 
 {% block contentwrap %}
+
+  <!-- under hero section -->
   <section id="Next" class="uk-section uk-section-primary">
     <div class="uk-text-center uk-container uk-container-xsmall">
-      <h2 class="uk-h3">
-        {{ _x('Lorem ipsum dolor sit amet', 'Homepage Featured Section Heading', 'cautious-octo-fiesta')|e('esc_html') }}
-      </h2>
-      <p>
-        {{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage Featured Section text', 'cautious-octo-fiesta')|e('esc_html') }}
-      </p>
-      <a class="feature-link uk-text-uppercase" href="{{ _x('#', 'Homepage Featured Section Link', 'cautious-octo-fiesta')|e('esc_html') }}">
-        {{ _x('Lorem Ipsum Dolor', 'Homepage Featured Section Link Text', 'cautious-octo-fiesta')|e('esc_html') }}
+      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage Featured Section - Heading', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
+      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage Featured Section - text', 'cautious-octo-fiesta')|e('esc_html') }}</p>
+      <a class="feature-link uk-text-uppercase" href="{{ _x('#', 'Homepage Featured Section - Link', 'cautious-octo-fiesta')|e('esc_html') }}">
+        {{ _x('Lorem Ipsum Dolor', 'Homepage Featured Section - Link Text', 'cautious-octo-fiesta')|e('esc_html') }}
       </a>
     </div>
   </section>
-  <section class="content-section uk-section uk-section-large uk-section-default">
-    <div class="uk-text-center uk-container uk-container-small">
-      Some Competitions will go here..
+  
+  <!-- latest products section -->
+  <section class="uk-section uk-container">
+    <h2 class="uk-text-center">{{ _x('Check out our Latest Competitions', 'Homepage Latest Section - Heading', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
+    <hr class="uk-divider-small uk-text-center">
+    {% if latest_competitions|length > 0 %}
+      <div id="slideshow_latest" class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for post in latest_competitions %}
+            <div class="swiper-slide">
+              {% include 'tease-product-home.twig' %}
+            </div>
+          {% endfor %}
+        </div>
+        {% if latest_competitions|length > 3 %}
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="uk-text-center uk-margin-small-top">
+      <a href="#" class="uk-button uk-button-default uk-button-large">View all</a>
     </div>
   </section>
+  
+  <!-- latest winners section -->
+  <section class="uk-section uk-section-muted">
+    <div class="uk-container">
+      <h2 class="uk-text-center">{{ _x('Our latest Winners', 'Homepage Winners Section - Heading', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
+      <hr class="uk-divider-small uk-text-center">
+      {% if latest_competitions|length > 0 %}
+        <div id="slideshow_latest" class="swiper-container">
+          <div class="swiper-wrapper">
+            {% for post in latest_competitions %}
+              <div class="swiper-slide">
+                {% include 'tease-product-home.twig' %}
+              </div>
+            {% endfor %}
+          </div>
+          {% if latest_competitions|length > 3 %}
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="uk-text-center uk-margin-small-top">
+        <a href="#" class="uk-button uk-button-default uk-button-large">View all</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- how to play: 3 blocks section -->
+  <section class="uk-child-width-1-3@m uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-primary uk-light uk-text-center" uk-grid>
+
+    <a href="#">
+      <div class="uk-inline uk-light">
+        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+          <img class="uk-transition-scale-up uk-transition-opaque" src="https://picsum.photos/720/720?random=1" alt="">
+          <div class="uk-overlay-primary uk-position-cover">
+            <div class="uk-position-center">
+              <div class="feature-link uk-text-uppercase uk-text-emphasis">Item</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#">
+      <div class="uk-inline uk-light">
+        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+          <img class="uk-transition-scale-up uk-transition-opaque" src="https://picsum.photos/720/720?random=2" alt="">
+          <div class="uk-overlay-primary uk-position-cover">
+            <div class="uk-position-center">
+              <div class="feature-link uk-text-uppercase uk-text-emphasis">Item</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#">
+      <div class="uk-inline uk-light">
+        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+          <img class="uk-transition-scale-up uk-transition-opaque" src="https://picsum.photos/720/720?random=3" alt="">
+          <div class="uk-overlay-primary uk-position-cover">
+            <div class="uk-position-center">
+              <div class="feature-link uk-text-uppercase uk-text-emphasis">Item</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </section>
+  
+  <!-- muted bg with card cta section -->
+  <section class="uk-section uk-section-small uk-section-muted">
+    <div class="uk-container">
+      <div class="uk-child-width-1-2@m uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-default uk-text-center uk-box-shadow-medium" uk-grid>
+        <div>
+          <img src="https://picsum.photos/720/720">
+        </div>
+        <div class="uk-padding-large">
+          <h3>Hello</h3>
+          <p class="uk-margin-small">The Avant luggage collection with Interlink™ technology uses a mechanical latching mechanism for seamless coupling of matching accessories</p>
+          <div class="uk-margin-top">
+            <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
+              Contact us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- testimonials section -->
+  <section class="uk-section uk-container uk-container-xsmall uk-text-center">
+    <h2 class="uk-h2">Testimonials</h2>
+    <hr class="uk-divider-small uk-text-center">
+    <div id="slideshow_tesimonials" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonial">
+            <div class="testimonials__star-rating">
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+            </div>
+            <p class="uk-h3 uk-padding uk-padding-remove-vertical uk-margin-top">"Sed do eiusmod tempor incididunt ut labore et amet dolore."</p>
+            <p>- Joe Blogs from Mullingar</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonial">
+            <div class="testimonials__star-rating">
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+              <span class="testimonials__star">
+                <svg aria-hidden="true" focusable="false" role="presentation" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </span>
+            </div>
+            <p class="uk-h3 uk-padding uk-padding-remove-vertical uk-margin-top">"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>
+            <p>- Jane Doe from Mullingar</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  
+  <!-- video section -->
+  <section class="uk-background-primary uk-text-center">
+    <div class="uk-inline uk-dark">
+      <img src="https://picsum.photos/1920/1200?random=1" alt="">
+      <div class="uk-overlay-primary uk-position-cover">
+        <div class="uk-position-center">
+          <a href="#modal-media-youtube" uk-toggle class="video-container__play cc-fade-in-up cc-animate-init -in cc-animate-complete">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="modal-media-youtube" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+        <iframe src="https://www.youtube-nocookie.com/embed/c2pz2mlSfXA" width="1920" height="1080" frameborder="0" uk-video uk-responsive></iframe>
+      </div>
+    </div>
+  </section>
+  
+  <!-- blog section -->
+  <section class="uk-section uk-container">
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+        <div class="post uk-text-center">
+          <img src="https://picsum.photos/720/509">
+          <h3 class="uk-margin-top">Iconic design meets advanced materials</h3>
+          <p>No one ever said it was going to be easy creating an innovative new luggage brand. And indeed, it was tough going for a while. Prototypes failed ...</p>
+          <a href="#" class="uk-button uk-button-default uk-button-large">Read more</a>
+        </div>
+      </div>
+      <div>
+        <div class="uk-child-width-1-1" uk-grid>
+          <div class="post stacked">
+            <div class="uk-child-width-1-2@m" uk-grid>
+              <div>
+                <img src="https://picsum.photos/720/509?random=10">
+              </div>
+              <div>
+                <h3 class="uk-h4 uk-margin-remove">About the worlds most awarded luggage brand</h3>
+                <p class="uk-margin-small">There were already enough purely utilitarian travel bags on the market, and also ones that claimed to keep clothes wrinkle-free. VOCIER wanted to ...</p>
+                <div class="uk-margin-small-top">
+                  <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
+                    Read more
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post stacked">
+            <div class="uk-child-width-1-2@m" uk-grid>
+              <div>
+                <img src="https://picsum.photos/720/509?random=11">
+              </div>
+              <div>
+                <h3 class="uk-h4 uk-margin-remove">About the worlds most awarded luggage brand</h3>
+                <p class="uk-margin-small">There were already enough purely utilitarian travel bags on the market, and also ones that claimed to keep clothes wrinkle-free. VOCIER wanted to ...</p>
+                <div class="uk-margin-small-top">
+                  <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
+                    Read more
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post stacked">
+            <div class="uk-child-width-1-2@m" uk-grid>
+              <div>
+                <img src="https://picsum.photos/720/509?random=12">
+              </div>
+              <div>
+                <h3 class="uk-h4 uk-margin-remove">About the worlds most awarded luggage brand</h3>
+                <p class="uk-margin-small">There were already enough purely utilitarian travel bags on the market, and also ones that claimed to keep clothes wrinkle-free. VOCIER wanted to ...</p>
+                <div class="uk-margin-small-top">
+                  <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
+                    Read more
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- contact cta section -->
+  <section class="uk-child-width-1-2@m uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-muted uk-text-center" uk-grid>
+    <div class="uk-padding">
+      <h3>In store</h3>
+      <p class="uk-margin-small">
+        123 Fake St.<br>
+        Toronto, Canada
+      </p>
+      <p class="uk-margin-small">
+        Mon - Fri, 10am - 9pm<br>
+        Sat & Sun, 11am - 5pm
+      </p>
+      <div class="uk-margin-top">
+        <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
+          Contact us
+        </a>
+      </div>
+    </div>
+    <div>
+      <img src="https://picsum.photos/1080/675">
+    </div>
+  </section>
+  
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{theme.link}}/assets/js/lib/swiper-bundle.min.js"></script>
+  <script>
+    jQuery(function($) {
+      $(".tease-buttons .button").addClass("uk-button uk-button-small uk-button-default");
+    });
+    jQuery(function(){
+      var latest_swiper = new Swiper('#slideshow_latest', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: true,
+        // },
+        // init: false,
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+        },
+        breakpoints: {
+          960: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1290: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        }
+      });
+      var tesimonials_swiper = new Swiper('#slideshow_tesimonials', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: true,
+        // },
+        // init: false,
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+        },
+      });
+    });
+  </script>
 {% endblock %}

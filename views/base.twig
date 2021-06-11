@@ -4,251 +4,68 @@
   <head>
     <meta charset="{{site.charset}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Norican&display=swap" rel="stylesheet">
     
     {{ function('wp_head') }}
     
-    {% block base_styles %}
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Norican&display=swap" rel="stylesheet">
-      <!-- fonts -->
-      <style>
-        html {
-          font-family: 'Nunito', sans-serif;
-          color: #3a3a3a;
-        }
-        .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
-        .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
-        h1, h2, h3, h4, h5, h6 {
-          font-family: 'Nunito', sans-serif;
-        }
-        .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
-          font-family: 'Nunito', sans-serif;
-        }
-        .norican {
-          font-family: 'Norican', cursive;
-        }
-        
-        /* font weight settings */
-        .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
-        .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
-        .uk-text-bold, 
-        .uk-label, 
-        h1, h2, h3, h4, h5, h6 {
-          font-weight: 600;
-        }
-        /* strong, figcaption, a:not(.uk-link-reset) {
-          font-weight: 700;
-        } */
-        
-        /* heading sizes */
-        .uk-h1, h1 {
-          font-size: 2.23125rem;
-        }
-        .uk-h2, h2 {
-          font-size: 1.7rem;
-        }
-        .uk-h3, h3 {
-          font-size: 1.5rem;
-        }
-        .uk-h4, h4 {
-          font-size: 1.25rem;
-        }
-        .uk-h5, h5 {
-          font-size: 1.125rem;
-        }
-        .uk-h5, h5 {
-          font-size: 1rem;
-        }
-        @media (min-width: 960px) {
-          .uk-h1, h1 {
-            font-size: 2.2rem;
-          }
-          .uk-h2, h2 {
-            font-size: 1.8rem;
-          }
-          .uk-h3, h3 {
-            font-size: 1.6rem;
-          }
-          .uk-h4, vh4 {
-            font-size: 1.4rem;
-          }
-          .uk-h5, h5 {
-            font-size: 1.2rem;
-          }
-          .uk-h6, h6 {
-            font-size: 1rem;
-          }
-        }
-      </style>
-      <!-- uikit mods -->
-      <style>
-        .uk-overlay-primary {
-          background: rgb(10 10 10 / 60%);
-          /* background: rgb(30 135 240 / 80%); */
-        }
-        .uk-overlay-secondary {
-          background: rgba(34,34,34,.8);
-        }
-        .uk-overlay-secondary .uk-button-primary {
-          background-color: #008b96;
-          color: #fff;
-        }
-        .uk-section-primary {
-          background: #008b96;
-        }
-        .uk-button-primary {
-          background-color: #008b96;
-          color: #ffffff;
-        }
-        .uk-tab>.uk-active>a {
-          border-color: #008b96;
-          color: #191919;
-        }
-        .uk-tab>*>a {
-          border-width: 3px;
-        }
-        .uk-tab:before {
-          bottom: 1px;
-        }
-        .uk-input:focus, .uk-select:focus, .uk-textarea:focus {
-          border-color: #008b96;
-        }
-        .uk-button-primary:focus, .uk-button-primary:hover {
-          background-color: #064d52;
-          color: #fff;
-        }
-        .uk-button-default {
-          background-color: transparent;
-          border: 1px solid #008b96;
-          color: #008b96;
-          transition: border-color 150ms;
-        }
-        .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
-        .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
-        h1, h2, h3, h4, h5, h6 {
-          color: #0e0e0e;
-        }
-        .uk-text-emphasis {
-          color: #1d1d1d!important;
-        }
-        .uk-light .uk-navbar-nav>li>a {
-          color: #fff;
-        }
-        .uk-container-xsmall {
-          max-width: 650px;
-        }
-        .uk-button-large {
-          font-size: .875rem;
-          line-height: 45px;
-          padding: 0 30px;
-          border-width: 2px;
-          border-style: solid;
-          font-weight: 500;
-        }
-        .uk-button-link, .uk-button-link:hover, .uk-button-link:focus {
-          color: #008b96;
-        }
-        .uk-navbar-nav>li>a {
-          text-transform: capitalize;
-        }
-        .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
-          font-size: 1rem;
-          min-height: auto;
-          padding: 0 15px;
-        }
-        .uk-link, a, .uk-link:hover, .uk-link:focus, a:hover, a:focus {
-          color: #008b96;
-        }
-        .single-content a {
-          text-decoration: underline;
-        }
-        .uk-logo {
-          font-size: 2.8rem;
-        }
-        @media only screen and (max-width:959px) {
-          .uk-logo {
-            font-size: 1.5rem;
-          }
-          .header-navbar.uk-navbar-container.uk-section-small {
-            padding-bottom: 20px;
-            padding-top: 20px;
-          }
-        }
-        @media (min-width: 960px){
-          .uk-container-expand {
-            padding-left: 20px;
-            padding-right: 20px;
-          }
-        }
-        
-        /* custom additions */
-        .uk-position-cover-padded {
-          bottom: 35px;
-          left: 35px;
-          right: 35px;
-          top: 35px;
-        }
-        .padded-outset-border {
-          border: 15px outset #7575751f;
-        }
-        @media only screen and (max-width:768px) {
-          .uk-position-cover-padded {
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-          }
-          .padded-outset-border {
-            border: 15px solid #ffffff00;
-          }
-        }
-      </style>
-      
-      <style>
-        /* shop toolbar */
-        .shop-fixednav {
-          display: none;
-          height: 53px;
-          position: fixed;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          z-index: 350;
-          background-color: #FFF;
-          box-shadow: 0 0 9px rgb(0 0 0 / 12%);
-        }
-        .shop-fixednav .uk-container {
-          padding: 8px 0 0px 0;
-        }
-        .shop-fixednav .header-cart-count {
-          top: 5px;
-          left: auto;
-          right: 22px;
-          font-size: 11px;
-          line-height: 15px;
-          min-width: 15px;
-          height: 15px;
-          border-radius: 15px;
-        }
-        @media only screen and (max-width:959px) {
-          .shop-fixednav {
-            display: block;
-          }
-          footer {
-            padding-bottom: 53px;
-          }
-        }
-      </style>
-    {% endblock %}
-    
     {% block styles %}
     {% endblock %}
+    
+    <!-- preloader css -->
+    <style>
+      .theme-preload::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 45vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80px;
+        height: 80px;
+        border: 2px solid #f3f3f3;
+        border-top: 3px solid #525252;
+        border-radius: 100%;
+        will-change: transform;
+        animation: spin 1s infinite linear;
+        z-index: 3;
+      }
+      .theme-preload::after {
+        content: '';
+        position: absolute;
+        background-color: #ffffff;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+      .no-overflow {
+        overflow: hidden;
+      }
+      /* preload animation new */
+      .theme-preload {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.4s linear;
+      }
+      .theme-preload.hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 0.4s, opacity 0.4s linear;
+      }
+    </style>
   </head>
 
   {% block bodywrap %}
-    <body class="{{body_class}}" data-template="base.twig">
+    <body class="{{body_class}} no-overflow" data-template="base.twig">
       
-      {# do function('custom_store_notice') #}
+      {% block theme_preload_markup %}
+        <div id="ThemePreload" class="theme-preload"></div>
+      {% endblock %}
+      
+      {% do function('custom_store_notice') %}
 
       {# dont forget to set an actual base header #}
       {% block header %}
@@ -286,6 +103,16 @@
       {{ function('wp_footer') }}
       
       {% block scripts %}
+      {% endblock %}
+      
+      {% block theme_preload_script %}
+        <script>
+          // website preloader animation
+          window.onload = function(){
+            document.getElementById("ThemePreload").classList.add("hidden");
+            document.getElementsByTagName("BODY")[0].classList.remove("no-overflow");
+          }
+        </script>
       {% endblock %}
       
     </body>

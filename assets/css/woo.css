@@ -25,7 +25,7 @@
   border-radius: 50%;
   text-align: center;
   font-size: 10px;
-  background-color: #008b96;
+  background-color: #008ce1;
   color: #fff;
 }
 .subtotal-cart {
@@ -38,7 +38,7 @@
   width: 50px;
 }
 .woocommerce-mini-cart__total bdi, .mini-cart-quantity bdi {
-  color: #008b96;
+  color: #008ce1;
   font-weight: 700;
 }
 .woocommerce-mini-cart__empty-message {
@@ -62,7 +62,7 @@ label[for=coupon_code] {
 
 /* product teases */
 .onsale.uk-label {
-  background: #008b96;
+  background: #008ce1;
 }
 .tease-image .onsale.uk-card-badge {
   position: absolute;
@@ -83,7 +83,7 @@ label[for=coupon_code] {
   margin-top: 4px;
 }
 .tease-image .onsale.uk-label, .tease-image .finishes.uk-label, .tease-image .max-tickets.uk-label {
-  background: #008b96;
+  background: #008ce1;
   border-radius: 2px;
   color: #fff;
   font-size: .75rem;
@@ -137,11 +137,11 @@ label[for=coupon_code] {
   border-color: #b1b1b1;
   border-width: 3px;
   text-transform: capitalize;
-  color: #008b96;
+  color: #008ce1;
   transition: border-color 150ms;
 }
 .tease-buttons .uk-button-default:hover, .tease-buttons .uk-button-default:focus {
-  border-color: #008b96;
+  border-color: #008ce1;
 }
 
 /* list tease product fixes for mobile */

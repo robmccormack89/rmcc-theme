@@ -1,6 +1,7 @@
 <?php
 /**
 * The front page template (when backend settings for front page display are set to static or latest posts)
+*
 * @package Cautious_Octo_Fiesta
 */
 
@@ -20,6 +21,13 @@ if ( is_home() && is_front_page() ) {
 } else {
 	$context['title'] =  get_the_title( $post->ID );
 };
+
+$args = array(
+   'post_type'             => 'product',
+   'post_status'           => 'publish',
+   'posts_per_page'        => '3',
+);
+$context['latest_competitions'] = new Timber\PostQuery($args);
 
 // render the context with template
 Timber::render( array('front-page.twig'), $context );

@@ -4,13 +4,13 @@
       <div class="uk-text-center">
         <a class="uk-link-text" href="{{shop_url|e('esc_url')}}">
           <i class="far fa-clock fa-lg"></i>
-          <div class="uk-text-small">{{ __('Competitions', 'cautious-octo-fiesta') }}</div>
+          <div class="uk-text-small">{{ _x('Competitions', 'Shop Fixed Nav Mobile - Competitions Text', 'cautious-octo-fiesta')|e('esc_html') }}</div>
         </a>
       </div>
       <div class="uk-text-center">
         <a class="uk-link-text" href="{{contact_page_link|e('esc_url')|default('#')}}">
           <i class="far fa-envelope fa-lg"></i>
-          <div class="uk-text-small">{{ __('Contact', 'cautious-octo-fiesta') }}</div>
+          <div class="uk-text-small">{{ _x('Contact', 'Shop Fixed Nav Mobile - Contact Text', 'cautious-octo-fiesta')|e('esc_html') }}</div>
         </a>
       </div>
       <div class="uk-text-center">
@@ -20,9 +20,9 @@
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
           {% if not user %}
-            <div class="uk-text-small">{{ __('Login/Signup', 'cautious-octo-fiesta') }}</div>
+            <div class="uk-text-small">{{ _x('Login/Signup', 'Shop Fixed Nav Mobile - Login Text', 'cautious-octo-fiesta')|e('esc_html') }}</div>
           {% else %}
-            <div class="uk-text-small">{{ __('Account', 'cautious-octo-fiesta') }}</div>
+            <div class="uk-text-small">{{ _x('Account', 'Shop Fixed Nav Mobile - Account Text', 'cautious-octo-fiesta')|e('esc_html') }}</div>
           {% endif %}
         </a>
       </div>
@@ -37,7 +37,7 @@
           <span>
             {% do action('cart_ajax_result_count') %}
           </span>
-          <div class="uk-text-small">{{ __('Basket', 'cautious-octo-fiesta') }}</div>
+          <div class="uk-text-small">{{ _x('Basket', 'Shop Fixed Nav Mobile - Basket Text', 'cautious-octo-fiesta')|e('esc_html') }}</div>
         </a>
       </div>
     </div>

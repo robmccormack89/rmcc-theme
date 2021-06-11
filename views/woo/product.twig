@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="{{theme.link}}/assets/css/lib/lightslider.css" />
   <script type="text/javascript" src="{{theme.link}}/assets/js/lib/lightslider.js"></script> 
   <link rel="stylesheet" href="{{theme.link}}/assets/css/lib/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="{{theme.link}}/assets/css/single-product.css" />
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/product.css" />
 {% endblock %}
 
 {% block header %}
@@ -86,7 +86,7 @@
                   {% endfor %}
                   
                 </div>
-                {% if not up_sells > 4 %}
+                {% if up_sells|length > 1 %}
                   <!-- Add Pagination -->
                   <div class="swiper-pagination"></div>
                 {% endif %}
@@ -109,7 +109,7 @@
                   {% endfor %}
                   
                 </div>
-                {% if not related_products > 4 %}
+                {% if related_products|length > 1 %}
                   <!-- Add Pagination -->
                   <div class="swiper-pagination"></div>
                 {% endif %}

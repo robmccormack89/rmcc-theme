@@ -9,6 +9,8 @@
 Timber::$dirname = array(
   'views',
   'views/parts',
+  'views/parts/tease',
+  'views/parts/comments',
   'views/woo',
   'views/wp',
   'views/wp/archive',
@@ -260,12 +262,12 @@ class CautiousOctoFiesta extends Timber\Site
   {
     // This theme uses wp_nav_menu() in one locations.
     register_nav_menus(array(
-      'main_menu' => 'Main Menu',
-      'mobile_menu' => 'Mobile Menu',
-      'footer_menu_1' => 'Footer Menu 1',
-      'footer_menu_2' => 'Footer Menu 2',
-      'footer_menu_3' => 'Footer Menu 3',
-      'footer_menu_4' => 'Footer Menu 4',
+      'main_menu' => __( 'Main Menu', 'cautious-octo-fiesta' ),
+      'mobile_menu' => __( 'Mobile Menu', 'cautious-octo-fiesta' ),
+      'footer_menu_1' => __( 'Footer Menu 1', 'cautious-octo-fiesta' ),
+      'footer_menu_2' => __( 'Footer Menu 2', 'cautious-octo-fiesta' ),
+      'footer_menu_3' => __( 'Footer Menu 3', 'cautious-octo-fiesta' ),
+      'footer_menu_4' => __( 'Footer Menu 4', 'cautious-octo-fiesta' ),
     ));
   }
 

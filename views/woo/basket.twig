@@ -1,5 +1,9 @@
 {% extends "base.twig" %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{{theme.link}}/assets/css/lib/swiper-bundle.min.css" />
+{% endblock %}
+
 {% block header %}
   <header class="header-muted">
     <div class="header-top-nav uk-position-top uk-position-z-index">
@@ -22,5 +26,6 @@
 {% endblock %}
 
 {% block scripts %}
+  <script src="{{theme.link}}/assets/js/lib/swiper-bundle.min.js"></script>
   <script type='text/javascript' src='{{theme.link}}/assets/js/basket.js'></script>
 {% endblock %}

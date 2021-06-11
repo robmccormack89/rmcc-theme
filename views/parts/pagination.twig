@@ -1,25 +1,27 @@
-<div data-template="pagination.twig">
-  <div class="pagination">
-    <ul class="uk-pagination uk-flex-center uk-margin-remove">
-      {% if pagination.prev %}
-        <li>
-          <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}"><i uk-icon="icon: chevron-left"></i> {{ __('Previous Page', 'urban-carnival-theme') }}</a>
-        </li>
-      {% endif %}
-      {% for page in pagination.pages %}
-        <li>
-          {% if page.link %}
-            <a href="{{page.link|e('esc_url')}}" class="{{page.class|e('html_attr')}}">{{page.title|e('esc_html')}}</a>
-          {% else %}
-            <span class="{{page.class|e('html_attr')}}">{{page.title|e('esc_html')}}</span>
-          {% endif %}
-        </li>
-      {% endfor %}
-      {% if pagination.next %}
-        <li>
-          <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">{{ __('Next Page', 'urban-carnival-theme') }} <i uk-icon="icon: chevron-right"></i></a>
-        </li>
-      {% endif %}
-    </ul>
-  </div>
+<div class="pagination" data-template="pagination.twig">
+  <ul class="uk-pagination uk-flex-center uk-margin-remove">
+    {% if pagination.prev %}
+      <li>
+        <a href="{{pagination.prev.link|e('esc_url')}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'|e('html_attr')}}">
+          <i uk-icon="icon: chevron-left"></i> {{ _x('Previous Page', 'Pagination - Previous page text', 'cautious-octo-fiesta')|e('esc_html') }}
+        </a>
+      </li>
+    {% endif %}
+    {% for page in pagination.pages %}
+      <li>
+        {% if page.link %}
+          <a href="{{page.link|e('esc_url')}}" class="{{page.class|e('html_attr')}}">{{page.title|e('esc_html')}}</a>
+        {% else %}
+          <span class="{{page.class|e('html_attr')}}">{{page.title|e('esc_html')}}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    {% if pagination.next %}
+      <li>
+        <a href="{{pagination.next.link|e('esc_url')}}" class="next {{pagination.next.link|length ? '' : 'invisible'|e('html_attr')}}">
+          {{ _x('Next Page', 'Pagination - Next page text', 'cautious-octo-fiesta')|e('esc_html') }} <i uk-icon="icon: chevron-right"></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
 </div>

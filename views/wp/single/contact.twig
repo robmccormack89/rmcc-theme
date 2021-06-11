@@ -15,12 +15,12 @@
         {{base_address_2|e('esc_html')|default('Base address 2')}},<br>
         {{base_city|e('esc_html')|default('Base city')}},<br>
         {{base_county|e('esc_html')|default('Base county')}},<br>
-        {{ __('Eircode:', 'cautious-octo-fiesta') }} {{base_eircode|e('esc_html')|default('Eircode')}}.
+        {{ _x('Eircode', 'Contact page Postcode label', 'cautious-octo-fiesta')|e('esc_html') }} {{base_eircode|e('esc_html')|default('Eircode')}}.
       </p>
       
       <p class="uk-text-bold uk-text-emphasis">
-        Tel: {{company_phone_number|e('esc_html')}}<br>
-        Email: {{display_email|e('html_attr')}}
+        {{ _x('Tel:', 'Contact page Telephone no. label', 'cautious-octo-fiesta')|e('esc_html') }} {{company_phone_number|e('esc_html')}}<br>
+        {{ _x('Email:', 'Contact page Email label', 'cautious-octo-fiesta')|e('esc_html') }} {{display_email|e('html_attr')}}
       </p>
       
       <hr>
@@ -28,9 +28,7 @@
     </div>
     
     <div class="contact-page-form">
-        
       {{ function('do_shortcode', '[contact-form-7 title="Contact"]') }}
-    
     </div>
 
   </section>

@@ -9,7 +9,7 @@
   {% endif %}
 
   <div id="CommentForm">
-    <h4>{{ __('Leave a new comment', 'ned-murphy-tractors-theme') }}</h4>
+    <h4>{{ _x('Leave a new comment', 'Blog post comments - Leave a comment text', 'cautious-octo-fiesta')|e('esc_html') }}</h4>
     {% include "comment-form.twig" %}
   </div>
 

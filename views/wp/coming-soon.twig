@@ -49,22 +49,22 @@
           <span class="uk-logo norican">{{site.title}}</span>
 
           <h1 class="launch-heading uk-heading-medium uk-margin-remove-top uk-margin-remove-bottom">
-            {{ __('Our new website is on its way.', 'cautious-octo-fiesta') }}
+            {{ _x('Our new website is on its way', 'Coming Soon Page - Heading', 'cautious-octo-fiesta')|e('esc_html') }}
           </h1>
 
           <p class="launch-msg uk-margin-small-bottom uk-text-lead">
-            {{ __('Get notified when we launch', 'cautious-octo-fiesta') }}
+            {{ _x('Get notified when we launch', 'Coming Soon Page - Message', 'cautious-octo-fiesta')|e('esc_html') }}
           </p>
           
           <div class="social-icons-wrap">
             <div class="social-icons uk-grid-small uk-child-width-auto uk-flex uk-flex-left uk-margin-top" uk-grid>
               <div>
-                <a href="{{ __('https://www.facebook.com', 'cautious-octo-fiesta') }}" target="_blank">
+                <a href="{{ _x('https://www.facebook.com', 'Facebook Link', 'cautious-octo-fiesta')|e('esc_html') }}" target="_blank">
                   <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
               </div>
               <div>
-                <a href="mailto:{{ __('info@dreamwinners.ie', 'cautious-octo-fiesta') }}">
+                <a href="mailto:{{ _x('info@example.com', 'Email address', 'cautious-octo-fiesta')|e('esc_html') }}">
                   <i class="far fa-envelope fa-lg"></i>
                 </a>
               </div>
