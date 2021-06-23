@@ -1,6 +1,6 @@
 <?php
-// namespace Rmcc;
-// use Timber\Site;
+namespace Rmcc;
+use Timber\Site;
 
 /**
  * Timber theme class & other functions for Twig.
@@ -30,7 +30,7 @@ Timber::$dirname = array(
 Timber::$autoescape = false;
 
 // Define Cautious_Octo_Fiesta Child Class
-class CautiousOctoFiesta extends Timber\Site
+class CautiousOctoFiesta extends Timber
 {
   public function __construct() {
     // timber stuff
@@ -206,15 +206,41 @@ class CautiousOctoFiesta extends Timber\Site
 
   public function add_to_twig($twig) {
     /* this is where you can add your own functions to twig */
-    // $twig->addExtension(new Twig_Extension_StringLoader());
+    $twig->addExtension(new Timber\Twig_Extension_StringLoader());
     
     // competition-related filters. see theme-functions.php
-    $twig->addFilter( new Timber\Twig_Filter('days_left', 'days_left'));
-    $twig->addFilter( new Timber\Twig_Filter('hours_left', 'hours_left'));
-    $twig->addFilter( new Timber\Twig_Filter('time_left', 'time_left'));
-    $twig->addFunction( new Timber\Twig_Function('tickets_left', 'tickets_left', array($max_tickets, $participants_count)));
+    $twig->addFilter( new Timber\Twig_Filter('days_left', array($this, 'days_left_filter')));
+    $twig->addFilter( new Timber\Twig_Filter('hours_left', array($this, 'hours_left_filter')));
+    $twig->addFilter( new Timber\Twig_Filter('time_left', array($this, 'time_left_filter')));
+    $twig->addFunction( new Timber\Twig_Function('tickets_left', array($this, 'tickets_left_filter'), array($max_tickets, $participants_count)));
     
     return $twig;
+  }
+  
+  public function days_left_filter($date) {
+    $date1 = new DateTime('now');
+    $date2 = new DateTime($date);
+    $days  = $date2->diff($date1)->format('%a');
+    return $days;
+  }
+  
+  public function hours_left_filter($date) {
+    $date1 = new DateTime('now');
+    $date2 = new DateTime($date);
+    $days  = $date2->diff($date1)->format('%h');
+    return $days;
+  }
+  
+  public function time_left_filter($date) {
+    $current_time = current_time('timestamp');
+    $whats_left_in_human = human_time_diff($date, $current_time);
+    
+    return $whats_left_in_human;
+  }
+  
+  public function tickets_left_filter($max_tickets, $participants_count) {
+    $tickets_left = $max_tickets - $participants_count;
+    return $tickets_left;
   }
 }
 new CautiousOctoFiesta();
