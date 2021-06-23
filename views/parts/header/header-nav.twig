@@ -1,0 +1,20 @@
+<nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
+  
+  <div class="uk-navbar-left">
+    <ul class="main-menu main-nav uk-navbar-nav uk-visible@l">
+      {% include 'header-nav-menu.twig' %}
+    </ul>
+    <a class="mobile-menu-toggle uk-navbar-toggle uk-hidden@l uk-text-emphasis" uk-navbar-toggle-icon href="#MobileOffCanvas" uk-toggle></a>
+  </div>
+  
+  <div class="uk-navbar-center">
+    {% include 'header-nav-logo.twig' %}
+  </div>
+  
+  <div class="uk-navbar-right">
+    {% include 'header-nav-icons.twig' %}
+  </div>
+  
+</nav>
+
+{% include 'header-mobile-offcanvas.twig' %}

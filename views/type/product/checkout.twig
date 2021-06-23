@@ -1,0 +1,84 @@
+{# translation-ready, escaped, formatted, semantic #}
+{% extends "page.twig" %}
+
+{% block styles %}
+  {# checkout specific styles #}
+  <style>
+    
+    /* order review table */
+    .woocommerce-form-coupon-toggle, .woocommerce-checkout-review-order-table {
+      font-size: 0.875em;
+    }
+    .woocommerce-form-login-toggle, .woocommerce-form-coupon-toggle {
+      margin-bottom: 10px;
+    }
+    .uk-table-small td, .uk-table-small th {
+      padding: 6px 8px;
+    }
+    th.product-total, td.product-total  {
+      text-align: right;
+    }
+    .cart-subtotal td, .order-total td, .cart-discount td {
+      text-align: right;
+    }
+    
+    /* billing form grid margins */
+    *+.uk-grid-margin-small, .uk-grid+.uk-grid-row-small, .uk-grid+.uk-grid-small, .uk-grid-row-small>.uk-grid-margin, .uk-grid-small>.uk-grid-margin {
+      margin-top: 8px;
+    }
+    
+    /* billing form required/s */
+    abbr.required {
+      color: #f0506e!important;
+    }
+    .validate-required label {
+      display: inline-block!important;
+    }
+    .req {
+      margin-left: 3px;
+    }
+    
+  </style>
+{% endblock %}
+
+{% block contentwrap %}
+  <article class="uk-section {{post.class|e('esc_html')}}" date-template="checkout.twig">
+    <section class="single-content uk-container uk-container-small">
+      {{post.content}}
+    </section>
+  </article>
+{% endblock %}
+
+{% block scripts %}
+  {# checkout specific scripts #}
+  <script type='text/javascript'>
+    // checkout customizations
+    jQuery(function($) {
+      function theCheckout() {
+        // billing fields grid
+        $(".woocommerce-billing-fields__field-wrapper").attr("uk-grid", true).addClass("uk-child-width-1-1 uk-grid-small");
+        $(".woocommerce-billing-fields h3").addClass("uk-h4");
+        // billing fields firstname, lastname
+        $(".woocommerce-billing-fields .form-row-first").addClass("uk-width-1-2");
+        $(".woocommerce-billing-fields .form-row-last").addClass("uk-width-1-2");
+        // form inputs/elements
+        $(".input-radio").addClass("uk-radio");
+        $(".input-text").addClass("uk-input");
+        $(".input-checkbox").addClass("uk-checkbox");
+        $("label").addClass("uk-form-label");
+        $("select").addClass("uk-select");
+        // order review table
+        $(".woocommerce-checkout-review-order-table").addClass("uk-table uk-table-divider uk-table-small uk-table-justify");
+        // payments methods ul
+        $(".wc_payment_methods").addClass("uk-list uk-list-large uk-list-divider");
+        // shipping methods ul
+        $("#shipping_method").addClass("uk-list");
+        // checkout buttons
+        $(".button").addClass("uk-button uk-button-primary");
+        $(".checkout_coupon button").addClass("uk-button uk-button-default uk-button-small");
+      }
+      $("form.checkout").load(theCheckout());
+      $("body").on('DOMSubtreeModified', "form.checkout", theCheckout);
+    });
+  </script>
+{% endblock %}

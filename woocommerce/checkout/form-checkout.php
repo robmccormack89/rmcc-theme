@@ -15,11 +15,7 @@
  * @version 3.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-?>
+if (! defined('ABSPATH')) { exit; } ?>
 
 <div class="coupon-box">
 	<?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>

@@ -9,8 +9,7 @@
 require_once get_template_directory() . '/inc/lib/class-tgm-plugin-activation.php';
 
 // register the required plugins(Timber) see TGM Plugin activation library for php
-function cautious_octo_fiesta_register_required_plugins()
-{
+function cautious_octo_fiesta_register_required_plugins() {
  $plugins = array(
    array(
      'name' => 'Timber',
@@ -54,22 +53,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 		$product = wc_get_product( $post->ID );
 	}
 	// woo functions
-	require get_template_directory() . '/inc/woo/woo-functions.php';
+	require get_template_directory() . '/inc/woo-functions.php';
 }
 
-// if ACF class exists, do some stuff
-if ( class_exists( 'ACF' ) ) {
-	require get_template_directory() . '/inc/acf/acf-functions.php';
-}
-
-require get_template_directory() . '/inc/static-site-helpers.php';
-
-// add_action('template_redirect', function() {
-//   if(!is_user_logged_in()) {
-//     if (is_page('coming-soon')) {
-//       return;
-//     }
-//     wp_redirect( esc_url_raw( home_url( 'coming-soon' ) ) );
-//     exit;
-//   }
-// });
+// require get_template_directory() . '/inc/static-site-helpers.php';

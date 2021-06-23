@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Minimal Header Page Template
+ * Template Name: Minimal Header Template
  *
  * @package Cautious_Octo_Fiesta
  */

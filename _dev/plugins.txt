@@ -1,0 +1,43 @@
+Timber -> theme needs this to function. necessary/required***
+
+ACF Pro ->  theme options/data. necessary/required***
+
+Contact Form 7 -> the theme's forms use CF7 shortcodes. necessary/required***
+
+WooCommerce -> theme needs this to function. necessary/required***
+
+WooCommerce Competitions -> essential for client**
+
+WooCommerce Competitions Tickets/Pick Number -> essential for client**
+
+Loco Translate -> theme translations in the browser. essential for client**
+
+Yoast SEO -> essential for client**
+
+Custom Product Tabs for WooCommerce -> essential for client**
+
+---
+
+Ajax Login/Register for WooCommerce -> makes the login form ajax on login page only; doesnt work on checkout. but the ajax validation part does. useful
+
+CheckoutWC -> making the theme do same without this. is best example of checkout page style. not required
+
+Direct Checkout for WooCommerce -> making the theme do same without this. is best example of direct checkout. not required
+
+---
+
+custom plugins to make:
+
+_static site helpers: good for doing wget request, also good for cleaning up the output of wp shite
+
+_ajax product filters
+
+---
+
+cross sells on basket
+
+product tabs(default is tabs not appearing/basic template)
+
+custom product gallery with lightgallery (should only be for competitions or simple products really)
+
+testimonials

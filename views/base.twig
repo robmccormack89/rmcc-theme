@@ -4,70 +4,23 @@
   <head>
     <meta charset="{{site.charset}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Norican&display=swap" rel="stylesheet">
     
-    {{ function('wp_head') }}
-    
-    {% block styles %}
+    {% block fonts %}
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Norican&display=swap" rel="stylesheet">
     {% endblock %}
     
-    <!-- preloader css -->
-    <style>
-      .theme-preload::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 45vh;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80px;
-        height: 80px;
-        border: 2px solid #f3f3f3;
-        border-top: 3px solid #525252;
-        border-radius: 100%;
-        will-change: transform;
-        animation: spin 1s infinite linear;
-        z-index: 3;
-      }
-      .theme-preload::after {
-        content: '';
-        position: absolute;
-        background-color: #ffffff;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-      }
-      .no-overflow {
-        overflow: hidden;
-      }
-      /* preload animation new */
-      .theme-preload {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.4s linear;
-      }
-      .theme-preload.hidden {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s 0.4s, opacity 0.4s linear;
-      }
-    </style>
+    {{ function('wp_head') }}
+
+    {% block styles %}
+    {% endblock %}
   </head>
 
   {% block bodywrap %}
-    <body class="{{body_class}} no-overflow" data-template="base.twig">
+    <body class="{{body_class|e('esc_html')}}" data-template="base.twig">
       
-      {% block theme_preload_markup %}
-        <div id="ThemePreload" class="theme-preload"></div>
-      {% endblock %}
-      
-      {% do function('custom_store_notice') %}
+      {% do action('rmcc_before_header') %}
 
-      {# dont forget to set an actual base header #}
       {% block header %}
         <header class="uk-section uk-section-small uk-background-muted">
           <div class="uk-container uk-container-expand">
@@ -75,6 +28,8 @@
           </div>
         </header>
       {% endblock %}
+      
+      {% do action('rmcc_after_header') %}
       
       <main role="main" id="MainContent">
         {% block contentwrap %}
@@ -88,31 +43,20 @@
         {% endblock %}
       </main>
       
-      {% block subscribe %}
-        {% include 'subscribe.twig' %}
-      {% endblock %}
+      {% do action('rmcc_before_footer') %}
       
       {% block footer %}
-        {% include 'footer.twig' %}
+        <footer class="the-footer">
+          {% include 'footer-main.twig' %}
+          {% include 'footer-bottom.twig' %}
+        </footer>
       {% endblock %}
       
-      {% block shop_fixed_nav %}
-        {% include 'shop-fixed-nav.twig' %} 
-      {% endblock %}
+      {% do action('rmcc_after_footer') %}
       
       {{ function('wp_footer') }}
       
       {% block scripts %}
-      {% endblock %}
-      
-      {% block theme_preload_script %}
-        <script>
-          // website preloader animation
-          window.onload = function(){
-            document.getElementById("ThemePreload").classList.add("hidden");
-            document.getElementsByTagName("BODY")[0].classList.remove("no-overflow");
-          }
-        </script>
       {% endblock %}
       
     </body>

@@ -17,13 +17,33 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 */
+
+/* 
+*
+* SHOP
+*
+*/
+
+/* shop filters reset button */
+.filtering-reset {
+  position: absolute;
+  top: -2rem;
+}
+
+
+/* 
+*
+* SWIPER GENERAL
+*
+*/
+
 .swiper-container {
   padding-bottom: 30px!important;
   z-index: 0!important;
 }
 .swiper-pagination {
   position: absolute!important;
-  bottom: 15px!important;
+  bottom: 0px!important;
 }
 
 /* 
@@ -34,7 +54,7 @@ Cautious Octo Fiesta is built using Timber WP https://github.com/timber/timber
 
 /* base/body font */
 html {
-  font-family: 'Nunito',sans-serif,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: 'Nunito', sans-serif;
   color: #3a3a3a;
 }
 
@@ -114,6 +134,10 @@ h1, h2, h3, h4, h5, h6 {
 *
 */
 
+.uk-card-badge {
+  height: auto;
+}
+
 .uk-overlay-primary {
   background: rgb(0 0 0 / 30%);
   /* background: rgb(40 100 142 / 72%); */
@@ -144,18 +168,24 @@ h1, h2, h3, h4, h5, h6 {
 .uk-tab:before {
   bottom: 1px;
 }
+.uk-tab.uk-tab-left:before {
+  bottom: 0;
+  right: 1px;
+}
 .uk-input:focus, .uk-select:focus, .uk-textarea:focus {
   border-color: #008ce1;
 }
+.uk-button {
+  letter-spacing: 1px;
+}
 .uk-button-primary:focus, .uk-button-primary:hover {
-  background-color: #064d52;
+  background-color: #0674b7;
   color: #fff;
 }
 .uk-button-default {
   background-color: transparent;
-  border: 1px solid #008ce1;
-  color: #008ce1;
-  transition: border-color 150ms;
+  border: 1px solid #0e0e0e;
+  color: #0e0e0e;
 }
 .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
 .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
@@ -165,7 +195,10 @@ h1, h2, h3, h4, h5, h6 {
 .uk-text-emphasis {
   color: #1d1d1d!important;
 }
-.uk-light .uk-navbar-nav>li>a {
+.uk-navbar-nav>li>span {
+  color: #999;
+}
+.uk-light .uk-navbar-nav>li>a, .uk-light .uk-navbar-nav>li>span {
   color: #fff;
 }
 .uk-container-xsmall {
@@ -215,6 +248,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.uk-subnav-pill>.uk-active>a, 
+.uk-subnav-pill>.is-active>a {
+  background-color: #008ce1;
+  color: #fff;
+}
+
 /* 
 *
 * CUSTOM MODS
@@ -248,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 *
 */
 
-.shop-fixednav {
+/* .shop-fixednav {
   display: none;
   height: 53px;
   position: fixed;
@@ -263,9 +302,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px 0 0px 0;
 }
 .shop-fixednav .header-cart-count {
-  top: 5px;
+  top: 7px;
   left: auto;
-  right: 22px;
+  right: 27px;
   font-size: 11px;
   line-height: 15px;
   min-width: 15px;
@@ -279,7 +318,10 @@ h1, h2, h3, h4, h5, h6 {
   footer {
     padding-bottom: 53px;
   }
-}
+  footer.no-shop-nav {
+    padding-bottom: 0;
+  }
+} */
 
 /* 
 *
@@ -341,6 +383,10 @@ h1, h2, h3, h4, h5, h6 {
 * GLOBAL HEADER 
 *
 */
+
+.header-navbar .uk-navbar-center {
+  z-index: 0;
+}
 
 .uk-logo,
 .header-muted .uk-logo,
@@ -494,21 +540,9 @@ svg.search, svg.search, svg.basket, svg.basket {
 *
 */
 
-/* subscribe form */
-@media (max-width: 959px){
-  .subscribe-section .uk-button {
-    margin-top: 5px;
-    width: 100%;
-  }
-}
-.subscribe-form input {
-  height: 49px!important;
-}
-
 /* primary colour */
 .the-footer .uk-nav-default>li>a:hover, 
-.the-footer .uk-nav-default>li>a:focus, 
-.subscribe-section .far {
+.the-footer .uk-nav-default>li>a:focus {
   color: #008ce1;
 }
 
@@ -550,4 +584,151 @@ svg.search, svg.search, svg.basket, svg.basket {
 }
 .tease-meta>:not(:first-child) {
   margin-left: 18px;
+}
+
+/* 
+*
+* WOO STYLES 
+*
+*/
+
+/* woocommerce_archive_description */
+.term-description {
+  margin-top: 30px;
+}
+.term-description>p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* checkout */
+.woocommerce-form-login-toggle, .woocommerce-form-coupon-toggle {
+  margin-bottom: 10px;
+}
+
+/* star rating color */
+.star-rating span:before {
+  color: #eeaf2e!important;
+}
+
+/* quantity inputs */
+.qty.uk-input {
+  max-width: 80px;
+}
+
+/* turn offs */
+.added_to_cart, 
+.screen-reader-text, 
+label[for=coupon_code] {
+  display: none!important;
+}
+
+/* product teases */
+.onsale.uk-label {
+  background: #008ce1;
+}
+.tease-image .onsale.uk-card-badge {
+  position: absolute;
+  left: 10px;
+  right: auto;
+  top: 10px;
+  z-index: 1;
+}
+.tease-image .max-tickets.uk-card-badge {
+  position: absolute;
+  left: auto;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+.tease-image .finishes.uk-card-badge {
+  right: 10px;
+  margin-top: 4px;
+}
+.tease-image .onsale.uk-label, .tease-image .finishes.uk-label, .tease-image .max-tickets.uk-label {
+  background: #008ce1;
+  border-radius: 2px;
+  color: #fff;
+  font-size: .75rem;
+  padding: 0px 6px;
+  text-transform: uppercase;
+}
+.tease-image .lottery-bage {
+  display: none;
+}
+
+.tease-title .uk-h4, .tease-title h4 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+.tease-title a, .tease-title a.uk-link-reset {
+  color: #1c1d1d!important;
+}
+.tease-title .uk-h4,
+.tease-title .uk-h3 {
+  margin-bottom: 5px;
+}
+
+.tease-price-rating .price {
+  position: relative;
+}
+.tease-price-rating .price bdi {
+  color: #1c1d1d;
+}
+.tease-price-rating .price ins, .tease-price-rating .price mark {
+  background: #fff0;
+  color: #1c1d1d;
+  font-size: 1.1rem;
+}
+.tease-price-rating .price del ins {
+  position: absolute;
+  left: 0;
+}
+.tease-price-rating .price del bdi {
+  opacity: 0.5;
+  text-decoration: line-through;
+  position: absolute;
+  left: calc(100% + 10px);
+}
+.tease-price-rating .star-rating {
+  margin: 10px 0 0!important;
+}
+
+.tease-buttons {
+  margin-top: 20px;
+}
+.tease-buttons .uk-button-default {
+  background-color: transparent;
+  border-style: double;
+  border-color: #b1b1b1;
+  border-width: 3px;
+  /* text-transform: capitalize; */
+  color: #008ce1;
+  transition: border-color 150ms;
+}
+.tease-buttons .uk-button-default:hover, .tease-buttons .uk-button-default:focus {
+  border-color: #008ce1;
+}
+
+.tease-details.uk-padding {
+  padding-left: 0px;
+}
+
+@media only screen and (max-width:959px) {
+  .tease-details.uk-padding {
+    padding: 10px 15px;
+  }
+  .product-tease *+.uk-grid-margin, .product-tease .uk-grid+.uk-grid, .product-tease .uk-grid>.uk-grid-margin {
+    margin-top: 0;
+  }
+}
+
+/* list tease product fixes for mobile */
+@media only screen and (max-width:959px) {
+  .product-list-item .uk-margin-medium-left {
+    margin-left: 0px!important;
+  }
+  .product-list-item .finishes {
+    margin-top: 5px;
+  }
 }

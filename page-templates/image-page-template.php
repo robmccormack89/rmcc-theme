@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Image Header Page Template
+ * Template Name: Image Header Template
  *
  * @package Cautious_Octo_Fiesta
  */

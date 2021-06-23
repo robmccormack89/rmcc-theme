@@ -26,7 +26,7 @@ $context['pagination'] = Timber::get_pagination();
 $context['paged'] = $paged;
 
 // templates to render
-$templates = array( 'index.twig' );
+$templates = array( 'blog.twig' );
 
 // render templates & context
 Timber::render( $templates, $context );

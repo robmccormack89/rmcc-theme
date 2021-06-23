@@ -1,0 +1,31 @@
+{# translation-ready, escaped, formatted, semantic #}
+{% extends "page.twig" %}
+
+{% block header %}
+  <header class="uk-inline">
+    <div class="header-top-nav main-nav uk-position-top uk-position-z-index">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+        {% include 'header-nav.twig' %}
+      </div>
+    </div>
+    <img class="cover-img uk-height-large" 
+    src="{{post.thumbnail.src|resize(1920)|default(options.site_featured_image.url|resize(1920))|default(theme.link ~ '/assets/images/clouds1.jpg')|e('esc_url')}}" 
+    alt="{{post.thumbnail.alt|default(options.site_featured_image.alt)|e('esc_html')}}">
+    <div class="uk-overlay-primary uk-position-cover">
+      <div class="uk-position-center">
+        <div class="uk-text-center uk-container uk-container-xsmall">
+          <h1 class="uk-margin-large-top">{{post.title|e('esc_html')}}</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block contentwrap %}
+  <!-- single page content -->
+  <article id="Page-{{post.id|e('esc_html')}}" class="uk-section {{post.class|e('esc_html')}}">
+    <div class="single-content uk-container uk-container-xsmall">
+      {{post.content}}
+    </div>
+  </article>
+{% endblock %}

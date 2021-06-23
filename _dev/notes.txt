@@ -1,0 +1,5 @@
+theme -> default woo bootstrap. default account, basket, checkout
+account.twig, checkout.twig, basket.twig templates should be rendered via woocommerce.php rather than custom page templates
+woocommerce.php could be broken up into parts -> single, shop, archive, cart, checkout etc
+
+plugin -> direct checkout. will provide custom checkout template 

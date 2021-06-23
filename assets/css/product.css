@@ -1,5 +1,46 @@
 /*
 * 
+* Notices & Messages
+*
+*/
+
+/* .uk-section>.woocommerce-message, .woocommerce-message {
+  display: none;
+} */
+.woocommerce-message {
+  background-color: #eee;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.woocommerce-info {
+  margin-bottom: 20px;
+}
+
+/*
+* 
+* Product Tabs
+*
+*/
+
+.tab-content {
+  margin-left: 30px;
+}
+@media (max-width: 959px){
+  .tab-content {
+    margin: 20px 0 0;
+  }
+}
+
+/* .uk-tab>*>a {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.comment-form-rating {
+  margin-top: 20px;
+} */
+
+/*
+* 
 * Competition 
 *
 */
@@ -9,42 +50,27 @@
   padding-bottom: 15px;
   margin-top: 10px;
 }
+
 /* ticket tab bar styling */
 .ticket-tab-bar .ticket-tab-bar-item {
   padding: 10px 25px;
   font-weight: 700;
   opacity: 0.5;
   text-transform: capitalize;
-  background-color: #008b96;
-  color: #fff;
+  color: #008ce1;
 }
+
 /* ticket numbers */
 ul.tickets_numbers {
   margin: 1em 0 1em -4px;
   padding: 0;
 }
-/* style one: solid colour bg with dotted border */
-/* ul.tickets_numbers li.tn {
-  border: 1px #ffffff;
-  background-color: #008b96;
-  color: #ffffff;
+ul.tickets_numbers li.tn {
+  border: 3px #b39292;
   border-style: dashed;
   border-radius: 0;
-  padding: .8em;
-  width: 2rem;
-  height: auto;
-  text-align: center;
-  margin: 0px;
-  font-size: 0.875rem;
-  font-weight: 700;
-} */
-/* style two: white bg with double border */
-ul.tickets_numbers li.tn {
-  border: 3px #d6d6d6;
-  border-style: double;
-  border-radius: 0;
-  background-color: #ffffff;
-  color: #008b96;
+  background-color: #e0a9a9;
+  color: #ffffff;
   padding: .8em;
   width: 2rem;
   height: auto;
@@ -59,6 +85,7 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected {
 ul.lottery-pn-answers li.selected.false {
   background: #d26c6c !important;
 }
+
 /* comp answers */
 ul.lottery-pn-answers {
   padding: 0;
@@ -69,7 +96,7 @@ ul.lottery-pn-answers li {
   border-radius: 0;
   padding: 7px 22px;
   width: fit-content;
-  color: #008b96;
+  color: #008ce1;
   margin: 0 6px 0 0;
   font-size: 1em;
   font-weight: 700;
@@ -79,16 +106,46 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
   color: #fff;
   border: 3px solid #fff!important;
 }
+ul.tickets_numbers li.in_cart {
+  background: #d4d4d4bd!important;
+  border-style: solid!important;
+  border-color: #c7c7c74f!important;
+  border-width: 3px!important;
+  color: #a2a2a2!important;
+  cursor: not-allowed;
+}
 .is-wc_lotery_countdown {
-  color: #008b96;
+  color: #008ce1;
   font-weight: 700;
   margin-top: 5px;
 }
+
 /* anwsers dropdown option styling */
 #lottery_answer_drop {
   width: 100%;
   padding: 0 20px 0 10px;
 }
+
+/* .lottery-time {
+  margin-top: -40px;
+} */
+/* .is-wc_lotery_countdown {
+  margin-top: 30px;
+} */
+/* ul.tickets_numbers li.tn {
+  border: 1px #ffffff;
+  background-color: #008ce1;
+  color: #ffffff;
+  border-style: dashed;
+  border-radius: 0;
+  padding: .8em;
+  width: 2rem;
+  height: auto;
+  text-align: center;
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 700;
+} */
 
 /*
 * 
@@ -113,7 +170,7 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
 *
 */
 
-.product-right bdi {
+.product-details bdi {
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -122,7 +179,7 @@ ul.tickets_numbers li.selected, ul.lottery-pn-answers li.selected, ul.lottery-pn
   width: fit-content;
 }
 bdi {
-  color: #008b96;
+  color: #008ce1;
 }
 ins, mark {
   background: #fff0;
@@ -142,7 +199,12 @@ del bdi {
   margin-bottom: 20px;
 }
 
-/* swiper stylings */
+/*
+* 
+* Swiper js
+*
+*/
+
 /* :root {
   --swiper-theme-color: #fc4c0287;
 }
@@ -192,26 +254,46 @@ span.sku_wrapper {
   left: 55px;
   right: auto;
 }
+.custom-title-price-excerpt .onsale.uk-card-badge {
+  position: initial;
+  right: auto;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  margin-bottom: 10px;
+  z-index: 1;
+}
 
 /* #RelatedGrid span.onsale.uk-card-badge.uk-label,
 #UpsellsGrid span.onsale.uk-card-badge.uk-label {
   left: 15px;
 } */
 
-/* product images */
+/*
+* 
+* Product images
+*
+*/
+
 /* .woocommerce #content div.product div.images,
 .woocommerce-page #content div.product div.images,
 .woocommerce-page div.product div.images,
 .woocommerce div.product div.images {
   width: 100%;
-} */
-/* img.single-product-image {
+}
+
+img.single-product-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
 } */
 
-/* iframe fix */
+/*
+* 
+* Iframes fix
+*
+*/
+
 /* iframe {
   max-width: 100%;
 } */
@@ -234,12 +316,3 @@ span.sku_wrapper {
   width: fit-content;
   display: inline-block;
 }
-
-/* product tabs styles */
-/* .uk-tab>*>a {
-  font-size: 1rem;
-  text-transform: capitalize;
-}
-.comment-form-rating {
-  margin-top: 20px;
-} */

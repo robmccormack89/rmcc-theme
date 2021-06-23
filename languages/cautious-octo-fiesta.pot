@@ -13,89 +13,277 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: views/temp/parts/footer.php:64
-msgctxt "Footer widget no.4: title"
-msgid "Contact"
+#: inc/timber-functions.php:54, inc/timber-functions.php:56
+msgctxt "Competition Winners label: Plural"
+msgid "Competition Winners"
 msgstr ""
 
-#: views/temp/parts/footer.php:66
-msgctxt "Footer widget no.4: text line 1"
-msgid "We’re available by phone 123-456-789"
+#: inc/timber-functions.php:55, inc/timber-functions.php:57, inc/timber-functions.php:83
+msgctxt "Competition Winners label: Singular"
+msgid "Competition Winner"
 msgstr ""
 
-#: views/temp/parts/footer.php:67
-msgctxt "Footer widget no.4: text line 2"
-msgid "Monday till Friday 10 to 6 EST"
+#: inc/timber-functions.php:58
+msgctxt "Competition Winners label: Archive"
+msgid "Competition Winners"
 msgstr ""
 
-#: views/temp/parts/footer.php:78
-msgctxt "Footer Copyright Text"
-msgid "Dream Winners. All rights reserved."
+#: inc/timber-functions.php:84
+msgctxt "Competition Winners description"
+msgid "Lucky Competition Winners..."
 msgstr ""
 
-#: views/temp/parts/main-nav.php:99
-msgctxt "Search popup placeholder text"
+#: inc/timber-functions.php:105, inc/timber-functions.php:107
+msgctxt "Entry Lists label: Plural"
+msgid "Entry Lists"
+msgstr ""
+
+#: inc/timber-functions.php:106, inc/timber-functions.php:108, inc/timber-functions.php:134
+msgctxt "Entry Lists label: Singular"
+msgid "Entry List"
+msgstr ""
+
+#: inc/timber-functions.php:109
+msgctxt "Entry Lists label: Archive"
+msgid "Entry Lists"
+msgstr ""
+
+#: inc/timber-functions.php:135
+msgctxt "Entry Lists description"
+msgid "Competition Entry List..."
+msgstr ""
+
+#: inc/woo-functions.php:82
+msgctxt "Checkout"
+msgid "Remove this item"
+msgstr ""
+
+#: inc/woo-functions.php:182
+msgctxt "Products label: Singular"
+msgid "Competition"
+msgstr ""
+
+#: inc/woo-functions.php:183
+msgctxt "Products label: Plural"
+msgid "Competitions"
+msgstr ""
+
+#: inc/woo-functions.php:253
+msgctxt "Store notice"
+msgid "This is a demo store for testing purposes — no orders shall be fulfilled."
+msgstr ""
+
+#: inc/woo-functions.php:256
+msgctxt "Store notice"
+msgid "Dismiss"
+msgstr ""
+
+#: inc/woo-functions.php:295
+msgctxt "Onsale label"
+msgid "Sale!"
+msgstr ""
+
+#: views/temp/404.php:6
+msgctxt "404 page"
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: views/temp/404.php:7
+msgctxt "404 page"
+msgid "The page you requested does not exist."
+msgstr ""
+
+#: views/temp/404.php:8
+msgctxt "404 page"
+msgid "Back to Homepage"
+msgstr ""
+
+#: views/temp/parts/footer/footer-copyright.php:2
+msgctxt "Copyright"
+msgid "All rights reserved."
+msgstr ""
+
+#: views/temp/parts/header/header-mobile-offcanvas.php:7
+msgctxt "Mobile menu"
+msgid "Menu"
+msgstr ""
+
+#: views/temp/parts/header/header-search-popup.php:7
+msgctxt "Search placeholder"
 msgid "Start typing..."
 msgstr ""
 
-#: views/temp/parts/subscribe.php:6
+#: views/temp/parts/pagination.php:7
+msgctxt "Pagination"
+msgid "Previous Page"
+msgstr ""
+
+#: views/temp/parts/pagination.php:23
+msgctxt "Pagination"
+msgid "Next Page"
+msgstr ""
+
+#: views/temp/parts/subscribe.php:7
+msgctxt "Subscribe"
 msgid "Sign up for first access to new competitions, sales & events"
 msgstr ""
 
 #: views/temp/parts/subscribe.php:9
-msgid "Enter your email here..."
+msgctxt "Subscribe"
+msgid "Get notified about the latest promotions & updates"
 msgstr ""
 
-#: views/temp/parts/subscribe.php:11
-msgid "Subscribe"
+#: views/temp/type/list/tease-list.php:11
+msgctxt "Entry list tease"
+msgid "Published:"
 msgstr ""
 
-#: views/temp/parts/subscribe.php:13
-msgid "Get notified about the latest promotions & updates."
+#: views/temp/type/list/tease-list.php:14
+msgctxt "Entry list tease"
+msgid "Draw date:"
 msgstr ""
 
-#: views/temp/wp/coming-soon.php:46
-msgid "Our new website is on its way."
+#: views/temp/type/list/tease-list.php:19
+msgctxt "Entry list tease"
+msgid "Download PDF"
 msgstr ""
 
-#: views/temp/wp/coming-soon.php:50
-msgid "Get notified when we launch"
+#: views/temp/type/post/single.php:34
+msgctxt "Post"
+msgid "Written by:"
 msgstr ""
 
-#: views/temp/wp/coming-soon.php:56
-msgid "https://www.facebook.com"
+#: views/temp/type/post/single.php:54
+msgctxt "Post"
+msgid "Previous Article"
 msgstr ""
 
-#: views/temp/wp/coming-soon.php:61
-msgid "info@dreamwinners.ie"
+#: views/temp/type/post/single.php:62
+msgctxt "Post"
+msgid "Next Article"
 msgstr ""
 
-#: views/temp/wp/front-page.php:15
-msgctxt "Homepage Hero Section Heading Text"
-msgid "Lorem ipsum dolor sit amet consectetur"
+#: views/temp/type/post/tease.php:42
+msgctxt "Post tease"
+msgid "Read more"
 msgstr ""
 
-#: views/temp/wp/front-page.php:19
-msgctxt "Homepage Hero Section Sub-heading Text"
-msgid "Lorem ipsum dolor sit amet"
+#: views/temp/type/product/product.php:84
+msgctxt "Upsell products"
+msgid "You may also like..."
 msgstr ""
 
-#: views/temp/wp/front-page.php:32
-msgctxt "Homepage Featured Section Heading"
-msgid "Lorem ipsum dolor sit amet"
+#: views/temp/type/product/product.php:101
+msgctxt "Related products"
+msgid "Related Competitions"
 msgstr ""
 
-#: views/temp/wp/front-page.php:35
-msgctxt "Homepage Featured Section text"
-msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor."
+#: views/temp/type/product/tease/tease-price-rating.php:3
+msgctxt "Product tease"
+msgid "Price of Entry:"
 msgstr ""
 
-#: views/temp/wp/front-page.php:37
-msgctxt "Homepage Featured Section Link"
-msgid "#"
+#: views/temp/woocommerce/form-checkout.php:21
+msgctxt "Checkout"
+msgid "Your order"
 msgstr ""
 
-#: views/temp/wp/front-page.php:38
-msgctxt "Homepage Featured Section Link Text"
-msgid "Lorem Ipsum Dolor"
+#: views/temp/woocommerce/form-checkout.php:30
+msgctxt "Checkout"
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:52
+msgctxt "Checkout"
+msgid "Billing"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:53
+msgctxt "Checkout"
+msgid "Payment"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:57
+msgctxt "Checkout"
+msgid "Information"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:58
+msgctxt "Checkout"
+msgid "Welcome back"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:70
+msgctxt "Checkout"
+msgid "Go back"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:71
+msgctxt "Checkout"
+msgid "Proceed to payment"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:102
+msgctxt "Checkout"
+msgid "Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements."
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:104
+msgctxt "Checkout"
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:116
+msgctxt "Checkout"
+msgid "Since your browser does not support JavaScript, or it is disabled, please ensure you click the %1$sUpdate Totals%2$s button before placing your order. You may be charged more than the amount stated above if you fail to do so."
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:118, views/temp/woocommerce/form-checkout.php:118
+msgctxt "Checkout"
+msgid "Update totals"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:125
+msgctxt "Checkout"
+msgid "Back to billing"
+msgstr ""
+
+#: views/temp/woocommerce/form-checkout.php:128, views/temp/woocommerce/form-checkout.php:128, views/temp/woocommerce/form-checkout.php:129
+msgctxt "Checkout"
+msgid "Place order"
+msgstr ""
+
+#: views/temp/woocommerce/mini-cart.php:34
+msgctxt "Minicart"
+msgid "Remove this item"
+msgstr ""
+
+#: views/temp/woocommerce/mini-cart.php:102
+msgctxt "Minicart"
+msgid "No products in the cart."
+msgstr ""
+
+#: views/temp/woocommerce/orderby.php:8, views/temp/woocommerce/orderby.php:10
+msgctxt "Shop filters"
+msgid "Filter"
+msgstr ""
+
+#: views/temp/woocommerce/orderby.php:12
+msgctxt "Shop filters"
+msgid "Select a category"
+msgstr ""
+
+#: views/temp/woocommerce/orderby.php:25
+msgctxt "Shop filters"
+msgid "Sorting"
+msgstr ""
+
+#: views/temp/woocommerce/orderby.php:27
+msgctxt "Shop filters"
+msgid "Shop order"
+msgstr ""
+
+#: views/temp/woocommerce/orderby.php:40
+msgctxt "Shop filters"
+msgid "Reset Filters"
 msgstr ""

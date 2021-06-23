@@ -1,0 +1,49 @@
+{# translation-ready, escaped, formatted, semantic #}
+{% if has_footer_menu_1 or has_footer_menu_2 or has_footer_menu_3 or has_footer_menu_4 %}
+  <div class="footer-main uk-section uk-section-default theme-border-top">
+    <div class="uk-container">
+      <div class="uk-child-width-1-4@m" uk-grid>
+        {% if has_footer_menu_1 %}
+          <div class="footer-menu-1">
+            <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_1.title|e('esc_html') }}</h4>
+            <ul class="uk-nav uk-nav-default">
+              {% for item in footer_menu_1.get_items %}
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        {% if has_footer_menu_2 %}
+          <div class="footer-menu-2">
+            <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_2.title|e('esc_html') }}</h4>
+            <ul class="uk-nav uk-nav-default">
+              {% for item in footer_menu_2.get_items %}
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        {% if has_footer_menu_3 %}
+          <div class="footer-menu-3">
+            <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_3.title|e('esc_html') }}</h4>
+            <ul class="uk-nav uk-nav-default">
+              {% for item in footer_menu_3.get_items %}
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        {% if has_footer_menu_4 %}
+          <div class="footer-menu-3">
+            <h4 class="uk-h6 uk-text-uppercase uk-text-bold">{{ footer_menu_4.title|e('esc_html') }}</h4>
+            <ul class="uk-nav uk-nav-default">
+              {% for item in footer_menu_4.get_items %}
+                <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

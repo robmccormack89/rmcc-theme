@@ -1,6 +1,7 @@
 <?php
 /**
  * The template for making woocommerce work with timber/twig. sets the templates & context for woo's archive & singular views
+ * https://docs.woocommerce.com/document/conditional-tags/ for more conditional tags
  *
  * @package Cautious_Octo_Fiesta
  */
@@ -14,60 +15,48 @@ if ( ! class_exists( 'Timber' ) ) {
 // get the main context
 $context = Timber::context();
 
-if ( is_singular( 'product' ) ) {
+// if is the single product page
+if (is_singular('product')) {
   
   $context['post'] = Timber::get_post();
   $product = wc_get_product( $context['post']->ID );
   $context['product'] = $product;
   
+  // get singular gallery attachments
   $context['attachment_ids'] = $product->get_gallery_image_ids();
   
-  // Get related products
-  $related_limit = 12;
-  $related_ids = wc_get_related_products( $context['post']->id, $related_limit );
-  $context['related_products'] = Timber::get_posts( $related_ids );
-  
-  // Get upsells
-  // $upsell_ids = $context['post']->get_upsell_ids();
-  $upsell_ids = $context['post']->_upsell_ids;
-  if ($upsell_ids) {
-    $context['up_sells'] = Timber::get_posts( $upsell_ids );
-  } else {
-    $context['up_sells'] = '';
-  }
   wp_reset_postdata();
   
   Timber::render( 'product.twig', $context );
   
-} else { // is not singular, then it must be an archive!
+} 
+
+// if is any woocommerce archive
+if (is_shop()) {
   
   // get the main posts object via the standard wp archive query & assign as variable 'products'
   $posts = Timber::get_posts();
   $context['products'] = $posts;
-  
-  // gets the woocommerce columns per row setting
+  $context['title'] = _x('Our Competitions', 'Shop Title', 'cautious-octo-fiesta');
   $context['products_grid_columns'] = wc_get_loop_prop('columns');
-  
-  // $context['tease_template'] = 'tease-product.twig';
-  
   $context['pagination'] = Timber::get_pagination();
   $context['paged'] = $paged;
   
-  if (is_tax('')) {
-    // get queried object stuff
+  // if is any general taxonomy archive
+  if (is_tax()) {
     $queried_object = get_queried_object();
     $term_id = $queried_object->term_id;
     $context['term_slug'] = $queried_object->slug;
     $context['term_id'] = $term_id;
-    $context['title'] = single_term_title( '', false );
+    $context['title'] = single_term_title('', false);
   };
   
+  // if is specifically a product category archive
   if (is_product_category()) {
     $context['category'] = get_term( $term_id, 'product_cat' );
-  };
-  
-  if (is_shop()) {
-    $context['title'] = __( 'Our Competitions', 'woocommerce' );
+    $thumbnail_id = get_term_meta( $term_id, 'thumbnail_id', true );
+    $context['cat_featured_img'] = wp_get_attachment_url( $thumbnail_id );
+    $context['cat_featured_alt'] = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', TRUE);
   };
 
   Timber::render('shop.twig', $context);

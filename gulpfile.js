@@ -9,8 +9,9 @@ const rename = require('gulp-rename');
 const config = {
   "text_domain" : "cautious-octo-fiesta",
   "twig_files"  : "views/**/*.twig",
-  // "php_files"   : "**/*.php", use for translations in all php files
-  "php_files"   : "views/**/*.php", // use for only translatins in twig files
+  "php_files"   : "{*.php,!(page-templates)/**/*.php}", // all php files in all folders incl. root except page-templates
+  // "php_files"   : "**/*.php", // all php files in all folders incl. root
+  // "php_files"   : "views/**/*.php", // only php files in views folder
   "cacheFolder" : "views/temp",
   "destFolder"  : "languages",
 };
@@ -59,7 +60,7 @@ var sass = require("gulp-sass"),
 
 var paths = {
     styles: {
-      src: "assets/sass/*.scss",
+      src: "assets/scss/*.scss",
       dest: "assets/css/"
     }
 };

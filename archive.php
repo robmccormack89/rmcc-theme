@@ -32,6 +32,11 @@ if ( is_day() ) {
   array_unshift( $templates, 'archive-live_draws.twig' );
 }
 
+if (is_post_type_archive( 'entry_lists' )) {
+  $file = get_field('pdf_upload');
+  $context['pdf_upload_url'] = $file['url'];
+}
+
 // get the pagination
 $context['pagination'] = Timber::get_pagination();
 $context['paged'] = $paged;

@@ -1,0 +1,17 @@
+<section id="CommentBox" class="single-comments article-comments uk-container uk-container-xsmall uk-section uk-section-small">
+
+  {% if post.comments|length > 0 %}
+    <ul class="uk-comment-list uk-margin-medium-bottom">
+      {% for comment in post.comments %}
+        {% include "comments-list.twig" %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <div id="CommentForm">
+    <h4>{{ _x('Leave a new comment', 'Blog post comments - Leave a comment text', 'cautious-octo-fiesta')|e('esc_html') }}</h4>
+    {% include "comment-form.twig" %}
+  </div>
+
+</section>
+
