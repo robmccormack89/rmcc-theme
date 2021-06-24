@@ -15,7 +15,10 @@
         {% include 'header-nav.twig' %}
       </div>
     </div>
-    <img class="cover-img home-cover-img" src="{{theme.link}}/assets/images/clouds1.jpg" alt="">
+    <img class="cover-img home-cover-img" 
+    data-src="{{options.site_featured_image.url|resize(1920, 800)|e('esc_url')|default(theme.link ~ '/assets/images/clouds1.jpg')}}" 
+    alt="{{options.site_featured_image.alt|e('esc_html')}}"
+    data-width data-height uk-img>
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
@@ -47,6 +50,7 @@
       </a>
     </div>
   </section>
+  
   
   <!-- latest products section -->
   <section class="uk-section uk-container">

@@ -10,11 +10,11 @@
  * makes ajax add to cart buttons on homepage work with loader effect
  *
 **/
-add_filter('body_class', function($classes){
-	$stack = $classes;
-	array_push($stack, 'woocommerce');
-	return $stack;
-});
+// add_filter('body_class', function($classes){
+// 	$stack = $classes;
+// 	array_push($stack, 'woocommerce');
+// 	return $stack;
+// });
 
 // get the context
 $context = Timber::context();

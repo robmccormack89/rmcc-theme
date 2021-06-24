@@ -368,7 +368,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* home hero image */
 .home-cover-img {
-  height:80vh;
+  /* max-height: 800px; */
+  /* height: 80vh; */
+}
+.home-cover-img {
+  max-height: 800px;
+  min-height: 60vh;
 }
 /* img modifiers */
 .img-sepia {
