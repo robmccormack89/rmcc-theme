@@ -1,7 +1,7 @@
 node_modules/
 .sass-cache/
-vendor/
 compilation_cache/
 .git
 .ftpconfig
 package-lock.json
+composer.lock

@@ -1,13 +1,5 @@
 {% extends "base.twig" %}
 
-{% block styles %}
-  <style>
-    .post.stacked .uk-grid-stack .uk-grid-margin {
-      margin-top: 10px;
-    }
-  </style>
-{% endblock %}
-
 {% block header %}
   <header class="uk-inline">
     <div class="header-top-nav uk-position-top uk-position-z-index">
@@ -16,22 +8,16 @@
       </div>
     </div>
     <img class="cover-img home-cover-img" 
-    data-src="{{options.site_featured_image.url|resize(1920, 800)|e('esc_url')|default(theme.link ~ '/assets/images/clouds1.jpg')}}" 
-    alt="{{options.site_featured_image.alt|e('esc_html')}}"
+    data-src="{{post.thumbnail.src|resize(1920)|default(options.site_featured_image.url|resize(1920))|default(theme.link ~ '/assets/images/clouds1.jpg')|e('esc_url')}}" 
+    alt="{{post.thumbnail.alt|default(options.site_featured_image.alt)|e('esc_html')}}" 
     data-width data-height uk-img>
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">
-            {{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage Hero Section - Heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
-          </h1>
+          <h1 class="uk-margin-large-top">{{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage hero title', 'cautious-octo-fiesta')|e('esc_html') }}</h1>
           <hr class="uk-divider-small">
-          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">
-            {{ _x('Lorem ipsum dolor sit amet', 'Homepage Hero Section - Sub-heading Text', 'cautious-octo-fiesta')|e('esc_html') }}
-          </p>
-          <a href="#Next" class="uk-button uk-button-default uk-button-large scroll">
-            {{ _x('Learn more', 'Homepage Hero Section - Button Text', 'cautious-octo-fiesta')|e('esc_html') }}
-          </a>
+          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ _x('Lorem ipsum dolor sit amet', 'Homepage hero sub-title', 'cautious-octo-fiesta')|e('esc_html') }}</p>
+          <a href="#Next" class="uk-button uk-button-default uk-button-large scroll">{{ _x('Learn more', 'Homepage hero button text', 'cautious-octo-fiesta')|e('esc_html') }}</a>
         </div>
       </div>
     </div>
@@ -43,20 +29,19 @@
   <!-- under hero section -->
   <section id="Next" class="uk-section uk-section-primary">
     <div class="uk-text-center uk-container uk-container-xsmall">
-      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage Featured Section - Heading', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
-      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage Featured Section - text', 'cautious-octo-fiesta')|e('esc_html') }}</p>
-      <a class="feature-link uk-text-uppercase" href="{{ _x('#', 'Homepage Featured Section - Link', 'cautious-octo-fiesta')|e('esc_html') }}">
-        {{ _x('Lorem Ipsum Dolor', 'Homepage Featured Section - Link Text', 'cautious-octo-fiesta')|e('esc_html') }}
+      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage under-hero title', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
+      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage under-hero message', 'cautious-octo-fiesta')|e('esc_html') }}</p>
+      <a class="feature-link uk-text-uppercase scroll" href="{{ _x('#Latest', 'Homepage under-hero link url', 'cautious-octo-fiesta') }}">
+        {{ _x('View all competitions', 'Homepage under-hero link text', 'cautious-octo-fiesta')|e('esc_html') }}
       </a>
     </div>
   </section>
   
-  
-  <!-- latest products section -->
-  <section class="uk-section uk-container">
-    <h2 class="uk-text-center">{{ _x('Latest Competitions', 'Homepage Latest Section - Heading', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
-    <hr class="uk-divider-small uk-text-center">
-    {% if latest_competitions|length > 0 %}
+  <!-- latest competitions -->
+  {% if latest_competitions|length > 0 %}
+    <section id="Latest" class="latest-competitions uk-section uk-container">
+      <h2 class="uk-text-center">{{ _x('Latest Competitions', 'Homepage latest competitions title', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
+      <hr class="uk-divider-small uk-text-center">
       <div id="slideshow_latest" class="swiper-container">
         <div class="swiper-wrapper">
           {% for post in latest_competitions %}
@@ -66,182 +51,27 @@
           {% endfor %}
         </div>
         {% if latest_competitions|length > 3 %}
-          <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
         {% endif %}
       </div>
-      <div class="uk-text-center uk-margin-medium-top">
-        <a href="#" class="uk-button uk-button-default uk-button-large">View all</a>
-      </div>
-    {% endif %}
-  </section>
+      {% if latest_competitions|length > 3 %}
+        <div class="view-all-button uk-text-center uk-margin-medium-top">
+          <a href="{{shop_endpoint|e('esc_url')}}" class="uk-button uk-button-default uk-button-large">{{ _x('View all', 'Homepage all competitions button text', 'cautious-octo-fiesta')|e('esc_html') }}</a>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
   
+  <!-- home page editor content -->
   {{post.content}}
-  
-  <!-- blog section -->
-  <section class="uk-section uk-container" hidden>
-    <div uk-grid>
-      <div class="uk-width-2-5@m">
-        <div class="post uk-text-center">
-          <img src="https://picsum.photos/720/620">
-          <h3 class="uk-margin-top">Iconic design meets advanced materials</h3>
-          <p>No one ever said it was going to be easy creating an innovative new luggage brand. And indeed, it was tough going for a while. Prototypes failed ...</p>
-          <a href="#" class="uk-button uk-button-default uk-button-large">Read more</a>
-        </div>
-      </div>
-      <div class="uk-width-3-5@m">
-        <div class="uk-child-width-1-1" uk-grid>
-          <div class="post stacked">
-            <div class="uk-child-width-1-2@m" uk-grid>
-              <div>
-                <img src="https://picsum.photos/720/509?random=10">
-              </div>
-              <div>
-                <h3 class="uk-h4 uk-margin-remove">About the worlds most awarded luggage brand</h3>
-                <p class="uk-margin-small">There were already enough purely utilitarian travel bags on the market, and also ones that claimed to keep clothes wrinkle-free. VOCIER wanted to ...</p>
-                <div class="uk-margin-small-top">
-                  <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="post stacked">
-            <div class="uk-child-width-1-2@m" uk-grid>
-              <div>
-                <img src="https://picsum.photos/720/509?random=11">
-              </div>
-              <div>
-                <h3 class="uk-h4 uk-margin-remove">About the worlds most awarded luggage brand</h3>
-                <p class="uk-margin-small">There were already enough purely utilitarian travel bags on the market, and also ones that claimed to keep clothes wrinkle-free. VOCIER wanted to ...</p>
-                <div class="uk-margin-small-top">
-                  <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="post stacked">
-            <div class="uk-child-width-1-2@m" uk-grid>
-              <div>
-                <img src="https://picsum.photos/720/509?random=12">
-              </div>
-              <div>
-                <h3 class="uk-h4 uk-margin-remove">About the worlds most awarded luggage brand</h3>
-                <p class="uk-margin-small">There were already enough purely utilitarian travel bags on the market, and also ones that claimed to keep clothes wrinkle-free. VOCIER wanted to ...</p>
-                <div class="uk-margin-small-top">
-                  <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- contact cta section -->
-  <section class="uk-child-width-1-2@m uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-muted uk-text-center" uk-grid hidden>
-    <div class="uk-padding">
-      <h3>In store</h3>
-      <p class="uk-margin-small">
-        123 Fake St.<br>
-        Toronto, Canada
-      </p>
-      <p class="uk-margin-small">
-        Mon - Fri, 10am - 9pm<br>
-        Sat & Sun, 11am - 5pm
-      </p>
-      <div class="uk-margin-top">
-        <a class="feature-link uk-text-uppercase uk-text-emphasis" href="#">
-          Contact us
-        </a>
-      </div>
-    </div>
-    <div>
-      <img src="https://picsum.photos/1080/675">
-    </div>
-  </section>
   
 {% endblock %}
 
 {% block scripts %}
   <script type='text/javascript'>
-    // smooth scroller
-    jQuery(function($) {
-      // Select all links with hashes
-      $('a.scroll[href*="#"]')
-        // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(event) {
-          // On-page links
-          if (
-            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-            && 
-            location.hostname == this.hostname
-          ) {
-            // Figure out element to scroll to
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            // Does a scroll target exist?
-            if (target.length) {
-              // Only prevent default if animation is actually gonna happen
-              event.preventDefault();
-              $('html, body').animate({
-                scrollTop: target.offset().top
-              }, 500, function() {
-                // Callback after animation
-                // Must change focus!
-                var $target = $(target);
-                $target.focus();
-                if ($target.is(":focus")) { // Checking if the target was focused
-                  return false;
-                } else {
-                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                  $target.focus(); // Set focus again
-                };
-              });
-            }
-          }
-        });
-    });
-  
-    // woo stuff
-    jQuery(function($) {
-      $(".tease-buttons .button").addClass("uk-button uk-button-small uk-button-default");
-    });
-    
-    // swipers
+    // latest comps swipers
     jQuery(function(){
       var latest_swiper = new Swiper('#slideshow_latest', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: true,
-        // },
-        // init: false,
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
-        },
-        breakpoints: {
-          960: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1290: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-        }
-      });
-      var winners_swiper = new Swiper('#slideshow_winners', {
         slidesPerView: 1,
         spaceBetween: 0,
         // autoplay: {

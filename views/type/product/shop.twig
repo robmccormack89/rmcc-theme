@@ -80,23 +80,3 @@
       
   </section>
 {% endblock %}
-
-{% block scripts %}
-  {# shop specific scripts #}
-  <script type='text/javascript'>
-    // shop main
-    jQuery(function($) {
-      function WooShop() {
-        $(".tease-buttons .button").addClass("uk-button-small uk-button-default");
-      }
-      $("#MainContent").load(WooShop());
-      $("body").on('DOMSubtreeModified', ".woocommerce", WooShop);
-    });
-    // shop toolbar
-    jQuery(function($) {
-  	  $(".woocommerce-ordering").on("change", "select.product_cats", function() {
-        $(this).closest("form").trigger("submit")
-  	  });
-  	});
-  </script>
-{% endblock %}

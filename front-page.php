@@ -10,11 +10,11 @@
  * makes ajax add to cart buttons on homepage work with loader effect
  *
 **/
-// add_filter('body_class', function($classes){
-// 	$stack = $classes;
-// 	array_push($stack, 'woocommerce');
-// 	return $stack;
-// });
+add_filter('body_class', function($classes){
+	$stack = $classes;
+	array_push($stack, 'woocommerce');
+	return $stack;
+});
 
 // get the context
 $context = Timber::context();
@@ -24,7 +24,7 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 // get the posts object (archive)
-// $context['posts'] = new Timber\PostQuery();
+$context['posts'] = new Timber\PostQuery();
 
 // get & set the title. if is blog & home, use site.title, else post.title 
 if (is_home() && is_front_page()) {
@@ -38,16 +38,14 @@ $args = array(
  'post_type'             => 'product',
  'post_status'           => 'publish',
  'posts_per_page'        => '5',
+ 'meta_query' => array(
+	 array(
+		 'key' => '_lottery_dates_to',
+		 'compare' => 'EXISTS'
+	 )
+ )
 );
 $context['latest_competitions'] = new Timber\PostQuery($args);
-
-// latest competition winners args
-$args = array(
- 'post_type'             => 'winners',
- 'post_status'           => 'publish',
- 'posts_per_page'        => '8',
-);
-$context['winners'] = new Timber\PostQuery($args);
 
 // render the context with template
 Timber::render(array('front-page.twig'), $context);
