@@ -377,7 +377,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (max-width:959px) {
 .home-cover-img {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 }
 /* img modifiers */
@@ -741,4 +741,17 @@ label[for=coupon_code] {
   .product-list-item .finishes {
     margin-top: 5px;
   }
+}
+
+
+.alertable {
+    position: fixed;
+    z-index: 9999;
+    top: 38vh;
+    left: calc(50% - 170px)!important;
+    width: 300px!important;
+    background: white;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 0 auto;
 }

@@ -53,11 +53,12 @@
 
 /* ticket tab bar styling */
 .ticket-tab-bar .ticket-tab-bar-item {
-  padding: 10px 25px;
-  font-weight: 700;
-  opacity: 0.5;
-  text-transform: capitalize;
-  color: #008ce1;
+	padding: 10px 25px;
+	font-weight: 700;
+	opacity: 0.5;
+	text-transform: capitalize;
+	color: #008ce1;
+	background-color: #d6d6d6;
 }
 
 /* ticket numbers */
