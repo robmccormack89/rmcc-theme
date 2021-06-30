@@ -13,8 +13,10 @@ function dream_winners_register_required_plugins() {
 	$plugins = array(
 		
 		// This is an example of how to include a plugin bundled with a theme.
+    
+    // acf pro
     array(
-			'name'               => 'Advanced Custom Fields PRO', // The plugin name.
+      'name'               => 'Advanced Custom Fields PRO', // The plugin name.
 			'slug'               => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
 			'source'             => get_stylesheet_directory() . '/inc/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
@@ -24,8 +26,9 @@ function dream_winners_register_required_plugins() {
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
+    // theme functionality
 		array(
-			'name'               => 'Dream Winners Theme Functionality by RMcC', // The plugin name.
+      'name'               => 'Dream Winners Theme Functionality by RMcC', // The plugin name.
 			'slug'               => 'dream-winners-functionality-plugin', // The plugin slug (typically the folder name).
 			'source'             => get_stylesheet_directory() . '/inc/lib/plugins/dream-winners-functionality-plugin-master.zip', // The plugin source.
 			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
@@ -35,21 +38,50 @@ function dream_winners_register_required_plugins() {
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
+    // woo comps
+    array(
+      'name'               => 'WooCommerce Competitions', // The plugin name.
+			'slug'               => 'woo-competition-plugin', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/inc/lib/plugins/woo-competition-plugin-master.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+    // woo comps tickets
+    array(
+      'name'               => 'WooCommerce Competitions - Ticket Numbers', // The plugin name.
+			'slug'               => 'woo-competition-tickets-plugin', // The plugin slug (typically the folder name).
+			'source'             => get_stylesheet_directory() . '/inc/lib/plugins/woo-competition-tickets-plugin-master.zip', // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+    
+    // woo
 		array(
       'name' => 'WooCommerce',
 			'slug' => 'woocommerce',
 			'required' => false
 		),
+    // cf7
     array(
       'name' => 'Contact Form 7',
 			'slug' => 'contact-form-7',
 			'required' => false
 		),
+    // loco translate
     array(
       'name' => 'Loco Translate',
 			'slug' => 'loco-translate',
 			'required' => false
 		),
+    
 	);
 	$config  = array(
 		'id' => 'tgmpa', // Unique ID for hashing notices for multiple instances of TGMPA.
