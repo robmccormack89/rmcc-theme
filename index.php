@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
 // get the main context

@@ -23,8 +23,8 @@ Timber::$dirname = array(
 // set the $autoescape value
 Timber::$autoescape = false;
 
-// Define Cautious_Octo_Fiesta Child Class
-class CautiousOctoFiesta extends Timber {
+// Define Dream_Winners Child Class
+class DreamWinners extends Timber {
   public function __construct() {
     parent::__construct();
     add_action('after_setup_theme', array($this, 'theme_supports'));
@@ -34,7 +34,7 @@ class CautiousOctoFiesta extends Timber {
 		add_action('init', array($this, 'register_taxonomies'));
     add_action('init', array($this, 'register_widget_areas'));
     add_action('init', array($this, 'register_navigation_menus'));
-    add_action('wp_enqueue_scripts', array($this, 'cautious_octo_fiesta_enqueue_assets'));
+    add_action('wp_enqueue_scripts', array($this, 'dream_winners_enqueue_assets'));
     
     add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
     
@@ -102,7 +102,7 @@ class CautiousOctoFiesta extends Timber {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
     
-    load_theme_textdomain('cautious-octo-fiesta', get_template_directory() . '/languages');
+    load_theme_textdomain('dream-winners', get_template_directory() . '/languages');
   }
   
   public function add_to_twig($twig) {
@@ -204,10 +204,10 @@ class CautiousOctoFiesta extends Timber {
     ));
   }
   
-  public function cautious_octo_fiesta_enqueue_assets() {
+  public function dream_winners_enqueue_assets() {
     // theme base scripts
     wp_enqueue_script(
-      'cautious-octo-fiesta',
+      'dream-winners',
       get_template_directory_uri() . '/assets/js/base.js',
       '',
       '',
@@ -228,13 +228,13 @@ class CautiousOctoFiesta extends Timber {
     
     // theme base css
     wp_enqueue_style(
-      'cautious-octo-fiesta',
+      'dream-winners',
       get_template_directory_uri() . '/assets/css/base.css'
     );
     
     // theme stylesheet
     wp_enqueue_style(
-      'cautious-octo-fiesta-styles', get_stylesheet_uri()
+      'dream-winners-styles', get_stylesheet_uri()
     );
     
     wp_enqueue_style(

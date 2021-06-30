@@ -2,7 +2,7 @@
 /**
  * Template Name: Image Header Template
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
 $context = Timber::context();

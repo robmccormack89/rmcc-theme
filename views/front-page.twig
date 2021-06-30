@@ -14,10 +14,10 @@
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">{{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage hero title', 'cautious-octo-fiesta')|e('esc_html') }}</h1>
+          <h1 class="uk-margin-large-top">{{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage hero title', 'dream-winners')|e('esc_html') }}</h1>
           <hr class="uk-divider-small">
-          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ _x('Lorem ipsum dolor sit amet', 'Homepage hero sub-title', 'cautious-octo-fiesta')|e('esc_html') }}</p>
-          <a href="#Next" class="uk-button uk-button-default uk-button-large scroll">{{ _x('Learn more', 'Homepage hero button text', 'cautious-octo-fiesta')|e('esc_html') }}</a>
+          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ _x('Lorem ipsum dolor sit amet', 'Homepage hero sub-title', 'dream-winners')|e('esc_html') }}</p>
+          <a href="#Next" class="uk-button uk-button-default uk-button-large scroll">{{ _x('Learn more', 'Homepage hero button text', 'dream-winners')|e('esc_html') }}</a>
         </div>
       </div>
     </div>
@@ -29,10 +29,10 @@
   <!-- under hero section -->
   <section id="Next" class="uk-section uk-section-primary">
     <div class="uk-text-center uk-container uk-container-xsmall">
-      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage under-hero title', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
-      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage under-hero message', 'cautious-octo-fiesta')|e('esc_html') }}</p>
-      <a class="feature-link uk-text-uppercase scroll" href="{{ _x('#Latest', 'Homepage under-hero link url', 'cautious-octo-fiesta') }}">
-        {{ _x('View all competitions', 'Homepage under-hero link text', 'cautious-octo-fiesta')|e('esc_html') }}
+      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage under-hero title', 'dream-winners')|e('esc_html') }}</h2>
+      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage under-hero message', 'dream-winners')|e('esc_html') }}</p>
+      <a class="feature-link uk-text-uppercase scroll" href="{{ _x('#Latest', 'Homepage under-hero link url', 'dream-winners') }}">
+        {{ _x('View all competitions', 'Homepage under-hero link text', 'dream-winners')|e('esc_html') }}
       </a>
     </div>
   </section>
@@ -40,7 +40,7 @@
   <!-- latest competitions -->
   {% if latest_competitions|length > 0 %}
     <section id="Latest" class="latest-competitions uk-section uk-container">
-      <h2 class="uk-text-center">{{ _x('Latest Competitions', 'Homepage latest competitions title', 'cautious-octo-fiesta')|e('esc_html') }}</h2>
+      <h2 class="uk-text-center">{{ _x('Latest Competitions', 'Homepage latest competitions title', 'dream-winners')|e('esc_html') }}</h2>
       <hr class="uk-divider-small uk-text-center">
       <div id="slideshow_latest" class="swiper-container">
         <div class="swiper-wrapper">
@@ -56,7 +56,7 @@
       </div>
       {% if latest_competitions|length > 3 %}
         <div class="view-all-button uk-text-center uk-margin-medium-top">
-          <a href="{{shop_endpoint|e('esc_url')}}" class="uk-button uk-button-default uk-button-large">{{ _x('View all', 'Homepage all competitions button text', 'cautious-octo-fiesta')|e('esc_html') }}</a>
+          <a href="{{shop_endpoint|e('esc_url')}}" class="uk-button uk-button-default uk-button-large">{{ _x('View all', 'Homepage all competitions button text', 'dream-winners')|e('esc_html') }}</a>
         </div>
       {% endif %}
     </section>

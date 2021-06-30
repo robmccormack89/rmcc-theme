@@ -2,7 +2,7 @@
 /**
 * The front page template (when backend settings for front page display are set to static or latest posts)
 *
-* @package Cautious_Octo_Fiesta
+* @package Dream_Winners
 */
 
 /**

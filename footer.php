@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
  $timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile

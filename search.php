@@ -2,7 +2,7 @@
 /**
  * The search
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
  $context = Timber::context();

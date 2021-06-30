@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
  
  $GLOBALS['timberContext'] = Timber::context();

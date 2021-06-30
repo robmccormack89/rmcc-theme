@@ -2,7 +2,7 @@
 /**
 * Woo functions
 *
-* @package Cautious_Octo_Fiesta
+* @package Dream_Winners
 */
 
 /**
@@ -33,8 +33,8 @@ function nk_get_cpt_labels($single,$plural){
 // change the post type labels for the Competition cpt
 function nk_custom_post_type_label_woo( $args ){
   $labels = nk_get_cpt_labels(
-    _x( 'Competition', 'Products label: Singular', 'cautious-octo-fiesta' ), 
-    _x( 'Competitions', 'Products label: Plural', 'cautious-octo-fiesta' )
+    _x( 'Competition', 'Products label: Singular', 'dream-winners' ), 
+    _x( 'Competitions', 'Products label: Plural', 'dream-winners' )
   );
   $args['labels'] = $labels;
   return $args;
@@ -102,7 +102,7 @@ function single_sales_flash(){
   global $post, $product;
 
   if ( $product->is_on_sale() ) :
-    echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html_x( 'Sale!', 'Onsale label', 'cautious-octo-fiesta' ) . '</span>', $post, $product );
+    echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html_x( 'Sale!', 'Onsale label', 'dream-winners' ) . '</span>', $post, $product );
   endif;
 }
 add_action('single_sales_flash', 'single_sales_flash');

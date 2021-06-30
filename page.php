@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all pages
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
 // get the main context

@@ -2,7 +2,7 @@
 /**
  * The template for displaying general archive pages
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
 // sets the template hierarchy

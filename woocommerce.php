@@ -3,7 +3,7 @@
  * The template for making woocommerce work with timber/twig. sets the templates & context for woo's archive & singular views
  * https://docs.woocommerce.com/document/conditional-tags/ for more conditional tags
  *
- * @package Cautious_Octo_Fiesta
+ * @package Dream_Winners
  */
 
 // make sure timber is activated first
@@ -37,7 +37,7 @@ if (is_shop()) {
   // get the main posts object via the standard wp archive query & assign as variable 'products'
   $posts = Timber::get_posts();
   $context['products'] = $posts;
-  $context['title'] = _x('Our Competitions', 'Shop Title', 'cautious-octo-fiesta');
+  $context['title'] = _x('Our Competitions', 'Shop Title', 'dream-winners');
   $context['products_grid_columns'] = wc_get_loop_prop('columns');
   $context['pagination'] = Timber::get_pagination();
   $context['paged'] = $paged;
