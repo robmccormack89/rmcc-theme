@@ -8,7 +8,9 @@
   </div>
   
   <div class="uk-navbar-center">
-    {% include 'header-nav-logo.twig' %}
+    <a class="uk-text-emphasis logo-svg" href="{{ site.url|e('esc_url') }}">
+      <img src="{{ theme_logo_url|resize(253)|e('esc_url')|default(theme.link ~ '/assets/images/logos/logo.svg') }}" width="253" height="39" uk-svg>
+    </a>
   </div>
   
   <div class="uk-navbar-right">

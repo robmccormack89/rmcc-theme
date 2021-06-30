@@ -446,6 +446,18 @@ svg.search, svg.search, svg.basket, svg.basket {
   }
 }
 
+/* logo svg sticky styling */
+
+.uk-sticky-below .logo-svg, .uk-sticky-below .logo-svg:hover, .uk-sticky-below .logo-svg:focus {
+  color: #008ce1!important;
+}
+
+@media (max-width: 768px) {
+  .logo-svg {
+    max-width: 190px;
+  }
+}
+
 /* main nav styling */
 .main-nav a {
   position: relative;
