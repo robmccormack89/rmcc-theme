@@ -274,6 +274,18 @@ function dream_winners_register_required_plugins() {
 			'slug' => 'yikes-inc-easy-custom-woocommerce-product-tabs',
 			'required' => false
 		),
+    // wp import
+    array(
+      'name' => 'WordPress Importer',
+			'slug' => 'wordpress-importer',
+			'required' => false
+		),
+    // customizer export/import
+    array(
+      'name' => 'Customizer Export/Import',
+			'slug' => 'customizer-export-import',
+			'required' => false
+		),
     
 	);
 	$config  = array(
