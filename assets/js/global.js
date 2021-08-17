@@ -24,7 +24,7 @@ jQuery(function($) {
     $(".input-checkbox").addClass("uk-checkbox");
     $(".comment-form input").addClass("uk-input");
     $("input#wp-comment-cookies-consent").removeClass("uk-input");
-    $("input.qty").addClass("uk-input");
+    // $("input.qty").addClass("uk-input");
     $("form label").addClass("uk-form-label");
     $(".woocommerce-form").addClass("uk-form-stacked");
     $(".comment-form").addClass("uk-form-stacked");
