@@ -1,0 +1,3 @@
+// add these under WP_DEBUG
+define('WPCF7_AUTOP', false );
+define('ALLOW_UNFILTERED_UPLOADS', true);

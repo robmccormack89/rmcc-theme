@@ -1,0 +1,33 @@
+1. Install & activate theme/recommended plugins
+
+Woocommerce > Settings > Account & Privacy Settings > disallow "Allow customers to place orders without an account"
+
+Delete default pages
+
+Import Pages, Posts, Lists, Winners, Testimonials, Menus, Forms via Wordpress Importer
+
+Delete Contact form 1
+
+Woocommerce > Settings > Advanced > Unset the cart/basket page & delete. Set any other pages if necessary
+
+Settings > Reading Settings > Your homepage displays: set to static page. Homepage - Homepage & Posts Page - Blog respectivley
+Settings > Reading Settings > Blog pages show at most: & Syndication feeds show the most recent: set to 3
+
+Settings > Permalinks > Common Settings: Custom Structure
+Settings > Permalinks > Product Category base: competition-category
+Settings > Permalinks > Product Tag base: competition-tag
+Settings > Permalinks > Product Permalinks: Custom Base: /competitions/
+
+Competitions > Competitions > Import
+Appearnce > Customizer > Import
+
+Appearnce > Menus > Set Menus to Locations. Main Menu -> Main Menu & Mobile Menu etc...
+
+Optional**
+
+Users > Profile > disable Show Toolbar
+
+Install Yoast
+Install Quick Featured Images
+Install Litespeed Cache
+Install Media Library Manager
