@@ -6,40 +6,53 @@
 */
 
 /**
+ * Auto Complete all WooCommerce orders.
+ */
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+function custom_woocommerce_auto_complete_order( $order_id ) { 
+    if ( ! $order_id ) {
+        return;
+    }
+
+    $order = wc_get_order( $order_id );
+    $order->update_status( 'completed' );
+}
+
+/**
  * WOOCOMMERCE CUSTOMIZE CPT LABELS: SINGULAR & PLURAL
  * we set it here to Competition/Competitions
  *
 **/
   
-function nk_get_cpt_labels($single,$plural){
-   $arr = array(
-    'name' => $plural,
-    'singular_name' => $single,
-    'menu_name' => $plural,
-    'add_new' => 'Add '.$single,
-    'add_new_item' => 'Add New '.$single,
-    'edit' => 'Edit',
-    'edit_item' => 'Edit '.$single,
-    'new_item' => 'New '.$single,
-    'view' => 'View '.$plural,
-    'view_item' => 'View '.$single,
-    'search_items' => 'Search '.$plural,
-    'not_found' => 'No '.$plural.' Found',
-    'not_found_in_trash' => 'No '.$plural.' Found in Trash',
-    'parent' => 'Parent '.$single
- );
-   return $arr;
-}
-// change the post type labels for the Competition cpt
-function nk_custom_post_type_label_woo( $args ){
-  $labels = nk_get_cpt_labels(
-    _x( 'Competition', 'Products label: Singular', 'dream-winners' ), 
-    _x( 'Competitions', 'Products label: Plural', 'dream-winners' )
-  );
-  $args['labels'] = $labels;
-  return $args;
-}
-add_filter('woocommerce_register_post_type_product', 'nk_custom_post_type_label_woo');
+// function nk_get_cpt_labels($single,$plural){
+//   $arr = array(
+//     'name' => $plural,
+//     'singular_name' => $single,
+//     'menu_name' => $plural,
+//     'add_new' => 'Add '.$single,
+//     'add_new_item' => 'Add New '.$single,
+//     'edit' => 'Edit',
+//     'edit_item' => 'Edit '.$single,
+//     'new_item' => 'New '.$single,
+//     'view' => 'View '.$plural,
+//     'view_item' => 'View '.$single,
+//     'search_items' => 'Search '.$plural,
+//     'not_found' => 'No '.$plural.' Found',
+//     'not_found_in_trash' => 'No '.$plural.' Found in Trash',
+//     'parent' => 'Parent '.$single
+//  );
+//   return $arr;
+// }
+// // change the post type labels for the Competition cpt
+// function nk_custom_post_type_label_woo( $args ){
+//   $labels = nk_get_cpt_labels(
+//     _x( 'Competition', 'Products label: Singular', 'dream-winners' ), 
+//     _x( 'Competitions', 'Products label: Plural', 'dream-winners' )
+//   );
+//   $args['labels'] = $labels;
+//   return $args;
+// }
+// add_filter('woocommerce_register_post_type_product', 'nk_custom_post_type_label_woo');
 
 /**
  * REMOVE WOO SCRIPTS & STYLES SELECTIVELY

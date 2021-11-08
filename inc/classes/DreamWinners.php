@@ -172,7 +172,7 @@ class DreamWinners extends Timber {
     $context['lost_endpoint'] = wc_get_account_endpoint_url( 'lost-password' );
     $context['orders_endpoint'] = wc_get_account_endpoint_url( 'orders' );
     $context['logout_endpoint'] = wc_get_account_endpoint_url( 'customer-logout' );
-    $context['shop_endpoint'] = get_permalink(woocommerce_get_page_id('shop'));
+    $context['shop_endpoint'] = get_permalink(wc_get_page_id('shop'));
     
     // return context
     return $context;    

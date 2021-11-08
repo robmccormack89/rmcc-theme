@@ -43,44 +43,49 @@ msgctxt "404 page"
 msgid "Back to Homepage"
 msgstr ""
 
-#: views/temp/front-page.php:23
-msgctxt "Homepage Hero Section - Heading Text"
+#: views/temp/front-page.php:17
+msgctxt "Homepage hero title"
 msgid "Lorem ipsum dolor sit amet consectetur"
 msgstr ""
 
-#: views/temp/front-page.php:27
-msgctxt "Homepage Hero Section - Sub-heading Text"
+#: views/temp/front-page.php:19
+msgctxt "Homepage hero sub-title"
 msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
-#: views/temp/front-page.php:30
-msgctxt "Homepage Hero Section - Button Text"
+#: views/temp/front-page.php:20
+msgctxt "Homepage hero button text"
 msgid "Learn more"
 msgstr ""
 
-#: views/temp/front-page.php:43
-msgctxt "Homepage Featured Section - Heading"
+#: views/temp/front-page.php:32
+msgctxt "Homepage under-hero title"
 msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
-#: views/temp/front-page.php:44
-msgctxt "Homepage Featured Section - text"
+#: views/temp/front-page.php:33
+msgctxt "Homepage under-hero message"
 msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor."
 msgstr ""
 
-#: views/temp/front-page.php:45
-msgctxt "Homepage Featured Section - Link"
-msgid "#"
+#: views/temp/front-page.php:34
+msgctxt "Homepage under-hero link url"
+msgid "#Latest"
 msgstr ""
 
-#: views/temp/front-page.php:46
-msgctxt "Homepage Featured Section - Link Text"
-msgid "Lorem Ipsum Dolor"
+#: views/temp/front-page.php:35
+msgctxt "Homepage under-hero link text"
+msgid "View all competitions"
 msgstr ""
 
-#: views/temp/front-page.php:53
-msgctxt "Homepage Latest Section - Heading"
+#: views/temp/front-page.php:43
+msgctxt "Homepage latest competitions title"
 msgid "Latest Competitions"
+msgstr ""
+
+#: views/temp/front-page.php:59
+msgctxt "Homepage all competitions button text"
+msgid "View all"
 msgstr ""
 
 #: views/temp/parts/footer/footer-copyright.php:2
