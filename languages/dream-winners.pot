@@ -13,17 +13,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: inc/woo-functions.php:36
-msgctxt "Products label: Singular"
-msgid "Competition"
-msgstr ""
-
-#: inc/woo-functions.php:37
-msgctxt "Products label: Plural"
-msgid "Competitions"
-msgstr ""
-
-#: inc/woo-functions.php:105
+#: inc/woo-functions.php:118
 msgctxt "Onsale label"
 msgid "Sale!"
 msgstr ""
