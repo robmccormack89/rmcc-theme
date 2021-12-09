@@ -18,6 +18,15 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Serchek Theme is built using Timber WP https://github.com/timber/timber
 */
 
+@media only screen and (max-width:959px) {
+  .home-title {
+    margin-top: 0;
+  }
+  .home-content {
+    padding-top: 0;
+  }
+}
+
 /* 
 *
 * SHOP
@@ -374,15 +383,15 @@ h1, h2, h3, h4, h5, h6 {
   /* max-height: 800px; */
   /* height: 80vh; */
 }
-.home-cover-img {
-  max-height: 70vh;
-  min-height: 50vh;
-}
-@media only screen and (max-width:959px) {
-.home-cover-img {
-  min-height: 100vh;
-}
-}
+/*.home-cover-img {*/
+/*  max-height: 70vh;*/
+/*  min-height: 50vh;*/
+/*}*/
+/*@media only screen and (max-width:959px) {*/
+/*.home-cover-img {*/
+/*  min-height: 100vh;*/
+/*}*/
+/*}*/
 /* img modifiers */
 .img-sepia {
   filter: sepia(1);
@@ -760,13 +769,13 @@ label[for=coupon_code] {
 
 
 .alertable {
-    position: fixed;
-    z-index: 9999;
-    top: 38vh;
-    left: calc(50% - 170px)!important;
-    width: 300px!important;
-    background: white;
-    border-radius: 4px;
-    padding: 20px;
-    margin: 0 auto;
+  position: fixed;
+  z-index: 9999;
+  top: 38vh;
+  left: calc(50% - 170px)!important;
+  width: 300px!important;
+  background: white;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 0 auto;
 }

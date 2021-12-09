@@ -49,3 +49,11 @@ add_action('tgmpa_register', 'serchek_theme_register_required_plugins');
 if (file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_once $composer_autoload;
 
 new Rmcc\SerchekTheme;
+
+add_action('template_redirect','redirect_all_pages_to_home');
+function redirect_all_pages_to_home() {
+  if ( ! is_front_page() ) {
+    wp_redirect( get_home_url() );
+    exit;
+  }
+}

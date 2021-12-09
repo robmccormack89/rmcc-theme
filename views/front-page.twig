@@ -3,7 +3,7 @@
 {% block header %}
   <header class="uk-inline">
     
-    <div class="header-top-nav uk-position-top uk-position-z-index">
+    <div class="header-top-nav uk-position-top uk-position-z-index uk-visible@m">
       <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light uuk-overlay-default; top: 200">
         {% include 'header-nav.twig' %}
       </div>
@@ -14,17 +14,29 @@
     data-src="{{post.thumbnail.src|resize(1920)|default(options.site_featured_image.url|resize(1920))|default(theme.link ~ '/assets/images/clean_room_cover.jpg')|e('esc_url')}}" 
     alt="{{post.thumbnail.alt|default(options.site_featured_image.alt)|e('esc_html')}}" 
     data-width data-height 
+    uk-height-viewport 
     uk-img>
     
     <div class="uk-overlay-primary uk-position-cover uk-padding-small">
       <div class="uk-position-center">
-        <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">
+        <div class="uk-text-center uk-container uk-container-xsmall uk-padding home-content">
+          <h1 class="home-title uk-margin-large-top">
             {{ __('Welcome to', 'serchek-theme')|e('esc_html') }} {{site.title}}
           </h1>
           <hr class="uk-divider-small">
           <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">
             {{ __('Clean Room Doors by Serchek Industrial Ireland Ltd', 'serchek-theme')|e('esc_html') }}
+          </p>
+          <p>
+            {{ __('Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761.', 'serchek-theme')|e('esc_html') }}<br>
+            Tel: 
+            <a href="tel:{{ __('044 9345884', 'serchek-theme')|e('esc_html') }}">
+              {{ __('044 9345884', 'serchek-theme')|e('esc_html') }}
+            </a>
+            Email: 
+            <a href="mailto:{{ __('info@serchek.com', 'serchek-theme')|e('esc_html') }}">
+              {{ __('info@serchek.com', 'serchek-theme')|e('esc_html') }}
+            </a>
           </p>
           <a href="#Next" class="uk-button uk-button-primary uk-button-large scroll">
             {{ __('Learn more', 'serchek-theme')|e('esc_html') }}
@@ -37,7 +49,7 @@
 {% endblock %}
 
 {% block contentwrap %}
-  <section id="Next" class="uk-section uk-section-primary">
+  <section class="uk-section uk-section-primary" hidden>
     <div class="uk-text-center uk-container uk-container-xsmall">
       <h2 class="uk-h3">
         {{ __('Pharma Doors by Serchek Industrial Ireland Ltd', 'serchek-theme')|e('esc_html') }}
@@ -59,7 +71,7 @@
       </a>
     </div>
   </section>
-  <section class="uk-section uk-section-muted">
+  <section id="Next" class="uk-section uk-section-muted">
     <div class="uk-container">
       <div class="uk-child-width-1-3@s uk-flex-center uk-text-center" uk-grid="">
         <div>
