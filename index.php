@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Dream_Winners
+ * @package Serchek_Theme
  */
 
 // get the main context

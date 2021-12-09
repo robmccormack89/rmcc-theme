@@ -1,0 +1,10 @@
+{# translation-ready, escaped, formatted, semantic #}
+{% extends "minimal-page.twig" %}
+
+{% block contentwrap %}
+	<section class="404-error-page uk-section uk-text-center uk-container uk-container-xsmall" data-template="404.twig">
+		<h1>{{ _x('404 - Page Not Found', '404 page', 'serchek-theme')|e('esc_html') }}</h1>
+		<p>{{ _x('The page you requested does not exist.', '404 page', 'serchek-theme')|e('esc_html') }}</p>
+		<a href="{{site.link}}" class="uk-button uk-button-primary uk-button-large">{{ _x('Back to Homepage', '404 page', 'serchek-theme')|e('esc_html') }}</a>
+	</section>
+{% endblock %}

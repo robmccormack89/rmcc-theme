@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all single posts
  *
- * @package Dream_Winners
+ * @package Serchek_Theme
  */
 
 // get the main context

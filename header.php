@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package Dream_Winners
+ * @package Serchek_Theme
  */
  
  $GLOBALS['timberContext'] = Timber::context();

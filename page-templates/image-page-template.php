@@ -2,7 +2,7 @@
 /**
  * Template Name: Image Header Template
  *
- * @package Dream_Winners
+ * @package Serchek_Theme
  */
 
 $context = Timber::context();

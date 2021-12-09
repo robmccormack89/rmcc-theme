@@ -2,98 +2,92 @@
 
 {% block header %}
   <header class="uk-inline">
+    
     <div class="header-top-nav uk-position-top uk-position-z-index">
-      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light uuk-overlay-default; top: 200">
         {% include 'header-nav.twig' %}
       </div>
     </div>
-    <img class="cover-img home-cover-img" 
-    data-src="{{post.thumbnail.src|resize(1920)|default(options.site_featured_image.url|resize(1920))|default(theme.link ~ '/assets/images/clouds1.jpg')|e('esc_url')}}" 
+    
+    <img 
+    class="cover-img home-cover-img" 
+    data-src="{{post.thumbnail.src|resize(1920)|default(options.site_featured_image.url|resize(1920))|default(theme.link ~ '/assets/images/clean_room_cover.jpg')|e('esc_url')}}" 
     alt="{{post.thumbnail.alt|default(options.site_featured_image.alt)|e('esc_html')}}" 
-    data-width data-height uk-img>
-    <div class="uk-overlay-primary uk-position-cover">
+    data-width data-height 
+    uk-img>
+    
+    <div class="uk-overlay-primary uk-position-cover uk-padding-small">
       <div class="uk-position-center">
         <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">{{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage hero title', 'dream-winners')|e('esc_html') }}</h1>
+          <h1 class="uk-margin-large-top">
+            {{ __('Welcome to', 'serchek-theme')|e('esc_html') }} {{site.title}}
+          </h1>
           <hr class="uk-divider-small">
-          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ _x('Lorem ipsum dolor sit amet', 'Homepage hero sub-title', 'dream-winners')|e('esc_html') }}</p>
-          <a href="#Next" class="uk-button uk-button-default uk-button-large scroll">{{ _x('Learn more', 'Homepage hero button text', 'dream-winners')|e('esc_html') }}</a>
+          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">
+            {{ __('Clean Room Doors by Serchek Industrial Ireland Ltd', 'serchek-theme')|e('esc_html') }}
+          </p>
+          <a href="#Next" class="uk-button uk-button-primary uk-button-large scroll">
+            {{ __('Learn more', 'serchek-theme')|e('esc_html') }}
+          </a>
         </div>
       </div>
     </div>
+    
   </header>
 {% endblock %}
 
 {% block contentwrap %}
-
-  <!-- under hero section -->
   <section id="Next" class="uk-section uk-section-primary">
     <div class="uk-text-center uk-container uk-container-xsmall">
-      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage under-hero title', 'dream-winners')|e('esc_html') }}</h2>
-      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage under-hero message', 'dream-winners')|e('esc_html') }}</p>
-      <a class="feature-link uk-text-uppercase scroll" href="{{ _x('#Latest', 'Homepage under-hero link url', 'dream-winners') }}">
-        {{ _x('View all competitions', 'Homepage under-hero link text', 'dream-winners')|e('esc_html') }}
+      <h2 class="uk-h3">
+        {{ __('Pharma Doors by Serchek Industrial Ireland Ltd', 'serchek-theme')|e('esc_html') }}
+      </h2>
+      <hr class="uk-divider-small">
+      <p>
+        {{ __('Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761.', 'serchek-theme')|e('esc_html') }}<br>
+        Tel: 
+        <a href="tel:{{ __('044 9345884', 'serchek-theme')|e('esc_html') }}">
+          {{ __('044 9345884', 'serchek-theme')|e('esc_html') }}
+        </a>
+        Email: 
+        <a href="mailto:{{ __('info@serchek.com', 'serchek-theme')|e('esc_html') }}">
+          {{ __('info@serchek.com', 'serchek-theme')|e('esc_html') }}
+        </a>
+      </p>
+      <a class="feature-link uk-text-uppercase" target="_blank" href="{{ __('https://www.industrialdoors.ie/', 'serchek-theme') }}">
+        {{ __('Go to Serchek Website', 'serchek-theme')|e('esc_html') }}
       </a>
     </div>
   </section>
-  
-  <!-- latest competitions -->
-  {% if latest_competitions|length > 0 %}
-    <section id="Latest" class="latest-competitions uk-section uk-container">
-      <h2 class="uk-text-center">{{ _x('Latest Competitions', 'Homepage latest competitions title', 'dream-winners')|e('esc_html') }}</h2>
-      <hr class="uk-divider-small uk-text-center">
-      <div id="slideshow_latest" class="swiper-container">
-        <div class="swiper-wrapper">
-          {% for post in latest_competitions %}
-            <div class="swiper-slide">
-              {% include 'tease-product.twig' %}
-            </div>
-          {% endfor %}
+  <section class="uk-section uk-section-muted">
+    <div class="uk-container">
+      <div class="uk-child-width-1-3@s uk-flex-center uk-text-center" uk-grid="">
+        <div>
+          <div class="uk-card uk-card-hover uk-card-large uk-card-default uk-card-body">
+            <h2>“High Speed” Clean Room Doors</h2>
+          </div>
         </div>
-        {% if latest_competitions|length > 3 %}
-          <div class="swiper-pagination"></div>
-        {% endif %}
+        <div>
+          <div class="uk-card uk-card-hover uk-card-large uk-card-default uk-card-body">
+            <h2>“Steel Pedestrian” Clean Room Doors</h2>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-hover uk-card-large uk-card-default uk-card-body">
+            <h2>Smart Automated Doors</h2>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-hover uk-card-large uk-card-default uk-card-body">
+            <h2>Clean Room Windows</h2>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-hover uk-card-large uk-card-default uk-card-body">
+            <h2>Members Resources (Manuals & Videos)</h2>
+          </div>
+        </div>
       </div>
-      {% if latest_competitions|length > 3 %}
-        <div class="view-all-button uk-text-center uk-margin-medium-top">
-          <a href="{{shop_endpoint|e('esc_url')}}" class="uk-button uk-button-default uk-button-large">{{ _x('View all', 'Homepage all competitions button text', 'dream-winners')|e('esc_html') }}</a>
-        </div>
-      {% endif %}
-    </section>
-  {% endif %}
-  
-  <!-- home page editor content -->
-  {{ post.content }}
-  
-{% endblock %}
-
-{% block scripts %}
-  <script type='text/javascript'>
-    // latest comps swipers
-    jQuery(function(){
-      var latest_swiper = new Swiper('#slideshow_latest', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: true,
-        // },
-        // init: false,
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
-        },
-        breakpoints: {
-          960: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1290: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-        }
-      });
-    });
-  </script>
+    </div>
+  </section>
 {% endblock %}

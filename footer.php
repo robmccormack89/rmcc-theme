@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package Dream_Winners
+ * @package Serchek_Theme
  */
 
  $timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile

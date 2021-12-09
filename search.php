@@ -2,7 +2,7 @@
 /**
  * The search
  *
- * @package Dream_Winners
+ * @package Serchek_Theme
  */
 
  $context = Timber::context();

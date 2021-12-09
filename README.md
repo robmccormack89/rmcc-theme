@@ -1,3 +1,3 @@
-# Dream Winners Theme
+# Serchek Theme
 
 ---
