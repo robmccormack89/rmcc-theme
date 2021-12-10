@@ -8,22 +8,13 @@
     {% block fonts %}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
     {% endblock %}
     
     {{ function('wp_head') }}
 
     {% block styles %}
     {% endblock %}
-    
-    <style>
-      .uk-sticky-below .logo-svg, .uk-sticky-below .logo-svg:hover, .uk-sticky-below .logo-svg:focus {
-        color: #008ce1!important;
-      }
-      header.uk-inline {
-        width: 100%;
-      }
-    </style>
     
   </head>
 
@@ -39,6 +30,7 @@
           </div>
         </header>
       {% endblock %}
+      {% include 'mobile-nav.twig' %}
       
       {% do action('rmcc_after_header') %}
       
@@ -58,7 +50,6 @@
       
       {% block footer %}
         <footer class="the-footer">
-          {# include 'footer-main.twig' #}
           {% include 'footer-bottom.twig' %}
         </footer>
       {% endblock %}

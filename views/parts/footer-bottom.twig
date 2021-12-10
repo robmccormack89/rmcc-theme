@@ -1,8 +1,9 @@
-{# translation-ready, escaped, formatted, semantic #}
-<div class="footer-bottom uk-section uk-section-small uk-section-default theme-border-top" data-template="footer-bottom.twig">
+<div class="footer-bottom uk-section uk-section-small uk-section-default" data-template="footer-bottom.twig">
   <div class="uk-container">
     <div class="uk-text-center">
-      <a href="https://www.industrialdoors.ie/" target="_blank" class="uk-link-reset"><img src="{{theme.link}}/assets/images/logos/serchek_logo.jpg" width="253" height="39" uk-svg></a>
+      <a href="{{ _x('https://www.industrialdoors.ie/', 'Footer Logo Link', 'serchek-theme')|e('esc_html') }}" target="_blank" class="uk-link-reset">
+        <img src="{{ _x('https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/logos/serchek_logo.jpg', 'Footer Logo Image', 'serchek-theme')|e('esc_html') }}" width="253" height="39" uk-svg>
+      </a>
     </div>
   </div>
 </div>

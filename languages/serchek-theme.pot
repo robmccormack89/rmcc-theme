@@ -13,46 +13,52 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: views/temp/front-page.php:23
-msgid "Welcome to"
+#: views/temp/front-page.php:5
+msgctxt "Homepage Cover Background Image"
+msgid "https://pharmadoors.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg"
 msgstr ""
 
-#: views/temp/front-page.php:27
-msgid "Clean Room Doors by Serchek Industrial Ireland Ltd"
+#: views/temp/front-page.php:19, views/temp/parts/mobile-nav.php:28
+msgctxt "Homepage Cover Title"
+msgid "Pharma Doors by Serchek Industrial Ireland Ltd."
 msgstr ""
 
-#: views/temp/front-page.php:30
-msgid "Learn more"
+#: views/temp/front-page.php:22
+msgctxt "Homepage Cover Description"
+msgid "Pharma Doors installs \"High Speed\" & \"Steel Pedestrian\" Clean Room Doors, Clean Room Windows & Smart Automated Doors."
 msgstr ""
 
-#: views/temp/front-page.php:43
-msgid "Pharma Doors by Serchek Industrial Ireland Ltd"
+#: views/temp/front-page.php:28, views/temp/parts/mobile-nav.php:32
+msgctxt "Homepage Cover Address"
+msgid "Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761"
 msgstr ""
 
-#: views/temp/front-page.php:47
-msgid "Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761."
-msgstr ""
-
-#: views/temp/front-page.php:49, views/temp/front-page.php:50
+#: views/temp/front-page.php:31, views/temp/front-page.php:31, views/temp/parts/mobile-nav.php:36, views/temp/parts/mobile-nav.php:36
+msgctxt "Homepage Cover Phone No."
 msgid "044 9345884"
 msgstr ""
 
-#: views/temp/front-page.php:53, views/temp/front-page.php:54
+#: views/temp/front-page.php:34, views/temp/front-page.php:34, views/temp/parts/mobile-nav.php:39, views/temp/parts/mobile-nav.php:39
+msgctxt "Homepage Cover Email"
 msgid "info@serchek.com"
 msgstr ""
 
-#: views/temp/front-page.php:57
+#: views/temp/parts/footer-bottom.php:4, views/temp/parts/mobile-nav.php:41
+msgctxt "Footer Logo Link"
 msgid "https://www.industrialdoors.ie/"
 msgstr ""
 
-#: views/temp/front-page.php:58
-msgid "Go to Serchek Website"
+#: views/temp/parts/footer-bottom.php:5, views/temp/parts/mobile-nav.php:42
+msgctxt "Footer Logo Image"
+msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/logos/serchek_logo.jpg"
 msgstr ""
 
-#: views/temp/parts/header-nav.php:58
-msgid "/contact"
+#: views/temp/parts/header-nav.php:55
+msgctxt "Header Button Link"
+msgid "https://www.industrialdoors.ie/contact/"
 msgstr ""
 
-#: views/temp/parts/header-nav.php:59
-msgid "Contact us"
+#: views/temp/parts/header-nav.php:56
+msgctxt "Header Button Text"
+msgid "Contact Us"
 msgstr ""

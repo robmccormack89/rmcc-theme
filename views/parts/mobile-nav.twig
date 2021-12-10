@@ -1,0 +1,47 @@
+<nav id="MobileOffCanvas" class="mobile-slide-navbar" uk-offcanvas="overlay: true;" data-template="header-mobile-offcanvas.twig">
+  <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    {% if has_menu_mobile %}
+      <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative" uk-nav>
+        <li class="uk-nav-header theme-border-bottom">Menu</li>
+        {% for item in menu_mobile.get_items %}
+          {% if item.get_children %}
+            <li class="theme-border-bottom {{ item.classes | join(' ')|e('esc_html') }} uk-parent">
+              <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+              <ul class="uk-nav-sub">
+                {% for child in item.get_children %}
+                  <li class="theme-border-top {{ child.classes | join(' ')|e('esc_html') }}">
+                    <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="theme-border-bottom {{ item.classes | join(' ')|e('esc_html') }}">
+              <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="uk-margin-small-left uk-margin-small-right">
+      <h5 class="uk-margin-top">{{ _x('Pharma Doors by Serchek Industrial Ireland Ltd.', 'Homepage Cover Title', 'serchek-theme')|e('esc_html') }}</h5>
+      <div class="uk-text-small">
+        <div class="address">
+          <p class="uk-margin-small">
+            {{ _x('Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761', 'Homepage Cover Address', 'serchek-theme')|e('esc_html') }}
+          </p>
+        </div>
+        <p class="uk-margin-small">
+          <strong>Tel:</strong> <a class="uk-link-reset" href="tel:{{ _x('044 9345884', 'Homepage Cover Phone No.', 'serchek-theme')|e('esc_html') }}">{{ _x('044 9345884', 'Homepage Cover Phone No.', 'serchek-theme')|e('esc_html') }}</a>
+        </p>
+        <p class="uk-margin-small uk-margin-large-bottom">
+          <strong>Email:</strong> <a class="uk-link-reset" href="mailto:{{ _x('info@serchek.com', 'Homepage Cover Email', 'serchek-theme')|e('esc_html') }}">{{ _x('info@serchek.com', 'Homepage Cover Email', 'serchek-theme')|e('esc_html') }}</a>
+        </p>
+        <a href="{{ _x('https://www.industrialdoors.ie/', 'Footer Logo Link', 'serchek-theme')|e('esc_html') }}" target="_blank" class="uk-link-reset uk-margin-large-top">
+          <img src="{{ _x('https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/logos/serchek_logo.jpg', 'Footer Logo Image', 'serchek-theme')|e('esc_html') }}" width="253" height="39" uk-svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

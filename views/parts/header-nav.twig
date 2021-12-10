@@ -1,18 +1,19 @@
 <nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
   
+  <!-- Logo/SiteTitle -->
   <div class="uk-navbar-left">
-    <a class="uk-text-emphasis logo-svg uk-link-reset" href="{{ site.url|e('esc_url') }}">
-      {% if theme_logo_url %}
-        <img src="{{ theme_logo_url|resize(253)|e('esc_url')|default(theme.link ~ '/assets/images/logos/logo.svg') }}" width="253" height="39" uk-svg>
-      {% else %}
-        <span class="uk-h2">{{site.title}}</span>
-      {% endif %}
+    <a class="uk-text-emphasis logo-svg uk-link-reset uk-visible@l" href="{{ site.url|e('esc_url') }}">
+      <span class="uk-h2">{{site.title}}
+    </a>
+    <a class="mobile-menu-toggle uk-navbar-toggle uk-hidden@l uk-text-emphasis" href="#MobileOffCanvas" uk-toggle>
+      <i class="fas fa-bars uk-margin-small-right fa-2x"></i>
     </a>
   </div>
   
-  <div class="uk-navbar-center" hidden>
-    <ul class="main-menu main-nav uk-navbar-nav uk-visible@l">
-      {% if has_menu_main %}
+  {% if has_menu_main %}
+    <!-- main menu -->
+    <div class="uk-navbar-center">
+      <ul class="main-menu main-nav uk-navbar-nav uk-visible@l">
         {% for item in menu_main.get_items %}
           {% if item.get_children %}
             <li class="{{ item.classes | join(' ') }}">
@@ -44,21 +45,16 @@
             </li>
           {% endif %}
         {% endfor %}
-      {% else %}
-        <li>
-          Add a menu to the Main Menu slot in Appearance > Menus
-        </li>
-      {% endif %}
-    </ul>
-    <a class="mobile-menu-toggle uk-navbar-toggle uk-hidden@l uk-text-emphasis" uk-navbar-toggle-icon href="#MobileOffCanvas" uk-toggle></a>
-  </div>
+      </ul>
+    </div>
+  {% endif %}
   
+  <!-- contact button -->
   <div class="uk-navbar-right">
     <div class="uk-navbar-item">
-      <a class="uk-button uk-button-primary" target="_blank" href="{{ __('/contact', 'serchek-theme') }}">
-        {{ __('Contact us', 'serchek-theme')|e('esc_html') }} <i class="far fa-envelope uk-margin-small-left"></i>
+      <a class="uk-button uk-button-primary contact-button" target="_blank" href="{{ _x('https://www.industrialdoors.ie/contact/', 'Header Button Link', 'serchek-theme')|e('esc_html') }}" target="_blank">
+        {{ _x('Contact Us', 'Header Button Text', 'serchek-theme')|e('esc_html') }} <i class="far fa-envelope uk-margin-small-left"></i>
       </a>
     </div>
   </div>
-  
 </nav>
