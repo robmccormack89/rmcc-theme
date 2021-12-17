@@ -53,7 +53,7 @@ gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean-temp'));
 // gulp style
 'use strict';
  
-var sass = require("gulp-sass"),
+var sass = require("gulp-sass")(require('node-sass')),
     postcss = require("gulp-postcss"),
     autoprefixer = require("autoprefixer"),
     cssnano = require("cssnano");

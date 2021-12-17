@@ -1,0 +1,18 @@
+{% extends "page.twig" %}
+
+{% block thumb_caption %}
+  {% if post.thumbnail.caption %}
+    <figcaption class="uk-container uk-container-large">{{ post.thumbnail.caption|e('esc_html') }}</figcaption>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <article id="Page-{{post.id|e('esc_html')}}" class="uk-section uk-container uk-container-large {{post.class|e('esc_html')}}" data-template="wide-page.twig" data-block="content">
+    {% block _content %}
+      <section class="single-content">
+        <h1 class="uk-margin-large-bottom uk-heading-small">{{post.title|e('esc_html')}}</h1>
+        {% include '_content.twig' %}
+      </section>
+    {% endblock %}
+  </article>
+{% endblock %}

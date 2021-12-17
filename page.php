@@ -10,8 +10,4 @@ $context = Timber::context();
 $post = new Timber\Post();
 $context['post'] = $post;
 
-if ( post_password_required( $post->ID ) ) {
-  Timber::render( 'page-password.twig', $context );
-} else {
-  Timber::render(array('page-' . $context['post']->post_name . '.twig', 'page.twig'), $context);
-}
+Timber::render(array('page-' . $context['post']->post_name . '.twig', 'page.twig', 'single.twig'), $context);

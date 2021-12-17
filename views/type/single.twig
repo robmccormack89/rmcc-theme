@@ -1,0 +1,57 @@
+{% extends "base.twig" %}
+
+{% block styles %}
+  <!-- single-only styles -->
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    .uk-background-bottom-center {
+      background-position: 50% -25vw;
+    }
+    figcaption {
+      font-size: .875rem;
+    }
+    .uk-container-break .alignwide {
+      max-width: 1600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  </style>
+{% endblock %}
+
+{% block header %}
+  <header class="uk-background-default" data-template="page.twig" data-block="header">
+    <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+      {% include 'header-nav.twig' %}
+    </div>
+  </header>
+{% endblock %}
+
+{% block contentwrap %}
+  {% block thumb %}
+    {% if post.thumbnail %}
+      <figure class="uk-margin-remove">
+        <img data-src="{{ post.thumbnail.src|resize(1920)|e('esc_url') }}" alt="{{ post.thumbnail.alt|e('esc_html') }}" 
+        class="" data-width data-height uk-img>
+        {% block thumb_caption %}
+          {% if post.thumbnail.caption %}
+            <figcaption class="uk-container">{{ post.thumbnail.caption|e('esc_html') }}</figcaption>
+          {% endif %}
+        {% endblock %}
+      </figure>
+    {% endif %}
+  {% endblock %}
+  {% block content %}
+    <article id="Single-{{post.id|e('esc_html')}}" class="uk-section uk-container {{post.class|e('esc_html')}}" data-template="single.twig" data-block="content">
+      {% block _content %}
+        <section class="single-content">
+          <h1 class="uk-margin-large-bottom uk-heading-small">{{post.title|e('esc_html')}}</h1>
+          {% include '_content.twig' %}
+        </section>
+      {% endblock %}
+    </article>
+  {% endblock %}
+{% endblock %}

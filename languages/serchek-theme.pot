@@ -13,6 +13,21 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: views/temp/404.php:5
+msgctxt "404 page"
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: views/temp/404.php:6
+msgctxt "404 page"
+msgid "The page you requested does not exist."
+msgstr ""
+
+#: views/temp/404.php:7
+msgctxt "404 page"
+msgid "Back to Homepage"
+msgstr ""
+
 #: views/temp/front-page.php:5
 msgctxt "Homepage Cover Background Image"
 msgid "https://pharmadoors.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg"
@@ -53,6 +68,11 @@ msgctxt "Footer Logo Image"
 msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/logos/serchek_logo.jpg"
 msgstr ""
 
+#: views/temp/parts/footer-bottom.php:11
+msgctxt "Copyright"
+msgid "All rights reserved."
+msgstr ""
+
 #: views/temp/parts/header-nav.php:55
 msgctxt "Header Button Link"
 msgid "https://www.industrialdoors.ie/contact/"
@@ -61,4 +81,34 @@ msgstr ""
 #: views/temp/parts/header-nav.php:56
 msgctxt "Header Button Text"
 msgid "Contact Us"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:7, views/temp/type/post/narrow-post.php:7, views/temp/type/post/post.php:7, views/temp/type/post/very-narrow-post.php:7, views/temp/type/post/wide-post.php:7
+msgctxt "Post"
+msgid "By:"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:7, views/temp/type/post/narrow-post.php:7, views/temp/type/post/post.php:7, views/temp/type/post/very-narrow-post.php:7, views/temp/type/post/wide-post.php:7
+msgctxt "Post"
+msgid "Posted:"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:25, views/temp/type/post/narrow-post.php:25, views/temp/type/post/post.php:25, views/temp/type/post/very-narrow-post.php:25, views/temp/type/post/wide-post.php:25
+msgctxt "Post"
+msgid "Previous Article"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:33, views/temp/type/post/narrow-post.php:33, views/temp/type/post/post.php:33, views/temp/type/post/very-narrow-post.php:33, views/temp/type/post/wide-post.php:33
+msgctxt "Post"
+msgid "Next Article"
+msgstr ""
+
+#: views/temp/type/post/_tease.php:42
+msgctxt "Post tease"
+msgid "Read more"
+msgstr ""
+
+#: views/temp/type/_content.php:2
+msgctxt "Password Protected Content Message"
+msgid "Sorry, this area is for members-only; you need to be logged-in to view this content. If you are a customer & wish to have access to our member's area, please contact one of our service team via our <a href=\"/contact\">contact</a> page & we will provided you with login details."
 msgstr ""

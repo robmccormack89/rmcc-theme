@@ -14,9 +14,4 @@ $timber_post = Timber::get_post();
 // set the post object variable
 $context['post'] = $timber_post;
 
-// if is password protect post, render that template first with context, or else render the regular template hierarchy with context
-if ( post_password_required( $timber_post->ID ) ) {
-	Timber::render( 'single-password.twig', $context );
-} else {
-	Timber::render( array( 'single-' . $timber_post->ID . '.twig', 'single-' . $timber_post->post_type . '.twig', 'single-' . $timber_post->slug . '.twig', 'single.twig' ), $context );
-}
+Timber::render( array( 'post-' . $timber_post->ID . '.twig', 'post-' . $timber_post->post_type . '.twig', 'post-' . $timber_post->slug . '.twig', 'post.twig', 'single.twig' ), $context );

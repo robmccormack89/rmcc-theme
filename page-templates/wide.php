@@ -1,6 +1,7 @@
 <?php
 /**
- * Template Name: Minimal Header Template
+ * Template Name: Wide Template
+ * Template Post Type: post, page
  *
  * @package Serchek_Theme
  */
@@ -8,4 +9,4 @@
 $context = Timber::context();
 $post = Timber::query_post();
 $context['post'] = $post;
-Timber::render('minimal-page.twig', $context);
+Timber::render('wide-'.$post->post_type.'.twig', $context);

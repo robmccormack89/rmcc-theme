@@ -1,6 +1,7 @@
 <?php
 /**
- * Template Name: Image Header Template
+ * Template Name: Narrow Template
+ * Template Post Type: post, page
  *
  * @package Serchek_Theme
  */
@@ -8,4 +9,4 @@
 $context = Timber::context();
 $post = Timber::query_post();
 $context['post'] = $post;
-Timber::render('image-page.twig', $context);
+Timber::render('narrow-'.$post->post_type.'.twig', $context);

@@ -637,7 +637,10 @@ svg.search, svg.search, svg.basket, svg.basket {
 }
 @media only screen and (min-device-width:960px) and (max-device-width:1250px) {
 }
-@media only screen and (max-width:639px) {
+@media only screen and (max-width:360px) {
+  .uk-heading-small {
+    font-size: 1.8rem;
+  }
 }
 @media only screen and (max-width:959px) {
   .cover-content {
