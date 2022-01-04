@@ -11,18 +11,6 @@ require_once get_template_directory() . '/inc/lib/class-tgm-plugin-activation.ph
 // register the required plugins(Timber) see TGM Plugin activation library for php
 function serchek_theme_register_required_plugins() {
 	$plugins = array(
-    // site preloader
-    array(
-      'name'               => 'Site Animated Preloader by RMcC', // The plugin name.
-			'slug'               => 'site-preloader-animated-plugin', // The plugin slug (typically the folder name).
-			'source'             => get_stylesheet_directory() . '/inc/lib/plugins/site-preloader-animated-plugin-master.zip', // The plugin source.
-			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-		),
     // loco translate
     array(
       'name' => 'Loco Translate',
@@ -50,6 +38,7 @@ if (file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_on
 
 new Rmcc\SerchekTheme;
 
+// this should be temporary until Tom is ready to start on othe pages
 add_action('template_redirect','redirect_all_pages_to_home');
 function redirect_all_pages_to_home() {
   if ( !is_front_page() && !is_user_logged_in()  ) {

@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-10 23:22+0000\n"
-"PO-Revision-Date: 2022-01-04 11:57+0000\n"
+"PO-Revision-Date: 2022-01-04 11:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -96,56 +96,6 @@ msgstr ""
 #: views/temp/parts/footer-bottom.php:11
 msgctxt "Copyright"
 msgid "All rights reserved."
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:31
-msgctxt "Featured item button link"
-msgid "https://www.industrialdoors.ie/why-us/"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:32
-msgctxt "Featured item button text"
-msgid "About us"
-msgstr "Learn more"
-
-#: views/temp/parts/featured-item-section.php:28
-msgctxt "Featured item description"
-msgid ""
-"Serchek installs, maintains and repairs Industrial and Commercial doors, "
-"Loading bays, gates and entry systems."
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:24
-msgctxt "Featured item image link"
-msgid "https://www.industrialdoors.ie/"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:25
-msgctxt "Featured item image source url"
-msgid ""
-"https://pharmadoors.ie/wp-content/themes/serchek-"
-"theme/assets/images/logos/serchek_logo.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:9
-msgctxt "Featured item slider image 1"
-msgid ""
-"https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/high-"
-"speed-door.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:12
-msgctxt "Featured item slider image 2"
-msgid ""
-"https://pharmadoors.ie/wp-content/themes/serchek-"
-"theme/assets/images/pedestrian-doors.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:15
-msgctxt "Featured item slider image 3"
-msgid ""
-"https://pharmadoors.ie/wp-content/themes/serchek-"
-"theme/assets/images/interlock.jpg"
 msgstr ""
 
 #: views/temp/parts/footer-bottom.php:5, views/temp/parts/mobile-nav.php:42

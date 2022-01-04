@@ -48,7 +48,11 @@ class SerchekTheme extends Timber {
     
     // add_filter( '__the_password_form', array($this, '_custom_password_form') );
     
-    add_shortcode('contact_section', array($this, 'contact_section'));
+    add_shortcode('contact_section', array($this, 'contact_section')); // [contact_section]
+    add_shortcode('featured_content_item_section', array($this, 'featured_content_item_section')); // [featured_content_item_section]
+    
+    add_filter('body_class', array($this, 'site_animated_preloader_body_class'));
+    add_action('rmcc_before_header', array($this, 'preloader_html'), 5);
   }
   
   // public function _custom_password_form() {
@@ -66,9 +70,25 @@ class SerchekTheme extends Timber {
   //   return $o;
   // }
   
+  public function preloader_html() {
+    echo '<div id="ThemePreload" class="theme-preload"></div>';
+  }
+  
+  public function site_animated_preloader_body_class($classes) {
+    $stack = $classes;
+  	array_push($stack, 'no-overflow');
+  	return $stack;
+  }
+  
   public function contact_section() {
     $context = Timber::context();
     $out = Timber::compile('contact-section.twig', $context);
+    return $out;
+  }
+  
+  public function featured_content_item_section() {
+    $context = Timber::context();
+    $out = Timber::compile('featured-item-section.twig', $context);
     return $out;
   }
   
@@ -209,6 +229,14 @@ class SerchekTheme extends Timber {
       'swiper-js',
       get_template_directory_uri() . '/assets/js/lib/swiper-bundle.min.js',
       '',
+      '1.0.0',
+      true
+    );
+    
+    wp_enqueue_script(
+      'site-animated-preloader',
+      get_template_directory_uri() . '/assets/js/site-animated-preloader.js',
+      'jquery',
       '1.0.0',
       true
     );
