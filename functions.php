@@ -38,7 +38,7 @@ if (file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_on
 
 new Rmcc\SerchekTheme;
 
-// this should be temporary until Tom is ready to start on othe pages
+// this should be temporary until Tom is ready to start on other pages
 add_action('template_redirect','redirect_all_pages_to_home');
 function redirect_all_pages_to_home() {
   if ( !is_front_page() && !is_user_logged_in()  ) {

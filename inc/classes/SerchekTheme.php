@@ -46,29 +46,30 @@ class SerchekTheme extends Timber {
     add_filter('upload_mimes', array($this, 'cc_mime_types'));
     add_action('admin_head', array($this, 'fix_svg'));
     
-    // add_filter( '__the_password_form', array($this, '_custom_password_form') );
-    
     add_shortcode('contact_section', array($this, 'contact_section')); // [contact_section]
     add_shortcode('featured_content_item_section', array($this, 'featured_content_item_section')); // [featured_content_item_section]
     
     add_filter('body_class', array($this, 'site_animated_preloader_body_class'));
     add_action('rmcc_before_header', array($this, 'preloader_html'), 5);
+    
+    // add_filter( '__the_password_form', array($this, 'custom_password_form') );
   }
   
-  // public function _custom_password_form() {
-  //   $context = Timber::context();
-  //   Timber::render('form.twig', $context);
-  // }
-  // public function __custom_password_form() {
-  //   global $post;
-  //   $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-  //   $o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
-  //   ' . __( "THIS IS YOUR NEW PASSWORD INTRO TEXT THAT SHOWS ABOVE THE PASSWORD FORM" ) . '
-  //   <label class="pass-label" for="' . $label . '">' . __( "PASSWORD:" ) . ' </label><input name="post_password" id="' . $label . '" type="password" style="background: #ffffff; border:1px solid #999; color:#333333; padding:10px;" size="20" /><input type="submit" name="Submit" class="button" value="' . esc_attr__( "Submit" ) . '" />
-  //   </form><p style="font-size:14px;margin:0px;">∗EXTRA TEXT CAN GO HERE...THIS WILL SHOW BELOW THE FORM</p>
-  //   ';
-  //   return $o;
-  // }
+  // in progress (custom_password_form)
+  public function _custom_password_form() {
+    $context = Timber::context();
+    Timber::render('form.twig', $context);
+  }
+  public function __custom_password_form() {
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
+    ' . __( "THIS IS YOUR NEW PASSWORD INTRO TEXT THAT SHOWS ABOVE THE PASSWORD FORM" ) . '
+    <label class="pass-label" for="' . $label . '">' . __( "PASSWORD:" ) . ' </label><input name="post_password" id="' . $label . '" type="password" style="background: #ffffff; border:1px solid #999; color:#333333; padding:10px;" size="20" /><input type="submit" name="Submit" class="button" value="' . esc_attr__( "Submit" ) . '" />
+    </form><p style="font-size:14px;margin:0px;">∗EXTRA TEXT CAN GO HERE...THIS WILL SHOW BELOW THE FORM</p>
+    ';
+    return $o;
+  }
   
   public function preloader_html() {
     echo '<div id="ThemePreload" class="theme-preload"></div>';
