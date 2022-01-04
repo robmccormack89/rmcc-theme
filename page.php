@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all pages
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 // get the main context

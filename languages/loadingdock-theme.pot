@@ -1,8 +1,8 @@
-# Copyright (C) 2022 serchek-theme
-# This file is distributed under the same license as the serchek-theme package.
+# Copyright (C) 2022 loadingdock-theme
+# This file is distributed under the same license as the loadingdock-theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: serchek-theme\n"
+"Project-Id-Version: loadingdock-theme\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,17 +30,17 @@ msgstr ""
 
 #: views/temp/front-page.php:5
 msgctxt "Homepage Cover Background Image"
-msgid "https://pharmadoors.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg"
+msgid "https://loadingdock.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg"
 msgstr ""
 
 #: views/temp/front-page.php:19, views/temp/parts/mobile-nav.php:28
 msgctxt "Homepage Cover Title"
-msgid "Pharma Doors by Serchek Industrial Ireland Ltd."
+msgid "Loading Dock by Serchek Industrial Ireland Ltd."
 msgstr ""
 
 #: views/temp/front-page.php:22
 msgctxt "Homepage Cover Description"
-msgid "Pharma Doors installs \"High Speed\" & \"Steel Pedestrian\" Clean Room Doors, Clean Room Windows & Smart Automated Doors."
+msgid "Loading Dock installs \"High Speed\" & \"Steel Pedestrian\" Clean Room Doors, Clean Room Windows & Smart Automated Doors."
 msgstr ""
 
 #: views/temp/front-page.php:28, views/temp/parts/mobile-nav.php:32
@@ -60,7 +60,7 @@ msgstr ""
 
 #: views/temp/parts/contact-section.php:3
 msgctxt "Contact section title line 1"
-msgid "Pharma Doors"
+msgid "Loading Dock"
 msgstr ""
 
 #: views/temp/parts/contact-section.php:3
@@ -90,7 +90,7 @@ msgstr ""
 
 #: views/temp/parts/contact-section.php:13
 msgctxt "Contact section button link"
-msgid "https://pharmadoors.ie/contact"
+msgid "https://loadingdock.ie/contact"
 msgstr ""
 
 #: views/temp/parts/contact-section.php:14
@@ -100,7 +100,7 @@ msgstr ""
 
 #: views/temp/parts/contact-section.php:20, views/temp/parts/contact-section.php:28
 msgctxt "Contact section background image url"
-msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/clean_room_cover.jpg"
+msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/clean_room_cover.jpg"
 msgstr ""
 
 #: views/temp/parts/contact-section.php:23
@@ -110,17 +110,17 @@ msgstr ""
 
 #: views/temp/parts/featured-item-section.php:9
 msgctxt "Featured item slider image 1"
-msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/high-speed-door.jpg"
+msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/high-speed-door.jpg"
 msgstr ""
 
 #: views/temp/parts/featured-item-section.php:12
 msgctxt "Featured item slider image 2"
-msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/pedestrian-doors.jpg"
+msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/pedestrian-doors.jpg"
 msgstr ""
 
 #: views/temp/parts/featured-item-section.php:15
 msgctxt "Featured item slider image 3"
-msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/interlock.jpg"
+msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/interlock.jpg"
 msgstr ""
 
 #: views/temp/parts/featured-item-section.php:24
@@ -130,7 +130,7 @@ msgstr ""
 
 #: views/temp/parts/featured-item-section.php:25
 msgctxt "Featured item image source url"
-msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/logos/serchek_logo.jpg"
+msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg"
 msgstr ""
 
 #: views/temp/parts/featured-item-section.php:28
@@ -155,7 +155,7 @@ msgstr ""
 
 #: views/temp/parts/footer-bottom.php:5, views/temp/parts/mobile-nav.php:42
 msgctxt "Footer Logo Image"
-msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/logos/serchek_logo.jpg"
+msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg"
 msgstr ""
 
 #: views/temp/parts/footer-bottom.php:11

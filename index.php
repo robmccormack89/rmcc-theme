@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 // get the main context

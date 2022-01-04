@@ -2,7 +2,7 @@
 
 {% block header %}
       
-  {% set thumbsrc = post.thumbnail.src|resize(1920)|default(_x('https://pharmadoors.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg', 'Homepage Cover Background Image', 'serchek-theme'))|e('esc_url') %}
+  {% set thumbsrc = post.thumbnail.src|resize(1920)|default(_x('https://loadingdock.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg', 'Homepage Cover Background Image', 'loadingdock-theme'))|e('esc_url') %}
   
   <header class="uk-background-cover uk-inline" style="background-image: url({{thumbsrc}});" uk-height-viewport>
     
@@ -16,22 +16,22 @@
       <div class="uk-position-cover uk-container uk-container-large uk-flex uk-flex-middle">
         <div class="uk-width-large cover-content">
           <h1 class="uk-heading-small">
-            {{ _x('Pharma Doors by Serchek Industrial Ireland Ltd.', 'Homepage Cover Title', 'serchek-theme')|e('esc_html') }}
+            {{ _x('Loading Dock by Serchek Industrial Ireland Ltd.', 'Homepage Cover Title', 'loadingdock-theme')|e('esc_html') }}
           </h1>
           <p class="uk-text-lead">
-            {{ _x('Pharma Doors installs "High Speed" & "Steel Pedestrian" Clean Room Doors, Clean Room Windows & Smart Automated Doors.', 'Homepage Cover Description', 'serchek-theme')|e('esc_html') }}
+            {{ _x('Loading Dock installs "High Speed" & "Steel Pedestrian" Clean Room Doors, Clean Room Windows & Smart Automated Doors.', 'Homepage Cover Description', 'loadingdock-theme')|e('esc_html') }}
           </p>
         </div>
       </div>
       <div class="uk-position-bottom-center uk-position-small uk-text-center">
         <span>
-          {{ _x('Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761', 'Homepage Cover Address', 'serchek-theme')|e('esc_html') }} | 
+          {{ _x('Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761', 'Homepage Cover Address', 'loadingdock-theme')|e('esc_html') }} | 
         </span>
         <span>
-          Tel: <a href="tel:{{ _x('044 9345884', 'Homepage Cover Phone No.', 'serchek-theme')|e('esc_html') }}">{{ _x('044 9345884', 'Homepage Cover Phone No.', 'serchek-theme')|e('esc_html') }}</a> 
+          Tel: <a href="tel:{{ _x('044 9345884', 'Homepage Cover Phone No.', 'loadingdock-theme')|e('esc_html') }}">{{ _x('044 9345884', 'Homepage Cover Phone No.', 'loadingdock-theme')|e('esc_html') }}</a> 
         </span>
         <span>
-          Email: <a href="mailto:{{ _x('info@serchek.com', 'Homepage Cover Email', 'serchek-theme')|e('esc_html') }}">{{ _x('info@serchek.com', 'Homepage Cover Email', 'serchek-theme')|e('esc_html') }}</a>
+          Email: <a href="mailto:{{ _x('info@serchek.com', 'Homepage Cover Email', 'loadingdock-theme')|e('esc_html') }}">{{ _x('info@serchek.com', 'Homepage Cover Email', 'loadingdock-theme')|e('esc_html') }}</a>
         </span>
       </div>
     </div>

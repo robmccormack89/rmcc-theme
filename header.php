@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
  
  $GLOBALS['timberContext'] = Timber::context();

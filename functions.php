@@ -1,15 +1,15 @@
 <?php
 /**
- * Serchek Theme functions and definitions
+ * Loadingdock Theme functions and definitions
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
  
 // stuff to say we need timber activated!! see TGM Plugin activation library for php
 require_once get_template_directory() . '/inc/lib/class-tgm-plugin-activation.php';
 
 // register the required plugins(Timber) see TGM Plugin activation library for php
-function serchek_theme_register_required_plugins() {
+function loadingdock_theme_register_required_plugins() {
 	$plugins = array(
     // loco translate
     array(
@@ -32,11 +32,11 @@ function serchek_theme_register_required_plugins() {
 	);
 	tgmpa($plugins, $config);
 }
-add_action('tgmpa_register', 'serchek_theme_register_required_plugins');
+add_action('tgmpa_register', 'loadingdock_theme_register_required_plugins');
 
 if (file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_once $composer_autoload;
 
-new Rmcc\SerchekTheme;
+new Rmcc\LoadingdockTheme;
 
 // this should be temporary until Tom is ready to start on other pages
 add_action('template_redirect','redirect_all_pages_to_home');

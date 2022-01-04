@@ -1,3 +1,3 @@
-# Serchek Theme
+# Loadingdock Theme
 
 ---

@@ -2,7 +2,7 @@
 /**
  * The search
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
  $context = Timber::context();

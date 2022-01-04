@@ -3,7 +3,7 @@
  * Template Name: Very Narrow Template
  * Template Post Type: post, page
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 $context = Timber::context();

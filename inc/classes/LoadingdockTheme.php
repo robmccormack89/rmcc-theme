@@ -14,8 +14,8 @@ Timber::$dirname = array(
 // set the $autoescape value
 Timber::$autoescape = false;
 
-// Define Serchek_Theme Child Class
-class SerchekTheme extends Timber {
+// Define Loadingdock_Theme Child Class
+class LoadingdockTheme extends Timber {
   public function __construct() {
     parent::__construct();
     add_action('after_setup_theme', array($this, 'theme_supports'));
@@ -25,7 +25,7 @@ class SerchekTheme extends Timber {
 		add_action('init', array($this, 'register_taxonomies'));
     add_action('init', array($this, 'register_widget_areas'));
     add_action('init', array($this, 'register_navigation_menus'));
-    add_action('wp_enqueue_scripts', array($this, 'serchek_theme_enqueue_assets'));
+    add_action('wp_enqueue_scripts', array($this, 'loadingdock_theme_enqueue_assets'));
     
     add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
     
@@ -139,7 +139,7 @@ class SerchekTheme extends Timber {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
     
-    load_theme_textdomain('serchek-theme', get_template_directory() . '/languages');
+    load_theme_textdomain('loadingdock-theme', get_template_directory() . '/languages');
   }
   
   public function add_to_twig($twig) {
@@ -188,10 +188,10 @@ class SerchekTheme extends Timber {
     ));
   }
   
-  public function serchek_theme_enqueue_assets() {
+  public function loadingdock_theme_enqueue_assets() {
     // theme base scripts
     wp_enqueue_script(
-      'serchek-theme',
+      'loadingdock-theme',
       get_template_directory_uri() . '/assets/js/base.js',
       '',
       '',
@@ -212,13 +212,13 @@ class SerchekTheme extends Timber {
     
     // theme base css
     wp_enqueue_style(
-      'serchek-theme',
+      'loadingdock-theme',
       get_template_directory_uri() . '/assets/css/base.css'
     );
     
     // theme stylesheet
     wp_enqueue_style(
-      'serchek-theme-styles', get_stylesheet_uri()
+      'loadingdock-theme-styles', get_stylesheet_uri()
     );
     
     wp_enqueue_style(

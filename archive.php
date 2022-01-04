@@ -2,7 +2,7 @@
 /**
  * The template for displaying general archive pages
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 // sets the template hierarchy

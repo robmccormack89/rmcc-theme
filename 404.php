@@ -2,7 +2,7 @@
 /**
  * The 404 template
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 // get the main context

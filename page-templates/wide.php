@@ -3,7 +3,7 @@
  * Template Name: Wide Template
  * Template Post Type: post, page
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 $context = Timber::context();

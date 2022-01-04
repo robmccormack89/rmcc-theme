@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all single posts
  *
- * @package Serchek_Theme
+ * @package Loadingdock_Theme
  */
 
 // get the main context
