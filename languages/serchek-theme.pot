@@ -1,4 +1,4 @@
-# Copyright (C) 2021 serchek-theme
+# Copyright (C) 2022 serchek-theme
 # This file is distributed under the same license as the serchek-theme package.
 msgid ""
 msgstr ""
@@ -56,6 +56,56 @@ msgstr ""
 #: views/temp/front-page.php:34, views/temp/front-page.php:34, views/temp/parts/mobile-nav.php:39, views/temp/parts/mobile-nav.php:39
 msgctxt "Homepage Cover Email"
 msgid "info@serchek.com"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:3
+msgctxt "Contact section title line 1"
+msgid "Pharma Doors"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:3
+msgctxt "Contact section title line 2"
+msgid "by Serchek Industrial Ireland Ltd."
+msgstr ""
+
+#: views/temp/parts/contact-section.php:5
+msgctxt "Contact section address line 1"
+msgid "Zone A, Mullingar Business Park"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:6
+msgctxt "Contact section address line 2"
+msgid "Mullingar, Co. Westmeath, N91 R761"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:9, views/temp/parts/contact-section.php:9
+msgctxt "Contact section phone no."
+msgid "044 9345884"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:10, views/temp/parts/contact-section.php:10
+msgctxt "Contact section email"
+msgid "info@serchek.com"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:13
+msgctxt "Contact section button link"
+msgid "https://pharmadoors.ie/contact"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:14
+msgctxt "Contact section button text"
+msgid "Contact us"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:20, views/temp/parts/contact-section.php:28
+msgctxt "Contact section background image url"
+msgid "https://pharmadoors.ie/wp-content/themes/serchek-theme/assets/images/clean_room_cover.jpg"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:23
+msgctxt "Contact section background image alt"
+msgid "Alt text"
 msgstr ""
 
 #: views/temp/parts/footer-bottom.php:4, views/temp/parts/mobile-nav.php:41

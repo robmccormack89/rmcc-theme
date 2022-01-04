@@ -47,6 +47,8 @@ class SerchekTheme extends Timber {
     add_action('admin_head', array($this, 'fix_svg'));
     
     // add_filter( '__the_password_form', array($this, '_custom_password_form') );
+    
+    add_shortcode('contact_section', array($this, 'contact_section'));
   }
   
   // public function _custom_password_form() {
@@ -63,6 +65,12 @@ class SerchekTheme extends Timber {
   //   ';
   //   return $o;
   // }
+  
+  public function contact_section() {
+    $context = Timber::context();
+    $out = Timber::compile('contact-section.twig', $context);
+    return $out;
+  }
   
   // Allow SVG
   public function cc_mime_types( $mimes ){

@@ -1,0 +1,203 @@
+# Copyright (C) 2021 serchek-theme
+# This file is distributed under the same license as the serchek-theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: serchek-theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:"
+"1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-10 23:22+0000\n"
+"PO-Revision-Date: 2022-01-04 11:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (UK)\n"
+"Language: en_GB\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.5; wp-5.8.2"
+
+#: views/temp/404.php:5
+msgctxt "404 page"
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: views/temp/404.php:7
+msgctxt "404 page"
+msgid "Back to Homepage"
+msgstr ""
+
+#: views/temp/404.php:6
+msgctxt "404 page"
+msgid "The page you requested does not exist."
+msgstr ""
+
+#: views/temp/parts/contact-section.php:5
+msgctxt "Contact section address line 1"
+msgid "Zone A, Mullingar Business Park"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:6
+msgctxt "Contact section address line 2"
+msgid "Mullingar, Co. Westmeath, N91 R761"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:23
+msgctxt "Contact section background image alt"
+msgid "Alt text"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:20,
+#: views/temp/parts/contact-section.php:28
+msgctxt "Contact section background image url"
+msgid ""
+"https://pharmadoors.ie/wp-content/themes/serchek-"
+"theme/assets/images/clean_room_cover.jpg"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:13
+msgctxt "Contact section button link"
+msgid "https://pharmadoors.ie/contact"
+msgstr "https://www.industrialdoors.ie/contact/"
+
+#: views/temp/parts/contact-section.php:14
+msgctxt "Contact section button text"
+msgid "Contact us"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:10,
+#: views/temp/parts/contact-section.php:10
+msgctxt "Contact section email"
+msgid "info@serchek.com"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:9,
+#: views/temp/parts/contact-section.php:9
+msgctxt "Contact section phone no."
+msgid "044 9345884"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:3
+msgctxt "Contact section title line 1"
+msgid "Pharma Doors"
+msgstr ""
+
+#: views/temp/parts/contact-section.php:3
+msgctxt "Contact section title line 2"
+msgid "by Serchek Industrial Ireland Ltd."
+msgstr ""
+
+#: views/temp/parts/footer-bottom.php:11
+msgctxt "Copyright"
+msgid "All rights reserved."
+msgstr ""
+
+#: views/temp/parts/footer-bottom.php:5, views/temp/parts/mobile-nav.php:42
+msgctxt "Footer Logo Image"
+msgid ""
+"https://pharmadoors.ie/wp-content/themes/serchek-"
+"theme/assets/images/logos/serchek_logo.jpg"
+msgstr ""
+
+#: views/temp/parts/footer-bottom.php:4, views/temp/parts/mobile-nav.php:41
+msgctxt "Footer Logo Link"
+msgid "https://www.industrialdoors.ie/"
+msgstr ""
+
+#: views/temp/parts/header-nav.php:55
+msgctxt "Header Button Link"
+msgid "https://www.industrialdoors.ie/contact/"
+msgstr ""
+
+#: views/temp/parts/header-nav.php:56
+msgctxt "Header Button Text"
+msgid "Contact Us"
+msgstr "Contact"
+
+#: views/temp/front-page.php:28, views/temp/parts/mobile-nav.php:32
+msgctxt "Homepage Cover Address"
+msgid "Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761"
+msgstr ""
+
+#: views/temp/front-page.php:5
+msgctxt "Homepage Cover Background Image"
+msgid ""
+"https://pharmadoors.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-"
+"scaled-1920x0-c-default.jpg"
+msgstr ""
+
+#: views/temp/front-page.php:22
+msgctxt "Homepage Cover Description"
+msgid ""
+"Pharma Doors installs \"High Speed\" & \"Steel Pedestrian\" Clean Room Doors,"
+" Clean Room Windows & Smart Automated Doors."
+msgstr ""
+
+#: views/temp/front-page.php:34, views/temp/front-page.php:34,
+#: views/temp/parts/mobile-nav.php:39, views/temp/parts/mobile-nav.php:39
+msgctxt "Homepage Cover Email"
+msgid "info@serchek.com"
+msgstr ""
+
+#: views/temp/front-page.php:31, views/temp/front-page.php:31,
+#: views/temp/parts/mobile-nav.php:36, views/temp/parts/mobile-nav.php:36
+msgctxt "Homepage Cover Phone No."
+msgid "044 9345884"
+msgstr ""
+
+#: views/temp/front-page.php:19, views/temp/parts/mobile-nav.php:28
+msgctxt "Homepage Cover Title"
+msgid "Pharma Doors by Serchek Industrial Ireland Ltd."
+msgstr ""
+
+#: views/temp/type/_content.php:2
+msgctxt "Password Protected Content Message"
+msgid ""
+"Sorry, this area is for members-only; you need to be logged-in to view this "
+"content. If you are a customer & wish to have access to our member's area, "
+"please contact one of our service team via our <a href=\"/contact\">"
+"contact</a> page & we will provided you with login details."
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:7,
+#: views/temp/type/post/narrow-post.php:7, views/temp/type/post/post.php:7,
+#: views/temp/type/post/very-narrow-post.php:7,
+#: views/temp/type/post/wide-post.php:7
+msgctxt "Post"
+msgid "By:"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:33,
+#: views/temp/type/post/narrow-post.php:33, views/temp/type/post/post.php:33,
+#: views/temp/type/post/very-narrow-post.php:33,
+#: views/temp/type/post/wide-post.php:33
+msgctxt "Post"
+msgid "Next Article"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:7,
+#: views/temp/type/post/narrow-post.php:7, views/temp/type/post/post.php:7,
+#: views/temp/type/post/very-narrow-post.php:7,
+#: views/temp/type/post/wide-post.php:7
+msgctxt "Post"
+msgid "Posted:"
+msgstr ""
+
+#: views/temp/type/post/full-width-post.php:25,
+#: views/temp/type/post/narrow-post.php:25, views/temp/type/post/post.php:25,
+#: views/temp/type/post/very-narrow-post.php:25,
+#: views/temp/type/post/wide-post.php:25
+msgctxt "Post"
+msgid "Previous Article"
+msgstr ""
+
+#: views/temp/type/post/_tease.php:42
+msgctxt "Post tease"
+msgid "Read more"
+msgstr ""
