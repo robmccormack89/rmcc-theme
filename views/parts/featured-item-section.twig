@@ -1,38 +1,87 @@
+{% set feat_desc = _x('Serchek installs, maintains and repairs Industrial and Commercial doors, Loading bays, gates and entry systems.', 'Homepage featured item - description', 'loadingdock-theme')|e('esc_html') %}
+
+{% set default_img_1 = theme.link ~ '/assets/images/loadingdock/stage-3-2.jpeg' %}
+{% set default_img_2 = theme.link ~ '/assets/images/loadingdock/stage-3.jpeg' %}
+{% set default_img_3 = theme.link ~ '/assets/images/loadingdock/stage-3-internal.jpeg' %}
+
 <section class="featured-item-section uk-section uk-section-small uk-section-muted">
   <div class="uk-container">
     <div class="uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-default uk-text-center uk-box-shadow-medium" uk-grid>
+      
       <div class="uk-width-3-5@m">
-        
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="autoplay: true">
           <ul class="uk-slideshow-items">
-            <li>
-              <img src="{{ _x('https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/high-speed-door.jpg', 'Featured item slider image 1', 'loadingdock-theme')|e('esc_html') }}" alt="" uk-cover>
-            </li>
-            <li>
-              <img src="{{ _x('https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/pedestrian-doors.jpg', 'Featured item slider image 2', 'loadingdock-theme')|e('esc_html') }}" alt="" uk-cover>
-            </li>
-            <li>
-              <img src="{{ _x('https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/interlock.jpg', 'Featured item slider image 3', 'loadingdock-theme')|e('esc_html') }}" alt="" uk-cover>
-            </li>
+            {% if options.homepage_slider_images %}
+              {% for img in options.homepage_slider_images %}
+                <li><img src="{{img.url}}" alt="{{img.alt}}" uk-cover></li>
+              {% endfor %}
+            {% else %}
+              <li>
+                <img src="{{default_img_1}}" uk-cover>
+              </li>
+              <li>
+                <img src="{{default_img_2}}" uk-cover>
+              </li>
+              <li>
+                <img src="{{default_img_3}}" uk-cover>
+              </li>
+            {% endif %}
           </ul>
           <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
           <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
         </div>
+      </div>
+      
+      <div class="uk-width-2-5@m uk-padding-large">
+        
+        <a href="https://www.industrialdoors.ie/" target="_blank" class="uk-link-reset">
+          <img data-src="/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg" width="253" height="85" uk-img>
+        </a>
+        
+        <p class="uk-margin-small">{{ feat_desc }}</p>
+        
+        <div class="uk-margin-top">
+          <a id="launchGallery" class="feature-link uk-text-uppercase uk-text-emphasis">View Gallery</a>
+          <script>
+            document.getElementById('launchGallery').addEventListener('click', function() {
+              lightGallery(document.getElementById('launchGallery'), {
+                dynamic: true,
+                dynamicEl: [
+                {% if options.homepage_gaallery_images %}
+                  {% for img in options.homepage_gallery_images %}
+                  {
+                    "src": '{{ img.url }}',
+                    'thumb': '{{ img.url|resize(96, 76, 'center') }}',
+                    {% if img.caption or img.title %}
+                    'subHtml': '<div class="cover-caption-{{ img.id }} uk-light">{% if img.caption %}<h3 class="uk-margin-remove-bottom caption">{{ img.caption }}</h3>{% endif %}{% if img.title %}<p class="title">{{ img.title }}</p>{% endif %}</div>'
+                    {% endif %}
+                  },
+                  {% endfor %}
+                {% else %}
+                  {
+                    "src": '{{default_img_1}}',
+                    'thumb': '{{default_img_1}}',
+                    'subHtml': '<div class="cover-caption-2 uk-light"><h4 class="uk-margin-remove-bottom caption">stage-3-2</h4></div>'
+                  },
+                  {
+                    "src": '{{default_img_2}}',
+                    'thumb': '{{default_img_2}}',
+                    'subHtml': '<div class="cover-caption-1 uk-light"><h4 class="uk-margin-remove-bottom caption">stage-3</h4></div>'
+                  },
+                  {
+                    "src": '{{default_img_3}}',
+                    'thumb': '{{default_img_3}}',
+                    'subHtml': '<div class="cover-caption-3 uk-light"><h4 class="uk-margin-remove-bottom caption">stage-3-internal</h4></div>'
+                  },
+                {% endif %}
+                ]
+              })
+            });
+          </script>
+        </div>
         
       </div>
-      <div class="uk-width-2-5@m uk-padding-large">
-        <a href="{{ _x('https://www.industrialdoors.ie/', 'Featured item image link', 'loadingdock-theme')|e('esc_html') }}" target="_blank" class="uk-link-reset">
-          <img src="{{ _x('https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg', 'Featured item image source url', 'loadingdock-theme')|e('esc_html') }}" width="253" height="39" uk-svg>
-        </a>
-        <p class="uk-margin-small">
-          {{ _x('Serchek installs, maintains and repairs Industrial and Commercial doors, Loading bays, gates and entry systems.', 'Featured item description', 'loadingdock-theme')|e('esc_html') }}
-        </p>
-        <div class="uk-margin-top">
-          <a class="feature-link uk-text-uppercase uk-text-emphasis" target="_blank" href="{{ _x('https://www.industrialdoors.ie/why-us/', 'Featured item button link', 'loadingdock-theme')|e('esc_url') }}">
-            {{ _x('About us', 'Featured item button text', 'loadingdock-theme')|e('esc_html') }}
-          </a>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>

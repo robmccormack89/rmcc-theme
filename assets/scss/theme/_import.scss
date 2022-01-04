@@ -20,6 +20,5 @@ $theme_solid_border: 2px solid 1px solid #e5e5e591;
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-// import woocommerce sass
-@import "../lib/woocommerce/woocommerce.scss";
-@import "../lib/woocommerce/woocommerce-layout.scss";
+// lightgallery scss
+@import "node_modules/lightgallery.js/src/sass/lightgallery.scss";

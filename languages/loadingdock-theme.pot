@@ -28,148 +28,68 @@ msgctxt "404 page"
 msgid "Back to Homepage"
 msgstr ""
 
-#: views/temp/front-page.php:5
-msgctxt "Homepage Cover Background Image"
-msgid "https://loadingdock.ie/wp-content/uploads/2021/12/1.-Clean-Room-Cover-v3-scaled-1920x0-c-default.jpg"
-msgstr ""
-
-#: views/temp/front-page.php:19, views/temp/parts/mobile-nav.php:28
-msgctxt "Homepage Cover Title"
+#: views/temp/front-page.php:6, views/temp/parts/mobile-nav.php:1
+msgctxt "Homepage cover - title"
 msgid "Loading Dock by Serchek Industrial Ireland Ltd."
 msgstr ""
 
-#: views/temp/front-page.php:22
-msgctxt "Homepage Cover Description"
+#: views/temp/front-page.php:7
+msgctxt "Homepage cover - description"
 msgid "Loading Dock installs \"High Speed\" & \"Steel Pedestrian\" Clean Room Doors, Clean Room Windows & Smart Automated Doors."
 msgstr ""
 
-#: views/temp/front-page.php:28, views/temp/parts/mobile-nav.php:32
-msgctxt "Homepage Cover Address"
-msgid "Zone A, Mullingar Business Park, Mullingar, Co. Westmeath, N91 R761"
-msgstr ""
-
-#: views/temp/front-page.php:31, views/temp/front-page.php:31, views/temp/parts/mobile-nav.php:36, views/temp/parts/mobile-nav.php:36
-msgctxt "Homepage Cover Phone No."
-msgid "044 9345884"
-msgstr ""
-
-#: views/temp/front-page.php:34, views/temp/front-page.php:34, views/temp/parts/mobile-nav.php:39, views/temp/parts/mobile-nav.php:39
-msgctxt "Homepage Cover Email"
-msgid "info@serchek.com"
-msgstr ""
-
-#: views/temp/parts/contact-section.php:3
-msgctxt "Contact section title line 1"
-msgid "Loading Dock"
-msgstr ""
-
-#: views/temp/parts/contact-section.php:3
-msgctxt "Contact section title line 2"
-msgid "by Serchek Industrial Ireland Ltd."
-msgstr ""
-
-#: views/temp/parts/contact-section.php:5
-msgctxt "Contact section address line 1"
+#: views/temp/front-page.php:8, views/temp/parts/contact-section.php:5, views/temp/parts/mobile-nav.php:2
+msgctxt "Homepage address - line 1"
 msgid "Zone A, Mullingar Business Park"
 msgstr ""
 
-#: views/temp/parts/contact-section.php:6
-msgctxt "Contact section address line 2"
+#: views/temp/front-page.php:9, views/temp/parts/contact-section.php:6, views/temp/parts/mobile-nav.php:3
+msgctxt "Homepage address - line 2"
 msgid "Mullingar, Co. Westmeath, N91 R761"
 msgstr ""
 
-#: views/temp/parts/contact-section.php:9, views/temp/parts/contact-section.php:9
-msgctxt "Contact section phone no."
+#: views/temp/front-page.php:10, views/temp/parts/contact-section.php:3, views/temp/parts/mobile-nav.php:4
+msgctxt "Homepage phone no."
 msgid "044 9345884"
 msgstr ""
 
-#: views/temp/parts/contact-section.php:10, views/temp/parts/contact-section.php:10
-msgctxt "Contact section email"
+#: views/temp/front-page.php:11, views/temp/parts/contact-section.php:4, views/temp/parts/mobile-nav.php:5
+msgctxt "Homepage email"
 msgid "info@serchek.com"
 msgstr ""
 
-#: views/temp/parts/contact-section.php:13
-msgctxt "Contact section button link"
-msgid "https://loadingdock.ie/contact"
+#: views/temp/parts/contact-section.php:1
+msgctxt "Homepage contact section title - line 1"
+msgid "Loading Dock"
 msgstr ""
 
-#: views/temp/parts/contact-section.php:14
-msgctxt "Contact section button text"
-msgid "Contact us"
+#: views/temp/parts/contact-section.php:2
+msgctxt "Homepage contact section title - line 2"
+msgid "by Serchek Industrial Ireland Ltd."
 msgstr ""
 
-#: views/temp/parts/contact-section.php:20, views/temp/parts/contact-section.php:28
-msgctxt "Contact section background image url"
-msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/clean_room_cover.jpg"
-msgstr ""
-
-#: views/temp/parts/contact-section.php:23
-msgctxt "Contact section background image alt"
-msgid "Alt text"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:9
-msgctxt "Featured item slider image 1"
-msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/high-speed-door.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:12
-msgctxt "Featured item slider image 2"
-msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/pedestrian-doors.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:15
-msgctxt "Featured item slider image 3"
-msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/interlock.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:24
-msgctxt "Featured item image link"
-msgid "https://www.industrialdoors.ie/"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:25
-msgctxt "Featured item image source url"
-msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:28
-msgctxt "Featured item description"
-msgid "Serchek installs, maintains and repairs Industrial and Commercial doors, Loading bays, gates and entry systems."
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:31
-msgctxt "Featured item button link"
-msgid "https://www.industrialdoors.ie/why-us/"
-msgstr ""
-
-#: views/temp/parts/featured-item-section.php:32
-msgctxt "Featured item button text"
-msgid "About us"
-msgstr ""
-
-#: views/temp/parts/footer-bottom.php:4, views/temp/parts/mobile-nav.php:41
-msgctxt "Footer Logo Link"
-msgid "https://www.industrialdoors.ie/"
-msgstr ""
-
-#: views/temp/parts/footer-bottom.php:5, views/temp/parts/mobile-nav.php:42
-msgctxt "Footer Logo Image"
-msgid "https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg"
-msgstr ""
-
-#: views/temp/parts/footer-bottom.php:11
-msgctxt "Copyright"
-msgid "All rights reserved."
-msgstr ""
-
-#: views/temp/parts/header-nav.php:55
-msgctxt "Header Button Link"
+#: views/temp/parts/contact-section.php:7
+msgctxt "Homepage contact section button - link"
 msgid "https://www.industrialdoors.ie/contact/"
 msgstr ""
 
-#: views/temp/parts/header-nav.php:56
-msgctxt "Header Button Text"
+#: views/temp/parts/contact-section.php:8
+msgctxt "Homepage contact section button - text"
+msgid "Contact us"
+msgstr ""
+
+#: views/temp/parts/featured-item-section.php:1
+msgctxt "Homepage featured item - description"
+msgid "Serchek installs, maintains and repairs Industrial and Commercial doors, Loading bays, gates and entry systems."
+msgstr ""
+
+#: views/temp/parts/header-nav.php:1
+msgctxt "Header contact button - link"
+msgid "https://www.industrialdoors.ie/contact/"
+msgstr ""
+
+#: views/temp/parts/header-nav.php:2
+msgctxt "Header contact button - text"
 msgid "Contact Us"
 msgstr ""
 

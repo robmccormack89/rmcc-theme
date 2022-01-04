@@ -1,3 +1,6 @@
+{% set header_btn_link =  _x('https://www.industrialdoors.ie/contact/', 'Header contact button - link', 'loadingdock-theme')|e('esc_html') %}
+{% set header_btn_text = _x('Contact Us', 'Header contact button - text', 'loadingdock-theme')|e('esc_html') %}
+
 <nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
   
   <!-- Logo/SiteTitle -->
@@ -52,8 +55,8 @@
   <!-- contact button -->
   <div class="uk-navbar-right">
     <div class="uk-navbar-item">
-      <a class="uk-button uk-button-primary contact-button" target="_blank" href="{{ _x('https://www.industrialdoors.ie/contact/', 'Header Button Link', 'loadingdock-theme')|e('esc_html') }}" target="_blank">
-        {{ _x('Contact Us', 'Header Button Text', 'loadingdock-theme')|e('esc_html') }} <i class="far fa-envelope uk-margin-small-left"></i>
+      <a class="uk-button uk-button-primary contact-button" target="_blank" href="{{ header_btn_link }}" target="_blank">
+        {{ header_btn_text }} <i class="far fa-envelope uk-margin-small-left"></i>
       </a>
     </div>
   </div>

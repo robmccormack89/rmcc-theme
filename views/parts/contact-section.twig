@@ -1,30 +1,45 @@
+{% set contact_title_1 = _x('Loading Dock', 'Homepage contact section title - line 1', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_title_2 = _x('by Serchek Industrial Ireland Ltd.', 'Homepage contact section title - line 2', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_phone = _x('044 9345884', 'Homepage phone no.', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_email = _x('info@serchek.com', 'Homepage email', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_address_1 = _x('Zone A, Mullingar Business Park', 'Homepage address - line 1', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_address_2 = _x('Mullingar, Co. Westmeath, N91 R761', 'Homepage address - line 2', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_btn_link = _x('https://www.industrialdoors.ie/contact/', 'Homepage contact section button - link', 'loadingdock-theme')|e('esc_url') %}
+{% set contact_btn_text = _x('Contact us', 'Homepage contact section button - text', 'loadingdock-theme')|e('esc_html') %}
+{% set contact_img = options.homepage_contact_section_image.url|resize(1080)|default('/wp-content/themes/loadingdock-theme/assets/images/loadingdock/internal-doors.jpg')|e('esc_url') %}
+
 <section class="uk-child-width-1-2@m uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-default uk-text-center" uk-grid>
   <div class="uk-padding">
-    <h3>{{ _x('Loading Dock', 'Contact section title line 1', 'loadingdock-theme')|e('esc_html') }}<br>{{ _x('by Serchek Industrial Ireland Ltd.', 'Contact section title line 2', 'loadingdock-theme')|e('esc_html') }}</h3>
+    
+    <h3>{{ contact_title_1 }}<br>{{ contact_title_2 }}</h3>
+    
     <p class="uk-margin-small">
-      {{ _x('Zone A, Mullingar Business Park', 'Contact section address line 1', 'loadingdock-theme')|e('esc_html') }}<br>
-      {{ _x('Mullingar, Co. Westmeath, N91 R761', 'Contact section address line 2', 'loadingdock-theme')|e('esc_html') }}
+      {{ contact_address_1 }}<br>
+      {{ contact_address_2 }}
     </p>
+    
     <p class="uk-margin-small">
-      Tel: <a class="uk-link-reset" href="tel:{{ _x('044 9345884', 'Contact section phone no.', 'loadingdock-theme')|e('esc_html') }}">{{ _x('044 9345884', 'Contact section phone no.', 'loadingdock-theme')|e('esc_html') }}</a><br>
-      Email: <a class="uk-link-reset" href="mailto:{{ _x('info@serchek.com', 'Contact section email', 'loadingdock-theme')|e('esc_html') }}">{{ _x('info@serchek.com', 'Contact section email', 'loadingdock-theme')|e('esc_html') }}</a>
+      Tel: <a class="uk-link-reset" href="tel:{{ contact_phone }}">{{ contact_phone }}</a><br>
+      Email: <a class="uk-link-reset" href="mailto:{{ contact_email }}">{{ contact_email }}</a>
     </p>
+    
     <div class="uk-margin-top">
-      <a class="feature-link uk-text-uppercase uk-text-emphasis" target="_blank" href="{{ _x('https://loadingdock.ie/contact', 'Contact section button link', 'loadingdock-theme')|e('esc_url') }}">
-        {{ _x('Contact us', 'Contact section button text', 'loadingdock-theme')|e('esc_html') }}
+      <a class="feature-link uk-text-uppercase uk-text-emphasis" target="_blank" href="{{ contact_btn_link }}">
+        {{ contact_btn_text }}
       </a>
     </div>
+    
   </div>
+  
   <div class="uk-visible@m">
     <img 
-    data-src="{{ _x('https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/clean_room_cover.jpg', 'Contact section background image url', 'loadingdock-theme')|e('esc_url') }}" 
+    data-src="{{ contact_img }}" 
     width="1080" height="675" 
     class="contact-section-img" 
-    alt="{{ _x('Alt text', 'Contact section background image alt', 'loadingdock-theme')|e('esc_html') }}"
+    alt="{{site.title}} by Serchek"
     uk-img>
   </div>
+  
 </section>
-<img 
-src="{{ _x('https://loadingdock.ie/wp-content/themes/loadingdock-theme/assets/images/clean_room_cover.jpg', 'Contact section background image url', 'loadingdock-theme')|e('esc_url') }}" 
-class="uk-hidden@m" 
->
+
+<img src="{{ contact_img }}" class="uk-hidden@m" alt="{{site.title}} by Serchek">

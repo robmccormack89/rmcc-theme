@@ -162,6 +162,9 @@ class LoadingdockTheme extends Timber {
     $context['has_menu_main'] = has_nav_menu( 'main_menu' );
     $context['has_menu_mobile'] = has_nav_menu( 'mobile_menu' );
     
+    // acf options
+    $context['options'] = get_fields('option');
+    
     // return context
     return $context;    
   }
