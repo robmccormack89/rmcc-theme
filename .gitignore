@@ -5,4 +5,3 @@ compilation_cache/
 .ftpconfig
 package-lock.json
 composer.lock
-vendor
