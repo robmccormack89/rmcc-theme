@@ -1,0 +1,20 @@
+<section class="single-pagination">
+  <div class="article-pagination uk-child-width-1-2" uk-grid>
+    <div class="prev-article uk-text-left">
+      {% if post.next %}
+        <a href="{{ post.next.link|e('esc_url') }}" class="uk-link-reset">
+          <div class="uk-text-emphasis"><i class="fas fa-angle-left"></i> {{ _x('Previous Article', 'Post', 'loadingdock-theme')|e('esc_html') }}</div>
+          <div class="uk-text-small uk-text-italic uk-width-large uk-visible@m">{{ post.next.title }}</div>
+        </a>
+      {% endif %}
+    </div>
+    <div class="next-article uk-text-right">
+      {% if post.prev %}
+        <a href="{{ post.prev.link|e('esc_url') }}" class="uk-link-reset">
+          <div class="uk-text-emphasis">{{ _x('Next Article', 'Post', 'loadingdock-theme')|e('esc_html') }} <i class="fas fa-angle-right"></i></div>
+          <div class="uk-text-small uk-text-italic uk-width-large uk-visible@m">{{ post.prev.title }}</div>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>

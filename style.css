@@ -33,12 +33,6 @@ Loadingdock Theme is built using Timber WP https://github.com/timber/timber
 *
 */
 
-/* shop filters reset button */
-.filtering-reset {
-  position: absolute;
-  top: -2rem;
-}
-
 
 /* 
 *
@@ -383,9 +377,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 /* home hero image */
+
 .home-cover-img {
-  /* max-height: 800px; */
-  /* height: 80vh; */
+  min-height: 100vh;
 }
 /*.home-cover-img {*/
 /*  max-height: 70vh;*/
@@ -668,9 +662,9 @@ svg.search, svg.search, svg.basket, svg.basket {
 .uk-sticky-below .logo-svg, .uk-sticky-below .logo-svg:hover, .uk-sticky-below .logo-svg:focus {
   color: #008ce1!important;
 }
-header.uk-inline {
+/* header.uk-inline {
   width: 100%;
-}
+} */
 
 /* animated preloader */
 .theme-preload::before {
@@ -710,4 +704,39 @@ header.uk-inline {
   opacity: 0;
   position: absolute;
   z-index: 3;
+}
+
+/* video popup */
+.video-container__play svg {
+  width: 80px;
+  height: 80px;
+  fill: transparent;
+  stroke: #fff;
+}
+
+/* subscribe section form */
+@media (max-width: 959px){
+  .subscribe-section .uk-button {
+    margin-top: 5px;
+    width: 100%;
+  }
+}
+.subscribe-form input {
+  height: 49px!important;
+}
+.subscribe-section .far {
+  color: #008ce1;
+}
+
+/* testimonials rating */
+.testimonials__star {
+  margin: 0 2px;
+  color: #eeaf2e;
+}
+
+.uk-sticky-below .logo-svg, .uk-sticky-below .logo-svg:hover, .uk-sticky-below .logo-svg:focus {
+	color: #008ce1!important;
+}
+.headercover.uk-inline {
+	width: 100%!important;
 }

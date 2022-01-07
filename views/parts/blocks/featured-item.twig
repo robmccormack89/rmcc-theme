@@ -1,0 +1,47 @@
+{#
+/**
+ * Block Name: Featured Content
+ *
+ * This is the template that displays the Featured Content block.
+ */
+#}
+
+{% if is_preview %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endif %}
+
+{% set custom_heading = fields.heading %}
+{% set custom_message = fields.message %}
+{% set excerpt = post.preview.length(22).read_more('') %}
+{% if post.post_type == 'winners' %}
+  {% set excerpt = post.preview.read_more('') %}
+{% endif %}
+{% set custom_image = fields.image %}
+
+{% set heading = custom_heading|default(post.title|default('Lorem ipsum dolor')) %}
+{% set message = custom_message|default(excerpt|default('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')) %}
+{% set button_txt = fields.custom_button_text|default(post.title|default('Learn more')) %}
+{% set image_src = Image(custom_image).src|resize(720, 500)|default(post.thumbnail.src|resize(720, 500)|default('https://picsum.photos/id/1045/720/500')) %}    
+{% set image_alt = Image(custom_image).alt|default(post.thumbnail.alt|default('Featured content image')) %}
+
+<section id="FeaturedItem" class="featured-item-section uk-section uk-section-small uk-section-muted">
+  <div class="uk-container">
+    <div class="uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-default uk-text-center uk-box-shadow-medium" uk-grid>
+      <div class="uk-width-3-5@m">
+        <img 
+        {% if not is_preview %}data-{% endif %}src="{{ image_src }}" 
+        alt="{{ image_alt }}" 
+        width="720" height="500" {% if not is_preview %}uk-img{% endif %}>
+      </div>
+      <div class="uk-width-2-5@m uk-padding-large">
+        <h3>{{ heading }}</h3>
+        <p class="uk-margin-small">{{ message }}</p>
+        {% if post and post.post_type != 'winners' %}
+          <div class="uk-margin-top">
+            <a class="feature-link uk-text-uppercase uk-text-emphasis" {% if not is_preview %}href="{{ post.link }}"{% endif %}>{{ button_txt }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

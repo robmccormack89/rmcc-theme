@@ -6,15 +6,15 @@
   {% set flip_class = 'uk-flex-last@m' %}
 {% endif %}
 
-<article id="Post-{{post.id|e('esc_html')}}" class="tease-post {{post.class|e('esc_html')}}"  data-template="tease.twig">
+<article id="Post-{{post.id}}" class="tease-post {{post.class}}"  data-template="tease.twig">
   <div class="uk-grid-match uk-grid-collapse uk-flex uk-flex-middle" uk-grid>
     
     {# tease post featured image #}
-    <div class="tease-image uk-width-1-2@m {{flip_class|e('esc_html')}}">
+    <div class="tease-image uk-width-1-2@m {{flip_class}}">
       <a class="uk-link-reset" href="{{post.link|e('esc_url')}}">
         <img 
         data-src="{{ post.thumbnail.src|resize(600, 464)|e('esc_url')|default('https://via.placeholder.com/600x464?text=+') }}" 
-        alt="{{post.thumbnail.alt|e('esc_html')}}" 
+        alt="{{post.thumbnail.alt}}" 
         width="600" height="464" class="square-img-to-landscape-mobile" 
         uk-img>
       </a>
@@ -26,17 +26,17 @@
         
         {# tease post title: linked #}
         <a class="uk-link-reset" href="{{post.link|e('esc_url')}}">
-          <h2 class="tease-title uk-margin-remove-top">{{post.title|e('esc_html')}}</h2>
+          <h2 class="tease-title uk-margin-remove-top">{{post.title}}</h2>
         </a>
         
         {# tease post meta: date & category #}
         <div class="tease-meta uk-text-meta">
           <time class="post-date">{{ post.date|date('j F Y') }}</time>
-          <span class="post-cat">{{ post.terms( {query:{taxonomy:'category', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ')|e('esc_html') }}</span>
+          <span class="post-cat">{{ post.terms( {query:{taxonomy:'category', orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0}} )|join(', ') }}</span>
         </div>
         
         {# tease post excerpt/preview #}
-        <p class="tease-excerpt">{{ post.preview.length(63).force.read_more('')|e('esc_html') }}</p>
+        <p class="tease-excerpt">{{ post.preview.length(63).force.read_more('') }}</p>
         
         {# tease post button #}
         <a href="{{post.link|e('esc_url')}}" class="uk-button uk-button-default uk-button-large">{{ _x('Read more', 'Post tease', 'loadingdock-theme')|e('esc_html') }}</a>

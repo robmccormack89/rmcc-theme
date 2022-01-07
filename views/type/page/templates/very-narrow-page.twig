@@ -1,0 +1,18 @@
+{% extends "narrow-page.twig" %}
+
+{% block thumb_caption %}
+  {% if post.thumbnail.caption %}
+    <figcaption class="uk-container uk-container-xsmall">{{ post.thumbnail.caption }}</figcaption>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <article id="Page-{{post.id}}" class="uk-section uk-container uk-container-xsmall {{post.class}}" data-template="very-narrow-page.twig">
+    {% block _content %}
+      <section class="single-content">
+        <h1 class="uk-margin-large-bottom uk-heading-small">{{post.title}}</h1>
+        {% include '_content.twig' %}
+      </section>
+    {% endblock %}
+  </article>
+{% endblock %}

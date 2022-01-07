@@ -10,7 +10,7 @@
 
 {% block contentwrap %}
   <section class="uk-section uk-container">
-    <h1 class="uk-margin-large-bottom uk-heading-small">{{title|e('esc_html')}}</h1>
+    <h1 class="uk-margin-large-bottom uk-heading-small">{{title}}</h1>
     <div class="blog-list archive-posts uk-child-width-1-1 uk-grid-collapse" uk-grid>
         {% if posts is not empty %}
           {% for post in posts %}

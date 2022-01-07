@@ -1,0 +1,11 @@
+<section class="single-content">
+  <h1 class="uk-margin-remove-bottom uk-heading-small">{{post.title}}</h1>
+  <div class="uk-text-meta uk-margin-large-bottom">
+    {{ _x('By:', 'Post', 'loadingdock-theme')|e('esc_html') }} {{post.author}}. {{ _x('Posted:', 'Post', 'loadingdock-theme')|e('esc_html') }} {{post.date}}
+  </div>
+  {% include '_content.twig' %}
+</section>
+
+{% include '_share.twig' %}
+
+{% include '_single-pagination.twig' %}

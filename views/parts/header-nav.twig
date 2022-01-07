@@ -3,9 +3,8 @@
 
 <nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
   
-  <!-- Logo/SiteTitle -->
   <div class="uk-navbar-left">
-    <a class="uk-text-emphasis logo-svg uk-link-reset uk-visible@l" href="{{ site.url|e('esc_url') }}">
+    <a class="uk-text-emphasis logo-svg uk-link-reset uk-visible@l" href="{{ site.url }}">
       <span class="uk-h2">{{site.title}}
     </a>
     <a class="mobile-menu-toggle uk-navbar-toggle uk-hidden@l uk-text-emphasis" href="#MobileOffCanvas" uk-toggle>
@@ -14,25 +13,24 @@
   </div>
   
   {% if has_menu_main %}
-    <!-- main menu -->
     <div class="uk-navbar-center">
       <ul class="main-menu main-nav uk-navbar-nav uk-visible@l">
         {% for item in menu_main.get_items %}
           {% if item.get_children %}
             <li class="{{ item.classes | join(' ') }}">
-              <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}
+              <a href="{{ item.link|e('esc_url') }}">{{ item.title }}
                 <i class="fas fa-angle-down uk-margin-small-left"></i>
               </a>
               <div class="uk-navbar-dropdown">
                 <ul class="uk-nav uk-navbar-dropdown-nav">
                   {% for child in item.get_children %}
                     <li class="{{ child.classes | join(' ') }}">
-                      <a href="{{ child.get_link|e('esc_url') }}">{{ child.title|e('esc_html') }}</a>
+                      <a href="{{ child.get_link|e('esc_url') }}">{{ child.title }}</a>
                       {% if child.children %}
                         <ul class="uk-nav-sub">
                           {% for third in child.children %}
                             <li class="{{ third.classes | join(' ') }}">
-                              <a href="{{ third.get_link|e('esc_url') }}">{{ third.title|e('esc_html') }}</a>
+                              <a href="{{ third.get_link|e('esc_url') }}">{{ third.title }}</a>
                             </li>
                           {% endfor %}
                         </ul>
@@ -44,7 +42,7 @@
             </li>
           {% else %}
             <li class="{{ item.classes | join(' ') }}">
-              <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+              <a href="{{ item.get_link|e('esc_url') }}">{{ item.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
@@ -52,7 +50,6 @@
     </div>
   {% endif %}
   
-  <!-- contact button -->
   <div class="uk-navbar-right">
     <div class="uk-navbar-item">
       <a class="uk-button uk-button-primary contact-button" target="_blank" href="{{ header_btn_link }}" target="_blank">

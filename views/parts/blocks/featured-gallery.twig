@@ -1,0 +1,62 @@
+{#
+/**
+ * Block Name: Featured Gallery
+ *
+ * This is the template that displays the Featured Gallery block.
+ */
+#}
+
+{% if is_preview %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endif %}
+
+{% set heading = fields.heading|default('Lorem ipsum dolor') %}
+{% set message = fields.message|default('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.') %}
+{% set image = fields.image %}
+{% set image_src = Image(image).src|resize(720, 500)|default('https://picsum.photos/id/1045/720/500') %}    
+{% set image_alt = Image(image).alt|default('Featured content image') %}
+{% set gallery = fields.gallery %}
+
+{% set view_gallery = 'View Gallery' %}
+
+<section id="FeaturedItem" class="featured-item-section uk-section uk-section-small uk-section-muted">
+  <div class="uk-container">
+    <div class="uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-default uk-text-center uk-box-shadow-medium" uk-grid>
+      <div class="uk-width-3-5@m">
+        <img 
+        {% if not is_preview %}data-{% endif %}src="{{ image_src }}" 
+        alt="{{ image_alt }}" 
+        width="720" height="500" {% if not is_preview %}uk-img{% endif %}>
+      </div>
+      <div class="uk-width-2-5@m uk-padding-large">
+        <h3>{{ heading }}</h3>
+        <p class="uk-margin-small">{{ message }}</p>
+        <div class="uk-margin-top">
+          {% if gallery %}
+            <a id="launchGallery" class="feature-link uk-text-uppercase uk-text-emphasis">{{ view_gallery }}</a>
+          {% endif %}
+          {% if gallery and not is_preview %}
+            <script>
+              document.getElementById('launchGallery').addEventListener('click', function() {
+                lightGallery(document.getElementById('launchGallery'), {
+                  dynamic: true,
+                  dynamicEl: [
+                    {% for img in gallery %}
+                    {
+                      "src": '{{ img.url }}',
+                      'thumb': '{{ img.url|resize(96, 76, 'center') }}',
+                      {% if img.caption or img.title %}
+                      'subHtml': '<div class="cover-caption-{{ img.id }} uk-light">{% if img.caption %}<h3 class="uk-margin-remove-bottom caption">{{ img.caption }}</h3>{% endif %}{% if img.title %}<p class="title">{{ img.title }}</p>{% endif %}</div>'
+                      {% endif %}
+                    },
+                    {% endfor %}
+                  ]
+                })
+              });
+            </script>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

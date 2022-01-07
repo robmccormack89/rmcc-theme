@@ -1,0 +1,27 @@
+{#
+/**
+ * Block Name: CTA section
+ *
+ * This is the template that displays the CTA section block.
+ */
+#}
+
+{% if is_preview %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endif %}
+
+{% set colour = fields.cta_colour|default('#008ce1') %}
+{% set heading = fields.cta_heading|default('Lorem ipsum dolor sit amet') %}
+{% set message = fields.cta_message|default('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.') %}
+{% set button_text = fields.cta_button_text|default('Learn more') %}
+{% set button_link = fields.cta_button_link|default('#FeaturedItem') %}
+
+<section id="CTA" class="uk-section uk-section-primary" {% if colour %}style="background-color: {{colour}}"{% endif %}>
+  <div class="uk-text-center uk-container uk-container-xsmall">
+    <h2 class="uk-h3">{{ heading }}</h2>
+    <p>{{ message }}</p>
+    <a class="feature-link uk-text-uppercase scroll" {% if not is_preview %}href="{{ button_link }}"{% endif %}>
+      {{ button_text }}
+    </a>
+  </div>
+</section>

@@ -4,6 +4,12 @@
 {% set mobile_phone = _x('044 9345884', 'Homepage phone no.', 'loadingdock-theme')|e('esc_html') %}
 {% set mobile_email = _x('info@serchek.com', 'Homepage email', 'loadingdock-theme')|e('esc_html') %}
 
+{% set tel_text = 'Tel:' %}
+{% set email_text = 'Email:' %}
+
+{% set logo = '/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg' %}
+{% set logo_link = 'https://www.industrialdoors.ie/' %}
+
 <nav id="MobileOffCanvas" class="mobile-slide-navbar" uk-offcanvas="overlay: true;" data-template="header-mobile-offcanvas.twig">
   <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
     <button class="uk-offcanvas-close" type="button" uk-close></button>
@@ -12,19 +18,19 @@
         <li class="uk-nav-header theme-border-bottom">Menu</li>
         {% for item in menu_mobile.get_items %}
           {% if item.get_children %}
-            <li class="theme-border-bottom {{ item.classes | join(' ')|e('esc_html') }} uk-parent">
-              <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+            <li class="theme-border-bottom {{ item.classes | join(' ') }} uk-parent">
+              <a href="{{ item.link }}">{{ item.title }}</a>
               <ul class="uk-nav-sub">
                 {% for child in item.get_children %}
-                  <li class="theme-border-top {{ child.classes | join(' ')|e('esc_html') }}">
-                    <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
+                  <li class="theme-border-top {{ child.classes | join(' ') }}">
+                    <a href="{{ child.get_link }}">- {{ child.title }}</a>
                   </li>
                 {% endfor %}
               </ul>
             </li>
           {% else %}
-            <li class="theme-border-bottom {{ item.classes | join(' ')|e('esc_html') }}">
-              <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+            <li class="theme-border-bottom {{ item.classes | join(' ') }}">
+              <a href="{{ item.get_link }}">{{ item.title }}</a>
             </li>
           {% endif %}
         {% endfor %}
@@ -39,13 +45,13 @@
           </p>
         </div>
         <p class="uk-margin-small">
-          <strong>Tel:</strong> <a class="uk-link-reset" href="tel:{{ mobile_phone }}">{{ mobile_phone }}</a>
+          <strong>{{tel_text}}</strong> <a class="uk-link-reset" href="tel:{{ mobile_phone }}">{{ mobile_phone }}</a>
         </p>
         <p class="uk-margin-small uk-margin-large-bottom">
-          <strong>Email:</strong> <a class="uk-link-reset" href="mailto:{{ mobile_email }}">{{ mobile_email }}</a>
+          <strong>{{email_text}}</strong> <a class="uk-link-reset" href="mailto:{{ mobile_email }}">{{ mobile_email }}</a>
         </p>
-        <a href="https://www.industrialdoors.ie/" target="_blank" class="uk-link-reset">
-          <img data-src="/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg" width="253" height="85" uk-img>
+        <a href="{{logo_link}}" target="_blank" class="uk-link-reset">
+          <img data-src="{{logo}}" width="253" height="85" uk-img>
         </a>
       </div>
     </div>

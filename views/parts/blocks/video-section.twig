@@ -1,0 +1,46 @@
+{#
+/**
+ * Block Name: Youtube popup
+ *
+ * This is the template that displays the Testimonials block.
+ */
+#}
+
+{% if is_preview %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endif %}
+
+{% set image_src = Image(fields.image).src|resize(1920, 500)|default(default_theme_img_1920_500) %}
+{% set image_alt = Image(fields.image).alt|default('Video Cover image') %}
+{% set youtube_embed = fields.youtube_embed_url %}
+
+<section id="VideoPopup" class="uk-background-primary uk-text-center">
+  <div class="uk-inline uk-dark">
+    <img 
+    {% if not is_preview %}data-{% endif %}src="{{ image_src }}" 
+    alt="{{ image_alt }}" 
+    width="1920" height="500" {% if not is_preview %}uk-img{% endif %}>
+    <div class="uk-overlay-primary uk-position-cover">
+      <div class="uk-position-center">
+        <a {% if youtube_embed and not is_preview %}href="#modal-media-youtube"{% endif %} uk-toggle class="video-container__play cc-fade-in-up cc-animate-init -in cc-animate-complete">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  {% if youtube_embed and not is_preview %}
+    <div id="modal-media-youtube" class="uk-flex-top" uk-modal>
+      <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+        <iframe 
+        src="{{ youtube_embed }}" 
+        width="1920" height="1080" frameborder="0" 
+        uk-video uk-responsive>
+        </iframe>
+      </div>
+    </div>
+  {% endif %}
+</section>

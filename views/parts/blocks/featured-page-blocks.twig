@@ -1,0 +1,65 @@
+{#
+/**
+ * Block Name: Featured Content
+ *
+ * This is the template that displays the Featured Content block.
+ */
+#}
+
+{% if is_preview %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endif %}
+
+{% set featureds_items = fields.featureds_items %}
+{% set no_display_text = 'No pages have been selected yet...' %}
+
+{% if posts %}
+  <section id="FeaturedPages" class="featured-page-blocks uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-primary uk-light uk-text-center" uk-grid>
+    {% for post in posts %}
+      {% set loop_number = loop.index %}
+      {% for item in featureds_items if item.select_featured_item == post.id  %}
+        {% set custom_text = item.text|default(post.title|default('Item ' ~ loop_number)) %}
+        {% set custom_image = item.image %}
+        {% set image_src = Image(custom_image).src|resize(720, 500)|default(post.thumbnail.src|resize(720, 500)|default('https://picsum.photos/720/500?random=' ~ loop_number)) %}    
+        {% set image_alt = Image(custom_image).alt|default(post.thumbnail.alt|default('Featured page ' ~ loop_number)) %}
+        {% set custom_link = item.link|default(post.link) %}
+        {% set width_numb = posts|length %}
+        {% set height_px = 500 %}
+        
+        {% if posts|length == 1 %}
+          {% set width_px = 1920 %}
+          {% set image_src = Image(custom_image).src|resize(width_px, height_px)|default(post.thumbnail.src|resize(width_px, height_px)|default('https://picsum.photos/' ~ width_px ~ '/' ~ height_px ~ '?random=' ~ loop_number)) %}
+        {% endif %}
+          
+        {% if posts|length == 2 %}
+          {% set width_px = 1200 %}
+          {% set image_src = Image(custom_image).src|resize(width_px, height_px)|default(post.thumbnail.src|resize(width_px, height_px)|default('https://picsum.photos/' ~ width_px ~ '/' ~ height_px ~ '?random=' ~ loop_number)) %}
+        {% endif %}
+        
+        {% if posts|length > 6 %}
+          {% set width_numb = 6 %}
+          {% set image_src = Image(custom_image).src|resize(height_px, height_px)|default(post.thumbnail.src|resize(width_px, height_px)|default('https://picsum.photos/' ~ height_px ~ '/' ~ height_px ~ '?random=' ~ loop_number)) %}
+        {% endif %}
+        
+        <a class="uk-width-1-{{width_numb}}@m" {% if custom_link and not is_preview %} href="{{ custom_link }}"{% endif %}>
+          <div class="uk-inline uk-light ">
+            <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+              <img 
+              class="uk-transition-scale-up uk-transition-opaque" 
+              alt="{{ image_alt }}" 
+              {% if not is_preview %}data-{% endif %}src="{{ image_src }}" 
+              data-width data-height {% if not is_preview %}uk-img{% endif %}>
+              <div class="uk-overlay-secondary uk-position-cover">
+                <div class="uk-position-center">
+                  <div class="feature-link uk-text-uppercase uk-text-emphasis">{{ custom_text }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    {% endfor %}
+  </section>
+{% else %}
+  {{no_display_text}}
+{% endif %}

@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-  <article id="Page-{{post.id|e('esc_html')}}" class="{{post.class|e('esc_html')}}" data-template="page-builder-page.twig" data-block="content">
+  <article id="Page-{{post.id}}" class="{{post.class}}" data-template="page-builder-page.twig">
     {% block _content %}
       <div class="single-content">
         {% include '_content.twig' %}

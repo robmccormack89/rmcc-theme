@@ -1,19 +1,32 @@
+{% set title = _x('404 - Page Not Found', '404 page', 'loadingdock-theme')|e('esc_html') %}
+{% set msg = _x('The page you requested does not exist.', '404 page', 'loadingdock-theme')|e('esc_html') %}
+
+{% set logo = '/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg' %}
+{% set logo_link = 'https://www.industrialdoors.ie/' %}
+
+{% set copy_text = 'All rights reserved.' %}
+{% set copy_symb = '©' %}
+
+{% set me = 'robmccormack89' %}
+{% set me_link = 'https://github.com/robmccormack89' %}
+{% set attr_text = 'Website by' %}
+
 <div class="footer-bottom uk-section uk-section-small uk-section-default theme-border-top" data-template="footer-bottom.twig">
   <div class="uk-container">
     <div class="uk-text-center">
-      <a href="https://www.industrialdoors.ie/" target="_blank" class="uk-link-reset">
-        <img data-src="/wp-content/themes/loadingdock-theme/assets/images/logos/serchek_logo.jpg" width="253" height="85" uk-img>
+      <a href="{{logo_link}}" target="_blank" class="uk-link-reset">
+        <img data-src="{{logo}}" width="253" height="85" uk-img>
       </a>
     </div>
     <div class="uk-grid-match uk-flex uk-flex-middle uk-flex-center" uk-grid>
       <div class="footer-copy uk-width-1-1 uk-width-expand@m">
         <div class="uk-width-2-3 uk-width-1-1@m uk-align-center uk-align-left@m uk-text-center uk-text-left@m">
-          © {{ "now"|date("Y") }} <a href="{{site.url|e('esc_url')}}">{{site.title|e('esc_html')}}</a>. All rights reserved.
+          {{copy_symb}} {{ "now"|date("Y") }} <a href="{{site.url}}">{{site.title}}</a>. {{copy_text}}
         </div>
       </div>
       <div class="payment-icons uk-width-auto">
         <div>
-      	   Website by <a href="https://github.com/robmccormack89" target="_blank">robmccormack89</a>
+      	   {{attr_text}} <a href="{{me_link}}" target="_blank">{{me}}</a>
         </div>
       </div>
     </div>

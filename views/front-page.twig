@@ -1,44 +1,13 @@
 {% extends "base.twig" %}
 
 {% block header %}
-  
-  {% set cover_img = post.thumbnail.src|default(options.homepage_cover_image.url|resize(1920)|default('/wp-content/themes/loadingdock-theme/assets/images/loadingdock/internal-doors.jpg'))|e('esc_url') %}
-  {% set cover_title = _x('Loading Dock by Serchek Industrial Ireland Ltd.', 'Homepage cover - title', 'loadingdock-theme')|e('esc_html') %}
-  {% set cover_desc = _x('Loading Dock installs "High Speed" & "Steel Pedestrian" Clean Room Doors, Clean Room Windows & Smart Automated Doors.', 'Homepage cover - description', 'loadingdock-theme')|e('esc_html') %}
-  {% set cover_address_1 = _x('Zone A, Mullingar Business Park', 'Homepage address - line 1', 'loadingdock-theme')|e('esc_html') %}
-  {% set cover_address_2 = _x('Mullingar, Co. Westmeath, N91 R761', 'Homepage address - line 2', 'loadingdock-theme')|e('esc_html') %}
-  {% set cover_phone = _x('044 9345884', 'Homepage phone no.', 'loadingdock-theme')|e('esc_html') %}
-  {% set cover_email = _x('info@serchek.com', 'Homepage email', 'loadingdock-theme')|e('esc_html') %}
-  
-  <header class="uk-background-cover uk-inline" style="background-image: url({{cover_img}});" uk-height-viewport>
-    
-    <div class="header-top-nav uk-position-top uk-position-z-index">
-      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light uuk-overlay-default; top: 200">
-        {% include 'header-nav.twig' %}
-      </div>
+  <header class="header-top-nav uk-position-top uk-position-z-index">
+    <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+      {% include 'header-nav.twig' %}
     </div>
-    
-    {# cover content #}
-    <div class="uk-position-cover uk-overlay uk-overlay-primary overlay-contained">
-      <div class="uk-position-cover uk-container uk-container-large uk-flex uk-flex-middle">
-        <div class="uk-width-large cover-content">
-          <h1 class="uk-heading-small">{{ cover_title }}</h1>
-          <p class="uk-text-lead">{{ cover_desc }}</p>
-        </div>
-      </div>
-      <div class="uk-position-bottom-center uk-position-small uk-text-center">
-        <span>{{ cover_address_1 }}, {{ cover_address_2 }} | </span>
-        <span>Tel: <a href="tel:{{ cover_phone }}">{{ cover_phone }}</a> </span>
-        <span>Email: <a href="mailto:{{ cover_email }}">{{ cover_email }}</a></span>
-      </div>
-    </div>
-    
   </header>
-
 {% endblock %}
 
 {% block contentwrap %}
-  <div class="home-content">
-    {{ post.content }}
-  </div>
+  {{ post.content }}
 {% endblock %}

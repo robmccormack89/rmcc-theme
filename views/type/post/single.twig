@@ -34,21 +34,21 @@
   {% block thumb %}
     {% if post.thumbnail %}
       <figure class="uk-margin-remove">
-        <img data-src="{{ post.thumbnail.src|resize(1920)|e('esc_url') }}" alt="{{ post.thumbnail.alt|e('esc_html') }}" 
+        <img data-src="{{ post.thumbnail.src|resize(1920)|e('esc_url') }}" alt="{{ post.thumbnail.alt }}" 
         class="" data-width data-height uk-img>
         {% block thumb_caption %}
           {% if post.thumbnail.caption %}
-            <figcaption class="uk-container">{{ post.thumbnail.caption|e('esc_html') }}</figcaption>
+            <figcaption class="uk-container">{{ post.thumbnail.caption }}</figcaption>
           {% endif %}
         {% endblock %}
       </figure>
     {% endif %}
   {% endblock %}
   {% block content %}
-    <article id="Single-{{post.id|e('esc_html')}}" class="uk-section uk-container {{post.class|e('esc_html')}}" data-template="single.twig" data-block="content">
+    <article id="Single-{{post.id}}" class="uk-section uk-container {{post.class}}" data-template="single.twig" data-block="content">
       {% block _content %}
         <section class="single-content">
-          <h1 class="uk-margin-large-bottom uk-heading-small">{{post.title|e('esc_html')}}</h1>
+          <h1 class="uk-margin-large-bottom uk-heading-small">{{post.title}}</h1>
           {% include '_content.twig' %}
         </section>
       {% endblock %}

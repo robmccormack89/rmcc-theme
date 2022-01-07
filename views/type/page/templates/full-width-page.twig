@@ -1,0 +1,15 @@
+{% extends "narrow-page.twig" %}
+
+{% block thumb %}
+{% endblock %}
+
+{% block content %}
+  <article id="Page-{{post.id}}" class="uk-section {{post.class}}" data-template="full-width-page.twig">
+    {% block _content %}
+      <div class="single-content">
+        <h1 class="uk-margin-large-bottom uk-heading-small">{{post.title}}</h1>
+        {% include '_content.twig' %}
+      </div>
+    {% endblock %}
+  </article>
+{% endblock %}

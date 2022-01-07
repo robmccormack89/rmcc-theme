@@ -1,0 +1,46 @@
+{#
+/**
+ * Block Name: Contact section
+ *
+ * This is the template that displays the Contact section block.
+ */
+#}
+
+{% if is_preview %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+{% endif %}
+
+{% set heading = fields.heading|default('Contact us') %}
+{% set address = fields.address|default('123 Lorem ipsum.<br>Toronto, Canada') %}
+{% set openhours = fields.openhours|default('Mon - Fri,<br>10am - 9pm') %}
+{% set button = fields.if_button %}
+{% set button_text = fields.button_text|default('Contact us') %}
+{% set button_link = fields.button_link|default('#') %}
+
+{% set image_src = Image(fields.image).src|resize(1080)|default(default_theme_img_1080) %}
+{% set image_alt = Image(fields.image).alt|default('Contact image') %}
+
+<section id="ContactSection" class="uk-child-width-1-2@m uk-grid-match uk-flex uk-flex-middle uk-grid-collapse uk-background-muted uk-text-center uk-grid" uk-grid>
+  <div class="uk-padding">
+    <h3>{{ heading }}</h3>
+    <p class="uk-margin-small">
+      {{ address }}
+    </p>
+    <p class="uk-margin-small">
+      {{ openhours }}
+    </p>
+    {% if button == 'yes' %}
+      <div class="uk-margin-top">
+      <a class="feature-link uk-text-uppercase uk-text-emphasis" {% if not is_preview %}href="{{ button_link }}"{% endif %}>
+        {{ button_text }}
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  <div>
+    <img 
+    {% if not is_preview %}data-{% endif %}src="{{ image_src }}" 
+    width="1080" height="675" 
+    alt="{{ image_alt }}" {% if not is_preview %}uk-img{% endif %}>
+  </div>
+</section>
