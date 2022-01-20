@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 {% endif %}
 
-{% set image_src = Image(fields.image).src|resize(1920, 500)|default(default_theme_img_1920_500) %}
+{% set image_src = Image(fields.image).src|resize(1920, 500, 'center')|default(default_theme_img_1920_500) %}
 {% set image_alt = Image(fields.image).alt|default('Video Cover image') %}
+{% set image_title = Image(fields.image).title|default('') %}
 {% set youtube_embed = fields.youtube_embed_url %}
 
 <section id="VideoPopup" class="uk-background-primary uk-text-center">
@@ -22,7 +23,7 @@
     width="1920" height="500" {% if not is_preview %}uk-img{% endif %}>
     <div class="uk-overlay-primary uk-position-cover">
       <div class="uk-position-center">
-        <a {% if youtube_embed and not is_preview %}href="#modal-media-youtube"{% endif %} uk-toggle class="video-container__play cc-fade-in-up cc-animate-init -in cc-animate-complete">
+        <a uk-tooltip="Click to play video" {% if youtube_embed and not is_preview %}href="#modal-media-youtube"{% endif %} uk-toggle class="video-container__play cc-fade-in-up cc-animate-init -in cc-animate-complete">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle">
             <circle cx="12" cy="12" r="10"></circle>
             <polygon points="10 8 16 12 10 16 10 8"></polygon>

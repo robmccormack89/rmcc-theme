@@ -33,7 +33,7 @@
         <p class="uk-margin-small">{{ message }}</p>
         <div class="uk-margin-top">
           {% if gallery %}
-            <a id="launchGallery" class="feature-link uk-text-uppercase uk-text-emphasis">{{ view_gallery }}</a>
+            <a id="launchGallery" class="feature-link uk-text-uppercase uk-text-emphasis" uk-tooltip="Click to launch gallery">{{ view_gallery }}</a>
           {% endif %}
           {% if gallery and not is_preview %}
             <script>
