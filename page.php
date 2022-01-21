@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all pages
  *
- * @package Loadingdock_Theme
+ * @package Rmcc_Theme
  */
 
 // get the main context

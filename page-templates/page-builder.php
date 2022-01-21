@@ -3,7 +3,7 @@
  * Template Name: Page Builder Template
  * Template Post Type: post, page
  *
- * @package Loadingdock_Theme
+ * @package Rmcc_Theme
  */
 
 $context = Timber::context();

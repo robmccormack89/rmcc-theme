@@ -1,4 +1,4 @@
-{% set msg = _x('Sorry, this area is for members-only; you need to be logged-in to view this content. If you are a customer & wish to have access to our member\'s area, please contact one of our service team via our <a href="/contact">contact</a> page & we will provided you with login details.', 'Password Protected Content Message', 'loadingdock-theme') %}
+{% set msg = _x('Sorry, this area is for members-only; you need to be logged-in to view this content. If you are a customer & wish to have access to our member\'s area, please contact one of our service team via our <a href="/contact">contact</a> page & we will provided you with login details.', 'Password Protected Content Message', 'rmcc-theme') %}
 
 {% if fn('post_password_required', post.id) and not fn('is_user_logged_in') %}
   {{ msg }}

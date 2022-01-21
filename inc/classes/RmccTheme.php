@@ -19,8 +19,8 @@ Timber::$dirname = array(
 // set the $autoescape value
 Timber::$autoescape = false;
 
-// Define Loadingdock_Theme Child Class
-class LoadingdockTheme extends Timber {
+// Define Rmcc_Theme Child Class
+class RmccTheme extends Timber {
   public function __construct() {
     parent::__construct();
     
@@ -32,7 +32,7 @@ class LoadingdockTheme extends Timber {
 		add_action('init', array($this, 'register_taxonomies'));
     add_action('init', array($this, 'register_widget_areas'));
     add_action('init', array($this, 'register_navigation_menus'));
-    add_action('wp_enqueue_scripts', array($this, 'loadingdock_theme_enqueue_assets'));
+    add_action('wp_enqueue_scripts', array($this, 'rmcc_theme_enqueue_assets'));
     add_filter('body_class', function($classes){
     	$stack = $classes;
     	array_push($stack, 'no-overflow');
@@ -122,7 +122,7 @@ class LoadingdockTheme extends Timber {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
     
-    load_theme_textdomain('loadingdock-theme', get_template_directory() . '/languages');
+    load_theme_textdomain('rmcc-theme', get_template_directory() . '/languages');
   }
   public function add_to_twig($twig) {
     $twig->addExtension(new \Twig_Extension_StringLoader());
@@ -152,7 +152,7 @@ class LoadingdockTheme extends Timber {
     $context['default_theme_img'] = 'https://picsum.photos/id/1036/1920/800';
     $context['default_theme_img_1080'] = 'https://picsum.photos/id/1/1080/675';
     $context['default_theme_img_1920_500'] = 'https://picsum.photos/1920/500';
-    $context['default_theme_img_loading'] = '/wp-content/themes/loadingdock-theme/assets/images/loadingdock/internal-doors.jpg';
+    $context['default_theme_img_loading'] = '/wp-content/themes/rmcc-theme/assets/images/theme/internal-doors.jpg';
     
     // return context
     return $context;    
@@ -223,11 +223,11 @@ class LoadingdockTheme extends Timber {
       'mobile_menu' => 'Mobile Menu',
     ));
   }
-  public function loadingdock_theme_enqueue_assets() {
+  public function rmcc_theme_enqueue_assets() {
     
     // theme base scripts  (uikit, lightgallery, fonts-awesome)
     wp_enqueue_script(
-      'loadingdock-theme',
+      'rmcc-theme',
       get_template_directory_uri() . '/assets/js/base.js',
       '',
       '',
@@ -239,13 +239,13 @@ class LoadingdockTheme extends Timber {
     
     // theme base css (uikit, lightgallery, fonts-awesome)
     wp_enqueue_style(
-      'loadingdock-theme',
+      'rmcc-theme',
       get_template_directory_uri() . '/assets/css/base.css'
     );
     
     // theme stylesheet (theme)
     wp_enqueue_style(
-      'loadingdock-theme-styles', get_stylesheet_uri()
+      'rmcc-theme-styles', get_stylesheet_uri()
     );
     
     // swiper, everywhere

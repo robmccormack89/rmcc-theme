@@ -3,7 +3,7 @@
 /**
  * ACF Options Pages
  *
- * @package Loadingdock_Theme
+ * @package Rmcc_Theme
  */
 
 if( function_exists('acf_add_options_page') ) {
@@ -232,13 +232,13 @@ function acf_blocks_editor_scripts() {
   
   // theme base css
   wp_enqueue_style(
-    'loadingdock-theme',
+    'rmcc-theme',
     get_template_directory_uri() . '/assets/css/base.css'
   );
   
   // theme stylesheet
   wp_enqueue_style(
-    'loadingdock-theme-styles', get_stylesheet_uri()
+    'rmcc-theme-styles', get_stylesheet_uri()
   );
 
 }

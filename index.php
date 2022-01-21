@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Loadingdock_Theme
+ * @package Rmcc_Theme
  */
 
 // get the main context

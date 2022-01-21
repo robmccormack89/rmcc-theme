@@ -1,15 +1,15 @@
 <?php
 /**
- * Loadingdock Theme functions and definitions
+ * Rmcc Theme functions and definitions
  *
- * @package Loadingdock_Theme
+ * @package Rmcc_Theme
  */
  
 // stuff to say we need timber activated!! see TGM Plugin activation library for php
 require_once get_template_directory() . '/inc/lib/class-tgm-plugin-activation.php';
 
 // register the required plugins(Timber) see TGM Plugin activation library for php
-function loadingdock_theme_register_required_plugins() {
+function rmcc_theme_register_required_plugins() {
 	$plugins = array(
     // acf pro
     array(
@@ -44,7 +44,7 @@ function loadingdock_theme_register_required_plugins() {
 	);
 	tgmpa($plugins, $config);
 }
-add_action('tgmpa_register', 'loadingdock_theme_register_required_plugins');
+add_action('tgmpa_register', 'rmcc_theme_register_required_plugins');
 
 if (class_exists('ACF')) {
   require get_template_directory() . '/acf/acf.php';
@@ -52,7 +52,7 @@ if (class_exists('ACF')) {
 
 if (file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_once $composer_autoload;
 
-new Rmcc\LoadingdockTheme;
+new Rmcc\RmccTheme;
 
 // this should be temporary until Tom is ready to start on other pages
 add_action('template_redirect','redirect_all_pages_to_home');
