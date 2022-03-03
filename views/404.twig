@@ -1,13 +1,20 @@
-{% extends "single.twig" %}
+{% extends "base.twig" %}
+{% import "functions.twig" as functions %}
+{% import "snippets.twig" as snippets %}
 
-{% set title = _x('404 - Page Not Found', '404 page', 'rmcc-theme')|e('esc_html') %}
-{% set msg = _x('The page you requested does not exist.', '404 page', 'rmcc-theme')|e('esc_html') %}
-{% set link_txt = _x('Back to Homepage', '404 page', 'rmcc-theme')|e('esc_html') %}
+{% block main %}
+  <article class="uk-section">
+    
+    <header class="article-header uk-position-relative uk-container uk-text-center">
+      <h1 class="uk-heading-medium">{{ snippets.error_page_title }}</h1>
+    </header>
 
-{% block contentwrap %}
-	<section class="404-error-page uk-section uk-container" data-template="404.twig">
-		<h1 class="uk-margin-large-bottom uk-heading-small">{{ title }}</h1>
-		<p>{{ msg }}</p>
-		<a href="{{site.link}}" class="uk-button uk-button-primary uk-button-large">{{ link_txt }}</a>
-	</section>
+    <div class="article-content uk-container uk-container-small uk-section uk-text-center">
+      {{ snippets.error_page_msg }}
+      <div>
+        <a href="/" class="uk-margin-top uk-button uk-button-default uk-button-small">{{ snippets.error_page_return_txt }}</a>
+      </div>
+    </div>
+
+  </article>
 {% endblock %}

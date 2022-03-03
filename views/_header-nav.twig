@@ -1,0 +1,104 @@
+{% import "snippets.twig" as snippets %}
+{% import "icons.twig" as icons %}
+
+<nav class="header-navbar uk-navbar-container uk-container uk-container-expand uk-section uk-section-small" uk-navbar>
+  
+  {# logo/title left #}
+  <div class="uk-navbar-left">
+    <a class="uk-logo uk-text-bold uk-text-emphasis" href="{{ site.url|e('esc_url') }}">
+      {% if theme_logo_src %}
+        <img data-src="{{ theme_logo_src|e('esc_url') }}" uk-img>
+      {% else %}
+        {{ site.title|e('esc_html') }}
+      {% endif %}
+    </a>
+  </div>
+  
+  {# menu right #}
+  <div class="uk-navbar-right">
+    
+    {# main menu #}
+    {% if has_menu_main %}
+      <ul class="main-menu main-nav uk-navbar-nav uk-visible@l">
+        {% for item in menu_main.get_items %}
+          {% if item.get_children %}
+            <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+              <a href="{{ item.link|e('esc_url') }}">
+                {{ item.title|e('esc_html')}} {{ icons.main_menu_down_icon }}
+              </a>
+              <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                  {% for child in item.get_children %}
+                    <li class="{{ child.classes|join(' ')|e('esc_html') }}">
+                      <a href="{{ child.get_link|e('esc_url') }}">{{ child.title|e('esc_html')}}</a>
+                      {% if child.children %}
+                        <ul class="uk-nav-sub">
+                          {% for third in child.children %}
+                            <li class="{{ third.classes|join(' ')|e('esc_html') }}">
+                              <a href="{{ third.get_link|e('esc_url') }}">{{ third.title|e('esc_html')}}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+          {% else %}
+            <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+              <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html')}}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% else %}
+      <div class="uk-navbar-item uk-visible@l">
+        {{ snippets.no_menu_text|e('esc_html') }}
+      </div>
+    {% endif %}
+    
+    {# mobile menu toggle #}
+    {% if has_menu_mobile %}
+      <div class="uk-navbar-item uk-padding-remove uk-hidden@l">
+        <a class="mobile-menu-toggle uk-navbar-toggle uk-text-emphasis uk-padding-remove" href="#MobileOffCanvas" uk-toggle>
+          {{ icons.mobile_menu_icon }}
+        </a>
+      </div>
+    {% endif %}
+    
+  </div>
+  
+</nav>
+
+{# mobile menu offcanvas #}
+{% if has_menu_mobile %}
+  <nav id="MobileOffCanvas" class="mobile-slide-navbar" uk-offcanvas="overlay: true;">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+      <button class="uk-offcanvas-close" type="button">{{ icons.close_mobile_menu_icon }}</button>
+      {% if has_menu_mobile %}
+        <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative" uk-nav>
+          <li class="uk-nav-header">{{ menu_mobile.title|default(site.title)|e('esc_html') }}</li>
+          {% for item in menu_mobile.get_items %}
+            {% if item.get_children %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }} uk-parent">
+                <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html')}}</a>
+                <ul class="uk-nav-sub">
+                  {% for child in item.get_children %}
+                    <li class="{{ child.classes|join(' ')|e('esc_html') }}">
+                      <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html')}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html')}}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </nav>
+{% endif %}

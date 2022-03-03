@@ -1,0 +1,184 @@
+{% extends "single.twig" %}
+
+{# 
+
+  A dynamic template for rendering pages thru custom.php. Built with 
+  acf custom fields as configurable template options. This template is 
+  designed to work specifically with gutenberg & page builders.
+  
+  custom.php will first look 
+  for custom-$post-type.twig, then
+  will default to custom.twig.
+  For posts specifically, we will add 
+  custom-post.twig & extend custom.twig.
+  No need to add custom-page.twig.
+  
+  About this template: 
+  
+  extends: single.twig
+  imports: functions.twig, styles.twig
+  functions: get_section_class(), , post_password_required()
+  macro functions: dynamic_gutenberg_styles(), site_header(), single_header(), single_header_image(), featured_img(), the_post_content(), single_footer()
+  blocks extended: single_styles, header, article_class, single_header, single_thumb, single_content_protected, single_footer, footer
+  acf fields: margins, padding, header, footer, page_header, page_footer, page_header_align
+
+ #}
+
+{# import our macros 
+
+#}
+
+{% import "functions.twig" as functions %}
+
+{# set vars with defaults from our template's custom fields 
+
+  it is best to set these defaults here now for when the template is applied but not yet saved with options
+
+#}
+{% set template_margin = post.meta('margins')|default('default') %}
+{% set template_padding = post.meta('padding')|default('default') %}
+{% set template_header = post.meta('header')|default('default') %}
+{% set template_footer = post.meta('footer')|default('default') %}
+{% set template_page_header = post.meta('page_header')|default('default') %}
+{% set template_page_footer = post.meta('page_footer')|default('default') %}
+{% set template_page_header_align = post.meta('page_header_align')|default('center') %}
+
+{# set section-ing class (padding top & bottom) 
+
+
+#}
+{% set section_class = (template_padding != 'default' and template_padding != 'none') ? ('uk-section uk-section-' ~ template_padding) : ((template_padding == 'none') ? 'uk-section uk-padding-remove-vertical' : 'uk-section') %}
+
+{# set margin-ing classes (container widths) 
+
+  available @ margins.
+
+#}
+
+{# meta_container #}
+{% set _meta_container = template_margin == 'full' ? 'no-container' : ( template_margin == 'default' ? 'uk-container' : ( (template_margin == 'xsmall' or template_margin == 'small' or template_margin == 'large' or template_margin == 'xlarge' or template_margin == 'expand') ? ('uk-container uk-container-' ~ template_margin) ) ) %}
+
+{# header_img_container #}
+{% set _header_img_container = template_margin == 'full' ? 'no-container' : ( (template_margin == 'expand' or template_margin == 'xlarge') ? 'uk-container uk-container-expand' : ( (template_margin == 'large' or template_margin == 'default') ? 'uk-container uk-container-large' : ( (template_margin == 'small' or template_margin == 'xsmall') ? 'uk-container' ) ) ) %}
+
+{# header_img_content_container #}
+{% set _header_img_content_container = template_margin == 'full' ? 'uk-container uk-container-expand' : ( (template_margin == 'large' or template_margin == 'xlarge' or template_margin == 'expand') ? ('uk-container uk-container-' ~ template_margin) : ( (template_margin == 'xsmall' or template_margin == 'small' or template_margin == 'default') ? 'uk-container' ) ) %}
+
+{# Logic for applying container's to editor content... 
+
+  The main_wrap is the primary container for all the content
+  The align_wrap_width should always be 1 step above the main_wrap, except upper limits
+  The alignwide_width should always be 1 step above the align_wrap_width, except upper limits
+  
+  main_wrap: if 'expand', set to 'none'. if 'xlarge', set to '1600px'. if 'large', set to '1400px'. if 'default', set to '1200px'. if 'small', set to '900px'. if 'xsmall', set to '650px'.
+  align_wrap_width: if 'expand', set to 'none'. if 'xlarge'||'large', set to '1600px'. if 'default', set to '1400px'. if 'small', set to '1200px'. if 'xsmall', set to '900px'.
+  alignwide_width: if 'expand', set to 'none'. if 'xlarge'||'large'||'default', set to '1600px'. if 'small', set to '1400px'. if 'xsmall', set to '1200px'
+
+ #}
+
+{% set _main_wrap = template_margin == 'expand' ? 'none' : ( template_margin == 'xlarge' ? '1600px' : ( template_margin == 'large' ? '1400px' : ( template_margin == 'default' ? '1200px' : ( template_margin == 'small' ? '900px' : ( template_margin == 'xsmall' ? '650px' ) ) ) ) ) %}
+{% set _align_wrap_width = template_margin == 'expand' ? 'none' : ( (template_margin == 'xlarge' or template_margin == 'large') ? '1600px' : ( template_margin == 'default' ? '1400px' : ( template_margin == 'small' ? '1200px' : (  template_margin == 'xsmall' ? '900px' ) ) ) ) %}
+{% set _alignwide_width = template_margin == 'expand' ? 'none' : ( (template_margin == 'xlarge' or template_margin == 'large' or template_margin == 'default') ? '1600px' : ( template_margin == 'small' ? '1400px' : ( template_margin == 'xsmall' ? '1200px' ) ) ) %}
+
+{% set _w = (template_margin == 'full' or template_margin == 'expand' or template_margin == 'xlarge') ? 1920 : ( (template_margin == 'large') ? 1600 : ( (template_margin == 'default') ? 1400 : ( (template_margin == 'small' or template_margin == 'xsmall') ? 1200 ) ) ) %}
+{% set _h = (template_margin == 'full' or template_margin == 'expand' or template_margin == 'xlarge') ? 800 : ( (template_margin == 'large') ? 700 : ( (template_margin == 'default') ? 600 : ( (template_margin == 'small' or template_margin == 'xsmall') ? 400 ) ) ) %}
+
+{% set margins = {
+    meta_container: _meta_container,
+    header_img_container: _header_img_container,
+    header_img_content_container: _header_img_content_container,
+    main_wrap: _main_wrap,
+    align_wrap_width: _align_wrap_width,
+    alignwide_width: _alignwide_width,
+    w: _w,
+    h: _h,
+} %}
+
+{# set bg class 
+
+  depending on 'template_page_header' setting
+
+#}
+
+{% set bg_class = (template_page_header == 'default') ? 'uk-background-muted' : '' %}
+
+{# Block-extended: extending single.twig's styles with custom template gutenberg dynamic styles 
+
+#}
+{% block single_styles %}
+  {{ functions.dynamic_gutenberg_styles(template_margin, margins) }}
+{% endblock %}
+
+{# sBlock-extended: ite header will only be visible when the template's header is set to 'default' or 'transparent'
+
+#}
+{% block header %}
+  {% if template_header == 'default' %}
+    {{ functions.site_header(_context) }}
+  {% elseif template_header == 'transparent' %}
+    {{ functions.site_header(_context, {transparent: true}) }}
+  {% endif %}
+{% endblock %}
+
+{# Block-extended: replace single.twig's article background class
+
+#}
+{% block article_class %}{{ bg_class }}{% endblock %}
+
+{# Block-extended: extend single.twig's page header; only 'default' & 'image' settings for template's page header will result in display 
+
+#}
+{% block single_header %}
+  {% if template_page_header == 'default' %}
+    {{ functions.single_header(post, null, false, { wrap_class: margins.meta_container ~ ' uk-text-' ~ template_page_header_align, terms_linked: true, meta_linked: true, title_linked: false }) }}
+  {% elseif template_page_header == 'image' %}
+    {% set single_header_image_args = {
+      align: template_page_header_align, 
+      img_content_container: margins.header_img_content_container, 
+      content_margin: (template_header == 'transparent') ? 'uk-margin-large-top' : null, 
+      w: 1920, 
+      h: 400, 
+      min_height: 300,
+      terms_linked: true, 
+      meta_linked: true, 
+      title_linked: false
+    } %}
+    {{ functions.single_header_image(post, null, false, single_header_image_args) }}
+  {% endif %}
+{% endblock %}
+
+{# Block-extended: we only wanna display the thumb when template_page_header == 'default' 
+
+#}
+{% block single_thumb %}
+  {% if template_page_header == 'default' %}
+    {{ functions.featured_img(post.thumbnail, {w: margins.w, h: margins.h, container: margins.header_img_container}) }}
+  {% endif %}
+{% endblock %}
+
+{# Block-extended: extend the content_editor block so we can add the section_class to it from our template's options 
+
+#}
+{% block single_content_protected %}
+  {{ functions.the_post_content(_context, { content_wrap: 'article-content-editor gutenberg-editor ' ~ section_class }) }}
+{% endblock %}
+
+{# Block-extended: extend the single footer; only display if template's page footer is set to 'default' 
+
+#}
+{% block single_footer %}
+  {% if template_page_footer == 'default' %}
+    {% if not fn('post_password_required', post.id) %}
+      {{ functions.single_footer(_context, { share: true, pagi: false, comments: false, class: 'article-footer ' ~ margins.meta_container ~ ' ' ~ section_class }) }}
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{# Block-extended: site footer will only be visible when the template's footer is set to 'default' 
+
+#}
+{% block footer %}
+  {% if template_footer == 'default' %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}

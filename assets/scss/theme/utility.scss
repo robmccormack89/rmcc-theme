@@ -1,6 +1,7 @@
 // breaks the uikit container so we can use fullwidth/expanded containers within narrower containers
 // this requires a custom sass build for uikit to remove the .uk-container .uk-container styling in components/container.scss
-.uk-container-break {
+.gutenberg-editor .uk-container-break,
+.break-wrap .uk-container-break {
   width: 100vw!important;
   position: relative;
   left: 50%;

@@ -1,129 +1,67 @@
+{% import "functions.twig" as functions %}
+
 <!DOCTYPE html>
 <html {{site.language_attributes}}>
 
   <head>
-    <meta charset="{{site.charset}}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    {% block fonts %}
+    <meta charset="{{ site.charset|e('html_attr') }}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="{{ site.theme.link|e('esc_url') }}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url|e('esc_url') }}" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    
+    {% block preloads %}
+      <link rel="preconnect" href="https://picsum.photos">
+      <link rel="dns-prefetch" href="https://picsum.photos">
+      <link rel="preconnect" href="https://i.picsum.photos" crossorigin>
+      <link rel="dns-prefetch" href="https://i.picsum.photos" crossorigin>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
     {% endblock %}
     
-    {{ function('wp_head') }}
+    {{ fn('wp_head') }}
 
     {% block styles %}
     {% endblock %}
     
   </head>
 
-  {% block bodywrap %}
-    <body class="{{body_class}}" data-template="base.twig">
-      
-      <div id="ThemePreload" class="theme-preload"></div>
-      
-      {% do action('rmcc_before_header') %}
+  <body class="{{ body_class }}">
+    
+    {% if theme_config.theme_preloader %}
+      <div id="Preloader" class="preloader"></div>
+    {% endif %}
 
-      {% block header %}
-        <header class="uk-section uk-section-small uk-background-muted">
-          <div class="uk-container uk-container-expand">
-            Sorry, nothing to display here...
-          </div>
-        </header>
+    {% block header %}
+      {{ functions.site_header(_context) }}
+    {% endblock %}
+    
+    <main id="Main" role="main">
+      {% block main %}
+        Sorry, nothing to display here...
       {% endblock %}
-      {% include 'mobile-nav.twig' %}
-      
-      {% do action('rmcc_after_header') %}
-      
-      <main role="main" id="MainContent">
-        {% block contentwrap %}
-          <section class="content-wrap uk-section uk-section-small">
-            <div class="content-container uk-container">
-              {% block content %}
-                Sorry, nothing to display here...
-              {% endblock %}
-            </div>
-          </section>
-        {% endblock %}
-      </main>
-      
-      {% do action('rmcc_before_footer') %}
-      
-      {% block footer %}
-        <footer class="the-footer">
-          {% include 'footer-bottom.twig' %}
-        </footer>
-      {% endblock %}
-      
-      {% do action('rmcc_after_footer') %}
-      
-      {{ function('wp_footer') }}
-      
-      {% block scripts %}
+    </main>
+    
+    {% block footer %}
+      {% include '_footer.twig' %}
+    {% endblock %}
+    
+    {{ function('wp_footer') }}
+    
+    {% block scripts %}
+      {% if theme_config.theme_preloader %}
         <script type='text/javascript'>
           document.body.onload = function(){
-            document.getElementById("ThemePreload").classList.add("hidden");
+            document.getElementById("Preloader").classList.add("hidden");
             document.getElementsByTagName("BODY")[0].classList.remove("no-overflow");
           }
-          jQuery(function(){
-            var tesimonials_swiper = new Swiper('#slideshow_tesimonials', {
-              slidesPerView: 1,
-              spaceBetween: 0,
-              {% if testimonials_count|length > 1 %}
-              autoplay: {
-                delay: 3000,
-                disableOnInteraction: true,
-              },
-              {% endif %}
-              pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
-              },
-            });
-          });
-          jQuery(function($) {
-            // Select all links with hashes
-            $('a.scroll[href*="#"]')
-              // Remove links that don't actually link to anything
-              .not('[href="#"]')
-              .not('[href="#0"]')
-              .click(function(event) {
-                // On-page links
-                if (
-                  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-                  && 
-                  location.hostname == this.hostname
-                ) {
-                  // Figure out element to scroll to
-                  var target = $(this.hash);
-                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                  // Does a scroll target exist?
-                  if (target.length) {
-                    // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
-                    $('html, body').animate({
-                      scrollTop: target.offset().top
-                    }, 500, function() {
-                      // Callback after animation
-                      // Must change focus!
-                      var $target = $(target);
-                      $target.focus();
-                      if ($target.is(":focus")) { // Checking if the target was focused
-                        return false;
-                      } else {
-                        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                        $target.focus(); // Set focus again
-                      };
-                    });
-                  }
-                }
-              });
-          });
         </script>
-      {% endblock %}
-      
-    </body>
-  {% endblock %}
+      {% endif %}
+    {% endblock %}
+    
+  </body>
 
 </html>

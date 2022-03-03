@@ -10,7 +10,7 @@ $theme_solid_border: 2px solid 1px solid #e5e5e591;
 
 @import "borders.scss";
 @import "fonts.scss";
-// @import "loaders.scss";
+@import "loaders.scss";
 @import "utility.scss";
 
 // 3. import the outside sources. this may be done as a separate file in assets/scss folder, tho woocommerce uses some uikit variables at the moment
@@ -20,5 +20,3 @@ $theme_solid_border: 2px solid 1px solid #e5e5e591;
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-// lightgallery scss
-@import "node_modules/lightgallery.js/src/sass/lightgallery.scss";

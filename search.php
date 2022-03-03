@@ -4,13 +4,19 @@
  *
  * @package Rmcc_Theme
  */
+ 
+// namespace stuff
+namespace Rmcc;
+use Timber\PostQuery;
 
- $context = Timber::context();
- $context['posts'] = new Timber\PostQuery();
- 
- $context['title'] = 'Search results for ' . get_search_query();
- 
- $context['pagination'] = Timber::get_pagination();
- $context['paged'] = $paged;
- 
- Timber::render( array( 'search.twig', 'archive.twig', 'index.twig' ), $context );
+global $snippets;
+
+// templates variable as an array
+$templates = array('search.twig', 'archive.twig');
+
+$context = Theme::context();
+$context['posts'] = new PostQuery();
+
+$context['title'] = $snippets['search_results_title_text'] . ' ' . get_search_query();
+
+Theme::render($templates, $context);

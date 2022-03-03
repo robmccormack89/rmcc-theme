@@ -1,48 +1,50 @@
 <?php
+
 /**
- * The template for displaying general archive pages
- *
- * @package Rmcc_Theme
- */
+*
+* The template for displaying all general archive pages (apart from the main blog posts page)
+*
+* @package Rmcc_Theme
+*
+*/
 
-// sets the template hierarchy
-$templates = array( 'archive.twig', 'index.twig' );
+// namespace stuff
+namespace Rmcc;
+use Timber\PostQuery;
+
+global $snippets;
  
-// sets the main context
-$context = Timber::context();
+// templates variable as an array
+$templates = array('archive.twig', 'blog.twig');
+ 
+// set the contexts
+$context = Theme::context();
+$context['posts'] = new PostQuery();
 
-// set the title variables & reset the template hierarchy for more specificity  
-$context['title'] = 'Archive';
-if ( is_day() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
-} elseif ( is_month() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'M Y' );
-} elseif ( is_year() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
-} elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} elseif ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
-} elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
-} elseif ( is_tax('status') ) {
-	$context['title'] = single_term_title( 'Status: ', false );;
-  array_unshift( $templates, 'archive-live_draws.twig' );
+// modify the title & the templates array depending on the type of archive
+if (is_day()) {
+	$title = $snippets['general_archive_title'] . ': ' . get_the_date('D M Y');
+}
+elseif (is_month()) {
+	$title = $snippets['general_archive_title'] . ': ' . get_the_date('M Y');
+}
+elseif (is_year()) {
+	$title = $snippets['general_archive_title'] . ': ' . get_the_date('Y');
+}
+elseif (is_tag()) {
+	$title = single_tag_title('', false);
+}
+elseif (is_category()) {
+	$title = single_cat_title('', false);
+	array_unshift($templates, 'archive-' . get_query_var('cat') . '.twig');
+}
+elseif (is_post_type_archive()) {
+	$title = post_type_archive_title('', false);
+	array_unshift($templates, 'archive-' . get_post_type() . '.twig');
 }
 
-if (is_post_type_archive( 'entry_lists' )) {
-  $file = get_field('pdf_upload');
-  $context['pdf_upload_url'] = $file['url'];
-}
+// the title, modified for paging
+$context['title'] = (is_paged()) ? $title . ' - Page ' . get_query_var('paged') : $title;
 
-// get the pagination
-$context['pagination'] = Timber::get_pagination();
-$context['paged'] = $paged;
-
-// get the posts variable for looping in our templates. the posts is from the main query
-$context['posts'] = new Timber\PostQuery();
-
-// render the twig templates with the context
-Timber::render( $templates, $context );
+// and render
+Theme::render($templates, $context);

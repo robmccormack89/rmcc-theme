@@ -1,0 +1,608 @@
+{# STYLE MACROS 
+
+  these macros are for doing dynamic inline styles in templates, and be may be reused regularly
+
+#}
+
+{% macro _old_dynamic_gutenberg_styles(template_margin, margins) %}
+  {% if template_margin != 'full' %}
+  
+    {# Logic for applying container's to editor content... 
+    
+      The main_wrap is the primary container for all the content
+      The align_wrap_width should always be 1 step above the main_wrap, except upper limits
+      The alignwide_width should always be 1 step above the align_wrap_width, except upper limits
+      
+      main_wrap: if 'expand', set to 'none'. if 'xlarge', set to '1600px'. if 'large' set to '1400px'. if 'default' set to '1200px'. if 'small' set to '900px'. if 'xsmall' set to '650px'
+      align_wrap_width: if 'expand' set to 'none'. if 'xlarge'||'large', set to '1600px'. if 'default' set to '1400px'. if 'small', set to '1200px'. if 'xsmall', set to '900px'
+      alignwide_width: if 'expand', set to 'none'. if 'xlarge'||'large'||'default', set to '1600px'. if 'small', set to '1400px', if 'xsmall', set to '1200px'
+    
+     #}
+  
+    <style>
+      
+      /* apply uk-container-xsmall styles to descendant elements inside the content editor, except .alignfull & .wp-block-image elements */
+      .gutenberg-editor > *:not(script, style, div.wp-block-image, .alignfull, .uk-container-break)
+      {
+        max-width: {{ margins.main_wrap }}!important;
+      }
+      
+      /* apply uk-container styles to descendant .wp-block-image elements, except ones with .alignfull */
+      .gutenberg-editor > div.wp-block-image:not(.alignfull)
+      {
+        max-width: {{ margins.align_wrap_width }}!important;
+      }
+      
+      /* apply uk-container-xsmall styles to .wp-block-image > alignleft|right|center elements */
+      .gutenberg-editor > div..wp-block-image .aligncenter,
+      .gutenberg-editor > div..wp-block-image .alignleft,
+      .gutenberg-editor > div..wp-block-image .alignright {
+        max-width: {{ margins.main_wrap }}!important;
+      }
+      
+      .gutenberg-editor > .wp-block-image.alignwide {
+        max-width: {{ margins.alignwide_width }}!important;
+      }
+      
+      /* apply fake containers mobile paddings */
+      @media (min-width: 960px) {
+        .gutenberg-editor > *:not(script, style, div.wp-block-image, .alignfull, .uk-container-break),
+        .gutenberg-editor > div.wp-block-image:not(.alignfull)
+        {
+          {% if template_margin == 'expand' %}
+            padding-left: 20px!important;
+            padding-right: 20px!important;
+          {% endif %}
+        }
+      }
+      
+    </style>
+  {% endif %}
+{% endmacro %}
+
+{% macro dynamic_gutenberg_styles(template_margin, margins) %}
+  {% if template_margin != 'full' %}
+    <style>
+      .gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image),
+      .gutenberg-editor > div.wp-block-image .aligncenter,
+      .gutenberg-editor > div.wp-block-image .alignleft,
+      .gutenberg-editor > div.wp-block-image .alignright,
+      .alignleft > .wp-block-button__link,
+      .aligncenter > .wp-block-button__link,
+      .alignright > .wp-block-button__link,
+      .alignleft > audio,
+      .aligncenter > audio,
+      .alignright > audio,
+      .wp-block-audio.alignleft figcaption,
+      .wp-block-audio.aligncenter figcaption,
+      .wp-block-audio.alignright figcaption
+      {
+        max-width: {{ margins.main_wrap }}!important;
+      }
+      .gutenberg-editor > .alignwide {
+        max-width: {{ margins.alignwide_width }}!important;
+      }
+      .gutenberg-editor > div.wp-block-image,
+      .wp-block-button.alignleft,
+      .wp-block-button.aligncenter,
+      .wp-block-button.alignright,
+      .wp-block-audio.alignleft,
+      .wp-block-audio.aligncenter,
+      .wp-block-audio.alignright
+      {
+        max-width: {{ margins.align_wrap_width }}!important;
+      }
+      {% if template_margin == 'expand' %}
+        @media (min-width: 960px) {
+          .gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image),
+          .gutenberg-editor > .alignwide,
+          .gutenberg-editor > div.wp-block-image,
+          .wp-block-button.alignleft,
+          .wp-block-button.aligncenter,
+          .wp-block-button.alignright,
+          .wp-block-audio.alignleft,
+          .wp-block-audio.aligncenter,
+          .wp-block-audio.alignright
+          {
+            width: calc(100% - 40px)!important;
+          }
+        }
+      {% endif %}
+    </style>
+  {% endif %}
+{% endmacro %}
+
+{# SITE HEADER 
+
+  These functions produce the various global site headers (default & transparent)
+
+#}
+
+{% macro site_header(context) %}
+  {% set args = varargs[0] %}
+  
+  {% set transparent = args.transparent|default(false) %}
+  {% set transparent_wrap_class = (transparent) ? 'uk-position-top' : 'uk-position-relative uk-background-default' %}
+  {% set transparent_sticky = (transparent) ? 'cls-inactive: uk-navbar-transparent uk-light;' %}
+  
+  {% set site = context.site %}
+  {% set theme_logo_src = context.theme_logo_src %}
+  {% set has_menu_main = context.has_menu_main %}
+  {% set menu_main = context.menu_main %}
+  {% set has_menu_mobile = context.has_menu_mobile %}
+  {% set menu_mobile = context.menu_mobile %}
+
+  <header class="site-header {{ transparent_wrap_class }}">
+    <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; {{ transparent_sticky }} top: 200">
+      {% include '_header-nav.twig' with {site, theme_logo_src, has_menu_main, menu_main, has_menu_mobile, menu_mobile} %}
+    </div>
+  </header>
+{% endmacro %}
+
+{# SINGULAR DATA 
+
+  These can be used in singular templates or in teases...
+
+#}
+
+{% macro single_title(post, linked = false) %}
+  {% set args = varargs[0] %}
+  
+  {% if post.title %}
+    <div class="{{ args.class|default('article-title') }}">
+      
+      {% if linked and post.link %}
+        <a class="{{ args.link_class|default('uk-link-reset') }}" href="{{ post.link|e('esc_url') }}">
+      {% endif %}
+      
+      <h2 class="{{ args.title_class|default('uk-heading-medium') }}">{{ post.title|e('esc_html') }}</h2>
+        
+      {% if linked and post.link %}
+        </a>
+      {% endif %}
+      
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro single_terms(post, tax, linked = true) %}
+  {% set args = varargs[0] %}
+  
+  {% if post.terms and tax %}
+    {% set terms = post.terms( { query:{ taxonomy:tax, orderby:'name', order: 'ASC', parent: 0, childless: 0, child_of: 0 }}) %}
+    
+    {% if terms is not empty %}
+      <div class="{{ args.class|default('article-terms') }}">
+        {% for term in terms %}
+          <a class="{{ args.link_class|default('uk-link') }}" {% if linked %}href="{{ term.link|e('esc_url') }}"{% endif %}>
+            {{ term.title|e('esc_html') }}
+          </a>{% if not loop.last %}{{ args.separator|default(', ') }}{% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% macro single_meta(author, linked = true, date) %}
+  {% set class = varargs[0] %}
+  
+  {% if author or date %}
+    <div class="{{ class|default('article-meta uk-text-meta') }}">
+      
+      {% if author %}
+        <span class="post-author">
+          {% if linked %}<a href="{{ author.link|e('esc_url') }}">{% endif %}
+            {{ author|e('esc_html') }}
+          {% if linked %}</a>{% endif %}
+        </span>
+      {% endif %}
+      
+      {% if date %}
+        <time class="post-date">
+          {{ date|date('j F Y')|e('esc_html') }}
+        </time>
+      {% endif %}
+      
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{# SINULAR HEADER 
+
+  These are for displaying the singular header (not the site header)
+
+#}
+
+{% macro single_header(post, tax, meta = false) %}
+  {% set args = varargs[0] %}
+  
+  <header class="article-header uk-position-relative {{ args.class|default('uk-section uk-background-default') }}">
+    <div class="{{ args.wrap_class|default('uk-container uk-text-center') }}">
+      
+      {{ _self.single_terms(post, tax, args.terms_linked) }}
+      
+      {{ _self.single_title(post, args.title_linked, {class: '', title_class: meta ? 'uk-heading-medium uk-margin-small-bottom' : 'uk-heading-medium'}) }}
+      
+      {% if meta %}
+        {{ _self.single_meta(post.author, args.meta_linked, post.date) }}
+      {% endif %}
+      
+    </div>
+  </header>
+{% endmacro %}
+
+{% macro single_header_image(post, tax, meta = false) %}
+  {% set args = varargs[0] %}
+  
+  <header class="article-header">
+    <figure class="article-featured-media uk-inline headercover uk-margin-remove">
+      
+      {{ _self.img_element(
+        post.thumbnail, 
+        false, 
+        { 
+          min_height: args.min_height, 
+          class: args.cover_class|default('cover-img'), 
+          w: args.w|default(1290), 
+          h: args.h|default(300), 
+          placeholder: args.placeholder|default('https://via.placeholder.com/1920x400?text=+') 
+        }
+      )}}
+      
+      <div class="uk-position-cover {{ args.overlay|default('uk-overlay uk-overlay-primary') }} overlay-contained">
+        <div class="uk-position-cover {{ args.img_content_container|default('uk-container') }} uk-flex uk-flex-middle uk-flex-{{ args.align|default('center') }} uk-text-{{ args.align|default('center') }}">
+          <div class="{{ args.content_margin|default('uk-margin-remove') }}">
+            
+            {{ _self.single_terms(post, tax, args.terms_linked) }}
+            
+            {{ _self.single_title(post, args.title_linked, {title_class: meta ? 'uk-heading-medium' ~ ' uk-margin-small-bottom' : null }) }}
+            
+            {% if meta %}
+              {{ _self.single_meta(post.author, args.meta_linked, post.date) }}
+            {% endif %}
+            
+          </div>
+        </div>
+        
+        {{ _self.img_caption(post.thumbnail.caption, { class: args.caption_pos|default('uk-position-bottom-center') }) }}
+        
+      </div>
+    </figure>
+  </header>
+{% endmacro %}
+
+{# SINULAR CONTENT 
+
+  These are for displaying the actual post content on singular templates (or the password protected form for password protected posts)
+
+#}
+
+{% macro the_post_content(context) %}
+  {% set args = varargs[0] %}
+  {% set post = context.post %}
+  
+  {% if not fn('post_password_required', post.id) %}
+    <div class="{{ args.content_wrap|default('article-content-editor gutenberg-editor uk-section') }}">
+      {{ post.content }}
+    </div>
+  {% else %}
+    {{ _self.password_protected_form(context, { password_content_wrap: args.password_content_wrap }) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro password_protected_form(context) %}
+  {% import "snippets.twig" as snippets %}
+  {% set args = varargs[0] %}
+  
+  {% set post = context.post %}
+  {% set site = context.site %}
+  
+  <div class="{{ args.password_content_wrap|default('uk-container uk-container-xsmall uk-section') }}">
+    <p class="uk-text-center uk-text-large">{{ snippets.pass_protect_text|e('esc_html') }}</p>
+    <form class="password-form" action="{{ site.site_url|e('esc_url') }}/wp-login.php?action=postpass" method="post">
+      <div class="uk-grid-collapse uk-flex uk-flex-middle" uk-grid>
+        <div class="uk-width-auto uk-visible@m">
+          <label for="pwbox-{{ post.id|e('esc_html') }}" class="uk-form-label uk-margin-small-right">{{ snippets.pass_label|e('esc_html') }}:</label>
+        </div>
+        <div class="uk-width-expand">
+          <input class="password-box uk-input uk-width-expand" name="post_password" id="pwbox-{{ post.id|e('esc_html') }}" type="password" placeholder="{{ snippets.pass_label|e('esc_html') }}" size="20" maxlength="20" />
+        </div>
+        <div class="uk-width-auto">
+          <input class="password-btn uk-button uk-button-primary" type="submit" name="Submit" value="{{ snippets.pass_enter_text|e('esc_html') }}" />
+        </div>
+      </div>
+    </form>
+  </div>
+{% endmacro %}
+
+{# TEASE CONTENT 
+
+  These are for displaying the preview content/password form on teases
+
+#}
+
+{% macro the_tease_content(context) %}
+  {% set args = varargs[0] %}
+  {% set post = context.post %}
+  
+  {% if not fn('post_password_required', post.id) %}
+    {{ _self.tease_excerpt(post) }}
+    {{ _self.tease_readmore(post) }}
+  {% else %}
+    {{ _self.password_protected_form(context, { password_content_wrap: args.password_content_wrap }) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro tease_excerpt(post) %}
+  {% set args = varargs[0] %}
+  <div class="{{ args.class|default('uk-container uk-container-xsmall uk-margin-large uk-text-large') }}">
+    <p class="{{ args.excerpt_class|default('article-excerpt') }}">{{ post.preview.length(args.length|default(22)).force.read_more('') }}</p>
+  </div>
+{% endmacro %}
+
+{% macro tease_readmore(post) %}
+  {% import "snippets.twig" as snippets %}
+  {% set args = varargs[0] %}
+  
+  <div class="{{ args.class|default('uk-flex uk-flex-center') }}">
+    <a href="{{post.link|e('esc_url')}}" class="{{ args.btn_class|default('uk-button uk-button-default uk-button-large') }}">{{ snippets.read_more|e('esc_html') }}</a>
+  </div>
+{% endmacro %}
+
+{# SINULAR FOOTER 
+
+  These are for displaying stuff in the singular footer (not the site footer)
+
+#}
+
+{% macro single_share(post) %}
+  {% import "snippets.twig" as snippets %}
+  {% import "icons.twig" as icons %}
+  
+  <div class="article-share">
+    <div class="social-icons uk-grid-small uk-child-width-auto" uk-grid>
+      <div>{{ snippets.share_text|e('esc_html') }}</div>
+      <div><a href="https://www.facebook.com/sharer.php?u={{ post.link|url_encode }}">{{ icons.fb_icon }}</a></div>
+      <div><a href="https://twitter.com/share?text={{ post.title|url_encode }}&url={{ post.link|url_encode }}">{{ icons.tweet_icon }}</a></div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro single_pagination(post) %}
+  {% import "snippets.twig" as snippets %}
+  {% set pagi_class = fn('post_password_required', context.post.id) ? '' : 'uk-margin-large-top' %}
+
+  {% if (post.next or post.prev) %}
+    <div class="article-pagination {{ pagi_class }}">
+      <div class="uk-child-width-1-2" uk-grid>
+        
+        <div class="prev-article uk-text-left">
+          {% if post.next %}
+            <a href="{{ post.next.link|e('esc_url') }}" class="uk-link-reset">
+              <div class="uk-text-emphasis"><i class="fas fa-angle-left"></i> {{ snippets.prev_post }}</div>
+              <div class="uk-text-small uk-text-italic uk-text-truncate uk-visible@m">{{ post.next.title }}</div>
+            </a>
+          {% endif %}
+          
+        </div>
+        
+        <div class="next-article uk-text-right">
+          {% if post.prev %}
+            <a href="{{ post.prev.link|e('esc_url') }}" class="uk-link-reset">
+              <div class="uk-text-emphasis">{{ snippets.next_post }} <i class="fas fa-angle-right"></i></div>
+              <div class="uk-text-small uk-text-italic uk-text-truncate uk-visible@m">{{ post.prev.title }}</div>
+            </a>
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro single_comments(post) %}
+  {% import "snippets.twig" as snippets %}
+
+  {% if fn('comments_open') and not fn('post_password_required', post.id) %}
+    <div class="article-comments uk-margin-large-top">
+      <div id="CommentBox">
+        {% if post.comments|length > 0 %}
+          <ul class="uk-comment-list uk-margin-medium-bottom">
+            {% for comment in post.comments %}
+              {% include "_comments-nested.twig" %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <div id="CommentForm">
+          <h4>{{ snippets.leave_comment }}</h4>
+          {% include "_comment-form.twig" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro single_footer(context) %}
+  {% set args = varargs[0] %}
+  
+  {% if (args.share and context.theme_config.theme_post_share) or (args.pagi and context.theme_config.theme_post_paging) or (args.comments and context.theme_config.theme_post_comments) %}
+    <footer class="{{ args.class|default('article-footer uk-container uk-container-xsmall uk-section') }}">
+      
+      {% if args.share and context.theme_config.theme_post_share %}
+        {{ _self.single_share(context.post) }}
+      {% endif %}
+
+      {% if args.pagi and context.theme_config.theme_post_paging %}
+        {{ _self.single_pagination(context.post) }}
+      {% endif %}
+
+      {% if args.comments and context.theme_config.theme_post_comments %}
+        {{ _self.single_comments(context.post) }}
+      {% endif %}
+      
+    </footer>
+  {% endif %}
+{% endmacro %}
+
+{# IMG/FEATURED IMAGES 
+
+  These are for getting stuff related to the featured image of a POST obj
+
+#}
+
+{% macro img_element(img_obj, caption = true) %}
+  {% set args = varargs[0] %}
+  
+  {% if img_obj or args.placeholder %}
+  
+    <img 
+    
+    {% if args.placeholder %}
+    data-src="{{ img_obj.src|resize(args.w|default(1200), args.h)|e('esc_url')|default( args.placeholder ) }}" 
+    {% else %}
+    data-src="{{ img_obj.src|resize(args.w|default(1200), args.h)|e('esc_url') }}" 
+    {% endif %}
+    
+    alt="{{ img_obj.alt|e('esc_html') }}" 
+    
+    data-width data-height class="{{ args.class|default('uk-position-relative') }}" 
+    
+    {% if args.min_height %}
+    style="min-height: {{ args.min_height }}px" 
+    {% endif %}
+    
+    uk-img>
+    
+    {% if caption %}
+      {{ _self.img_caption(img_obj.caption) }}
+    {% endif %}
+    
+  {% endif %}
+{% endmacro %}
+
+{% macro featured_img(post_thumbnail) %}
+  {% set args = varargs[0] %}
+  
+  {% if post_thumbnail %}
+    <figure class="article-featured-media uk-position-relative">
+      <div class="{{ args.container|default('uk-container') }}">
+        {{ _self.img_element(post_thumbnail, true, {w: args.w, h: args.h, class: null, caption_class: args.caption_class}) }}
+      </div>
+    </figure>
+  {% endif %}
+{% endmacro %}
+
+{% macro img_caption(caption) %}
+  {% set args = varargs[0] %}
+
+  {% if caption %}
+    <figcaption class="{{ args.class|default('uk-text-small uk-text-center') }}">
+      {{ caption|e('esc_html') }}
+    </figcaption>
+  {% endif %}
+{% endmacro %}
+
+{# ARCHIVE HEADER 
+
+  The archive header functions (not the site header)
+  
+  muted_page_header_with_title() is not specific to archives as it only requires a title string, so can be used anywhere really
+
+#}
+
+{% macro muted_page_header_with_title(title) %}
+  {% set args = varargs[0] %}
+  
+  {% if title %}
+    <header class="{{ args.class|default('archive-header blog-page-header uk-background-muted uk-section uk-section-small uk-text-center') }}">
+      <div class="{{ args.wrap_class|default('uk-container') }}">
+        <h1 class="{{ args.title_class|default('uk-heading-large uk-margin-remove') }}">
+          {{title|e('esc_html')}}
+        </h1>
+      </div>
+    </header>
+  {% endif %}
+{% endmacro %}
+
+{# ARCHIVE GRID/LOOP 
+
+  The archive loop functions (with no posts found text)
+
+#}
+
+{% macro archive_loop_grid(posts) %}
+  {% import "snippets.twig" as snippets %}
+  {% set args = varargs[0] %}
+
+  {% if posts is not empty %}
+    <div class="{{ args.grid_class|default('archive-posts uk-child-width-1-1 uk-grid-divider') }}" uk-grid>
+      {% for post in posts %}
+        {% include args.tease|default(['_tease-'~post.post_type~'.twig', '_tease.twig']) %}
+      {% endfor %}
+    </div>      
+  {% else %}
+    <div class="{{ args.no_posts_class|default('uk-section uk-container') }}">
+      {{ snippets.no_posts_text|e('esc_html') }}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{# ARCHIVE FOOTER 
+
+  The archive footer functions (not the site footer)
+
+#}
+
+{% macro archive_footer(posts) %}
+  {% set args = varargs[0] %}
+  
+  <footer class="{{ args.class|default('archive-footer') }}">
+    {{ _self.archive_pagination(posts.pagination({show_all: false, mid_size: 3, end_size: 2})) }}
+  </footer>
+{% endmacro %}
+
+{% macro archive_pagination(pagination) %}
+  {% import "snippets.twig" as snippets %}
+  {% import "icons.twig" as icons %}
+  {% set args = varargs[0] %}
+  
+  {% if (pagination.next or pagination.prev) %}
+    <nav class="{{ args.class|default('pagination uk-section uk-padding-remove-top') }}">
+      <ul class="{{ args.wrap_class|default('uk-pagination uk-flex-center uk-margin-remove') }}">
+        
+        {% if pagination.prev %}
+          <li>
+            <a href="{{ pagination.prev.link|e('esc_url') }}" class="prev">
+              {{ icons.left_pagi_icon }} {{ snippets.prev_page|e('esc_html') }}
+            </a>
+          </li>
+        {% endif %}
+        
+        {% for page in pagination.pages %}
+          <li>
+            {% if page.link %}
+              <a href="{{ page.link|e('esc_url') }}" class="{{ page.class|e('esc_html') }}">{{ page.title|e('esc_html') }}</a>
+            {% else %}
+              <span class="{{ page.class|e('esc_html') }}">{{ page.title|e('esc_html') }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+        
+        {% if pagination.next %}
+          <li>
+            <a href="{{ pagination.next.link|e('esc_url') }}" class="next">
+              {{ snippets.next_page|e('esc_html') }} {{ icons.right_pagi_icon }}
+            </a>
+          </li>
+        {% endif %}
+        
+      </ul>
+    </nav>
+  {% endif %}
+{% endmacro %}
+
+{# GENERAL 
+
+  Miscellaneous macros & such...
+
+#}

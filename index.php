@@ -1,32 +1,33 @@
 <?php
+
 /**
- * The main index template file, functions at the main archive
- *
- * @package Rmcc_Theme
- */
+*
+* The main blog posts archive template. This template will display the main blog posts archive, whether set to the homepage or any other page
+* This template will also get used when all other template are missing. which shouldnt be the case anyway
+*
+* @package Rmcc_Theme
+*
+*/
 
-// get the main context
-$context = Timber::context();
+// namespace stuff
+namespace Rmcc;
+use Timber\PostQuery;
+use Timber\Post;
+ 
+// templates variable as an array
+$templates = array('blog.twig');
 
-// get the posts from the main query
-$context['posts'] = new Timber\PostQuery();
+// set the contexts
+$context = Theme::context();
+$context['posts'] = new PostQuery();
 
-// get the singular post object from within the loop, for setting the title below
-$post = new Timber\Post();
+// set the title for the blog page
+$post = new Post();
+$title =  get_the_title($post->id);
+if (is_home() && is_front_page()) $title = get_bloginfo('name');
 
-// set the title for blog page etc
-if ( is_home() && is_front_page() ) {
-	$context['title'] =  get_bloginfo( 'name' );
-} else {
-	$context['title'] =  get_the_title( $post->ID );
-};
+// the title, modified for paging
+$context['title'] = (is_paged()) ? $title . ' - Page ' . get_query_var('paged') : $title;
 
-// get the pagination
-$context['pagination'] = Timber::get_pagination();
-$context['paged'] = $paged;
-
-// templates to render
-$templates = array( 'blog.twig' );
-
-// render templates & context
-Timber::render( $templates, $context );
+// and render
+Theme::render($templates, $context);

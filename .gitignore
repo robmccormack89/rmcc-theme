@@ -1,3 +1,5 @@
+_dev
+todo
 node_modules/
 .sass-cache/
 compilation_cache/
@@ -5,3 +7,11 @@ compilation_cache/
 .ftpconfig
 package-lock.json
 composer.lock
+inc/acf/blocks/inc/acf/blocks/.git
+inc/acf/blocks/.ftpconfig
+inc/acf/blocks/.sass-cache/
+inc/acf/blocks/compilation_cache/
+inc/acf/blocks/node_modules/
+inc/acf/blocks/package-lock.json
+inc/acf/blocks/composer.lock
+inc/acf/blocks/todo
