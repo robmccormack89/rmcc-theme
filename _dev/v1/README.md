@@ -1,3 +1,0 @@
-# Rmcc Theme
-
----
