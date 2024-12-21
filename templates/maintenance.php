@@ -1,12 +1,12 @@
 <?php
 /**
-*
-* Template Name: Maintenance Mode Template
-* Template Post Type: page
-*
-* @package Rmcc_Theme
-*
-*/
+ *
+ * Template Name: Maintenance Mode Template
+ * Template Post Type: page
+ *
+ * @package Rmcc_Theme
+ *
+ */
 
 namespace Rmcc;
 
