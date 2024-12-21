@@ -1,12 +1,12 @@
 <?php
 
 /**
-*
-* the Theme main class
-*
-* @package Rmcc_Theme
-*
-*/
+ *
+ * the Theme main class
+ *
+ * @package Rmcc_Theme
+ *
+ */
 
 namespace Rmcc;
 use Timber\Timber;
@@ -24,11 +24,11 @@ Timber::$dirname = array(
 Timber::$autoescape = false;
 
 // Define Theme Child Class
-class Theme extends Timber {
+class Theme extends Timber
+{
 
-  public function __construct() {   
+  public function __construct() {
     parent::__construct();
-    
     global $configs;
 
     // regular theme stuff. calling in the methods below into the wp activation contexts
@@ -42,8 +42,8 @@ class Theme extends Timber {
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
 
     // Remove tags support from posts
-    if($configs['disable_post_tags']){
-      add_action('init', function(){
+    if ($configs['disable_post_tags']) {
+      add_action('init', function () {
         global $wp_taxonomies;
         unregister_taxonomy_for_object_type('post_tag', 'post');
         unset($wp_taxonomies['post_tag']);
@@ -54,10 +54,10 @@ class Theme extends Timber {
   }
 
   /**
-  *
-  * theme & twig setups
-  *
-  */
+   *
+   * theme & twig setups
+   *
+   */
 
   public function theme_supports() {
 
@@ -92,14 +92,14 @@ class Theme extends Timber {
     ));
 
     // Add excerpts to pages
-    if($configs['enable_page_excerpts']) add_post_type_support('page', 'excerpt');
+    if ($configs['enable_page_excerpts']) add_post_type_support('page', 'excerpt');
 
     // escaping on some stuff set to wpautop
     remove_filter('term_description', 'wpautop');
     remove_filter('the_content', 'wpautop');
     remove_filter('the_excerpt', 'wpautop');
     remove_filter('widget_text_content', 'wpautop');
-    remove_filter('widget_custom_html', 'wpautop' , 10, 3 );
+    remove_filter('widget_custom_html', 'wpautop', 10, 3);
 
     // svg supports
     add_action('admin_head', 'fix_svg');
@@ -111,51 +111,51 @@ class Theme extends Timber {
 
     // load theme's translations (to edit, use locoTranslate)
     load_textdomain('rmcc-theme', get_template_directory() . '/languages/en_GB.mo');
-    
+
     // allow icon for yoast breads
-    if(yoast_breadcrumb_enabled()) add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
+    if (yoast_breadcrumb_enabled()) add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
 
     // post comments
-    if(!$configs['enable_post_comments']) add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);
-    if(!$configs['enable_post_comments']) add_action('admin_menu', 'disable_comments_admin_menu');
-    if(!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_admin_menu_redirect');
-    if(!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_dashboard');
-    if(!$configs['enable_post_comments']) add_action('init', 'disable_comments_admin_bar');
+    if (!$configs['enable_post_comments']) add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);
+    if (!$configs['enable_post_comments']) add_action('admin_menu', 'disable_comments_admin_menu');
+    if (!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_admin_menu_redirect');
+    if (!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_dashboard');
+    if (!$configs['enable_post_comments']) add_action('init', 'disable_comments_admin_bar');
 
     // allowed html for wp kses post
-    add_action('init', function(){
+    add_action('init', function () {
       global $allowedposttags;
-      $allowed_atts = array (
-        'align'      => array(),
-        'class'      => array(),
-        'type'       => array(),
-        'id'         => array(),
-        'dir'        => array(),
-        'lang'       => array(),
-        'style'      => array(),
-        'xml:lang'   => array(),
-        'src'        => array(),
-        'alt'        => array(),
-        'href'       => array(),
-        'rel'        => array(),
-        'rev'        => array(),
-        'target'     => array(),
+      $allowed_atts = array(
+        'align' => array(),
+        'class' => array(),
+        'type' => array(),
+        'id' => array(),
+        'dir' => array(),
+        'lang' => array(),
+        'style' => array(),
+        'xml:lang' => array(),
+        'src' => array(),
+        'alt' => array(),
+        'href' => array(),
+        'rel' => array(),
+        'rev' => array(),
+        'target' => array(),
         'novalidate' => array(),
-        'type'       => array(),
-        'value'      => array(),
-        'name'       => array(),
-        'tabindex'   => array(),
-        'action'     => array(),
-        'method'     => array(),
-        'for'        => array(),
-        'width'      => array(),
-        'height'     => array(),
-        'data'       => array(),
-        'title'      => array(),
-        'fuck'      => array(),
-        'rmcc-accordion'      => array(),
-        'rmcc-icon'      => array(),
-        'rmcc-slider'      => array(),
+        'type' => array(),
+        'value' => array(),
+        'name' => array(),
+        'tabindex' => array(),
+        'action' => array(),
+        'method' => array(),
+        'for' => array(),
+        'width' => array(),
+        'height' => array(),
+        'data' => array(),
+        'title' => array(),
+        'fuck' => array(),
+        'rmcc-accordion' => array(),
+        'rmcc-icon' => array(),
+        'rmcc-slider' => array(),
         'rmcc-grid' => array(),
         'rmcc-form' => array(),
         'rmcc-modal' => array(),
@@ -177,8 +177,8 @@ class Theme extends Timber {
         'viewBox' => array(),
         'fill' => array(),
         'd' => array(),
-        'uk-slider-parallax'      => array(),
-        'data-nanogallery2'      => array(),
+        'uk-slider-parallax' => array(),
+        'data-nanogallery2' => array(),
       );
       $allowedposttags['form'] = $allowed_atts;
       $allowedposttags['button'] = $allowed_atts;
@@ -222,7 +222,7 @@ class Theme extends Timber {
 
     // Removes sticky posts from main loop. this function fixes issue of duplicate posts on archives
     //see https://wordpress.stackexchange.com/questions/225015/sticky-post-from-page-2-and-on
-    add_action('pre_get_posts', function($q){
+    add_action('pre_get_posts', function ($q) {
       // Only target the blog page // Only target the main query
       if ($q->is_home() && $q->is_main_query()) {
 
@@ -256,7 +256,7 @@ class Theme extends Timber {
           // Get the sticky posts
           $args = [
             'posts_per_page' => count($stickies),
-            'post__in'       => $stickies
+            'post__in' => $stickies
           ];
           $sticky_posts = get_posts($args);
 
@@ -276,29 +276,38 @@ class Theme extends Timber {
 
     // rmcc (uikit) css
     wp_enqueue_style(
-      'rmcc-theme', get_template_directory_uri() . '/public/css/rmcc.min.css'
+      'rmcc-theme',
+      get_template_directory_uri() . '/public/css/rmcc.min.css'
     );
 
     // rmcc (uikit) js
     wp_enqueue_script(
-      'rmcc-theme', get_template_directory_uri() . '/public/js/rmcc.min.js', '', '', false
+      'rmcc-theme',
+      get_template_directory_uri() . '/public/js/rmcc.min.js',
+      '',
+      '',
+      false
     );
 
     // theme stylesheet (style.css)
     wp_enqueue_style(
-      'rmcc-theme-style', get_stylesheet_uri()
+      'rmcc-theme-style',
+      get_stylesheet_uri()
     );
 
   }
 
-  public function register_post_types() {}
-  public function register_taxonomies() {}
-  public function register_widget_areas() {}
+  public function register_post_types() {
+  }
+  public function register_taxonomies() {
+  }
+  public function register_widget_areas() {
+  }
 
   public function register_navigation_menus() {
     register_nav_menus(array(
-      'main_menu' => _x( 'Main Menu', 'Menus', 'rmcc-theme' ),
-      'iconnav_menu' => _x( 'Iconnav Menu', 'Menus', 'rmcc-theme' ),
+      'main_menu' => _x('Main Menu', 'Menus', 'rmcc-theme'),
+      'iconnav_menu' => _x('Iconnav Menu', 'Menus', 'rmcc-theme'),
     ));
   }
 
@@ -311,9 +320,9 @@ class Theme extends Timber {
     $context['configs'] = $configs;
 
     // wp customizer logo
-    $theme_logo_src = wp_get_attachment_image_url(get_theme_mod('custom_logo') , 'full');
-    if($theme_logo_src){
-      $context['theme']->logo = (object)[];
+    $theme_logo_src = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
+    if ($theme_logo_src) {
+      $context['theme']->logo = (object) [];
       $context['theme']->logo->src = $theme_logo_src;
       $context['theme']->logo->alt = '';
       $context['theme']->logo->w = $configs['logo_width'];
@@ -332,11 +341,11 @@ class Theme extends Timber {
     return $context;
 
   }
-  
+
   public function add_to_twig($twig) {
     $twig->addExtension(new StringLoaderExtension());
     $twig->addExtension(new StringExtension());
-		return $twig;
+    return $twig;
   }
 
 }
