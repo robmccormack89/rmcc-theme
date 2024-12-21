@@ -1,50 +1,215 @@
 <?php
-
 /**
 *
-* The template for displaying all general archive pages (apart from the main blog posts page)
+* The template for displaying general archive pages.
 *
 * @package Rmcc_Theme
 *
 */
 
-// namespace stuff
 namespace Rmcc;
-use Timber\PostQuery;
 
-global $snippets;
- 
-// templates variable as an array
-$templates = array('archive.twig', 'blog.twig');
- 
-// set the contexts
+/*
+Set 
+The
+Base
+Stuff
+Same
+As
+404
+*/
+
+// set templates variable as an array. set as base.twig to start,
+// in case anything goes wrong (wp wants display some template, but our conditionals below dont cover it).
+// we will modify this within conditionals below for diffrent contexts etc...
+$templates = array('base.twig');
+
+// set the context
 $context = Theme::context();
-$context['posts'] = new PostQuery();
 
-// modify the title & the templates array depending on the type of archive
-if (is_day()) {
-	$title = $snippets['general_archive_title'] . ': ' . get_the_date('D M Y');
+// set some context vars.
+// set title & desc to start, in case anything goes wrong.
+// we will modify these within conditionals below for diffrent contexts etc...
+$context['title'] = _x( 'Error: Page not found', '404/Error pages', 'basic-theme' );
+$context['description'] = _x( 'Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below.', '404/Error pages', 'basic-theme' );
+
+/*
+Set
+The
+Contextual
+Stuff
+with
+Conditionals
+*/
+
+// author archives
+if (is_author()) {
+
+  // disable blog filters on author archives
+  $context['configs']['blog_filters'] = false;
+
+  // set templates & vars
+  array_unshift($templates, 'author.twig', 'archive.twig');
+  if (isset($wp_query->query_vars['author'])) {
+  	$author = Theme::get_user($wp_query->query_vars['author']);
+  	$context['author'] = $author;
+  	$context['title'] = _x('Author: ', 'Archives', 'basic-theme') . $author->name();
+    $context['description'] = get_the_archive_description();
+  }
+
 }
+
+// date archives (D)
+elseif (is_day()) {
+
+  // disable blog filters on date archives
+  $context['configs']['blog_filters'] = false;
+
+  // set templates & vars
+  array_unshift($templates, 'day.twig', 'archive.twig');
+	$context['title'] = _x('Day: ', 'Archives', 'basic-theme') . get_the_date('l dS \o\f F Y');
+  $context['description'] = get_the_archive_description();
+
+}
+
+// date archives (M)
 elseif (is_month()) {
-	$title = $snippets['general_archive_title'] . ': ' . get_the_date('M Y');
+
+  // disable blog filters on date archives
+  $context['configs']['blog_filters'] = false;
+
+  // set templates & vars
+  array_unshift($templates, 'month.twig', 'archive.twig');
+	$context['title'] = _x('Month: ', 'Archives', 'basic-theme') . get_the_date('F Y');
+  $context['description'] = get_the_archive_description();
+
 }
+
+// date archives (Y)
 elseif (is_year()) {
-	$title = $snippets['general_archive_title'] . ': ' . get_the_date('Y');
+
+  // disable blog filters on date archives
+  $context['configs']['blog_filters'] = false;
+
+  // set templates & vars
+  array_unshift($templates, 'year.twig', 'archive.twig');
+	$context['title'] = _x('Year: ', 'Archives', 'basic-theme') . get_the_date('Y');
+  $context['description'] = get_the_archive_description();
+
 }
+
+// tag archives
 elseif (is_tag()) {
-	$title = single_tag_title('', false);
+
+  // reset filters config (cats only)
+  $context['configs']['blog_filters_properties'] = (object) [
+    "types" => array(
+      (object) [
+        "parentGroupId" => 'post_cat_group',
+        "subGroupId" => 'post_subcat_group',
+        "subId" => 'post_cat_sub',
+        "formQueryKey" => 'category_name',
+        "taxKey" => 'category',
+        "altQueryKey" => 'cat',
+        "currentQueryVar" => ''
+      ]
+    )
+  ];
+
+  // set templates & vars
+  array_unshift($templates, 'archive_' . get_query_var('tag') . '.twig', 'tag.twig', 'archive.twig');
+  $context['title'] = _x('Tag: ', 'Archives', 'basic-theme') . single_tag_title('', false);
+  $context['description'] = get_the_archive_description();
+
 }
+
+// category archives
 elseif (is_category()) {
-	$title = single_cat_title('', false);
-	array_unshift($templates, 'archive-' . get_query_var('cat') . '.twig');
+
+  // reset filters config (tags only)
+  $context['configs']['blog_filters_properties'] = (object) [
+    "types" => array(
+      (object) [
+        "formQueryKey" => 'tag',
+        "taxKey" => 'post_tag',
+        "altQueryKey" => 'tag_id',
+        "currentQueryVar" => ''
+      ]
+    )
+  ];
+
+  // set templates & vars
+  array_unshift($templates, 'archive_' . get_query_var('cat') . '.twig', 'category.twig', 'archive.twig');
+  $context['title'] = single_cat_title('', false);
+  $context['description'] = get_the_archive_description();
+
 }
+
+// custom taxonomy archives
+elseif(is_tax()){
+
+  // disable blog filters on custom taxonomy archives
+  $context['configs']['blog_filters'] = false;
+
+  // set templates & vars
+  array_unshift($templates, 'custom_taxonomy.twig', 'archive.twig');
+  $context['title'] = single_term_title('', false);
+  $context['description'] = get_the_archive_description();
+
+}
+
+// custom post_type archives
 elseif (is_post_type_archive()) {
-	$title = post_type_archive_title('', false);
-	array_unshift($templates, 'archive-' . get_post_type() . '.twig');
+
+  // disable blog filters on post_type archives.
+  // can reset the blog filters settings here if adding in filters for other taxonomies on a custom type etc. Clever?!!
+  $context['configs']['blog_filters'] = false;
+
+  // set templates & vars
+	array_unshift($templates, 'archive_' . get_post_type() . '.twig', 'custom_post_type.twig', 'archive.twig');
+  $context['title'] = post_type_archive_title('', false);
+  $context['description'] = get_the_archive_description();
+
 }
 
-// the title, modified for paging
-$context['title'] = (is_paged()) ? $title . ' - Page ' . get_query_var('paged') : $title;
+/*
+Set
+An
+Archive
+Object
+So
+We
+Have
+it
+like
+a
+post
+object
+*/
 
-// and render
+// create the archive object, and fill it. i think this is good practice as it matches singular context format like post.title as archive.title
+$context['archive'] = (object) [
+
+  "posts" => $context['posts'],
+
+  "title" => (is_paged()) ? $context['title'] . ' - Page ' . get_query_var('paged') : $context['title'],
+  "description" => $context['description'],
+
+  "thumbnail" => [
+    "src" => false,
+    "alt" => false,
+    "caption" => false
+  ]
+  
+];
+
+/*
+finally
+we
+render
+templates
+and
+context
+*/
+
 Theme::render($templates, $context);

@@ -1,0 +1,25 @@
+<section id="TheLoopContainer" class="rmcc-position-relative">
+  <div id="TheLoop" class="products-loop rmcc-position-relative">
+
+    {% if archive.posts is not empty %}
+
+      <div id="PostsGrid" class="archive-posts filters-container" rmcc-grid>
+        {% for post in archive.posts %}
+          {% include fn('post_password_required', post) ? 'archive/tease_protected.twig' : 'archive/tease.twig' with {post: post, preview_length: 28, w: 1200} %}
+        {% endfor %}
+      </div>
+
+      {% block archive_footer %}
+        {% include 'archive/footer.twig' %}
+      {% endblock %}
+
+    {% else %}
+
+      <div id="PostsGrid">
+        <p class="rmcc-text-emphasis">{{ _x('Sorry, there has been an error locating a resource for your query. Please try again.', 'Archive: No posts', 'basic-theme')|e('esc_html') }}</p>
+      </div>
+
+    {% endif %}
+
+  </div>
+</section>

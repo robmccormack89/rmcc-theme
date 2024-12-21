@@ -1,14 +1,16 @@
 const TerserPlugin = require('terser-webpack-plugin');
 
-var path = require('path');
-
 module.exports = {
+
+    name: 'uikit',
+    mode: "production", // sets mode to miniied production output, the entry file and the path & filename to output file
   
-  optimization: {
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-    })],
-  },
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin({    
+        extractComments: false,
+      })],
+    },
   
   // remove file size warnings from webpack, sets new limit
   performance: {
@@ -16,15 +18,13 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
   },
-    
-  // sets mode to miniied production output, the entry file and the path & filename to output file
-  mode: "production",
+
   entry: {
-    base: './assets/js/srcs/index.js',
+    uikit: './src/js/index.js',
   },
   output: {
     filename: '[name].js',
-    path: __dirname + '/assets/js',
+    path: __dirname + '/public/js',
   },
     
 };

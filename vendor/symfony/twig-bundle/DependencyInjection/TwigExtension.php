@@ -18,10 +18,13 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\Form\AbstractRendererEngine;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Translation\Translator;
+use Symfony\Contracts\Service\ResetInterface;
+use Twig\Environment;
 use Twig\Extension\ExtensionInterface;
 use Twig\Extension\RuntimeExtensionInterface;
 use Twig\Loader\LoaderInterface;
@@ -43,8 +46,18 @@ class TwigExtension extends Extension
         $loader = new PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('twig.php');
 
+        if (method_exists(Environment::class, 'resetGlobals')) {
+            $container->getDefinition('twig')->addTag('kernel.reset', ['method' => 'resetGlobals']);
+        }
+
         if ($container::willBeAvailable('symfony/form', Form::class, ['symfony/twig-bundle'], true)) {
             $loader->load('form.php');
+
+            if (is_subclass_of(AbstractRendererEngine::class, ResetInterface::class)) {
+                $container->getDefinition('twig.form.engine')->addTag('kernel.reset', [
+                    'method' => 'reset',
+                ]);
+            }
         }
 
         if ($container::willBeAvailable('symfony/console', Application::class, ['symfony/twig-bundle'], true)) {

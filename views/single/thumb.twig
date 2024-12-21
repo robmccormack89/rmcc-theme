@@ -1,0 +1,11 @@
+<figure class="rmcc-inline rmcc-margin-remove">
+
+  <img class="cover-img min-height-medium rmcc-height-max-large" src="{{ post.thumbnail.src|resize(1920, 450, 'center')|e('esc_url') }}" alt="{{ post.thumbnail.alt|e('esc_html') }}">
+
+  {% if post.thumbnail.caption %}
+    <figcaption class="rmcc-position-bottom rmcc-text-center rmcc-padding-small rmcc-light rmcc-overlay rmcc-overlay-faint rmcc-text-small">
+      {{ post.thumbnail.caption|e('esc_html') }}
+    </figcaption>
+  {% endif %}
+
+</figure>

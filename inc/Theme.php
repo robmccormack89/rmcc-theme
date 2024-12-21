@@ -1,14 +1,23 @@
 <?php
+
+/**
+*
+* the Theme main class
+*
+* @package Rmcc_Theme
+*
+*/
+
 namespace Rmcc;
 use Timber\Timber;
+use Timber\Site;
 use Twig\Extra\String\StringExtension;
+use Twig\Extension\StringLoaderExtension;
 
 // Define paths to Twig templates
 Timber::$dirname = array(
   'views',
-  'views/archive',
-  'views/macros',
-  'views/single',
+  'views/site',
 );
 
 // set the $autoescape value
@@ -16,113 +25,48 @@ Timber::$autoescape = false;
 
 // Define Theme Child Class
 class Theme extends Timber {
-  
-  public function __construct() {
+
+  public function __construct() {   
     parent::__construct();
     
-    // theme & twig stuff
+    global $configs;
+
+    // regular theme stuff. calling in the methods below into the wp activation contexts
     add_action('after_setup_theme', array($this, 'theme_supports'));
-		add_filter('timber/context', array($this, 'add_to_context'));
-		add_filter('timber/twig', array($this, 'add_to_twig'));
-		add_action('init', array($this, 'register_post_types'));
-		add_action('init', array($this, 'register_taxonomies'));
+    add_filter('timber/context', array($this, 'add_to_context'));
+    add_filter('timber/twig', array($this, 'add_to_twig'));
+    add_action('init', array($this, 'register_post_types'));
+    add_action('init', array($this, 'register_taxonomies'));
     add_action('init', array($this, 'register_widget_areas'));
     add_action('init', array($this, 'register_navigation_menus'));
-    add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets')); // use 'theme_enqueue_assets' for frontend-only
-    
-    // adds svg support to theme
-    add_filter('wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
-    
-      global $wp_version;
-      if ($wp_version !== '4.7.1') {
-        return $data;
-      }
-    
-      $filetype = wp_check_filetype($filename, $mimes);
-    
-      return [
-        'ext'             => $filetype['ext'],
-        'type'            => $filetype['type'],
-        'proper_filename' => $data['proper_filename']
-      ];
-    
-    }, 10, 4 );
-    add_filter('upload_mimes', array($this, 'cc_mime_types'));
-    add_action('admin_head', array($this, 'fix_svg'));
-    
-    global $theme_config;
-    if($theme_config['theme_preloader']){
-      // add custom classes to the body classes, the WP way
-      add_filter('body_class', function($classes){
-      	$stack = $classes;
-      	array_push($stack, 'no-overflow');
-      	return $stack;
+    add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
+
+    // fetch routes
+    if($configs['blog_filters']) add_action('rest_api_init', 'blog_filters_ajax_restapi_routes');
+
+    // Remove tags support from posts
+    if($configs['disable_post_tags']){
+      add_action('init', function(){
+        global $wp_taxonomies;
+        unregister_taxonomy_for_object_type('post_tag', 'post');
+        unset($wp_taxonomies['post_tag']);
+        unregister_taxonomy('post_tag');
       });
     }
-    
-    // removes sticky posts from main loop, this function fixes issue of duplicate posts on archive. see https://wordpress.stackexchange.com/questions/225015/sticky-post-from-page-2-and-on
-    add_action('pre_get_posts', function ($q) {
-      
-      // Only target the blog page // Only target the main query
-      if ($q->is_home() && $q->is_main_query()) {
-        
-        // Remove sticky posts
-        $q->set('ignore_sticky_posts', 1);
-    
-        // Get the sticky posts array
-        $stickies = get_option('sticky_posts');
-    
-        // Make sure we have stickies before continuing, else, bail
-        if (!$stickies) {
-          return;
-        }
-    
-        // Great, we have stickies, lets continue
-        // Lets remove the stickies from the main query
-        $q->set('post__not_in', $stickies);
-    
-        // Lets add the stickies to page one via the_posts filter
-        if ($q->is_paged()) {
-          return;
-        }
-    
-        add_filter('the_posts', function ($posts, $q) use ($stickies) {
-          
-          // Make sure we only target the main query
-          if (!$q->is_main_query()) {
-            return $posts;
-          }
-    
-          // Get the sticky posts
-          $args = [
-            'posts_per_page' => count($stickies),
-            'post__in'       => $stickies
-          ];
-          $sticky_posts = get_posts($args);
-    
-          // Lets add the sticky posts in front of our normal posts
-          $posts = array_merge($sticky_posts, $posts);
-    
-          return $posts;
-            
-        }, 10, 2);
-        
-      }
-      
-    });
+
   }
-  
-  // svg
-  public function cc_mime_types( $mimes ){
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
-  }
-  public function fix_svg() {
-    echo '<style type="text/css"> .attachment-266x266, .thumbnail img { width: 100%!important; height: auto!important; } </style>';
-  }
-  
-  // theme & twig
+
+  /**
+  *
+  * theme & twig setups
+  *
+  */
+
   public function theme_supports() {
+
+    global $configs;
+
+    // usual theme supports
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
@@ -144,88 +88,317 @@ class Theme extends Timber {
       'caption'
     ));
     add_theme_support('custom-logo', array(
-      'height' => 30,
-      'width' => 261,
+      'height' => $configs['logo_height'],
+      'width' => $configs['logo_width'],
       'flex-width' => true,
       'flex-height' => true
     ));
-    load_theme_textdomain('rmcc-theme', get_template_directory() . '/languages');
-  }
-  public function add_to_twig($twig) {
-    $twig->addExtension(new \Twig_Extension_StringLoader());
-    $twig->addExtension(new StringExtension());
-		return $twig;
-  }
-  public function add_to_context($context) {
-    $context['site'] = new \Timber\Site;
 
-    // get the wp logo
-    $theme_logo_id = get_theme_mod( 'custom_logo' );
-    $theme_logo_url = wp_get_attachment_image_url( $theme_logo_id , 'full' );
-    $context['theme_logo_src'] = $theme_logo_url;
+    // Add excerpts to pages
+    if($configs['enable_page_excerpts']) add_post_type_support('page', 'excerpt');
+
+    // escaping on some stuff set to wpautop
+    remove_filter('term_description', 'wpautop');
+    remove_filter('the_content', 'wpautop');
+    remove_filter('the_excerpt', 'wpautop');
+    remove_filter('widget_text_content', 'wpautop');
+    remove_filter('widget_custom_html', 'wpautop' , 10, 3 );
+
+    // svg supports
+    add_action('admin_head', 'fix_svg');
+    add_filter('wp_check_filetype_and_ext', 'check_filetype', 10, 4);
+    add_filter('upload_mimes', 'cc_mime_types');
+
+    // uikit active nav items
+    add_filter('nav_menu_css_class', 'rmcc_active_menu_items', 10, 2);
+
+    // load theme's translations (to edit, use locoTranslate)
+    load_textdomain('basic-theme', get_template_directory() . '/languages/en_GB.mo');
     
-    // menu register & args
-    $main_menu_args = array( 'depth' => 3 );
-    $context['menu_main'] = new \Timber\Menu( 'main_menu', $main_menu_args );
-    $context['menu_mobile'] = new \Timber\Menu( 'mobile_menu', $main_menu_args );
-    $context['has_menu_main'] = has_nav_menu( 'main_menu' );
-    $context['has_menu_mobile'] = has_nav_menu( 'mobile_menu' );
-    
-    // acf options
-    $context['options'] = get_fields('option');
-    
-    global $snippets;
-    // some nice image ids: 1015, 1036, 1038, 1041, 1042, 1044, 1045, 1051, 1056, 1057, 1067, 1069, 1068, 1078, 1080, 1083, 10
-    $context['default_theme_img_id'] = $snippets['default_theme_img_id'];
-    $context['default_theme_img'] = 'https://picsum.photos/id/' . $snippets['default_theme_img_id'] . '/1920/800';
-    
-    global $theme_config;
-    $context['theme_config'] = $theme_config;
-    
-    // return context
-    return $context;    
+    // allow icon for yoast breads
+    if(yoast_breadcrumb_enabled()) add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
+
+    // post comments
+    if(!$configs['enable_post_comments']) add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);
+    if(!$configs['enable_post_comments']) add_action('admin_menu', 'disable_comments_admin_menu');
+    if(!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_admin_menu_redirect');
+    if(!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_dashboard');
+    if(!$configs['enable_post_comments']) add_action('init', 'disable_comments_admin_bar');
+
+    // allowed html for wp kses post
+    add_action('init', function(){
+      global $allowedposttags;
+      $allowed_atts = array (
+        'align'      => array(),
+        'class'      => array(),
+        'type'       => array(),
+        'id'         => array(),
+        'dir'        => array(),
+        'lang'       => array(),
+        'style'      => array(),
+        'xml:lang'   => array(),
+        'src'        => array(),
+        'alt'        => array(),
+        'href'       => array(),
+        'rel'        => array(),
+        'rev'        => array(),
+        'target'     => array(),
+        'novalidate' => array(),
+        'type'       => array(),
+        'value'      => array(),
+        'name'       => array(),
+        'tabindex'   => array(),
+        'action'     => array(),
+        'method'     => array(),
+        'for'        => array(),
+        'width'      => array(),
+        'height'     => array(),
+        'data'       => array(),
+        'title'      => array(),
+        'fuck'      => array(),
+        'rmcc-accordion'      => array(),
+        'rmcc-icon'      => array(),
+        'rmcc-slider'      => array(),
+        'rmcc-grid' => array(),
+        'rmcc-form' => array(),
+        'rmcc-modal' => array(),
+        'rmcc-toggle' => array(),
+        'hidden' => array(),
+        'role' => array(),
+        'aria-live' => array(),
+        'aria-atomic' => array(),
+        'data-status' => array(),
+        'aria-required' => array(),
+        'aria-invalid' => array(),
+        'aria-describedby' => array(),
+        'data-name' => array(),
+        'size' => array(),
+        'role' => array(),
+        'aria-hidden' => array(),
+        'focusable' => array(),
+        'role' => array(),
+        'viewBox' => array(),
+        'fill' => array(),
+        'd' => array(),
+        'uk-slider-parallax'      => array(),
+        'data-nanogallery2'      => array(),
+      );
+      $allowedposttags['form'] = $allowed_atts;
+      $allowedposttags['button'] = $allowed_atts;
+      $allowedposttags['cite'] = $allowed_atts;
+      $allowedposttags['svg'] = $allowed_atts;
+      $allowedposttags['path'] = $allowed_atts;
+      $allowedposttags['label'] = $allowed_atts;
+      $allowedposttags['input'] = $allowed_atts;
+      $allowedposttags['textarea'] = $allowed_atts;
+      $allowedposttags['iframe'] = $allowed_atts;
+      $allowedposttags['script'] = $allowed_atts;
+      $allowedposttags['style'] = $allowed_atts;
+      $allowedposttags['strong'] = $allowed_atts;
+      $allowedposttags['small'] = $allowed_atts;
+      $allowedposttags['table'] = $allowed_atts;
+      $allowedposttags['span'] = $allowed_atts;
+      $allowedposttags['abbr'] = $allowed_atts;
+      $allowedposttags['code'] = $allowed_atts;
+      $allowedposttags['pre'] = $allowed_atts;
+      $allowedposttags['div'] = $allowed_atts;
+      $allowedposttags['img'] = $allowed_atts;
+      $allowedposttags['h1'] = $allowed_atts;
+      $allowedposttags['h2'] = $allowed_atts;
+      $allowedposttags['h3'] = $allowed_atts;
+      $allowedposttags['h4'] = $allowed_atts;
+      $allowedposttags['h5'] = $allowed_atts;
+      $allowedposttags['h6'] = $allowed_atts;
+      $allowedposttags['ol'] = $allowed_atts;
+      $allowedposttags['ul'] = $allowed_atts;
+      $allowedposttags['li'] = $allowed_atts;
+      $allowedposttags['em'] = $allowed_atts;
+      $allowedposttags['hr'] = $allowed_atts;
+      $allowedposttags['br'] = $allowed_atts;
+      $allowedposttags['tr'] = $allowed_atts;
+      $allowedposttags['td'] = $allowed_atts;
+      $allowedposttags['p'] = $allowed_atts;
+      $allowedposttags['a'] = $allowed_atts;
+      $allowedposttags['b'] = $allowed_atts;
+      $allowedposttags['i'] = $allowed_atts;
+    }, 10);
+
+    // Removes sticky posts from main loop. this function fixes issue of duplicate posts on archives
+    //see https://wordpress.stackexchange.com/questions/225015/sticky-post-from-page-2-and-on
+    add_action('pre_get_posts', function($q){
+      // Only target the blog page // Only target the main query
+      if ($q->is_home() && $q->is_main_query()) {
+
+        // Remove sticky posts
+        $q->set('ignore_sticky_posts', 1);
+
+        // Get the sticky posts array
+        $stickies = get_option('sticky_posts');
+
+        // Make sure we have stickies before continuing, else, bail
+        if (!$stickies) {
+          return;
+        }
+
+        // Great, we have stickies, lets continue
+        // Lets remove the stickies from the main query
+        $q->set('post__not_in', $stickies);
+
+        // Lets add the stickies to page one via the_posts filter
+        if ($q->is_paged()) {
+          return;
+        }
+
+        add_filter('the_posts', function ($posts, $q) use ($stickies) {
+
+          // Make sure we only target the main query
+          if (!$q->is_main_query()) {
+            return $posts;
+          }
+
+          // Get the sticky posts
+          $args = [
+            'posts_per_page' => count($stickies),
+            'post__in'       => $stickies
+          ];
+          $sticky_posts = get_posts($args);
+
+          // Lets add the sticky posts in front of our normal posts
+          $posts = array_merge($sticky_posts, $posts);
+
+          return $posts;
+
+        }, 10, 2);
+
+      }
+    });
+
+    //  live search
+    if($configs['live_search']) add_action('wp_ajax_ajax_live_search', 'ajax_live_search');
+    if($configs['live_search']) add_action('wp_ajax_nopriv_ajax_live_search', 'ajax_live_search');
+
   }
+
+  public function theme_enqueue_assets() {
+
+    global $configs;
+
+    // rmcc (uikit) css
+    wp_enqueue_style(
+      'basic-theme', get_template_directory_uri() . '/public/css/rmcc.css'
+    );
+
+    // rmcc (uikit) js
+    wp_enqueue_script(
+      'basic-theme', get_template_directory_uri() . '/public/js/rmcc.js', '', '', false
+    );
+
+    // theme stylesheet (style.css)
+    wp_enqueue_style(
+      'basic-theme-style', get_stylesheet_uri()
+    );
+
+    // globals
+    wp_enqueue_script(
+      'basic-theme-global',
+      get_template_directory_uri() . '/public/js/global.js',
+      '',
+      '1.0.0',
+      true
+    );
+
+    // scroll
+    if($configs['infinite_pagination']){
+      wp_enqueue_script(
+        'basic-theme-scroll',
+        get_template_directory_uri() . '/public/js/scroll.js',
+        '',
+        '1.0.0',
+        true
+      );
+    }
+
+    // filters
+    if($configs['blog_filters']){
+      wp_enqueue_script(
+        'basic-theme-filters',
+        get_template_directory_uri() . '/public/js/filters.js',
+        '',
+        '1.0.0',
+        true
+      );
+    }
+
+    if($configs['live_search']){
+
+      // live search
+      wp_enqueue_script(
+        'basic-theme-search',
+        get_template_directory_uri() . '/public/js/search.jquery.js',
+        array('jquery'),
+        '1.0.0',
+        true
+      );
+
+      // infused with ajax!
+      wp_localize_script(
+        'basic-theme-search',
+        'myAjax',
+        array(
+          'ajaxurl' => admin_url('admin-ajax.php')
+        )
+      );
+      
+    }
+
+  }
+
   public function register_post_types() {}
   public function register_taxonomies() {}
   public function register_widget_areas() {}
+
   public function register_navigation_menus() {
-    global $snippets;
     register_nav_menus(array(
-      'main_menu' => $snippets['main_menu_location_title'],
-      'mobile_menu' => $snippets['mobile_menu_location_title'],
+      'main_menu' => _x( 'Main Menu', 'Menus', 'basic-theme' ),
+      'iconnav_menu' => _x( 'Iconnav Menu', 'Menus', 'basic-theme' ),
     ));
   }
-  public function theme_enqueue_assets() {
-    
-    // google fonts
-    wp_enqueue_style(
-      'noto-font',
-      'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap'
-    );
-    
-    // theme base scripts  (uikit, lightgallery, fonts-awesome)
-    wp_enqueue_script(
-      'rmcc-theme',
-      get_template_directory_uri() . '/assets/js/base.js',
-      '',
-      '',
-      false
-    );
-    
-    // enqueue wp jquery. inline scripts will require this
-    // wp_enqueue_script('jquery');
-    
-    // theme base css (uikit, lightgallery, fonts-awesome)
-    wp_enqueue_style(
-      'rmcc-theme',
-      get_template_directory_uri() . '/assets/css/base.css'
-    );
-    
-    // theme stylesheet (theme)
-    wp_enqueue_style(
-      'rmcc-theme-styles', get_stylesheet_uri()
-    );
-    
+
+  public function add_to_context($context) {
+
+    global $configs;
+
+    // globals for twig
+    $context['site'] = new Site;
+    $context['configs'] = $configs;
+
+    // wp customizer logo
+    $theme_logo_src = wp_get_attachment_image_url(get_theme_mod('custom_logo') , 'full');
+    if($theme_logo_src){
+      $context['theme']->logo = (object)[];
+      $context['theme']->logo->src = $theme_logo_src;
+      $context['theme']->logo->alt = '';
+      $context['theme']->logo->w = $configs['logo_width'];
+      $context['theme']->logo->h = $configs['logo_height'];
+    }
+
+    // add menus to the context
+    $context['menu_main'] = Timber::get_menu('main_menu', array('depth' => 3));
+    $context['menu_iconnav'] = Timber::get_menu('iconnav_menu', array('depth' => 1));
+
+    // conditionals for checking menus
+    $context['has_menu_main'] = has_nav_menu('main_menu');
+    $context['has_menu_iconnav'] = has_nav_menu('iconnav_menu');
+
+    // return context
+    return $context;
+
+  }
+  
+  public function add_to_twig($twig) {
+    $twig->addExtension(new StringLoaderExtension());
+    $twig->addExtension(new StringExtension());
+		return $twig;
   }
 
 }

@@ -1,0 +1,44 @@
+<article id="comment-{{ comment.id|e('esc_html') }}" {{ fn('comment_class', 'rmcc-comment ' ~ (primary_comment ? 'rmcc-comment-primary rmcc-padding-small') ~ ' rmcc-visible-toggle', comment.id) }} tabindex="-1" role="comment">
+
+  <header class="rmcc-comment-header rmcc-position-relative">
+
+    <ul class="rmcc-grid-small rmcc-flex-middle" rmcc-grid>
+
+      <li class="rmcc-width-auto">
+        <img class="rmcc-comment-avatar rmcc-border-circle" alt="{{ comment.author.name|e('esc_html') }} avatar" src="{{ comment.avatar|e('esc_url') }}" width="70" height="70">
+      </li>
+
+      <li class="rmcc-width-expand">
+        <h3 class="rmcc-comment-title rmcc-margin-remove">
+          {{ comment.author.name|e('esc_html') }}
+        </h3>
+        <p class="rmcc-comment-meta rmcc-margin-remove-top">
+          {{ comment.date|e('esc_html') }}, {{ comment.time|e('esc_html') }}
+        </p>
+      </li>
+      
+    </ul>
+
+    {% if comment.author.id == fn('get_current_user_id') %}
+      <div class="rmcc-position-top-right rmcc-position-small rmcc-hidden-hover">
+        <a class="rmcc-link-muted rmcc-margin-left" href="{{ fn('get_edit_comment_link', comment.id)|e('esc_url') }} ">{{ _x('Edit', 'Single: comments', 'basic-theme')|e('esc_html') }}</a>
+      </div>
+    {% endif %}
+
+  </header>
+
+  <div class="rmcc-comment-body rmcc-margin-top">
+
+    {{ comment.content|e('wp_kses_post') }}
+
+    {% if fn('is_user_logged_in') and not disable_replies %}
+      <a class="rmcc-button rmcc-button-small rmcc-button-default rmcc-text-capitalize" href rmcc-toggle="target: #comment-reply-box{{ comment.id|e('esc_html') }}; animation: rmcc-animation-fade">{{ _x('Reply', 'Single: comments', 'basic-theme')|e('esc_html') }}</a>
+      <div id="comment-reply-box{{ comment.id }}" class="rmcc-margin-top" hidden>
+        <h3 class="rmcc-h4">{{ _x('Reply to', 'Single: comments', 'basic-theme')|e('esc_html') }} {{ comment.author.name|e('esc_html') }}</h3>
+        {% include "single/comments/form.twig" %}
+      </div>
+    {% endif %}
+
+  </div>
+  
+</article>
