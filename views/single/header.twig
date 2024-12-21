@@ -7,7 +7,7 @@
         <h1 class="rmcc-article-title">{{ post.title|e('esc_html') }}</h1>
 
         {% block single_metas %}
-          {% if (post.author or post.date or post.categories) and (post.post_type == 'post') %}
+          {% if (post.date or post.categories or fn('get_post_meta', post.id, 'read_time', true)) and (post.post_type == 'post') %}
             {% include 'single/meta.twig' %}
           {% endif %}
         {% endblock %}

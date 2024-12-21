@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-  <article id="{{ post.id|e('esc_html') }}" class="{{ post.class|e('esc_html') }}">
+  <article id="{{ post.id|e('esc_html') }}" class="{{ post.class|e('esc_html') }}" data-template="custom.twig">
     
     {% block single_header %}
     {% endblock %}

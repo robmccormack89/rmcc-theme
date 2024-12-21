@@ -13,21 +13,19 @@
     {% endblock %}
 
     <main id="Main" role="main">
-      <div id="ContentSection">
-        {% block main %}
-          <div class="rmcc-section rmcc-container rmcc-container-xsmall">
+      {% block main %}
+        <div class="rmcc-section rmcc-container rmcc-container-xsmall">
 
-            {% if title %}
-              <h1>{{ title|e('esc_html') }}</h1>
-            {% endif %}
+          {% if title %}
+            <h1>{{ title|e('esc_html') }}</h1>
+          {% endif %}
 
-            <p>{{ description|default(_x('Sorry, nothing to display here....', 'Base: No content message', 'rmcc-theme'))|e('esc_html') }}</p>
+          <p>{{ description|default(_x('Sorry, nothing to display here....', 'Base: No content message', 'rmcc-theme'))|e('esc_html') }}</p>
 
-            {% include (fn('is_404') or fn('get_post_status', post.id) == 'private') ? 'search_form.twig' ignore missing %}
+          {% include (fn('is_404') or fn('get_post_status', post.id) == 'private') ? 'search_form.twig' ignore missing %}
 
-          </div>
-        {% endblock %}
-      </div>
+        </div>
+      {% endblock %}
     </main>
 
     {% block footer %}
