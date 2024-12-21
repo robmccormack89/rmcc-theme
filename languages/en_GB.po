@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-12-21 15:26+0000\n"
+"PO-Revision-Date: 2024-12-21 17:21+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -37,64 +37,51 @@ msgid ""
 "finding what you want using the search form below."
 msgstr ""
 
-#: archive.php:116
-msgctxt "Archives"
-msgid "Tag: "
+#: views/temp/archive.php:24
+msgctxt "Archive: No posts"
+msgid ""
+"Sorry, there has been an error locating a resource for your query. Please "
+"try again."
 msgstr ""
 
-#: archive.php:104
-msgctxt "Archives"
-msgid "Year: "
+#: views/temp/archive/pagination.php:8
+msgctxt "Archive: pagination"
+msgid "Newer posts"
 msgstr ""
 
-#: archive.php:89
-msgctxt "Archives"
-msgid "Month: "
+#: views/temp/archive/pagination.php:26
+msgctxt "Archive: pagination"
+msgid "Older posts"
 msgstr ""
 
-#: archive.php:74
-msgctxt "Archives"
-msgid "Day: "
-msgstr ""
-
-#: archive.php:58
+#: archive.php:53
 msgctxt "Archives"
 msgid "Author: "
 msgstr ""
 
-#: inc/extra/configs.php:115
-msgctxt "Theme Featured Image - src"
-msgid "https://picsum.photos/1920/1200"
+#: archive.php:64
+msgctxt "Archives"
+msgid "Day: "
 msgstr ""
 
-#: inc/extra/configs.php:116
-msgctxt "Theme Featured Image - alt"
-msgid "Alt"
+#: archive.php:74
+msgctxt "Archives"
+msgid "Month: "
 msgstr ""
 
-#: inc/extra/configs.php:117
-msgctxt "Theme Featured Image - caption"
-msgid "Caption"
+#: archive.php:94
+msgctxt "Archives"
+msgid "Tag: "
 msgstr ""
 
-#: inc/Theme.php:309
-msgctxt "Menus"
-msgid "Main Menu"
+#: archive.php:84
+msgctxt "Archives"
+msgid "Year: "
 msgstr ""
 
-#: inc/Theme.php:310
-msgctxt "Menus"
-msgid "Iconnav Menu"
-msgstr ""
-
-#: search.php:51
-msgctxt "Search: results"
-msgid "Search results"
-msgstr ""
-
-#: search.php:52
-msgctxt "Search: results"
-msgid "You have searched for:"
+#: views/temp/base.php:23
+msgctxt "Base: No content message"
+msgid "Sorry, nothing to display here...."
 msgstr ""
 
 #: templates/coming-soon.php:4
@@ -105,191 +92,180 @@ msgstr ""
 msgid "Custom Template"
 msgstr ""
 
-#: templates/maintenance.php:4
-msgid "Maintenance Mode Template"
+#: views/temp/site/footer/footer-copyright.php:2
+msgctxt "Footer: back to home"
+msgid "Return to Homepage"
 msgstr ""
 
-#: views/temp/archive/parts/loop.php:23
-msgctxt "Archive: No posts"
-msgid ""
-"Sorry, there has been an error locating a resource for your query. Please "
-"try again."
+#: views/temp/site/footer/footer-copyright.php:2,
+#: views/temp/site/header/nav-offcanvas.php:26
+msgctxt "Footer: copyright"
+msgid "© All Rights Reserved %s"
 msgstr ""
 
-#: views/temp/archive/parts/pagination.php:9
-msgctxt "Archive: pagination"
-msgid "Newer posts"
-msgstr ""
-
-#: views/temp/archive/parts/pagination.php:29
-msgctxt "Archive: pagination"
-msgid "Older posts"
-msgstr ""
-
-#: views/temp/archive/parts/pagination.php:47
-msgctxt "Archive: pagination"
-msgid "End of posts..."
-msgstr ""
-
-#: views/temp/archive/parts/pagination.php:48
-msgctxt "Archive: pagination"
-msgid "No more Posts to load"
-msgstr ""
-
-#: views/temp/archive/parts/tease.php:22
-msgctxt "Tease: date"
-msgid "%s ago"
-msgstr ""
-
-#: views/temp/archive/parts/tease.php:35
-msgctxt "Tease: comments"
-msgid "Comments"
-msgstr ""
-
-#: views/temp/archive/parts/tease.php:55
-msgctxt "Tease: read more"
-msgid "Read more"
-msgstr ""
-
-#: views/temp/base.php:31
-msgctxt "Base: No content message"
-msgid "Sorry, nothing to display here...."
-msgstr ""
-
-#: views/temp/parts/footer.php:14
+#: views/temp/site/footer.php:9
 msgctxt "Footer: to top"
 msgid "Scroll to Top"
 msgstr ""
 
-#: views/temp/parts/password_form.php:3
+#: templates/maintenance.php:4
+msgid "Maintenance Mode Template"
+msgstr ""
+
+#: inc/Theme.php:301
+msgctxt "Menus"
+msgid "Iconnav Menu"
+msgstr ""
+
+#: inc/Theme.php:300
+msgctxt "Menus"
+msgid "Main Menu"
+msgstr ""
+
+#: views/temp/site/password_form.php:30, views/temp/site/password_form.php:31
+msgctxt "Password protected content: button text"
+msgid "Enter"
+msgstr ""
+
+#: views/temp/site/password_form.php:11, views/temp/site/password_form.php:20
+msgctxt "Password protected content: form placeholder"
+msgid "Password"
+msgstr ""
+
+#: views/temp/site/password_form.php:3
 msgctxt "Password protected content: message"
 msgid ""
 "This content is password protected. To view it please enter your password "
 "below:"
 msgstr ""
 
-#: views/temp/parts/password_form.php:11, views/temp/parts/password_form.php:20
-msgctxt "Password protected content: form placeholder"
-msgid "Password"
-msgstr ""
-
-#: views/temp/parts/password_form.php:30, views/temp/parts/password_form.php:31
-msgctxt "Password protected content: button text"
-msgid "Enter"
-msgstr ""
-
-#: views/temp/parts/search_form.php:11, views/temp/parts/_nav-overlay.php:12
-msgctxt "Search: form"
-msgid "Start typing..."
-msgstr ""
-
-#: views/temp/parts/search_form.php:24
+#: views/temp/site/search_form.php:24
 msgctxt "Search: form"
 msgid "Search"
 msgstr ""
 
-#: views/temp/parts/_footer-copyright.php:2,
-#: views/temp/parts/_nav-offcanvas.php:27
-msgctxt "Footer: copyright"
-msgid "© All Rights Reserved %s"
-msgstr ""
-
-#: views/temp/parts/_footer-copyright.php:2
-msgctxt "Footer: back to home"
-msgid "Return to Homepage"
-msgstr ""
-
-#: views/temp/parts/_nav-overlay.php:12
+#: views/temp/site/header/nav-overlay.php:13
 msgctxt "Search: form"
 msgid "Start typing & press enter..."
 msgstr ""
 
-#: views/temp/single/parts/comment.php:28
-msgctxt "Single: comments"
-msgid "Edit"
+#: views/temp/site/header/nav-overlay.php:13,
+#: views/temp/site/search_form.php:11
+msgctxt "Search: form"
+msgid "Start typing..."
 msgstr ""
 
-#: views/temp/single/parts/comment.php:41
-msgctxt "Single: comments"
-msgid "Reply"
+#: search.php:49
+msgctxt "Search: results"
+msgid "Search results"
 msgstr ""
 
-#: views/temp/single/parts/comment.php:43
-msgctxt "Single: comments"
-msgid "Reply to"
+#: search.php:50
+msgctxt "Search: results"
+msgid "You have searched for:"
 msgstr ""
 
-#: views/temp/single/parts/comments.php:3
-msgctxt "Single: comments"
-msgid "Comments"
-msgstr ""
-
-#: views/temp/single/parts/comments.php:36
-msgctxt "Single: comments"
-msgid "Leave a new comment"
-msgstr ""
-
-#: views/temp/single/parts/comment_form.php:16
-msgctxt "Single: comments"
-msgid "Your name"
-msgstr ""
-
-#: views/temp/single/parts/comment_form.php:21
-msgctxt "Single: comments"
-msgid "Your email"
-msgstr ""
-
-#: views/temp/single/parts/comment_form.php:29
-msgctxt "Single: comments"
-msgid "Your website address (including http:// or https://)"
-msgstr ""
-
-#: views/temp/single/parts/comment_form.php:34
-msgctxt "Single: comments"
-msgid "Leave a message..."
-msgstr ""
-
-#: views/temp/single/parts/comment_form.php:40
-msgctxt "Single: comments"
-msgid "Send"
-msgstr ""
-
-#: views/temp/single/parts/comment_form.php:41
-msgctxt "Single: comments"
-msgid "Clear"
-msgstr ""
-
-#: views/temp/single/parts/single_author.php:13
-msgctxt "Single: author"
-msgid "Posted by %s"
-msgstr "Written by %s"
-
-#: views/temp/single/parts/single_author.php:23
+#: views/temp/single/author.php:20
 msgctxt "Single: author"
 msgid "Actions"
 msgstr ""
 
-#: views/temp/single/parts/single_author.php:24
+#: views/temp/single/author.php:21
 msgctxt "Single: author"
 msgid "More articles by this author"
 msgstr ""
 
-#: views/temp/single/parts/single_meta.php:9
+#: views/temp/single/author.php:11
+msgctxt "Single: author"
+msgid "Posted by %s"
+msgstr "Written by %s"
+
+#: views/temp/single/comments/form.php:35
+msgctxt "Single: comments"
+msgid "Clear"
+msgstr ""
+
+#: views/temp/single/comments.php:2
+msgctxt "Single: comments"
+msgid "Comments"
+msgstr ""
+
+#: views/temp/single/comments/comment.php:24
+msgctxt "Single: comments"
+msgid "Edit"
+msgstr ""
+
+#: views/temp/single/comments/form.php:29
+msgctxt "Single: comments"
+msgid "Leave a message..."
+msgstr ""
+
+#: views/temp/single/comments.php:34
+msgctxt "Single: comments"
+msgid "Leave a new comment"
+msgstr ""
+
+#: views/temp/single/comments/comment.php:35
+msgctxt "Single: comments"
+msgid "Reply"
+msgstr ""
+
+#: views/temp/single/comments/comment.php:37
+msgctxt "Single: comments"
+msgid "Reply to"
+msgstr ""
+
+#: views/temp/single/comments/form.php:34
+msgctxt "Single: comments"
+msgid "Send"
+msgstr ""
+
+#: views/temp/single/comments/form.php:18
+msgctxt "Single: comments"
+msgid "Your email"
+msgstr ""
+
+#: views/temp/single/comments/form.php:14
+msgctxt "Single: comments"
+msgid "Your name"
+msgstr ""
+
+#: views/temp/single/comments/form.php:25
+msgctxt "Single: comments"
+msgid "Your website address (including http:// or https://)"
+msgstr ""
+
+#: views/temp/single/meta.php:8
 msgctxt "Single: meta date"
 msgid "%s ago"
 msgstr ""
 
-#: views/temp/single/parts/single_pagination.php:8
+#: views/temp/single/pagination.php:7
 msgctxt "Single: pagination"
 msgid "Newer article"
 msgstr ""
 
-#: views/temp/single/parts/single_pagination.php:20
+#: views/temp/single/pagination.php:18
 msgctxt "Single: pagination"
 msgid "Older article"
 msgstr ""
 
-#: views/temp/single/parts/single_share.php:2
+#: views/temp/single/share.php:1
 msgctxt "Single: share"
 msgid "Share this post:"
+msgstr ""
+
+#: views/temp/archive/tease.php:34
+msgctxt "Tease: comments"
+msgid "Comments"
+msgstr ""
+
+#: views/temp/archive/tease.php:22
+msgctxt "Tease: date"
+msgid "%s ago"
+msgstr ""
+
+#: views/temp/archive/tease.php:54
+msgctxt "Tease: read more"
+msgid "Read more"
 msgstr ""
