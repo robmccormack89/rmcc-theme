@@ -1,12 +1,12 @@
 <?php
 /**
-*
-* The search
-*
-* @package Rmcc_Theme
-*
-*/
- 
+ *
+ * The search
+ *
+ * @package Rmcc_Theme
+ *
+ */
+
 namespace Rmcc;
 
 /*
@@ -30,8 +30,8 @@ $context = Theme::context();
 // set some context vars.
 // set title & desc to start, in case anything goes wrong.
 // we will modify these within conditionals below for diffrent contexts etc...
-$context['title'] = _x( 'Error: Page not found', '404/Error pages', 'rmcc-theme' );
-$context['description'] = _x( 'Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below.', '404/Error pages', 'rmcc-theme' );
+$context['title'] = _x('Error: Page not found', '404/Error pages', 'rmcc-theme');
+$context['description'] = _x('Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below.', '404/Error pages', 'rmcc-theme');
 
 /*
 Set
@@ -42,12 +42,12 @@ with
 Conditionals
 */
 
-if(is_search()){
+if (is_search()) {
 
   // set templates & vars
   array_unshift($templates, 'search.twig', 'archive.twig');
-  $context['title'] = _x( 'Search results', 'Search: results', 'rmcc-theme' );
-  $context['description'] = _x( 'You have searched for:', 'Search: results', 'rmcc-theme' ) . ' "' . get_search_query() . '"';
+  $context['title'] = _x('Search results', 'Search: results', 'rmcc-theme');
+  $context['description'] = _x('You have searched for:', 'Search: results', 'rmcc-theme') . ' "' . get_search_query() . '"';
 
 }
 

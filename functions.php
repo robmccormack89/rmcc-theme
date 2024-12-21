@@ -1,11 +1,11 @@
 <?php
 /**
-*
-* Rmcc Theme functions and definitions...
-*
-* @package Rmcc_Theme
-*
-*/
+ *
+ * Rmcc Theme functions and definitions...
+ *
+ * @package Rmcc_Theme
+ *
+ */
 
 require get_template_directory() . '/inc/extra/helpers.php';
 $configs = require_once(get_template_directory() . '/inc/extra/configs.php');
@@ -22,7 +22,7 @@ require_once get_template_directory() . '/inc/lib/plugin-activation.php';
   timber should be included in packages
 
 */
-if(file_exists($composer_autoload = __DIR__.'/vendor/autoload.php')) require_once $composer_autoload;
+if (file_exists($composer_autoload = __DIR__ . '/vendor/autoload.php')) require_once $composer_autoload;
 
 /* init the main theme class
 
