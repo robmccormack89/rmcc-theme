@@ -1,7 +1,7 @@
 {
   "name": "rmcc-theme",
   "version": "1.0.0",
-  "description": "Wordpress Theme Stuff",
+  "description": "Wordpress Theme",
   "main": "src/js/index.js",
   "style": "style.css",
   "scripts": {
@@ -15,18 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uikit": "^3.14.3",
-    "@fortawesome/fontawesome-free": "^6.1.1",
-    "macy": "^2.5.1",
-    "swiper": "^8.4.5",
-    "infinite-scroll": "^4.0.1",
-    "lg-fullscreen.js": "^1.1.0",
-    "lg-hash.js": "^1.0.0",
-    "lg-share.js": "^1.2.2",
-    "lg-thumbnail.js": "^1.1.0",
-    "lg-zoom.js": "^1.0.1",
-    "lightgallery.js": "^1.1.3",
-    "lightslider": "^1.1.6"
+    "uikit": "^3.21.16"
   },
   "devDependencies": {
 
@@ -35,7 +24,6 @@
     "gulp-wp-pot": "^2.5.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.3",
-    "uikit": "^3.14.3",
     "autoprefixer": "^10.4.4",
     "cssnano": "^5.1.4",
     "gulp-postcss": "^9.0.1",
@@ -71,11 +59,8 @@
     "semver": "^7.6.0",
     "strip-css-comments": "^5.0.0",
     "svgo": "^3.2.0",
-
     "webpack": "^5.70.0",
-    "webpack-cli": "^5.1.4",
-
-    "debounce": "^1.2.0"
+    "webpack-cli": "^5.1.4"
     
   }
 }

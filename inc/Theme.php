@@ -276,26 +276,17 @@ class Theme extends Timber {
 
     // rmcc (uikit) css
     wp_enqueue_style(
-      'rmcc-theme', get_template_directory_uri() . '/public/css/rmcc.css'
+      'rmcc-theme', get_template_directory_uri() . '/public/css/rmcc.min.css'
     );
 
     // rmcc (uikit) js
     wp_enqueue_script(
-      'rmcc-theme', get_template_directory_uri() . '/public/js/rmcc.js', '', '', false
+      'rmcc-theme', get_template_directory_uri() . '/public/js/rmcc.min.js', '', '', false
     );
 
     // theme stylesheet (style.css)
     wp_enqueue_style(
       'rmcc-theme-style', get_stylesheet_uri()
-    );
-
-    // globals
-    wp_enqueue_script(
-      'rmcc-theme-global',
-      get_template_directory_uri() . '/public/js/global.js',
-      '',
-      '1.0.0',
-      true
     );
 
   }
