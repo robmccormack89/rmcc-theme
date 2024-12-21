@@ -1,0 +1,46 @@
+{% if (posts.pagination.next or posts.pagination.prev) %}
+  <div id="themePagination" class="pagination archive-pagination {{ container_class|default('rmcc-margin-large-top') }}" data-template="_pagination.twig">
+    <ul class="rmcc-pagination rmcc-flex-center rmcc-margin-remove">
+
+      {% if posts.pagination.prev %}
+        <li>
+          <a href="{{ posts.pagination.prev.link|e('esc_url') }}" data-link="{{ posts.pagination.prev.link|e('esc_url') }}" class="prev rmcc-animation-toggle">
+            <span class="rmcc-animation-slide-right-small" rmcc-icon="arrow-left"></span> {{ _x('Newer posts', 'Archive: pagination', 'basic-theme')|e('esc_html') }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% for page in posts.pagination.pages %}
+        <li class="{{ ('current' in page.class) ? 'rmcc-active' }}">
+          {% if page.link %}
+            <a href="{{ page.link|e('esc_url') }}" class="{{ page.class|e('esc_html') }}" data-link="{{ page.link|e('esc_url') }}">{{ page.title|e('esc_html') }}</a>
+          {% else %}
+            <span class="{{ page.class|e('esc_html') }}">{{ page.title|e('esc_html') }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+
+      {% if posts.pagination.next %}
+        <li>
+          <a href="{{ posts.pagination.next.link|e('esc_url') }}" data-link="{{ posts.pagination.next.link|e('esc_url') }}" class="next rmcc-animation-toggle">
+            {{ _x('Older posts', 'Archive: pagination', 'basic-theme')|e('esc_html') }} <span class="rmcc-animation-slide-left-small" rmcc-icon="arrow-right"></span>
+          </a>
+        </li>
+      {% endif %}
+
+    </ul>
+  </div>
+{% endif %}
+
+{% if posts.pagination.next and (configs.infinite_pagination) %}
+  <div class="page-load-status">
+    <div class="loader-ellips infinite-scroll-request rmcc-section-small rmcc-padding-remove-bottom">
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+    </div>
+    <p class="infinite-scroll-last rmcc-section-small rmcc-padding-remove-bottom rmcc-margin-remove">{{ _x('End of posts...', 'Archive: pagination', 'basic-theme')|e('esc_html') }}</p>
+    <p class="infinite-scroll-error rmcc-section-small rmcc-padding-remove-bottom rmcc-margin-remove">{{ _x('No more Posts to load', 'Archive: pagination', 'basic-theme')|e('esc_html') }}</p>
+  </div>
+{% endif %}

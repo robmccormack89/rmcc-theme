@@ -1,0 +1,595 @@
+/*!
+Theme Name: Rmcc Theme
+Theme URI: https://github.com/robmccormack89
+Author: RobertMcCormack
+Author URI: https://github.com/robmccormack89
+Description: Rmcc Theme is a fast, clean and modern-looking responsive WooCommerce theme for WordPress. The theme is responsive, super fast, SEO friendly, WPML and RTL ready. This theme is built with frontend-framework UiKit (https://getuikit.com/docs/introduction) & wordpres theme-building framework Timber (https://upstatement.com/timber/). This theme also includes Font Awesome icons set (https://fontawesome.com/icons) & Google Font: Nunito (https://fonts.google.com/specimen/Nunito).
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: rmcc-theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Rmcc Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Rmcc Theme is built using Timber WP https://github.com/timber/timber
+*/
+
+/* 
+*
+* SWIPER GENERAL
+*
+*/
+
+.swiper-container {
+  /* padding-bottom: 30px!important; */
+  z-index: 0!important;
+}
+.swiper-pagination {
+  position: absolute!important;
+  bottom: 0px!important;
+}
+
+/* 
+*
+* SITE FONTS 
+*
+*/
+
+/* base/body font */
+html {
+  font-family: 'Noto Sans', sans-serif;
+  color: #3a3a3a;
+}
+
+/* heading fonts */
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6, .uk-logo {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* navbar font */
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* font weight settings */
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+.uk-text-bold, 
+.uk-label, 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+.uk-button {
+  font-weight: 700;
+}
+
+/* strong, figcaption, a:not(.uk-link-reset) {
+  font-weight: 700;
+} */
+
+/* heading sizes */
+.uk-h1, h1 {
+  font-size: 2.23125rem;
+}
+.uk-h2, h2 {
+  font-size: 1.7rem;
+}
+.uk-h3, h3 {
+  font-size: 1.5rem;
+}
+.uk-h4, h4 {
+  font-size: 1.25rem;
+}
+.uk-h5, h5 {
+  font-size: 1.125rem;
+}
+.uk-h5, h5 {
+  font-size: 1rem;
+}
+@media (min-width: 960px) {
+  .uk-h1, h1 {
+    font-size: 2.2rem;
+  }
+  .uk-h2, h2 {
+    font-size: 1.8rem;
+  }
+  .uk-h3, h3 {
+    font-size: 1.6rem;
+  }
+  .uk-h4, h4 {
+    font-size: 1.4rem;
+  }
+  .uk-h5, h5 {
+    font-size: 1.2rem;
+  }
+  .uk-h6, h6 {
+    font-size: 1rem;
+  }
+}
+
+/* 
+*
+* UIKIT MODS 
+*
+*/
+
+/* overlays */
+.uk-overlay-primary {
+  background: rgb(0 0 0 / 30%);
+}
+.uk-overlay-secondary {
+  background: rgba(34,34,34,.8);
+}
+/* .uk-overlay-secondary .uk-button-primary {
+  background-color: #d11324;
+  color: #fff;
+} */
+
+/* buttons, overlays */
+.uk-button-primary,
+.uk-overlay-primary .uk-button-primary,
+.uk-overlay-secondary .uk-button-primary,
+.uk-light .uk-button-primary {
+  background-color: #d11324;
+  color: #fff;
+}
+
+/* buttons */
+.uk-button {
+  letter-spacing: 1px;
+}
+.uk-button-primary:focus, .uk-button-primary:hover {
+  background-color: #0674b7;
+  color: #fff;
+}
+.uk-button-default {
+  background-color: transparent;
+  border: 1px solid #0e0e0e;
+  color: #0e0e0e;
+}
+.uk-button-large {
+  font-size: 1rem;
+  line-height: 45px;
+  padding: 0 30px;
+  border-width: 2px;
+  border-style: solid;
+  font-weight: 500;
+}
+.uk-button-small {
+  font-size: .875rem;
+  line-height: 35px;
+  padding: 0 20px;
+  border-width: 2px;
+  border-style: solid;
+  font-weight: 500;
+}
+.uk-button-link, .uk-button-link:hover, .uk-button-link:focus {
+  color: #d11324;
+}
+
+/* sections */
+.uk-section-primary {
+  background: #110184;
+}
+
+/* inputs */
+.uk-input:focus, .uk-select:focus, .uk-textarea:focus {
+  border-color: #d11324;
+}
+
+/* headings & text */
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+  color: #0e0e0e;
+}
+.uk-text-emphasis {
+  color: #1d1d1d!important;
+}
+
+/* navbars */
+.uk-navbar-nav>li>span {
+  color: #999;
+}
+.uk-light .uk-navbar-nav>li>a, .uk-light .uk-navbar-nav>li>span {
+  color: #fff;
+}
+.uk-navbar-nav>li>a {
+  text-transform: capitalize;
+}
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+  font-size: 1rem;
+  min-height: auto;
+  padding: 0 15px;
+}
+
+/* containers */
+.uk-container-xsmall {
+  max-width: 650px;
+}
+@media (min-width: 960px){
+  .uk-container-expand {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* links */
+.uk-link, a, .uk-link:hover, .uk-link:focus, a:hover, a:focus {
+  color: #d11324;
+}
+
+/* logos */
+.uk-logo {
+  font-size: 2rem;
+}
+@media only screen and (max-width:959px) {
+  .uk-logo {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* 
+*
+* CUSTOM MODS
+*
+*/
+
+.uk-position-cover-padded {
+  bottom: 35px;
+  left: 35px;
+  right: 35px;
+  top: 35px;
+}
+.padded-outset-border {
+  border: 15px outset #7575751f;
+}
+@media only screen and (max-width:768px) {
+  .uk-position-cover-padded {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .padded-outset-border {
+    border: 15px solid #ffffff00;
+  }
+}
+
+/* 
+*
+* SHOPFIXEDNAV 
+*
+*/
+
+/* 
+*
+* GENERAL STYLES 
+*
+*/
+
+.fat-border-top {
+  border-top: 3px solid #d11324;
+}
+.fat-border-bottom {
+  border-bottom: 3px solid #d11324;
+}
+
+/* feature-links: custom link styling */
+.feature-link {
+  font-weight: 500;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.feature-link:hover {
+  text-decoration: none;
+}
+.feature-link:after {
+  content: '';
+  display: block;
+  border-top: 2px solid;
+  transition: all 250ms;
+}
+.feature-link:hover::after {
+  transform: scaleX(0.8);
+}
+
+/* 
+*
+* IMAGE MODIFIERS
+*
+*/
+
+.cover-img {
+  object-fit: cover;
+  width: 100%;
+}
+.home-cover-img,
+.full-cover-img {
+  min-height: 100vh;
+}
+.img-sepia {
+  filter: sepia(1);
+}
+.img-grey {
+  filter: grayscale(1);
+}
+
+/* 
+*
+* GLOBAL HEADER 
+*
+*/
+
+.header-navbar .uk-navbar-center {
+  z-index: 0;
+}
+
+@media only screen and (max-width:959px) {
+  .header-navbar.uk-navbar-container.uk-section-small {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
+.uk-logo,
+.header-muted .uk-logo,
+.header-muted .uk-sticky-below .uk-logo {
+  color: #0e0e0e;
+  transition: color 150ms;
+}
+.uk-logo:hover, .uk-logo:focus,
+.header-muted .uk-logo:hover, .header-muted .uk-logo:focus,
+.header-muted .uk-sticky-below .uk-logo:hover, .header-muted .uk-sticky-below .uk-logo:focus {
+  color: #d11324;
+}
+.uk-light .uk-logo, .uk-light .uk-logo:hover, .uk-light .uk-logo:focus {
+  color: #fff;
+}
+
+/* header icons styles */
+svg.user {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 2px;
+}
+svg.search, svg.search, svg.basket, svg.basket {
+  fill: currentColor;
+  vertical-align: top;
+}
+.header-icons .uk-navbar-item, 
+.header-icons.uk-navbar-nav>li>a, 
+.header-icons .uk-navbar-toggle {
+  /* color: #d11324; */
+}
+.header-icons .uk-navbar-item:hover, 
+.header-icons .uk-navbar-item:focus, 
+.header-icons.uk-navbar-nav>li>a:hover, 
+.header-icons.uk-navbar-nav>li>a:focus, 
+.header-icons .uk-navbar-toggle:hover,
+.header-icons .uk-navbar-toggle:focus {
+  color: #d11324;
+}
+.uk-light .header-icons .uk-navbar-item, 
+.uk-light .header-icons.uk-navbar-nav>li>a, 
+.uk-light .header-icons .uk-navbar-toggle {
+  color: #fff;
+}
+@media only screen and (max-width:959px) {
+  .header-icons .uk-navbar-item, .header-icons.uk-navbar-nav>li>a, .header-icons .uk-navbar-toggle {
+    padding: 0 10px;
+  }
+}
+
+.site-header {
+  z-index: 3;
+}
+
+/* main nav styling */
+.main-nav a {
+  position: relative;
+}
+.main-nav.uk-navbar-nav>li>a {
+  /* color: #7e7586; */
+  transition: color 150ms;
+}
+.uk-light .main-nav.uk-navbar-nav>li>a, .uk-light .main-nav.uk-navbar-nav>li>a:hover, .uk-light .main-nav.uk-navbar-nav>li>a:focus {
+  color: #fff;
+}
+.main-nav.uk-navbar-nav>li>a:hover, .main-nav.uk-navbar-nav>li>a:focus {
+  color: #d11324;
+}
+.main-nav a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: -3px;
+  background-color: currentColor;
+  height: 2px;
+  transition: opacity .3s, width .3s;
+  opacity: 0;
+}
+.main-nav.uk-navbar-nav>li>a:hover:after {
+  width: calc(100% - 2em);
+  opacity: 1;
+}
+
+/* navbar & sticky styling */
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background: #ffffff;
+}
+@media only screen and (max-width:959px) {
+  .uk-navbar-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.uk-navbar-sticky.uk-section-small {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.uk-navbar-sticky {
+  box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+}
+
+/* mobile header */
+.mobile-slide-navbar .uk-offcanvas-bar {
+  padding: 0;
+  width: 85%;
+  max-width: 500px;
+}
+.mobile-slide-navbar .uk-offcanvas-bar .uk-nav-default>li.current-menu-item>a {
+  color: #3e3e3e;
+  border-left: 3px solid #d11324;
+}
+.mobile-slide-navbar .uk-offcanvas-bar .uk-nav>li>a {
+  padding: 10px 10px;
+}
+.mobile-slide-navbar .uk-nav-default .uk-nav-header {
+  color: #c1c1c1;
+}
+.mobile-slide-navbar .uk-nav-header {
+  background-color: #f9f9f9;
+  padding: 12px 10px;
+  text-transform: uppercase;
+}
+.mobile-slide-navbar .uk-offcanvas-close {
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  color: #c1c1c1;
+}
+.mobile-slide-navbar .uk-offcanvas-bar ul.uk-nav-scr {
+  padding: 0;
+}
+.mobile-slide-navbar .uk-offcanvas-bar .uk-nav-sub a {
+  padding: 10px 10px;
+}
+.mobile-slide-navbar .uk-nav-default .menu-item.uk-open {
+  background-color: #f7f7f7;
+}
+.mobile-slide-navbar .top-search-bar-mobile .uk-search-input {
+  font-size: 0.8rem;
+  border: none;
+  padding-left: 15px;
+}
+.mobile-slide-navbar .top-search-bar-mobile  .uk-search-icon-flip {
+  background-color: #fff;
+  color: #f7f7f7!important;
+}
+.mobile-slide-navbar .uk-nav-parent-icon>.uk-parent>a:after {
+  background: none;
+  content: "";
+  float: right;
+  height: auto;
+  width: auto;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f104";
+  font-size: 18px;
+  color: #c1c1c1;
+}
+.mobile-slide-navbar .uk-nav-parent-icon>.uk-parent.uk-open>a:after {
+  background: none;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f107";
+}
+
+/* 
+*
+* BLOG STYLES 
+*
+*/
+
+/* blog post tease */
+.article-meta>:not(:last-child)::after {
+  content: "•";
+  margin-left: 8px;
+  position: absolute;
+  display: inline-block;
+  font-weight: 700;
+}
+.article-meta>:not(:first-child) {
+  margin-left: 18px;
+}
+.password-btn {
+  margin-left: 4px;
+}
+
+/* 
+*
+* NEW
+*
+*/
+
+.uk-overlay .uk-position-small {
+  margin: 15px!important;
+}
+.uk-width-large {
+  width: 550px;
+}
+@media only screen and (min-device-width:960px) and (max-device-width:1250px) {
+}
+@media only screen and (max-width:360px) {
+  .uk-heading-small {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width:959px) {
+  .cover-content {
+    margin-top: -75px;
+  }
+  .uk-text-lead {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-device-width:940px) and (max-device-width:1085px) {
+}
+@media only screen and (max-width:959px) {
+}
+@media only screen and (max-width:1200px) {
+}
+@media only screen and (max-width:959px) {
+}
+@media only screen and (max-width:959px) {
+}
+
+/* subscribe section form */
+@media (max-width: 959px){
+  .subscribe-section .uk-button {
+    margin-top: 5px;
+    width: 100%;
+  }
+}
+.subscribe-form input {
+  height: 49px!important;
+}
+.subscribe-section .far {
+  color: #d11324;
+}
+
+.headercover.uk-inline {
+	width: 100%!important;
+}

@@ -1,0 +1,36 @@
+<header class="single-header">
+
+  {# singluar title & meta information about the post #}
+  {% block single_title_metas %}
+    <div class="single-title-meta rmcc-section rmcc-section-muted rmcc-section-small rmcc-padding-remove-top">
+      <div class="rmcc-container rmcc-container-xsmall rmcc-margin-small-top rmcc-text-left rmcc-text-center@s">
+
+        {# title #}
+        <h1 class="rmcc-article-title">{{ post.title|e('esc_html') }}</h1>
+
+        {# the meta info #}
+        {% block single_metas %}
+          {% if (post.author or post.date or post.categories) and (post.post_type == 'post') %}
+            {% include 'single_meta.twig' %}
+          {% endif %}
+        {% endblock %}
+
+      </div>
+    </div>
+  {% endblock %}
+
+  {# singular featured image (wide) #}
+  {% block single_thumb %}
+    {% if post.thumbnail %}
+      {% include 'single_thumb.twig' %}
+    {% endif %}
+  {% endblock %}
+
+  {# the breadcrumbs. a global part #}
+  {% block breads %}
+    {% if fn('yoast_breadcrumb_enabled') and not fn('is_front_page') %}
+      {% include 'breads.twig' %}
+    {% endif %}
+  {% endblock %}
+
+</header>

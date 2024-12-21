@@ -1,0 +1,6 @@
+<form id="FiltersForm" action="{{ shop_url|e('esc_url') }}" class="" method="get" role="search">
+  <fieldset class="rmcc-fieldset">
+    {% include 'archive/filters/form/nav.twig' %}
+    {% include 'archive/filters/form/inputs.twig' %}
+  </fieldset>
+</form>

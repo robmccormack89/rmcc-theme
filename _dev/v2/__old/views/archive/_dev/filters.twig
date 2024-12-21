@@ -1,0 +1,62 @@
+<section class="rmcc-margin-medium-bottom">
+
+  <form id="FiltersForm" class action method="get" role="search">
+    <fieldset class="rmcc-fieldset">
+
+      <ul class="rmcc-child-width-1-1" rmcc-grid>
+      
+        <li>
+          <h2>Categoriess</h2>
+          <div id class="rmcc-grid-small rmcc-child-width-auto rmcc-margin-remove rmcc-grid">
+            <label class="rmcc-form-label">
+              <input class="rmcc-checkbox rmcc-border-rounded" type="checkbox" name="category_name" id="15" value="events"> Events
+            </label>
+            <label class="rmcc-form-label">
+              <input class="rmcc-checkbox rmcc-border-rounded has-children" type="checkbox" name="category_name" id="14" value="news"> News 
+            </label>
+          </div>
+        </li>
+
+        <li class="rmcc-hidden">
+          <h2>Sub Categories</h2>
+        </li>
+
+        <li>
+          <h2>Tags</h2>
+          <div id class="rmcc-grid-small rmcc-child-width-auto rmcc-margin-remove rmcc-grid">
+            <label class="rmcc-form-label">
+              <input class="rmcc-checkbox rmcc-border-rounded " type="checkbox" name="tag" id="18" value="eu"> eu
+            </label>
+            <label class="rmcc-form-label">
+              <input class="rmcc-checkbox rmcc-border-rounded " type="checkbox" name="tag" id="17" value="globe"> globe
+            </label>
+            <label class="rmcc-form-label">
+              <input class="rmcc-checkbox rmcc-border-rounded " type="checkbox" name="tag" id="16" value="ireland"> ireland
+            </label>
+          </div>
+        </li>
+
+
+      </ul>
+      
+      <ul class="rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-child-width-auto rmcc-grid-small rmcc-grid" rmcc-grid="">
+
+        <li class="live-search-form-submit rmcc-first-column">
+          <input type="submit" value="Apply" class="rmcc-button rmcc-button-primary rmcc-border-rounded">
+        </li>
+
+        <li class="live-search-form-reset">
+          <input type="reset" value="Clear" class="rmcc-button rmcc-button-default rmcc-border-rounded">
+        </li>
+
+      </ul>
+
+
+    </fieldset>
+  </form>
+
+</section>
+
+  <div id="DemoPostsGrid" class="rmcc-hidden rmcc-margin-medium-top">
+    {% include 'archive/filters/loading_posts.twig' %}
+  </div>

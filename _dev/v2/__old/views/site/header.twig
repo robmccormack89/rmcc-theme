@@ -1,0 +1,29 @@
+<header class="site-header rmcc-background-muted" data-template="header.twig">
+  <nav class="rmcc-navbar-container rmcc-navbar-transparent">
+    <div class="rmcc-container">
+      <div class="rmcc-navbar" rmcc-navbar>
+
+        <div class="rmcc-navbar-left nav-overlay">
+          {% include 'header/nav-left.twig' %}
+        </div>
+
+        <div class="rmcc-navbar-center nav-overlay">
+          {% include 'header/nav-center.twig' %}
+        </div>
+
+        <div class="rmcc-navbar-right nav-overlay">
+          {% include 'header/nav-right.twig' %}
+        </div>
+
+        <div class="nav-overlay rmcc-navbar-left rmcc-flex-1" hidden>
+          {% include 'header/nav-overlay.twig' %}
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+{% if has_menu_main %}
+  {% include 'header/nav-offcanvas.twig' %}
+{% endif %}

@@ -1,0 +1,5 @@
+<p class="rmcc-text-center rmcc-text-small">
+  {{ _x('© All Rights Reserved %s', 'Footer: copyright', 'basic-theme')|format(now|date('Y'))|e('esc_html') }} - <a href="{{ site.link|e('esc_url') }}" rmcc-tooltip="{{ _x('Return to Homepage', 'Footer: back to home', 'basic-theme')|e('esc_html') }}">{{ site.title|e('esc_html') }}</a>
+  <br>
+  Made by <a href="https://github.com/robmccormack89/" rmcc-tooltip="Check me out on github" target="_blank">robmccormack89 <span rmcc-icon="icon: github"></span></a>
+</p>

@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+{% import "functions.twig" as functions %}
+{% import "snippets.twig" as snippets %}
+
+{% block main %}
+  <article class="uk-section">
+    
+    <header class="article-header uk-position-relative uk-container uk-text-center">
+      <h1 class="uk-heading-medium">{{ snippets.error_page_title }}</h1>
+    </header>
+
+    <div class="article-content uk-container uk-container-small uk-section uk-text-center">
+      {{ snippets.error_page_msg }}
+      <div>
+        <a href="/" class="uk-margin-top uk-button uk-button-default uk-button-small">{{ snippets.error_page_return_txt }}</a>
+      </div>
+    </div>
+
+  </article>
+{% endblock %}

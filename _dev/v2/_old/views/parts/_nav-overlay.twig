@@ -1,0 +1,19 @@
+<div class="rmcc-navbar-item rmcc-width-expand">
+  <form id="form_validate_search" class="form_search_main rmcc-search rmcc-search-navbar rmcc-width-1-1 rmcc-position-relative rmcc-inline rmcc-flex rmcc-flex-center" role="search" method="get" action="{{ site.url|e('esc_url') }}" accept-charset="utf-8" novalidate="novalidate">
+    <div class="rmcc-width-1-1 rmcc-position-relative">
+      {# search text input #}
+      <input 
+      id="input_search" 
+      class="rmcc-search-input" 
+      type="text" 
+      name="s" 
+      maxlength="300" 
+      pattern=".*\S+.*" 
+      placeholder="{{ configs.live_search ? _x('Start typing...', 'Search: form', 'basic-theme')|e('esc_html') : _x('Start typing & press enter...', 'Search: form', 'basic-theme')|e('esc_html') }}" 
+      autocomplete="off" 
+      value
+      required />
+    </div>
+  </form>
+</div>
+<a class="rmcc-navbar-toggle" rmcc-close rmcc-toggle="target: .nav-overlay; animation: rmcc-animation-fade" href="#"></a>

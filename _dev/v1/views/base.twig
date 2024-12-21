@@ -1,0 +1,67 @@
+{% import "functions.twig" as functions %}
+
+<!DOCTYPE html>
+<html {{site.language_attributes}}>
+
+  <head>
+    
+    <meta charset="{{ site.charset|e('html_attr') }}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="{{ site.theme.link|e('esc_url') }}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url|e('esc_url') }}" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    
+    {% block preloads %}
+      <link rel="preconnect" href="https://picsum.photos">
+      <link rel="dns-prefetch" href="https://picsum.photos">
+      <link rel="preconnect" href="https://i.picsum.photos" crossorigin>
+      <link rel="dns-prefetch" href="https://i.picsum.photos" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% endblock %}
+    
+    {{ fn('wp_head') }}
+
+    {% block styles %}
+    {% endblock %}
+    
+  </head>
+
+  <body class="{{ body_class }}">
+    
+    {% if theme_config.theme_preloader %}
+      <div id="Preloader" class="preloader"></div>
+    {% endif %}
+
+    {% block header %}
+      {{ functions.site_header(_context) }}
+    {% endblock %}
+    
+    <main id="Main" role="main">
+      {% block main %}
+        Sorry, nothing to display here...
+      {% endblock %}
+    </main>
+    
+    {% block footer %}
+      {% include '_footer.twig' %}
+    {% endblock %}
+    
+    {{ function('wp_footer') }}
+    
+    {% block scripts %}
+      {% if theme_config.theme_preloader %}
+        <script type='text/javascript'>
+          document.body.onload = function(){
+            document.getElementById("Preloader").classList.add("hidden");
+            document.getElementsByTagName("BODY")[0].classList.remove("no-overflow");
+          }
+        </script>
+      {% endif %}
+    {% endblock %}
+    
+  </body>
+
+</html>

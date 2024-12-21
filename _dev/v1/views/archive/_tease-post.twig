@@ -1,0 +1,6 @@
+{% extends "_tease.twig" %}
+{% import "functions.twig" as functions %}
+
+{% block tease_header %}
+  {{ functions.single_header(post, 'category', true, {terms_linked: false, meta_linked: false, title_linked: true, class: 'no-padding'}) }}
+{% endblock %}

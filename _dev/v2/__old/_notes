@@ -1,0 +1,25 @@
+1. plain uikit build
+
+1b. plain uikit build, prefixed with rmcc
+
+  - build custom uikit from scss (gulp style)
+  - place built css into dist/css
+  - prefix built css with 'rmcc' (pnpm prefixium)
+  - rename file to rmcc.css & move to public/css
+  - in uikit.js; replace 'uk-' with 'rmcc-' & dont forget to match case
+  - html classes & attrs can now use custom prefix 'rmcc'
+  - css components will display correctly
+  - js components like sortable & modal will work correctly
+
+1c. plain uikit build, prefixed with rmcc, scoped with rmcc-wrap
+
+  - build custom uikit from scss (gulp style)
+  - place built css into dist/css
+  - prefix built css with 'rmcc' (pnpm prefixium)
+  - scope built css with 'rmcc-wrap' (pnpm scopeium -s "rmcc-wrap")
+  - rename file to rmcc.css & move to public/css/wrap
+  - in uikit.js; replace 'uk-' with 'rmcc-' & dont forget to match case
+  - html classes & attrs can now use custom prefix 'rmcc'
+  - css components will display almost correctly. sortable dragging produces a weird artifact for example.
+  - js components like sortable & modal will work correctly, once the UiKit.container is set & is placed within rmcc-wrap for styling
+  - NB. requires UiKit.container to be set to a class INSIDE the wrap. create an empty div with the container class & place before closing tag of wrap to remove css artifacts

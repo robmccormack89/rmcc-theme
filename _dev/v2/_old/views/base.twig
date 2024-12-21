@@ -1,0 +1,58 @@
+{% block html_head_container %}
+
+  {% include 'html_head.twig' %}
+    {% block styles %}
+    {% endblock %}
+  </head>
+  {% endblock %}
+
+  <body class="{{ body_class }} {{ (configs.animated_preloader) ? 'no-overflow' : 'no-preloader' }}" data-template="base.twig">
+
+    {% if configs.animated_preloader %}
+      <div id="preLoader" class="preloader"></div>
+    {% endif %}
+
+    {% block header %}
+      {% include 'header.twig' %}
+    {% endblock %}
+
+    {# this acts as the base for all templates including 404s #}
+    <main id="Main" role="main">
+      <div id="ContentSection">
+        {% block main %}
+          <div class="rmcc-section rmcc-container rmcc-container-xsmall">
+
+            {# main title #}
+            {% if title %}
+              <h1>{{ title|e('esc_html') }}</h1>
+            {% endif %}
+
+            {# main description or message #}
+            <p>{{ description|default(_x('Sorry, nothing to display here....', 'Base: No content message', 'basic-theme'))|e('esc_html') }}</p>
+
+            {# if it's a 404, include the search form #}
+            {% include (fn('is_404') or fn('get_post_status', post.id) == 'private') ? 'search_form.twig' ignore missing %}
+
+          </div>
+        {% endblock %}
+      </div>
+    </main>
+
+    {% block footer %}
+      {% include 'footer.twig' %}
+    {% endblock %}
+
+    {{ fn('wp_footer') }}
+
+    {% block scripts %}
+    {% endblock %}
+
+    {% if configs.animated_preloader %}
+      <script type='text/javascript'>
+        document.body.addEventListener("load", preloadMe());
+      </script>
+    {% endif %}
+
+  </body>
+
+</html>
