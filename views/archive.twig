@@ -1,39 +1,40 @@
 {% extends "base.twig" %}
 
 {% block styles %}
-  {{ parent() }}
+	{{ parent() }}
 {% endblock %}
 
 {% block main %}
-  <div data-template="archive.twig">
+	<div data-template="archive.twig">
 
-    {% block archive_header %}
-      {% include 'archive/header.twig' %}
-    {% endblock %}
+		{% block archive_header %}
+			{% include 'archive/header.twig' %}
+		{% endblock %}
 
-    {% block archive_content %}
-      <div class="rmcc-section rmcc-container rmcc-container-xsmall">
-        {% block archive_loop %}
-          {% if archive.posts is not empty %}
-            <div class="archive-posts" rmcc-grid>
-              {% for post in archive.posts %}
-                {% include fn('post_password_required', post) ? 'archive/tease_protected.twig' : 'archive/tease.twig' with {post: post, preview_length: 28, w: 1200} %}
-              {% endfor %}
-            </div>
-          {% else %}
-            <p class="rmcc-text-emphasis">{{ _x('Sorry, there has been an error locating a resource for your query. Please try again.', 'Archive: No posts', 'rmcc-theme')|e('esc_html') }}</p>
-          {% endif %}
-        {% endblock %}
-      </div>
-    {% endblock %}
+		{% block archive_content %}
+			<div class="rmcc-section rmcc-container rmcc-container-xsmall">
+				{% block archive_loop %}
+					{% if archive.posts is not empty %}
+						<div class="archive-posts" rmcc-grid>
+							{% for post in archive.posts %}
+								{% include fn('post_password_required', post) ? 'archive/tease_protected.twig' : 'archive/tease.twig' with {post: post, preview_length: 28, w: 1200} %}
+							{% endfor %}
+						</div>
+					{% else %}
+						<p class="rmcc-text-emphasis">{{ _x('Sorry, there has been an error locating a resource for your query. Please try again.', 'Archive: No posts', 'rmcc-theme')|e('esc_html') }}</p>
+					{% endif %}
+				{% endblock %}
+			</div>
+		{% endblock %}
 
-      {% block archive_footer %}
-        {% include 'archive/footer.twig' %}
-      {% endblock %}
+		{% block archive_footer %}
+			{% include 'archive/footer.twig' %}
+		{% endblock %}
 
-  </div>
+	</div>
 {% endblock %}
 
 {% block scripts %}
-  {{ parent() }}
+	{{ parent() }}
 {% endblock %}
+

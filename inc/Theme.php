@@ -24,8 +24,7 @@ Timber::$dirname = array(
 Timber::$autoescape = false;
 
 // Define Theme Child Class
-class Theme extends Timber
-{
+class Theme extends Timber {
 
   public function __construct() {
     parent::__construct();
