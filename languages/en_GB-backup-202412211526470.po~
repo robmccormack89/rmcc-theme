@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-12-21 15:26+0000\n"
+"PO-Revision-Date: 2024-12-21 15:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -262,7 +262,7 @@ msgstr ""
 #: views/temp/single/parts/single_author.php:13
 msgctxt "Single: author"
 msgid "Posted by %s"
-msgstr "Written by %s"
+msgstr ""
 
 #: views/temp/single/parts/single_author.php:23
 msgctxt "Single: author"

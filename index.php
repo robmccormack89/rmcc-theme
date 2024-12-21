@@ -54,20 +54,6 @@ if(is_home()) {
   // reset the title & description from site if blog is on the front page
   if(is_front_page()) {
 
-    // get terms data if query is for a term
-    // if(!empty($configs['live_search_taxes'])){
-    //   foreach ($configs['live_search_taxes'] as $tax) {
-    //     $tax_args = array(
-    //       'fields' => 'all',
-    //       'name__like' => 'Events',
-    //     );
-    //     $tax_items = get_terms($tax, $tax_args);
-    //     if(!empty($tax_items)) $context['result_items'][$tax] = $tax_items; // result_items.category
-    //   }
-    // }
-
-    // print_r($context['result_items']['category']);
-
     $context['title'] = get_bloginfo('name');
     $context['description'] = get_bloginfo('description');
   }

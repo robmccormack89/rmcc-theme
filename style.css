@@ -26,3 +26,6 @@ Basic Theme is built using Timber WP https://github.com/timber/timber
 .rmcc-navbar-item, .rmcc-navbar-toggle {
   font-size: 1rem;
 }
+.rmcc-logo {
+  font-size: 1.5rem;
+}

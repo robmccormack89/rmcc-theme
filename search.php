@@ -43,8 +43,6 @@ Conditionals
 */
 
 if(is_search()){
-  
-  $context['configs']['blog_filters'] = false;
 
   // set templates & vars
   array_unshift($templates, 'search.twig', 'archive.twig');
