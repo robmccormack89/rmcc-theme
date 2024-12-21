@@ -5,7 +5,7 @@
       <time>{{ fn('human_time_diff', fn('get_the_time', 'U'), fn('current_time', 'timestamp'))|e('esc_html') }}</time>
     {% endset %}
     <span class="post-date">
-      <span rmcc-icon="icon: file-edit; ratio: 1"></span> {{ _x('%s ago', 'Single: meta date', 'basic-theme')|e('esc_html')|format(post_dated) }}
+      <span rmcc-icon="icon: file-edit; ratio: 1"></span> {{ _x('%s ago', 'Single: meta date', 'rmcc-theme')|e('esc_html')|format(post_dated) }}
     </span>
   {% endif %}
 

@@ -6,7 +6,7 @@ const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 
 const config = {
-  "text_domain" : "basic-theme",
+  "text_domain" : "rmcc-theme",
   "twig_files"  : "views/**/*.twig",
   // "twig_blocks"  : "inc/acf/blocks/views/**/*.twig",
   "php_files"   : "{*.php,!(vendor|node_modules|_dev|_bin|_woo_one|_woo_two)/**/*.php}", // all php files in all folders incl. root except page-templates

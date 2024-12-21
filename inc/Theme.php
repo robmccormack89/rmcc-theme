@@ -113,7 +113,7 @@ class Theme extends Timber {
     add_filter('nav_menu_css_class', 'rmcc_active_menu_items', 10, 2);
 
     // load theme's translations (to edit, use locoTranslate)
-    load_textdomain('basic-theme', get_template_directory() . '/languages/en_GB.mo');
+    load_textdomain('rmcc-theme', get_template_directory() . '/languages/en_GB.mo');
     
     // allow icon for yoast breads
     if(yoast_breadcrumb_enabled()) add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
@@ -285,22 +285,22 @@ class Theme extends Timber {
 
     // rmcc (uikit) css
     wp_enqueue_style(
-      'basic-theme', get_template_directory_uri() . '/public/css/rmcc.css'
+      'rmcc-theme', get_template_directory_uri() . '/public/css/rmcc.css'
     );
 
     // rmcc (uikit) js
     wp_enqueue_script(
-      'basic-theme', get_template_directory_uri() . '/public/js/rmcc.js', '', '', false
+      'rmcc-theme', get_template_directory_uri() . '/public/js/rmcc.js', '', '', false
     );
 
     // theme stylesheet (style.css)
     wp_enqueue_style(
-      'basic-theme-style', get_stylesheet_uri()
+      'rmcc-theme-style', get_stylesheet_uri()
     );
 
     // globals
     wp_enqueue_script(
-      'basic-theme-global',
+      'rmcc-theme-global',
       get_template_directory_uri() . '/public/js/global.js',
       '',
       '1.0.0',
@@ -310,7 +310,7 @@ class Theme extends Timber {
     // scroll
     if($configs['infinite_pagination']){
       wp_enqueue_script(
-        'basic-theme-scroll',
+        'rmcc-theme-scroll',
         get_template_directory_uri() . '/public/js/scroll.js',
         '',
         '1.0.0',
@@ -321,7 +321,7 @@ class Theme extends Timber {
     // filters
     if($configs['blog_filters']){
       wp_enqueue_script(
-        'basic-theme-filters',
+        'rmcc-theme-filters',
         get_template_directory_uri() . '/public/js/filters.js',
         '',
         '1.0.0',
@@ -333,7 +333,7 @@ class Theme extends Timber {
 
       // live search
       wp_enqueue_script(
-        'basic-theme-search',
+        'rmcc-theme-search',
         get_template_directory_uri() . '/public/js/search.jquery.js',
         array('jquery'),
         '1.0.0',
@@ -342,7 +342,7 @@ class Theme extends Timber {
 
       // infused with ajax!
       wp_localize_script(
-        'basic-theme-search',
+        'rmcc-theme-search',
         'myAjax',
         array(
           'ajaxurl' => admin_url('admin-ajax.php')
@@ -359,8 +359,8 @@ class Theme extends Timber {
 
   public function register_navigation_menus() {
     register_nav_menus(array(
-      'main_menu' => _x( 'Main Menu', 'Menus', 'basic-theme' ),
-      'iconnav_menu' => _x( 'Iconnav Menu', 'Menus', 'basic-theme' ),
+      'main_menu' => _x( 'Main Menu', 'Menus', 'rmcc-theme' ),
+      'iconnav_menu' => _x( 'Iconnav Menu', 'Menus', 'rmcc-theme' ),
     ));
   }
 

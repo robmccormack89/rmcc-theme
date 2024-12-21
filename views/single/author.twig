@@ -8,7 +8,7 @@
     {% set authr_link %}
       <a href="{{ post.author.link|e('esc_url') }}">{{ post.author|e('esc_html') }}</a>
     {% endset %}
-    <h2 class="rmcc-margin-small-bottom rmcc-h4">{{ _x('Posted by %s', 'Single: author', 'basic-theme')|e('esc_html')|format(authr_link) }}</h2>
+    <h2 class="rmcc-margin-small-bottom rmcc-h4">{{ _x('Posted by %s', 'Single: author', 'rmcc-theme')|e('esc_html')|format(authr_link) }}</h2>
     <p class="rmcc-text-small rmcc-text-muted rmcc-margin-remove">{{ post.author.description|e('esc_html') }}</p>
   </li>
 
@@ -17,8 +17,8 @@
       <a href="#" class="rmcc-icon-button rmcc-icon" rmcc-icon="icon:more-vertical"></a>
       <div rmcc-dropdown="mode:click; pos: bottom-right; boundary:#author-wrap">
         <ul class="rmcc-nav rmcc-dropdown-nav">
-          <li class="rmcc-nav-header">{{ _x('Actions', 'Single: author', 'basic-theme')|e('esc_html') }}</li>
-          <li><a href="{{ post.author.link|e('esc_url') }}">{{ _x('More articles by this author', 'Single: author', 'basic-theme')|e('esc_html') }} <span rmcc-icon="icon: arrow-right"></span></a></li>
+          <li class="rmcc-nav-header">{{ _x('Actions', 'Single: author', 'rmcc-theme')|e('esc_html') }}</li>
+          <li><a href="{{ post.author.link|e('esc_url') }}">{{ _x('More articles by this author', 'Single: author', 'rmcc-theme')|e('esc_html') }} <span rmcc-icon="icon: arrow-right"></span></a></li>
         </ul>
       </div>
     </div>

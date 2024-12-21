@@ -1,5 +1,5 @@
 {
-  "name": "basic-theme",
+  "name": "rmcc-theme",
   "version": "1.0.0",
   "description": "Wordpress Theme Stuff",
   "main": "src/js/index.js",

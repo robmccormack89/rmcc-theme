@@ -1,4 +1,4 @@
-<div class="rmcc-margin-right rmcc-text-small">{{ _x('Share this post:', 'Single: share', 'basic-theme')|e('esc_html') }}</div>
+<div class="rmcc-margin-right rmcc-text-small">{{ _x('Share this post:', 'Single: share', 'rmcc-theme')|e('esc_html') }}</div>
 <a href="https://www.facebook.com/sharer.php?u={{ post.link|e('esc_url') }}&t={{ post.title|url_encode }}" class="rmcc-icon-button rmcc-margin-small-right" rmcc-icon="facebook"></a>
 <a href="https://twitter.com/share?url={{ post.link|e('esc_url') }}&text={{ post.title|url_encode }}" class="rmcc-icon-button rmcc-margin-small-right" rmcc-icon="twitter"></a>
 <a href="https://pinterest.com/pin/create/link/?url={{ post.link|e('esc_url') }}{% if post.thumbnail %}&media={{ post.thumbnail.src|e('esc_url') }}{% endif %}&description={{ post.title|url_encode }}" class="rmcc-icon-button" rmcc-icon="pinterest"></a>

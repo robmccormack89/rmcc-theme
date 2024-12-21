@@ -111,9 +111,9 @@ Stuff
 
 // $configs['theme_defaults'] = (object) [
 //   "thumbnail" => [
-//     "src" => _x( 'https://picsum.photos/1920/1200', 'Theme Featured Image - src', 'basic-theme' ),
-//     "alt" => _x( 'Alt', 'Theme Featured Image - alt', 'basic-theme' ),
-//     "caption" => _x( 'Caption', 'Theme Featured Image - caption', 'basic-theme' )
+//     "src" => _x( 'https://picsum.photos/1920/1200', 'Theme Featured Image - src', 'rmcc-theme' ),
+//     "alt" => _x( 'Alt', 'Theme Featured Image - alt', 'rmcc-theme' ),
+//     "caption" => _x( 'Caption', 'Theme Featured Image - caption', 'rmcc-theme' )
 //   ]
 // ];
 

@@ -19,7 +19,7 @@
             <time>{{ fn('human_time_diff', fn('get_the_time', 'U'), fn('current_time', 'timestamp'))|e('esc_html') }}</time>
           {% endset %}
           <span class="post-date rmcc-text-capitalize">
-            <span rmcc-icon="icon: file-edit; ratio: 1"></span> {{ _x('%s ago', 'Tease: date', 'basic-theme')|e('esc_html')|format(_post_dated) }}
+            <span rmcc-icon="icon: file-edit; ratio: 1"></span> {{ _x('%s ago', 'Tease: date', 'rmcc-theme')|e('esc_html')|format(_post_dated) }}
           </span>
         {% endif %}
 
@@ -31,7 +31,7 @@
         
         {% if fn('comments_open')and configs.enable_post_comments and post.comments|length > 0 %}
           <span class="post-comment-count rmcc-text-capitalize">
-            <span rmcc-icon="icon: comments; ratio: 1"></span> {{ post.comments|length|e('esc_html') }} <span>{{ _x('Comments', 'Tease: comments', 'basic-theme')|e('esc_html') }}</span>
+            <span rmcc-icon="icon: comments; ratio: 1"></span> {{ post.comments|length|e('esc_html') }} <span>{{ _x('Comments', 'Tease: comments', 'rmcc-theme')|e('esc_html') }}</span>
           </span>
         {% endif %}
 
@@ -51,7 +51,7 @@
 
   {% block tease_read_more %}
     <a href="{{ post.link|e('esc_url') }}" class="rmcc-button rmcc-button-link rmcc-animation-toggle rmcc-text-capitalize">
-      {{ _x('Read more', 'Tease: read more', 'basic-theme')|e('esc_html') }} <span class="rmcc-animation-slide-left-small" rmcc-icon="arrow-right"></span>
+      {{ _x('Read more', 'Tease: read more', 'rmcc-theme')|e('esc_html') }} <span class="rmcc-animation-slide-left-small" rmcc-icon="arrow-right"></span>
     </a>
   {% endblock %}
 

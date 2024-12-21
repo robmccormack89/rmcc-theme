@@ -1,5 +1,5 @@
-# Copyright (C) 2024 basic-theme
-# This file is distributed under the same license as the basic-theme package.
+# Copyright (C) 2024 rmcc-theme
+# This file is distributed under the same license as the rmcc-theme package.
 msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"

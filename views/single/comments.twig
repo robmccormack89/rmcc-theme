@@ -1,5 +1,5 @@
 {% if post.comments|length > 0 %}
-  <h2 class="rmcc-h3">{{ _x('Comments', 'Single: comments', 'basic-theme')|e('esc_html') }}</h2>
+  <h2 class="rmcc-h3">{{ _x('Comments', 'Single: comments', 'rmcc-theme')|e('esc_html') }}</h2>
   <ul class="rmcc-comment-list rmcc-margin-medium-bottom">
     {% for comment in post.comments %}
       <li>
@@ -31,6 +31,6 @@
 {% endif %}
 
 {% if fn('is_user_logged_in') %}
-  <h2 class="rmcc-h3">{{ _x('Leave a new comment', 'Single: comments', 'basic-theme')|e('esc_html') }}</h2>
+  <h2 class="rmcc-h3">{{ _x('Leave a new comment', 'Single: comments', 'rmcc-theme')|e('esc_html') }}</h2>
   {% include 'single/comments/form.twig' %}
 {% endif %}
