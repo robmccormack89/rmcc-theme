@@ -32,19 +32,4 @@
 
 {% block scripts %}
   {{ parent() }}
-
-  {% if configs.infinite_pagination %}
-    <script type='text/javascript'>
-      if(document.getElementById('themePagination')){
-        window.addEventListener('load', (event) => {
-          archivePagination('.archive-posts', '.item', '.next', '.page-load-status', '.pagination', false, true);
-        });
-      }
-    </script>
-  {% endif %}
-
-  {% if configs.blog_filters and configs.blog_filters_properties.types %}
-    {% include 'archive/filters/scripts.twig' %}
-  {% endif %}
-
 {% endblock %}

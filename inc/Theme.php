@@ -41,9 +41,6 @@ class Theme extends Timber {
     add_action('init', array($this, 'register_navigation_menus'));
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
 
-    // fetch routes
-    if($configs['blog_filters']) add_action('rest_api_init', 'blog_filters_ajax_restapi_routes');
-
     // Remove tags support from posts
     if($configs['disable_post_tags']){
       add_action('init', function(){
@@ -273,15 +270,9 @@ class Theme extends Timber {
       }
     });
 
-    //  live search
-    if($configs['live_search']) add_action('wp_ajax_ajax_live_search', 'ajax_live_search');
-    if($configs['live_search']) add_action('wp_ajax_nopriv_ajax_live_search', 'ajax_live_search');
-
   }
 
   public function theme_enqueue_assets() {
-
-    global $configs;
 
     // rmcc (uikit) css
     wp_enqueue_style(
@@ -306,50 +297,6 @@ class Theme extends Timber {
       '1.0.0',
       true
     );
-
-    // scroll
-    if($configs['infinite_pagination']){
-      wp_enqueue_script(
-        'rmcc-theme-scroll',
-        get_template_directory_uri() . '/public/js/scroll.js',
-        '',
-        '1.0.0',
-        true
-      );
-    }
-
-    // filters
-    if($configs['blog_filters']){
-      wp_enqueue_script(
-        'rmcc-theme-filters',
-        get_template_directory_uri() . '/public/js/filters.js',
-        '',
-        '1.0.0',
-        true
-      );
-    }
-
-    if($configs['live_search']){
-
-      // live search
-      wp_enqueue_script(
-        'rmcc-theme-search',
-        get_template_directory_uri() . '/public/js/search.jquery.js',
-        array('jquery'),
-        '1.0.0',
-        true
-      );
-
-      // infused with ajax!
-      wp_localize_script(
-        'rmcc-theme-search',
-        'myAjax',
-        array(
-          'ajaxurl' => admin_url('admin-ajax.php')
-        )
-      );
-      
-    }
 
   }
 
