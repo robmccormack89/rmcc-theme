@@ -50,6 +50,108 @@ class Theme extends Timber {
       });
     }
 
+    // maintenance mode. when it exists & is not false
+    if(array_key_exists('maintenance_mode', $configs) && !($configs['maintenance_mode'] == false)){
+
+      // when maintenance mode set to true
+      if(is_bool($configs['maintenance_mode']) && $configs['maintenance_mode'] == true){
+        if(!is_user_logged_in()){
+          add_action('template_redirect', array($this, 'maintenance_mode'));
+        }
+      }
+
+      // when maintenance mode set to 'all'
+      if(is_string($configs['maintenance_mode']) && $configs['maintenance_mode'] == 'all'){
+        add_action('template_redirect', array($this, 'maintenance_mode'));
+      }
+
+    }
+
+  }
+
+  public function maintenance_mode($configs) {
+
+    global $configs;
+
+    // when redirect_all_traffic_to_page is OFF
+    if(!(array_key_exists('redirect_all_traffic_to_page', $configs)) || (is_bool($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == false) || (is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == '') ){
+      add_filter('template_include', function(){
+        global $configs;
+        if(!is_front_page()){
+          wp_redirect(esc_url_raw(home_url()));
+          exit;
+        }
+        $templates = array('maintenance.twig');
+        if(array_key_exists('maintenance_template', $configs)) array_unshift($templates, $configs['maintenance_template']);
+        $context = Theme::context();
+        Theme::render($templates, $context);
+      }, 10, 1);
+    }
+
+    // when redirect_all_traffic_to_page is ON
+    if(array_key_exists('redirect_all_traffic_to_page', $configs) && (is_int($configs['redirect_all_traffic_to_page']) || is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] != '')){
+
+      if(is_int($configs['redirect_all_traffic_to_page'])){
+        $_postObj = get_post($configs['redirect_all_traffic_to_page']);
+        if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
+      } elseif(is_string($configs['redirect_all_traffic_to_page'])) {
+        $postObj = get_page_by_slug($configs['redirect_all_traffic_to_page']);
+      }
+
+      if(isset($postObj)){
+        $link = get_permalink($postObj);
+        if(!(is_page($configs['redirect_all_traffic_to_page'])) ){
+          wp_redirect(esc_url_raw($link));
+          exit;
+        }
+      }
+
+      return;
+
+    }
+
+  }
+
+  public function there($configs) {
+
+    global $configs;
+    
+    // when redirect_all_traffic_to_page is OFF
+    if(!(array_key_exists('redirect_all_traffic_to_page', $configs)) || (is_bool($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == false) || (is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == '') ){
+      add_filter('template_include', function(){
+        if(!is_front_page()){
+          wp_redirect(esc_url_raw(home_url()));
+          exit;
+        }
+        $templates = array('maintenance.twig');
+        if(array_key_exists('maintenance_template', $configs)) array_unshift($templates, $configs['maintenance_template']);
+        $context = Theme::context();
+        Theme::render($templates, $context);
+      });
+    }
+
+    // when redirect_all_traffic_to_page is ON
+    if(array_key_exists('redirect_all_traffic_to_page', $configs) && (is_int($configs['redirect_all_traffic_to_page']) || is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] != '')){
+
+      if(is_int($configs['redirect_all_traffic_to_page'])){
+        $_postObj = get_post($configs['redirect_all_traffic_to_page']);
+        if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
+      } elseif(is_string($configs['redirect_all_traffic_to_page'])) {
+        $postObj = get_page_by_slug($configs['redirect_all_traffic_to_page']);
+      }
+
+      if(isset($postObj)){
+        $link = get_permalink($postObj);
+        if(!(is_page($configs['redirect_all_traffic_to_page'])) ){
+          wp_redirect(esc_url_raw($link));
+          exit;
+        }
+      }
+
+      return;
+
+    }
+
   }
 
   /**
@@ -327,6 +429,11 @@ class Theme extends Timber {
       $context['theme']->logo->w = $configs['logo_width'];
       $context['theme']->logo->h = $configs['logo_height'];
     }
+
+    $context['theme']->featured_img = (object) [];
+    $context['theme']->featured_img->src = _x( 'https://picsum.photos/1920/1200', 'Theme Featured Image - src', 'rmcc-theme' );
+    $context['theme']->featured_img->alt = _x( 'Alt', 'Theme Featured Image - alt', 'rmcc-theme' );
+    $context['theme']->featured_img->caption = _x( 'Caption', 'Theme Featured Image - caption', 'rmcc-theme' );
 
     // add menus to the context
     $context['menu_main'] = Timber::get_menu('main_menu', array('depth' => 3));

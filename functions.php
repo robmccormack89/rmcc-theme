@@ -19,14 +19,14 @@ require_once get_template_directory() . '/inc/lib/plugin-activation.php';
 
 /* composer autoloader of classes
 
-  timber should be included in packages
+	timber should be included in packages
 
 */
 if (file_exists($composer_autoload = __DIR__ . '/vendor/autoload.php')) require_once $composer_autoload;
 
 /* init the main theme class
 
-  Timber should be available via composer autoload
+	Timber should be available via composer autoload
 
 */
 if (class_exists('Timber\Timber')) new Rmcc\Theme;

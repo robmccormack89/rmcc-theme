@@ -30,7 +30,6 @@
 
 /* Fading animation */
 .fade {
-
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
@@ -100,11 +99,9 @@
 	.rmcc-background-secondary {
 		background-color: $theme_dark_grey;
 	}
-
 	.demo-text {
 		height: 30px;
 	}
-
 	.demo-text-first {
 		height: 15px;
 		margin-top: 15px;
@@ -127,7 +124,6 @@
 	height: 1em;
 	margin: 10px auto;
 }
-
 .loader-ellips__dot {
 	display: block;
 	width: 1em;
@@ -138,22 +134,18 @@
 	animation-duration: 0.5s;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
-
 	&:nth-child(1) {
 		left: 0;
 		animation-name: reveal;
 	}
-
 	&:nth-child(2) {
 		left: 0;
 		animation-name: slide;
 	}
-
 	&:nth-child(3) {
 		left: 1.5em;
 		animation-name: slide;
 	}
-
 	&:nth-child(4) {
 		left: 3em;
 		animation-name: reveal;
@@ -165,7 +157,6 @@
 .quickloader {
 	border: none;
 }
-
 .quickloader::before {
 	content: "";
 	position: absolute;
@@ -184,7 +175,6 @@
 	animation: spin 1s infinite linear;
 	z-index: 1;
 }
-
 .quickloader::after {
 	content: '';
 	position: absolute;

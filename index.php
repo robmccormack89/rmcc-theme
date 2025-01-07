@@ -1,11 +1,11 @@
 <?php
 /**
- *
- * The main blog template file
- *
- * @package Rmcc_Theme
- *
- */
+	*
+	* The main blog template file
+	*
+	* @package Rmcc_Theme
+	*
+	*/
 
 namespace Rmcc;
 
@@ -53,7 +53,6 @@ if (is_home()) {
 
   // reset the title & description from site if blog is on the front page
   if (is_front_page()) {
-
     $context['title'] = get_bloginfo('name');
     $context['description'] = get_bloginfo('description');
   }
