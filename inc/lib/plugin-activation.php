@@ -9,11 +9,10 @@
 require_once get_template_directory() . '/inc/lib/class-tgm-plugin-activation.php';
 add_action('tgmpa_register', function(){
   $plugins = array(
-    // loco translate
     // array(
-    // 	'name' => 'Loco Translate',
-    // 	'slug' => 'loco-translate',
-    // 	'required' => false
+    //   'name' => 'Loco Translate',
+    //   'slug' => 'loco-translate',
+    //   'required' => false
     // ),
   );
   $config  = array(
@@ -28,5 +27,5 @@ add_action('tgmpa_register', function(){
     'is_automatic' => false, // Automatically activate plugins after installation or not.
     'message' => '' // Message to output right before the plugins table.
   );
-	tgmpa($plugins, $config);
+  tgmpa($plugins, $config);
 });
