@@ -1,11 +1,11 @@
 <?php
 /**
-	*
-	* The main blog template file
-	*
-	* @package Rmcc_Theme
-	*
-	*/
+ *
+ * The main blog template file
+ *
+ * @package Rmcc_Theme
+ *
+ */
 
 namespace Rmcc;
 
