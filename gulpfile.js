@@ -6,13 +6,13 @@ const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 
 const config = {
-  "text_domain" : "rmcc-theme",
-  "twig_files"  : "views/**/*.twig",
-  // "twig_blocks"  : "inc/acf/blocks/views/**/*.twig",
-  "php_files"   : "{*.php,!(vendor|node_modules|_dev|_bin|_woo_one|_woo_two)/**/*.php}", // all php files in all folders incl. root except page-templates
-  "cacheFolder" : "views/temp",
-  // "blocksCacheFolder" : "inc/acf/blocks/views/temp",
-  "destFolder"  : "languages",
+  "text_domain"       : "rmcc-theme",
+  "destFolder"        : "languages",
+  "twig_files"        : "views/**/*.twig",
+  "php_files"         : "{*.php,!(vendor|node_modules|_dev)/**/*.php}",
+  "cacheFolder"       : "views/temp",
+  "twig_blocks"       : "inc/acf/blocks/views/**/*.twig",
+  "blocksCacheFolder" : "inc/acf/blocks/views/temp"
 };
 
 const gettext_regex = {

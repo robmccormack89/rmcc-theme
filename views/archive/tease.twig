@@ -4,7 +4,8 @@
     {% if post.thumbnail %}
       <figure>
         <a title="{{ post.thumbnail.title|e('esc_html') }}" href="{{ post.link|e('esc_url') }}">
-          <img src="{{ post.thumbnail.src|resize(w|default(600), h|default(null), pos|default(null))|e('esc_url') }}" width="{{ w|default(600) }}" alt="{{ post.thumbnail.alt|e('esc_html') }}">
+          <img src="{{ post.thumbnail.src|resize(w|default(600), h|default(null), pos|default(null))|e('esc_url') }}" 
+          width="{{ w|default(600) }}" alt="{{ post.thumbnail.alt|e('esc_html') }}">
         </a>
       </figure>
     {% endif %}

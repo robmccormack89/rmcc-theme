@@ -26,9 +26,12 @@ Timber::$autoescape = false;
 // Define Theme Child Class
 class Theme extends Timber {
 
+  public $configs;
+
   public function __construct() {
     parent::__construct();
     global $configs;
+    $this->configs = $configs;
 
     // regular theme stuff. calling in the methods below into the wp activation contexts
     add_action('after_setup_theme', array($this, 'theme_supports'));
@@ -41,7 +44,7 @@ class Theme extends Timber {
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
 
     // Remove tags support from posts
-    if ($configs['disable_post_tags']) {
+    if ($this->configs['disable_post_tags']) {
       add_action('init', function () {
         global $wp_taxonomies;
         unregister_taxonomy_for_object_type('post_tag', 'post');
@@ -51,17 +54,17 @@ class Theme extends Timber {
     }
 
     // maintenance mode. when it exists & is not false
-    if(array_key_exists('maintenance_mode', $configs) && !($configs['maintenance_mode'] == false)){
+    if(array_key_exists('maintenance_mode', $this->configs) && !($this->configs['maintenance_mode'] == false)){
 
       // when maintenance mode set to true
-      if(is_bool($configs['maintenance_mode']) && $configs['maintenance_mode'] == true){
+      if(is_bool($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == true){
         if(!is_user_logged_in()){
           add_action('template_redirect', array($this, 'maintenance_mode'));
         }
       }
 
       // when maintenance mode set to 'all'
-      if(is_string($configs['maintenance_mode']) && $configs['maintenance_mode'] == 'all'){
+      if(is_string($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == 'all'){
         add_action('template_redirect', array($this, 'maintenance_mode'));
       }
 
@@ -69,80 +72,35 @@ class Theme extends Timber {
 
   }
 
-  public function maintenance_mode($configs) {
-
-    global $configs;
+  public function maintenance_mode() {
 
     // when redirect_all_traffic_to_page is OFF
-    if(!(array_key_exists('redirect_all_traffic_to_page', $configs)) || (is_bool($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == false) || (is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == '') ){
+    if(!(array_key_exists('redirect_all_traffic_to_page', $this->configs)) || (is_bool($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] == false) || (is_string($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] == '') ){
       add_filter('template_include', function(){
-        global $configs;
         if(!is_front_page()){
           wp_redirect(esc_url_raw(home_url()));
           exit;
         }
         $templates = array('maintenance.twig');
-        if(array_key_exists('maintenance_template', $configs)) array_unshift($templates, $configs['maintenance_template']);
+        if(array_key_exists('maintenance_template', $this->configs)) array_unshift($templates, $this->configs['maintenance_template']);
         $context = Theme::context();
         Theme::render($templates, $context);
       }, 10, 1);
     }
 
     // when redirect_all_traffic_to_page is ON
-    if(array_key_exists('redirect_all_traffic_to_page', $configs) && (is_int($configs['redirect_all_traffic_to_page']) || is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] != '')){
+    if(array_key_exists('redirect_all_traffic_to_page', $this->configs) && (is_int($this->configs['redirect_all_traffic_to_page']) || is_string($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] != '')){
 
-      if(is_int($configs['redirect_all_traffic_to_page'])){
-        $_postObj = get_post($configs['redirect_all_traffic_to_page']);
+      if(is_int($this->configs['redirect_all_traffic_to_page'])){
+        $_postObj = get_post($this->configs['redirect_all_traffic_to_page']);
         if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
-      } elseif(is_string($configs['redirect_all_traffic_to_page'])) {
-        $postObj = get_page_by_slug($configs['redirect_all_traffic_to_page']);
+      } elseif(is_string($this->configs['redirect_all_traffic_to_page'])) {
+        $postObj = get_page_by_slug($this->configs['redirect_all_traffic_to_page']);
       }
 
       if(isset($postObj)){
         $link = get_permalink($postObj);
-        if(!(is_page($configs['redirect_all_traffic_to_page'])) ){
-          wp_redirect(esc_url_raw($link));
-          exit;
-        }
-      }
-
-      return;
-
-    }
-
-  }
-
-  public function there($configs) {
-
-    global $configs;
-    
-    // when redirect_all_traffic_to_page is OFF
-    if(!(array_key_exists('redirect_all_traffic_to_page', $configs)) || (is_bool($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == false) || (is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] == '') ){
-      add_filter('template_include', function(){
-        if(!is_front_page()){
-          wp_redirect(esc_url_raw(home_url()));
-          exit;
-        }
-        $templates = array('maintenance.twig');
-        if(array_key_exists('maintenance_template', $configs)) array_unshift($templates, $configs['maintenance_template']);
-        $context = Theme::context();
-        Theme::render($templates, $context);
-      });
-    }
-
-    // when redirect_all_traffic_to_page is ON
-    if(array_key_exists('redirect_all_traffic_to_page', $configs) && (is_int($configs['redirect_all_traffic_to_page']) || is_string($configs['redirect_all_traffic_to_page']) && $configs['redirect_all_traffic_to_page'] != '')){
-
-      if(is_int($configs['redirect_all_traffic_to_page'])){
-        $_postObj = get_post($configs['redirect_all_traffic_to_page']);
-        if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
-      } elseif(is_string($configs['redirect_all_traffic_to_page'])) {
-        $postObj = get_page_by_slug($configs['redirect_all_traffic_to_page']);
-      }
-
-      if(isset($postObj)){
-        $link = get_permalink($postObj);
-        if(!(is_page($configs['redirect_all_traffic_to_page'])) ){
+        if(!(is_page($this->configs['redirect_all_traffic_to_page'])) ){
           wp_redirect(esc_url_raw($link));
           exit;
         }
@@ -161,8 +119,6 @@ class Theme extends Timber {
    */
 
   public function theme_supports() {
-
-    global $configs;
 
     // usual theme supports
     add_theme_support('title-tag');
@@ -186,14 +142,14 @@ class Theme extends Timber {
       'caption'
     ));
     add_theme_support('custom-logo', array(
-      'height' => $configs['logo_height'],
-      'width' => $configs['logo_width'],
+      'height' => $this->configs['logo_height'],
+      'width' => $this->configs['logo_width'],
       'flex-width' => true,
       'flex-height' => true
     ));
 
     // Add excerpts to pages
-    if ($configs['enable_page_excerpts']) add_post_type_support('page', 'excerpt');
+    if ($this->configs['enable_page_excerpts']) add_post_type_support('page', 'excerpt');
 
     // escaping on some stuff set to wpautop
     remove_filter('term_description', 'wpautop');
@@ -217,11 +173,11 @@ class Theme extends Timber {
     if (yoast_breadcrumb_enabled()) add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
 
     // post comments
-    if (!$configs['enable_post_comments']) add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);
-    if (!$configs['enable_post_comments']) add_action('admin_menu', 'disable_comments_admin_menu');
-    if (!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_admin_menu_redirect');
-    if (!$configs['enable_post_comments']) add_action('admin_init', 'disable_comments_dashboard');
-    if (!$configs['enable_post_comments']) add_action('init', 'disable_comments_admin_bar');
+    if (!$this->configs['enable_post_comments']) add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);
+    if (!$this->configs['enable_post_comments']) add_action('admin_menu', 'disable_comments_admin_menu');
+    if (!$this->configs['enable_post_comments']) add_action('admin_init', 'disable_comments_admin_menu_redirect');
+    if (!$this->configs['enable_post_comments']) add_action('admin_init', 'disable_comments_dashboard');
+    if (!$this->configs['enable_post_comments']) add_action('init', 'disable_comments_admin_bar');
 
     // allowed html for wp kses post
     add_action('init', function () {
@@ -414,11 +370,9 @@ class Theme extends Timber {
 
   public function add_to_context($context) {
 
-    global $configs;
-
     // globals for twig
     $context['site'] = new Site;
-    $context['configs'] = $configs;
+    $context['configs'] = $this->configs;
 
     // wp customizer logo
     $theme_logo_src = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
@@ -426,10 +380,11 @@ class Theme extends Timber {
       $context['theme']->logo = (object) [];
       $context['theme']->logo->src = $theme_logo_src;
       $context['theme']->logo->alt = '';
-      $context['theme']->logo->w = $configs['logo_width'];
-      $context['theme']->logo->h = $configs['logo_height'];
+      $context['theme']->logo->w = $this->configs['logo_width'];
+      $context['theme']->logo->h = $this->configs['logo_height'];
     }
 
+    // theme default featured image
     $context['theme']->featured_img = (object) [];
     $context['theme']->featured_img->src = _x( 'https://picsum.photos/1920/1200', 'Theme Featured Image - src', 'rmcc-theme' );
     $context['theme']->featured_img->alt = _x( 'Alt', 'Theme Featured Image - alt', 'rmcc-theme' );
@@ -443,7 +398,11 @@ class Theme extends Timber {
     $context['has_menu_main'] = has_nav_menu('main_menu');
     $context['has_menu_iconnav'] = has_nav_menu('iconnav_menu');
 
-    // return context
+    // set title & desc to start, in case anything goes wrong.
+    $context['title'] = _x('Error: Page not found', '404/Error pages', 'rmcc-theme');
+    $context['description'] = _x('Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below.', '404/Error pages', 'rmcc-theme');
+
+    // return the context
     return $context;
 
   }
