@@ -44,7 +44,7 @@ class Theme extends Timber {
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
 
     // Remove tags support from posts
-    if ($this->configs['disable_post_tags']) {
+    if (array_key_exists('enable_post_tags', $this->configs) && $this->configs['enable_post_tags'] != true) {
       add_action('init', function () {
         global $wp_taxonomies;
         unregister_taxonomy_for_object_type('post_tag', 'post');

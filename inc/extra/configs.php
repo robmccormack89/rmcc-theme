@@ -9,38 +9,33 @@
 */
 
 /*
-Maintenance Mode
-Stuff
+Maintenance
+Mode
 */
 
-// $configs['maintenance_mode'] = 'all';
-// $configs['redirect_all_traffic_to_page'] = 2;
-// $configs['maintenance_template'] = 'coming_soon.twig'; // only applies when redirect_all_traffic_to_page doesnt exist or is set to false. defaults to maintenance.twig downstream
+// $configs['maintenance_mode'] = 'all'; // set to true (for logged-out users) or 'all' (for all users)
+// $configs['redirect_all_traffic_to_page'] = 2; // use page or post ID here. or slug?
+// $configs['maintenance_template'] = 'hello.twig'; // only applies when redirect_all_traffic_to_page is unset. default: maintenance.twig
 
 /*
-Logo
-Stuff
+Configs &
+Settings
 */
 
-$configs['logo_width'] = '223';//
-$configs['logo_height'] = '36';//
+$configs['logo_width'] = '223';
+$configs['logo_height'] = '36';
 
 /*
+Enable
 Disable
 Stuff
 */
 
-$configs['disable_post_tags'] = false;//
-
-/*
-Singular
-Stuff
-*/
-
-$configs['enable_page_excerpts'] = true;//
-$configs['enable_post_comments'] = true;//
-$configs['enable_post_sharing'] = true;//
-$configs['enable_post_paging'] = true;//
-$configs['enable_post_author'] = true;//
+$configs['enable_post_tags'] = true;
+$configs['enable_page_excerpts'] = true;
+$configs['enable_post_comments'] = true;
+$configs['enable_post_sharing'] = true;
+$configs['enable_post_paging'] = true;
+$configs['enable_post_author'] = true;
 
 return $configs;
