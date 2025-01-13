@@ -1,6 +1,6 @@
 {
   "require": {
-    "timber/timber": "^2.3.0",
+    "timber/timber": "^2.3.1",
     "twig/string-extra": "^3.17.0",
     "twig/extra-bundle": "^3.17.0"
   },

@@ -9,7 +9,7 @@
   <body class="{{ body_class }}" data-template="base.twig">
 
     {% block header %}
-      {% include 'header.twig' %}
+      {% include 'header.twig' ignore missing %}
     {% endblock %}
 
     <main id="Main" role="main">
@@ -26,7 +26,7 @@
     </main>
 
     {% block footer %}
-      {% include 'footer.twig' %}
+      {% include 'footer.twig' ignore missing %}
     {% endblock %}
 
     {{ fn('wp_footer') }}

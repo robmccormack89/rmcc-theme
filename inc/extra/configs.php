@@ -13,7 +13,7 @@ Maintenance Mode
 Stuff
 */
 
-$configs['maintenance_mode'] = 'all';
+// $configs['maintenance_mode'] = 'all';
 // $configs['redirect_all_traffic_to_page'] = 2;
 // $configs['maintenance_template'] = 'coming_soon.twig'; // only applies when redirect_all_traffic_to_page doesnt exist or is set to false. defaults to maintenance.twig downstream
 
