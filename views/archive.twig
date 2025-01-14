@@ -12,7 +12,7 @@
     {% endblock %}
 
     {% block archive_content %}
-      <div class="rmcc-section rmcc-container rmcc-container-xsmall">
+      <div class="archive-content rmcc-section rmcc-container rmcc-container-xsmall">
         {% block archive_loop %}
           {% if archive.posts is not empty %}
             <div class="archive-posts" rmcc-grid>
@@ -36,4 +36,13 @@
 
 {% block scripts %}
   {{ parent() }}
+  {% if configs.infinite_pagination %}
+    <script type='text/javascript'>
+      if(document.getElementById('themePagination')){
+        window.addEventListener('load', (event) => {
+          archivePagination('.archive-posts', '.item', '.next', '.page-load-status', '.pagination', false, true);
+        });
+      }
+    </script>
+  {% endif %}
 {% endblock %}

@@ -352,6 +352,17 @@ class Theme extends Timber {
       get_stylesheet_uri()
     );
 
+    // scroller
+    if($this->configs['infinite_pagination']){
+      wp_enqueue_script(
+        'rmcc-theme-scroller',
+        get_template_directory_uri() . '/public/js/scroller.js',
+        '',
+        '1.0.0',
+        true
+      );
+    }
+
   }
 
   public function register_post_types() {

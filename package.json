@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uikit": "^3.21.16"
+    "uikit": "^3.21.16",
+    "infinite-scroll": "^4.0.1"
   },
   "devDependencies": {
 

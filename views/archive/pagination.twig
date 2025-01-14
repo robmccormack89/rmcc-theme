@@ -31,3 +31,16 @@
     </ul>
   </div>
 {% endif %}
+
+{% if posts.pagination.next and (configs.infinite_pagination) %}
+  <div class="page-load-status">
+    <div class="loader-ellips infinite-scroll-request rmcc-section rmcc-padding-remove-top">
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+    </div>
+    <p class="infinite-scroll-last rmcc-margin-remove" hidden>{{ _x('End of posts...', 'Archive: pagination', 'rmcc-theme')|e('esc_html') }}</p>
+    <p class="infinite-scroll-error rmcc-margin-remove" hidden>{{ _x('No more Posts to load', 'Archive: pagination', 'rmcc-theme')|e('esc_html') }}</p>
+  </div>
+{% endif %}

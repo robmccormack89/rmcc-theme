@@ -38,4 +38,11 @@ $configs['enable_post_sharing'] = true;
 $configs['enable_post_paging'] = true;
 $configs['enable_post_author'] = true;
 
+/*
+Archives
+Stuff
+*/
+
+$configs['infinite_pagination'] = true;
+
 return $configs;
