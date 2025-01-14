@@ -70,6 +70,9 @@ class Theme extends Timber {
 
     }
 
+    // fetch routes
+    if($configs['blog_filters']) add_action('rest_api_init', 'blog_filters_ajax_restapi_routes');
+
   }
 
   public function maintenance_mode() {
@@ -351,6 +354,17 @@ class Theme extends Timber {
       'rmcc-theme-style',
       get_stylesheet_uri()
     );
+
+    // filters
+    if($this->configs['blog_filters']){
+      wp_enqueue_script(
+        'rmcc-theme-filters',
+        get_template_directory_uri() . '/public/js/filters.js',
+        '',
+        '1.0.0',
+        true
+      );
+    }
 
   }
 

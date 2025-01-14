@@ -38,4 +38,31 @@ $configs['enable_post_sharing'] = true;
 $configs['enable_post_paging'] = true;
 $configs['enable_post_author'] = true;
 
+/*
+Blog Filters
+Stuff
+*/
+
+$configs['blog_filters'] = true;
+$configs['blog_filters_properties'] = (object) [
+  "types" => array(
+    (object) [
+      "parentGroupId" => 'post_cat_group',
+      "subGroupId" => 'post_subcat_group',
+      "subId" => 'post_cat_sub',
+      "formQueryKey" => 'category_name',
+      "taxKey" => 'category',
+      "altQueryKey" => 'cat',
+      "currentQueryVar" => ''
+    ],
+    (object) [
+      "formQueryKey" => 'tag',
+      "taxKey" => 'post_tag',
+      "altQueryKey" => 'tag_id',
+      "currentQueryVar" => ''
+    ]
+  )
+];
+// $configs['blog_filters'] = false; // disable
+
 return $configs;
