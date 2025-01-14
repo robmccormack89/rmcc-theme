@@ -3,18 +3,11 @@
 {% block styles %}
 {% endblock %}
 
-{% block single_metas %}
-{% endblock %}
-
-{% block single_thumb %}
-{% endblock %}
-
-{% block breads %}
-{% endblock %}
-
 {% block single_content %}
-  <div class="single-content rmcc-background-default rmcc-section rmcc-container rmcc-container-xsmall" data-template="single_protected.twig">
-    {% include 'password_form.twig' %}
+  <div class="single-content" data-template="single_protected.twig">
+    <div class="rmcc-container rmcc-container-xsmall">
+      {% include 'password_form.twig' %}
+    </div>
   </div>
 {% endblock %}
 

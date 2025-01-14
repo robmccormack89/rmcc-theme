@@ -11,35 +11,6 @@
     {% endif %}
   {% endblock %}
 
-  {% block tease_metas %}
-    {% if ((fn('comments_open') and configs.enable_post_comments and post.comments|length > 0 ) or (fn('get_post_meta', post.id, 'read_time', true)) or (post.date)) and (post.post_type == 'post') %}
-      <div class="article-meta rmcc-article-meta dotted-subs">
-
-        {% if post.date %}
-          {% set dated %}
-            <time>{{ fn('human_time_diff', fn('get_the_time', 'U'), fn('current_time', 'timestamp'))|e('esc_html') }}</time>
-          {% endset %}
-          <span class="post-date rmcc-text-capitalize">
-            <span rmcc-icon="icon: file-edit; ratio: 1"></span> {{ _x('%s ago', 'Tease: date', 'rmcc-theme')|e('esc_html')|format(dated) }}
-          </span>
-        {% endif %}
-
-        {% if fn('get_post_meta', post.id, 'read_time', true) %}
-          <span class="post-read-time rmcc-text-capitalize">
-            <span rmcc-icon="icon: clock; ratio: 1"></span> {{ fn('get_post_meta', post.id, 'read_time', true)|e('esc_html') }}
-          </span>
-        {% endif %}
-        
-        {% if fn('comments_open') and configs.enable_post_comments and post.comments|length > 0 %}
-          <span class="post-comment-count rmcc-text-capitalize">
-            <span rmcc-icon="icon: comments; ratio: 1"></span> {{ post.comments|length|e('esc_html') }} <span>{{ _x('Comments', 'Tease: comments', 'rmcc-theme')|e('esc_html') }}</span>
-          </span>
-        {% endif %}
-
-      </div>
-    {% endif %}
-  {% endblock %}
-
   {% block tease_title %}
     <h2 class="rmcc-h3 rmcc-article-title rmcc-margin-small">
       <a class="rmcc-link-heading" title="{{ post.title|e('esc_html') }}" href="{{ post.link|e('esc_url') }}">{{ post.title|e('esc_html') }}</a>

@@ -1,6 +1,0 @@
-{% set posts = archive.posts %}
-{% if (posts.pagination.next or posts.pagination.prev) %}
-  <footer class="archive-footer rmcc-section rmcc-padding-remove-top">
-    {% include 'archive/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-  </footer>
-{% endif %}
