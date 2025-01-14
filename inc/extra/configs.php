@@ -38,4 +38,11 @@ $configs['enable_post_sharing'] = true;
 $configs['enable_post_paging'] = true;
 $configs['enable_post_author'] = true;
 
+/*
+Global
+Stuff
+*/
+
+$configs['animated_preloader'] = true;
+
 return $configs;

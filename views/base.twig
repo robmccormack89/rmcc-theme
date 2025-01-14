@@ -8,6 +8,10 @@
 
   <body class="{{ body_class }}" data-template="base.twig">
 
+    {% if configs.animated_preloader %}
+      <div id="preLoader" class="preloader"></div>
+    {% endif %}
+
     {% block header %}
       {% include 'header.twig' ignore missing %}
     {% endblock %}
@@ -33,6 +37,16 @@
 
     {% block scripts %}
     {% endblock %}
+
+    {% if configs.animated_preloader %}
+      <script type='text/javascript'>
+        removePreloader = function() {
+          document.getElementById('preLoader').classList.add('hidden');
+          document.getElementsByTagName('body')[0].classList.remove('no-overflow');
+        }
+        document.body.addEventListener("load", removePreloader());
+      </script>
+    {% endif %}
 
   </body>
 
