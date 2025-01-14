@@ -2,15 +2,15 @@
 
 // Getting the data for the blog filters & checking stuff
 function terms_for_filters($get_terms_tax_key = 'category', $parent_only = true){
-	$terms_args = array(
-		'taxonomy' => $get_terms_tax_key,
-		'orderby' => 'slug',
-		'hide_empty' => true
-	);
-	if ($parent_only) {
-		$terms_args['parent'] = 0;
-	}
-	return get_terms($terms_args);
+  $terms_args = array(
+    'taxonomy' => $get_terms_tax_key,
+    'orderby' => 'slug',
+    'hide_empty' => true
+  );
+  if($parent_only) {
+    $terms_args['parent'] = 0;
+  }
+  return get_terms($terms_args);
 }
 function is_term_active($id, $q_var){
 
