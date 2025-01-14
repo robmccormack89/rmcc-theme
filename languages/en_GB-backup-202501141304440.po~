@@ -76,7 +76,7 @@ msgstr ""
 #: inc/Theme.php:402
 msgctxt "404/Error pages"
 msgid "Error: Page not found"
-msgstr "Error: No Page found"
+msgstr ""
 
 #: inc/Theme.php:403
 msgctxt "404/Error pages"
