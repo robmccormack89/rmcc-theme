@@ -13,3 +13,6 @@ compilation_cache/
 
 _dev
 _dev/
+
+inc/lib/plugins
+inc/lib/plugins/
