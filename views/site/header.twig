@@ -24,6 +24,6 @@
   </nav>
 </header>
 
-{% if has_menu_main %}
+{% if fn('has_nav_menu', 'main_menu') %}
   {% include 'header/nav-offcanvas.twig' %}
 {% endif %}
