@@ -394,10 +394,6 @@ class Theme extends Timber {
     $context['menu_main'] = Timber::get_menu('main_menu', array('depth' => 3));
     $context['menu_iconnav'] = Timber::get_menu('iconnav_menu', array('depth' => 1));
 
-    // conditionals for checking menus
-    $context['has_menu_main'] = has_nav_menu('main_menu');
-    $context['has_menu_iconnav'] = has_nav_menu('iconnav_menu');
-
     // set title & desc to start, in case anything goes wrong.
     $context['title'] = _x('Error: Page not found', '404/Error pages', 'rmcc-theme');
     $context['description'] = _x('Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below.', '404/Error pages', 'rmcc-theme');
