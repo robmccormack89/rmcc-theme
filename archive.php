@@ -39,6 +39,9 @@ Conditionals
 // author archives
 if (is_author()) {
 
+  // disable blog filters on author archives
+  $context['configs']['blog_filters'] = false;
+
   // set templates & vars
   array_unshift($templates, 'author.twig', 'archive.twig');
   if (isset($wp_query->query_vars['author'])) {
@@ -53,6 +56,9 @@ if (is_author()) {
 // date archives (D)
 elseif (is_day()) {
 
+  // disable blog filters on author archives
+  $context['configs']['blog_filters'] = false;
+
   // set templates & vars
   array_unshift($templates, 'day.twig', 'archive.twig');
   $context['title'] = _x('Day: ', 'Archives', 'rmcc-theme') . get_the_date('l dS \o\f F Y');
@@ -62,6 +68,9 @@ elseif (is_day()) {
 
 // date archives (M)
 elseif (is_month()) {
+
+  // disable blog filters on date archives
+  $context['configs']['blog_filters'] = false;
 
   // set templates & vars
   array_unshift($templates, 'month.twig', 'archive.twig');
@@ -73,6 +82,9 @@ elseif (is_month()) {
 // date archives (Y)
 elseif (is_year()) {
 
+  // disable blog filters on date archives
+  $context['configs']['blog_filters'] = false;
+
   // set templates & vars
   array_unshift($templates, 'year.twig', 'archive.twig');
   $context['title'] = _x('Year: ', 'Archives', 'rmcc-theme') . get_the_date('Y');
@@ -82,6 +94,21 @@ elseif (is_year()) {
 
 // tag archives
 elseif (is_tag()) {
+
+  // reset filters config (cats only)
+  $context['configs']['blog_filters_properties'] = (object) [
+    "types" => array(
+      (object) [
+        "parentGroupId" => 'post_cat_group',
+        "subGroupId" => 'post_subcat_group',
+        "subId" => 'post_cat_sub',
+        "formQueryKey" => 'category_name',
+        "taxKey" => 'category',
+        "altQueryKey" => 'cat',
+        "currentQueryVar" => ''
+      ]
+    )
+  ];
 
   // set templates & vars
   array_unshift($templates, 'archive_' . get_query_var('tag') . '.twig', 'tag.twig', 'archive.twig');
@@ -93,6 +120,18 @@ elseif (is_tag()) {
 // category archives
 elseif (is_category()) {
 
+  // reset filters config (tags only)
+  $context['configs']['blog_filters_properties'] = (object) [
+    "types" => array(
+      (object) [
+        "formQueryKey" => 'tag',
+        "taxKey" => 'post_tag',
+        "altQueryKey" => 'tag_id',
+        "currentQueryVar" => ''
+      ]
+    )
+  ];
+
   // set templates & vars
   array_unshift($templates, 'archive_' . get_query_var('cat') . '.twig', 'category.twig', 'archive.twig');
   $context['title'] = single_cat_title('', false);
@@ -103,6 +142,9 @@ elseif (is_category()) {
 // custom taxonomy archives
 elseif (is_tax()) {
 
+  // disable blog filters on custom taxonomy archives
+  $context['configs']['blog_filters'] = false;
+
   // set templates & vars
   array_unshift($templates, 'custom_taxonomy.twig', 'archive.twig');
   $context['title'] = single_term_title('', false);
@@ -112,6 +154,10 @@ elseif (is_tax()) {
 
 // custom post_type archives
 elseif (is_post_type_archive()) {
+
+  // disable blog filters on post_type archives.
+  // can reset the blog filters settings here if adding in filters for other taxonomies on a custom type etc. Clever?!!
+  $context['configs']['blog_filters'] = false;
 
   // set templates & vars
   array_unshift($templates, 'archive_' . get_post_type() . '.twig', 'custom_post_type.twig', 'archive.twig');
