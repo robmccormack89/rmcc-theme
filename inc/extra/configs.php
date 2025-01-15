@@ -38,4 +38,15 @@ $configs['enable_post_sharing'] = true;
 $configs['enable_post_paging'] = true;
 $configs['enable_post_author'] = true;
 
+/*
+Live Search
+Stuff
+*/
+
+$configs['live_search'] = true;
+$configs['live_search_types'] = array('post', 'page');
+$configs['live_search_taxes'] = array('category', 'post_tag');
+$configs['live_search_types_in_taxes'] = array('post');
+
+
 return $configs;
