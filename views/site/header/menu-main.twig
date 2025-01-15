@@ -1,4 +1,4 @@
-{% if has_menu_main %}
+{% if fn('has_nav_menu', 'main_menu') %}
   {% for item in menu_main.get_items %}
     {% if item.children %}
       <li class="rmcc-visible@m {{ item.classes|join(' ')|e('esc_html') }}">

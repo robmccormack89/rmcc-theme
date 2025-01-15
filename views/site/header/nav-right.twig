@@ -6,7 +6,7 @@
   </li>
 
   {# mobile menu toggle #}
-  {% if has_menu_main %}
+  {% if fn('has_nav_menu', 'main_menu') %}
     <li class="rmcc-hidden@m">
       <a class="rmcc-navbar-toggle rmcc-navbar-toggle-animate rmcc-icon rmcc-navbar-toggle-icon" href="#" rmcc-navbar-toggle-icon rmcc-toggle="target: #SlideInMenuLeft"></a>
     </li>
