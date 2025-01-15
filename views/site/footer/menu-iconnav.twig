@@ -1,4 +1,4 @@
-{% if has_menu_iconnav %}
+{% if fn('has_nav_menu', 'iconnav_menu') %}
 
   {# socials/icon nav: title #}
   <h4 class="rmcc-text-center rmcc-margin-small rmcc-h3">{{ menu_iconnav.title|e('esc_html') }}</h4>
