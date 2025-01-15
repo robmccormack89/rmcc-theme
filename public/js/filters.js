@@ -1,5 +1,5 @@
 //
-// blog filters: main functions
+// blog filters: the main functions
 //
 
 // submit the filters form by interuppting normal submit & doing our own
@@ -10,7 +10,7 @@ function filtersFormSubmitCustom(event, form, demoPostsGrid, postsGrid, theLoopC
   var theLoopContainer = document.getElementById(theLoopContainer);
   var theOldLoop = document.querySelector(theOldLoopSel);
 
-	// event.preventDefault(); // prevent default submit event. this is done when calling this function instead
+  // event.preventDefault(); // prevent default submit event. this is done when calling this function instead
 
   // disable any checked parent checkboxes when subs are also selected.
   for (i in subFields) {
