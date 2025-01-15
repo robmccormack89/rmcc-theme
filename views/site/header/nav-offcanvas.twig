@@ -3,7 +3,7 @@
 
     {# mobile menu nav #}
     <ul class="rmcc-nav-default rmcc-nav-parent-icon" rmcc-nav="multiple: true">
-      {% if has_menu_main %}
+      {% if fn('has_nav_menu', 'main_menu') %}
 
         {# mobile menu title #}
         <li class="rmcc-nav-header rmcc-padding-remove rmcc-margin-small-bottom rmcc-text-capitalize">
