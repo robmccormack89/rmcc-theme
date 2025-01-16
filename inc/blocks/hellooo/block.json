@@ -1,0 +1,16 @@
+{
+  "name": "acf/hellooo",
+  "title": "Hellooo",
+  "description": "A custom hellooo block that uses ACF fields.",
+  "style": [ "file:./hellooo.css" ],
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["testimonial", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "hellooo.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

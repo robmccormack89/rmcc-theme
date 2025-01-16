@@ -38,4 +38,12 @@ $configs['enable_post_sharing'] = true;
 $configs['enable_post_paging'] = true;
 $configs['enable_post_author'] = true;
 
+/*
+ACF
+Stuff
+*/
+
+$configs['enable_acf'] = true;
+$configs['hide_acf_menus'] = false;
+
 return $configs;
