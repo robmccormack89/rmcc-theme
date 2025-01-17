@@ -9,6 +9,7 @@
 
 require get_template_directory() . '/inc/extra/helpers.php';
 $configs = require_once(get_template_directory() . '/inc/extra/configs.php');
+require get_template_directory() . '/inc/extra/prox.php';
 
 /* plugin activation
 
