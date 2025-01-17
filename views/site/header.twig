@@ -1,1 +1,159 @@
-<!-- site header goes here -->
+<header>
+
+  <div class="rainbow-bar">
+    <span class="rmcc-section-primary rmcc-section-green"></span>
+    <span class="rmcc-section-primary"></span>
+    <span class="rmcc-section-primary rmcc-section-purple"></span>
+    <span class="rmcc-section-primary rmcc-section-pink"></span>
+    <span class="rmcc-section-primary rmcc-section-orange"></span>
+    <span class="rmcc-section-primary rmcc-section-yellow last"></span>
+  </div>
+
+  <div class="rmcc-background-secondary darken ukkk-padding rmcc-padding-remove-horizontal rmcc-box-shadow-medium rmcc-position-relative rmcc-position-z-index">
+
+    <!-- topbar -->
+    <div class="rmcc-container rmcc-container-expand">
+      <div class="rmcc-light rmcc-grid rmcc-padding-xsmall rmcc-padding-remove-horizontal" rmcc-grid>
+
+        <!-- left -->
+        <div class="rmcc-width-expand rmcc-visible@l">
+          <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+            <div class="rmcc-width-auto">
+              <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                <li><span class="rmcc-margin-small-right rmcc-text-purple" rmcc-icon="location"></span></li>
+                <li><span class="rmcc-text-small rmcc-text-emphasis">{{ _x('123 Main Street, Orange County, Ohio, USA', 'Company: address', 'rmcc-theme')|e('esc_html') }}</span></li>
+              </ul>
+            </div>
+            <div class="rmcc-width-auto">
+              <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                <li><span class="rmcc-margin-small-right rmcc-text-pink" rmcc-icon="mail"></span></li>
+                <li><a class="rmcc-text-small" href="mailto:sendmail@risehand.com">{{ _x('admin@example.ie', 'Company: email', 'rmcc-theme')|e('esc_html') }}</a></li>
+              </ul>
+            </div>
+            <div class="rmcc-width-auto">
+              <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                <li><span class="rmcc-margin-small-right rmcc-text-green" rmcc-icon="receiver"></span></li>
+                <li><a class="rmcc-text-small" href="mailto:sendmail@risehand.com">{{ _x('032 12 33456', 'Company: phone', 'rmcc-theme')|e('esc_html') }}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% if fn('has_nav_menu', 'iconnav_menu') %}
+          <!-- right -->
+          <div class="rmcc-width-1-1 rmcc-width-auto@l rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-flex-left@l rmcc-text-center rmcc-text-right@l">
+
+            <div class="rmcc-grid-small rmcc-flex-middle rmcc-flex-center rmcc-flex-left@l" rmcc-grid>
+              <div class="rmcc-width-auto">
+                <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                  <li><span class="rmcc-margin-small-right rmcc-text-yellow" rmcc-icon="happy"></span></li>
+                  <li><span class="rmcc-text-small rmcc-text-emphasis">{{ menu_iconnav.title|e('esc_html') }}</span></li>
+                </ul>
+              </div>
+              <div class="rmcc-width-auto">
+                <ul class="rmcc-iconnav">
+                  {% for item in menu_iconnav.get_items %}
+                    <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                      <a href="{{ item.link|e('esc_url') }}" target="_blank">
+                        {{ item.title|e('wp_kses_post')}}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <!-- main nav -->
+    <nav class="rmcc-navbar-container rmcc-navbar-transparent rmcc-background-secondary rmcc-light">
+      <div class="rmcc-container rmcc-container-expand">
+        <div rmcc-navbar="" class="rmcc-navbar">
+
+          <div class="rmcc-navbar-left">
+            <a class="rmcc-navbar-item rmcc-logo" href="{{ site.link|e('esc_url') }}">
+              {% if theme.logo %}
+                <img class="rmcc-padding-small" src="{{ theme.logo.src|e('esc_url') }}" width="{{ theme.logo.w }}" height="{{ theme.logo.h }}" alt="{{ theme.logo.alt|e('esc_html') }}">
+              {% else %}
+                {{ site.title|e('esc_html') }}
+              {% endif %}
+            </a>
+          </div>
+
+          {% if fn('has_nav_menu', 'main_menu') %}
+            <div class="rmcc-navbar-center rmcc-visible@xl">
+              <ul class="rmcc-navbar-nav">
+                {% for item in menu_main.get_items %}
+                  {% if menu_main.get_items|length > 1 and loop.last %}
+                  {% else %}
+                    {% if item.children %}
+                      <li class="rmcc-visible@m {{ item.classes|join(' ')|e('esc_html') }}">
+                        <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }} <span rmcc-navbar-parent-icon></span></a>
+                        <div rmcc-dropdown>
+                          <ul class="rmcc-nav rmcc-dropdown-nav">
+                            {% for child in item.children %}
+                              <li class="{{ child.classes|join(' ')|e('esc_html') }}">
+                                <a href="{{ child.link|e('esc_url') }}">{{ child.title|e('esc_html') }}</a>
+                                {% if child.children %}
+                                  <div rmcc-dropdown="pos: right-top">
+                                    <ul class="rmcc-nav rmcc-dropdown-nav">
+                                      {% for third in child.children %}
+                                        <li class="{{ third.classes|join(' ')|e('esc_html') }}">
+                                          <a href="{{ third.link|e('esc_url') }}">{{ third.title|e('esc_html') }}</a>
+                                        </li>
+                                      {% endfor %}
+                                    </ul>
+                                  </div>
+                                {% endif %}
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </li>
+                    {% else %}
+                      <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                        <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+                      </li>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          <div class="rmcc-navbar-right">
+            <div class="rmcc-navbar-item">
+              <ul class="rmcc-iconnav">
+
+                {% for item in menu_main.get_items %}
+                  {% if menu_main.get_items|length > 1 and loop.last %}
+                    <li class="rmcc-flex rmcc-flex-middle rmcc-visible@s">
+                      <button class="rmcc-button rmcc-button-small rmcc-button-danger rmcc-button-purple rmcc-border-rounded" href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }} <span rmcc-icon="icon:arrow-right;ratio:1.2"></span></button>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+
+                <!-- search -->
+                <li class="rmcc-flex rmcc-flex-middle">
+                  <a href="#" rmcc-icon="icon: search; ratio: 1.2" class="rmcc-icon"></a>
+                </li>
+
+                <!-- mobile -->
+                <li class="rmcc-flex rmcc-flex-middle">
+                  <a class="rmcc-navbar-toggle rmcc-navbar-toggle-animate rmcc-icon rmcc-navbar-toggle-icon" href="#" rmcc-navbar-toggle-icon="" role="button" aria-haspopup="true" aria-label="Open menu"></a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>

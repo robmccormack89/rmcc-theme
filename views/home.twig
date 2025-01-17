@@ -1,0 +1,599 @@
+{% extends 'base.twig' %}
+
+{% block styles %}
+  {{ parent() }}
+  <link rel='stylesheet' href='{{theme.link}}/public/css/editor.css' type='text/css' media='all' />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endblock %}
+
+{% block main %}
+  <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }}" data-template="single.twig">
+    {% block single_content %}
+      <section class="single-content">
+
+        <!-- cover carousel (swiper js) -->
+        <section class="rmcc-section-secondary darken rmcc-position-relative rmcc-position-z-index-reset">
+
+          <!-- swiper -->
+          <div class="rmcc-container rmcc-container-expand rmcc-padding-remove-horizontal">
+            <div id="firstSwiper" class="swiper padded-overflow">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="rmcc-height-large rmcc-box-shadow-large">
+                    <img class="fit-img rmcc-position-relative rmcc-border-rounded" src="{{theme.link}}/public/images/kinnegad/large/image4.jpg" width="1920" alt="">
+                    <div class="rmcc-overlay-primary rmcc-overlay-navy darken rmcc-overlay-navy rmcc-light rmcc-position-cover rmcc-position-z-index"></div>
+                    <div class="rmcc-overlay rmcc-position-center-left rmcc-position-z-index rmcc-padding-large">
+                      <div class="rmcc-width-1-1 rmcc-width-4-5@m rmcc-width-4-5@l rmcc-width-3-5@xl rmcc-text-center rmcc-text-left@m">
+                        <span class="rmcc-text-meta rmcc-text-large">welcome to the</span>
+                        <h2 class="rmcc-heading-small rmcc-margin-small-bottom rmcc-margin-remove-top">Kinnegad Combined Community Employment Scheme.</h2>
+                        <p class="rmcc-margin-small-top rmcc-visible@l">Kinnegad Combined Community Employment Scheme which represents 22 community and voluntary groups across  Westmeath/Offaly/Meath. We work actively alongside sponsors/sub Sponsors to help participants of the scheme gain meaningful practical experience, achieve relevant qualifications and training and offer them support and guidance as they work towards achieving their goals and progressing into sustainable secure employment progressing their careers.</p>
+                        <button class="rmcc-button rmcc-button-large rmcc-button-default rmcc-border-rounded">Learn more</button>
+                        <button class="rmcc-button rmcc-button-large rmcc-button-danger rmcc-button-purple rmcc-border-rounded">Latest jobs <span rmcc-icon="icon:arrow-right;ratio:1" class="rmcc-icon"></span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <script>
+              const firstSwiper = new Swiper('#firstSwiper', {
+                watchSlidesProgress: true,
+                pagination: {
+                  el: '.swiper-pagination',
+                },
+              });
+            </script>
+          </div>
+
+        </section>
+
+        <!-- 4x carousel -->
+        <section class="rmcc-section-small rmcc-padding-remove-top rmcc-section-secondary darken rmcc-preserve-color">
+          <div class="rmcc-container rmcc-container-xlarge">
+
+            <div class="rmcc-container rmcc-container-expand">
+              <div id="secondSwiper" class="swiper">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <div class="rmcc-card rmcc-card-secondary rmcc-card-transparent darken rmcc-card-hover rmcc-box-shadow-remove">
+                      <div class="rmcc-card-badge rmcc-card-badge-green rmcc-light">CE Scheme</div>
+                      <div class="rmcc-card-body">
+                        <h3 class="rmcc-card-title">Who is eligible?</h3>
+                        <p>In order to be eligible for a Community Employment (CE) scheme, a person must be in receipt of a qualifying social welfare payment for at least 12 months.</p>
+                        <p rmcc-margin="">
+                          <!-- <a class="rmcc-button rmcc-button-default rmcc-first-column" href="#">Learn more</a> -->
+                          <a class="rmcc-button rmcc-button-text" href="#">Learn more about eligibility</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <div class="rmcc-card rmcc-card-primary rmcc-card-green rmcc-light rmcc-card-hover rmcc-box-shadow-remove">
+                      <div class="rmcc-card-badge rmcc-card-badge-secondary rmcc-light">CE Scheme</div>
+                      <div class="rmcc-card-body">
+                        <h3 class="rmcc-card-title">Our Area</h3>
+                        <p>KCCES supports Community Employment participants in Rochfortbridge, Raharney, Killucan/Raharney, Clonard, Castlejordan, Kinnegad, Milltownpass and Ballinabrackey.</p>
+                        <p rmcc-margin="">
+                          <a class="rmcc-button rmcc-button-default rmcc-first-column" href="#">QQI courses <span rmcc-icon="icon:arrow-right;ratio:1" class="rmcc-icon"></span></a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <div class="rmcc-card rmcc-card-primary rmcc-light rmcc-card-hover rmcc-box-shadow-remove">
+                      <div class="rmcc-card-badge rmcc-card-badge-secondary rmcc-light">CE Scheme</div>
+                      <div class="rmcc-card-body">
+                        <h3 class="rmcc-card-title">Training</h3>
+                        <p>Training is an integral part of Community Employment. Each learner on CE designs an Individual Training Plan (ILP) which outlines work experience & both job specific & progression training.</p>
+                        <p rmcc-margin="">
+                          <a class="rmcc-button rmcc-button-default rmcc-first-column" href="#">Learn more <span rmcc-icon="icon:arrow-right;ratio:1" class="rmcc-icon"></span></a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="swiper-slide">
+                    <div class="rmcc-card rmcc-card-primary rmcc-card-purple rmcc-light rmcc-card-hover rmcc-box-shadow-remove">
+                      <div class="rmcc-card-badge rmcc-card-badge-secondary rmcc-light">CE Scheme</div>
+                      <div class="rmcc-card-body">
+                        <h3 class="rmcc-card-title">Employment</h3>
+                        <p>The Community Employment (CE) Scheme helps people who are long-term unemployed get back to work by offering part-time, supported work placements with host organisations within their local community.</p>
+                        <p rmcc-margin="">
+                          <a class="rmcc-button rmcc-button-default rmcc-first-column" href="#">Latest Jobs <span rmcc-icon="icon:arrow-right;ratio:1" class="rmcc-icon"></span></a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+              </div>
+              <script>
+                const secondSwiper = new Swiper('#secondSwiper', {
+                  watchSlidesProgress: true,
+                  pagination: {
+                    el: '.swiper-pagination',
+                  },
+                  autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  },
+                  slidesPerView: 1,
+                  spaceBetween: 0,
+                  breakpoints: {
+                    959: {
+                      slidesPerView: 2,
+                      spaceBetween: 0
+                    },
+                    1199: {
+                      slidesPerView: 3,
+                      spaceBetween: 0
+                    },
+                    1599: {
+                      slidesPerView: 4,
+                      spaceBetween: 0
+                    },
+                  }
+                });
+              </script>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- left/right -->
+        <section class="rmcc-section rmcc-section-small rmcc-padding-remove-top rmcc-section-secondary darken rmcc-light rmcc-preserve-color">
+          <div class="rmcc-container rmcc-container-xlarge">
+            <div class="rmcc-child-width-1-2@m rmcc-grid-match rmcc-grid-large" rmcc-grid>
+              <div class="">
+                <div class="rmcc-height-1-1">
+                  <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image13.jpg" width="1200" alt="">
+                </div>
+              </div>
+              <div class="rmcc-flex rmcc-flex-middle">
+                <div>
+                  <h2>What is the Community Employment Scheme?</h2>
+                  
+                  <p>Community Employment is an employment programme funded by the Department of Social Protection (DSP), which helps long-term unemployed people to re-enter the active workforce by offering part-time and temporary placements within local voluntary communities and organisations.</p>
+
+                  <p>By doing this they are providing the participants with meaningful practical experience and training opportunities to enhance and develop their technical and personal skills. Participants can avail of the possibility of studying to achieve major awards up to level 6 which are QQI accredited and tailored to suit the needs and career goals of any individual. After completing their placement, participants are encouraged to seek employment elsewhere based on the experience, the development of new skills and the qualifications they have gained.</p>
+
+                  <ul class="rmcc-list rmcc-margin-medium-bottom">
+                    <li><span rmcc-icon="check" class="rmcc-margin-right rmcc-text-green"></span> New personal & technical skills</li>
+                    <li><span rmcc-icon="check" class="rmcc-margin-right rmcc-text-green"></span> Practical experience</li>
+                    <li><span rmcc-icon="check" class="rmcc-margin-right rmcc-text-green"></span> Training opportunities</li>
+                  </ul>
+            
+                  <!-- <p class="rmcc-margin-medium-bottom">Call to ask any question: <span class="rmcc-text-emphasis rmcc-text-underline">123-456-7890</span> or <span class="rmcc-text-emphasis rmcc-text-underline">456-789-1430</span></p> -->
+
+                  <button class="rmcc-button rmcc-button-large rmcc-button-default rmcc-border-rounded">Learn more about eligibility</button>
+                  <button class="rmcc-button rmcc-button-large rmcc-button-danger rmcc-button-primary rmcc-border-rounded rmcc-text-light">Our sponsors <span rmcc-icon="icon:arrow-right;ratio:1" class="rmcc-icon"></span></button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- blog carousel -->
+        <section class="rmcc-container rmcc-container-expand rmcc-section rmcc-section-small rmcc-padding-remove-top rmcc-section-secondary darken rmcc-padding-remove-horizontal rmcc-padding-remove-bottom">
+          <h2 class="rmcc-heading-small rmcc-text-center rmcc-margin-remove">Latest News</h2>
+          <div id="blogSwiper" class="swiper padded-overflow">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="rmcc-card rmcc-card-secondary rmcc-card-small rmcc-border-rounded">
+                  <div class="rmcc-card-media-top">
+                    <div class="rmcc-card-badge rmcc-card-badge-green badge-left">Recent News</div>
+                    <img src="{{theme.link}}/public/images/kinnegad/large/image1.jpg" width="900" height="600" alt="">
+                  </div>
+                  <div class="rmcc-card-header rmcc-text-green rmcc-text-fat">
+                    <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+                      <div class="rmcc-width-auto">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="clock"></span></li>
+                          <li><time datetime="2016-04-01T19:00">April 01, 2016</time></li>
+                        </ul>
+                      </div>
+                      <div class="rmcc-width-expand">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="comments"></span></li>
+                          <li><span>23 comments</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="rmcc-margin-remove">
+                  <div class="rmcc-card-body">
+                    <h3 class="rmcc-card-title"><a class="rmcc-link-heading" href="#">Lorem ipsum dolor sit amet, consectetur elit.</a></h3>
+                    <p>Despite facing significant financial constraints, this organization continues</p>
+                    <a class="rmcc-button rmcc-button-text" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rmcc-card rmcc-card-secondary rmcc-card-small rmcc-border-rounded">
+                  <div class="rmcc-card-media-top">
+                    <div class="rmcc-card-badge rmcc-card-badge-orange darken badge-left">Recent Events</div>
+                    <img src="{{theme.link}}/public/images/kinnegad/large/image2.jpg" width="900" height="600" alt="">
+                  </div>
+                  <div class="rmcc-card-header rmcc-text-orange darken rmcc-text-fat">
+                    <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+                      <div class="rmcc-width-auto">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="clock"></span></li>
+                          <li><time datetime="2016-04-01T19:00">April 01, 2016</time></li>
+                        </ul>
+                      </div>
+                      <div class="rmcc-width-expand">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="comments"></span></li>
+                          <li><span>23 comments</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="rmcc-margin-remove">
+                  <div class="rmcc-card-body">
+                    <h3 class="rmcc-card-title"><a class="rmcc-link-heading" href="#">Duis aute irure dolor in reprehenderit in voluptate.</a></h3>
+                    <p>We are thrilled to announce that thanks to incredible generosity and support</p>
+                    <a class="rmcc-button rmcc-button-text" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rmcc-card rmcc-card-secondary rmcc-card-small rmcc-border-rounded">
+                  <div class="rmcc-card-media-top">
+                    <div class="rmcc-card-badge rmcc-card-badge-blue darken badge-left">Recent News</div>
+                    <img src="{{theme.link}}/public/images/kinnegad/large/image10.jpg" width="900" height="600" alt="">
+                  </div>
+                  <div class="rmcc-card-header rmcc-text-blue darken rmcc-text-fat">
+                    <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+                      <div class="rmcc-width-auto">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="clock"></span></li>
+                          <li><time datetime="2016-04-01T19:00">April 01, 2016</time></li>
+                        </ul>
+                      </div>
+                      <div class="rmcc-width-expand">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="comments"></span></li>
+                          <li><span>23 comments</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="rmcc-margin-remove">
+                  <div class="rmcc-card-body">
+                    <h3 class="rmcc-card-title"><a class="rmcc-link-heading" href="#">Sed ut perspiciatis unde omnis iste natus.</a></h3>
+                    <p>Donating to charity can provide a profound sense of fulfillment and happiness</p>
+                    <a class="rmcc-button rmcc-button-text" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rmcc-card rmcc-card-secondary rmcc-card-small rmcc-border-rounded">
+                  <div class="rmcc-card-media-top">
+                    <div class="rmcc-card-badge rmcc-card-badge-pink darken badge-left">Awards</div>
+                    <img src="{{theme.link}}/public/images/kinnegad/large/image13.jpg" width="900" height="600" alt="">
+                  </div>
+                  <div class="rmcc-card-header rmcc-text-pink darken rmcc-text-fat">
+                    <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+                      <div class="rmcc-width-auto">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="clock"></span></li>
+                          <li><time datetime="2016-04-01T19:00">April 01, 2016</time></li>
+                        </ul>
+                      </div>
+                      <div class="rmcc-width-expand">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="comments"></span></li>
+                          <li><span>23 comments</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="rmcc-margin-remove">
+                  <div class="rmcc-card-body">
+                    <h3 class="rmcc-card-title"><a class="rmcc-link-heading" href="#">Nemo enim ipsam voluptatem quia voluptas.</a></h3>
+                    <p>A good municipality keeps it’s stakeholders and members well informed.</p>
+                    <a class="rmcc-button rmcc-button-text" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rmcc-card rmcc-card-secondary rmcc-card-small rmcc-border-rounded">
+                  <div class="rmcc-card-media-top">
+                    <div class="rmcc-card-badge rmcc-card-badge-green badge-left">Recent News</div>
+                    <img src="{{theme.link}}/public/images/kinnegad/large/image1.jpg" width="900" height="600" alt="">
+                  </div>
+                  <div class="rmcc-card-header rmcc-text-green rmcc-text-fat">
+                    <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+                      <div class="rmcc-width-auto">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="clock"></span></li>
+                          <li><time datetime="2016-04-01T19:00">April 01, 2016</time></li>
+                        </ul>
+                      </div>
+                      <div class="rmcc-width-expand">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="comments"></span></li>
+                          <li><span>23 comments</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="rmcc-margin-remove">
+                  <div class="rmcc-card-body">
+                    <h3 class="rmcc-card-title"><a class="rmcc-link-heading" href="#">Neque porro quisquam est, qui dolorem ipsum.</a></h3>
+                    <p>Despite facing significant financial constraints, this organization continues</p>
+                    <a class="rmcc-button rmcc-button-text" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="rmcc-card rmcc-card-secondary rmcc-card-small rmcc-border-rounded">
+                  <div class="rmcc-card-media-top">
+                    <div class="rmcc-card-badge rmcc-card-badge-orange darken badge-left">Recent Events</div>
+                    <img src="{{theme.link}}/public/images/kinnegad/large/image2.jpg" width="900" height="600" alt="">
+                  </div>
+                  <div class="rmcc-card-header rmcc-text-orange darken rmcc-text-fat">
+                    <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+                      <div class="rmcc-width-auto">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="clock"></span></li>
+                          <li><time datetime="2016-04-01T19:00">April 01, 2016</time></li>
+                        </ul>
+                      </div>
+                      <div class="rmcc-width-expand">
+                        <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                          <li><span class="rmcc-margin-small-right" rmcc-icon="comments"></span></li>
+                          <li><span>23 comments</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="rmcc-margin-remove">
+                  <div class="rmcc-card-body">
+                    <h3 class="rmcc-card-title"><a class="rmcc-link-heading" href="#">Quis autem vel eum reprehenderit qui voluptate.</a></h3>
+                    <p>We are thrilled to announce that thanks to incredible generosity and support</p>
+                    <a class="rmcc-button rmcc-button-text" href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+          </div>
+          <script>
+            const blogSwiper = new Swiper('#blogSwiper', {
+              slidesPerView: 1,
+              spaceBetween: 0,
+              watchSlidesProgress: true,
+              pagination: {
+                el: '.swiper-pagination',
+              },
+              breakpoints: {
+                959: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                1199: {
+                  slidesPerView: 3,
+                  spaceBetween: 30
+                },
+                1599: {
+                  slidesPerView: 4,
+                  spaceBetween: 30
+                },
+              }
+            });
+          </script>
+        </section>
+
+        <!-- social wall -->
+        <section>
+
+          <div class="rmcc-container rmcc-container-expand rmcc-section rmcc-section-small rmcc-section-secondary darken rmcc-padding-remove-horizontal rmcc-padding-remove-bottom">
+            <h2 class="rmcc-heading-small rmcc-text-center rmcc-margin-bottom">More information</h2>
+          </div>
+
+          <div class="social-wall">
+
+            <!-- 5x (1:4) -->
+            <div class="social-one rmcc-child-width-1-2@m rmcc-grid-match rmcc-grid-collapse" rmcc-grid>
+        
+              <!-- 1x -->
+              <div class="rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center">
+                <div class="rmcc-height-1-1">
+                  <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image12.jpg" width="975" height="975" alt="">
+                </div>
+              </div>
+        
+              <!-- 4x -->
+              <div>
+                <div class="rmcc-child-width-1-2@m rmcc-grid-match rmcc-grid-collapse rmcc-height-1-1" rmcc-grid>
+                  <div class="rmcc-background-secondary darken rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-height-1-2 rmcc-padding">
+                    <blockquote cite="#" class="rmcc-margin-remove">
+                      <span rmcc-icon="icon: quote-right; ratio: 1.5" class="rmcc-text-green"></span>
+                      <p class="rmcc-margin-small-bottom rmcc-margin-small-top rmcc-text-fat rmcc-text-large">"We cannot solve problems with the kind of thinking we employed when we came up with them."</p>
+                      <footer>Albert Einstein</footer>
+                    </blockquote>
+                  </div>
+                  <div class="rmcc-background-primary rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-height-1-2">
+                    <div class="rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-height-medium">
+                      <span rmcc-icon="icon: bluesky; ratio: 6" class="rmcc-text-emphasis"></span>
+                    </div>
+                  </div>
+                  <div class="rmcc-background-primary rmcc-background-green darken rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-height-1-2 rmcc-padding-large">
+                    <div>
+                      <span class="rmcc-text-meta rmcc-text-large">who we are</span>
+                      <h2 class="rmcc-h1 rmcc-margin-small-bottom rmcc-margin-remove-top">Learn more about us.</h2>
+                      <p class="rmcc-margin-small-top">Kinnegad Combined Community Employment Scheme which represents 22 community & voluntary groups across Westmeath/Offaly/Meath.</p>
+                      <button class="rmcc-button rmcc-button-large rmcc-button-default rmcc-margin-small-right rmcc-border-rounded">Learn more</button>
+                    </div>
+                  </div>
+                  <div class="rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-height-1-2">
+                    <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/image1.png" width="480" height="480" alt="">
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+        
+            <!-- 5x (2:1:2) -->
+            <div class="social-two rmcc-child-width-1-4@m rmcc-grid-match rmcc-grid-collapse" rmcc-grid>
+        
+              <!-- 2x -->
+              <div>
+                <div class="rmcc-height-1-1 rmcc-child-width-1-1 rmcc-grid-collapse" rmcc-grid>
+                  <div class="rmcc-height-1-2">
+                    <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image10.jpg" width="957" height="957" alt="">
+                  </div>
+                  <div class="rmcc-height-1-2 rmcc-background-primary rmcc-background-pink darken rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-padding">
+                    <blockquote cite="#" class="rmcc-margin-remove">
+                      <span rmcc-icon="icon: quote-right; ratio: 1.5" class="rmcc-text-navy"></span>
+                      <p class="rmcc-margin-small-bottom rmcc-margin-small-top rmcc-text-fat rmcc-text-large">"Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too."</p>
+                      <footer>Mark Twain</footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- 1x -->
+              <div class="rmcc-width-1-2@m">
+                <div class="rmcc-inline">
+                  <img class="fit-img" src="{{theme.link}}/public/images/social/four.jpg" width="1200" height="1200" alt="">
+                  <div class="rmcc-position-cover"></div>
+                  <div class="rmcc-position-center rmcc-dark">
+                    <div class="rmcc-width-large">
+                      <span class="rmcc-text-meta rmcc-text-large rmcc-text-green">ce training</span>
+                      <h2 class="rmcc-heading-medium rmcc-text-navy rmcc-margin-small-bottom rmcc-margin-remove-top">Job-specific & Progression training.</h2>
+                      <p class="rmcc-margin-small-top rmcc-text-lead rmcc-text-navy">Training is an integral part of Community Employment. Each learner on CE designs an Individual Training Plan (ILP) which outlines work experience and both job specific and progression training.</p>
+                      <button class="rmcc-button rmcc-button-large rmcc-button-danger rmcc-button-green rmcc-border-rounded">Learn more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- 2x -->
+              <div>
+                <div class="rmcc-height-1-1 rmcc-child-width-1-1 rmcc-grid-collapse" rmcc-grid>
+                  <div class="rmcc-height-1-2 rmcc-background-primary rmcc-background-purple darken rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-padding">
+                    <div class="rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-height-small">
+                      <span class="rmcc-heading-small">#Training</span>
+                    </div>
+                  </div>
+                  <div class="rmcc-height-1-2">
+                    <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image13.jpg" width="800" height="800" alt="">
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+        
+            <!-- 4x -->
+            <div class="social-three rmcc-child-width-1-1 rmcc-child-width-1-2@m rmcc-child-width-1-4@l rmcc-grid-match rmcc-grid-collapse" rmcc-grid>
+        
+              <div class="rmcc-background-primary rmcc-background-orange rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-padding-large">
+                <div>
+                  <span class="rmcc-text-meta rmcc-text-large">ce scheme</span>
+                  <h2 class="rmcc-h1 rmcc-margin-small-bottom rmcc-margin-remove-top">Our Sponsors</h2>
+                  <p class="rmcc-margin-small-top">Kinnegad Combined Community Employment Scheme CLG have 22 Sponsors across Westmeath/Offaly/Meath.</p>
+                  <button class="rmcc-button rmcc-button-large rmcc-button-default rmcc-margin-small-right rmcc-border-rounded">Learn more</button>
+                </div>
+              </div>
+        
+              <div class="rmcc-background-default rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center">
+                <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image2.jpg" width="800" height="800" alt="">
+              </div>
+        
+              <div class="rmcc-background-muted rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center">
+                <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image4.jpg" width="800" height="800" alt="">
+              </div>
+        
+              <div class="rmcc-background-primary rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center">
+                <div class="rmcc-height-medium rmcc-flex rmcc-flex-middle rmcc-flex-center">
+                  <span rmcc-icon="icon: facebook; ratio: 6" class="rmcc-text-emphasis"></span>
+                </div>
+              </div>
+        
+            </div>
+        
+            <!-- 2x -->
+            <div class="social-four rmcc-child-width-1-2@m rmcc-grid-match rmcc-grid-collapse" rmcc-grid>
+
+              <div class="rmcc-background-primary rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center">
+                <div class="rmcc-height-1-1">
+                  <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image3.jpg" width="975" height="975" alt="">
+                </div>
+              </div>
+
+              <div class="rmcc-background-secondary rmcc-background-orange darken rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center">
+                <div class="rmcc-inline">
+                  <img src="{{theme.link}}/public/images/social/five.jpg" width="957" height="957" alt="">
+                  <div class="rmcc-overlay-primary rmcc-overlay-navy rmcc-position-cover"></div>
+                  <div class="rmcc-overlay rmcc-position-center rmcc-dark">
+                    <div class="rmcc-width-large">
+                      <span class="rmcc-text-meta rmcc-text-large">who is eligible</span>
+                      <h2 class="rmcc-heading-medium rmcc-margin-small-bottom rmcc-margin-remove-top">Who is eligible for a Community Employment (CE) Scheme.</h2>
+                      <p class="rmcc-margin-small-top rmcc-text-lead">In order to be eligible for a Community Employment (CE) Scheme, a person must be in receipt of a qualifying social welfare payment for at least 12 months.</p>
+                      <button class="rmcc-button rmcc-button-large rmcc-button-default rmcc-border-rounded">Learn more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        
+            <!-- 4x -->
+            <div class="social-five rmcc-child-width-1-2@s rmcc-child-width-1-4@m rmcc-grid-match rmcc-grid-collapse" rmcc-grid>
+        
+              <div class="rmcc-background-primary rmcc-background-green rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-padding-large">
+                <span rmcc-icon="icon: youtube; ratio: 6" class="rmcc-text-emphasis"></span>
+              </div>
+        
+              <div class="rmcc-background-muted rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-padding">
+                <blockquote cite="#" class="rmcc-margin-remove">
+                  <span rmcc-icon="icon: quote-right; ratio: 1.5" class="rmcc-text-green"></span>
+                  <p class="rmcc-margin-small-bottom rmcc-margin-small-top rmcc-text-fat rmcc-text-large">"Success usually comes to those who are too busy to be looking for it."</p>
+                  <footer>Henry David Thoreau</footer>
+                </blockquote>
+              </div>
+        
+              <div class="rmcc-background-muted rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center">
+                <img class="fit-img" src="{{theme.link}}/public/images/kinnegad/large/image4.jpg" width="800" height="800" alt="">
+              </div>
+        
+              <div class="rmcc-background-primary rmcc-background-purple darken rmcc-light rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-padding">
+                <div class="rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-text-center rmcc-height-small">
+                  <span class="rmcc-heading-small">#Progression</span>
+                </div>
+              </div>
+        
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+    {% endblock %}
+  </article>
+{% endblock %}

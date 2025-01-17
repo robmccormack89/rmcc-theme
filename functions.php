@@ -30,3 +30,10 @@ if (file_exists($composer_autoload = __DIR__ . '/vendor/autoload.php')) require_
 
 */
 if (class_exists('Timber\Timber')) new Rmcc\Theme;
+
+/* init acf
+
+  acf load-in with checks
+
+*/
+require get_template_directory() . '/inc/extra/acf_init.php';

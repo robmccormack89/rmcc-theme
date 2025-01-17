@@ -19,13 +19,91 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Basic Theme is built using Timber WP https://github.com/timber/timber
 */
 
-.rmcc-navbar-nav > li > a {
-  text-transform: capitalize;
+.rmcc-navbar-toggle-icon svg {
+  height: 25px;
+  width: 25px;
 }
-.rmcc-navbar-nav > li > a, 
-.rmcc-navbar-item, .rmcc-navbar-toggle {
-  font-size: 1rem;
+.rmcc-logo img.rmcc-padding-small {
+  padding: 5px 0px;
 }
-.rmcc-logo {
-  font-size: 1.5rem;
+.rmcc-padding-xsmall {
+  padding: 10px;
+}
+
+/* COLOUR_BARS */
+.rainbow-bar {
+  display:flow-root
+}
+.rainbow-bar span {
+  width:16.666%;
+  float:left;
+  height:5px;
+  display: block;
+}
+.rainbow-bar .last {
+  width:16.666%!important;
+}
+
+.rmcc-text-underline {
+  text-decoration: underline;
+}
+
+.rmcc-card-transparent,
+.rmcc-card-transparent.rmcc-card-secondary,
+.rmcc-card-transparent.rmcc-card-secondary.darken {
+  background-color: transparent !important;
+}
+
+.rmcc-position-z-index-reset {
+  z-index: 0;
+}
+
+.rmcc-heading-small {
+  font-size: 2.6rem
+}
+@media (max-width: 1599px) {
+  .rmcc-heading-small {
+    font-size: 2.4rem
+  }
+}
+@media (max-width: 1199px) {
+  .rmcc-heading-small {
+    font-size: 2.4rem
+  }
+  .social-wall .rmcc-heading-medium {
+    font-size: 2.5rem;
+  }
+  .social-wall .rmcc-text-lead {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 959px) {
+  .rmcc-heading-small {
+    font-size: 2.2rem
+  }
+}
+@media (max-width: 639px) {
+  .rmcc-heading-small {
+    font-size: 2rem
+  }
+  .rmcc-button-large {
+    font-size: .875rem;
+    padding: 0 20px;
+  }
+  .rmcc-text-large {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .social-wall .rmcc-heading-medium {
+    font-size: 2rem;
+  }
+  .social-wall .rmcc-text-lead {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .rmcc-height-1-2 {
+    height: 50%;
+  }
 }

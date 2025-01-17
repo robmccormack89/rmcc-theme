@@ -1,0 +1,38 @@
+{% extends 'base.twig' %}
+
+{% block styles %}
+  {{ parent() }}
+  <link rel='stylesheet' href='{{theme.link}}/public/css/editor.css' type='text/css' media='all' />
+{% endblock %}
+
+{% block main %}
+  <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }}" data-template="single.twig">
+
+    {% block single_header %}
+      <header class="single-header">
+        <div class="rmcc-section rmcc-section-small rmcc-container rmcc-container-xsmall">
+          <h1 class="rmcc-article-title">{{ post.title|e('esc_html') }}</h1>
+        </div>
+      </header>
+    {% endblock %}
+
+    {% block single_content %}
+      <div class="single-content">
+        <div class="content-editor gutenberg-editor">
+          {{ post.content|e('wp_kses_post') }}
+        </div>
+      </div>
+    {% endblock %}
+
+    {% block single_footer %}
+      {% if post.post_type == 'post' and configs.enable_post_paging and (post.next or post.prev) %}
+        <footer class="single-footer">
+          <div class="rmcc-section rmcc-section-small rmcc-container rmcc-container-xsmall">
+            {% include 'single/pagination.twig' %}
+          </div>
+        </footer>
+      {% endif %}
+    {% endblock %}
+
+  </article>
+{% endblock %}

@@ -2,8 +2,10 @@
 
 {% block main %}
   <article id="{{ post.id|e('esc_html') }}" class="{{ post.class|e('esc_html') }}" data-template="custom.twig">
-    {% block single_content %}
-      {{ parent() }}
-    {% endblock %}
+    <section class="single-content rmcc-section-secondary darken">
+      <div class="content-editor gutenberg-editor">
+        {{ post.content|e('wp_kses_post') }}
+      </div>
+    </section>
   </article>
 {% endblock %}

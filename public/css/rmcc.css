@@ -12084,334 +12084,12 @@ iframe[data-rmcc-cover] {
     page-break-after: avoid;
   }
 }
-.theme-primary-bg {
-  background-color: #23259c;
-}
-
-.theme-muted-primary-bg {
-  background-color: #454556;
-}
-
-.theme-primary-bg-dark {
-  background-color: #0d0e27;
-}
-
-.theme-dark-bg {
-  background: #1e1e1e;
-}
-
-.overlay-wrap:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: auto;
-}
-
-.primary-overlay-hover:after,
-.default-overlay-hover:after {
-  background-color: none;
-  transition: 0.5s ease;
-}
-
-.primary-overlay-hover:hover:after {
-  background-color: rgba(35, 37, 156, 0.8);
-}
-
-.default-overlay-hover:hover:after {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.primary-overlay:after {
-  background-color: rgba(35, 37, 156, 0.8);
-}
-
-.default-overlay:after {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.rmcc-overlay-faint {
-  background: rgba(0, 0, 0, 0.25);
-}
-
-.rmcc-overlay-medium {
-  background: rgba(30, 30, 30, 0.4);
-}
-
-.rmcc-overlay-greypurple {
-  background: rgba(69, 69, 86, 0.45);
-}
-
-.theme-border {
-  border: 1px solid #e5e5e5;
-}
-
-.theme-border-top {
-  border-top: 1px solid #e5e5e5;
-}
-
-.theme-border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.theme-border-left {
-  border-left: 1px solid #e5e5e5;
-}
-
-.theme-border-right {
-  border-right: 1px solid #e5e5e5;
-}
-
-.rmcc-light .theme-border {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-.rmcc-light .theme-border-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-}
-.rmcc-light .theme-border-bottom {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-}
-.rmcc-light .theme-border-left {
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
-}
-.rmcc-light .theme-border-right {
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.theme-divider {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  position: relative;
-  padding: 0;
-}
-
-.theme-divider::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: 20px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.theme-divider::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: 0;
-  bottom: 0;
-  left: 20px;
-  border-bottom: 2px solid #e5e5e5;
-  width: 40px;
-}
-
-.rmcc-border-rounded.rounded-bottom-only {
-  border-radius: 0px 0px 5px 5px;
-}
-
-.rmcc-light hr,
-hr.rmcc-light {
-  border-top-color: rgba(255, 255, 255, 0.25);
-}
-
-.border-full {
-  border-radius: 100%;
-}
-
 .break-wrap .rmcc-container-break, .gutenberg-editor .rmcc-container-break {
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50%;
   width: 100%;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes reveal {
-  from {
-    transform: scale(0.001);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-@keyframes slide {
-  to {
-    transform: translateX(1.5em);
-  }
-}
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-.preloader::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 45vh;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80px;
-  height: 80px;
-  border: 2px solid #f3f3f3;
-  border-top: 3px solid #666;
-  border-radius: 100%;
-  will-change: transform;
-  animation: spin 1s infinite linear;
-  z-index: 992;
-}
-
-.preloader::after {
-  content: "";
-  position: absolute;
-  background-color: #fff;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 991;
-}
-
-.preloader {
-  visibility: visible;
-  opacity: 992;
-  transition: opacity 0.4s linear;
-}
-
-.preloader.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.4s, opacity 0.4s linear;
-}
-
-#loading,
-#loaderSearch {
-  display: inline-block;
-  vertical-align: middle;
-  width: 13px;
-  height: 13px;
-  border: 2px solid rgba(180, 180, 180, 0.5);
-  border-radius: 13px;
-  border-top-color: #666;
-  animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-}
-
-#DemoPostsGrid {
-  min-height: 600px;
-}
-
-.demo-archive-posts .rmcc-background-secondary {
-  background-color: #999;
-}
-.demo-archive-posts .demo-text {
-  height: 30px;
-}
-.demo-archive-posts .demo-text-first {
-  height: 15px;
-  margin-top: 15px;
-  margin-bottom: 0px;
-}
-
-.page-load-status {
-  display: none;
-  text-align: center;
-  color: #454556;
-}
-
-.loader-ellips {
-  font-size: 1.25rem;
-  position: relative;
-  width: 4em;
-  height: 1em;
-  margin: 10px auto;
-}
-
-.loader-ellips__dot {
-  display: block;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  background: #454556;
-  position: absolute;
-  animation-duration: 0.5s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
-.loader-ellips__dot:nth-child(1) {
-  left: 0;
-  animation-name: reveal;
-}
-.loader-ellips__dot:nth-child(2) {
-  left: 0;
-  animation-name: slide;
-}
-.loader-ellips__dot:nth-child(3) {
-  left: 1.5em;
-  animation-name: slide;
-}
-.loader-ellips__dot:nth-child(4) {
-  left: 3em;
-  animation-name: reveal;
-  animation-direction: reverse;
-}
-
-.quickloader {
-  border: none;
-}
-
-.quickloader::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  bottom: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70px;
-  height: 70px;
-  border: 2px solid #1e1e1e;
-  border-top: 3px solid #23259c;
-  border-radius: 100%;
-  will-change: transform;
-  animation: spin 1s infinite linear;
-  z-index: 1;
-}
-
-.quickloader::after {
-  content: "";
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .rmcc-position-top-right.outside {
@@ -12675,105 +12353,977 @@ hr.rmcc-light {
   width: 49%;
 }
 
-.dotted-subs > :not(:first-child) {
-  margin-left: 20px;
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+/* 
+font sizes
+*/
+html {
+  font-size: 18px;
 }
 
-.dotted-subs > :not(:last-child)::after {
-  content: "•";
-  display: inline-block;
-  position: absolute;
-  margin-left: 5px;
+/* 
+font families
+*/
+/* fonts: BobbyJones & Fredoka */
+/* @font-face {
+  font-family: 'Bobby Jones Soft';
+  src: url(public/fonts/BobbyJonesSoft-Regular.woff2);
+}
+.bobby-jones {
+  font-family: 'Bobby Jones Soft';
+  font-weight: normal;
+  font-style: normal;
+} */
+/* heading fonts */
+.rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6,
+.rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fredoka", sans-serif;
   font-weight: 700;
 }
 
-input.rmcc-form-small {
-  height: 30px;
+.rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
+  font-family: "Fredoka", sans-serif;
 }
 
-figcaption.rmcc-padding-small {
-  padding: 5px;
+/* text fonts */
+html,
+.rmcc-text-lead {
+  font-family: "Fredoka", sans-serif;
 }
 
-article.post.item.rmcc-article .rmcc-article-title {
-  font-size: 1.5rem;
+/* 
+color (headings,text,links)
+*/
+/* heading colours */
+/* .rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6, 
+.rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge, 
+h1, h2, h3, h4, h5, h6,
+.rmcc-card-default .rmcc-card-title {
+  color: #0c305e;
+} */
+/* text colours */
+/* html,
+.rmcc-text-lead,
+.rmcc-card-default {
+  color: #0c305e;
+} */
+/* extra text colours */
+.rmcc-text-dark {
+  color: #333 !important;
 }
 
-.single-excerpt .rmcc-dropcap:first-letter,
-.single-excerpt .rmcc-dropcap > p:first-of-type:first-letter {
-  margin-top: -5px;
+.rmcc-text-light {
+  color: #ffffff !important;
 }
 
-a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-underline:focus,
-.rmcc-link-toggle:focus .rmcc-link, .rmcc-link-toggle:hover .rmcc-link, .rmcc-link:hover, a:hover {
-  text-decoration: none;
+.rmcc-text-navy {
+  color: #0c305e !important;
 }
 
-/* dark backgrounds */
-.rmcc-light {
-  background: #222;
+.rmcc-text-blue {
+  color: #02bffb !important;
 }
 
-.rmcc-light .rmcc-modal-dialog {
-  background: #222;
+.rmcc-text-green {
+  color: #58e09f !important;
 }
 
-.rmcc-light .rmcc-navbar-dropdown {
-  background: #222;
+.rmcc-text-purple {
+  color: #c65fdf !important;
 }
 
-.rmcc-light .rmcc-section-default {
-  background: #222;
+.rmcc-text-pink {
+  color: #fc77a5 !important;
 }
 
-.rmcc-light .rmcc-background-default {
-  background: #222;
+.rmcc-text-orange {
+  color: #fda43d !important;
 }
 
-/* dark muted backgrounds */
-.rmcc-light .rmcc-background-muted,
-.rmcc-light .rmcc-modal-close-full,
-.rmcc-light .rmcc-section-muted,
-.rmcc-light .rmcc-tile-muted {
-  background: #333;
+.rmcc-text-yellow {
+  color: #fdf056 !important;
 }
 
-.rmcc-light .rmcc-comment-primary {
-  background-color: #333;
+.rmcc-text-navy.darken {
+  color: #0b2b52 !important;
 }
 
-/* links */
-.rmcc-light .rmcc-navbar-dropdown-nav > li > a {
-  color: rgba(255, 255, 255, 0.5);
+.rmcc-text-blue.darken {
+  color: #27a5fe !important;
 }
 
-/* links focus/hover */
-.rmcc-light .rmcc-navbar-dropdown-nav > li > a:focus {
-  color: rgba(255, 255, 255, 0.7);
+.rmcc-text-green.darken {
+  color: #3ecc8c !important;
 }
 
-.rmcc-light .rmcc-navbar-dropdown-nav > li > a:hover {
-  color: rgba(255, 255, 255, 0.7);
+.rmcc-text-purple.darken {
+  color: #ab42c4 !important;
 }
 
-/* borders */
-.rmcc-light .theme-border {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.rmcc-text-pink.darken {
+  color: #fd3d96 !important;
 }
 
-.rmcc-light .theme-border-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+.rmcc-text-orange.darken {
+  color: #ef9b3c !important;
 }
 
-.rmcc-light .theme-border-right {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+.rmcc-text-yellow.darken {
+  color: #fec142 !important;
 }
 
-.rmcc-light .theme-border-bottom,
-.rmcc-light .the-header.rmcc-sticky-below {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+/* 
+background (sections,badges,card-badges_overlays)
+*/
+/* overlays (background) */
+.rmcc-overlay-primary.rmcc-overlay-navy {
+  background: rgba(12, 48, 94, 0.8);
 }
 
-.rmcc-light .theme-border-left {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+.rmcc-overlay-primary.rmcc-overlay-blue {
+  background: rgba(2, 191, 251, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-green {
+  background: rgba(88, 224, 159, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-purple {
+  background: rgba(198, 95, 223, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-pink {
+  background: rgba(252, 119, 165, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-orange {
+  background: rgba(253, 164, 61, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-yellow {
+  background: rgba(253, 240, 86, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-navy.darken {
+  background: rgba(11, 43, 82, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-blue.darken {
+  background: rgba(39, 165, 254, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-green.darken {
+  background: rgba(62, 204, 140, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-purple.darken {
+  background: rgba(171, 66, 196, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-pink.darken {
+  background: rgba(253, 61, 150, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-orange.darken {
+  background: rgba(239, 155, 60, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-yellow.darken {
+  background: rgba(254, 193, 66, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-navy {
+  background: rgba(12, 48, 94, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-blue {
+  background: rgba(2, 191, 251, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-green {
+  background: rgba(88, 224, 159, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-purple {
+  background: rgba(198, 95, 223, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-pink {
+  background: rgba(252, 119, 165, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-orange {
+  background: rgba(253, 164, 61, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-yellow {
+  background: rgba(253, 240, 86, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-navy.darken {
+  background: rgba(11, 43, 82, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-blue.darken {
+  background: rgba(39, 165, 254, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-green.darken {
+  background: rgba(62, 204, 140, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-purple.darken {
+  background: rgba(171, 66, 196, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-pink.darken {
+  background: rgba(253, 61, 150, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-orange.darken {
+  background: rgba(239, 155, 60, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-yellow.darken {
+  background: rgba(254, 193, 66, 0.8);
+}
+
+/* sections,badges,card-badges (background) */
+/* blue,primary */
+.rmcc-section-primary,
+.rmcc-section-default.rmcc-section-blue,
+.rmcc-badge,
+.rmcc-card-badge {
+  background: #02bffb !important;
+}
+
+.rmcc-section-primary.darken,
+.rmcc-section-default.rmcc-section-blue.darken,
+.rmcc-badge.darken,
+.rmcc-card-badge.darken {
+  background: #27a5fe !important;
+}
+
+/* navy,secondary */
+.rmcc-section-secondary,
+.rmcc-badge-secondary,
+.rmcc-card-badge-secondary {
+  background: #0c305e !important;
+}
+
+.rmcc-section-secondary.darken,
+.rmcc-badge-secondary.darken,
+.rmcc-card-badge-secondary.darken {
+  background: #0b2b52 !important;
+}
+
+/* green */
+.rmcc-section-default.rmcc-section-green,
+.rmcc-section-primary.rmcc-section-green,
+.rmcc-badge-green,
+.rmcc-card-badge-green {
+  background: #58e09f !important;
+}
+
+.rmcc-section-default.rmcc-section-green.darken,
+.rmcc-section-primary.rmcc-section-green.darken,
+.rmcc-badge-green.darken,
+.rmcc-card-badge-green.darken {
+  background: #3ecc8c !important;
+}
+
+/* purple */
+.rmcc-section-default.rmcc-section-purple,
+.rmcc-section-primary.rmcc-section-purple,
+.rmcc-badge-purple,
+.rmcc-card-badge-purple {
+  background: #c65fdf !important;
+}
+
+.rmcc-section-default.rmcc-section-purple.darken,
+.rmcc-section-primary.rmcc-section-purple.darken,
+.rmcc-badge-purple.darken,
+.rmcc-card-badge-purple.darken {
+  background: #ab42c4 !important;
+}
+
+/* pink */
+.rmcc-section-default.rmcc-section-pink,
+.rmcc-section-primary.rmcc-section-pink,
+.rmcc-badge-pink,
+.rmcc-card-badge-pink {
+  background: #fc77a5 !important;
+}
+
+.rmcc-section-default.rmcc-section-pink.darken,
+.rmcc-section-primary.rmcc-section-pink.darken,
+.rmcc-badge-pink.darken,
+.rmcc-card-badge-pink.darken {
+  background: #fd3d96 !important;
+}
+
+/* orange */
+.rmcc-section-default.rmcc-section-orange,
+.rmcc-section-primary.rmcc-section-orange,
+.rmcc-badge-orange,
+.rmcc-card-badge-orange {
+  background: #fda43d !important;
+}
+
+.rmcc-section-default.rmcc-section-orange.darken,
+.rmcc-section-primary.rmcc-section-orange.darken,
+.rmcc-badge-orange.darken,
+.rmcc-card-badge-orange.darken {
+  background: #ef9b3c !important;
+}
+
+/* yellow */
+.rmcc-section-default.rmcc-section-yellow,
+.rmcc-section-primary.rmcc-section-yellow,
+.rmcc-badge-yellow,
+.rmcc-card-badge-yellow {
+  background: #fdf056 !important;
+}
+
+.rmcc-section-default.rmcc-section-yellow.darken,
+.rmcc-section-primary.rmcc-section-yellow.darken,
+.rmcc-badge-yellow.darken,
+.rmcc-card-badge-yellow.darken {
+  background: #fec142 !important;
+}
+
+/* 
+background-color (backgrounds,cards,tiles,buttons,subnavs)
+*/
+/* background,card,tile,button (background-color) */
+/* blue,primary */
+.rmcc-background-primary, .rmcc-background-default.rmcc-background-blue,
+.rmcc-card-primary, .rmcc-card-default.rmcc-card-blue, .rmcc-card-blue,
+.rmcc-tile-primary, .rmcc-tile-default.rmcc-tile-blue, .rmcc-tile-blue,
+.rmcc-subnav-pill > .rmcc-active > a,
+.rmcc-button-primary {
+  background-color: #02bffb !important;
+}
+
+.rmcc-background-primary.darken, .rmcc-background-default.rmcc-background-blue.darken,
+.rmcc-card-primary:hover, .rmcc-card-default.rmcc-card-blue:hover, .rmcc-card-blue:hover,
+.rmcc-tile-primary.darken, .rmcc-tile-default.rmcc-tile-blue.darken, .rmcc-tile-blue.darken,
+.rmcc-button-primary:hover {
+  background-color: #27a5fe !important;
+}
+
+/* navy,secondary */
+.rmcc-background-secondary,
+.rmcc-card-secondary,
+.rmcc-tile-secondary,
+.rmcc-button-secondary {
+  background-color: #0c305e !important;
+}
+
+.rmcc-background-secondary.darken,
+.rmcc-card-secondary:hover,
+.rmcc-card-secondary.darken,
+.rmcc-tile-secondary.darken,
+.rmcc-button-secondary.darken {
+  background-color: #0b2b52 !important;
+}
+
+/* green */
+.rmcc-background-default.rmcc-background-green, .rmcc-background-primary.rmcc-background-green,
+.rmcc-card-default.rmcc-card-green, .rmcc-card-primary.rmcc-card-green, .rmcc-card-green,
+.rmcc-tile-default.rmcc-tile-green, .rmcc-tile-primary.rmcc-tile-green, .rmcc-tile-green,
+.rmcc-button-green {
+  background-color: #58e09f !important;
+}
+
+.rmcc-background-default.rmcc-background-green.darken, .rmcc-background-primary.rmcc-background-green.darken,
+.rmcc-card-default.rmcc-card-green:hover, .rmcc-card-primary.rmcc-card-green:hover, .rmcc-card-green:hover,
+.rmcc-tile-default.rmcc-tile-green.darken, .rmcc-tile-primary.rmcc-tile-green.darken, .rmcc-tile-green.darken,
+.rmcc-button-green:hover {
+  background-color: #3ecc8c !important;
+}
+
+/* purple */
+.rmcc-background-default.rmcc-background-purple, .rmcc-background-primary.rmcc-background-purple,
+.rmcc-card-default.rmcc-card-purple, .rmcc-card-primary.rmcc-card-purple, .rmcc-card-purple,
+.rmcc-tile-default.rmcc-tile-purple, .rmcc-tile-primary.rmcc-tile-purple, .rmcc-tile-purple,
+.rmcc-button-purple {
+  background-color: #c65fdf !important;
+}
+
+.rmcc-background-default.rmcc-background-purple.darken, .rmcc-background-primary.rmcc-background-purple.darken,
+.rmcc-card-default.rmcc-card-purple:hover, .rmcc-card-primary.rmcc-card-purple:hover, .rmcc-card-purple:hover,
+.rmcc-tile-default.rmcc-tile-purple.darken, .rmcc-tile-primary.rmcc-tile-purple.darken, .rmcc-tile-purple.darken,
+.rmcc-button-purple:hover {
+  background-color: #ab42c4 !important;
+}
+
+/* pink */
+.rmcc-background-default.rmcc-background-pink, .rmcc-background-primary.rmcc-background-pink,
+.rmcc-card-default.rmcc-card-pink, .rmcc-card-primary.rmcc-card-pink, .rmcc-card-pink,
+.rmcc-tile-default.rmcc-tile-pink, .rmcc-tile-primary.rmcc-tile-pink, .rmcc-tile-pink,
+.rmcc-button-pink {
+  background-color: #fc77a5 !important;
+}
+
+.rmcc-background-default.rmcc-background-pink.darken, .rmcc-background-primary.rmcc-background-pink.darken,
+.rmcc-card-default.rmcc-card-pink:hover, .rmcc-card-primary.rmcc-card-pink:hover, .rmcc-card-pink:hover,
+.rmcc-tile-default.rmcc-tile-pink.darken, .rmcc-tile-primary.rmcc-tile-pink.darken, .rmcc-tile-pink.darken,
+.rmcc-button-pink:hover {
+  background-color: #fd3d96 !important;
+}
+
+/* orange */
+.rmcc-background-default.rmcc-background-orange, .rmcc-background-primary.rmcc-background-orange,
+.rmcc-card-default.rmcc-card-orange, .rmcc-card-primary.rmcc-card-orange, .rmcc-card-orange,
+.rmcc-tile-default.rmcc-tile-orange, .rmcc-tile-primary.rmcc-tile-orange, .rmcc-tile-orange,
+.rmcc-button-orange {
+  background-color: #fda43d !important;
+}
+
+.rmcc-background-default.rmcc-background-orange.darken, .rmcc-background-primary.rmcc-background-orange.darken,
+.rmcc-card-default.rmcc-card-orange:hover, .rmcc-card-primary.rmcc-card-orange:hover, .rmcc-card-orange:hover,
+.rmcc-tile-default.rmcc-tile-orange.darken, .rmcc-tile-primary.rmcc-tile-orange.darken, .rmcc-tile-orange.darken,
+.rmcc-button-orange:hover {
+  background-color: #ef9b3c !important;
+}
+
+/* yellow */
+.rmcc-background-default.rmcc-background-yellow, .rmcc-background-primary.rmcc-background-yellow,
+.rmcc-card-default.rmcc-card-yellow, .rmcc-card-primary.rmcc-card-yellow, .rmcc-card-yellow,
+.rmcc-tile-default.rmcc-tile-yellow, .rmcc-tile-primary.rmcc-tile-yellow, .rmcc-tile-yellow,
+.rmcc-button-yellow {
+  background-color: #fdf056 !important;
+}
+
+.rmcc-background-default.rmcc-background-yellow.darken, .rmcc-background-primary.rmcc-background-yellow.darken,
+.rmcc-card-default.rmcc-card-yellow:hover, .rmcc-card-primary.rmcc-card-yellow:hover, .rmcc-card-yellow:hover,
+.rmcc-tile-default.rmcc-tile-yellow.darken, .rmcc-tile-primary.rmcc-tile-yellow.darken, .rmcc-tile-yellow.darken,
+.rmcc-button-yellow:hover {
+  background-color: #fec142 !important;
+}
+
+/* hover cards with no default/primary/secondary */
+.rmcc-card-hover:not(.rmcc-card-default):not(.rmcc-card-primary):not(.rmcc-card-secondary):hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* 
+
+buttons extras
+
+*/
+.rmcc-button-default.rmcc-button-green,
+.rmcc-button-default.rmcc-button-purple,
+.rmcc-button-default.rmcc-button-pink,
+.rmcc-button-default.rmcc-button-orange,
+.rmcc-button-default.rmcc-button-yellow {
+  border: 1px solid transparent;
+}
+
+.rmcc-button-danger.rmcc-button-green,
+.rmcc-button-danger.rmcc-button-purple,
+.rmcc-button-danger.rmcc-button-pink,
+.rmcc-button-danger.rmcc-button-orange,
+.rmcc-button-danger.rmcc-button-yellow {
+  border: 1px solid transparent;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-green,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-green,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green,
+.rmcc-light .rmcc-button-default.rmcc-button-green,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-green,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-green,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green {
+  color: #58e09f;
+  border: 3px solid #58e09f;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-green:hover:hover,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-light .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover {
+  color: #3ecc8c;
+  border: 3px solid #3ecc8c;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-green,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-green,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-green,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-green,
+.rmcc-light .rmcc-button-primary.rmcc-button-green,
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-green,
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-green,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green {
+  color: #58e09f;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-purple,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-purple,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple,
+.rmcc-light .rmcc-button-default.rmcc-button-purple,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-purple,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-purple,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple {
+  color: #c65fdf;
+  border: 3px solid #c65fdf;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-purple:hover:hover,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-light .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover {
+  color: #ab42c4;
+  border: 3px solid #ab42c4;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-purple,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-purple,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-purple,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-purple,
+.rmcc-light .rmcc-button-primary.rmcc-button-purple,
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-purple,
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-purple,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple {
+  color: #c65fdf;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-pink,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-pink,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink,
+.rmcc-light .rmcc-button-default.rmcc-button-pink,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-pink,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-pink,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink {
+  color: #fc77a5;
+  border: 3px solid #fc77a5;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-pink:hover:hover,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-light .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover {
+  color: #fd3d96;
+  border: 3px solid #fd3d96;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-pink,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-pink,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-pink,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-pink,
+.rmcc-light .rmcc-button-primary.rmcc-button-pink,
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-pink,
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-pink,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink {
+  color: #fc77a5;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-orange,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-orange,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange,
+.rmcc-light .rmcc-button-default.rmcc-button-orange,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-orange,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-orange,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange {
+  color: #fda43d;
+  border: 3px solid #fda43d;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-orange:hover:hover,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-light .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover {
+  color: #ef9b3c;
+  border: 3px solid #ef9b3c;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-orange,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-orange,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-orange,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-orange,
+.rmcc-light .rmcc-button-primary.rmcc-button-orange,
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-orange,
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-orange,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange {
+  color: #fda43d;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow,
+.rmcc-light .rmcc-button-default.rmcc-button-yellow,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-yellow,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-yellow,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow {
+  color: #fdf056;
+  border: 3px solid #fdf056;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow:hover:hover,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-light .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover {
+  color: #fec142;
+  border: 3px solid #fec142;
+}
+
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-light .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow,
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow {
+  color: #fdf056;
+}
+
+/* 
+
+buttons more
+
+*/
+.rmcc-button {
+  text-transform: initial;
+}
+
+.rmcc-button-large {
+  font-size: 1rem;
+}
+
+.rmcc-button-large.rmcc-border-rounded {
+  border-radius: 30px;
+}
+
+.rmcc-button.rmcc-fat-border {
+  border-width: 4px;
+}
+
+.rmcc-button-large.rmcc-fat-border {
+  border-width: 5px;
+}
+
+/* bigger text on text buttons */
+.rmcc-button-text {
+  font-size: 1.1rem;
+}
+
+/*
+
+modifications 
+
+*/
+/* divider colour on light */
+.rmcc-light .rmcc-hr, .rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-hr, .rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-hr, .rmcc-overlay-primary .rmcc-hr, .rmcc-light hr, .rmcc-section-primary:not(.rmcc-preserve-color) hr, .rmcc-section-secondary:not(.rmcc-preserve-color) hr, .rmcc-tile-primary:not(.rmcc-preserve-color) hr, .rmcc-tile-secondary:not(.rmcc-preserve-color) hr, .rmcc-card-primary.rmcc-card-body hr, .rmcc-card-primary > :not([class*=rmcc-card-media]) hr, .rmcc-card-secondary.rmcc-card-body hr, .rmcc-card-secondary > :not([class*=rmcc-card-media]) hr, .rmcc-overlay-primary hr,
+.rmcc-background-primary .rmcc-hr, .rmcc-background-primary hr,
+.rmcc-background-secondary .rmcc-hr, .rmcc-background-secondary hr,
+.rmcc-section-primary .rmcc-hr, .rmcc-section-primary hr,
+.rmcc-section-secondary .rmcc-hr, .rmcc-section-secondary hr,
+.rmcc-card-primary .rmcc-hr, .rmcc-card-primary hr,
+.rmcc-card-secondary .rmcc-hr, .rmcc-card-secondary hr {
+  border-top-color: rgba(229, 229, 229, 0.231372549);
+}
+
+/*
+
+additions 
+
+*/
+.rmcc-text-fat {
+  font-weight: 500;
+}
+
+.rmcc-box-shadow-remove {
+  box-shadow: none !important;
+}
+
+.fit-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+swiperJs modifications & additions
+*/
+/* provide extra padding around swiper for cases like box shadowed items (works instead of overflow:visible) */
+.swiper.padded-overflow .swiper-slide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.swiper.padded-overflow .swiper-slide.swiper-slide-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.1s linear all;
+}
+
+.swiper.padded-overflow {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+.swiper.padded-overflow .swiper-wrapper {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 1200px) {
+  .swiper.padded-overflow {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+  .swiper.padded-overflow .swiper-wrapper {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
+/* reposition swiper pagination */
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 0px);
+}
+
+/*
+rmcc-card modifications & additions
+*/
+/* disable card header's border */
+.rmcc-card-header {
+  border: none;
+}
+
+/* card body paddings */
+.rmcc-card-small .rmcc-card-body, .rmcc-card-small.rmcc-card-body {
+  padding: 15px 25px 30px 25px;
+}
+
+/* rounded cards */
+.rmcc-card.rmcc-border-rounded {
+  border-radius: 10px;
+}
+
+.rmcc-card.rmcc-border-rounded > .rmcc-card-media-top > img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* card badges */
+.rmcc-card-badge {
+  height: 28px;
+  padding: 0 15px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* card badges reposition mods */
+.rmcc-card-badge.badge-left {
+  top: 0;
+  left: 0;
+  right: auto;
+}
+
+.rmcc-card-badge.badge-right {
+  top: 0;
+  right: 0;
+}
+
+/* rounded card badges */
+.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-left {
+  border-radius: 10px 0 0 0;
+}
+
+.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-right {
+  border-radius: 0 10px 0 0;
+}
+
+.rmcc-light.rmcc-card-badge-secondary, .rmcc-card-badge-secondary.rmcc-section-primary:not(.rmcc-preserve-color), .rmcc-card-badge-secondary.rmcc-section-secondary:not(.rmcc-preserve-color), .rmcc-card-badge-secondary.rmcc-tile-primary:not(.rmcc-preserve-color), .rmcc-card-badge-secondary.rmcc-tile-secondary:not(.rmcc-preserve-color), .rmcc-card-badge-secondary.rmcc-card-primary.rmcc-card-body, .rmcc-card-primary > .rmcc-card-badge-secondary:not([class*=rmcc-card-media]), .rmcc-card-badge-secondary.rmcc-card-secondary.rmcc-card-body, .rmcc-card-secondary > .rmcc-card-badge-secondary:not([class*=rmcc-card-media]), .rmcc-card-badge-secondary.rmcc-overlay-primary,
+.rmcc-light.rmcc-card-badge-green,
+.rmcc-card-badge-green.rmcc-section-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-green.rmcc-section-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-green.rmcc-tile-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-green.rmcc-tile-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-green.rmcc-card-primary.rmcc-card-body,
+.rmcc-card-primary > .rmcc-card-badge-green:not([class*=rmcc-card-media]),
+.rmcc-card-badge-green.rmcc-card-secondary.rmcc-card-body,
+.rmcc-card-secondary > .rmcc-card-badge-green:not([class*=rmcc-card-media]),
+.rmcc-card-badge-green.rmcc-overlay-primary,
+.rmcc-light.rmcc-card-badge-blue,
+.rmcc-card-badge-blue.rmcc-section-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-blue.rmcc-section-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-blue.rmcc-tile-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-blue.rmcc-tile-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-blue.rmcc-card-primary.rmcc-card-body,
+.rmcc-card-primary > .rmcc-card-badge-blue:not([class*=rmcc-card-media]),
+.rmcc-card-badge-blue.rmcc-card-secondary.rmcc-card-body,
+.rmcc-card-secondary > .rmcc-card-badge-blue:not([class*=rmcc-card-media]),
+.rmcc-card-badge-blue.rmcc-overlay-primary,
+.rmcc-light.rmcc-card-badge-purple,
+.rmcc-card-badge-purple.rmcc-section-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-purple.rmcc-section-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-purple.rmcc-tile-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-purple.rmcc-tile-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-purple.rmcc-card-primary.rmcc-card-body,
+.rmcc-card-primary > .rmcc-card-badge-purple:not([class*=rmcc-card-media]),
+.rmcc-card-badge-purple.rmcc-card-secondary.rmcc-card-body,
+.rmcc-card-secondary > .rmcc-card-badge-purple:not([class*=rmcc-card-media]),
+.rmcc-card-badge-purple.rmcc-overlay-primary,
+.rmcc-light.rmcc-card-badge-pink,
+.rmcc-card-badge-pink.rmcc-section-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-pink.rmcc-section-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-pink.rmcc-tile-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-pink.rmcc-tile-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-pink.rmcc-card-primary.rmcc-card-body,
+.rmcc-card-primary > .rmcc-card-badge-pink:not([class*=rmcc-card-media]),
+.rmcc-card-badge-pink.rmcc-card-secondary.rmcc-card-body,
+.rmcc-card-secondary > .rmcc-card-badge-pink:not([class*=rmcc-card-media]),
+.rmcc-card-badge-pink.rmcc-overlay-primary,
+.rmcc-light.rmcc-card-badge-orange,
+.rmcc-card-badge-orange.rmcc-section-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-orange.rmcc-section-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-orange.rmcc-tile-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-orange.rmcc-tile-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-orange.rmcc-card-primary.rmcc-card-body,
+.rmcc-card-primary > .rmcc-card-badge-orange:not([class*=rmcc-card-media]),
+.rmcc-card-badge-orange.rmcc-card-secondary.rmcc-card-body,
+.rmcc-card-secondary > .rmcc-card-badge-orange:not([class*=rmcc-card-media]),
+.rmcc-card-badge-orange.rmcc-overlay-primary,
+.rmcc-light.rmcc-card-badge-yellow,
+.rmcc-card-badge-yellow.rmcc-section-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-yellow.rmcc-section-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-yellow.rmcc-tile-primary:not(.rmcc-preserve-color),
+.rmcc-card-badge-yellow.rmcc-tile-secondary:not(.rmcc-preserve-color),
+.rmcc-card-badge-yellow.rmcc-card-primary.rmcc-card-body,
+.rmcc-card-primary > .rmcc-card-badge-yellow:not([class*=rmcc-card-media]),
+.rmcc-card-badge-yellow.rmcc-card-secondary.rmcc-card-body,
+.rmcc-card-secondary > .rmcc-card-badge-yellow:not([class*=rmcc-card-media]),
+.rmcc-card-badge-yellow.rmcc-overlay-primary {
+  color: #fff !important;
+}
+
+/*
+rmcc-navbar modifications & additions
+*/
+.rmcc-navbar-nav {
+  gap: 15px;
+}
+
+@media (min-width: 960px) {
+  .rmcc-navbar-nav {
+    gap: 35px;
+  }
+}
+.rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
+  column-gap: 0.25em;
+  min-height: 80px;
+  font-size: 1rem;
+}
+
+.rmcc-navbar-nav > li > a {
+  padding: 0 0;
+  color: #999;
+  text-transform: capitalize;
+}
+
+.rmcc-iconnav > * {
+  padding-left: 20px;
+}
+
+.rmcc-button-default.darken {
+  border-color: #333;
+}
+
+.rmcc-button-default.darken:hover {
+  border-color: rgba(51, 51, 51, 0.3019607843);
 }

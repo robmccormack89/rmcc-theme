@@ -1,0 +1,869 @@
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+
+/* 
+font sizes
+*/
+
+html {
+  font-size: 18px;
+}
+
+/* 
+font families
+*/
+
+/* fonts: BobbyJones & Fredoka */
+/* @font-face {
+  font-family: 'Bobby Jones Soft';
+  src: url(public/fonts/BobbyJonesSoft-Regular.woff2);
+}
+.bobby-jones {
+  font-family: 'Bobby Jones Soft';
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* heading fonts */
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-3xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+}
+
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* text fonts */
+html,
+.uk-text-lead {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* 
+color (headings,text,links)
+*/
+
+/* heading colours */
+/* .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, 
+.uk-heading-2xlarge, .uk-heading-3xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, 
+h1, h2, h3, h4, h5, h6,
+.uk-card-default .uk-card-title {
+  color: #0c305e;
+} */
+
+/* text colours */
+/* html,
+.uk-text-lead,
+.uk-card-default {
+  color: #0c305e;
+} */
+
+/* extra text colours */
+.uk-text-dark {
+  color: #333!important;
+}
+.uk-text-light {
+  color: #ffffff!important;
+}
+.uk-text-navy {
+  color: #0c305e!important;
+}
+.uk-text-blue {
+  color: #02bffb!important;
+}
+.uk-text-green {
+  color: #58e09f!important;
+}
+.uk-text-purple {
+  color: #c65fdf!important;
+}
+.uk-text-pink {
+  color: #fc77a5!important;
+}
+.uk-text-orange {
+  color: #fda43d!important;
+}
+.uk-text-yellow {
+  color: #fdf056!important;
+}
+.uk-text-navy.darken {
+  color: #0b2b52!important;
+}
+.uk-text-blue.darken {
+  color: #27a5fe!important;
+}
+.uk-text-green.darken {
+  color: #3ecc8c!important;
+}
+.uk-text-purple.darken {
+  color: #ab42c4!important;
+}
+.uk-text-pink.darken {
+  color: #fd3d96!important;
+}
+.uk-text-orange.darken {
+  color: #ef9b3c!important;
+}
+.uk-text-yellow.darken {
+  color: #fec142!important;
+}
+
+/* 
+background (sections,badges,card-badges_overlays)
+*/
+
+/* overlays (background) */
+.uk-overlay-primary.uk-overlay-navy {
+  background: rgba(12, 48, 94, .8);
+}
+.uk-overlay-primary.uk-overlay-blue {
+  background: rgba(2, 191, 251, .8);
+}
+.uk-overlay-primary.uk-overlay-green {
+  background: rgba(88, 224, 159, .8);
+}
+.uk-overlay-primary.uk-overlay-purple {
+  background: rgba(198, 95, 223, .8);
+}
+.uk-overlay-primary.uk-overlay-pink {
+  background: rgba(252, 119, 165, .8);
+}
+.uk-overlay-primary.uk-overlay-orange {
+  background: rgba(253, 164, 61, .8);
+}
+.uk-overlay-primary.uk-overlay-yellow {
+  background: rgba(253, 240, 86, .8);
+}
+.uk-overlay-primary.uk-overlay-navy.darken {
+  background: rgba(11, 43, 82, .8);
+}
+.uk-overlay-primary.uk-overlay-blue.darken {
+  background: rgba(39, 165, 254, .8);
+}
+.uk-overlay-primary.uk-overlay-green.darken {
+  background: rgba(62, 204, 140, .8);
+}
+.uk-overlay-primary.uk-overlay-purple.darken {
+  background: rgba(171, 66, 196, .8);
+}
+.uk-overlay-primary.uk-overlay-pink.darken {
+  background: rgba(253, 61, 150, .8);
+}
+.uk-overlay-primary.uk-overlay-orange.darken {
+  background: rgba(239, 155, 60, .8);
+}
+.uk-overlay-primary.uk-overlay-yellow.darken {
+  background: rgba(254, 193, 66, .8);
+}
+.uk-overlay-default.uk-overlay-navy {
+  background: rgba(12, 48, 94, .8);
+}
+.uk-overlay-default.uk-overlay-blue {
+  background: rgba(2, 191, 251, .8);
+}
+.uk-overlay-default.uk-overlay-green {
+  background: rgba(88, 224, 159, .8);
+}
+.uk-overlay-default.uk-overlay-purple {
+  background: rgba(198, 95, 223, .8);
+}
+.uk-overlay-default.uk-overlay-pink {
+  background: rgba(252, 119, 165, .8);
+}
+.uk-overlay-default.uk-overlay-orange {
+  background: rgba(253, 164, 61, .8);
+}
+.uk-overlay-default.uk-overlay-yellow {
+  background: rgba(253, 240, 86, .8);
+}
+.uk-overlay-default.uk-overlay-navy.darken {
+  background: rgba(11, 43, 82, .8);
+}
+.uk-overlay-default.uk-overlay-blue.darken {
+  background: rgba(39, 165, 254, .8);
+}
+.uk-overlay-default.uk-overlay-green.darken {
+  background: rgba(62, 204, 140, .8);
+}
+.uk-overlay-default.uk-overlay-purple.darken {
+  background: rgba(171, 66, 196, .8);
+}
+.uk-overlay-default.uk-overlay-pink.darken {
+  background: rgba(253, 61, 150, .8);
+}
+.uk-overlay-default.uk-overlay-orange.darken {
+  background: rgba(239, 155, 60, .8);
+}
+.uk-overlay-default.uk-overlay-yellow.darken {
+  background: rgba(254, 193, 66, .8);
+}
+
+/* sections,badges,card-badges (background) */
+
+/* blue,primary */
+.uk-section-primary, 
+.uk-section-default.uk-section-blue,
+.uk-badge,
+.uk-card-badge {
+  background: #02bffb!important;
+}
+.uk-section-primary.darken, 
+.uk-section-default.uk-section-blue.darken,
+.uk-badge.darken,
+.uk-card-badge.darken {
+  background: #27a5fe!important;
+}
+
+/* navy,secondary */
+.uk-section-secondary,
+.uk-badge-secondary,
+.uk-card-badge-secondary {
+  background: #0c305e!important;
+}
+.uk-section-secondary.darken,
+.uk-badge-secondary.darken,
+.uk-card-badge-secondary.darken {
+  background: #0b2b52!important;
+}
+
+/* green */
+.uk-section-default.uk-section-green, 
+.uk-section-primary.uk-section-green,
+.uk-badge-green,
+.uk-card-badge-green {
+  background: #58e09f!important;
+}
+.uk-section-default.uk-section-green.darken, 
+.uk-section-primary.uk-section-green.darken,
+.uk-badge-green.darken,
+.uk-card-badge-green.darken {
+  background: #3ecc8c!important;
+}
+
+/* purple */
+.uk-section-default.uk-section-purple,
+.uk-section-primary.uk-section-purple,
+.uk-badge-purple,
+.uk-card-badge-purple {
+  background: #c65fdf!important;
+}
+.uk-section-default.uk-section-purple.darken, 
+.uk-section-primary.uk-section-purple.darken,
+.uk-badge-purple.darken,
+.uk-card-badge-purple.darken {
+  background: #ab42c4!important;
+}
+
+/* pink */
+.uk-section-default.uk-section-pink,
+.uk-section-primary.uk-section-pink,
+.uk-badge-pink,
+.uk-card-badge-pink {
+  background: #fc77a5!important;
+}
+.uk-section-default.uk-section-pink.darken, 
+.uk-section-primary.uk-section-pink.darken,
+.uk-badge-pink.darken,
+.uk-card-badge-pink.darken {
+  background: #fd3d96!important;
+}
+
+/* orange */
+.uk-section-default.uk-section-orange,
+.uk-section-primary.uk-section-orange,
+.uk-badge-orange,
+.uk-card-badge-orange {
+  background: #fda43d!important;
+}
+.uk-section-default.uk-section-orange.darken,
+.uk-section-primary.uk-section-orange.darken,
+.uk-badge-orange.darken,
+.uk-card-badge-orange.darken {
+  background: #ef9b3c!important;
+}
+
+/* yellow */
+.uk-section-default.uk-section-yellow,
+.uk-section-primary.uk-section-yellow,
+.uk-badge-yellow,
+.uk-card-badge-yellow {
+  background: #fdf056!important;
+}
+.uk-section-default.uk-section-yellow.darken, 
+.uk-section-primary.uk-section-yellow.darken,
+.uk-badge-yellow.darken,
+.uk-card-badge-yellow.darken {
+  background: #fec142!important;
+}
+
+/* 
+background-color (backgrounds,cards,tiles,buttons,subnavs)
+*/
+/* background,card,tile,button (background-color) */
+
+/* blue,primary */
+.uk-background-primary, .uk-background-default.uk-background-blue,
+.uk-card-primary, .uk-card-default.uk-card-blue, .uk-card-blue,
+.uk-tile-primary, .uk-tile-default.uk-tile-blue, .uk-tile-blue,
+.uk-subnav-pill>.uk-active>a,
+.uk-button-primary {
+  background-color: #02bffb!important;
+}
+.uk-background-primary.darken, .uk-background-default.uk-background-blue.darken,
+.uk-card-primary:hover, .uk-card-default.uk-card-blue:hover, .uk-card-blue:hover,
+.uk-tile-primary.darken, .uk-tile-default.uk-tile-blue.darken, .uk-tile-blue.darken,
+.uk-button-primary:hover {
+  background-color: #27a5fe!important;
+}
+
+/* navy,secondary */
+.uk-background-secondary,
+.uk-card-secondary,
+.uk-tile-secondary,
+.uk-button-secondary {
+  background-color: #0c305e!important;
+}
+.uk-background-secondary.darken,
+.uk-card-secondary:hover,
+.uk-card-secondary.darken,
+.uk-tile-secondary.darken,
+.uk-button-secondary.darken {
+  background-color: #0b2b52!important;
+}
+
+/* green */
+.uk-background-default.uk-background-green, .uk-background-primary.uk-background-green,
+.uk-card-default.uk-card-green, .uk-card-primary.uk-card-green, .uk-card-green,
+.uk-tile-default.uk-tile-green, .uk-tile-primary.uk-tile-green, .uk-tile-green,
+.uk-button-green {
+  background-color: #58e09f!important;
+}
+.uk-background-default.uk-background-green.darken, .uk-background-primary.uk-background-green.darken,
+.uk-card-default.uk-card-green:hover, .uk-card-primary.uk-card-green:hover, .uk-card-green:hover,
+.uk-tile-default.uk-tile-green.darken, .uk-tile-primary.uk-tile-green.darken, .uk-tile-green.darken,
+.uk-button-green:hover {
+  background-color: #3ecc8c!important;
+}
+
+/* purple */
+.uk-background-default.uk-background-purple, .uk-background-primary.uk-background-purple,
+.uk-card-default.uk-card-purple, .uk-card-primary.uk-card-purple, .uk-card-purple,
+.uk-tile-default.uk-tile-purple, .uk-tile-primary.uk-tile-purple, .uk-tile-purple,
+.uk-button-purple {
+  background-color: #c65fdf!important;
+}
+.uk-background-default.uk-background-purple.darken, .uk-background-primary.uk-background-purple.darken,
+.uk-card-default.uk-card-purple:hover, .uk-card-primary.uk-card-purple:hover, .uk-card-purple:hover,
+.uk-tile-default.uk-tile-purple.darken, .uk-tile-primary.uk-tile-purple.darken, .uk-tile-purple.darken,
+.uk-button-purple:hover {
+  background-color: #ab42c4!important;
+}
+
+/* pink */
+.uk-background-default.uk-background-pink, .uk-background-primary.uk-background-pink,
+.uk-card-default.uk-card-pink,.uk-card-primary.uk-card-pink, .uk-card-pink,
+.uk-tile-default.uk-tile-pink, .uk-tile-primary.uk-tile-pink, .uk-tile-pink,
+.uk-button-pink {
+  background-color: #fc77a5!important;
+}
+.uk-background-default.uk-background-pink.darken, .uk-background-primary.uk-background-pink.darken,
+.uk-card-default.uk-card-pink:hover, .uk-card-primary.uk-card-pink:hover, .uk-card-pink:hover,
+.uk-tile-default.uk-tile-pink.darken, .uk-tile-primary.uk-tile-pink.darken, .uk-tile-pink.darken,
+.uk-button-pink:hover {
+  background-color: #fd3d96!important;
+}
+
+/* orange */
+.uk-background-default.uk-background-orange, .uk-background-primary.uk-background-orange,
+.uk-card-default.uk-card-orange, .uk-card-primary.uk-card-orange, .uk-card-orange,
+.uk-tile-default.uk-tile-orange, .uk-tile-primary.uk-tile-orange, .uk-tile-orange ,
+.uk-button-orange {
+  background-color: #fda43d!important;
+}
+.uk-background-default.uk-background-orange.darken, .uk-background-primary.uk-background-orange.darken,
+.uk-card-default.uk-card-orange:hover, .uk-card-primary.uk-card-orange:hover, .uk-card-orange:hover,
+.uk-tile-default.uk-tile-orange.darken, .uk-tile-primary.uk-tile-orange.darken, .uk-tile-orange.darken,
+.uk-button-orange:hover {
+  background-color: #ef9b3c!important;
+}
+
+/* yellow */
+.uk-background-default.uk-background-yellow, .uk-background-primary.uk-background-yellow,
+.uk-card-default.uk-card-yellow, .uk-card-primary.uk-card-yellow, .uk-card-yellow,
+.uk-tile-default.uk-tile-yellow, .uk-tile-primary.uk-tile-yellow, .uk-tile-yellow,
+.uk-button-yellow {
+  background-color: #fdf056!important;
+}
+.uk-background-default.uk-background-yellow.darken, .uk-background-primary.uk-background-yellow.darken,
+.uk-card-default.uk-card-yellow:hover, .uk-card-primary.uk-card-yellow:hover, .uk-card-yellow:hover,
+.uk-tile-default.uk-tile-yellow.darken, .uk-tile-primary.uk-tile-yellow.darken, .uk-tile-yellow.darken,
+.uk-button-yellow:hover {
+  background-color: #fec142!important;
+}
+
+/* hover cards with no default/primary/secondary */
+.uk-card-hover:not(.uk-card-default):not(.uk-card-primary):not(.uk-card-secondary):hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* 
+
+buttons extras
+
+*/
+
+.uk-button-default.uk-button-green,
+.uk-button-default.uk-button-purple,
+.uk-button-default.uk-button-pink,
+.uk-button-default.uk-button-orange,
+.uk-button-default.uk-button-yellow {
+  border: 1px solid transparent;
+}
+
+.uk-button-danger.uk-button-green,
+.uk-button-danger.uk-button-purple,
+.uk-button-danger.uk-button-pink,
+.uk-button-danger.uk-button-orange,
+.uk-button-danger.uk-button-yellow {
+  border: 1px solid transparent;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-green, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-green, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-green, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-green, 
+.uk-light .uk-button-default.uk-button-green, 
+.uk-offcanvas-bar .uk-button-default.uk-button-green, 
+.uk-overlay-primary .uk-button-default.uk-button-green, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-green, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-green, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-green, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-green {
+  color: #58e09f;
+  border: 3px solid #58e09f;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-green:hover:hover, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-green:hover, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-green:hover, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-green:hover, 
+.uk-light .uk-button-default.uk-button-green:hover, 
+.uk-offcanvas-bar .uk-button-default.uk-button-green:hover, 
+.uk-overlay-primary .uk-button-default.uk-button-green:hover, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-green:hover, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-green:hover, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-green:hover, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-green:hover {
+  color: #3ecc8c;
+  border: 3px solid #3ecc8c;
+}
+
+.uk-card-primary.uk-card-body .uk-button-primary.uk-button-green, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-green, 
+.uk-card-secondary.uk-card-body .uk-button-primary.uk-button-green, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-green, 
+.uk-light .uk-button-primary.uk-button-green, 
+.uk-offcanvas-bar .uk-button-primary.uk-button-green, 
+.uk-overlay-primary .uk-button-primary.uk-button-green, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-green, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-green, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-green, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-green {
+  color: #58e09f;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-purple, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-purple, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-purple, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-purple, 
+.uk-light .uk-button-default.uk-button-purple, 
+.uk-offcanvas-bar .uk-button-default.uk-button-purple, 
+.uk-overlay-primary .uk-button-default.uk-button-purple, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-purple, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-purple, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-purple, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-purple {
+  color: #c65fdf;
+  border: 3px solid #c65fdf;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-purple:hover:hover, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-purple:hover, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-purple:hover, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-purple:hover, 
+.uk-light .uk-button-default.uk-button-purple:hover, 
+.uk-offcanvas-bar .uk-button-default.uk-button-purple:hover, 
+.uk-overlay-primary .uk-button-default.uk-button-purple:hover, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-purple:hover, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-purple:hover, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-purple:hover, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-purple:hover {
+  color: #ab42c4;
+  border: 3px solid #ab42c4;
+}
+
+.uk-card-primary.uk-card-body .uk-button-primary.uk-button-purple, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-purple, 
+.uk-card-secondary.uk-card-body .uk-button-primary.uk-button-purple, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-purple, 
+.uk-light .uk-button-primary.uk-button-purple, 
+.uk-offcanvas-bar .uk-button-primary.uk-button-purple, 
+.uk-overlay-primary .uk-button-primary.uk-button-purple, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-purple, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-purple, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-purple, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-purple {
+  color: #c65fdf;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-pink, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-pink, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-pink, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-pink, 
+.uk-light .uk-button-default.uk-button-pink, 
+.uk-offcanvas-bar .uk-button-default.uk-button-pink, 
+.uk-overlay-primary .uk-button-default.uk-button-pink, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-pink, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-pink, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-pink, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-pink {
+  color: #fc77a5;
+  border: 3px solid #fc77a5;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-pink:hover:hover, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-pink:hover, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-pink:hover, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-pink:hover, 
+.uk-light .uk-button-default.uk-button-pink:hover, 
+.uk-offcanvas-bar .uk-button-default.uk-button-pink:hover, 
+.uk-overlay-primary .uk-button-default.uk-button-pink:hover, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-pink:hover, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-pink:hover, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-pink:hover, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-pink:hover {
+  color: #fd3d96;
+  border: 3px solid #fd3d96;
+}
+
+.uk-card-primary.uk-card-body .uk-button-primary.uk-button-pink, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-pink, 
+.uk-card-secondary.uk-card-body .uk-button-primary.uk-button-pink, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-pink, 
+.uk-light .uk-button-primary.uk-button-pink, 
+.uk-offcanvas-bar .uk-button-primary.uk-button-pink, 
+.uk-overlay-primary .uk-button-primary.uk-button-pink, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-pink, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-pink, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-pink, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-pink {
+  color: #fc77a5;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-orange, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-orange, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-orange, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-orange, 
+.uk-light .uk-button-default.uk-button-orange, 
+.uk-offcanvas-bar .uk-button-default.uk-button-orange, 
+.uk-overlay-primary .uk-button-default.uk-button-orange, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-orange, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-orange, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-orange, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-orange {
+  color: #fda43d;
+  border: 3px solid #fda43d;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-orange:hover:hover, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-orange:hover, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-orange:hover, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-orange:hover, 
+.uk-light .uk-button-default.uk-button-orange:hover, 
+.uk-offcanvas-bar .uk-button-default.uk-button-orange:hover, 
+.uk-overlay-primary .uk-button-default.uk-button-orange:hover, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-orange:hover, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-orange:hover, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-orange:hover, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-orange:hover {
+  color: #ef9b3c;
+  border: 3px solid #ef9b3c;
+}
+
+.uk-card-primary.uk-card-body .uk-button-primary.uk-button-orange, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-orange, 
+.uk-card-secondary.uk-card-body .uk-button-primary.uk-button-orange, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-orange, 
+.uk-light .uk-button-primary.uk-button-orange, 
+.uk-offcanvas-bar .uk-button-primary.uk-button-orange, 
+.uk-overlay-primary .uk-button-primary.uk-button-orange, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-orange, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-orange, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-orange, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-orange {
+  color: #fda43d;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-yellow, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-yellow, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-yellow, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-yellow, 
+.uk-light .uk-button-default.uk-button-yellow, 
+.uk-offcanvas-bar .uk-button-default.uk-button-yellow, 
+.uk-overlay-primary .uk-button-default.uk-button-yellow, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow {
+  color: #fdf056;
+  border: 3px solid #fdf056;
+}
+
+.uk-card-primary.uk-card-body .uk-button-default.uk-button-yellow:hover:hover, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-default.uk-button-yellow:hover, 
+.uk-card-secondary.uk-card-body .uk-button-default.uk-button-yellow:hover, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-default.uk-button-yellow:hover, 
+.uk-light .uk-button-default.uk-button-yellow:hover, 
+.uk-offcanvas-bar .uk-button-default.uk-button-yellow:hover, 
+.uk-overlay-primary .uk-button-default.uk-button-yellow:hover, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow:hover, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow:hover, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow:hover, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-default.uk-button-yellow:hover {
+  color: #fec142;
+  border: 3px solid #fec142;
+}
+
+.uk-card-primary.uk-card-body .uk-button-primary.uk-button-yellow, 
+.uk-card-primary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-yellow, 
+.uk-card-secondary.uk-card-body .uk-button-primary.uk-button-yellow, 
+.uk-card-secondary>:not([class*=uk-card-media]) .uk-button-primary.uk-button-yellow, 
+.uk-light .uk-button-primary.uk-button-yellow, 
+.uk-offcanvas-bar .uk-button-primary.uk-button-yellow, 
+.uk-overlay-primary .uk-button-primary.uk-button-yellow, 
+.uk-section-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-yellow, 
+.uk-section-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-yellow, 
+.uk-tile-primary:not(.uk-preserve-color) .uk-button-primary.uk-button-yellow, 
+.uk-tile-secondary:not(.uk-preserve-color) .uk-button-primary.uk-button-yellow {
+  color: #fdf056;
+}
+
+/* 
+
+buttons more
+
+*/
+
+.uk-button {
+  text-transform: initial;
+}
+.uk-button-large {
+  font-size: 1rem;
+}
+.uk-button-large.uk-border-rounded {
+  border-radius: 30px;
+}
+.uk-button.uk-fat-border {
+  border-width: 4px;
+}
+.uk-button-large.uk-fat-border {
+  border-width: 5px;
+}
+/* bigger text on text buttons */
+.uk-button-text {
+  font-size: 1.1rem;
+}
+  
+/*
+
+modifications 
+
+*/
+
+/* divider colour on light */
+.uk-light .uk-hr, .uk-light hr,
+.uk-background-primary .uk-hr, .uk-background-primary hr,
+.uk-background-secondary .uk-hr, .uk-background-secondary hr,
+.uk-section-primary .uk-hr, .uk-section-primary hr,
+.uk-section-secondary .uk-hr, .uk-section-secondary hr,
+.uk-card-primary .uk-hr, .uk-card-primary hr,
+.uk-card-secondary .uk-hr, .uk-card-secondary hr {
+  border-top-color: #e5e5e53b;
+}
+
+/*
+
+additions 
+
+*/
+
+.uk-text-fat {
+  font-weight: 500;
+}
+.uk-box-shadow-remove {
+  box-shadow: none!important;
+}
+.fit-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+swiperJs modifications & additions
+*/
+
+/* provide extra padding around swiper for cases like box shadowed items (works instead of overflow:visible) */
+.swiper.padded-overflow .swiper-slide {
+  opacity: 0;
+  visibility: hidden;
+}
+.swiper.padded-overflow .swiper-slide.swiper-slide-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: .1s linear all;
+}
+.swiper.padded-overflow {
+  padding-left: 30px!important;
+  padding-right: 30px!important
+}
+.swiper.padded-overflow .swiper-wrapper {
+  padding-top: 30px!important;
+  padding-bottom: 30px!important;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 1200px) {
+  .swiper.padded-overflow {
+    padding-left: 40px!important;
+    padding-right: 40px!important
+  }
+  .swiper.padded-overflow .swiper-wrapper {
+    padding-top: 40px!important;
+    padding-bottom: 40px!important
+  }
+}
+/* reposition swiper pagination */
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 0px);
+}
+
+/*
+uk-card modifications & additions
+*/
+
+/* disable card header's border */
+.uk-card-header {
+  border: none;
+}
+
+/* card body paddings */
+.uk-card-small .uk-card-body, .uk-card-small.uk-card-body {
+  padding: 15px 25px 30px 25px;
+}
+
+/* rounded cards */
+.uk-card.uk-border-rounded {
+  border-radius: 10px;
+}
+.uk-card.uk-border-rounded>.uk-card-media-top>img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* card badges */
+.uk-card-badge {
+  height: 28px;
+  padding: 0 15px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* card badges reposition mods */
+.uk-card-badge.badge-left {
+  top: 0;
+  left: 0;
+  right: auto;
+}
+.uk-card-badge.badge-right {
+  top: 0;
+  right: 0;
+}
+
+/* rounded card badges */
+.uk-card.uk-border-rounded .uk-card-badge.badge-left {
+  border-radius: 10px 0 0 0;
+}
+.uk-card.uk-border-rounded .uk-card-badge.badge-right {
+  border-radius: 0 10px 0 0;
+}
+
+
+
+
+.uk-light.uk-card-badge-secondary,
+.uk-light.uk-card-badge-green,
+.uk-light.uk-card-badge-blue,
+.uk-light.uk-card-badge-purple,
+.uk-light.uk-card-badge-pink,
+.uk-light.uk-card-badge-orange,
+.uk-light.uk-card-badge-yellow {
+  color:#fff!important;
+}
+
+
+
+/*
+uk-navbar modifications & additions
+*/
+
+
+.uk-navbar-nav {
+  gap: 15px;
+}
+@media (min-width: 960px) {
+  .uk-navbar-nav {
+      gap: 35px;
+  }
+}
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+  column-gap: .25em;
+  min-height: 80px;
+  font-size: 1rem;
+}
+.uk-navbar-nav>li>a {
+  padding: 0 0;
+  color: #999;
+  text-transform: capitalize;
+}
+
+
+.uk-iconnav>* {
+  padding-left: 20px;
+}
+
+
+
+
+.uk-button-default.darken {
+  border-color: #333;
+}
+.uk-button-default.darken:hover {
+  border-color: #3333334d;
+}
