@@ -5,4 +5,4 @@
  * @param array $block The block settings and attributes.
  */
 ?>
-<p class="rmcc-margin-remove-bottom">Howya!</p>
+<p class="rmcc-margin-remove-top rmcc-margin-remove-bottom">Howya!</p>

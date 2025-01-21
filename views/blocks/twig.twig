@@ -1,1 +1,5 @@
-<p class="rmcc-margin-remove-bottom">{{theme.featured_img.src}}</p>
+{% extends "blocks/block.twig" %}
+
+{% block block_content %}
+  <div>{{theme.featured_img.src}}</div>
+{% endblock %}
