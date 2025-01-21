@@ -1,14 +1,14 @@
 {
-  "name": "acf/hellooo",
-  "title": "Hellooo",
-  "description": "A demo block built using ACF.",
-  "style": [ "file:./hellooo.css" ],
+  "name": "acf/twig",
+  "title": "Twig",
+  "description": "A demo block built using ACF & Timber/Twig.",
+  "style": [ "file:./twig.css" ],
   "category": "formatting",
   "icon": "admin-comments",
   "keywords": ["testimonial", "quote"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "hellooo.php"
+    "renderTemplate": "twig.php"
   },
   "supports": {
     "anchor": true
