@@ -10,7 +10,47 @@
     "mode": "preview",
     "renderTemplate": "twig.php"
   },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "margin": {
+            "bottom": "0rem",
+            "top": "0rem"
+          },
+          "padding": "0rem"
+        }
+      }
+    }
+  },
   "supports": {
-    "anchor": true
+    "html": false,
+    "mode": true,
+    "jsx": true,
+    "anchor": true,
+    "multiple": false,
+    "align": true,
+    "alignContent": false,
+    "alignText": false,
+    "fullHeight": false,
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "heading": false,
+      "button": false,
+      "enableContrastChecker": false
+    },
+    "spacing": {
+      "margin": ["bottom", "top"],
+      "padding": true
+    },
+    "typography": {
+      "fontSize": false,
+      "_lineHeight": true
+    }
   }
+
 }

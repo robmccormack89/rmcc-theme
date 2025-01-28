@@ -8,8 +8,9 @@
 namespace Rmcc;
 
 $context = Theme::context();
-$context['block'] = $block;
 $context['fields'] = get_fields();
-$context['is_preview'] = $is_preview;
+$context['block'] = $block;
+$context['block']['is_preview'] = $is_preview;
+$context['_block'] = new Block($context['block']);
 
 Theme::render('blocks/twig.twig', $context);
