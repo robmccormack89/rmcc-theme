@@ -1,21 +1,15 @@
 {% block block_styles %}
-  {# Extend this downstream to add inline styles for specific blocks #}
 {% endblock %}
 
-{# here we do the HTML markup for block wrapper #}
-{% if not block.is_preview %}<div {{ _block.spacingAttrs }}>{% endif %}
-  <div class="{{ _block.wrapper }}" data-template="_block.twig">
-    <div id="{{ block.anchor|default(block.id)|e('esc_html') }}" class="{{ _block.container }} {{ block.className|e('esc_html') }}" {{ _block.align }}>
-
-      {# Extend this downstream in specific blocks #}
+<div {{ block.extra.spacingAttrs }}>
+  <div class="{{ block.extra.wrapper }}" data-template="_block.twig">
+    <div id="{{ block.anchor|default(block.id)|e('esc_html') }}" class="{{ block.extra.container }} {{ block.className|e('esc_html') }}" {{ block.extra.align }}>
       {% block block_content %}
         Nothing here....
       {% endblock %}
-      
     </div>
   </div>
-{% if not block.is_preview %}</div>{% endif %}
+</div>
 
 {% block block_scripts %}
-  {# Extend this downstream to add inline scripts for specific blocks #}
 {% endblock %}

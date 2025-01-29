@@ -9,7 +9,7 @@ body {
   box-sizing: border-box;
 }
 /* base margins: 900px S */
-.gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.uk-container-break) {
+.gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.rmcc-container-break) {
   max-width: 750px;
 }
 /* alignwide margins: 1400px L */
@@ -72,7 +72,7 @@ body {
   text-align: right;
 }
 /* paddings (responsive) */
-.gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.uk-container-break),
+.gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.rmcc-container-break),
 .gutenberg-editor > .alignwide,
 .gutenberg-editor > div.wp-block-image,
 .wp-block-button.alignleft,
@@ -85,7 +85,7 @@ body {
   width: calc(100% - 30px);
 }
 @media (min-width: 640px) {
-  .gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.uk-container-break),
+  .gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.rmcc-container-break),
   .gutenberg-editor > .alignwide,
   .gutenberg-editor > div.wp-block-image,
   .wp-block-button.alignleft,
@@ -99,7 +99,7 @@ body {
   }
 }
 @media (min-width: 960px) {
-  .gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.uk-container-break),
+  .gutenberg-editor > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(div.wp-block-image):not(.rmcc-container-break),
   .gutenberg-editor > .alignwide,
   .gutenberg-editor > div.wp-block-image,
   .wp-block-button.alignleft,

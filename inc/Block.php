@@ -2,26 +2,28 @@
 
 namespace Rmcc;
 
+// this class sets up data like custom classes according to the block's given settings
 class Block {
 
-  public $spacingAttrs;
+  public $spacingAttrs; // spacing & margin as per block.json
 
-  public $wrapper;
-  public $container;
-  public $align;
+  public $wrapper; // _block.twig breaking container class
+  public $container; // _block.twig container class
+  public $align; // _block.twig inline style for left/right aligns
   
-  public $fullheight;
+  public $fullheight; // fullheight controls
   public $fullheight_class;
   public $fullheight_img_class;
 
-  public $align_text;
+  public $align_text; // text alignmenmt controls
 
-  public $align_content;
+  public $align_content; // absolute positioning of content controls
   public $align_content_pos;
 
   public function __construct($block) {
 
-    $this->spacingAttrs = wp_kses_data(get_block_wrapper_attributes());
+    // block spacing & margin (_block.twig only)
+    if(!$block['is_preview']) $this->spacingAttrs = wp_kses_data(get_block_wrapper_attributes());
 
     // block wrapping (_block.twig only)
     if(array_key_exists('align', $block) && array_key_exists('is_preview', $block)){
@@ -32,14 +34,20 @@ class Block {
       
         // align_container
         $this->container = 'rmcc-no-container';
-        if($block['align'] == 'left' || $block['align'] == 'center' || $block['align'] == 'right') $this->container = 'rmcc-container rmcc-container-small';
         if($block['align'] == 'full') $this->container = 'rmcc-container rmcc-container-expand rmcc-padding-remove-horizontal';
         if($block['align'] == 'wide') $this->container = 'rmcc-container rmcc-container-xlarge';
       
         // align_style
         $this->align = null;
-        if($block['align'] == 'right') $this->align = 'style="padding-right:0;margin-right:0;"';
-        if($block['align'] == 'left') $this->align = 'style="padding-left:0;margin-left:0;"';
+        if($block['align'] == 'right') $this->align = 'style="padding-right:0;margin-right:0;margin-left:25%"';
+        if($block['align'] == 'left') $this->align = 'style="padding-left:0;margin-left:0;margin-right:25%"';
+        if($block['align'] == 'center') $this->align = 'style="padding-left:0;padding-right:0;margin-left:12.5%;margin-right:12.5%"';
+
+        // disable spacingAttrs on left/right/center align
+        if($block['align'] == 'left') $this->spacingAttrs = null;
+        if($block['align'] == 'right') $this->spacingAttrs = null;
+        if($block['align'] == 'center') $this->spacingAttrs = null;
+        
       
       }
     }

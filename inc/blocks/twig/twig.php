@@ -11,6 +11,6 @@ $context = Theme::context();
 $context['fields'] = get_fields();
 $context['block'] = $block;
 $context['block']['is_preview'] = $is_preview;
-$context['_block'] = new Block($context['block']);
+$context['block']['extra']= new Block($context['block']);
 
 Theme::render('blocks/twig.twig', $context);

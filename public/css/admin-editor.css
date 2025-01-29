@@ -1,3 +1,21 @@
 html :where(.wp-block) {
   max-width: 1100px;
 }
+html :where(.wp-block)[data-align=left]:has(.acf-block-preview ), 
+html :where(.wp-block)[data-align=right]:has(.acf-block-preview ),
+html :where(.wp-block)[data-align=center]:has(.acf-block-preview ) {
+  height: auto;
+}
+html :where(.wp-block)[data-align=left]>.acf-block-preview {
+  float: none;
+  margin-right: 25%;
+}
+html :where(.wp-block)[data-align=right]>.acf-block-preview {
+  float: none;
+  margin-left: 25%;
+}
+html :where(.wp-block)[data-align=center]>.acf-block-preview {
+  float: none;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
