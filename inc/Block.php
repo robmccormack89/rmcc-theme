@@ -62,12 +62,12 @@ class Block {
     if($block['name'] == 'acf/card'){
       if(get_field('img')){
         $data = get_field('img');
-        if(get_field('left')) $data['left'] = get_field('left');
-        if(get_field('top')) $data['top'] = get_field('top');
-        if(get_field('fixed_bg')) $data['fixed_bg'] = get_field('fixed_bg');
+        if(get_field('left')) $data['_left'] = get_field('left');
+        if(get_field('top')) $data['_top'] = get_field('top');
+        if(get_field('fixed_bg')) $data['_fixed_bg'] = get_field('fixed_bg');
         if(get_field('size')) $data['_size'] = get_field('size');
         if(get_field('width')) $data['_width'] = get_field('width');
-        if(get_field('repeat')) $data['repeat'] = get_field('repeat');
+        if(get_field('repeat')) $data['_repeat'] = get_field('repeat');
       }
     }
     return $data;
