@@ -26,4 +26,4 @@ $template = array(
 );
 $context['block']['template'] = $template;
 
-Theme::render('blocks/rmcc.twig', $context);
+Theme::render('rmcc.twig', $context);

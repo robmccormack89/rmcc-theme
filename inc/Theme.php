@@ -120,6 +120,8 @@ class Theme extends Timber {
 
   public function theme_supports() {
 
+    //add_theme_support('appearance-tools');
+
     // usual theme supports
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');

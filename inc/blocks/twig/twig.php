@@ -13,4 +13,4 @@ $context['block'] = $block;
 $context['block']['is_preview'] = $is_preview;
 $context['block']['extra']= new Block($context['block']);
 
-Theme::render('blocks/twig.twig', $context);
+Theme::render('twig.twig', $context);

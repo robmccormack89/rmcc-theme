@@ -1,15 +1,17 @@
 {% block block_styles %}
 {% endblock %}
 
-<div {{ block.extra.spacingAttrs }}>
-  <div class="{{ block.extra.wrapper }}" data-template="_block.twig">
-    <div id="{{ block.anchor|default(block.id)|e('esc_html') }}" class="{{ block.extra.container }} {{ block.className|e('esc_html') }}" {{ block.extra.align }}>
+{# <div class="rmcc-background-cover" style="background-image: url(' {{ block.style.background.backgroundImage.url }} ')"> #}
+<div {{ block.controls.spacingAttrs }}>
+  <div class="{{ block.controls.wrapper }}" data-template="_block.twig">
+    <div id="{{ block.anchor|default(block.id)|e('esc_html') }}" class="{{ block.controls.container }} {{ block.className|e('esc_html') }}" {{ block.controls.align }}>
       {% block block_content %}
         Nothing here....
       {% endblock %}
     </div>
   </div>
 </div>
+{# </div> #}
 
 {% block block_scripts %}
 {% endblock %}

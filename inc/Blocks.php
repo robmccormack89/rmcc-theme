@@ -17,13 +17,21 @@ class Blocks {
     add_action('init', array($this, 'allowed_html_in_content'), 10); //  wp kses post
     add_action('init', array($this, 'register_acf_blocks'));
     add_action('enqueue_block_assets', array($this, 'acf_blocks_editor_scripts')); // use 'enqueue_block_editor_assets' for backend-only
+    add_action('block_categories_all', array($this, 'custom_block_category'));
+  }
+  
+  public function custom_block_category($categories) {
+    $categories[] = array(
+      'slug'  => 'rmcc',
+      'title' => 'RMcC'
+    );
+    return $categories;
   }
 
   public function register_acf_blocks() {
-    // register_block_type(__DIR__ . '/blocks/hellooo/block.json');
-    // register_block_type(__DIR__ . '/blocks/howya/block.json');
-    register_block_type(__DIR__ . '/blocks/twig/block.json');
-    register_block_type(__DIR__ . '/blocks/rmcc/block.json');
+    // register_block_type(__DIR__ . '/blocks/twig/block.json');
+    // register_block_type(__DIR__ . '/blocks/rmcc/block.json');
+    register_block_type(__DIR__ . '/blocks/card/block.json');
   }
 
   public function allowed_html_in_content() {

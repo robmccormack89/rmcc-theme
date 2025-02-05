@@ -1,0 +1,88 @@
+{
+  "name": "acf/card",
+  "title": "RMcC Card",
+  "description": "A card (rmcc-card) block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "card"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "card.php"
+  },
+  "__attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "margin": {
+            "bottom": "0rem",
+            "top": "0rem"
+          },
+          "padding": "0rem"
+        }
+      }
+    }
+  },
+  "attributes": {
+    "style": {
+        "background": {
+            "backgroundImage": {
+                "url":"https://picsum.photos/1920/1200"
+            },
+            "backgroundPosition":"50% 50%",
+            "backgroundSize": "cover"
+        }
+    }
+  },
+  "supports": {
+    "html": false,
+    "mode": true,
+    "jsx": true,
+    "anchor": true,
+    "multiple": true,
+
+    "background": {
+      "backgroundImage": true,
+      "__backgroundSize": true
+    },
+
+    "align": false,
+    "alignContent": false,
+    "alignText": false,
+    "fullHeight": false,
+
+    "_color": {
+      "background": true,
+      "gradients": true,
+      "text": false,
+      "link": false,
+      "heading": false,
+      "button": false,
+      "enableContrastChecker": false
+    },
+    "__color": false,
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false,
+      "link": false,
+      "heading": false,
+      "button": false,
+      "enableContrastChecker": false
+    },
+
+    "_spacing": {
+      "margin": ["bottom", "top"],
+      "padding": true
+    },
+    "spacing": false,
+
+    "_typography": {
+      "fontSize": false,
+      "_lineHeight": true
+    },
+    "typography": false
+
+  }
+
+}

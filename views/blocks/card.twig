@@ -1,7 +1,10 @@
 {% extends "_block.twig" %}
 
 {% block block_content %}
-  <div class="rmcc-card rmcc-card-primary rmcc-card-body">
+
+  {# {{ dump(block.controls) }} #}
+  <div class="rmcc-card rmcc-card-body {{block.controls.colour_bg}} {{block.controls.fullheight}}">
     <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
   </div>
+
 {% endblock %}
