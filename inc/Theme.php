@@ -120,7 +120,8 @@ class Theme extends Timber {
 
   public function theme_supports() {
 
-    //add_theme_support('appearance-tools');
+    add_theme_support('appearance-tools');
+    add_theme_support('custom-spacing');
 
     // usual theme supports
     add_theme_support('title-tag');

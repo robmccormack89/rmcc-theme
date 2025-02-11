@@ -8,13 +8,19 @@
 namespace Rmcc;
 
 $context = Theme::context();
+
+// $prev = ($is_preview) ? 'in preview' : 'not in preview';
+// print_r($prev);
+// print_r('<hr>');
+// print_r($block);
+// print_r('<hr>');
+// print_r($content);
+// print_r('<hr>');
+
 $context['block'] = $block;
 $context['block']['fields'] = get_fields();
 $context['block']['is_preview'] = $is_preview;
 $context['block']['controls'] = new Block($context['block']);
-// $template = array(
-//   array('core/image', array()),
-// );
 $template = array(
   array('core/heading', array(
     'level' => 2,
@@ -26,23 +32,6 @@ $template = array(
     'className' => 'rmcc-margin-remove',
   ))
 );
-// $template = array(
-//   array( 'core/paragraph', array(
-//       'placeholder' => 'Add a root-level paragraph',
-//   ) ),
-//   array( 'core/columns', array(), array(
-//       array( 'core/column', array(), array(
-//           array( 'core/image', array() ),
-//       ) ),
-//       array( 'core/column', array(), array(
-//           array( 'core/paragraph', array(
-//               'placeholder' => 'Add a inner paragraph'
-//           ) ),
-//       ) ),
-//   ) )
-// );
-
-
 $context['block']['template'] = $template;
 
 Theme::render('card.twig', $context);

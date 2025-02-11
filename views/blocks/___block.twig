@@ -1,0 +1,56 @@
+{% block block_styles %}
+{% endblock %}
+
+{{ dump(block) }}
+
+<div class="{{ block.controls.wrapper }}">
+  {% if not block.is_preview %}<div {{ block.controls.spacingAttrs }}>{% endif %}
+    <div class="rmcc-section-primary rmcc-padding-small">
+      Block Preview
+    </div>
+  {% if not block.is_preview %}</div>{% endif %}
+</div>
+
+{% if not block.is_preview %}
+  {# <hr> #}
+  <div hidden>
+
+    {% if block.controls.img %}
+      background-image: {{ dump(block.controls.img) }}
+      <hr>
+    {% endif %}
+
+    {% if block.controls.spacingAttrs %}
+      spacingAttrs: {{ dump(block.controls.spacingAttrs) }}
+      <hr>
+    {% endif %}
+
+    {% if block.controls.wrapper %}
+      wrapper: {{ dump(block.controls.wrapper) }}
+      <hr>
+    {% endif %}
+
+    {% if block.controls.container %}
+      container: {{ dump(block.controls.container) }}
+      <hr>
+    {% endif %}
+
+    {% if block.controls.align %}
+      align: {{ dump(block.controls.align) }}
+      <hr>
+    {% endif %}
+
+    {% if block.controls.colour_bg %}
+      colour_bg: {{ dump(block.controls.colour_bg) }}
+      <hr>
+    {% endif %}
+
+    {% if block.controls.fullheight %}
+      fullheight: {{ dump(block.controls.fullheight) }}
+    {% endif %}
+
+  </div>
+{% endif %}
+
+{% block block_scripts %}
+{% endblock %}

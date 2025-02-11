@@ -9,11 +9,11 @@ class Block {
   public $img;
 
   // Built-in Controls
-  public $spacingAttrs;
+  public $spacer;
   public $wrapper;
   public $container;
-  public $align;
-  public $colour_bg;
+  public $aligner;
+  public $bg_class;
   public $fullheight;
   public $fullheight_img;
   public $align_text;
@@ -28,13 +28,13 @@ class Block {
     */
 
     // block spacing, margin & wrapping (related to aligner)
-    $this->spacingAttrs = $this->block_spacing($block);
+    $this->spacer = $this->block_spacing($block);
     $this->wrapper = $this->block_wrapper($block);
     $this->container = $this->block_container($block);
-    $this->align = $this->block_align($block);
+    $this->aligner = $this->block_align($block);
 
     // blocks bg colour / gradient
-    $this->colour_bg = $this->block_colour_bg($block);
+    $this->bg_class = $this->block_colour_bg($block);
 
     // blocks fullHeight
     $this->fullheight = $this->block_fullheight($block);
@@ -58,18 +58,36 @@ class Block {
 
   // returns image object
   public function block_fields_img($block){
-    $data = null;
+    // $data = null;
+    $data = [];
+    $data['html_wrap_start'] = '<div>';
+    $data['html_wrap_end'] = '</div>';
+
     if($block['name'] == 'acf/card'){
       if(get_field('img')){
+
         $data = get_field('img');
+
+        $data['html_wrap_start'] = '<div>';
+        $data['html_wrap_end'] = '</div>';
+
         if(get_field('left')) $data['_left'] = get_field('left');
         if(get_field('top')) $data['_top'] = get_field('top');
         if(get_field('fixed_bg')) $data['_fixed_bg'] = get_field('fixed_bg');
         if(get_field('size')) $data['_size'] = get_field('size');
         if(get_field('width')) $data['_width'] = get_field('width');
         if(get_field('repeat')) $data['_repeat'] = get_field('repeat');
+
+        if($data['url']) {
+          $class_string = 'class="rmcc-background-cover"';
+          $attrs_string = 'style="background-image: url(' . $data['url'] . ')"';
+          $full_string = '<div ' . $class_string . ' ' . $attrs_string . ' >';
+          $data['html_wrap_start'] = $full_string;
+        }
+
       }
     }
+
     return $data;
   }
 
@@ -80,7 +98,7 @@ class Block {
 
       if(!$block['is_preview']) $data = wp_kses_data(get_block_wrapper_attributes());
 
-      // disable spacingAttrs on left/right/center align
+      // disable spacer on left/right/center align
       if( $block['align'] == 'left' || $block['align'] == 'right' || $block['align'] == 'center') $data = null;
 
     }

@@ -1,0 +1,25 @@
+{% block block_styles %}
+{% endblock %}
+
+{% if block.backgroundColor %}
+{% set inliner = 'style="background-color: var(--wp--preset--color--' ~ block.backgroundColor  ~ ') !important;"' %}
+{% elseif block.style.color.background %}
+{% set inliner = 'style="background-color: ' ~ block.style.color.background ~ ';"' %}
+{% elseif block.gradient %}
+{% set inliner = 'style="background: var(--wp--preset--gradient--' ~ block.gradient ~ ') !important;"' %}
+{% elseif block.style.color.gradient %}
+{% set inliner = 'style="background: ' ~ block.style.color.gradient ~ ';"' %}
+{% endif %}
+
+{{ block.controls.img.html_wrap_start }}
+<div {{ inliner }}>
+  <div class="rmcc-card rmcc-card-body {{block.controls.bg_class}} {{block.controls.fullheight}}">
+    {% block block_content %}
+      Nothing here....
+    {% endblock %}
+  </div>
+</div>
+{{ block.controls.img.html_wrap_end }}
+
+{% block block_scripts %}
+{% endblock %}

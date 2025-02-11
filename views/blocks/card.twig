@@ -1,10 +1,5 @@
-{% extends "_block.twig" %}
+{% extends block.is_preview ? '_preview.twig' : '_block.twig' %}
 
 {% block block_content %}
-
-  {# {{ dump(block.controls.img) }} #}
-  <div class="rmcc-card rmcc-card-body {{block.controls.colour_bg}} {{block.controls.fullheight}}">
-    <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
-  </div>
-
+  <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
 {% endblock %}
