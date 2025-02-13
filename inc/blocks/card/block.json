@@ -81,8 +81,8 @@
 
     "__appearance-tools": "add_theme_support",
     "background": {
-      "backgroundImage": false,
-      "backgroundSize": false
+      "backgroundImage": true,
+      "backgroundSize": true
     },
     "spacing": {
       "margin": true,

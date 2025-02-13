@@ -63,7 +63,9 @@ class Block {
     $data['html_wrap_start'] = '<div>';
     $data['html_wrap_end'] = '</div>';
 
+    // img via ACF fields
     if($block['name'] == 'acf/card'){
+
       if(get_field('img')){
 
         $data = get_field('img');
@@ -86,6 +88,34 @@ class Block {
         }
 
       }
+
+      // img via native backgroundImage supports
+      if(array_key_exists('style', $block)){
+        if(array_key_exists('background', $block['style'])){
+
+          $backgroundSize = (array_key_exists('backgroundSize', $block['style']['background'])) ? $block['style']['background']['backgroundSize'] : null;
+          $backgroundAttachment = (array_key_exists('backgroundAttachment', $block['style']['background'])) ? $block['style']['background']['backgroundAttachment'] : null;
+          $backgroundRepeat = (array_key_exists('backgroundRepeat', $block['style']['background'])) ? $block['style']['background']['backgroundRepeat'] : null;
+          $backgroundPosition = (array_key_exists('backgroundPosition', $block['style']['background'])) ? $block['style']['background']['backgroundPosition'] : null;
+
+          
+          if($backgroundSize){
+            print_r($backgroundSize);
+          }
+
+          if(array_key_exists('backgroundImage', $block['style']['background'])){
+            if(array_key_exists('url', $block['style']['background']['backgroundImage'])){
+      
+              $class_string = 'class="rmcc-background-cover"';
+              $attrs_string = 'style="background-image: url(' . $block['style']['background']['backgroundImage']['url'] . ')"';
+              $full_string = '<div ' . $class_string . ' ' . $attrs_string . ' >';
+              $data['html_wrap_start'] = $full_string;
+  
+            }
+          }
+        }
+      }
+
     }
 
     return $data;
