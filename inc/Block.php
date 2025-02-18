@@ -93,26 +93,67 @@ class Block {
       if(array_key_exists('style', $block)){
         if(array_key_exists('background', $block['style'])){
 
+          $backgroundImage = (array_key_exists('backgroundImage', $block['style']['background'])) ? $block['style']['background']['backgroundImage'] : null;
           $backgroundSize = (array_key_exists('backgroundSize', $block['style']['background'])) ? $block['style']['background']['backgroundSize'] : null;
           $backgroundAttachment = (array_key_exists('backgroundAttachment', $block['style']['background'])) ? $block['style']['background']['backgroundAttachment'] : null;
           $backgroundRepeat = (array_key_exists('backgroundRepeat', $block['style']['background'])) ? $block['style']['background']['backgroundRepeat'] : null;
           $backgroundPosition = (array_key_exists('backgroundPosition', $block['style']['background'])) ? $block['style']['background']['backgroundPosition'] : null;
 
-          
-          if($backgroundSize){
-            print_r($backgroundSize);
+          $backgroundImageUrl = null;
+          $backgroundImageId = null;
+          $backgroundImageSrc = null;
+          $backgroundImageTitle = null;
+
+          if($backgroundImage){
+            if(array_key_exists('url', $backgroundImage)) $backgroundImageUrl = $backgroundImage['url'];
+            if(array_key_exists('id', $backgroundImage)) $backgroundImageId = $backgroundImage['id'];
+            if(array_key_exists('source', $backgroundImage)) $backgroundImageSrc = $backgroundImage['source'];
+            if(array_key_exists('title', $backgroundImage)) $backgroundImageTitle = $backgroundImage['title'];
           }
 
-          if(array_key_exists('backgroundImage', $block['style']['background'])){
-            if(array_key_exists('url', $block['style']['background']['backgroundImage'])){
-      
-              $class_string = 'class="rmcc-background-cover"';
-              $attrs_string = 'style="background-image: url(' . $block['style']['background']['backgroundImage']['url'] . ')"';
-              $full_string = '<div ' . $class_string . ' ' . $attrs_string . ' >';
-              $data['html_wrap_start'] = $full_string;
-  
-            }
+          if($backgroundImageUrl){
+            
+            // $class_string = 'class="rmcc-background-cover"';
+            // $attrs_string = 'style="background-image: url(' . $backgroundImageUrl . ');"';
+            // $full_string = '<div ' . $class_string . ' ' . $attrs_string . ' >';
+            // $data['html_wrap_start'] = $full_string;
+
+            $class_start = 'class="';
+            $class_end = '"';
+            $style_start = 'style="';
+            $style_end = '"';
+
+            $size_class = '';
+            $size_style = '';
+            if($backgroundSize == 'cover') $size_class = 'rmcc-background-cover';
+            if($backgroundSize == 'contain') $size_class = 'rmcc-background-contain';
+            if($backgroundSize == 'auto') $size_style = 'background-size: auto;';
+            if(str_contains($backgroundSize,'px')) $size_style = 'background-size:'.$backgroundSize.';';
+
+            $repeat_class = '';
+            $repeat_style = '';
+            if($backgroundRepeat == 'no-repeat') $repeat_class = 'rmcc-background-norepeat';
+            if($backgroundRepeat == 'repeat') $repeat_style = 'background-repeat: repeat;';
+
+            $attachment_style = '';
+            if($backgroundAttachment == 'fixed') $attachment_style = 'background-attachment: fixed;';
+            if($backgroundAttachment == 'scroll') $attachment_style = 'background-attachment: scroll;';
+
+
+            $classy = $class_start . $size_class . ' ' . $repeat_class . $class_end;
+            $styley = $style_start . $size_style . ' ' . $repeat_style . ' ' . $attachment_style . $style_end;
+
+            print_r($classy);
+            print_r('<hr>');
+            print_r($styley);
+
+            // $rmcc_cover = 'rmcc-background-cover'; // size
+            // $rmcc_contain = 'rmcc-background-contain'; // size
+            // $rmcc_norepeat = 'rmcc-background-norepeat'; // repeat
+            // $rmcc_fixed = 'rmcc-background-fixed'; // attachment
+
           }
+
         }
       }
 
