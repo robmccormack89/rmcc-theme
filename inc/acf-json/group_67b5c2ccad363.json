@@ -1,0 +1,43 @@
+{
+    "key": "group_67b5c2ccad363",
+    "title": "RMcC Card",
+    "fields": [
+        {
+            "key": "field_67b5c2d0472cf",
+            "label": "Block instructions",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p>These are just some basic instructions for how to use this block. The block is compatible within a range of built-in controls, including:<\/p>\r\n\r\n<ol>\r\n  <li>Block alignment (Full, wide, center\/left\/right, none)<\/li>\r\n  <li>FullHeight<\/li>\r\n  <li>Background image<\/li>\r\n  <li>Background size<\/li>\r\n  <li>Colours & gradients (background & image overlay)<\/li>\r\n  <li>Custom margins & spacing<\/li>\r\n  <li>BlockGap (nested block spacing)<\/li>\r\n<\/ol>",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/card"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1739968366
+}

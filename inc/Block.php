@@ -139,13 +139,21 @@ class Block {
             if($backgroundAttachment == 'fixed') $attachment_style = 'background-attachment: fixed;';
             if($backgroundAttachment == 'scroll') $attachment_style = 'background-attachment: scroll;';
 
+            $pos_style = '';
+            if($backgroundPosition) $pos_style = 'background-position: '.$backgroundPosition.';';
+
+            $img_style = '';
+            if($backgroundImageUrl) $img_style = 'background-image: url('.$backgroundImageUrl.');';
+
+            // print_r($img_style);
 
             $classy = $class_start . $size_class . ' ' . $repeat_class . $class_end;
-            $styley = $style_start . $size_style . ' ' . $repeat_style . ' ' . $attachment_style . $style_end;
-
-            print_r($classy);
-            print_r('<hr>');
-            print_r($styley);
+            $styley = $style_start . $size_style . ' ' . $repeat_style . ' ' . $attachment_style . ' ' . $pos_style . ' ' . $img_style . $style_end;
+            $allo = $classy . ' ' . $styley;
+            $data['wrap'] = $allo;
+            // print_r($classy);
+            // print_r('<hr>');
+            // print_r($allo);
 
             // $rmcc_cover = 'rmcc-background-cover'; // size
             // $rmcc_contain = 'rmcc-background-contain'; // size

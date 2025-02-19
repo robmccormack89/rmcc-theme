@@ -120,6 +120,7 @@ class Theme extends Timber {
 
   public function theme_supports() {
 
+    // some additional block supports
     add_theme_support('appearance-tools');
     add_theme_support('custom-spacing');
 

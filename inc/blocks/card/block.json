@@ -38,6 +38,12 @@
     }
   },
 
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
   "supports": {
 
     "__base": "",
