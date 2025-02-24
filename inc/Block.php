@@ -5,20 +5,20 @@ namespace Rmcc;
 // this class sets up data like custom classes according to the block's given settings
 class Block {
 
-  // ACF Fields
-  public $img;
-
   // Built-in Controls
   public $spacer;
-  public $wrapper;
-  public $container;
-  public $aligner;
+  public $wrap_class;
+  public $container_class;
+  public $align_style;
   public $bg_class;
-  public $fullheight;
+  public $fullheight_class;
   public $fullheight_img;
   public $align_text;
   public $align_content;
   public $align_content_pos;
+
+  public $img;
+  public $preview;
 
   public function __construct($block) {
 
@@ -29,15 +29,15 @@ class Block {
 
     // block spacing, margin & wrapping (related to aligner)
     $this->spacer = $this->block_spacing($block);
-    $this->wrapper = $this->block_wrapper($block);
-    $this->container = $this->block_container($block);
-    $this->aligner = $this->block_align($block);
+    $this->wrap_class = $this->block_wrapper($block);
+    $this->container_class = $this->block_container($block);
+    $this->align_style = $this->block_align($block);
 
     // blocks bg colour / gradient
     $this->bg_class = $this->block_colour_bg($block);
 
     // blocks fullHeight
-    $this->fullheight = $this->block_fullheight($block);
+    $this->fullheight_class = $this->block_fullheight($block);
     $this->fullheight_img = $this->block_fullheight_img($block);
 
     // blocks text alignment
@@ -47,49 +47,40 @@ class Block {
     $this->align_content = $this->block_align_content($block);
     $this->align_content_pos = $this->block_align_content_pos($block);
 
-    /*
-    ACF
-    Fields
-    */
+    // blocks backgroundImage
+    $this->img = $this->block_img($block);
 
-    $this->img = $this->block_fields_img($block);
+    //
+    $this->preview = $this->block_preview_wrapper($block);
 
   }
 
+  public function block_preview_wrapper($block){
+    $data = [];
+    $data['wrapper'] = '';
+
+    if(array_key_exists('backgroundColor', $block)) $data['wrapper'] = 'style="background-color: var(--wp--preset--color--' . $block['backgroundColor']  . ') !important;"';
+    if(array_key_exists('gradient', $block)) $data['wrapper'] = 'style="background: var(--wp--preset--gradient--' . $block['gradient'] . ') !important;"';
+    if(array_key_exists('style', $block)){
+      if(array_key_exists('color', $block['style'])){
+        if(array_key_exists('background', $block['style']['color'])) $data['wrapper'] = 'style="background-color: ' . $block['style']['color']['background'] . ';"';
+        if(array_key_exists('gradient', $block['style']['color'])) $data['wrapper'] = 'style="background: ' . $block['style']['color']['gradient'] . ';"';
+      }
+    }
+
+    return $data;
+  }
+
   // returns image object
-  public function block_fields_img($block){
+  public function block_img($block){
     // $data = null;
     $data = [];
-    $data['html_wrap_start'] = '<div>';
-    $data['html_wrap_end'] = '</div>';
+    $data['wrapper'] = '';
 
     // img via ACF fields
     if($block['name'] == 'acf/card'){
 
-      if(get_field('img')){
-
-        $data = get_field('img');
-
-        $data['html_wrap_start'] = '<div>';
-        $data['html_wrap_end'] = '</div>';
-
-        if(get_field('left')) $data['_left'] = get_field('left');
-        if(get_field('top')) $data['_top'] = get_field('top');
-        if(get_field('fixed_bg')) $data['_fixed_bg'] = get_field('fixed_bg');
-        if(get_field('size')) $data['_size'] = get_field('size');
-        if(get_field('width')) $data['_width'] = get_field('width');
-        if(get_field('repeat')) $data['_repeat'] = get_field('repeat');
-
-        if($data['url']) {
-          $class_string = 'class="rmcc-background-cover"';
-          $attrs_string = 'style="background-image: url(' . $data['url'] . ')"';
-          $full_string = '<div ' . $class_string . ' ' . $attrs_string . ' >';
-          $data['html_wrap_start'] = $full_string;
-        }
-
-      }
-
-      // img via native backgroundImage supports
+      // img via native backgroundImage (with relevant supports)
       if(array_key_exists('style', $block)){
         if(array_key_exists('background', $block['style'])){
 
@@ -123,42 +114,39 @@ class Block {
             $style_start = 'style="';
             $style_end = '"';
 
+            // background size
             $size_class = '';
             $size_style = '';
-            if($backgroundSize == 'cover') $size_class = 'rmcc-background-cover';
-            if($backgroundSize == 'contain') $size_class = 'rmcc-background-contain';
-            if($backgroundSize == 'auto') $size_style = 'background-size: auto;';
+            if($backgroundSize == 'cover') $size_class = 'rmcc-background-cover ';
+            if($backgroundSize == 'contain') $size_class = 'rmcc-background-contain ';
+            if($backgroundSize == 'auto') $size_style = 'background-size:auto;';
             if(str_contains($backgroundSize,'px')) $size_style = 'background-size:'.$backgroundSize.';';
 
+            // background repeat
             $repeat_class = '';
             $repeat_style = '';
-            if($backgroundRepeat == 'no-repeat') $repeat_class = 'rmcc-background-norepeat';
-            if($backgroundRepeat == 'repeat') $repeat_style = 'background-repeat: repeat;';
+            if($backgroundRepeat == 'no-repeat') $repeat_class = 'rmcc-background-norepeat ';
+            if($backgroundRepeat == 'repeat') $repeat_style = 'background-repeat:repeat;';
 
+            // background attachment
+            $attachment_class = '';
             $attachment_style = '';
-            if($backgroundAttachment == 'fixed') $attachment_style = 'background-attachment: fixed;';
-            if($backgroundAttachment == 'scroll') $attachment_style = 'background-attachment: scroll;';
+            if($backgroundAttachment == 'fixed') $attachment_class = 'rmcc-background-fixed ';
+            if($backgroundAttachment == 'fixed') $attachment_style = 'background-attachment:fixed;';
+            if($backgroundAttachment == 'scroll') $attachment_style = 'background-attachment:scroll;';
 
+            // background position
             $pos_style = '';
-            if($backgroundPosition) $pos_style = 'background-position: '.$backgroundPosition.';';
+            if($backgroundPosition) $pos_style = 'background-position:'.$backgroundPosition.';';
 
+            // background image
             $img_style = '';
             if($backgroundImageUrl) $img_style = 'background-image: url('.$backgroundImageUrl.');';
 
-            // print_r($img_style);
-
-            $classy = $class_start . $size_class . ' ' . $repeat_class . $class_end;
-            $styley = $style_start . $size_style . ' ' . $repeat_style . ' ' . $attachment_style . ' ' . $pos_style . ' ' . $img_style . $style_end;
-            $allo = $classy . ' ' . $styley;
-            $data['wrap'] = $allo;
-            // print_r($classy);
-            // print_r('<hr>');
-            // print_r($allo);
-
-            // $rmcc_cover = 'rmcc-background-cover'; // size
-            // $rmcc_contain = 'rmcc-background-contain'; // size
-            // $rmcc_norepeat = 'rmcc-background-norepeat'; // repeat
-            // $rmcc_fixed = 'rmcc-background-fixed'; // attachment
+            $classes = $class_start . $size_class . '' . $repeat_class . '' . $attachment_class . '' .$class_end;
+            $styles = $style_start . $size_style . '' . $repeat_style . '' . $attachment_style . '' . $pos_style . '' . $img_style . $style_end;
+            $wrap = $classes . ' ' . $styles;
+            $data['wrapper'] = $wrap;
 
           }
 
@@ -204,6 +192,7 @@ class Block {
         if($block['align'] == 'wide') $data = 'rmcc-container rmcc-container-xlarge';
       }
     }
+    if(array_key_exists('className', $block)) $data = $data . ' ' . esc_html($block['className']);;
     return $data;
   }
 

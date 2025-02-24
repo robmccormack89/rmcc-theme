@@ -9,14 +9,6 @@ namespace Rmcc;
 
 $context = Theme::context();
 
-// $prev = ($is_preview) ? 'in preview' : 'not in preview';
-// print_r($prev);
-// print_r('<hr>');
-// print_r($block);
-// print_r('<hr>');
-// print_r($content);
-// print_r('<hr>');
-
 $context['block'] = $block;
 $context['block']['fields'] = get_fields();
 $context['block']['is_preview'] = $is_preview;

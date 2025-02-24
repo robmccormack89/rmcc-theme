@@ -282,7 +282,7 @@ class Theme extends Timber {
 
     // wp customizer logo
     $theme_logo_src = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
-    if ($theme_logo_src) {
+    if($theme_logo_src) {
       $context['theme']->logo = (object) [];
       $context['theme']->logo->src = $theme_logo_src;
       $context['theme']->logo->alt = '';
