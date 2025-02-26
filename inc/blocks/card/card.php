@@ -13,7 +13,7 @@ $context['block'] = $block;
 $context['block']['fields'] = get_fields();
 $context['block']['is_preview'] = $is_preview;
 $context['block']['controls'] = new Block($context['block']);
-$template = array(
+$context['block']['template'] = array(
   array('core/heading', array(
     'level' => 2,
     'content' => 'Primary',
@@ -24,6 +24,4 @@ $template = array(
     'className' => 'rmcc-margin-remove',
   ))
 );
-$context['block']['template'] = $template;
-
 Theme::render('card.twig', $context);

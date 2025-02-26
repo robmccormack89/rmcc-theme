@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<p>These are just some basic instructions for how to use this block. The block is compatible within a range of built-in controls, including:<\/p>\r\n\r\n<ol>\r\n  <li>Block alignment (Full, wide, center\/left\/right, none)<\/li>\r\n  <li>FullHeight<\/li>\r\n  <li>Background image<\/li>\r\n  <li>Background size<\/li>\r\n  <li>Colours & gradients (background & image overlay)<\/li>\r\n  <li>Custom margins & spacing<\/li>\r\n  <li>BlockGap (nested block spacing)<\/li>\r\n<\/ol>",
+            "message": "<p>These are just some basic instructions for how to use this block. The block is compatible within a range of built-in controls, including:<\/p>\r\n\r\n<ol>\r\n  <li>Alignment (full|wide|center|left|right|none)<\/li>\r\n  <li>FullHeight & MinHeight<\/li>\r\n  <li>Background image & size<\/li>\r\n  <li>Colours & gradients (text\/background\/overlay)<\/li>\r\n  <li>Custom margins & spacing<\/li>\r\n  <li>Border width/colour/radius<\/li>\r\n<\/ol>",
             "new_lines": "",
             "esc_html": 0
         }

@@ -1,16 +1,17 @@
 {% block block_styles %}
 {% endblock %}
 
-<div {{block.controls.img.wrap}}>
-  <div {{block.controls.preview.wrap}}>
-    <div {{block.controls.inner.wrap}}>
-    {# <div {{block.controls.position.wrap}}></div> #}
+<div {{block.controls.img.wrapper}}>
+  <div {{block.controls.preview.wrapper}}>
+    <div {{block.controls.content.wrapper}}>
       {% block block_content %}
         Nothing here....
       {% endblock %}
     </div>
   </div>
 </div>
+
+{# align/left/right/center problem!!! #}
 
 {% block block_scripts %}
 {% endblock %}

@@ -1,14 +1,26 @@
 {% block block_styles %}
 {% endblock %}
 
-<div class="{{block.controls.wrap_class}}">
-  <div id="{{block.anchor|default(block.id)|e('esc_html')}}" class="{{block.controls.container_class}}" {{block.controls.align_style}}>
-    <div {{block.controls.img.wrapper}}>
-      <div {{block.controls.spacer}}>
-        <div class="rmcc-card rmcc-card-body {{block.controls.bg_class}} {{block.controls.fullheight_class}}">
-          {% block block_content %}
-            Nothing here....
-          {% endblock %}
+{# <pre>{{dump(block.align_content)}}</pre> #}
+
+{# <div class="rmcc-card rmcc-card-body rmcc-background-primary rmcc-light rmcc-height-viewport bmcc-flex bmcc-flex-top uk-inline" hidden>
+  <div class="rmcc-position-top-right">
+    <div class="acf-innerblocks-container">
+      <h2 class="wp-block-heading rmcc-card-title rmcc-text-bold">ONE</h2>
+    </div>
+  </div>
+</div> #}
+
+<div {{block.controls.outer.wrap}}>
+  <div {{block.controls.container.wrap}}>
+    <div {{block.controls.img.wrap}}>
+      <div {{block.controls.block_wrapper_attributes}}>
+        <div {{block.controls.inner.wrap}}>
+          <div {{block.controls.position.wrap}}>
+            {% block block_content %}
+              Nothing here....
+            {% endblock %}
+          </div>
         </div>
       </div>
     </div>

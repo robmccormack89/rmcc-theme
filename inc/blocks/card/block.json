@@ -16,25 +16,17 @@
       "type": "object",
       "default": {
         "spacing": {
-
-          "__margin": {
+          "margin": {
             "bottom": "0rem",
             "top": "0rem"
           },
-
-          "__padding": "0rem",
-
-          "blockGap": "100px"
-
+          "__padding": "0rem"
         }
-      },
-      "___background": {
-        "backgroundImage": {
-          "url":"https://picsum.photos/1920/1200"
-        },
-        "backgroundPosition":"50% 50%",
-        "backgroundSize": "contain"
       }
+    },
+    "alignContent": {
+      "type": "string",
+      "default": "center left"
     }
   },
 
@@ -46,16 +38,13 @@
 
   "supports": {
 
-    "__base": "",
     "mode": true,
     "jsx": true,
 
-    "__defaults": "",
     "html": true,
     "anchor": true,
     "multiple": true,
 
-    "__more_defaults": "",
     "className": true,
     "customClassName": true,
     "defaultStylePicker": true,
@@ -63,39 +52,39 @@
     "reusable": true,
     "lock": true,
 
-    "__controls": "",
-
     "align": true,
+    "alignContent": "matrix",
     "fullHeight": true,
     "color": {
       "background": true,
-      "gradients": true,
-      "__not_working_yet": "",
-      "text": false,
-      "link": false,
-      "heading": false,
-      "button": false,
-      "enableContrastChecker": false
+      "gradients": true
     },
-    "alignContent": false,
-    "alignText": false,
-    "typography": {
-      "fontSize": false,
-      "lineHeight": false
-    },
-
-
-    "__appearance-tools": "add_theme_support",
     "background": {
       "backgroundImage": true,
       "backgroundSize": true
     },
     "spacing": {
       "margin": true,
-      "blockGap": true,
-      "__custom-spacing": "add_theme_support",
       "padding": true
+    },
+
+    "dimensions": {
+      "minHeight": true
+    },
+
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true,
+      "__experimentalDefaultControls": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+      }
     }
+
 
 
   }
