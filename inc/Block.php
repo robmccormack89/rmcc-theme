@@ -183,6 +183,7 @@ class Block {
     if((array_key_exists('style', $block))){
       if((array_key_exists('dimensions', $block['style']))){
         if((array_key_exists('minHeight', $block['style']['dimensions']))){
+          $styles[] = 'height: ' . $block['style']['dimensions']['minHeight'];
           $styles[] = 'min-height: ' . $block['style']['dimensions']['minHeight'];
         }
       }
@@ -199,8 +200,8 @@ class Block {
 
     // alignContent top|middle|bottom
     if((array_key_exists('align_content', $block))){
-      $align_content = 'rmcc-width-1-1 rmcc-inline';
-      $_align_content = ($block['align_content'] == 'center') ? 'rmcc-width-1-1 rmcc-flex rmcc-flex-middle' : 'rmcc-width-1-1 rmcc-flex rmcc-flex-' . $block['align_content'];
+      $align_content = '';
+      $_align_content = ($block['align_content'] == 'center') ? 'rmcc-flex rmcc-flex-middle' : 'rmcc-flex rmcc-flex-' . $block['align_content'];
       if($block['align_content'] == 'center' || $block['align_content'] == 'top' || $block['align_content'] == 'bottom') $align_content = $_align_content;
       $classes[] = $align_content;
     }
@@ -232,6 +233,8 @@ class Block {
         if($block['align_content'] == 'bottom right') $align_content_pos = 'rmcc-position-bottom-right';
         if($block['align_content'] == 'bottom center') $align_content_pos = 'rmcc-position-bottom-center';
         if($block['align_content'] == 'bottom left') $align_content_pos = 'rmcc-position-bottom-left';
+
+        if($block['align_content'] == 'none') $align_content_pos = 'rmcc-position-none';
       }
     }
     $classes[] = $align_content_pos;

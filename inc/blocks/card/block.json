@@ -10,6 +10,8 @@
     "mode": "preview",
     "renderTemplate": "card.php"
   },
+
+  "style": [ "file:./card.css" ],
   
   "attributes": {
     "style": {
@@ -26,7 +28,7 @@
     },
     "alignContent": {
       "type": "string",
-      "default": "center left"
+      "default": "none"
     }
   },
 
