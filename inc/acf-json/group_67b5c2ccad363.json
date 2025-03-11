@@ -26,7 +26,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/card"
+                "value": "acf\/rmcc-card"
             }
         ]
     ],

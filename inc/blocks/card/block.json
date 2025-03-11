@@ -1,5 +1,5 @@
 {
-  "name": "acf/card",
+  "name": "acf/rmcc-card",
   "title": "RMcC Card",
   "description": "A card (rmcc-card) block built using ACF & Timber/Twig.",
   "category": "rmcc",
@@ -57,6 +57,7 @@
     "align": true,
     "alignContent": "matrix",
     "fullHeight": true,
+
     "color": {
       "background": true,
       "gradients": true
@@ -65,6 +66,7 @@
       "backgroundImage": true,
       "backgroundSize": true
     },
+
     "spacing": {
       "margin": true,
       "padding": true
@@ -73,6 +75,8 @@
     "dimensions": {
       "minHeight": true
     },
+
+    "shadow": true,
 
     "__experimentalBorder": {
       "color": true,

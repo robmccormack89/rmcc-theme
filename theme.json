@@ -1,0 +1,62 @@
+{
+	"version": 2,
+	"settings": {
+		"layout": {
+			"contentSize": "750px",
+			"wideSize": "1200px"
+		},
+		"typography": {
+			"customFontSize": true,
+			"defaultFontSizes": true,
+			"dropCap": true,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "13px"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "20px"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "36px"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "42px"
+				}
+			],
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": false,
+			"textAlign": true,
+			"textDecoration": true,
+			"textTransform": true,
+			"writingMode": false,
+			"fontFamilies": [
+				{
+					"name": "Primary",
+					"slug": "primary",
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+				},
+				{
+					"name": "Secondary",
+					"slug": "secondary",
+					"fontFamily": "system-ui, sans-serif"
+				}
+			]
+		}
+	},
+	"styles": {
+		"typography": {
+				"fontFamily": "var(--wp--preset--font-family--primary)",
+				"fontSize": "16px"
+		}
+	}
+}

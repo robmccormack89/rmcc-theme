@@ -1,9 +1,9 @@
-<div {{block.controls.outer.wrap}}>
+<div id="{{ block.anchor|default(block.id)|e('esc_html') }}" {{block.controls.outer.wrap}}>
   <div {{block.controls.container.wrap}}>
     <div {{block.controls.img.wrap}}>
       <div {{block.controls.block_wrapper_attributes}}>
         <div {{block.controls.inner.wrap}}>
-          <div class="rmcc-width-1-1 rmcc-inline">
+          <div {{block.controls.inline.wrap}}>
             <div {{block.controls.position.wrap}}>
               {% block block_content %}
                 Nothing here....

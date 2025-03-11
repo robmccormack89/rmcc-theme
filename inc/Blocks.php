@@ -162,7 +162,11 @@ class Blocks {
         get_template_directory_uri() . '/public/css/admin-editor.css'
       );
 
-
+      // rmcc card for preview
+      // wp_enqueue_style(
+      //   'rmcc-card-style',
+      //   get_template_directory_uri() . '/inc/blocks/card/card.css'
+      // );
       
     }
     

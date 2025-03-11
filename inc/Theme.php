@@ -43,6 +43,8 @@ class Theme extends Timber {
     add_action('init', array($this, 'register_navigation_menus'));
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
 
+    add_filter( 'wp_theme_json_data_theme', array($this, 'filter_theme_json_theme') );
+
     // Remove tags support from posts
     if (array_key_exists('enable_post_tags', $this->configs) && $this->configs['enable_post_tags'] != true) {
       add_action('init', function () {
@@ -69,6 +71,36 @@ class Theme extends Timber {
       }
 
     }
+
+  }
+
+  public function filter_theme_json_theme( $theme_json ){
+
+    $new_data = array(
+      'version'  => 2,
+      'settings' => array(
+        'color' => array(
+          'text'       => false,
+          'palette'    => array(
+            array(
+              'slug'  => 'foreground',
+              'color' => 'black',
+              'name'  => __( 'Foreground', 'theme-domain' ),
+            ),
+            array(
+              'slug'  => 'background',
+              'color' => 'white',
+              'name'  => __( 'Background', 'theme-domain' ),
+            ),
+          ),
+        ),
+      ),
+    );
+
+    // print_r($theme_json);
+  
+    // return $theme_json->update_with( $new_data );
+    return $theme_json;
 
   }
 
@@ -123,6 +155,30 @@ class Theme extends Timber {
     // some additional block supports
     add_theme_support('appearance-tools');
     add_theme_support('custom-spacing');
+
+    add_theme_support(
+      'editor-shadow-presets',
+      array(
+          array(
+              'name'     => esc_attr__( 'Small', 'rmcc-theme' ),
+              'shadow' => "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+              'slug'     => 'sm'
+          ),
+          array(
+              'name'     => esc_attr__( 'Medium', 'rmcc-theme' ),
+              'shadow' => "0 4px  10px 0 rgba( 0, 0, 0, 0.3 )",
+              'slug'     =>  'md',
+          ),
+          array(
+              'name'     => esc_attr__( 'Large', 'rmcc-theme' ),
+              'shadow' => "0 8px  15px 0 rgba( 0, 0, 0, 0.3 )",
+              'slug'     => 'lg',
+          )
+      )
+    );
+
+    // add_theme_support( 'wp-block-styles' );
+    // add_theme_support( 'shadow' );
 
     // usual theme supports
     add_theme_support('title-tag');
