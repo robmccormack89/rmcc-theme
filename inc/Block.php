@@ -7,7 +7,7 @@ class Block {
 
   public $outer;
   public $container;
-  public $img;
+  public $background;
   public $block_wrapper_attributes;
   public $inner;
   public $inline;
@@ -17,7 +17,7 @@ class Block {
   public function __construct($block) {
     $this->outer = $this->block_outer($block);
     $this->container = $this->block_container($block);
-    $this->img = $this->block_img($block);
+    $this->background = $this->block_background($block);
     $this->block_wrapper_attributes = $this->block_wrapper_attributes($block);
     $this->inner = $this->block_inner($block);
     $this->inline = $this->block_inline($block);
@@ -68,7 +68,7 @@ class Block {
     if($style) $data['wrap'] = $data['wrap'] . ' ' . $style;
     return $data;
   }
-  public function block_img($block) {
+  public function block_background($block) {
     $data = [];
     $_classes = [];
     $_styles = [];

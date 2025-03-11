@@ -1,6 +1,11 @@
 {
 	"version": 2,
 	"settings": {
+		"appearanceTools": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
 		"layout": {
 			"contentSize": "750px",
 			"wideSize": "1200px"
