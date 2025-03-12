@@ -1,7 +1,7 @@
 {
   "name": "acf/rmcc-block",
   "title": "RMcC Block",
-  "description": "A card block built using ACF & Timber/Twig.",
+  "description": "A block built using ACF & Timber/Twig, by RMcC.",
   "category": "rmcc",
   "icon": "admin-comments",
   "keywords": ["rmcc", "card"],
