@@ -130,7 +130,10 @@ class Blocks {
   }
   public function register_blocks_scripts() {
 
-    // gutenberg editor styles
+    // frontend only
+    if(!is_admin()){}
+
+    // backend (gutenberg editor)
     if(is_admin()){
 
       // rmcc (uikit) css
@@ -152,41 +155,7 @@ class Blocks {
         'rmcc-theme-style',
         get_stylesheet_uri()
       );
-
-      // wp_enqueue_style(
-      //   'admin-editor-theme',
-      //   get_template_directory_uri() . '/public/css/admin-editor.css'
-      // );
-
-      // rmcc card for preview
-      // wp_enqueue_style(
-      //   'rmcc-card-style',
-      //   get_template_directory_uri() . '/inc/blocks/card/card.css'
-      // );
       
-    }
-    
-    // frontend only
-    if(!is_admin()){
-      // swiper main
-      // wp_enqueue_style(
-      //   'swiper',
-      //   // get_template_directory_uri() . '/assets/css/lib/swiper-bundle.min.css'
-      //   'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'
-      // );
-      // wp_enqueue_script(
-      //   'swiper-js',
-      //   // get_template_directory_uri() . '/assets/js/lib/swiper-bundle.min.js',
-      //   'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
-      //   '',
-      //   '1.0.0',
-      //   false
-      // );
-      // swiper extra
-      // wp_enqueue_style(
-      //   'frontend-editor-theme',
-      //   get_template_directory_uri() . '/assets/css/frontend.css'
-      // );
     }
 
   }
