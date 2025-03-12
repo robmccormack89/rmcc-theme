@@ -2,8 +2,6 @@
 
 namespace Rmcc;
 use Timber\Timber;
-use Timber\Post;
-use Timber\PostQuery;
 
 array_unshift(
   Timber::$dirname,
