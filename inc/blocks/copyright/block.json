@@ -1,0 +1,42 @@
+{
+  "name": "acf/rmcc-copyright",
+  "title": "RMcC Copyright",
+  "description": "A copyright block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "copyright"],
+
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "copyright.php"
+  },
+
+  "style": [ "file:./copyright.css" ],
+
+  "supports": {
+
+    "mode": true,
+    "jsx": false,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": false,
+    "inserter": false,
+    "reusable": true,
+    "lock": true,
+
+    "align": false
+  },
+
+  "__parent": [ "acf/rmcc-block" ],
+  
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  }
+
+}

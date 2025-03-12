@@ -14,27 +14,17 @@ array_unshift(
 class Blocks {
 
   public function __construct() {
-    add_action('init', array($this, 'allowed_html_in_content'), 10); //  wp kses post
-    add_action('init', array($this, 'register_acf_blocks'));
-    add_action('enqueue_block_assets', array($this, 'acf_blocks_editor_scripts')); // use 'enqueue_block_editor_assets' for backend-only
-    add_action('block_categories_all', array($this, 'custom_block_category'));
-  }
-  
-  public function custom_block_category($categories) {
-    $categories[] = array(
-      'slug'  => 'rmcc',
-      'title' => 'RMcC'
-    );
-    return $categories;
+    // filter what html tags & attrs are allowed in wp content / wp kses post
+    add_action('init', array($this, 'allowed_html_tags_attrs'), 10);
+
+    // block stuff
+    add_action('block_categories_all', array($this, 'register_blocks_categories'));
+    add_action('enqueue_block_assets', array($this, 'register_blocks_scripts'));
+    add_action('init', array($this, 'register_blocks'));
   }
 
-  public function register_acf_blocks() {
-    // register_block_type(__DIR__ . '/blocks/twig/block.json');
-    // register_block_type(__DIR__ . '/blocks/rmcc/block.json');
-    register_block_type(__DIR__ . '/blocks/card/block.json');
-  }
-
-  public function allowed_html_in_content() {
+  // filter what html tags & attrs are allowed in wp content / wp kses post
+  public function allowed_html_tags_attrs() {
     global $allowedposttags;
     $allowed_atts = array(
       'align' => array(),
@@ -132,7 +122,15 @@ class Blocks {
     $allowedposttags['i'] = $allowed_atts;
   }
 
-  public function acf_blocks_editor_scripts() {
+  // block stuff
+  public function register_blocks_categories($categories) {
+    $categories[] = array(
+      'slug'  => 'rmcc',
+      'title' => 'RMcC'
+    );
+    return $categories;
+  }
+  public function register_blocks_scripts() {
 
     // gutenberg editor styles
     if(is_admin()){
@@ -157,10 +155,10 @@ class Blocks {
         get_stylesheet_uri()
       );
 
-      wp_enqueue_style(
-        'admin-editor-theme',
-        get_template_directory_uri() . '/public/css/admin-editor.css'
-      );
+      // wp_enqueue_style(
+      //   'admin-editor-theme',
+      //   get_template_directory_uri() . '/public/css/admin-editor.css'
+      // );
 
       // rmcc card for preview
       // wp_enqueue_style(
@@ -193,6 +191,10 @@ class Blocks {
       // );
     }
 
+  }
+  public function register_blocks() {
+    register_block_type(__DIR__ . '/blocks/block/block.json');
+    register_block_type(__DIR__ . '/blocks/copyright/block.json');
   }
 
 }

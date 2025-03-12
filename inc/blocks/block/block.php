@@ -1,6 +1,6 @@
 <?php
 /**
- * RMcC Card Block template.
+ * RMcC Block template.
  *
  * @param array $block The block settings and attributes.
  */
@@ -24,4 +24,4 @@ $context['block']['template'] = array(
     'className' => 'rmcc-margin-remove',
   ))
 );
-Theme::render('card.twig', $context);
+Theme::render('block.twig', $context);

@@ -1,6 +1,6 @@
 {
     "key": "group_67b5c2ccad363",
-    "title": "RMcC Card",
+    "title": "RMcC Block",
     "fields": [
         {
             "key": "field_67b5c2d0472cf",
@@ -26,7 +26,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/rmcc-card"
+                "value": "acf\/rmcc-block"
             }
         ]
     ],

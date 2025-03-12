@@ -5,83 +5,68 @@ namespace Rmcc;
 // this class sets up data like custom classes according to the block's given settings
 class Block {
 
-  public $outer;
+  public $break;
   public $container;
   public $background;
   public $block_wrapper_attributes;
-  public $inner;
-  public $inline;
-  public $position;
+  public $card;
+  public $content;
   public $preview;
 
   public function __construct($block) {
-    $this->outer = $this->block_outer($block);
+    $this->break = $this->block_break($block);
     $this->container = $this->block_container($block);
     $this->background = $this->block_background($block);
     $this->block_wrapper_attributes = $this->block_wrapper_attributes($block);
-    $this->inner = $this->block_inner($block);
-    $this->inline = $this->block_inline($block);
-    $this->position = $this->block_position($block);
+    $this->card = $this->block_card($block);
+    $this->content = [];
+    $this->content['wrap'] = $this->block_content_wrap($block);
+    $this->content['position'] = $this->block_content_position($block);
     $this->preview = $this->block_preview($block);
   }
 
-  public function block_outer($block) {
-    $data = [];
-    $data['wrap'] = '';
-
+  public function block_break($block) {
     $classes = ['rmcc-block'];
-    if(array_key_exists('align', $block) && array_key_exists('is_preview', $block)){
-      if(!$block['is_preview']){
-        if($block['align'] == 'wide' || $block['align'] == 'full' || $block['align'] == 'right' || $block['align'] == 'left' || $block['align'] == 'center') $classes[] = 'rmcc-container-break';
-      }
-    }
+    if($block['align'] == 'wide' || $block['align'] == 'full' || $block['align'] == 'right' || $block['align'] == 'left' || $block['align'] == 'center') $classes[] = 'rmcc-container-break';
 
-    $data['wrap'] = 'class="' . implode(' ', $classes) . '"';
-    return $data;
+    $html = 'class="' . implode(' ', $classes) . '"';
+    return $html;
   }
   public function block_container($block) {
-    $data = [];
-    $classes = [];
-    $style = false;
-    $data['wrap'] = '';
+    $classes = ['rmcc-no-container'];
+    $style = null;
 
-    // container classes (align full/wide)
-    $classes[] = 'rmcc-no-container';
-    if(array_key_exists('align', $block) && array_key_exists('is_preview', $block)){
-      if(!$block['is_preview']){
-        if($block['align'] == 'full') $classes = ['rmcc-container', 'rmcc-container-expand', 'rmcc-padding-remove-horizontal'];
-        if($block['align'] == 'wide') $classes = ['rmcc-container'];
-      }
-    }
+    if(array_key_exists('align', $block)){
 
-    // align style inline (left/right/center)
-    if(array_key_exists('align', $block) && array_key_exists('is_preview', $block)){
-      if(!$block['is_preview']){
-        if($block['align'] == 'right') $style = 'style="padding-right:0;margin-right:0;margin-left:50%"';
-        if($block['align'] == 'left') $style = 'style="padding-left:0;margin-left:0;margin-right:50%"';
-        if($block['align'] == 'center') $style = 'style="padding-left:0;padding-right:0;margin-left:25%;margin-right:25%"';
-      }
+      // container classes (align full/wide)
+      if($block['align'] == 'full') $classes = ['rmcc-container', 'rmcc-container-expand', 'rmcc-padding-remove-horizontal'];
+      if($block['align'] == 'wide') $classes = ['rmcc-container'];
+
+      // align style inline (left/right/center)
+      if($block['align'] == 'right') $style = 'style="padding-right:0;margin-right:0;margin-left:50%"';
+      if($block['align'] == 'left') $style = 'style="padding-left:0;margin-left:0;margin-right:50%"';
+      if($block['align'] == 'center') $style = 'style="padding-left:0;padding-right:0;margin-left:25%;margin-right:25%"';
+
     }
 
     $classes = implode(' ', $classes);
-    $data['wrap'] = 'class="' . $classes . '"';
-    if($style) $data['wrap'] = $data['wrap'] . ' ' . $style;
-    return $data;
+    $html = 'class="' . $classes . '"';
+    if($style) $html = $html . ' ' . $style;
+    return $html;
   }
   public function block_background($block) {
-    $data = [];
-    $_classes = [];
-    $_styles = [];
-    $data['wrap'] = '';
+    $classes = [];
+    $styles = [];
 
+    // set the background classes & styles according to block background settings
     if(array_key_exists('style', $block)){
       if(array_key_exists('background', $block['style'])){
-
         $backgroundImage = (array_key_exists('backgroundImage', $block['style']['background'])) ? $block['style']['background']['backgroundImage'] : null;
         $backgroundSize = (array_key_exists('backgroundSize', $block['style']['background'])) ? $block['style']['background']['backgroundSize'] : null;
         $backgroundAttachment = (array_key_exists('backgroundAttachment', $block['style']['background'])) ? $block['style']['background']['backgroundAttachment'] : null;
         $backgroundRepeat = (array_key_exists('backgroundRepeat', $block['style']['background'])) ? $block['style']['background']['backgroundRepeat'] : null;
         $backgroundPosition = (array_key_exists('backgroundPosition', $block['style']['background'])) ? $block['style']['background']['backgroundPosition'] : null;
+
         $backgroundImageUrl = null;
         $backgroundImageId = null;
         $backgroundImageSrc = null;
@@ -93,72 +78,64 @@ class Block {
           if(array_key_exists('source', $backgroundImage)) $backgroundImageSrc = $backgroundImage['source'];
           if(array_key_exists('title', $backgroundImage)) $backgroundImageTitle = $backgroundImage['title'];
         }
-
         if($backgroundImageUrl){
 
           // background size
-          if($backgroundSize == 'cover') $_classes[] = 'rmcc-background-cover';
-          if($backgroundSize == 'contain') $_classes[] = 'rmcc-background-contain';
-          if($backgroundSize == 'auto') $_styles['background-size'] = 'auto;';
-          if(str_contains($backgroundSize,'px')) $_styles['background-size'] = $backgroundSize;
+          if($backgroundSize == 'cover') $classes[] = 'rmcc-background-cover';
+          if($backgroundSize == 'contain') $classes[] = 'rmcc-background-contain';
+          if($backgroundSize == 'auto') $styles['background-size'] = 'auto;';
+          if(str_contains($backgroundSize,'px')) $styles['background-size'] = $backgroundSize;
 
           // background repeat
-          if($backgroundRepeat == 'no-repeat') $_classes[] = 'rmcc-background-norepeat';
-          if($backgroundRepeat == 'repeat') $_styles['background-repeat'] = 'repeat';
+          if($backgroundRepeat == 'no-repeat') $classes[] = 'rmcc-background-norepeat';
+          if($backgroundRepeat == 'repeat') $styles['background-repeat'] = 'repeat';
 
           // background attachment
-          if($backgroundAttachment == 'fixed') $_classes[] = 'rmcc-background-fixed';
-          if($backgroundAttachment == 'fixed') $_styles['background-attachment'] = 'fixed';
-          if($backgroundAttachment == 'scroll') $_styles['background-attachment'] = 'scroll';
+          if($backgroundAttachment == 'fixed') $classes[] = 'rmcc-background-fixed';
+          if($backgroundAttachment == 'fixed') $styles['background-attachment'] = 'fixed';
+          if($backgroundAttachment == 'scroll') $styles['background-attachment'] = 'scroll';
 
           // background position
-          if($backgroundPosition) $_styles['background-position'] = $backgroundPosition;
+          if($backgroundPosition) $styles['background-position'] = $backgroundPosition;
 
           // background image
-          if($backgroundImageUrl) $_styles['background-image'] = 'url('.$backgroundImageUrl.')';
+          if($backgroundImageUrl) $styles['background-image'] = 'url('.$backgroundImageUrl.')';
 
           // for background images WITH borders, we need to add the radius to the img wrap, when imgs are set
           if(array_key_exists('border', $block['style'])){
             if(array_key_exists('radius', $block['style']['border'])){
-              $_styles['border-radius'] = $block['style']['border']['radius'];
+              $styles['border-radius'] = $block['style']['border']['radius'];
             }
           }
 
         }
-
       }
     }
 
-    // better output of classes and styles
-    $classes = 'class="' . implode(' ', $_classes) . '"';
+    // better html outputting of classes & styles (as arrays)
+    $classes = 'class="' . implode(' ', $classes) . '"';
     $styles = array_map(function($value, $key) {
       return $key.':'.$value;
-    }, array_values($_styles), array_keys($_styles));
+    }, array_values($styles), array_keys($styles));
     $styles = 'style="' . implode(';', $styles) . '"';
+    $html = $classes . ' ' . $styles;
 
-    $data['wrap'] = $classes . ' ' . $styles;
-    return $data;
+    return $html;
   }
   public function block_wrapper_attributes($block) {
-    $data = null;
-    if(array_key_exists('is_preview', $block)){
+    $html = wp_kses_data(get_block_wrapper_attributes());
 
-      if(!$block['is_preview']) $data = wp_kses_data(get_block_wrapper_attributes());
-
-      // remove custom className from get_block_wrapper_attributes (we will put it back in in inner)
-      if(array_key_exists('className', $block)) {
-        $_className = esc_html($block['className']);
-        if($data && str_contains($data, $_className))$data = str_replace(' '.$_className, '', $data);
-      }
-
+    // remove custom className from get_block_wrapper_attributes (we will put it back in in inner)
+    if(array_key_exists('className', $block)) {
+      $className = esc_html($block['className']);
+      if($html && str_contains($html, $className)) $html = str_replace(' '.$className, '', $html);
     }
-    return $data;
+
+    return $html;
   }
-  public function block_inner($block) {
-    $data = [];
+  public function block_card($block) {
     $classes = ['rmcc-flex','rmcc-card-body'];
     $styles = [];
-    $data['wrap'] = '';
 
     // if custom className, remove rmcc-card-body (padding) class, & replace with custom className
     // allow for removal/custom internal padding
@@ -167,7 +144,7 @@ class Block {
       $classes[] = esc_html($block['className']);
     }
 
-    // backgrounds
+    // backgrounds classes
     $bg_class = 'rmcc-background-muted';
     if((array_key_exists('backgroundColor', $block)) || (array_key_exists('gradient', $block))) $bg_class = 'rmcc-background-blank';
     if((array_key_exists('style', $block))){
@@ -177,6 +154,14 @@ class Block {
         }
       }
     }
+    $classes[] = $bg_class;
+
+    // heights classes
+    $height_class = 'rmcc-no-height';
+    if(array_key_exists('fullHeight', $block)){
+      if($block['fullHeight']) $height_class = 'rmcc-height-viewport';
+    } 
+    $classes[] = $height_class;
 
     // heights styles
     if((array_key_exists('style', $block))){
@@ -186,29 +171,17 @@ class Block {
           $styles[] = 'min-height: ' . $block['style']['dimensions']['minHeight'];
         }
       }
-    }
-
-    // heights classes
-    $height_class = 'rmcc-no-height';
-    if(array_key_exists('fullHeight', $block)){
-      if($block['fullHeight']) $height_class = 'rmcc-height-viewport';
-    }  
-
-    $classes[] = $bg_class;
-    $classes[] = $height_class;
+    } 
 
     // alignContent top|middle|bottom
-    $align_content = '';
     if((array_key_exists('align_content', $block))){
       if((array_key_exists('supports', $block))){
         if((array_key_exists('alignContent', $block['supports']))){
           if($block['supports']['alignContent']){
-            if($block['supports']['alignContent'] === 'matrix'){
-              // print_r('nope');
-            } else {
-              $_align_content = ($block['align_content'] == 'center') ? 'rmcc-flex rmcc-flex-middle' : 'rmcc-flex rmcc-flex-' . $block['align_content'];
-              if($block['align_content'] == 'center' || $block['align_content'] == 'top' || $block['align_content'] == 'bottom') $align_content = $_align_content;
-              $classes[] = $align_content;
+            if(!($block['supports']['alignContent'] === 'matrix')){
+              $flex_classes = 'rmcc-flex rmcc-flex-' . $block['align_content'];
+              if($block['align_content'] == 'center') $flex_classes = 'rmcc-flex rmcc-flex-middle';
+              $classes[] = $flex_classes;
             }
           }
         }
@@ -216,80 +189,60 @@ class Block {
     }
 
     // finally....
-    $data['wrap'] = 'class="' . implode(' ', $classes) . '" style="' . implode(';', $styles) . '"';
+    $html = 'class="' . implode(' ', $classes) . '" style="' . implode(';', $styles) . '"';
     
     // and return!
-    return $data;
+    return $html;
 
   }
-  public function block_inline($block) {
-    $data = [];
-    $data['wrap'] = '';
-    $classes = [];
+  public function block_content_wrap($block) {
+    $classes = ['rmcc-width-1-1'];
 
     if((array_key_exists('align_content', $block))){
       if((array_key_exists('supports', $block))){
         if((array_key_exists('alignContent', $block['supports']))){
           if($block['supports']['alignContent']){
-            if($block['supports']['alignContent'] === 'matrix'){
-              $classes = ['rmcc-width-1-1','rmcc-inline'];
-            } else {
-              $classes = ['rmcc-width-1-1'];
-            }
+            if($block['supports']['alignContent'] === 'matrix') $classes = ['rmcc-width-1-1','rmcc-inline'];
           }
         }
       }
     }
 
-    // finally....
-    $data['wrap'] = 'class="' . implode(' ', $classes) . '"';
-    
-    // and return!
-    return $data;
+    $html = 'class="' . implode(' ', $classes) . '"';
+    return $html;
   }
-  public function block_position($block) {
-    $data = [];
-    $data['wrap'] = '';
-    $classes = [];
+  public function block_content_position($block) {
+    $classes = ['rmcc-position-none'];
 
-    $align_content_pos = 'rmcc-position-none';
+    // matrix content positioning
     if((array_key_exists('align_content', $block))){
       if(!($block['align_content'] == 'center' || $block['align_content'] == 'top' || $block['align_content'] == 'bottom')){
-
-        if($block['align_content'] == 'top right') $align_content_pos = 'rmcc-position-top-right';
-        if($block['align_content'] == 'top center') $align_content_pos = 'rmcc-position-top-center';
-        if($block['align_content'] == 'top left') $align_content_pos = 'rmcc-position-top-left';
-
-        if($block['align_content'] == 'center right') $align_content_pos = 'rmcc-position-center-right';
-        if($block['align_content'] == 'center center') $align_content_pos = 'rmcc-position-center';
-        if($block['align_content'] == 'center left') $align_content_pos = 'rmcc-position-center-left';
-
-        if($block['align_content'] == 'bottom right') $align_content_pos = 'rmcc-position-bottom-right';
-        if($block['align_content'] == 'bottom center') $align_content_pos = 'rmcc-position-bottom-center';
-        if($block['align_content'] == 'bottom left') $align_content_pos = 'rmcc-position-bottom-left';
-
-        if($block['align_content'] == 'none') $align_content_pos = 'rmcc-position-none';
+        if($block['align_content'] == 'top right') $classes = ['rmcc-position-top-right'];
+        if($block['align_content'] == 'top center') $classes = ['rmcc-position-top-center'];
+        if($block['align_content'] == 'top left') $classes = ['rmcc-position-top-left'];
+        if($block['align_content'] == 'center right') $classes = ['rmcc-position-center-right'];
+        if($block['align_content'] == 'center center') $classes = ['rmcc-position-center'];
+        if($block['align_content'] == 'center left') $classes = ['rmcc-position-center-left'];
+        if($block['align_content'] == 'bottom right') $classes = ['rmcc-position-bottom-right'];
+        if($block['align_content'] == 'bottom center') $classes = ['rmcc-position-bottom-center'];
+        if($block['align_content'] == 'bottom left') $classes = ['rmcc-position-bottom-left'];
       }
     }
-    $classes[] = $align_content_pos;
 
-    $data['wrap'] = 'class="' . implode(' ', $classes) . '"';
-    
-    // and return!
-    return $data;
+    $html = 'class="' . implode(' ', $classes) . '"';
+    return $html;
   }
   public function block_preview($block){
-    $data = [];
-    $data['wrap'] = '';
-    if(array_key_exists('backgroundColor', $block)) $data['wrap'] = 'style="background-color: var(--wp--preset--color--' . $block['backgroundColor']  . ') !important;"';
-    if(array_key_exists('gradient', $block)) $data['wrap'] = 'style="background: var(--wp--preset--gradient--' . $block['gradient'] . ') !important;"';
+    $html = '';
+    if(array_key_exists('backgroundColor', $block)) $html = 'style="background-color: var(--wp--preset--color--' . $block['backgroundColor']  . ') !important;"';
+    if(array_key_exists('gradient', $block)) $html = 'style="background: var(--wp--preset--gradient--' . $block['gradient'] . ') !important;"';
     if(array_key_exists('style', $block)){
       if(array_key_exists('color', $block['style'])){
-        if(array_key_exists('background', $block['style']['color'])) $data['wrap'] = 'style="background-color: ' . $block['style']['color']['background'] . ';"';
-        if(array_key_exists('gradient', $block['style']['color'])) $data['wrap'] = 'style="background: ' . $block['style']['color']['gradient'] . ';"';
+        if(array_key_exists('background', $block['style']['color'])) $html = 'style="background-color: ' . $block['style']['color']['background'] . ';"';
+        if(array_key_exists('gradient', $block['style']['color'])) $html = 'style="background: ' . $block['style']['color']['gradient'] . ';"';
       }
     }
-    return $data;
+    return $html;
   }
 
 }

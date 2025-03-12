@@ -1,42 +1,17 @@
 {
-  "name": "acf/rmcc-card",
-  "title": "RMcC Card",
-  "description": "A card (rmcc-card) block built using ACF & Timber/Twig.",
+  "name": "acf/rmcc-block",
+  "title": "RMcC Block",
+  "description": "A card block built using ACF & Timber/Twig.",
   "category": "rmcc",
   "icon": "admin-comments",
   "keywords": ["rmcc", "card"],
 
   "acf": {
     "mode": "preview",
-    "renderTemplate": "card.php"
+    "renderTemplate": "block.php"
   },
 
-  "style": [ "file:./card.css" ],
-  
-  "attributes": {
-    "style": {
-      "type": "object",
-      "default": {
-        "spacing": {
-          "margin": {
-            "bottom": "0rem",
-            "top": "0rem"
-          },
-          "__padding": "0rem"
-        }
-      }
-    },
-    "alignContent": {
-      "type": "string",
-      "default": "none"
-    }
-  },
-
-  "example": {
-    "attributes": {
-      "preview": true
-    }
-  },
+  "style": [ "file:./block.css" ],
 
   "supports": {
 
@@ -56,15 +31,11 @@
 
     "align": true,
     "alignContent": "matrix",
+
     "fullHeight": true,
 
-    "color": {
-      "background": true,
-      "gradients": true
-    },
-    "background": {
-      "backgroundImage": true,
-      "backgroundSize": true
+    "dimensions": {
+      "minHeight": true
     },
 
     "spacing": {
@@ -72,8 +43,14 @@
       "padding": true
     },
 
-    "dimensions": {
-      "minHeight": true
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+
+    "color": {
+      "background": true,
+      "gradients": true
     },
 
     "shadow": true,
@@ -91,8 +68,30 @@
       }
     }
 
+  },
+  
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
 
-
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "margin": {
+            "bottom": "0rem",
+            "top": "0rem"
+          }
+        }
+      }
+    },
+    "alignContent": {
+      "type": "string",
+      "default": "none"
+    }
   }
 
 }
