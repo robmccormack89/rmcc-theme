@@ -1,5 +1,5 @@
 {% extends block.is_preview ? '_preview.twig' : '_block.twig' %}
 
 {% block block_content %}
-  <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" templateLock="all" />
+  <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
 {% endblock %}

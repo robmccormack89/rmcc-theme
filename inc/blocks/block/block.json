@@ -24,7 +24,6 @@
 
     "className": true,
     "customClassName": true,
-    "defaultStylePicker": true,
     "inserter": true,
     "reusable": true,
     "lock": true,
@@ -33,28 +32,30 @@
     "alignContent": "matrix",
 
     "fullHeight": true,
-
     "dimensions": {
       "minHeight": true
     },
 
     "spacing": {
       "margin": true,
-      "padding": true
+      "padding": true,
+      "blockGap": false,
+      "__experimentalDefaultControls": {
+        "blockGap": false
+      }
     },
+    "layout": false,
 
     "background": {
       "backgroundImage": true,
       "backgroundSize": true
     },
-
     "color": {
       "background": true,
       "gradients": true
     },
 
     "shadow": true,
-
     "__experimentalBorder": {
       "color": true,
       "radius": true,
@@ -84,7 +85,8 @@
           "margin": {
             "bottom": "0rem",
             "top": "0rem"
-          }
+          },
+          "blockGap": "20px"
         }
       }
     },
