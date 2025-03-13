@@ -5,13 +5,19 @@
   "category": "rmcc",
   "icon": "admin-comments",
   "keywords": ["rmcc", "copyright"],
+  "style": ["file:./copyright.css"],
+  "__parent": ["acf/rmcc-block"],
 
   "acf": {
     "mode": "preview",
     "renderTemplate": "copyright.php"
   },
 
-  "style": [ "file:./copyright.css" ],
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
 
   "supports": {
     "mode": true,
@@ -28,14 +34,6 @@
     "lock": true,
 
     "align": false
-  },
-
-  "__parent": [ "acf/rmcc-block" ],
-  
-  "example": {
-    "attributes": {
-      "preview": true
-    }
   }
 
 }

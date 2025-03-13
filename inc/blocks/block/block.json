@@ -5,13 +5,18 @@
   "category": "rmcc",
   "icon": "admin-comments",
   "keywords": ["rmcc", "card"],
+  "style": ["file:./block.css"],
 
   "acf": {
     "mode": "preview",
     "renderTemplate": "block.php"
   },
 
-  "style": [ "file:./block.css" ],
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
 
   "supports": {
     "mode": true,
@@ -66,12 +71,6 @@
         "style": true,
         "width": true
       }
-    }
-  },
-  
-  "example": {
-    "attributes": {
-      "preview": true
     }
   },
 
