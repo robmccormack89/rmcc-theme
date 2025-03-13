@@ -14,7 +14,6 @@
   "style": [ "file:./block.css" ],
 
   "supports": {
-
     "mode": true,
     "jsx": true,
 
@@ -68,7 +67,6 @@
         "width": true
       }
     }
-
   },
   
   "example": {

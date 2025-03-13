@@ -14,7 +14,6 @@
   "style": [ "file:./copyright.css" ],
 
   "supports": {
-
     "mode": true,
     "jsx": false,
 
@@ -24,7 +23,7 @@
 
     "className": false,
     "customClassName": false,
-    "inserter": false,
+    "inserter": true,
     "reusable": true,
     "lock": true,
 

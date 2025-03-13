@@ -51,14 +51,6 @@ class Blocks {
       'height' => array(),
       'data' => array(),
       'title' => array(),
-      'fuck' => array(),
-      'rmcc-accordion' => array(),
-      'rmcc-icon' => array(),
-      'rmcc-slider' => array(),
-      'rmcc-grid' => array(),
-      'rmcc-form' => array(),
-      'rmcc-modal' => array(),
-      'rmcc-toggle' => array(),
       'hidden' => array(),
       'role' => array(),
       'aria-live' => array(),
@@ -77,8 +69,15 @@ class Blocks {
       'viewBox' => array(),
       'fill' => array(),
       'd' => array(),
-      'uk-slider-parallax' => array(),
       'data-nanogallery2' => array(),
+      'rmcc-slider-parallax' => array(),
+      'rmcc-accordion' => array(),
+      'rmcc-icon' => array(),
+      'rmcc-slider' => array(),
+      'rmcc-grid' => array(),
+      'rmcc-form' => array(),
+      'rmcc-modal' => array(),
+      'rmcc-toggle' => array(),
     );
     $allowedposttags['form'] = $allowed_atts;
     $allowedposttags['button'] = $allowed_atts;
@@ -136,12 +135,12 @@ class Blocks {
     // backend (gutenberg editor)
     if(is_admin()){
 
-      // rmcc (uikit) css
+      // rmcc theme main css (uikit/build)
       wp_enqueue_style(
         'rmcc-theme',
         get_template_directory_uri() . '/public/css/rmcc.min.css'
       );
-      // rmcc (uikit) js
+      // rmcc theme main js (uikit/build)
       wp_enqueue_script(
         'rmcc-theme',
         get_template_directory_uri() . '/public/js/rmcc.min.js',
@@ -150,7 +149,7 @@ class Blocks {
         false
       );
 
-      // theme stylesheet (style.css)
+      // rmcc theme stylesheet (style.css)
       wp_enqueue_style(
         'rmcc-theme-style',
         get_stylesheet_uri()

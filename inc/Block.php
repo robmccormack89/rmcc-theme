@@ -28,7 +28,6 @@ class Block {
   public function block_break($block) {
     $classes = ['rmcc-block'];
     if($block['align'] == 'wide' || $block['align'] == 'full' || $block['align'] == 'right' || $block['align'] == 'left' || $block['align'] == 'center') $classes[] = 'rmcc-container-break';
-
     $html = 'class="' . implode(' ', $classes) . '"';
     return $html;
   }
@@ -37,16 +36,13 @@ class Block {
     $style = null;
 
     if(array_key_exists('align', $block)){
-
       // container classes (align full/wide)
       if($block['align'] == 'full') $classes = ['rmcc-container', 'rmcc-container-expand', 'rmcc-padding-remove-horizontal'];
       if($block['align'] == 'wide') $classes = ['rmcc-container'];
-
       // align style inline (left/right/center)
       if($block['align'] == 'right') $style = 'style="padding-right:0;margin-right:0;margin-left:50%"';
       if($block['align'] == 'left') $style = 'style="padding-left:0;margin-left:0;margin-right:50%"';
       if($block['align'] == 'center') $style = 'style="padding-left:0;padding-right:0;margin-left:25%;margin-right:25%"';
-
     }
 
     $classes = implode(' ', $classes);
@@ -119,7 +115,6 @@ class Block {
     }, array_values($styles), array_keys($styles));
     $styles = 'style="' . implode(';', $styles) . '"';
     $html = $classes . ' ' . $styles;
-
     return $html;
   }
   public function block_wrapper_attributes($block) {
@@ -190,10 +185,7 @@ class Block {
 
     // finally....
     $html = 'class="' . implode(' ', $classes) . '" style="' . implode(';', $styles) . '"';
-    
-    // and return!
     return $html;
-
   }
   public function block_content_wrap($block) {
     $classes = ['rmcc-width-1-1'];
