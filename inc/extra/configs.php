@@ -46,20 +46,25 @@ Stuff
 $configs['blog_filters'] = true;
 $configs['blog_filters_properties'] = (object) [
   "types" => array(
+    // format for taxonomy WITH parent->child relationships (like categories)
     (object) [
-      "parentGroupId" => 'post_cat_group',
-      "subGroupId" => 'post_subcat_group',
-      "subId" => 'post_cat_sub',
-      "formQueryKey" => 'category_name',
-      "taxKey" => 'category',
-      "altQueryKey" => 'cat',
-      "currentQueryVar" => ''
+      "parentGroupId" => 'catGroup', // customizable
+      "subGroupId" => 'subcatGroup', // customizable
+      "subId" => 'subcat', // customizable
+
+      "taxKey" => 'category', // taxonomy key
+      "altQueryKey" => 'cat', // taxonomy ID
+      "formQueryKey" => 'category_name', // taxonomy slug
+
+      "currentQueryVar" => '' // must be defined & empty unless currently paged
     ],
+    // format for taxonomy WITHOUT parent->child relationships (like tags)
     (object) [
-      "formQueryKey" => 'tag',
-      "taxKey" => 'post_tag',
-      "altQueryKey" => 'tag_id',
-      "currentQueryVar" => ''
+      "taxKey" => 'post_tag', // taxonomy key
+      "altQueryKey" => 'tag_id', // taxonomy ID
+      "formQueryKey" => 'tag', // taxonomy slug
+      
+      "currentQueryVar" => '' // must be defined & empty unless currently paged
     ]
   )
 ];
