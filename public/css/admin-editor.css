@@ -1,3 +1,0 @@
-html :where(.wp-block):not(.acf-block-preview) {
-  max-width: 1100px;
-}
