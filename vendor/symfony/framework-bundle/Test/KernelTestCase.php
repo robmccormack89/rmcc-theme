@@ -12,7 +12,7 @@
 namespace Symfony\Bundle\FrameworkBundle\Test;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Contracts\Service\ResetInterface;
@@ -25,11 +25,22 @@ use Symfony\Contracts\Service\ResetInterface;
 abstract class KernelTestCase extends TestCase
 {
     use MailerAssertionsTrait;
-    use NotificationAssertionsTrait;
 
-    protected static ?string $class = null;
-    protected static ?KernelInterface $kernel = null;
-    protected static bool $booted = false;
+    protected static $class;
+
+    /**
+     * @var KernelInterface
+     */
+    protected static $kernel;
+
+    /**
+     * @var ContainerInterface
+     *
+     * @deprecated since Symfony 5.3, use static::getContainer() instead
+     */
+    protected static $container;
+
+    protected static $booted = false;
 
     protected function tearDown(): void
     {
@@ -40,17 +51,19 @@ abstract class KernelTestCase extends TestCase
     }
 
     /**
+     * @return string
+     *
      * @throws \RuntimeException
      * @throws \LogicException
      */
-    protected static function getKernelClass(): string
+    protected static function getKernelClass()
     {
         if (!isset($_SERVER['KERNEL_CLASS']) && !isset($_ENV['KERNEL_CLASS'])) {
-            throw new \LogicException(\sprintf('You must set the KERNEL_CLASS environment variable to the fully-qualified class name of your Kernel in phpunit.xml / phpunit.xml.dist or override the "%1$s::createKernel()" or "%1$s::getKernelClass()" method.', static::class));
+            throw new \LogicException(sprintf('You must set the KERNEL_CLASS environment variable to the fully-qualified class name of your Kernel in phpunit.xml / phpunit.xml.dist or override the "%1$s::createKernel()" or "%1$s::getKernelClass()" method.', static::class));
         }
 
         if (!class_exists($class = $_ENV['KERNEL_CLASS'] ?? $_SERVER['KERNEL_CLASS'])) {
-            throw new \RuntimeException(\sprintf('Class "%s" doesn\'t exist or cannot be autoloaded. Check that the KERNEL_CLASS value in phpunit.xml matches the fully-qualified class name of your Kernel or override the "%s::createKernel()" method.', $class, static::class));
+            throw new \RuntimeException(sprintf('Class "%s" doesn\'t exist or cannot be autoloaded. Check that the KERNEL_CLASS value in phpunit.xml matches the fully-qualified class name of your Kernel or override the "%s::createKernel()" method.', $class, static::class));
         }
 
         return $class;
@@ -58,8 +71,10 @@ abstract class KernelTestCase extends TestCase
 
     /**
      * Boots the Kernel for this test.
+     *
+     * @return KernelInterface
      */
-    protected static function bootKernel(array $options = []): KernelInterface
+    protected static function bootKernel(array $options = [])
     {
         static::ensureKernelShutdown();
 
@@ -67,6 +82,9 @@ abstract class KernelTestCase extends TestCase
         $kernel->boot();
         static::$kernel = $kernel;
         static::$booted = true;
+
+        $container = static::$kernel->getContainer();
+        static::$container = $container->has('test.service_container') ? $container->get('test.service_container') : $container;
 
         return static::$kernel;
     }
@@ -79,7 +97,7 @@ abstract class KernelTestCase extends TestCase
      *
      * Using this method is the best way to get a container from your test code.
      */
-    protected static function getContainer(): Container
+    protected static function getContainer(): ContainerInterface
     {
         if (!static::$booted) {
             static::bootKernel();
@@ -99,13 +117,34 @@ abstract class KernelTestCase extends TestCase
      *
      *  * environment
      *  * debug
+     *
+     * @return KernelInterface
      */
-    protected static function createKernel(array $options = []): KernelInterface
+    protected static function createKernel(array $options = [])
     {
-        static::$class ??= static::getKernelClass();
+        if (null === static::$class) {
+            static::$class = static::getKernelClass();
+        }
 
-        $env = $options['environment'] ?? $_ENV['APP_ENV'] ?? $_SERVER['APP_ENV'] ?? 'test';
-        $debug = $options['debug'] ?? $_ENV['APP_DEBUG'] ?? $_SERVER['APP_DEBUG'] ?? true;
+        if (isset($options['environment'])) {
+            $env = $options['environment'];
+        } elseif (isset($_ENV['APP_ENV'])) {
+            $env = $_ENV['APP_ENV'];
+        } elseif (isset($_SERVER['APP_ENV'])) {
+            $env = $_SERVER['APP_ENV'];
+        } else {
+            $env = 'test';
+        }
+
+        if (isset($options['debug'])) {
+            $debug = $options['debug'];
+        } elseif (isset($_ENV['APP_DEBUG'])) {
+            $debug = $_ENV['APP_DEBUG'];
+        } elseif (isset($_SERVER['APP_DEBUG'])) {
+            $debug = $_SERVER['APP_DEBUG'];
+        } else {
+            $debug = true;
+        }
 
         return new static::$class($env, $debug);
     }
@@ -131,5 +170,7 @@ abstract class KernelTestCase extends TestCase
                 $container->reset();
             }
         }
+
+        static::$container = null;
     }
 }

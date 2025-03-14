@@ -11,7 +11,6 @@
 
 namespace Symfony\Bundle\FrameworkBundle\Command;
 
-use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
@@ -34,21 +33,30 @@ use Symfony\Component\HttpKernel\KernelInterface;
  *
  * @final
  */
-#[AsCommand(name: 'assets:install', description: 'Install bundle\'s web assets under a public directory')]
 class AssetsInstallCommand extends Command
 {
     public const METHOD_COPY = 'copy';
     public const METHOD_ABSOLUTE_SYMLINK = 'absolute symlink';
     public const METHOD_RELATIVE_SYMLINK = 'relative symlink';
 
-    public function __construct(
-        private Filesystem $filesystem,
-        private string $projectDir,
-    ) {
+    protected static $defaultName = 'assets:install';
+    protected static $defaultDescription = 'Install bundle\'s web assets under a public directory';
+
+    private $filesystem;
+    private $projectDir;
+
+    public function __construct(Filesystem $filesystem, string $projectDir)
+    {
         parent::__construct();
+
+        $this->filesystem = $filesystem;
+        $this->projectDir = $projectDir;
     }
 
-    protected function configure(): void
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
     {
         $this
             ->setDefinition([
@@ -57,6 +65,7 @@ class AssetsInstallCommand extends Command
             ->addOption('symlink', null, InputOption::VALUE_NONE, 'Symlink the assets instead of copying them')
             ->addOption('relative', null, InputOption::VALUE_NONE, 'Make relative symlinks')
             ->addOption('no-cleanup', null, InputOption::VALUE_NONE, 'Do not remove the assets of the bundles that no longer exist')
+            ->setDescription(self::$defaultDescription)
             ->setHelp(<<<'EOT'
 The <info>%command.name%</info> command installs bundle assets into a given
 directory (e.g. the <comment>public</comment> directory).
@@ -80,6 +89,9 @@ EOT
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var KernelInterface $kernel */
@@ -93,7 +105,7 @@ EOT
             $targetArg = $kernel->getProjectDir().'/'.$targetArg;
 
             if (!is_dir($targetArg)) {
-                throw new InvalidArgumentException(\sprintf('The target directory "%s" does not exist.', $targetArg));
+                throw new InvalidArgumentException(sprintf('The target directory "%s" does not exist.', $targetArg));
             }
         }
 
@@ -130,7 +142,7 @@ EOT
             $validAssetDirs[] = $assetDir;
 
             if (OutputInterface::VERBOSITY_VERBOSE <= $output->getVerbosity()) {
-                $message = \sprintf("%s\n-> %s", $bundle->getName(), $targetDir);
+                $message = sprintf("%s\n-> %s", $bundle->getName(), $targetDir);
             } else {
                 $message = $bundle->getName();
             }
@@ -151,13 +163,13 @@ EOT
                 }
 
                 if ($method === $expectedMethod) {
-                    $rows[] = [\sprintf('<fg=green;options=bold>%s</>', '\\' === \DIRECTORY_SEPARATOR ? 'OK' : "\xE2\x9C\x94" /* HEAVY CHECK MARK (U+2714) */), $message, $method];
+                    $rows[] = [sprintf('<fg=green;options=bold>%s</>', '\\' === \DIRECTORY_SEPARATOR ? 'OK' : "\xE2\x9C\x94" /* HEAVY CHECK MARK (U+2714) */), $message, $method];
                 } else {
-                    $rows[] = [\sprintf('<fg=yellow;options=bold>%s</>', '\\' === \DIRECTORY_SEPARATOR ? 'WARNING' : '!'), $message, $method];
+                    $rows[] = [sprintf('<fg=yellow;options=bold>%s</>', '\\' === \DIRECTORY_SEPARATOR ? 'WARNING' : '!'), $message, $method];
                 }
             } catch (\Exception $e) {
                 $exitCode = 1;
-                $rows[] = [\sprintf('<fg=red;options=bold>%s</>', '\\' === \DIRECTORY_SEPARATOR ? 'ERROR' : "\xE2\x9C\x98" /* HEAVY BALLOT X (U+2718) */), $message, $e->getMessage()];
+                $rows[] = [sprintf('<fg=red;options=bold>%s</>', '\\' === \DIRECTORY_SEPARATOR ? 'ERROR' : "\xE2\x9C\x98" /* HEAVY BALLOT X (U+2718) */), $message, $e->getMessage()];
             }
         }
         // remove the assets of the bundles that no longer exist
@@ -192,7 +204,7 @@ EOT
         try {
             $this->symlink($originDir, $targetDir, true);
             $method = self::METHOD_RELATIVE_SYMLINK;
-        } catch (IOException) {
+        } catch (IOException $e) {
             $method = $this->absoluteSymlinkWithFallback($originDir, $targetDir);
         }
 
@@ -209,7 +221,7 @@ EOT
         try {
             $this->symlink($originDir, $targetDir);
             $method = self::METHOD_ABSOLUTE_SYMLINK;
-        } catch (IOException) {
+        } catch (IOException $e) {
             // fall back to copy
             $method = $this->hardCopy($originDir, $targetDir);
         }
@@ -222,7 +234,7 @@ EOT
      *
      * @throws IOException if link cannot be created
      */
-    private function symlink(string $originDir, string $targetDir, bool $relative = false): void
+    private function symlink(string $originDir, string $targetDir, bool $relative = false)
     {
         if ($relative) {
             $this->filesystem->mkdir(\dirname($targetDir));
@@ -230,7 +242,7 @@ EOT
         }
         $this->filesystem->symlink($originDir, $targetDir);
         if (!file_exists($targetDir)) {
-            throw new IOException(\sprintf('Symbolic link "%s" was created but appears to be broken.', $targetDir), 0, null, $targetDir);
+            throw new IOException(sprintf('Symbolic link "%s" was created but appears to be broken.', $targetDir), 0, null, $targetDir);
         }
     }
 
@@ -260,7 +272,7 @@ EOT
             return $defaultPublicDir;
         }
 
-        $composerConfig = json_decode($this->filesystem->readFile($composerFilePath), true, flags: \JSON_THROW_ON_ERROR);
+        $composerConfig = json_decode(file_get_contents($composerFilePath), true);
 
         return $composerConfig['extra']['public-dir'] ?? $defaultPublicDir;
     }
