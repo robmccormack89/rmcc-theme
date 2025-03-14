@@ -48,5 +48,4 @@ $configs['live_search_types'] = array('post', 'page');
 $configs['live_search_taxes'] = array('category', 'post_tag');
 $configs['live_search_types_in_taxes'] = array('post');
 
-
 return $configs;

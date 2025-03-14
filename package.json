@@ -19,6 +19,8 @@
   },
   "devDependencies": {
 
+    "debounce": "^1.2.0",
+
     "gulp": "^4.0.2",
     "del": "^6.0.0",
     "gulp-wp-pot": "^2.5.0",

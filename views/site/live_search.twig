@@ -61,17 +61,17 @@
           {% if not (configs.disable_post_tags and tax == 'post_tag') and result_items_within[type][tax] is not empty %}
             {% for item in result_items_within[type][tax] %}
               <li>
-                <a class="uk-link-text" href="{{ fn('get_permalink', item.id) }}">
-                  <div class="uk-grid-small uk-flex uk-flex-middle" uk-grid>
-                    <div class="uk-width-expand">
+                <a class="rmcc-link-text" href="{{ fn('get_permalink', item.id) }}">
+                  <div class="rmcc-grid-small rmcc-flex rmcc-flex-middle" rmcc-grid>
+                    <div class="rmcc-width-expand">
                       {{ item.title|e('esc_html') }} ({{ query_string|capitalize|e('esc_html') }})
                     </div>
-                    <div clas="uk-width-auto">
-                      <div class="uk-text-meta ajax-search-meta uk-text-right">
+                    <div clas="rmcc-width-auto">
+                      <div class="rmcc-text-meta ajax-search-meta rmcc-text-right">
                         {% set type_cpt_obj = fn('get_post_type_object', type) %}
                         {% set type_labels = type_cpt_obj.labels %}
                         {% set tax_labels = fn('get_taxonomy_labels', fn('get_taxonomy', tax)) %}
-                        {{ _x('%1$s in %2$s', 'Search: results', 'base-theme')|e('esc_html')|format(type_labels.singular_name|e('esc_html'), tax_labels.singular_name|e('esc_html')) }}
+                        {{ _x('%1$s in %2$s', 'Search: results', 'rmcc-theme')|e('esc_html')|format(type_labels.singular_name|e('esc_html'), tax_labels.singular_name|e('esc_html')) }}
                       </div>
                     </div>
                   </div>
@@ -87,7 +87,7 @@
   {% if not result_items and not result_items_within %}
     <li>
       <p class="padding-5 rmcc-padding-remove-vertical rmcc-margin-remove rmcc-text-small rmcc-text-muted">
-        {{ _x('Sorry, we couldnt find anything for your query. Try searching for something else.', 'Search: form', 'base-theme')|e('esc_html') }}
+        {{ _x('Sorry, we couldnt find anything for your query. Try searching for something else.', 'Search: form', 'rmcc-theme')|e('esc_html') }}
       </p>
     </li>
   {% endif %}

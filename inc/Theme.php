@@ -327,6 +327,11 @@ class Theme extends Timber {
       }
     });
 
+    // live search
+    global $configs;
+    if($configs['live_search']) add_action('wp_ajax_ajax_live_search', 'ajax_live_search');
+    if($configs['live_search']) add_action('wp_ajax_nopriv_ajax_live_search', 'ajax_live_search');
+
   }
 
   public function theme_enqueue_assets() {
@@ -351,6 +356,29 @@ class Theme extends Timber {
       'rmcc-theme-style',
       get_stylesheet_uri()
     );
+
+    global $configs;
+    if($configs['live_search']){
+
+      // live search
+      wp_enqueue_script(
+        'rmcc-theme-search',
+        get_template_directory_uri() . '/public/js/search.jquery.js',
+        array('jquery'),
+        '1.0.0',
+        true
+      );
+
+      // infused with ajax!
+      wp_localize_script(
+        'rmcc-theme-search',
+        'myAjax',
+        array(
+          'ajaxurl' => admin_url('admin-ajax.php')
+        )
+      );
+      
+    }
 
   }
 
