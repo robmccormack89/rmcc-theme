@@ -16,10 +16,8 @@ const config = {
   "text_domain"       : "rmcc-theme",
   "destFolder"        : "languages",
   "twig_files"        : "views/**/*.twig",
-  "php_files"         : "{*.php,!(vendor|node_modules|_dev)/**/*.php}",
+  "php_files"         : "{*.php,/inc/*.php,/inc/extra/*.php,/templates/*.php,views/temp/**/*.php}",
   "cacheFolder"       : "views/temp",
-  "twig_blocks"       : "inc/acf/blocks/views/**/*.twig",
-  "blocksCacheFolder" : "inc/acf/blocks/views/temp"
 };
 
 const gettext_regex = {
@@ -41,18 +39,6 @@ gulp.task('compile-twig', () => {
     .pipe(gulp.dest(config.cacheFolder));
 });
 
-gulp.task('compile-blocks-twig', () => {
-  return gulp.src(config.twig_blocks)
-    .pipe(replace(gettext_regex.simple, match => `<?php ${match}; ?>`))
-    .pipe(replace(gettext_regex.plural, match => `<?php ${match}; ?>`))
-    .pipe(replace(gettext_regex.disambiguation, match => `<?php ${match}; ?>`))
-    .pipe(replace(gettext_regex.noop, match => `<?php ${match}; ?>`))
-    .pipe(rename({
-      extname: '.php',
-    }))
-    .pipe(gulp.dest(config.blocksCacheFolder));
-});
-
 gulp.task('generate-pot', () => {
   const output = gulp.src(config.php_files)
     .pipe(wpPot({
@@ -62,16 +48,11 @@ gulp.task('generate-pot', () => {
   return output;
 });
 
-gulp.task('clean-temp', function(){
-   return del(['views/temp/**', 'views/temp'], {force: true});
+gulp.task('clean', function(){
+   return del([config.cacheFolder+'/**', config.cacheFolder], {force: true});
 });
 
-gulp.task('clean-blocks-temp', function(){
-   return del(['inc/acf/blocks/views/temp/**', 'inc/acf/blocks/views/temp'], {force: true});
-});
-
-// gulp.task('pot', gulp.series('compile-twig', 'compile-blocks-twig', 'generate-pot', 'clean-temp', 'clean-blocks-temp'));
-gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean-temp'));
+gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean'));
 
 //
 //
@@ -101,9 +82,6 @@ function style() {
 }
 
 exports.style = style;
-
 var build = gulp.parallel(style);
-
 gulp.task('build', build);
-
 gulp.task('default', build);
