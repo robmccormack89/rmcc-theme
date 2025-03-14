@@ -1,22 +1,8 @@
-// STANDARD UIKI BUILD; STRAIGHT FROM NODE_MODULES
-
-// 1. customizing uikit variables before build (variables get built in)
-// $offcanvas-bar-background: #fff;
-// $offcanvas-bar-color-mode: none;
-
-// 2. Import uikit variables & mixins
-// @import "node_modules/uikit/src/scss/variables-theme.scss";
-// @import "node_modules/uikit/src/scss/mixins-theme.scss";
-
-// 3. Import uikit theme
-// @import "node_modules/uikit/src/scss/uikit-theme.scss";
-
-// 4. import custom theme sass
-// @import "src/scss/theme/_import.scss";
-
-// ------------------------------------------------------------
-
-// A CUSTOM UIKIT BUILD WITH SELECTIVE COMPONENTS (ALL SELECTED)
+//
+//
+// 1. set your own custom variables
+//
+//
 
 // base colour variables
 $theme_primary: #23259c; // solaris purple
@@ -78,77 +64,72 @@ $theme_faint_black_overlay: rgba($theme_true_black, 0.25); // very faint black
 $theme_medium_black_overlay: rgba($theme_black, 0.4); // black medium
 $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 
-// 1. first, do your overwrites of the uikit theme'd variables here...
+//
+//
+// 2. overwrite any of uikit's variables
+//
+//
+
+// // Uikit Offcanvas
+// $offcanvas-bar-background: #fff;
+// $offcanvas-bar-color-mode: none;
 
 //
-// Uikit Font Size
 //
-// $global-font-size: $theme-base-font-size;
+// 3a. import themed variables & mixins from uikit
+// ..for local overwrites use "src/scss/theme/..."
+//
+//
+
+@import "node_modules/uikit/src/scss/variables-theme.scss";
+@import "node_modules/uikit/src/scss/mixins-theme.scss";
 
 //
-// Uikit Colors
 //
-// $global-color: $theme_darker_grey;
-// $global-emphasis-color: $theme_grey_primary;
-// $global-muted-color: $theme_light_grey;
-// $global-link-color: $theme_grey_primary;
-// $global-link-hover-color: $theme_secondary;
-// $button-link-hover-color: $theme_secondary;
-// $link-heading-hover-color: $theme_secondary;
-// $global-inverse-color: $theme_white;
-// $base-heading-color: $theme_grey_primary;
-// $text-lead-color: $theme_darker_grey;
+// 3b. Or import default (non-themed) variables & mixins from uikit
+// ..for local overwrites use "src/scss/theme/..."
+//
+//
+
+// @import "node_modules/uikit/src/scss/variables.scss";
+// @import "node_modules/uikit/src/scss/mixins.scss";
 
 //
-// Uikit Backgrounds
 //
-// $global-background: $theme_white;
-// $global-muted-background: $theme_lightest_grey;
-// $global-primary-background: $theme_primary;
-// $global-primary-background: $theme_grey_primary;
-// $card-default-title-color: $theme_grey_primary;
-// $card-default-title-color: $theme_grey_primary;
-// $global-secondary-background: $theme_secondary;
-// $global-success-background: $theme_green;
-// $global-warning-background: $theme_orange;
-// $global-danger-background: $theme_pink;
+// 4. If importing themed uikit, we now import the themed uikit components
+// ..you dont need this if not using uikit's theme
+// ..the uikit variables we set above will overwrite the ones we imoprt here, neat!
+// ..this file imports the components from the local uikit installed in node_modules
+//
+//
+
+// @import "src/scss/theme/import-theme.scss"; // select components
+@import "src/scss/theme/import-theme-all.scss"; // all
 
 //
-// Uikit Transitions
 //
-// $transition-scale: 1.08;
-
+// 5. next, we can (optionally) do any custom mixin overwrites
 //
-// Uikit Overlays
 //
-$overlay-default-background: rgba($theme_white, 0.8) !default; // white overlay
-$overlay-primary-background: rgba($theme_primary, 0.8) !default; // purple overlay
-$overlay-primary-color-mode: light !default;
 
-//
-// Uikit Offcanvas
-//
-$offcanvas-bar-background: #fff;
-$offcanvas-bar-color-mode: none;
-
-// 2. Import themed variables & mixins
-@import "src/scss/uikit/variables-theme.scss";
-@import "src/scss/uikit/mixins-theme.scss";
-
-// 2. Or import the default variables & mixins
-// @import "src/scss/uikit/variables.scss";
-// @import "src/scss/uikit/mixins.scss";
-
-// 3. If importing the theme, now import the themed uikit components (with custom variables) next
-@import "src/scss/uikit/theme/_import.scss"; // use to include ALL components 
-//@import "src/scss/uikit/theme/_import-select.scss"; // use for selective component builds
-
-// 4. next, we do any custom mixin overwrites. we can use this themed or not also
 // @import "src/scss/theme/accordion-mixins.scss";
 
-// 5. Now we Import the main uikit components (regardless of theme)
-@import "src/scss/uikit/components/_import.scss"; // use to include ALL components 
-//@import "src/scss/uikit/components/_import-select.scss"; // use for selective component builds
+//
+//
+// 6. now we need to import the main uikit components
+// ..you need this regardless of whether uikit is theme'd or not
+// ..this file imports the components from the local uikit installed in node_modules
+//
+//
 
-// 6. finally, import our custom sass styles. this is our own custom stuff which can now also use uikit variables
-@import "src/scss/custom/_import.scss";
+// @import "src/scss/theme/import-components.scss"; // select components
+@import "src/scss/theme/import-components-all.scss"; // all
+
+//
+//
+// 7. finally, we can now (optionally) import any extra custom scss styles
+// ..the file we import here can also use the custom AND uikit variables set above, also neat!
+//
+//
+
+@import "src/scss/theme/custom/_import.scss";

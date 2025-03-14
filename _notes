@@ -1,0 +1,8 @@
+html/semantics & markup:
+
+  improved html_head markup
+  will look to better define rest of html markup where possible as per validator.w3.org
+
+builds:
+
+  improved scss builds with prexifing & scoping using latest clean (and selective) method & latest packages

@@ -1,4 +1,11 @@
+'use strict';
+
+//
+//
 // gulp pot
+//
+//
+
 const gulp = require('gulp');
 const del = require('del');
 const wpPot = require('gulp-wp-pot');
@@ -66,8 +73,11 @@ gulp.task('clean-blocks-temp', function(){
 // gulp.task('pot', gulp.series('compile-twig', 'compile-blocks-twig', 'generate-pot', 'clean-temp', 'clean-blocks-temp'));
 gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean-temp'));
 
+//
+//
 // gulp style
-'use strict';
+//
+//
  
 var sass = require("gulp-sass")(require('sass')),
     postcss = require("gulp-postcss"),
