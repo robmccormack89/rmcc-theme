@@ -11,6 +11,7 @@
 
 namespace Symfony\Bundle\FrameworkBundle\CacheWarmer;
 
+use Doctrine\Common\Annotations\AnnotationException;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Serializer\Mapping\Factory\CacheClassMetadataFactory;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
@@ -23,26 +24,28 @@ use Symfony\Component\Serializer\Mapping\Loader\YamlFileLoader;
  * Warms up XML and YAML serializer metadata.
  *
  * @author Titouan Galopin <galopintitouan@gmail.com>
- *
- * @final since Symfony 7.1
  */
 class SerializerCacheWarmer extends AbstractPhpFileCacheWarmer
 {
+    private $loaders;
+
     /**
      * @param LoaderInterface[] $loaders      The serializer metadata loaders
      * @param string            $phpArrayFile The PHP file where metadata are cached
      */
-    public function __construct(
-        private array $loaders,
-        string $phpArrayFile,
-    ) {
+    public function __construct(array $loaders, string $phpArrayFile)
+    {
         parent::__construct($phpArrayFile);
+        $this->loaders = $loaders;
     }
 
-    protected function doWarmUp(string $cacheDir, ArrayAdapter $arrayAdapter, ?string $buildDir = null): bool
+    /**
+     * {@inheritdoc}
+     */
+    protected function doWarmUp(string $cacheDir, ArrayAdapter $arrayAdapter)
     {
-        if (!$this->loaders) {
-            return true;
+        if (!class_exists(CacheClassMetadataFactory::class) || !method_exists(XmlFileLoader::class, 'getMappedClasses') || !method_exists(YamlFileLoader::class, 'getMappedClasses')) {
+            return false;
         }
 
         $metadataFactory = new CacheClassMetadataFactory(new ClassMetadataFactory(new LoaderChain($this->loaders)), $arrayAdapter);
@@ -51,6 +54,8 @@ class SerializerCacheWarmer extends AbstractPhpFileCacheWarmer
             foreach ($loader->getMappedClasses() as $mappedClass) {
                 try {
                     $metadataFactory->getMetadataFor($mappedClass);
+                } catch (AnnotationException $e) {
+                    // ignore failing annotations
                 } catch (\Exception $e) {
                     $this->ignoreAutoloadException($mappedClass, $e);
                 }

@@ -1,0 +1,38 @@
+// custom design element: dotted-subs
+.dotted-subs>:not(:first-child) {
+  margin-left: 20px;
+}
+.dotted-subs>:not(:last-child)::after {
+  content: "•";
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  font-weight: 700;
+}
+
+// small form inputs (matches height of rmcc-button-small)
+input.rmcc-form-small {
+  height: 30px;
+}
+
+// caption modifier
+figcaption.rmcc-padding-small {
+  padding: 5px;
+}
+
+// post tease
+article.post.item.rmcc-article .rmcc-article-title {
+  font-size: 1.5rem;
+}
+
+// single post - dropcap modifier
+.single-excerpt .rmcc-dropcap:first-letter, 
+.single-excerpt .rmcc-dropcap>p:first-of-type:first-letter {
+  margin-top: -5px;
+}
+
+// removing underline on certain links
+a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-underline:focus,
+.rmcc-link-toggle:focus .rmcc-link, .rmcc-link-toggle:hover .rmcc-link, .rmcc-link:hover, a:hover {
+  text-decoration: none;
+}
