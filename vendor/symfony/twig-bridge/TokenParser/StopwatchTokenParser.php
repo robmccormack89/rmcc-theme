@@ -25,9 +25,11 @@ use Twig\TokenParser\AbstractTokenParser;
  */
 final class StopwatchTokenParser extends AbstractTokenParser
 {
-    public function __construct(
-        private bool $stopwatchIsAvailable,
-    ) {
+    private bool $stopwatchIsAvailable;
+
+    public function __construct(bool $stopwatchIsAvailable)
+    {
+        $this->stopwatchIsAvailable = $stopwatchIsAvailable;
     }
 
     public function parse(Token $token): Node
@@ -36,7 +38,9 @@ final class StopwatchTokenParser extends AbstractTokenParser
         $stream = $this->parser->getStream();
 
         // {% stopwatch 'bar' %}
-        $name = $this->parser->getExpressionParser()->parseExpression();
+        $name = method_exists($this->parser, 'parseExpression') ?
+            $this->parser->parseExpression() :
+            $this->parser->getExpressionParser()->parseExpression();
 
         $stream->expect(Token::BLOCK_END_TYPE);
 
