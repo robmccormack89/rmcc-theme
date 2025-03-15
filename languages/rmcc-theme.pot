@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-14 13:03+0000\n"
+"POT-Creation-Date: 2025-03-15 21:08+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -40,37 +40,37 @@ msgctxt "Archives"
 msgid "Author: "
 msgstr ""
 
-#: inc/Theme.php:366
+#: inc/Theme.php:268
 msgctxt "Menus"
 msgid "Main Menu"
 msgstr ""
 
-#: inc/Theme.php:367
+#: inc/Theme.php:269
 msgctxt "Menus"
 msgid "Iconnav Menu"
 msgstr ""
 
-#: inc/Theme.php:389
+#: inc/Theme.php:291
 msgctxt "Theme Featured Image - src"
 msgid "https://picsum.photos/1920/1200"
 msgstr ""
 
-#: inc/Theme.php:390
+#: inc/Theme.php:292
 msgctxt "Theme Featured Image - alt"
 msgid "Alt"
 msgstr ""
 
-#: inc/Theme.php:391
+#: inc/Theme.php:293
 msgctxt "Theme Featured Image - caption"
 msgid "Caption"
 msgstr ""
 
-#: inc/Theme.php:402
+#: inc/Theme.php:300
 msgctxt "404/Error pages"
 msgid "Error: Page not found"
 msgstr ""
 
-#: inc/Theme.php:403
+#: inc/Theme.php:301
 msgctxt "404/Error pages"
 msgid "Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below."
 msgstr ""
@@ -83,6 +83,10 @@ msgstr ""
 #: search.php:44
 msgctxt "Search: results"
 msgid "You have searched for:"
+msgstr ""
+
+#: templates/blank.php:4
+msgid "Blank Template"
 msgstr ""
 
 #: templates/coming-soon.php:4
@@ -125,6 +129,16 @@ msgstr ""
 #: views/temp/archive/tease.php:55
 msgctxt "Tease: read more"
 msgid "Read more"
+msgstr ""
+
+#: views/temp/blocks/copyright/block.php:5, views/temp/site/footer/footer-copyright.php:2, views/temp/site/header/nav-offcanvas.php:26
+msgctxt "Footer: copyright"
+msgid "© All Rights Reserved %s"
+msgstr ""
+
+#: views/temp/blocks/copyright/block.php:5, views/temp/site/footer/footer-copyright.php:2
+msgctxt "Footer: back to home"
+msgid "Return to Homepage"
 msgstr ""
 
 #: views/temp/maintenance.php:1
@@ -225,16 +239,6 @@ msgstr ""
 #: views/temp/site/footer.php:9
 msgctxt "Footer: to top"
 msgid "Scroll to Top"
-msgstr ""
-
-#: views/temp/site/footer/footer-copyright.php:2, views/temp/site/header/nav-offcanvas.php:26
-msgctxt "Footer: copyright"
-msgid "© All Rights Reserved %s"
-msgstr ""
-
-#: views/temp/site/footer/footer-copyright.php:2
-msgctxt "Footer: back to home"
-msgid "Return to Homepage"
 msgstr ""
 
 #: views/temp/site/header/nav-search.php:9, views/temp/site/search_form.php:11

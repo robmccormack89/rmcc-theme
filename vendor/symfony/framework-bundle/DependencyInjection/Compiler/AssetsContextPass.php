@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class AssetsContextPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container): void
+    public function process(ContainerBuilder $container)
     {
         if (!$container->hasDefinition('assets.context')) {
             return;

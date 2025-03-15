@@ -19,26 +19,36 @@ use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
 
 abstract class AbstractPhpFileCacheWarmer implements CacheWarmerInterface
 {
+    private $phpArrayFile;
+
     /**
      * @param string $phpArrayFile The PHP file where metadata are cached
      */
-    public function __construct(
-        private string $phpArrayFile,
-    ) {
+    public function __construct(string $phpArrayFile)
+    {
+        $this->phpArrayFile = $phpArrayFile;
     }
 
-    public function isOptional(): bool
+    /**
+     * {@inheritdoc}
+     */
+    public function isOptional()
     {
         return true;
     }
 
-    public function warmUp(string $cacheDir, ?string $buildDir = null): array
+    /**
+     * {@inheritdoc}
+     *
+     * @return string[] A list of classes to preload on PHP 7.4+
+     */
+    public function warmUp(string $cacheDir)
     {
         $arrayAdapter = new ArrayAdapter();
 
         spl_autoload_register([ClassExistenceResource::class, 'throwOnRequiredClass']);
         try {
-            if (!$this->doWarmUp($cacheDir, $arrayAdapter, $buildDir)) {
+            if (!$this->doWarmUp($cacheDir, $arrayAdapter)) {
                 return [];
             }
         } finally {
@@ -48,7 +58,7 @@ abstract class AbstractPhpFileCacheWarmer implements CacheWarmerInterface
         // the ArrayAdapter stores the values serialized
         // to avoid mutation of the data after it was written to the cache
         // so here we un-serialize the values first
-        $values = array_map(fn ($val) => null !== $val ? unserialize($val) : null, $arrayAdapter->getValues());
+        $values = array_map(function ($val) { return null !== $val ? unserialize($val) : null; }, $arrayAdapter->getValues());
 
         return $this->warmUpPhpArrayAdapter(new PhpArrayAdapter($this->phpArrayFile, new NullAdapter()), $values);
     }
@@ -56,9 +66,9 @@ abstract class AbstractPhpFileCacheWarmer implements CacheWarmerInterface
     /**
      * @return string[] A list of classes to preload on PHP 7.4+
      */
-    protected function warmUpPhpArrayAdapter(PhpArrayAdapter $phpArrayAdapter, array $values): array
+    protected function warmUpPhpArrayAdapter(PhpArrayAdapter $phpArrayAdapter, array $values)
     {
-        return $phpArrayAdapter->warmUp($values);
+        return (array) $phpArrayAdapter->warmUp($values);
     }
 
     /**
@@ -68,12 +78,12 @@ abstract class AbstractPhpFileCacheWarmer implements CacheWarmerInterface
     {
         try {
             ClassExistenceResource::throwOnRequiredClass($class, $exception);
-        } catch (\ReflectionException) {
+        } catch (\ReflectionException $e) {
         }
     }
 
     /**
      * @return bool false if there is nothing to warm-up
      */
-    abstract protected function doWarmUp(string $cacheDir, ArrayAdapter $arrayAdapter, ?string $buildDir = null): bool;
+    abstract protected function doWarmUp(string $cacheDir, ArrayAdapter $arrayAdapter);
 }
