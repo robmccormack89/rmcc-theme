@@ -9,6 +9,12 @@
     "twig-pot": "gulp pot",
     "scopeium": "node build/scope",
     "prefixium": "node build/prefix",
+    "buildScripts": "npx webpack",
+    "buildStyles": "gulp style",
+    "build": "npx webpack && gulp style",
+    "scope": "pnpm scopeium",
+    "prefix": "pnpm prefixium",
+    "pot": "gulp pot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
