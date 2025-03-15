@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-14 13:03+0000\n"
+"POT-Creation-Date: 2025-03-15 18:44+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:"
 "1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-01-14 13:04+0000\n"
+"PO-Revision-Date: 2025-03-15 18:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.14; wp-6.7.1"
+"X-Loco-Version: 2.7.1; wp-6.7.2"
 
 #: archive.php:88
 msgctxt "Archives"
@@ -48,37 +48,37 @@ msgctxt "Archives"
 msgid "Author: "
 msgstr ""
 
-#: inc/Theme.php:366
+#: inc/Theme.php:394
 msgctxt "Menus"
 msgid "Main Menu"
 msgstr ""
 
-#: inc/Theme.php:367
+#: inc/Theme.php:395
 msgctxt "Menus"
 msgid "Iconnav Menu"
 msgstr ""
 
-#: inc/Theme.php:389
+#: inc/Theme.php:417
 msgctxt "Theme Featured Image - src"
 msgid "https://picsum.photos/1920/1200"
 msgstr ""
 
-#: inc/Theme.php:390
+#: inc/Theme.php:418
 msgctxt "Theme Featured Image - alt"
 msgid "Alt"
 msgstr ""
 
-#: inc/Theme.php:391
+#: inc/Theme.php:419
 msgctxt "Theme Featured Image - caption"
 msgid "Caption"
 msgstr ""
 
-#: inc/Theme.php:402
+#: inc/Theme.php:426
 msgctxt "404/Error pages"
 msgid "Error: Page not found"
-msgstr "Error: No Page found"
+msgstr ""
 
-#: inc/Theme.php:403
+#: inc/Theme.php:427
 msgctxt "404/Error pages"
 msgid ""
 "Sorry, there has been an error locating a resource for your query. Try "
@@ -245,21 +245,33 @@ msgstr ""
 #: views/temp/site/header/nav-offcanvas.php:26
 msgctxt "Footer: copyright"
 msgid "© All Rights Reserved %s"
-msgstr ""
+msgstr "© Copyright. All Rights Reserved %s"
 
 #: views/temp/site/footer/footer-copyright.php:2
 msgctxt "Footer: back to home"
 msgid "Return to Homepage"
 msgstr ""
 
-#: views/temp/site/header/nav-search.php:9, views/temp/site/search_form.php:11
+#: views/temp/site/header/nav-search.php:29, views/temp/site/search_form.php:11
 msgctxt "Search: form"
 msgid "Start typing..."
 msgstr ""
 
-#: views/temp/site/header/nav-search.php:9
+#: views/temp/site/header/nav-search.php:29
 msgctxt "Search: form"
 msgid "Start typing & press enter..."
+msgstr ""
+
+#: views/temp/site/live_search.php:74
+msgctxt "Search: results"
+msgid "%1$s in %2$s"
+msgstr ""
+
+#: views/temp/site/live_search.php:90
+msgctxt "Search: form"
+msgid ""
+"Sorry, we couldnt find anything for your query. Try searching for something "
+"else."
 msgstr ""
 
 #: views/temp/site/password_form.php:3
