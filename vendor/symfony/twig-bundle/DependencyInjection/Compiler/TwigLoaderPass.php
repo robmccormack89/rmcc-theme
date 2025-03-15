@@ -23,7 +23,7 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 class TwigLoaderPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container): void
+    public function process(ContainerBuilder $container)
     {
         if (false === $container->hasDefinition('twig')) {
             return;

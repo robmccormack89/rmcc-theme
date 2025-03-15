@@ -36,29 +36,33 @@ final class TransTokenParser extends AbstractTokenParser
         $vars = new ArrayExpression([], $lineno);
         $domain = null;
         $locale = null;
+        $parseExpression = method_exists($this->parser, 'parseExpression')
+            ? $this->parser->parseExpression(...)
+            : $this->parser->getExpressionParser()->parseExpression(...);
+
         if (!$stream->test(Token::BLOCK_END_TYPE)) {
             if ($stream->test('count')) {
                 // {% trans count 5 %}
                 $stream->next();
-                $count = $this->parser->getExpressionParser()->parseExpression();
+                $count = $parseExpression();
             }
 
             if ($stream->test('with')) {
                 // {% trans with vars %}
                 $stream->next();
-                $vars = $this->parser->getExpressionParser()->parseExpression();
+                $vars = $parseExpression();
             }
 
             if ($stream->test('from')) {
                 // {% trans from "messages" %}
                 $stream->next();
-                $domain = $this->parser->getExpressionParser()->parseExpression();
+                $domain = $parseExpression();
             }
 
             if ($stream->test('into')) {
                 // {% trans into "fr" %}
                 $stream->next();
-                $locale = $this->parser->getExpressionParser()->parseExpression();
+                $locale = $parseExpression();
             } elseif (!$stream->test(Token::BLOCK_END_TYPE)) {
                 throw new SyntaxError('Unexpected token. Twig was looking for the "with", "from", or "into" keyword.', $stream->getCurrent()->getLine(), $stream->getSourceContext());
             }
@@ -74,7 +78,7 @@ final class TransTokenParser extends AbstractTokenParser
 
         $stream->expect(Token::BLOCK_END_TYPE);
 
-        return new TransNode($body, $domain, $count, $vars, $locale, $lineno);
+        return new TransNode($body, $domain, $count, $vars, $locale, $lineno, $this->getTag());
     }
 
     public function decideTransFork(Token $token): bool
