@@ -81,8 +81,8 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 //
 //
 
-@import "node_modules/uikit/src/scss/variables-theme.scss";
-@import "node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
 
 //
 //
@@ -91,8 +91,8 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 //
 //
 
-// @import "node_modules/uikit/src/scss/variables.scss";
-// @import "node_modules/uikit/src/scss/mixins.scss";
+// @import "../../node_modules/uikit/src/scss/variables.scss";
+// @import "../../node_modules/uikit/src/scss/mixins.scss";
 
 //
 //
@@ -103,8 +103,8 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 //
 //
 
-// @import "src/scss/theme/import-theme.scss"; // select components
-@import "src/scss/theme/import-theme-all.scss"; // all
+// @import "theme/import-theme.scss"; // select components
+@import "theme/import-theme-all.scss"; // all
 
 //
 //
@@ -112,7 +112,7 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 //
 //
 
-// @import "src/scss/theme/accordion-mixins.scss";
+// @import "theme/accordion-mixins.scss";
 
 //
 //
@@ -122,8 +122,8 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 //
 //
 
-// @import "src/scss/theme/import-components.scss"; // select components
-@import "src/scss/theme/import-components-all.scss"; // all
+// @import "theme/import-components.scss"; // select components
+@import "theme/import-components-all.scss"; // all
 
 //
 //
@@ -132,4 +132,4 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 //
 //
 
-@import "src/scss/theme/custom/_import.scss";
+@import "theme/custom/_import.scss";

@@ -1,22 +1,30 @@
+// ESM modules | latest build packages
+
 'use strict';
 
 //
 //
 // gulp pot
 //
+// "gulp": "^5.0.0",
+// "del": "^8.0.0",
+// "gulp-wp-pot": "^2.5.0",
+// "gulp-rename": "^2.0.0",
+// "gulp-replace": "^1.1.4",
+//
 //
 
-const gulp = require('gulp');
-const del = require('del');
-const wpPot = require('gulp-wp-pot');
-const replace = require('gulp-replace');
-const rename = require('gulp-rename');
+import gulp from 'gulp'
+import {deleteSync} from 'del';
+import wpPot from 'gulp-wp-pot'
+import replace from 'gulp-replace'
+import rename from 'gulp-rename'
 
 const config = {
   "text_domain"       : "rmcc-theme",
   "destFolder"        : "languages",
   "twig_files"        : "views/**/*.twig",
-  "php_files"         : "{*.php,/inc/*.php,/inc/extra/*.php,/templates/*.php,views/temp/**/*.php}",
+  "php_files"         : "{*.php,inc/*.php,inc/extra/*.php,templates/*.php,views/temp/**/*.php}",
   "cacheFolder"       : "views/temp",
 };
 
@@ -48,8 +56,8 @@ gulp.task('generate-pot', () => {
   return output;
 });
 
-gulp.task('clean', function(){
-   return del([config.cacheFolder+'/**', config.cacheFolder], {force: true});
+gulp.task('clean', async function(){
+  return deleteSync([config.cacheFolder+'/**', config.cacheFolder], {force: true});
 });
 
 gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean'));
@@ -58,12 +66,20 @@ gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean'));
 //
 // gulp style
 //
+// "sass": "^1.85.1",
+// "gulp-sass": "^6.0.1",
+// "gulp-postcss": "^10.0.0",
+// "autoprefixer": "^10.4.21",
+// "cssnano": "^7.0.6",
 //
- 
-var sass = require("gulp-sass")(require('sass')),
-    postcss = require("gulp-postcss"),
-    autoprefixer = require("autoprefixer"),
-    cssnano = require("cssnano");
+//
+
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 
 var paths = {
     styles: {
@@ -81,7 +97,7 @@ function style() {
   .pipe(gulp.dest(paths.styles.dest));
 }
 
-exports.style = style;
+gulp.task('style', style);
 var build = gulp.parallel(style);
 gulp.task('build', build);
 gulp.task('default', build);
