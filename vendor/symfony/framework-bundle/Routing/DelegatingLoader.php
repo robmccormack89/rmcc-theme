@@ -28,17 +28,22 @@ use Symfony\Component\Routing\RouteCollection;
  */
 class DelegatingLoader extends BaseDelegatingLoader
 {
-    private bool $loading = false;
+    private $loading = false;
+    private $defaultOptions;
+    private $defaultRequirements;
 
-    public function __construct(
-        LoaderResolverInterface $resolver,
-        private array $defaultOptions = [],
-        private array $defaultRequirements = [],
-    ) {
+    public function __construct(LoaderResolverInterface $resolver, array $defaultOptions = [], array $defaultRequirements = [])
+    {
+        $this->defaultOptions = $defaultOptions;
+        $this->defaultRequirements = $defaultRequirements;
+
         parent::__construct($resolver);
     }
 
-    public function load(mixed $resource, ?string $type = null): RouteCollection
+    /**
+     * {@inheritdoc}
+     */
+    public function load($resource, ?string $type = null): RouteCollection
     {
         if ($this->loading) {
             // This can happen if a fatal error occurs in parent::load().
@@ -53,7 +58,7 @@ class DelegatingLoader extends BaseDelegatingLoader
             //   the fatal error from occurring a second time,
             //   otherwise the PHP process would be killed immediately;
             // - while rendering the exception page, the router can be required
-            //   (by e.g. the web profiler that needs to generate a URL);
+            //   (by e.g. the web profiler that needs to generate an URL);
             // - this handles the case and prevents the second fatal error
             //   by triggering an exception beforehand.
 
