@@ -2,18 +2,26 @@
 # This file is distributed under the same license as the rmcc-theme package.
 msgid ""
 msgstr ""
-"Project-Id-Version: rmcc-theme\n"
+"Project-Id-Version: undefined\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-03-15 17:45+0000\n"
-"Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:"
+"1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2025-03-15 17:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (UK)\n"
+"Language: en_GB\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2"
 
 #: archive.php:88
 msgctxt "Archives"
@@ -72,7 +80,9 @@ msgstr ""
 
 #: inc/Theme.php:399
 msgctxt "404/Error pages"
-msgid "Sorry, there has been an error locating a resource for your query. Try finding what you want using the search form below."
+msgid ""
+"Sorry, there has been an error locating a resource for your query. Try "
+"finding what you want using the search form below."
 msgstr ""
 
 #: search.php:43
@@ -99,7 +109,9 @@ msgstr ""
 
 #: views/temp/archive.php:24
 msgctxt "Archive: No posts"
-msgid "Sorry, there has been an error locating a resource for your query. Please try again."
+msgid ""
+"Sorry, there has been an error locating a resource for your query. Please "
+"try again."
 msgstr ""
 
 #: views/temp/archive/pagination.php:8
@@ -129,7 +141,9 @@ msgstr ""
 
 #: views/temp/maintenance.php:1
 msgctxt "Maintenance mode"
-msgid "We are currently undergoing routine maintenance. Please try back in a few minutes."
+msgid ""
+"We are currently undergoing routine maintenance. Please try back in a few "
+"minutes."
 msgstr ""
 
 #: views/temp/single/author.php:11
@@ -227,10 +241,11 @@ msgctxt "Footer: to top"
 msgid "Scroll to Top"
 msgstr ""
 
-#: views/temp/site/footer/footer-copyright.php:2, views/temp/site/header/nav-offcanvas.php:26
+#: views/temp/site/footer/footer-copyright.php:2,
+#: views/temp/site/header/nav-offcanvas.php:26
 msgctxt "Footer: copyright"
 msgid "© All Rights Reserved %s"
-msgstr ""
+msgstr "© Copyright. All Rights Reserved %s"
 
 #: views/temp/site/footer/footer-copyright.php:2
 msgctxt "Footer: back to home"
@@ -249,7 +264,9 @@ msgstr ""
 
 #: views/temp/site/password_form.php:3
 msgctxt "Password protected content: message"
-msgid "This content is password protected. To view it please enter your password below:"
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
 msgstr ""
 
 #: views/temp/site/password_form.php:11, views/temp/site/password_form.php:20
