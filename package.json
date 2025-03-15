@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Wordpress Theme",
   "main": "src/js/index.js",
-  "style": "style.css",
+  "style": "public/css/rmcc.css",
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
     "twig-pot": "gulp pot",
