@@ -13,10 +13,12 @@ namespace Symfony\Bundle\FrameworkBundle\Secrets;
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>
+ *
+ * @internal
  */
 abstract class AbstractVault
 {
-    protected ?string $lastMessage = null;
+    protected $lastMessage;
 
     public function getLastMessage(): ?string
     {
@@ -36,11 +38,11 @@ abstract class AbstractVault
     protected function validateName(string $name): void
     {
         if (!preg_match('/^\w++$/D', $name)) {
-            throw new \LogicException(\sprintf('Invalid secret name "%s": only "word" characters are allowed.', $name));
+            throw new \LogicException(sprintf('Invalid secret name "%s": only "word" characters are allowed.', $name));
         }
     }
 
-    protected function getPrettyPath(string $path): string
+    protected function getPrettyPath(string $path)
     {
         return str_replace(getcwd().\DIRECTORY_SEPARATOR, '', $path);
     }

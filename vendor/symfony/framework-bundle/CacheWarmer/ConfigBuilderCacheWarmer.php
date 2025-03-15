@@ -29,24 +29,26 @@ use Symfony\Component\HttpKernel\KernelInterface;
  * Generate all config builders.
  *
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
- *
- * @final since Symfony 7.1
  */
 class ConfigBuilderCacheWarmer implements CacheWarmerInterface
 {
-    public function __construct(
-        private KernelInterface $kernel,
-        private ?LoggerInterface $logger = null,
-    ) {
+    private $kernel;
+    private $logger;
+
+    public function __construct(KernelInterface $kernel, ?LoggerInterface $logger = null)
+    {
+        $this->kernel = $kernel;
+        $this->logger = $logger;
     }
 
-    public function warmUp(string $cacheDir, ?string $buildDir = null): array
+    /**
+     * {@inheritdoc}
+     *
+     * @return string[]
+     */
+    public function warmUp(string $cacheDir)
     {
-        if (!$buildDir) {
-            return [];
-        }
-
-        $generator = new ConfigBuilderGenerator($buildDir);
+        $generator = new ConfigBuilderGenerator($this->kernel->getBuildDir());
 
         if ($this->kernel instanceof Kernel) {
             /** @var ContainerBuilder $container */
@@ -72,7 +74,9 @@ class ConfigBuilderCacheWarmer implements CacheWarmerInterface
             try {
                 $this->dumpExtension($extension, $generator);
             } catch (\Exception $e) {
-                $this->logger?->warning('Failed to generate ConfigBuilder for extension {extensionClass}: '.$e->getMessage(), ['exception' => $e, 'extensionClass' => $extension::class]);
+                if ($this->logger) {
+                    $this->logger->warning('Failed to generate ConfigBuilder for extension {extensionClass}.', ['exception' => $e, 'extensionClass' => \get_class($extension)]);
+                }
             }
         }
 
@@ -97,8 +101,11 @@ class ConfigBuilderCacheWarmer implements CacheWarmerInterface
         $generator->build($configuration);
     }
 
-    public function isOptional(): bool
+    /**
+     * {@inheritdoc}
+     */
+    public function isOptional()
     {
-        return false;
+        return true;
     }
 }

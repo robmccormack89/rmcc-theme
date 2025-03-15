@@ -25,16 +25,24 @@ use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
  */
 final class CachePoolClearerCacheWarmer implements CacheWarmerInterface
 {
+    private $poolClearer;
+    private $pools;
+
     /**
      * @param string[] $pools
      */
-    public function __construct(
-        private Psr6CacheClearer $poolClearer,
-        private array $pools = [],
-    ) {
+    public function __construct(Psr6CacheClearer $poolClearer, array $pools = [])
+    {
+        $this->poolClearer = $poolClearer;
+        $this->pools = $pools;
     }
 
-    public function warmUp(string $cacheDir, ?string $buildDir = null): array
+    /**
+     * {@inheritdoc}
+     *
+     * @return string[]
+     */
+    public function warmUp(string $cacheDirectory): array
     {
         foreach ($this->pools as $pool) {
             if ($this->poolClearer->hasPool($pool)) {
@@ -45,6 +53,9 @@ final class CachePoolClearerCacheWarmer implements CacheWarmerInterface
         return [];
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function isOptional(): bool
     {
         // optional cache warmers are not run when handling the request

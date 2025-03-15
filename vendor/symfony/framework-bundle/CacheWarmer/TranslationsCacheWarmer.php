@@ -21,38 +21,48 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * Generates the catalogues for translations.
  *
  * @author Xavier Leune <xavier.leune@gmail.com>
- *
- * @final since Symfony 7.1
  */
 class TranslationsCacheWarmer implements CacheWarmerInterface, ServiceSubscriberInterface
 {
-    private TranslatorInterface $translator;
+    private $container;
+    private $translator;
 
-    /**
-     * As this cache warmer is optional, dependencies should be lazy-loaded, that's why a container should be injected.
-     */
-    public function __construct(
-        private ContainerInterface $container,
-    ) {
+    public function __construct(ContainerInterface $container)
+    {
+        // As this cache warmer is optional, dependencies should be lazy-loaded, that's why a container should be injected.
+        $this->container = $container;
     }
 
-    public function warmUp(string $cacheDir, ?string $buildDir = null): array
+    /**
+     * {@inheritdoc}
+     *
+     * @return string[]
+     */
+    public function warmUp(string $cacheDir)
     {
-        $this->translator ??= $this->container->get('translator');
+        if (null === $this->translator) {
+            $this->translator = $this->container->get('translator');
+        }
 
         if ($this->translator instanceof WarmableInterface) {
-            return $this->translator->warmUp($cacheDir, $buildDir);
+            return (array) $this->translator->warmUp($cacheDir);
         }
 
         return [];
     }
 
-    public function isOptional(): bool
+    /**
+     * {@inheritdoc}
+     */
+    public function isOptional()
     {
         return true;
     }
 
-    public static function getSubscribedServices(): array
+    /**
+     * {@inheritdoc}
+     */
+    public static function getSubscribedServices()
     {
         return [
             'translator' => TranslatorInterface::class,
