@@ -39,12 +39,16 @@ unsetDarkStyle = function(cls, show, hide) {
 };
 
 //
-// functions for setting & getting cookies
+// set the init styles depending on the 'darklight' cookie
 //
 
 var darklightCookie = getCookie("darklight");
 if(darklightCookie) setDarkStyle('rmcc-light', 'lightBtn', 'darkBtn');
 else unsetDarkStyle('rmcc-light', 'darkBtn', 'lightBtn');
+
+//
+// watch the darklight btns for mouseover events, so we can set a new style & cookie when it happens
+//
 
 document.querySelectorAll('.darklight-btn').forEach(item => {
   item.addEventListener('mousedown', event => {
