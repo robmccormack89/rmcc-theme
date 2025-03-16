@@ -53,15 +53,17 @@ else unsetDarkStyle('rmcc-light', 'darkBtn', 'lightBtn');
 document.querySelectorAll('.darklight-btn').forEach(item => {
   item.addEventListener('mousedown', event => {
 
-    event.preventDefault();
+    event.preventDefault(); // prevent default events from propagating
 
-    var darklightCookie = getCookie("darklight");
+    var darklightCookie = getCookie("darklight"); // get cookie value at point of mouseover
 
+    // if darklightCookie not set, UNSET any dark style
     if(darklightCookie != "" && darklightCookie != null) {
       unsetCookie('darklight');
       unsetDarkStyle('rmcc-light', 'darkBtn', 'lightBtn');
     }
     
+    // else we SET the dark style
     else {
       setCookie('darklight', 'dark', 7);
       setDarkStyle('rmcc-light', 'lightBtn', 'darkBtn');
