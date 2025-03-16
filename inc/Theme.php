@@ -352,6 +352,17 @@ class Theme extends Timber {
       get_stylesheet_uri()
     );
 
+    // darklight
+    if($this->configs['darklight_mode']){
+      wp_enqueue_script(
+        'rmcc-theme-darklight',
+        get_template_directory_uri() . '/public/js/darklight.js',
+        '',
+        '1.0.0',
+        true
+      );
+    }
+
   }
 
   public function register_post_types() {

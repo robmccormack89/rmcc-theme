@@ -18,6 +18,13 @@ Mode
 // $configs['maintenance_template'] = 'hello.twig'; // only applies when redirect_all_traffic_to_page is unset. default: maintenance.twig
 
 /*
+darklight
+mode
+*/
+
+$configs['darklight_mode'] = true;
+
+/*
 Configs &
 Settings
 */

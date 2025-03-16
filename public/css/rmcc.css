@@ -12912,3 +12912,38 @@ a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-und
 .rmcc-light .theme-border-left {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* dark light buttons stylings */
+.darklight-btn {
+  margin-top: -2px;
+}
+
+.darklight svg {
+  color: #fff;
+  height: 20px;
+  width: 20px;
+  stroke: #999;
+}
+
+.darklight svg:focus,
+.darklight svg:hover {
+  stroke: #666;
+}
+
+.light-btn svg {
+  height: 21px;
+  width: 21px;
+}
+
+.light-btn svg .sun-st {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.light-btn svg .light-btn:focus .sun-st,
+.light-btn:hover .sun-st {
+  stroke: rgba(255, 255, 255, 0.7);
+}

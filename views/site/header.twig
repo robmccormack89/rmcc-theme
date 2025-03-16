@@ -13,6 +13,7 @@
 
         <div class="rmcc-navbar-right nav-search">
           {% include 'header/nav-right.twig' %}
+          {% include configs.darklight_mode ? 'header/darklight.twig' ignore missing %}
         </div>
 
         <div class="nav-search rmcc-navbar-left rmcc-flex-1" hidden>
