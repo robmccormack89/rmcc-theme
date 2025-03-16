@@ -1,1 +1,31 @@
-Hello there...
+{% extends 'single.twig' %}
+
+{% block styles %}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block single_header %}
+{% endblock %}
+
+{% block single_content %}
+  <div id="my_nanogallery"></div>
+  <script>
+    jQuery(document).ready(function () {
+      jQuery("#my_nanogallery").nanogallery2({
+        thumbnailWidth:   'auto',
+        thumbnailHeight:  150,
+        kind:             'nano_photos_provider2',
+        dataProvider:     'https://testwp.com/wp-content/themes/rmcc-theme/inc/nanogallery/nano_photos_provider2.php',
+        locationHash:     false
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block single_footer %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

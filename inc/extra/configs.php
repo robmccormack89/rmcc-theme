@@ -18,6 +18,14 @@ Mode
 // $configs['maintenance_template'] = 'hello.twig'; // only applies when redirect_all_traffic_to_page is unset. default: maintenance.twig
 
 /*
+Meta Gallerys
+nanogallery
+Stuff
+*/
+
+$configs['nanogallery'] = true;
+
+/*
 Configs &
 Settings
 */

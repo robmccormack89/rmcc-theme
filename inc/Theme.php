@@ -70,6 +70,68 @@ class Theme extends Timber {
 
     }
 
+    // meta galleries
+    if($this->configs['nanogallery']){
+      
+      // add taxonomies to media library
+      add_action('init' , function(){
+
+        // add current taxonomies to media library
+        // register_taxonomy_for_object_type('category', 'attachment');
+        // register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+
+        // add custom taxonomy ('media_category') to media library post type
+        $labels_media_cats = array(
+          'name' => _x('Media Categories', 'Custom taxonomy label: plural', 'base-theme'),
+          'singular_name' => _x('Media Category', 'Custom taxonomy label: singular', 'base-theme'),
+          'search_items' => _x('Search Media Categories', 'Custom taxonomy label: search', 'base-theme'),
+          'all_items' => _x('All Media Categories', 'Custom taxonomy label: all', 'base-theme'),
+          'parent_item' => _x('Parent Media Category', 'Custom taxonomy label: parent', 'base-theme'),
+          'parent_item_colon' => _x('Parent Media Category', 'Custom taxonomy label: parent', 'base-theme') . ':',
+          'edit_item' => _x('Edit Media Category', 'Custom taxonomy label: edit', 'base-theme'),
+          'update_item' => _x('Update Media Category', 'Custom taxonomy label: update', 'base-theme'),
+          'add_new_item' => _x('Add New Media Category', 'Custom taxonomy label: add', 'base-theme'),
+          'new_item_name' => _x('New Media Category Name', 'Custom taxonomy label: new', 'base-theme'),
+          'menu_name' => _x('Media Category', 'Custom taxonomy label: menu label', 'base-theme'),
+        );
+        $args_media_cats = array(
+          'labels' => $labels_media_cats,
+          'hierarchical' => true,
+          'query_var' => 'true',
+          'rewrite' => 'true',
+          'show_admin_column' => 'true',
+        );
+        register_taxonomy('media_category', 'attachment', $args_media_cats);
+
+        $labels_media_tags = array(
+          'name' => _x('Media Tags', 'Custom taxonomy label: plural', 'base-theme'),
+          'singular_name' => _x('Media Tag', 'Custom taxonomy label: singular', 'base-theme'),
+          'search_items' => _x('Search Media Tags', 'Custom taxonomy label: search', 'base-theme'),
+          'all_items' => _x('All Media Tags', 'Custom taxonomy label: all', 'base-theme'),
+          'parent_item' => _x('Parent Media Tag', 'Custom taxonomy label: parent', 'base-theme'),
+          'parent_item_colon' => _x('Parent Media Tag', 'Custom taxonomy label: parent', 'base-theme') . ':',
+          'edit_item' => _x('Edit Media Tag', 'Custom taxonomy label: edit', 'base-theme'),
+          'update_item' => _x('Update Media Tag', 'Custom taxonomy label: update', 'base-theme'),
+          'add_new_item' => _x('Add New Media Tag', 'Custom taxonomy label: add', 'base-theme'),
+          'new_item_name' => _x('New Media Tag Name', 'Custom taxonomy label: new', 'base-theme'),
+          'menu_name' => _x('Media Tag', 'Custom taxonomy label: menu label', 'base-theme'),
+        );
+        $args_media_tags = array(
+          'labels' => $labels_media_tags,
+          'hierarchical' => false,
+          'query_var' => 'true',
+          'rewrite' => 'true',
+          'show_admin_column' => 'true',
+        );
+        register_taxonomy('media_tag', 'attachment', $args_media_tags);
+
+      });
+
+      // shortcoded meta galleries
+      add_shortcode('nanogallery', 'nanogallery');
+
+    }
+
   }
 
   public function maintenance_mode() {
@@ -351,6 +413,26 @@ class Theme extends Timber {
       'rmcc-theme-style',
       get_stylesheet_uri()
     );
+
+    // nanogallery resources
+    if($this->configs['nanogallery']){
+
+      // nano galleries css
+      wp_enqueue_style(
+        'nanogallery',
+        get_template_directory_uri() . '/public/css/nanogallery2.min.css'
+      );
+      
+      // nano galleries js
+      wp_enqueue_script(
+        'nanogallery',
+        get_template_directory_uri() . '/public/js/jquery.nanogallery2.min.js',
+        array('jquery'),
+        '3.0.5',
+        true
+      );
+
+    }
 
   }
 

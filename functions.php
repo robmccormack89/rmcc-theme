@@ -30,3 +30,4 @@ if (file_exists($composer_autoload = __DIR__ . '/vendor/autoload.php')) require_
 
 */
 if (class_exists('Timber\Timber')) new Rmcc\Theme;
+if($configs['nanogallery']) require get_template_directory() . '/inc/extra/nanogallery.php';
