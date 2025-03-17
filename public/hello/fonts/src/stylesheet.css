@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Bobby Jones Soft';
+    src: url('BobbyJonesSoft-Regular.woff2') format('woff2'),
+        url('BobbyJonesSoft-Regular.woff') format('woff'),
+        url('BobbyJonesSoft-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bobby Rough Soft Outline';
+    src: url('BobbyRoughSoft-Outline.woff2') format('woff2'),
+        url('BobbyRoughSoft-Outline.woff') format('woff'),
+        url('BobbyRoughSoft-Outline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bobby Jones Soft Outline';
+    src: url('BobbyJonesSoft-Outline.woff2') format('woff2'),
+        url('BobbyJonesSoft-Outline.woff') format('woff'),
+        url('BobbyJonesSoft-Outline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bobby Rough Soft';
+    src: url('BobbyRoughSoft-Regular.woff2') format('woff2'),
+        url('BobbyRoughSoft-Regular.woff') format('woff'),
+        url('BobbyRoughSoft-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
