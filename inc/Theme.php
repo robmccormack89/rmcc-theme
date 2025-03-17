@@ -27,8 +27,6 @@ Timber::$autoescape = false;
 class Theme extends Timber {
 
   public $configs;
-  public $is_maintenance;
-  public $is_maintenance_all;
 
   public function __construct() {
     parent::__construct();
