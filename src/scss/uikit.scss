@@ -64,6 +64,42 @@ $theme_faint_black_overlay: rgba($theme_true_black, 0.25); // very faint black
 $theme_medium_black_overlay: rgba($theme_black, 0.4); // black medium
 $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 
+// *****theme vars actually used within imports
+
+// theme_primary
+// theme_black
+// theme_white
+// theme_light_grey
+// theme_lighter_grey
+// theme_dark_grey
+// theme_darker_grey
+// theme_grey_primary
+// theme_dark_primary
+
+// theme_faint_black_overlay
+// theme_medium_black_overlay
+// theme_grey_primary_overlay
+
+// theme_border
+// theme_border_light
+// theme_border_thick
+// theme_border_light_color
+
+// *****uikit vars actually used within imports
+
+// overlay-primary-background
+// overlay-default-background
+
+// global-secondary-background
+// global-emphasis-color
+// inverse-global-muted-color
+// inverse-global-color
+// inverse-global-border
+
+// global-medium-font-size
+
+// *****files actually using vars: backgrounds.scss, borders.scss, dark.scss & loaders.scss
+
 //
 //
 // 2. overwrite any of uikit's variables

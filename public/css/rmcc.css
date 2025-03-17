@@ -12219,6 +12219,15 @@ iframe[data-rmcc-cover] {
     page-break-after: avoid;
   }
 }
+.break-wrap .rmcc-container-break,
+.gutenberg-editor .rmcc-container-break {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50%;
+  width: 100%;
+}
+
 .theme-primary-bg {
   background-color: #23259c;
 }
@@ -12358,14 +12367,6 @@ hr.rmcc-light {
 
 .border-full {
   border-radius: 100%;
-}
-
-.break-wrap .rmcc-container-break, .gutenberg-editor .rmcc-container-break {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50%;
-  width: 100%;
 }
 
 @keyframes spin {
@@ -12842,6 +12843,19 @@ article.post.item.rmcc-article .rmcc-article-title {
 a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-underline:focus,
 .rmcc-link-toggle:focus .rmcc-link, .rmcc-link-toggle:hover .rmcc-link, .rmcc-link:hover, a:hover {
   text-decoration: none;
+}
+
+.rmcc-navbar .rmcc-logo {
+  font-size: 1.5rem;
+}
+
+.rmcc-navbar-nav > li > a,
+.rmcc-navbar-item, .rmcc-navbar-toggle {
+  font-size: 1rem;
+}
+
+.rmcc-navbar-nav > li > a {
+  text-transform: capitalize;
 }
 
 /* dark backgrounds */

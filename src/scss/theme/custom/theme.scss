@@ -36,3 +36,16 @@ a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-und
 .rmcc-link-toggle:focus .rmcc-link, .rmcc-link-toggle:hover .rmcc-link, .rmcc-link:hover, a:hover {
   text-decoration: none;
 }
+
+// fixing up the navbar logo; making it nice
+.rmcc-navbar .rmcc-logo {
+  font-size: 1.5rem;
+}
+// fixing up the navbar nav text; making it nice
+.rmcc-navbar-nav > li > a, 
+.rmcc-navbar-item, .rmcc-navbar-toggle {
+  font-size: 1rem;
+}
+.rmcc-navbar-nav > li > a {
+  text-transform: capitalize;
+}
