@@ -12826,15 +12826,25 @@ hr.rmcc-light {
 /* yellow dark: #fec142 */
 /* yellow light: #fdf056 */
 /* 
-base font size
+font sizes
 */
 html {
   font-size: 18px;
 }
 
 /* 
-base font families
+font families
 */
+/* fonts: BobbyJones & Fredoka */
+/* @font-face {
+  font-family: 'Bobby Jones Soft';
+  src: url(public/fonts/BobbyJonesSoft-Regular.woff2);
+}
+.bobby-jones {
+  font-family: 'Bobby Jones Soft';
+  font-weight: normal;
+  font-style: normal;
+} */
 /* heading fonts */
 .rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6,
 .rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge,
@@ -12843,12 +12853,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* navbar fonts */
 .rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
   font-family: "Fredoka", sans-serif;
 }
 
-/* body text fonts */
+/* text fonts */
 html,
 .rmcc-text-lead {
   font-family: "Fredoka", sans-serif;
@@ -12869,10 +12878,21 @@ html,
 /* yellow dark: #fec142 */
 /* yellow light: #fdf056 */
 /* 
-headings,text,links (prop: color)
-
-custom modifying classes
+color (headings,text,links)
 */
+/* heading colours */
+/* .rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6, 
+.rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge, 
+h1, h2, h3, h4, h5, h6,
+.rmcc-card-default .rmcc-card-title {
+  color: #0c305e;
+} */
+/* text colours */
+/* html,
+.rmcc-text-lead,
+.rmcc-card-default {
+  color: #0c305e;
+} */
 /* extra text colours */
 .rmcc-text-dark {
   color: #333 !important;
@@ -12953,10 +12973,9 @@ custom modifying classes
 /* yellow dark: #fec142 */
 /* yellow light: #fdf056 */
 /* 
-overlays (prop: background)
-
-all custom modifying classes
+background (sections,badges,card-badges_overlays)
 */
+/* overlays (background) */
 .rmcc-overlay-primary.rmcc-overlay-navy {
   background: rgba(12, 48, 94, 0.8);
 }
@@ -13069,11 +13088,7 @@ all custom modifying classes
   background: rgba(254, 193, 66, 0.8);
 }
 
-/*
-sections,badges,card-badges (prop: background)
-
-mixed custom modifying classes (primary & secondary contain mods of builtin classes, all colours are custom)
-*/
+/* sections,badges,card-badges (background) */
 /* blue,primary */
 .rmcc-section-primary,
 .rmcc-section-default.rmcc-section-blue,
@@ -13177,11 +13192,10 @@ mixed custom modifying classes (primary & secondary contain mods of builtin clas
   background: #fec142 !important;
 }
 
-/*
-background,card,tile,button (prop: background-color)
-
-mixed custom modifying classes (primary & secondary contain mods of builtin classes, all colours are custom)
+/* 
+background-color (backgrounds,cards,tiles,buttons,subnavs)
 */
+/* background,card,tile,button (background-color) */
 /* blue,primary */
 .rmcc-background-primary, .rmcc-background-default.rmcc-background-blue,
 .rmcc-card-primary, .rmcc-card-default.rmcc-card-blue, .rmcc-card-blue,
@@ -13289,11 +13303,7 @@ mixed custom modifying classes (primary & secondary contain mods of builtin clas
   background-color: #fec142 !important;
 }
 
-/*
-hover cards with no default/primary/secondary (prop: background-color)
-
-mods builtin '.rmcc-card-hover'
-*/
+/* hover cards with no default/primary/secondary */
 .rmcc-card-hover:not(.rmcc-card-default):not(.rmcc-card-primary):not(.rmcc-card-secondary):hover {
   background-color: transparent;
   box-shadow: none;
@@ -13314,9 +13324,9 @@ mods builtin '.rmcc-card-hover'
 /* yellow dark: #fec142 */
 /* yellow light: #fdf056 */
 /* 
-buttons extra (prop: border,color)
 
-all custom modifying classes
+buttons extras
+
 */
 .rmcc-button-default.rmcc-button-green,
 .rmcc-button-default.rmcc-button-purple,
@@ -13555,7 +13565,9 @@ all custom modifying classes
 }
 
 /* 
-buttons text (prop: text-transform,font-size,border-radius)
+
+buttons more
+
 */
 .rmcc-button {
   text-transform: initial;
@@ -13563,10 +13575,6 @@ buttons text (prop: text-transform,font-size,border-radius)
 
 .rmcc-button-large {
   font-size: 1rem;
-}
-
-.rmcc-button-text {
-  font-size: 1.1rem;
 }
 
 .rmcc-button-large.rmcc-border-rounded {
@@ -13581,17 +13589,30 @@ buttons text (prop: text-transform,font-size,border-radius)
   border-width: 5px;
 }
 
-/* 
-more buttons stuff
+/* bigger text on text buttons */
+.rmcc-button-text {
+  font-size: 1.1rem;
+}
+
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+/*
+
+modifications 
+
 */
-.rmcc-button-default.darken {
-  border-color: #333;
-}
-
-.rmcc-button-default.darken:hover {
-  border-color: rgba(51, 51, 51, 0.3019607843);
-}
-
 /* divider colour on light */
 .rmcc-light .rmcc-hr, .rmcc-light hr,
 .rmcc-background-primary .rmcc-hr, .rmcc-background-primary hr,
@@ -13603,14 +13624,35 @@ more buttons stuff
   border-top-color: rgba(229, 229, 229, 0.231372549);
 }
 
+/*
+
+additions 
+
+*/
+.rmcc-text-fat {
+  font-weight: 500;
+}
+
+.rmcc-box-shadow-remove {
+  box-shadow: none !important;
+}
+
+.fit-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+rmcc-card modifications & additions
+*/
 /* disable card header's border */
 .rmcc-card-header {
   border: none;
 }
 
 /* card body paddings */
-.rmcc-card-small .rmcc-card-body,
-.rmcc-card-small.rmcc-card-body {
+.rmcc-card-small .rmcc-card-body, .rmcc-card-small.rmcc-card-body {
   padding: 15px 25px 30px 25px;
 }
 
@@ -13632,7 +13674,7 @@ more buttons stuff
   font-weight: 500;
 }
 
-/* card badges: reposition mods */
+/* card badges reposition mods */
 .rmcc-card-badge.badge-left {
   top: 0;
   left: 0;
@@ -13644,7 +13686,7 @@ more buttons stuff
   right: 0;
 }
 
-/* card badges:rounded */
+/* rounded card badges */
 .rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-left {
   border-radius: 10px 0 0 0;
 }
@@ -13663,6 +13705,9 @@ more buttons stuff
   color: #fff !important;
 }
 
+/*
+rmcc-navbar modifications & additions
+*/
 .rmcc-navbar-nav {
   gap: 15px;
 }
@@ -13688,20 +13733,17 @@ more buttons stuff
   padding-left: 20px;
 }
 
-.rmcc-text-fat {
-  font-weight: 500;
+.rmcc-button-default.darken {
+  border-color: #333;
 }
 
-.rmcc-box-shadow-remove {
-  box-shadow: none !important;
+.rmcc-button-default.darken:hover {
+  border-color: rgba(51, 51, 51, 0.3019607843);
 }
 
-.fit-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
+/*
+swiperJs modifications & additions
+*/
 /* provide extra padding around swiper for cases like box shadowed items (works instead of overflow:visible) */
 .swiper.padded-overflow .swiper-slide {
   opacity: 0;

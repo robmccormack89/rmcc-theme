@@ -1,0 +1,21 @@
+.rmcc-navbar-nav {
+  gap: 15px;
+}
+@media (min-width: 960px) {
+  .rmcc-navbar-nav {
+      gap: 35px;
+  }
+}
+.rmcc-navbar-item, .rmcc-navbar-nav>li>a, .rmcc-navbar-toggle {
+  column-gap: .25em;
+  min-height: 80px;
+  font-size: 1rem;
+}
+.rmcc-navbar-nav>li>a {
+  padding: 0 0;
+  color: #999;
+  text-transform: capitalize;
+}
+.rmcc-iconnav>* {
+  padding-left: 20px;
+}

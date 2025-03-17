@@ -7,6 +7,7 @@
 @import "loaders.scss"; // custom theme classes for animated loaders
 @import "position.scss"; // custom theme classes for positional stuff
 
-@import "theme.scss"; // extra theme-related fixins & gubbins!
+// @import "theme.scss"; // extra theme-related fixins & gubbins!
+// @import "dark.scss"; // the dark theme! this allows for dark/light modes. keep this last as it may modify stuff from above
 
-@import "dark.scss"; // the dark theme! this allows for dark/light modes. keep this last as it may modify stuff from above
+@import "kinny/_import.scss"; // import new styles for kinny

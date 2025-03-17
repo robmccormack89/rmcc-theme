@@ -1,0 +1,34 @@
+/* provide extra padding around swiper for cases like box shadowed items (works instead of overflow:visible) */
+.swiper.padded-overflow .swiper-slide {
+  opacity: 0;
+  visibility: hidden;
+}
+.swiper.padded-overflow .swiper-slide.swiper-slide-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: .1s linear all;
+}
+.swiper.padded-overflow {
+  padding-left: 30px!important;
+  padding-right: 30px!important
+}
+.swiper.padded-overflow .swiper-wrapper {
+  padding-top: 30px!important;
+  padding-bottom: 30px!important;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 1200px) {
+  .swiper.padded-overflow {
+    padding-left: 40px!important;
+    padding-right: 40px!important
+  }
+  .swiper.padded-overflow .swiper-wrapper {
+    padding-top: 40px!important;
+    padding-bottom: 40px!important
+  }
+}
+/* reposition swiper pagination */
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 0px);
+}

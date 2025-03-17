@@ -1,0 +1,43 @@
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+
+/* 
+base font size
+*/
+
+html {
+  font-size: 18px;
+}
+
+/* 
+base font families
+*/
+
+/* heading fonts */
+.rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6, 
+.rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge, 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+}
+/* navbar fonts */
+.rmcc-navbar-item, .rmcc-navbar-nav>li>a, .rmcc-navbar-toggle {
+  font-family: "Fredoka", sans-serif;
+}
+/* body text fonts */
+html,
+.rmcc-text-lead {
+  font-family: "Fredoka", sans-serif;
+}

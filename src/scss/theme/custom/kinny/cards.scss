@@ -1,0 +1,51 @@
+/* disable card header's border */
+.rmcc-card-header {
+  border: none;
+}
+/* card body paddings */
+.rmcc-card-small .rmcc-card-body, 
+.rmcc-card-small.rmcc-card-body {
+  padding: 15px 25px 30px 25px;
+}
+/* rounded cards */
+.rmcc-card.rmcc-border-rounded {
+  border-radius: 10px;
+}
+.rmcc-card.rmcc-border-rounded>.rmcc-card-media-top>img {
+  border-radius: 10px 10px 0px 0px;
+}
+/* card badges */
+.rmcc-card-badge {
+  height: 28px;
+  padding: 0 15px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+/* card badges: reposition mods */
+.rmcc-card-badge.badge-left {
+  top: 0;
+  left: 0;
+  right: auto;
+}
+.rmcc-card-badge.badge-right {
+  top: 0;
+  right: 0;
+}
+/* card badges:rounded */
+.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-left {
+  border-radius: 10px 0 0 0;
+}
+.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-right {
+  border-radius: 0 10px 0 0;
+}
+// text on badges: dark mode
+.rmcc-light.rmcc-card-badge-secondary,
+.rmcc-light.rmcc-card-badge-green,
+.rmcc-light.rmcc-card-badge-blue,
+.rmcc-light.rmcc-card-badge-purple,
+.rmcc-light.rmcc-card-badge-pink,
+.rmcc-light.rmcc-card-badge-orange,
+.rmcc-light.rmcc-card-badge-yellow {
+  color:#fff!important;
+}

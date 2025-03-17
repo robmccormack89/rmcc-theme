@@ -1,0 +1,287 @@
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+
+/* 
+buttons extra (prop: border,color)
+
+all custom modifying classes
+*/
+
+.rmcc-button-default.rmcc-button-green,
+.rmcc-button-default.rmcc-button-purple,
+.rmcc-button-default.rmcc-button-pink,
+.rmcc-button-default.rmcc-button-orange,
+.rmcc-button-default.rmcc-button-yellow {
+  border: 1px solid transparent;
+}
+.rmcc-button-danger.rmcc-button-green,
+.rmcc-button-danger.rmcc-button-purple,
+.rmcc-button-danger.rmcc-button-pink,
+.rmcc-button-danger.rmcc-button-orange,
+.rmcc-button-danger.rmcc-button-yellow {
+  border: 1px solid transparent;
+}
+// green
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-green, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-green, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green, 
+.rmcc-light .rmcc-button-default.rmcc-button-green, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-green, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-green, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green {
+  color: #58e09f;
+  border: 3px solid #58e09f;
+}
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-green:hover:hover, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-light .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-green:hover {
+  color: #3ecc8c;
+  border: 3px solid #3ecc8c;
+}
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-green, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-green, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-green, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-green, 
+.rmcc-light .rmcc-button-primary.rmcc-button-green, 
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-green, 
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-green, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-green {
+  color: #58e09f;
+}
+// purple
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-purple, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-purple, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple, 
+.rmcc-light .rmcc-button-default.rmcc-button-purple, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-purple, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-purple, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple {
+  color: #c65fdf;
+  border: 3px solid #c65fdf;
+}
+// purple
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-purple:hover:hover, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-light .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-purple:hover {
+  color: #ab42c4;
+  border: 3px solid #ab42c4;
+}
+// purple
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-light .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-purple {
+  color: #c65fdf;
+}
+// pink
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-pink, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-pink, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink, 
+.rmcc-light .rmcc-button-default.rmcc-button-pink, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-pink, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-pink, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink {
+  color: #fc77a5;
+  border: 3px solid #fc77a5;
+}
+// pink
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-pink:hover:hover, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-light .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-pink:hover {
+  color: #fd3d96;
+  border: 3px solid #fd3d96;
+}
+// pink
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-light .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-pink {
+  color: #fc77a5;
+}
+// orange
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-orange, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-orange, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange, 
+.rmcc-light .rmcc-button-default.rmcc-button-orange, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-orange, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-orange, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange {
+  color: #fda43d;
+  border: 3px solid #fda43d;
+}
+// orange
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-orange:hover:hover, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-light .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-orange:hover {
+  color: #ef9b3c;
+  border: 3px solid #ef9b3c;
+}
+// orange
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-light .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-orange {
+  color: #fda43d;
+}
+// yellow
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-light .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow {
+  color: #fdf056;
+  border: 3px solid #fdf056;
+}
+// yellow
+.rmcc-card-primary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow:hover:hover, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-light .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-offcanvas-bar .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-overlay-primary .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-default.rmcc-button-yellow:hover {
+  color: #fec142;
+  border: 3px solid #fec142;
+}
+// yellow
+.rmcc-card-primary.rmcc-card-body .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-card-primary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-card-secondary.rmcc-card-body .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-card-secondary>:not([class*=rmcc-card-media]) .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-light .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-offcanvas-bar .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-overlay-primary .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow, 
+.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-button-primary.rmcc-button-yellow {
+  color: #fdf056;
+}
+
+/* 
+buttons text (prop: text-transform,font-size,border-radius)
+*/
+.rmcc-button {
+  text-transform: initial;
+}
+.rmcc-button-large {
+  font-size: 1rem;
+}
+.rmcc-button-text {
+  font-size: 1.1rem;
+}
+// all custom modifying classes
+.rmcc-button-large.rmcc-border-rounded {
+  border-radius: 30px;
+}
+.rmcc-button.rmcc-fat-border {
+  border-width: 4px;
+}
+.rmcc-button-large.rmcc-fat-border {
+  border-width: 5px;
+}
+
+/* 
+more buttons stuff
+*/
+
+.rmcc-button-default.darken {
+  border-color: #333;
+}
+.rmcc-button-default.darken:hover {
+  border-color: #3333334d;
+}

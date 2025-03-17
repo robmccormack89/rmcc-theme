@@ -1,0 +1,70 @@
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+
+/* 
+headings,text,links (prop: color)
+
+custom modifying classes
+*/
+
+/* extra text colours */
+.rmcc-text-dark {
+  color: #333!important;
+}
+.rmcc-text-light {
+  color: #ffffff!important;
+}
+.rmcc-text-navy {
+  color: #0c305e!important;
+}
+.rmcc-text-blue {
+  color: #02bffb!important;
+}
+.rmcc-text-green {
+  color: #58e09f!important;
+}
+.rmcc-text-purple {
+  color: #c65fdf!important;
+}
+.rmcc-text-pink {
+  color: #fc77a5!important;
+}
+.rmcc-text-orange {
+  color: #fda43d!important;
+}
+.rmcc-text-yellow {
+  color: #fdf056!important;
+}
+.rmcc-text-navy.darken {
+  color: #0b2b52!important;
+}
+.rmcc-text-blue.darken {
+  color: #27a5fe!important;
+}
+.rmcc-text-green.darken {
+  color: #3ecc8c!important;
+}
+.rmcc-text-purple.darken {
+  color: #ab42c4!important;
+}
+.rmcc-text-pink.darken {
+  color: #fd3d96!important;
+}
+.rmcc-text-orange.darken {
+  color: #ef9b3c!important;
+}
+.rmcc-text-yellow.darken {
+  color: #fec142!important;
+}
