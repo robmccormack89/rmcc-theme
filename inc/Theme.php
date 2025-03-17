@@ -53,63 +53,6 @@ class Theme extends Timber {
       });
     }
 
-    // maintenance mode. when it exists & is not false
-    if(array_key_exists('maintenance_mode', $this->configs) && !($this->configs['maintenance_mode'] == false)){
-
-      // when maintenance mode set to true
-      if(is_bool($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == true){
-        if(!is_user_logged_in()){
-          add_action('template_redirect', array($this, 'maintenance_mode'));
-        }
-      }
-
-      // when maintenance mode set to 'all'
-      if(is_string($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == 'all'){
-        add_action('template_redirect', array($this, 'maintenance_mode'));
-      }
-
-    }
-
-  }
-
-  public function maintenance_mode() {
-
-    // when redirect_all_traffic_to_page is OFF
-    if(!(array_key_exists('redirect_all_traffic_to_page', $this->configs)) || (is_bool($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] == false) || (is_string($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] == '') ){
-      add_filter('template_include', function(){
-        if(!is_front_page()){
-          wp_redirect(esc_url_raw(home_url()));
-          exit;
-        }
-        $templates = array('maintenance.twig');
-        if(array_key_exists('maintenance_template', $this->configs)) array_unshift($templates, $this->configs['maintenance_template']);
-        $context = Theme::context();
-        Theme::render($templates, $context);
-      }, 10, 1);
-    }
-
-    // when redirect_all_traffic_to_page is ON
-    if(array_key_exists('redirect_all_traffic_to_page', $this->configs) && (is_int($this->configs['redirect_all_traffic_to_page']) || is_string($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] != '')){
-
-      if(is_int($this->configs['redirect_all_traffic_to_page'])){
-        $_postObj = get_post($this->configs['redirect_all_traffic_to_page']);
-        if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
-      } elseif(is_string($this->configs['redirect_all_traffic_to_page'])) {
-        $postObj = get_page_by_slug($this->configs['redirect_all_traffic_to_page']);
-      }
-
-      if(isset($postObj)){
-        $link = get_permalink($postObj);
-        if(!(is_page($this->configs['redirect_all_traffic_to_page'])) ){
-          wp_redirect(esc_url_raw($link));
-          exit;
-        }
-      }
-
-      return;
-
-    }
-
   }
 
   /**
