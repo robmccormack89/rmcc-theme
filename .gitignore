@@ -4,10 +4,8 @@ package-lock.json
 composer.lock
 
 .sass-cache/
-
 node_modules
 node_modules/
-
 compilation_cache
 compilation_cache/
 
@@ -16,6 +14,5 @@ _dev/
 
 inc/lib/plugins
 inc/lib/plugins/
-
-inc/acf
-inc/acf/
+inc/lib/acf
+inc/lib/acf/
