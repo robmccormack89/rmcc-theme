@@ -27,6 +27,8 @@ Timber::$autoescape = false;
 class Theme extends Timber {
 
   public $configs;
+  public $is_maintenance;
+  public $is_maintenance_all;
 
   public function __construct() {
     parent::__construct();
@@ -53,19 +55,17 @@ class Theme extends Timber {
       });
     }
 
-    // maintenance mode. when it exists & is not false
+    // if maintenance_mode exists in the config
     if(array_key_exists('maintenance_mode', $this->configs) && !($this->configs['maintenance_mode'] == false)){
 
-      // when maintenance mode set to true
-      if(is_bool($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == true){
-        if(!is_user_logged_in()){
-          add_action('template_redirect', array($this, 'maintenance_mode'));
-        }
+      // maintenance_mode is set for ALL users (logged in & not)
+      if(is_string($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == 'all'){
+        add_action('template_redirect', array($this, 'maintenance_mode')); // do the redirect now
       }
 
-      // when maintenance mode set to 'all'
-      if(is_string($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == 'all'){
-        add_action('template_redirect', array($this, 'maintenance_mode'));
+      // regular maintenance_mode is on (only logged out users will be affected)
+      if(is_bool($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == true){
+        if(!is_user_logged_in()) add_action('template_redirect', array($this, 'maintenance_mode')); // do the redirect now, but only for non logged in users!
       }
 
     }
@@ -74,8 +74,34 @@ class Theme extends Timber {
 
   public function maintenance_mode() {
 
-    // when redirect_all_traffic_to_page is OFF
-    if(!(array_key_exists('redirect_all_traffic_to_page', $this->configs)) || (is_bool($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] == false) || (is_string($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] == '') ){
+    // set vars for conditionals
+    $redirects_exists = (array_key_exists('redirect_to_page', $this->configs));
+    $redirects_is_int = ($redirects_exists && is_int($this->configs['redirect_to_page']));
+    $redirects_is_string = ($redirects_exists && is_string($this->configs['redirect_to_page']));
+    $redirects_is_bool = ($redirects_exists && is_bool($this->configs['redirect_to_page']));
+    $redirects_is_false = ($redirects_is_bool && $this->configs['redirect_to_page'] == false);
+    $redirects_is_empty = ($redirects_is_string && $this->configs['redirect_to_page'] == '');
+    
+    // create the OFF conditional var
+    $redirects_are_off = false;
+    if(!$redirects_exists){
+      $redirects_are_off = true;
+    } else {
+      if($redirects_is_false || $redirects_is_empty){
+        $redirects_are_off = true;
+      }
+    }
+
+    // create the ON conditional var
+    $redirects_are_on = false;
+    if($redirects_exists){
+      if(($redirects_is_int || $redirects_is_string) && !$redirects_is_empty){
+        $redirects_are_on = true;
+      }
+    }
+    
+    // now we do the maintenance_mode stuff for when redirects are OFF (redirects to a default template or one provided seperately)
+    if($redirects_are_off){
       add_filter('template_include', function(){
         if(!is_front_page()){
           wp_redirect(esc_url_raw(home_url()));
@@ -88,26 +114,25 @@ class Theme extends Timber {
       }, 10, 1);
     }
 
-    // when redirect_all_traffic_to_page is ON
-    if(array_key_exists('redirect_all_traffic_to_page', $this->configs) && (is_int($this->configs['redirect_all_traffic_to_page']) || is_string($this->configs['redirect_all_traffic_to_page']) && $this->configs['redirect_all_traffic_to_page'] != '')){
+    // now we do the maintenance_mode stuff for when redirects are ON (redirects to a seperate page or post)
+    if($redirects_are_on){
 
-      if(is_int($this->configs['redirect_all_traffic_to_page'])){
-        $_postObj = get_post($this->configs['redirect_all_traffic_to_page']);
+      if($redirects_is_int){
+        $_postObj = get_post($this->configs['redirect_to_page']);
         if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
-      } elseif(is_string($this->configs['redirect_all_traffic_to_page'])) {
-        $postObj = get_page_by_slug($this->configs['redirect_all_traffic_to_page']);
+      } elseif($redirects_is_string) {
+        $postObj = get_page_by_slug($this->configs['redirect_to_page']);
       }
 
       if(isset($postObj)){
         $link = get_permalink($postObj);
-        if(!(is_page($this->configs['redirect_all_traffic_to_page'])) ){
+        if(!(is_page($this->configs['redirect_to_page'])) ){
           wp_redirect(esc_url_raw($link));
           exit;
         }
       }
 
       return;
-
     }
 
   }

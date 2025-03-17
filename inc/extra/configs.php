@@ -13,9 +13,9 @@ Maintenance
 Mode
 */
 
-// $configs['maintenance_mode'] = 'all'; // set to true (for logged-out users) or 'all' (for all users)
-// $configs['redirect_all_traffic_to_page'] = 2; // use page or post ID here. or slug?
-// $configs['maintenance_template'] = 'hello.twig'; // only applies when redirect_all_traffic_to_page is unset. default: maintenance.twig
+$configs['maintenance_mode'] = true; // set to true (for logged-out users) or 'all' (for all users)
+// $configs['redirect_to_page'] = 'sample-page'; // use page or post slug/ID here
+// $configs['maintenance_template'] = 'hello.twig'; // only applies when redirect_to_page is unset. defaults to maintenance.twig
 
 /*
 Configs &
