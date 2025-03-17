@@ -255,19 +255,6 @@ all custom modifying classes
 /* 
 buttons text (prop: text-transform,font-size,border-radius)
 */
-.rmcc-button {
-  text-transform: initial;
-}
-.rmcc-button-large {
-  font-size: 1rem;
-}
-.rmcc-button-text {
-  font-size: 1.1rem;
-}
-// all custom modifying classes
-.rmcc-button-large.rmcc-border-rounded {
-  border-radius: 30px;
-}
 .rmcc-button.rmcc-fat-border {
   border-width: 4px;
 }
@@ -278,7 +265,6 @@ buttons text (prop: text-transform,font-size,border-radius)
 /* 
 more buttons stuff
 */
-
 .rmcc-button-default.darken {
   border-color: #333;
 }

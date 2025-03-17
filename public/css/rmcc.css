@@ -12228,6 +12228,153 @@ iframe[data-rmcc-cover] {
   width: 100%;
 }
 
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+/* 
+base font size
+*/
+html {
+  font-size: 18px;
+}
+
+/* 
+base font families
+*/
+/* heading fonts */
+.rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6,
+.rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+}
+
+/* navbar fonts */
+.rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* body text fonts */
+html,
+.rmcc-text-lead {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* 
+buttons text (prop: text-transform,font-size,border-radius)
+*/
+.rmcc-button {
+  text-transform: initial;
+}
+
+.rmcc-button-large {
+  font-size: 1rem;
+}
+
+.rmcc-button-text {
+  font-size: 1.1rem;
+}
+
+.rmcc-button-large.rmcc-border-rounded {
+  border-radius: 30px;
+}
+
+/* disable card header's border */
+.rmcc-card-header {
+  border: none;
+}
+
+/* card body paddings */
+.rmcc-card-small .rmcc-card-body,
+.rmcc-card-small.rmcc-card-body {
+  padding: 15px 25px 30px 25px;
+}
+
+/* rounded cards */
+.rmcc-card.rmcc-border-rounded {
+  border-radius: 10px;
+}
+
+.rmcc-card.rmcc-border-rounded > .rmcc-card-media-top > img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* card badges */
+.rmcc-card-badge {
+  height: 28px;
+  padding: 0 15px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* card badges: reposition mods */
+.rmcc-card-badge.badge-left {
+  top: 0;
+  left: 0;
+  right: auto;
+}
+
+.rmcc-card-badge.badge-right {
+  top: 0;
+  right: 0;
+}
+
+/* card badges:rounded */
+.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-left {
+  border-radius: 10px 0 0 0;
+}
+
+.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-right {
+  border-radius: 0 10px 0 0;
+}
+
+.rmcc-light.rmcc-card-badge-secondary,
+.rmcc-light.rmcc-card-badge-green,
+.rmcc-light.rmcc-card-badge-blue,
+.rmcc-light.rmcc-card-badge-purple,
+.rmcc-light.rmcc-card-badge-pink,
+.rmcc-light.rmcc-card-badge-orange,
+.rmcc-light.rmcc-card-badge-yellow {
+  color: #fff !important;
+}
+
+.rmcc-navbar-nav {
+  gap: 15px;
+}
+
+@media (min-width: 960px) {
+  .rmcc-navbar-nav {
+    gap: 35px;
+  }
+}
+.rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
+  column-gap: 0.25em;
+  min-height: 80px;
+  font-size: 1rem;
+}
+
+.rmcc-navbar-nav > li > a {
+  padding: 0 0;
+  color: #999;
+  text-transform: capitalize;
+}
+
+.rmcc-iconnav > * {
+  padding-left: 20px;
+}
+
 .theme-primary-bg {
   background-color: #23259c;
 }
@@ -12289,6 +12436,376 @@ iframe[data-rmcc-cover] {
 
 .rmcc-overlay-greypurple {
   background: rgba(69, 69, 86, 0.45);
+}
+
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+/*
+sections,badges,card-badges (prop: background)
+*/
+/* blue,primary */
+.rmcc-section-primary,
+.rmcc-badge,
+.rmcc-card-badge {
+  background: #02bffb !important;
+}
+
+.rmcc-section-primary.darken,
+.rmcc-badge.darken,
+.rmcc-card-badge.darken {
+  background: #27a5fe !important;
+}
+
+/* navy,secondary */
+.rmcc-section-secondary,
+.rmcc-badge-secondary,
+.rmcc-card-badge-secondary {
+  background: #0c305e !important;
+}
+
+.rmcc-section-secondary.darken,
+.rmcc-badge-secondary.darken,
+.rmcc-card-badge-secondary.darken {
+  background: #0b2b52 !important;
+}
+
+/*
+background,card,tile,button (prop: background-color)
+*/
+/* blue,primary */
+.rmcc-background-primary,
+.rmcc-card-primary,
+.rmcc-tile-primary,
+.rmcc-subnav-pill > .rmcc-active > a,
+.rmcc-button-primary {
+  background-color: #02bffb !important;
+}
+
+.rmcc-background-primary.darken,
+.rmcc-card-primary:hover,
+.rmcc-tile-primary.darken,
+.rmcc-button-primary:hover {
+  background-color: #27a5fe !important;
+}
+
+/* navy,secondary */
+.rmcc-background-secondary,
+.rmcc-card-secondary,
+.rmcc-tile-secondary,
+.rmcc-button-secondary {
+  background-color: #0c305e !important;
+}
+
+.rmcc-background-secondary.darken,
+.rmcc-card-secondary:hover,
+.rmcc-card-secondary.darken,
+.rmcc-tile-secondary.darken,
+.rmcc-button-secondary.darken {
+  background-color: #0b2b52 !important;
+}
+
+/*
+hover cards with no default/primary/secondary (prop: background-color)
+*/
+.rmcc-card-hover:not(.rmcc-card-default):not(.rmcc-card-primary):not(.rmcc-card-secondary):hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.rmcc-overlay-primary.rmcc-overlay-navy {
+  background: rgba(12, 48, 94, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-blue {
+  background: rgba(2, 191, 251, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-green {
+  background: rgba(88, 224, 159, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-purple {
+  background: rgba(198, 95, 223, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-pink {
+  background: rgba(252, 119, 165, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-orange {
+  background: rgba(253, 164, 61, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-yellow {
+  background: rgba(253, 240, 86, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-navy.darken {
+  background: rgba(11, 43, 82, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-blue.darken {
+  background: rgba(39, 165, 254, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-green.darken {
+  background: rgba(62, 204, 140, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-purple.darken {
+  background: rgba(171, 66, 196, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-pink.darken {
+  background: rgba(253, 61, 150, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-orange.darken {
+  background: rgba(239, 155, 60, 0.8);
+}
+
+.rmcc-overlay-primary.rmcc-overlay-yellow.darken {
+  background: rgba(254, 193, 66, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-navy {
+  background: rgba(12, 48, 94, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-blue {
+  background: rgba(2, 191, 251, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-green {
+  background: rgba(88, 224, 159, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-purple {
+  background: rgba(198, 95, 223, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-pink {
+  background: rgba(252, 119, 165, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-orange {
+  background: rgba(253, 164, 61, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-yellow {
+  background: rgba(253, 240, 86, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-navy.darken {
+  background: rgba(11, 43, 82, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-blue.darken {
+  background: rgba(39, 165, 254, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-green.darken {
+  background: rgba(62, 204, 140, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-purple.darken {
+  background: rgba(171, 66, 196, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-pink.darken {
+  background: rgba(253, 61, 150, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-orange.darken {
+  background: rgba(239, 155, 60, 0.8);
+}
+
+.rmcc-overlay-default.rmcc-overlay-yellow.darken {
+  background: rgba(254, 193, 66, 0.8);
+}
+
+/* blue,primary */
+.rmcc-section-default.rmcc-section-blue {
+  background: #02bffb !important;
+}
+
+.rmcc-section-default.rmcc-section-blue.darken {
+  background: #27a5fe !important;
+}
+
+/* green */
+.rmcc-section-default.rmcc-section-green,
+.rmcc-section-primary.rmcc-section-green,
+.rmcc-badge-green,
+.rmcc-card-badge-green {
+  background: #58e09f !important;
+}
+
+.rmcc-section-default.rmcc-section-green.darken,
+.rmcc-section-primary.rmcc-section-green.darken,
+.rmcc-badge-green.darken,
+.rmcc-card-badge-green.darken {
+  background: #3ecc8c !important;
+}
+
+/* purple */
+.rmcc-section-default.rmcc-section-purple,
+.rmcc-section-primary.rmcc-section-purple,
+.rmcc-badge-purple,
+.rmcc-card-badge-purple {
+  background: #c65fdf !important;
+}
+
+.rmcc-section-default.rmcc-section-purple.darken,
+.rmcc-section-primary.rmcc-section-purple.darken,
+.rmcc-badge-purple.darken,
+.rmcc-card-badge-purple.darken {
+  background: #ab42c4 !important;
+}
+
+/* pink */
+.rmcc-section-default.rmcc-section-pink,
+.rmcc-section-primary.rmcc-section-pink,
+.rmcc-badge-pink,
+.rmcc-card-badge-pink {
+  background: #fc77a5 !important;
+}
+
+.rmcc-section-default.rmcc-section-pink.darken,
+.rmcc-section-primary.rmcc-section-pink.darken,
+.rmcc-badge-pink.darken,
+.rmcc-card-badge-pink.darken {
+  background: #fd3d96 !important;
+}
+
+/* orange */
+.rmcc-section-default.rmcc-section-orange,
+.rmcc-section-primary.rmcc-section-orange,
+.rmcc-badge-orange,
+.rmcc-card-badge-orange {
+  background: #fda43d !important;
+}
+
+.rmcc-section-default.rmcc-section-orange.darken,
+.rmcc-section-primary.rmcc-section-orange.darken,
+.rmcc-badge-orange.darken,
+.rmcc-card-badge-orange.darken {
+  background: #ef9b3c !important;
+}
+
+/* yellow */
+.rmcc-section-default.rmcc-section-yellow,
+.rmcc-section-primary.rmcc-section-yellow,
+.rmcc-badge-yellow,
+.rmcc-card-badge-yellow {
+  background: #fdf056 !important;
+}
+
+.rmcc-section-default.rmcc-section-yellow.darken,
+.rmcc-section-primary.rmcc-section-yellow.darken,
+.rmcc-badge-yellow.darken,
+.rmcc-card-badge-yellow.darken {
+  background: #fec142 !important;
+}
+
+/* blue,primary */
+.rmcc-background-default.rmcc-background-blue,
+.rmcc-card-default.rmcc-card-blue, .rmcc-card-blue,
+.rmcc-tile-default.rmcc-tile-blue, .rmcc-tile-blue {
+  background-color: #02bffb !important;
+}
+
+.rmcc-background-default.rmcc-background-blue.darken,
+.rmcc-card-default.rmcc-card-blue:hover, .rmcc-card-blue:hover,
+.rmcc-tile-default.rmcc-tile-blue.darken, .rmcc-tile-blue.darken {
+  background-color: #27a5fe !important;
+}
+
+/* green */
+.rmcc-background-default.rmcc-background-green, .rmcc-background-primary.rmcc-background-green,
+.rmcc-card-default.rmcc-card-green, .rmcc-card-primary.rmcc-card-green, .rmcc-card-green,
+.rmcc-tile-default.rmcc-tile-green, .rmcc-tile-primary.rmcc-tile-green, .rmcc-tile-green,
+.rmcc-button-green {
+  background-color: #58e09f !important;
+}
+
+.rmcc-background-default.rmcc-background-green.darken, .rmcc-background-primary.rmcc-background-green.darken,
+.rmcc-card-default.rmcc-card-green:hover, .rmcc-card-primary.rmcc-card-green:hover, .rmcc-card-green:hover,
+.rmcc-tile-default.rmcc-tile-green.darken, .rmcc-tile-primary.rmcc-tile-green.darken, .rmcc-tile-green.darken,
+.rmcc-button-green:hover {
+  background-color: #3ecc8c !important;
+}
+
+/* purple */
+.rmcc-background-default.rmcc-background-purple, .rmcc-background-primary.rmcc-background-purple,
+.rmcc-card-default.rmcc-card-purple, .rmcc-card-primary.rmcc-card-purple, .rmcc-card-purple,
+.rmcc-tile-default.rmcc-tile-purple, .rmcc-tile-primary.rmcc-tile-purple, .rmcc-tile-purple,
+.rmcc-button-purple {
+  background-color: #c65fdf !important;
+}
+
+.rmcc-background-default.rmcc-background-purple.darken, .rmcc-background-primary.rmcc-background-purple.darken,
+.rmcc-card-default.rmcc-card-purple:hover, .rmcc-card-primary.rmcc-card-purple:hover, .rmcc-card-purple:hover,
+.rmcc-tile-default.rmcc-tile-purple.darken, .rmcc-tile-primary.rmcc-tile-purple.darken, .rmcc-tile-purple.darken,
+.rmcc-button-purple:hover {
+  background-color: #ab42c4 !important;
+}
+
+/* pink */
+.rmcc-background-default.rmcc-background-pink, .rmcc-background-primary.rmcc-background-pink,
+.rmcc-card-default.rmcc-card-pink, .rmcc-card-primary.rmcc-card-pink, .rmcc-card-pink,
+.rmcc-tile-default.rmcc-tile-pink, .rmcc-tile-primary.rmcc-tile-pink, .rmcc-tile-pink,
+.rmcc-button-pink {
+  background-color: #fc77a5 !important;
+}
+
+.rmcc-background-default.rmcc-background-pink.darken, .rmcc-background-primary.rmcc-background-pink.darken,
+.rmcc-card-default.rmcc-card-pink:hover, .rmcc-card-primary.rmcc-card-pink:hover, .rmcc-card-pink:hover,
+.rmcc-tile-default.rmcc-tile-pink.darken, .rmcc-tile-primary.rmcc-tile-pink.darken, .rmcc-tile-pink.darken,
+.rmcc-button-pink:hover {
+  background-color: #fd3d96 !important;
+}
+
+/* orange */
+.rmcc-background-default.rmcc-background-orange, .rmcc-background-primary.rmcc-background-orange,
+.rmcc-card-default.rmcc-card-orange, .rmcc-card-primary.rmcc-card-orange, .rmcc-card-orange,
+.rmcc-tile-default.rmcc-tile-orange, .rmcc-tile-primary.rmcc-tile-orange, .rmcc-tile-orange,
+.rmcc-button-orange {
+  background-color: #fda43d !important;
+}
+
+.rmcc-background-default.rmcc-background-orange.darken, .rmcc-background-primary.rmcc-background-orange.darken,
+.rmcc-card-default.rmcc-card-orange:hover, .rmcc-card-primary.rmcc-card-orange:hover, .rmcc-card-orange:hover,
+.rmcc-tile-default.rmcc-tile-orange.darken, .rmcc-tile-primary.rmcc-tile-orange.darken, .rmcc-tile-orange.darken,
+.rmcc-button-orange:hover {
+  background-color: #ef9b3c !important;
+}
+
+/* yellow */
+.rmcc-background-default.rmcc-background-yellow, .rmcc-background-primary.rmcc-background-yellow,
+.rmcc-card-default.rmcc-card-yellow, .rmcc-card-primary.rmcc-card-yellow, .rmcc-card-yellow,
+.rmcc-tile-default.rmcc-tile-yellow, .rmcc-tile-primary.rmcc-tile-yellow, .rmcc-tile-yellow,
+.rmcc-button-yellow {
+  background-color: #fdf056 !important;
+}
+
+.rmcc-background-default.rmcc-background-yellow.darken, .rmcc-background-primary.rmcc-background-yellow.darken,
+.rmcc-card-default.rmcc-card-yellow:hover, .rmcc-card-primary.rmcc-card-yellow:hover, .rmcc-card-yellow:hover,
+.rmcc-tile-default.rmcc-tile-yellow.darken, .rmcc-tile-primary.rmcc-tile-yellow.darken, .rmcc-tile-yellow.darken,
+.rmcc-button-yellow:hover {
+  background-color: #fec142 !important;
 }
 
 .theme-border {
@@ -12367,6 +12884,17 @@ hr.rmcc-light {
 
 .border-full {
   border-radius: 100%;
+}
+
+/* divider colour on light */
+.rmcc-light .rmcc-hr, .rmcc-light hr,
+.rmcc-background-primary .rmcc-hr, .rmcc-background-primary hr,
+.rmcc-background-secondary .rmcc-hr, .rmcc-background-secondary hr,
+.rmcc-section-primary .rmcc-hr, .rmcc-section-primary hr,
+.rmcc-section-secondary .rmcc-hr, .rmcc-section-secondary hr,
+.rmcc-card-primary .rmcc-hr, .rmcc-card-primary hr,
+.rmcc-card-secondary .rmcc-hr, .rmcc-card-secondary hr {
+  border-top-color: rgba(229, 229, 229, 0.231372549);
 }
 
 @keyframes spin {
@@ -12826,494 +13354,6 @@ hr.rmcc-light {
 /* yellow dark: #fec142 */
 /* yellow light: #fdf056 */
 /* 
-base font size
-*/
-html {
-  font-size: 18px;
-}
-
-/* 
-base font families
-*/
-/* heading fonts */
-.rmcc-h1, .rmcc-h2, .rmcc-h3, .rmcc-h4, .rmcc-h5, .rmcc-h6,
-.rmcc-heading-2xlarge, .rmcc-heading-3xlarge, .rmcc-heading-large, .rmcc-heading-medium, .rmcc-heading-small, .rmcc-heading-xlarge,
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Fredoka", sans-serif;
-  font-weight: 700;
-}
-
-/* navbar fonts */
-.rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
-  font-family: "Fredoka", sans-serif;
-}
-
-/* body text fonts */
-html,
-.rmcc-text-lead {
-  font-family: "Fredoka", sans-serif;
-}
-
-/* blue primary dark: #27a5fe */
-/* blue primary light: #02bffb */
-/* navy secondary dark: #0b2b52 */
-/* navy secondary light: #0c305e */
-/* green dark: #3ecc8c */
-/* green light: #58e09f */
-/* purple dark: #ab42c4 */
-/* purple light: #c65fdf */
-/* pink dark: #fd3d96 */
-/* pink light: #fc77a5 */
-/* orange dark: #ef9b3c */
-/* orange light: #fda43d */
-/* yellow dark: #fec142 */
-/* yellow light: #fdf056 */
-/* 
-headings,text,links (prop: color)
-
-custom modifying classes
-*/
-/* extra text colours */
-.rmcc-text-dark {
-  color: #333 !important;
-}
-
-.rmcc-text-light {
-  color: #ffffff !important;
-}
-
-.rmcc-text-navy {
-  color: #0c305e !important;
-}
-
-.rmcc-text-blue {
-  color: #02bffb !important;
-}
-
-.rmcc-text-green {
-  color: #58e09f !important;
-}
-
-.rmcc-text-purple {
-  color: #c65fdf !important;
-}
-
-.rmcc-text-pink {
-  color: #fc77a5 !important;
-}
-
-.rmcc-text-orange {
-  color: #fda43d !important;
-}
-
-.rmcc-text-yellow {
-  color: #fdf056 !important;
-}
-
-.rmcc-text-navy.darken {
-  color: #0b2b52 !important;
-}
-
-.rmcc-text-blue.darken {
-  color: #27a5fe !important;
-}
-
-.rmcc-text-green.darken {
-  color: #3ecc8c !important;
-}
-
-.rmcc-text-purple.darken {
-  color: #ab42c4 !important;
-}
-
-.rmcc-text-pink.darken {
-  color: #fd3d96 !important;
-}
-
-.rmcc-text-orange.darken {
-  color: #ef9b3c !important;
-}
-
-.rmcc-text-yellow.darken {
-  color: #fec142 !important;
-}
-
-/* blue primary dark: #27a5fe */
-/* blue primary light: #02bffb */
-/* navy secondary dark: #0b2b52 */
-/* navy secondary light: #0c305e */
-/* green dark: #3ecc8c */
-/* green light: #58e09f */
-/* purple dark: #ab42c4 */
-/* purple light: #c65fdf */
-/* pink dark: #fd3d96 */
-/* pink light: #fc77a5 */
-/* orange dark: #ef9b3c */
-/* orange light: #fda43d */
-/* yellow dark: #fec142 */
-/* yellow light: #fdf056 */
-/* 
-overlays (prop: background)
-
-all custom modifying classes
-*/
-.rmcc-overlay-primary.rmcc-overlay-navy {
-  background: rgba(12, 48, 94, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-blue {
-  background: rgba(2, 191, 251, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-green {
-  background: rgba(88, 224, 159, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-purple {
-  background: rgba(198, 95, 223, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-pink {
-  background: rgba(252, 119, 165, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-orange {
-  background: rgba(253, 164, 61, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-yellow {
-  background: rgba(253, 240, 86, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-navy.darken {
-  background: rgba(11, 43, 82, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-blue.darken {
-  background: rgba(39, 165, 254, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-green.darken {
-  background: rgba(62, 204, 140, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-purple.darken {
-  background: rgba(171, 66, 196, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-pink.darken {
-  background: rgba(253, 61, 150, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-orange.darken {
-  background: rgba(239, 155, 60, 0.8);
-}
-
-.rmcc-overlay-primary.rmcc-overlay-yellow.darken {
-  background: rgba(254, 193, 66, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-navy {
-  background: rgba(12, 48, 94, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-blue {
-  background: rgba(2, 191, 251, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-green {
-  background: rgba(88, 224, 159, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-purple {
-  background: rgba(198, 95, 223, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-pink {
-  background: rgba(252, 119, 165, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-orange {
-  background: rgba(253, 164, 61, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-yellow {
-  background: rgba(253, 240, 86, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-navy.darken {
-  background: rgba(11, 43, 82, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-blue.darken {
-  background: rgba(39, 165, 254, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-green.darken {
-  background: rgba(62, 204, 140, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-purple.darken {
-  background: rgba(171, 66, 196, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-pink.darken {
-  background: rgba(253, 61, 150, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-orange.darken {
-  background: rgba(239, 155, 60, 0.8);
-}
-
-.rmcc-overlay-default.rmcc-overlay-yellow.darken {
-  background: rgba(254, 193, 66, 0.8);
-}
-
-/*
-sections,badges,card-badges (prop: background)
-
-mixed custom modifying classes (primary & secondary contain mods of builtin classes, all colours are custom)
-*/
-/* blue,primary */
-.rmcc-section-primary,
-.rmcc-section-default.rmcc-section-blue,
-.rmcc-badge,
-.rmcc-card-badge {
-  background: #02bffb !important;
-}
-
-.rmcc-section-primary.darken,
-.rmcc-section-default.rmcc-section-blue.darken,
-.rmcc-badge.darken,
-.rmcc-card-badge.darken {
-  background: #27a5fe !important;
-}
-
-/* navy,secondary */
-.rmcc-section-secondary,
-.rmcc-badge-secondary,
-.rmcc-card-badge-secondary {
-  background: #0c305e !important;
-}
-
-.rmcc-section-secondary.darken,
-.rmcc-badge-secondary.darken,
-.rmcc-card-badge-secondary.darken {
-  background: #0b2b52 !important;
-}
-
-/* green */
-.rmcc-section-default.rmcc-section-green,
-.rmcc-section-primary.rmcc-section-green,
-.rmcc-badge-green,
-.rmcc-card-badge-green {
-  background: #58e09f !important;
-}
-
-.rmcc-section-default.rmcc-section-green.darken,
-.rmcc-section-primary.rmcc-section-green.darken,
-.rmcc-badge-green.darken,
-.rmcc-card-badge-green.darken {
-  background: #3ecc8c !important;
-}
-
-/* purple */
-.rmcc-section-default.rmcc-section-purple,
-.rmcc-section-primary.rmcc-section-purple,
-.rmcc-badge-purple,
-.rmcc-card-badge-purple {
-  background: #c65fdf !important;
-}
-
-.rmcc-section-default.rmcc-section-purple.darken,
-.rmcc-section-primary.rmcc-section-purple.darken,
-.rmcc-badge-purple.darken,
-.rmcc-card-badge-purple.darken {
-  background: #ab42c4 !important;
-}
-
-/* pink */
-.rmcc-section-default.rmcc-section-pink,
-.rmcc-section-primary.rmcc-section-pink,
-.rmcc-badge-pink,
-.rmcc-card-badge-pink {
-  background: #fc77a5 !important;
-}
-
-.rmcc-section-default.rmcc-section-pink.darken,
-.rmcc-section-primary.rmcc-section-pink.darken,
-.rmcc-badge-pink.darken,
-.rmcc-card-badge-pink.darken {
-  background: #fd3d96 !important;
-}
-
-/* orange */
-.rmcc-section-default.rmcc-section-orange,
-.rmcc-section-primary.rmcc-section-orange,
-.rmcc-badge-orange,
-.rmcc-card-badge-orange {
-  background: #fda43d !important;
-}
-
-.rmcc-section-default.rmcc-section-orange.darken,
-.rmcc-section-primary.rmcc-section-orange.darken,
-.rmcc-badge-orange.darken,
-.rmcc-card-badge-orange.darken {
-  background: #ef9b3c !important;
-}
-
-/* yellow */
-.rmcc-section-default.rmcc-section-yellow,
-.rmcc-section-primary.rmcc-section-yellow,
-.rmcc-badge-yellow,
-.rmcc-card-badge-yellow {
-  background: #fdf056 !important;
-}
-
-.rmcc-section-default.rmcc-section-yellow.darken,
-.rmcc-section-primary.rmcc-section-yellow.darken,
-.rmcc-badge-yellow.darken,
-.rmcc-card-badge-yellow.darken {
-  background: #fec142 !important;
-}
-
-/*
-background,card,tile,button (prop: background-color)
-
-mixed custom modifying classes (primary & secondary contain mods of builtin classes, all colours are custom)
-*/
-/* blue,primary */
-.rmcc-background-primary, .rmcc-background-default.rmcc-background-blue,
-.rmcc-card-primary, .rmcc-card-default.rmcc-card-blue, .rmcc-card-blue,
-.rmcc-tile-primary, .rmcc-tile-default.rmcc-tile-blue, .rmcc-tile-blue,
-.rmcc-subnav-pill > .rmcc-active > a,
-.rmcc-button-primary {
-  background-color: #02bffb !important;
-}
-
-.rmcc-background-primary.darken, .rmcc-background-default.rmcc-background-blue.darken,
-.rmcc-card-primary:hover, .rmcc-card-default.rmcc-card-blue:hover, .rmcc-card-blue:hover,
-.rmcc-tile-primary.darken, .rmcc-tile-default.rmcc-tile-blue.darken, .rmcc-tile-blue.darken,
-.rmcc-button-primary:hover {
-  background-color: #27a5fe !important;
-}
-
-/* navy,secondary */
-.rmcc-background-secondary,
-.rmcc-card-secondary,
-.rmcc-tile-secondary,
-.rmcc-button-secondary {
-  background-color: #0c305e !important;
-}
-
-.rmcc-background-secondary.darken,
-.rmcc-card-secondary:hover,
-.rmcc-card-secondary.darken,
-.rmcc-tile-secondary.darken,
-.rmcc-button-secondary.darken {
-  background-color: #0b2b52 !important;
-}
-
-/* green */
-.rmcc-background-default.rmcc-background-green, .rmcc-background-primary.rmcc-background-green,
-.rmcc-card-default.rmcc-card-green, .rmcc-card-primary.rmcc-card-green, .rmcc-card-green,
-.rmcc-tile-default.rmcc-tile-green, .rmcc-tile-primary.rmcc-tile-green, .rmcc-tile-green,
-.rmcc-button-green {
-  background-color: #58e09f !important;
-}
-
-.rmcc-background-default.rmcc-background-green.darken, .rmcc-background-primary.rmcc-background-green.darken,
-.rmcc-card-default.rmcc-card-green:hover, .rmcc-card-primary.rmcc-card-green:hover, .rmcc-card-green:hover,
-.rmcc-tile-default.rmcc-tile-green.darken, .rmcc-tile-primary.rmcc-tile-green.darken, .rmcc-tile-green.darken,
-.rmcc-button-green:hover {
-  background-color: #3ecc8c !important;
-}
-
-/* purple */
-.rmcc-background-default.rmcc-background-purple, .rmcc-background-primary.rmcc-background-purple,
-.rmcc-card-default.rmcc-card-purple, .rmcc-card-primary.rmcc-card-purple, .rmcc-card-purple,
-.rmcc-tile-default.rmcc-tile-purple, .rmcc-tile-primary.rmcc-tile-purple, .rmcc-tile-purple,
-.rmcc-button-purple {
-  background-color: #c65fdf !important;
-}
-
-.rmcc-background-default.rmcc-background-purple.darken, .rmcc-background-primary.rmcc-background-purple.darken,
-.rmcc-card-default.rmcc-card-purple:hover, .rmcc-card-primary.rmcc-card-purple:hover, .rmcc-card-purple:hover,
-.rmcc-tile-default.rmcc-tile-purple.darken, .rmcc-tile-primary.rmcc-tile-purple.darken, .rmcc-tile-purple.darken,
-.rmcc-button-purple:hover {
-  background-color: #ab42c4 !important;
-}
-
-/* pink */
-.rmcc-background-default.rmcc-background-pink, .rmcc-background-primary.rmcc-background-pink,
-.rmcc-card-default.rmcc-card-pink, .rmcc-card-primary.rmcc-card-pink, .rmcc-card-pink,
-.rmcc-tile-default.rmcc-tile-pink, .rmcc-tile-primary.rmcc-tile-pink, .rmcc-tile-pink,
-.rmcc-button-pink {
-  background-color: #fc77a5 !important;
-}
-
-.rmcc-background-default.rmcc-background-pink.darken, .rmcc-background-primary.rmcc-background-pink.darken,
-.rmcc-card-default.rmcc-card-pink:hover, .rmcc-card-primary.rmcc-card-pink:hover, .rmcc-card-pink:hover,
-.rmcc-tile-default.rmcc-tile-pink.darken, .rmcc-tile-primary.rmcc-tile-pink.darken, .rmcc-tile-pink.darken,
-.rmcc-button-pink:hover {
-  background-color: #fd3d96 !important;
-}
-
-/* orange */
-.rmcc-background-default.rmcc-background-orange, .rmcc-background-primary.rmcc-background-orange,
-.rmcc-card-default.rmcc-card-orange, .rmcc-card-primary.rmcc-card-orange, .rmcc-card-orange,
-.rmcc-tile-default.rmcc-tile-orange, .rmcc-tile-primary.rmcc-tile-orange, .rmcc-tile-orange,
-.rmcc-button-orange {
-  background-color: #fda43d !important;
-}
-
-.rmcc-background-default.rmcc-background-orange.darken, .rmcc-background-primary.rmcc-background-orange.darken,
-.rmcc-card-default.rmcc-card-orange:hover, .rmcc-card-primary.rmcc-card-orange:hover, .rmcc-card-orange:hover,
-.rmcc-tile-default.rmcc-tile-orange.darken, .rmcc-tile-primary.rmcc-tile-orange.darken, .rmcc-tile-orange.darken,
-.rmcc-button-orange:hover {
-  background-color: #ef9b3c !important;
-}
-
-/* yellow */
-.rmcc-background-default.rmcc-background-yellow, .rmcc-background-primary.rmcc-background-yellow,
-.rmcc-card-default.rmcc-card-yellow, .rmcc-card-primary.rmcc-card-yellow, .rmcc-card-yellow,
-.rmcc-tile-default.rmcc-tile-yellow, .rmcc-tile-primary.rmcc-tile-yellow, .rmcc-tile-yellow,
-.rmcc-button-yellow {
-  background-color: #fdf056 !important;
-}
-
-.rmcc-background-default.rmcc-background-yellow.darken, .rmcc-background-primary.rmcc-background-yellow.darken,
-.rmcc-card-default.rmcc-card-yellow:hover, .rmcc-card-primary.rmcc-card-yellow:hover, .rmcc-card-yellow:hover,
-.rmcc-tile-default.rmcc-tile-yellow.darken, .rmcc-tile-primary.rmcc-tile-yellow.darken, .rmcc-tile-yellow.darken,
-.rmcc-button-yellow:hover {
-  background-color: #fec142 !important;
-}
-
-/*
-hover cards with no default/primary/secondary (prop: background-color)
-
-mods builtin '.rmcc-card-hover'
-*/
-.rmcc-card-hover:not(.rmcc-card-default):not(.rmcc-card-primary):not(.rmcc-card-secondary):hover {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-/* blue primary dark: #27a5fe */
-/* blue primary light: #02bffb */
-/* navy secondary dark: #0b2b52 */
-/* navy secondary light: #0c305e */
-/* green dark: #3ecc8c */
-/* green light: #58e09f */
-/* purple dark: #ab42c4 */
-/* purple light: #c65fdf */
-/* pink dark: #fd3d96 */
-/* pink light: #fc77a5 */
-/* orange dark: #ef9b3c */
-/* orange light: #fda43d */
-/* yellow dark: #fec142 */
-/* yellow light: #fdf056 */
-/* 
 buttons extra (prop: border,color)
 
 all custom modifying classes
@@ -13557,22 +13597,6 @@ all custom modifying classes
 /* 
 buttons text (prop: text-transform,font-size,border-radius)
 */
-.rmcc-button {
-  text-transform: initial;
-}
-
-.rmcc-button-large {
-  font-size: 1rem;
-}
-
-.rmcc-button-text {
-  font-size: 1.1rem;
-}
-
-.rmcc-button-large.rmcc-border-rounded {
-  border-radius: 30px;
-}
-
 .rmcc-button.rmcc-fat-border {
   border-width: 4px;
 }
@@ -13592,100 +13616,88 @@ more buttons stuff
   border-color: rgba(51, 51, 51, 0.3019607843);
 }
 
-/* divider colour on light */
-.rmcc-light .rmcc-hr, .rmcc-light hr,
-.rmcc-background-primary .rmcc-hr, .rmcc-background-primary hr,
-.rmcc-background-secondary .rmcc-hr, .rmcc-background-secondary hr,
-.rmcc-section-primary .rmcc-hr, .rmcc-section-primary hr,
-.rmcc-section-secondary .rmcc-hr, .rmcc-section-secondary hr,
-.rmcc-card-primary .rmcc-hr, .rmcc-card-primary hr,
-.rmcc-card-secondary .rmcc-hr, .rmcc-card-secondary hr {
-  border-top-color: rgba(229, 229, 229, 0.231372549);
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+/* 
+headings,text,links (prop: color)
+
+custom modifying classes
+*/
+/* extra text colours */
+.rmcc-text-dark {
+  color: #333 !important;
 }
 
-/* disable card header's border */
-.rmcc-card-header {
-  border: none;
+.rmcc-text-light {
+  color: #ffffff !important;
 }
 
-/* card body paddings */
-.rmcc-card-small .rmcc-card-body,
-.rmcc-card-small.rmcc-card-body {
-  padding: 15px 25px 30px 25px;
+.rmcc-text-navy {
+  color: #0c305e !important;
 }
 
-/* rounded cards */
-.rmcc-card.rmcc-border-rounded {
-  border-radius: 10px;
+.rmcc-text-blue {
+  color: #02bffb !important;
 }
 
-.rmcc-card.rmcc-border-rounded > .rmcc-card-media-top > img {
-  border-radius: 10px 10px 0px 0px;
+.rmcc-text-green {
+  color: #58e09f !important;
 }
 
-/* card badges */
-.rmcc-card-badge {
-  height: 28px;
-  padding: 0 15px;
-  font-size: 1.1rem;
-  text-transform: capitalize;
-  font-weight: 500;
+.rmcc-text-purple {
+  color: #c65fdf !important;
 }
 
-/* card badges: reposition mods */
-.rmcc-card-badge.badge-left {
-  top: 0;
-  left: 0;
-  right: auto;
+.rmcc-text-pink {
+  color: #fc77a5 !important;
 }
 
-.rmcc-card-badge.badge-right {
-  top: 0;
-  right: 0;
+.rmcc-text-orange {
+  color: #fda43d !important;
 }
 
-/* card badges:rounded */
-.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-left {
-  border-radius: 10px 0 0 0;
+.rmcc-text-yellow {
+  color: #fdf056 !important;
 }
 
-.rmcc-card.rmcc-border-rounded .rmcc-card-badge.badge-right {
-  border-radius: 0 10px 0 0;
+.rmcc-text-navy.darken {
+  color: #0b2b52 !important;
 }
 
-.rmcc-light.rmcc-card-badge-secondary,
-.rmcc-light.rmcc-card-badge-green,
-.rmcc-light.rmcc-card-badge-blue,
-.rmcc-light.rmcc-card-badge-purple,
-.rmcc-light.rmcc-card-badge-pink,
-.rmcc-light.rmcc-card-badge-orange,
-.rmcc-light.rmcc-card-badge-yellow {
-  color: #fff !important;
+.rmcc-text-blue.darken {
+  color: #27a5fe !important;
 }
 
-.rmcc-navbar-nav {
-  gap: 15px;
+.rmcc-text-green.darken {
+  color: #3ecc8c !important;
 }
 
-@media (min-width: 960px) {
-  .rmcc-navbar-nav {
-    gap: 35px;
-  }
-}
-.rmcc-navbar-item, .rmcc-navbar-nav > li > a, .rmcc-navbar-toggle {
-  column-gap: 0.25em;
-  min-height: 80px;
-  font-size: 1rem;
+.rmcc-text-purple.darken {
+  color: #ab42c4 !important;
 }
 
-.rmcc-navbar-nav > li > a {
-  padding: 0 0;
-  color: #999;
-  text-transform: capitalize;
+.rmcc-text-pink.darken {
+  color: #fd3d96 !important;
 }
 
-.rmcc-iconnav > * {
-  padding-left: 20px;
+.rmcc-text-orange.darken {
+  color: #ef9b3c !important;
+}
+
+.rmcc-text-yellow.darken {
+  color: #fec142 !important;
 }
 
 .rmcc-text-fat {

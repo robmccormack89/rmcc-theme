@@ -1,13 +1,23 @@
 // 2. import the theme components
-
 @import "container.scss"; // classes for breaking the container; for things like gutenberg. keep this first for simplicity
 
-@import "backgrounds.scss"; // custom theme classes for coloured backgrounds & overlays
-@import "borders.scss"; // custom theme classes for borders & dividers
-@import "loaders.scss"; // custom theme classes for animated loaders
-@import "position.scss"; // custom theme classes for positional stuff
+// base
+@import "fonts.scss"; 
+@import "cards.scss";
+@import "navs.scss";
 
-// @import "theme.scss"; // extra theme-related fixins & gubbins!
+// @import "theme.scss"; // extra theme-related fixins & gubbins! (leftover from latestcore)
+
+// custom classes mostly (wont do anything on their own)
+@import "backgrounds.scss"; // coloured backgrounds & overlays (contains some base mods)
+@import "borders.scss"; // borders & dividers (contains some base mods)
+@import "loaders.scss"; // animated loaders
+@import "position.scss"; // positional stuff
+@import "button-text.scss"; // buttons text/borders.. (button backgrounds are done via backgrounds.scss)
+@import "text.scss"; // coloured text
+@import "extra.scss"; // additional..
+
 // @import "dark.scss"; // the dark theme! this allows for dark/light modes. keep this last as it may modify stuff from above
 
-@import "kinny/_import.scss"; // import new styles for kinny
+// other library customizations
+@import "swiper.scss";

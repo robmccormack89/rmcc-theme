@@ -41,3 +41,21 @@ html,
 .rmcc-text-lead {
   font-family: "Fredoka", sans-serif;
 }
+
+/* 
+buttons text (prop: text-transform,font-size,border-radius)
+*/
+.rmcc-button {
+  text-transform: initial;
+}
+.rmcc-button-large {
+  font-size: 1rem;
+}
+.rmcc-button-text {
+  font-size: 1.1rem;
+}
+
+// all custom modifying classes
+.rmcc-button-large.rmcc-border-rounded {
+  border-radius: 30px;
+}

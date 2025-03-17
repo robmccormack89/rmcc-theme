@@ -77,3 +77,14 @@ hr.rmcc-light {
 .border-full {
   border-radius: 100%;
 }
+
+/* divider colour on light */
+.rmcc-light .rmcc-hr, .rmcc-light hr,
+.rmcc-background-primary .rmcc-hr, .rmcc-background-primary hr,
+.rmcc-background-secondary .rmcc-hr, .rmcc-background-secondary hr,
+.rmcc-section-primary .rmcc-hr, .rmcc-section-primary hr,
+.rmcc-section-secondary .rmcc-hr, .rmcc-section-secondary hr,
+.rmcc-card-primary .rmcc-hr, .rmcc-card-primary hr,
+.rmcc-card-secondary .rmcc-hr, .rmcc-card-secondary hr {
+  border-top-color: #e5e5e53b;
+}

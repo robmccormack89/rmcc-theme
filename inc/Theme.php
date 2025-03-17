@@ -274,6 +274,11 @@ class Theme extends Timber {
 
   public function theme_enqueue_assets() {
 
+    if (!is_admin()) {
+      wp_register_style('google', 'https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap', array(), null, 'all');
+      wp_enqueue_style('google');
+    }
+
     // rmcc (uikit) css
     wp_enqueue_style(
       'rmcc-theme',
