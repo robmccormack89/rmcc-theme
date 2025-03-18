@@ -17,7 +17,8 @@
 @import "text.scss"; // coloured text
 @import "extra.scss"; // additional..
 
-// @import "dark.scss"; // the dark theme! this allows for dark/light modes. keep this last as it may modify stuff from above
+@import "dark.scss"; // the dark theme! this allows for dark/light modes. keep this last as it may modify stuff from above
+@import "darklight.scss"; // the darklight buttons
 
 // other library customizations
 @import "swiper.scss";

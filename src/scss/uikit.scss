@@ -110,6 +110,15 @@ $theme_grey_primary_overlay: rgba($theme_grey_primary, 0.45); // purple overlay
 // $offcanvas-bar-background: #fff;
 // $offcanvas-bar-color-mode: none;
 
+$iconnav-item-color: #89839f; // icon colours
+$icon-button-background: #f3edfb; // icon bg color
+$base-heading-color: #5d5b68; // heading color
+$text-emphasis-color: #5c5b68; // emphasis color
+$base-body-color: #635f6a; // text color
+$global-primary-background: #867edf; // button color
+$global-link-color: #867edf; // button color
+$global-muted-background: #ebe8fc; // muted bg color
+
 //
 //
 // 3a. import themed variables & mixins from uikit

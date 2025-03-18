@@ -1,29 +1,57 @@
-/* dark backgrounds */
-.rmcc-light {
-  background: $global-secondary-background;
-}
-.rmcc-light .rmcc-modal-dialog {
-  background: $global-secondary-background;
-}
-.rmcc-light .rmcc-navbar-dropdown {
-  background: $global-secondary-background;
-}
+/* blue primary dark: #27a5fe */
+/* blue primary light: #02bffb */
+/* navy secondary dark: #0b2b52 */
+/* navy secondary light: #0c305e */
+/* green dark: #3ecc8c */
+/* green light: #58e09f */
+/* purple dark: #ab42c4 */
+/* purple light: #c65fdf */
+/* pink dark: #fd3d96 */
+/* pink light: #fc77a5 */
+/* orange dark: #ef9b3c */
+/* orange light: #fda43d */
+/* yellow dark: #fec142 */
+/* yellow light: #fdf056 */
+
+/* dark/default backgrounds */
 .rmcc-light .rmcc-section-default {
-  background: $global-secondary-background;
+  // background: $global-secondary-background;
+  background: #170f3f;
 }
 .rmcc-light .rmcc-background-default {
-  background: $global-secondary-background;
+  // background: $global-secondary-background;
+  background: #170f3f;
 }
-/* dark muted backgrounds */
+/* dark/muted backgrounds */
+body.rmcc-light {
+  //background: $global-secondary-background;
+  background: #130e2b;
+}
 .rmcc-light .rmcc-background-muted,
-.rmcc-light .rmcc-modal-close-full,
 .rmcc-light .rmcc-section-muted,
 .rmcc-light .rmcc-tile-muted {
-  background: $global-emphasis-color;
+  // background: $global-emphasis-color;
+  background: #130e2b;
 }
 .rmcc-light .rmcc-comment-primary {
-  background-color: $global-emphasis-color;
+  // background-color: $global-emphasis-color;
+  background: #130e2b;
 }
+
+// .rmcc-light .rmcc-modal-dialog {
+//   //
+//   background: $global-secondary-background;
+// }
+// .rmcc-light .rmcc-navbar-dropdown {
+//   //
+//   background: $global-secondary-background;
+// }
+// .rmcc-light .rmcc-modal-close-full {
+//   //
+//   background: $global-emphasis-color;
+// }
+
+
 /* links */
 .rmcc-light .rmcc-navbar-dropdown-nav > li > a {
   color: $inverse-global-muted-color;

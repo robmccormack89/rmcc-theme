@@ -6,14 +6,14 @@
 {% endblock %}
 
 {% block main %}
-  <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }}" data-template="single.twig">
+  <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }} rmcc-box-shadow-medium" data-template="single.twig">
 
     {% block single_header %}
       {% include 'single/header.twig' %}
     {% endblock %}
 
     {% block single_content %}
-      <div class="single-content rmcc-background-default rmcc-section rmcc-section-small">
+      <div class="single-content rmcc-section rmcc-section-default rmcc-section-small">
 
         {% block single_content_lead %}
           {% if post.post_excerpt and (post.post_type == 'post' or configs.enable_page_excerpts == true) %}

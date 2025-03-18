@@ -9,12 +9,19 @@
 */
 
 /*
+darklight
+mode
+*/
+
+$configs['darklight_mode'] = true;
+
+/*
 Configs &
 Settings
 */
 
-$configs['logo_width'] = '223';
-$configs['logo_height'] = '36';
+$configs['logo_width'] = '270';
+$configs['logo_height'] = '90';
 
 /*
 Enable

@@ -1,0 +1,37 @@
+/* dark light buttons stylings */
+
+.darklight-btn {
+  margin-top: -2px;
+}
+
+// colour the buttons' svgs together
+.darklight svg {
+  color: $global-inverse-color;
+  height: 20px;
+  width: 20px;
+  stroke: $global-muted-color;
+}
+.darklight svg:focus, 
+.darklight svg:hover {
+  stroke: $global-color;
+}
+
+// sun
+.light-btn svg {
+  height: 21px;
+  width: 21px;
+}
+// sun spokes
+.light-btn svg .sun-st {
+  fill:none;
+  stroke:$inverse-global-muted-color;
+  stroke-width:2;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+// sun hover
+.light-btn svg 
+.light-btn:focus .sun-st, 
+.light-btn:hover .sun-st {
+  stroke:$inverse-global-color;
+}

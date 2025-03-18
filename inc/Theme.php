@@ -300,6 +300,17 @@ class Theme extends Timber {
       get_stylesheet_uri()
     );
 
+    // darklight
+    if($this->configs['darklight_mode']){
+      wp_enqueue_script(
+        'rmcc-theme-darklight',
+        get_template_directory_uri() . '/public/js/darklight.js',
+        '',
+        '1.0.0',
+        true
+      );
+    }
+
   }
 
   public function register_post_types() {
@@ -313,6 +324,9 @@ class Theme extends Timber {
     register_nav_menus(array(
       'main_menu' => _x('Main Menu', 'Menus', 'rmcc-theme'),
       'iconnav_menu' => _x('Iconnav Menu', 'Menus', 'rmcc-theme'),
+      'footer_menu_1' => _x('Footer Menu 1', 'Menus', 'rmcc-theme'),
+      'footer_menu_2' => _x('Footer Menu 2', 'Menus', 'rmcc-theme'),
+      'footer_menu_3' => _x('Footer Menu 3', 'Menus', 'rmcc-theme'),
     ));
   }
 
@@ -341,6 +355,9 @@ class Theme extends Timber {
     // add menus to the context
     $context['menu_main'] = Timber::get_menu('main_menu', array('depth' => 3));
     $context['menu_iconnav'] = Timber::get_menu('iconnav_menu', array('depth' => 1));
+    $context['footer_menu_1'] = Timber::get_menu('footer_menu_1', array('depth' => 1));
+    $context['footer_menu_2'] = Timber::get_menu('footer_menu_2', array('depth' => 1));
+    $context['footer_menu_3'] = Timber::get_menu('footer_menu_3', array('depth' => 1));
 
     // set title & desc to start, in case anything goes wrong.
     $context['title'] = _x('Error: Page not found', '404/Error pages', 'rmcc-theme');
