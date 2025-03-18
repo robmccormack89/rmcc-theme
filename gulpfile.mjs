@@ -24,7 +24,7 @@ const config = {
   "text_domain"       : "rmcc-theme",
   "destFolder"        : "languages",
   "twig_files"        : "views/**/*.twig",
-  "php_files"         : "{*.php,inc/*.php,inc/extra/*.php,templates/*.php,views/temp/**/*.php}",
+  "php_files"         : "{*.php,inc/*.php,inc/extra/*.php,templates/*.php,inc/blocks/**/*.php,views/temp/**/*.php}",
   "cacheFolder"       : "views/temp",
 };
 
