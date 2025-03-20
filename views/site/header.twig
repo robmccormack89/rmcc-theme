@@ -147,11 +147,12 @@
                   <a class="rmcc-navbar-toggle rmcc-navbar-toggle-animate rmcc-icon rmcc-navbar-toggle-icon" href="#" rmcc-navbar-toggle-icon="" role="button" aria-haspopup="true" aria-label="Open menu"></a>
                 </li>
 
+                <!-- darklight -->
                 <div class="darklight rmcc-flex rmcc-flex-middle">
-                  <a id="darkBtn" class="darklight-btn dark-btn moon-btn">
+                  <a id="darkBtn" class="darklight-btn dark-btn moon-btn" {{ (configs.darklight) ? 'hidden' : null }}>
                     <img src="{{theme.link|e('esc_url')}}/public/images/moon.svg" rmcc-svg>
                   </a>
-                  <a id="lightBtn" class="darklight-btn light-btn sun-btn">
+                  <a id="lightBtn" class="darklight-btn light-btn sun-btn" {{ (configs.darklight) ? null : 'hidden' }}>
                     <img src="{{theme.link|e('esc_url')}}/public/images/sun.svg" rmcc-svg>
                   </a>
                 </div>
