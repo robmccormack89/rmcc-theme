@@ -110,7 +110,7 @@
 
   "styles": {
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--fredoka)",
+      "__fontFamily": "var(--wp--preset--font-family--primary)",
       "fontSize": "18px"
     },
     "elements": {
