@@ -1,15 +1,44 @@
-<ul class="rmcc-navbar-nav rmcc-navbar-nav-primary">
+<div class="rmcc-navbar-right">
+  <div class="rmcc-navbar-item">
+    <ul class="rmcc-iconnav">
 
-  {# search popup toggle #}
-  <li class="search-icon">
-    <a id="CloseSearchNav" class="rmcc-navbar-toggle" rmcc-search-icon rmcc-toggle="target: .nav-search; animation: rmcc-animation-fade" href="#"></a>
-  </li>
+      {% for item in menu_main.get_items %}
+        {% if menu_main.get_items|length > 1 and loop.last %}
+          <li class="rmcc-flex rmcc-flex-middle rmcc-visible@s">
+            <button class="rmcc-button rmcc-button-small rmcc-button-danger rmcc-button-purple rmcc-border-rounded" href="{{ item.link|e('esc_url') }}">
+              {{ item.title|e('esc_html') }} <span rmcc-icon="icon:arrow-right;ratio:1.2"></span>
+            </button>
+          </li>
+        {% endif %}
+      {% endfor %}
 
-  {# mobile menu toggle #}
-  {% if fn('has_nav_menu', 'main_menu') %}
-    <li class="rmcc-hidden@m">
-      <a class="rmcc-navbar-toggle rmcc-navbar-toggle-animate rmcc-icon rmcc-navbar-toggle-icon" href="#" rmcc-navbar-toggle-icon rmcc-toggle="target: #SlideInMenuLeft"></a>
-    </li>
-  {% endif %}
+      <!-- search toggle -->
+      <li class="rmcc-flex rmcc-flex-middle">
+        <a href="#modal-search" rmcc-icon="icon: search; ratio: 1.2" class="rmcc-icon" rmcc-toggle></a>
+      </li>
 
-</ul>
+      <!-- mobile toggle -->
+      <li class="rmcc-flex rmcc-flex-middle">
+        <a 
+        class="rmcc-navbar-toggle rmcc-navbar-toggle-animate rmcc-icon rmcc-navbar-toggle-icon rmcc-navbar-toggle-animate" 
+        href="#mobileOffcanvas" 
+        rmcc-toggle="target: #mobileOffcanvas" 
+        rmcc-navbar-toggle-icon 
+        role="button" aria-label="Open menu" aria-haspopup="true" aria-expanded aria-controls="mobileOffcanvas"></a>
+      </li>
+
+      <!-- darklight -->
+      {% if configs.darklight_mode %}
+        <div class="darklight rmcc-flex rmcc-flex-middle">
+          <a id="darkBtn" class="darklight-btn dark-btn moon-btn" {{ (configs.darklight) ? 'hidden' : null }}>
+            <img src="{{theme.link|e('esc_url')}}/public/images/moon.svg" rmcc-svg>
+          </a>
+          <a id="lightBtn" class="darklight-btn light-btn sun-btn" {{ (configs.darklight) ? null : 'hidden' }}>
+            <img src="{{theme.link|e('esc_url')}}/public/images/sun.svg" rmcc-svg>
+          </a>
+        </div>
+      {% endif %}
+
+    </ul>
+  </div>
+</div>

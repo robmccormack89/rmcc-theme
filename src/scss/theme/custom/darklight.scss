@@ -1,14 +1,10 @@
 /* dark light buttons stylings */
 
-.darklight-btn {
-  margin-top: -2px;
-}
-
 // colour the buttons' svgs together
 .darklight svg {
   color: $global-inverse-color;
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   stroke: $global-muted-color;
 }
 .darklight svg:focus, 
@@ -18,8 +14,8 @@
 
 // sun
 .light-btn svg {
-  height: 21px;
-  width: 21px;
+  height: 25px;
+  width: 25px;
 }
 // sun spokes
 .light-btn svg .sun-st {

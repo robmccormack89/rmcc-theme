@@ -4541,7 +4541,7 @@ select.rmcc-form-width-xsmall {
   box-sizing: border-box;
   width: 270px;
   padding: 20px 20px;
-  background: #222;
+  background: #130e2b;
   /* 3 */
   overflow-y: auto;
 }
@@ -13788,14 +13788,10 @@ body.rmcc-light {
 }
 
 /* dark light buttons stylings */
-.darklight-btn {
-  margin-top: -2px;
-}
-
 .darklight svg {
   color: #fff;
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   stroke: #999;
 }
 
@@ -13805,8 +13801,8 @@ body.rmcc-light {
 }
 
 .light-btn svg {
-  height: 21px;
-  width: 21px;
+  height: 25px;
+  width: 25px;
 }
 
 .light-btn svg .sun-st {

@@ -1,0 +1,58 @@
+  {# mobile offcanvas #}
+  <div id="mobileOffcanvas" rmcc-offcanvas="overlay: true">
+    <div class="rmcc-offcanvas-bar rmcc-inline rmcc-padding-remove rmcc-height-1-1" style="">
+
+      <button class="rmcc-offcanvas-close" type="button" rmcc-close></button>
+
+      <div class="rmcc-padding-small">
+      
+        <ul class="rmcc-nav rmcc-nav-default">
+          <li class="rmcc-nav-header">{{ menu_main.title|e('esc_html') }}</li>
+          <li class="rmcc-nav-divider"></li>
+
+          {% include 'header/nav-offcanvas.twig' %}
+
+          <li class="rmcc-active">
+            <a href="#">Active</a>
+          </li>
+          <li class="rmcc-parent">
+            <a href="#">Parent</a>
+            <ul class="rmcc-nav-sub">
+              <li>
+                <a href="#">Sub item</a>
+              </li>
+              <li>
+                <a href="#">Sub item</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#js-options">
+              <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: table"></span>Item
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: thumbnails"></span>Item
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: trash"></span>
+              Item
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="offcanvas-content rmcc-margin">
+          <h3>Title</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      
+      </div>
+
+      <div class="rmcc-position-bottom">Hello there...</div>
+
+    </div>
+  </div>

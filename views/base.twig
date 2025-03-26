@@ -8,100 +8,6 @@
 
   <body class="{{ body_class }} rmcc-background-muted {{ (configs.darklight) ? 'rmcc-light' : 'rmcc-dark' }}" data-template="base.twig">
 
-    <style>
-      .rmcc-navbar-toggle-icon svg {
-        height: 25px;
-        width: 25px;
-      }
-      .rmcc-logo img.rmcc-padding-small {
-        padding: 5px 0px;
-      }
-      .rmcc-padding-xsmall {
-        padding: 10px;
-      }
-
-      /* COLOUR_BARS */
-      .rainbow-bar {
-        display:flow-root
-      }
-      .rainbow-bar span {
-        width:16.666%;
-        float:left;
-        height:5px;
-        display: block;
-      }
-      .rainbow-bar .last {
-        width:16.666%!important;
-      }
-
-      .rmcc-text-underline {
-        text-decoration: underline;
-      }
-
-      .rmcc-card-transparent,
-      .rmcc-card-transparent.rmcc-card-secondary,
-      .rmcc-card-transparent.rmcc-card-secondary.darken {
-        background-color: transparent !important;
-      }
-
-      .rmcc-position-z-index-reset {
-        z-index: 0;
-      }
-
-      .rmcc-heading-small {
-        font-size: 2.6rem
-      }
-      @media (max-width: 1599px) {
-        .rmcc-heading-small {
-          font-size: 2.4rem
-        }
-      }
-      @media (max-width: 1199px) {
-        .rmcc-heading-small {
-          font-size: 2.4rem
-        }
-        .social-wall .rmcc-heading-medium {
-          font-size: 2.5rem;
-        }
-        .social-wall .rmcc-text-lead {
-          font-size: 1.1rem;
-        }
-      }
-      @media (max-width: 959px) {
-        .rmcc-heading-small {
-          font-size: 2.2rem
-        }
-      }
-      @media (max-width: 639px) {
-        .rmcc-heading-small {
-          font-size: 2rem
-        }
-        .rmcc-button-large {
-          font-size: .875rem;
-          padding: 0 20px;
-        }
-        .rmcc-text-large {
-          font-size: 1.2rem;
-          line-height: 1.2;
-        }
-        .social-wall .rmcc-heading-medium {
-          font-size: 2rem;
-        }
-        .social-wall .rmcc-text-lead {
-          font-size: 1rem;
-        }
-      }
-
-      @media (min-width: 960px) {
-        .rmcc-height-1-2 {
-          height: 50%;
-        }
-      }
-
-
-
-    </style>
-
     {% block header %}
       {% include 'header.twig' ignore missing %}
     {% endblock %}
@@ -110,12 +16,9 @@
       {% block main %}
         <div class="rmcc-section-default">
           <div class="rmcc-container rmcc-container-xsmall">
-
             <h1>{{ title|e('esc_html') }}</h1>
             <p>{{ description|e('esc_html') }}</p>
-
             {% include (fn('is_404') or fn('get_post_status', post.id) == 'private') ? 'search_form.twig' ignore missing %}
-
           </div>
         </div>
       {% endblock %}
@@ -126,6 +29,25 @@
     {% endblock %}
 
     {{ fn('wp_footer') }}
+
+    {% if fn('has_nav_menu', 'main_menu') %}
+      {% include 'header/offcanvas.twig' %}
+    {% endif %}
+
+    {# search popup #}
+    <div id="modal-search" class="rmcc-modal-full rmcc-modal" rmcc-modal>
+      <div class="rmcc-modal-dialog rmcc-flex rmcc-flex-center rmcc-flex-middle rmcc-background-muted" rmcc-height-viewport>
+        <button class="rmcc-modal-close-full" type="button" rmcc-icon="icon: close; ratio: 2"></button>
+        <form id="form_validate_search" class="rmcc-search rmcc-search-large" role="search" method="get" action="{{ site.url|e('esc_url') }}" accept-charset="utf-8" novalidate="novalidate">
+          <input 
+          id="input_search" class="rmcc-search-input rmcc-text-center" type="search" name="s" maxlength="300" pattern=".*\S+.*" 
+          placeholder="{{ _x('Start searching...', 'Search: form', 'rmcc-theme')|e('esc_html') }}"
+          aria-label="{{ _x('Start searching...', 'Search: form', 'rmcc-theme')|e('esc_html') }}"
+          autocomplete="off" autooofocus value required />
+          <input type="hidden" name="post_type" value="post" />
+        </form>
+      </div>
+    </div>
 
     {% block scripts %}
     {% endblock %}

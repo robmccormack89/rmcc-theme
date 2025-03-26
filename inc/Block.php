@@ -162,8 +162,10 @@ class Block {
     if((array_key_exists('style', $block))){
       if((array_key_exists('dimensions', $block['style']))){
         if((array_key_exists('minHeight', $block['style']['dimensions']))){
-          $styles[] = 'height: ' . $block['style']['dimensions']['minHeight'];
-          $styles[] = 'min-height: ' . $block['style']['dimensions']['minHeight'];
+          if(!empty($block['style']['dimensions']['minHeight'])){
+            $styles[] = 'height: ' . $block['style']['dimensions']['minHeight'];
+            $styles[] = 'min-height: ' . $block['style']['dimensions']['minHeight'];
+          }
         }
       }
     } 

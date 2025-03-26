@@ -1,0 +1,57 @@
+<!-- topbar -->
+<div class="rmcc-container rmcc-container-expand">
+  <div class="rmcc-grid rmcc-padding-xsmall rmcc-padding-remove-horizontal" rmcc-grid>
+
+    <!-- left -->
+    <div class="rmcc-width-expand rmcc-visible@l">
+      <div class="rmcc-grid-small rmcc-grid-divider rmcc-flex-middle" rmcc-grid>
+        <div class="rmcc-width-auto">
+          <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+            <li><span class="rmcc-margin-small-right rmcc-text-purple" rmcc-icon="location"></span></li>
+            <li><span class="rmcc-text-small rmcc-text-emphasis">{{ _x('123 Main Street, Orange County, Ohio, USA', 'Company: address', 'rmcc-theme')|e('esc_html') }}</span></li>
+          </ul>
+        </div>
+        <div class="rmcc-width-auto">
+          <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+            <li><span class="rmcc-margin-small-right rmcc-text-pink" rmcc-icon="mail"></span></li>
+            <li><a class="rmcc-text-small" href="mailto:sendmail@risehand.com">{{ _x('admin@example.ie', 'Company: email', 'rmcc-theme')|e('esc_html') }}</a></li>
+          </ul>
+        </div>
+        <div class="rmcc-width-auto">
+          <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+            <li><span class="rmcc-margin-small-right rmcc-text-green" rmcc-icon="receiver"></span></li>
+            <li><a class="rmcc-text-small" href="mailto:sendmail@risehand.com">{{ _x('032 12 33456', 'Company: phone', 'rmcc-theme')|e('esc_html') }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {% if fn('has_nav_menu', 'iconnav_menu') %}
+      <!-- right -->
+      <div class="rmcc-width-1-1 rmcc-width-auto@l rmcc-flex rmcc-flex-middle rmcc-flex-center rmcc-flex-left@l rmcc-text-center rmcc-text-right@l">
+
+        <div class="rmcc-grid-small rmcc-flex-middle rmcc-flex-center rmcc-flex-left@l" rmcc-grid>
+          <div class="rmcc-width-auto">
+            <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+              <li><span class="rmcc-margin-small-right rmcc-text-yellow" rmcc-icon="happy"></span></li>
+              <li><span class="rmcc-text-small rmcc-text-emphasis">{{ menu_iconnav.title|e('esc_html') }}</span></li>
+            </ul>
+          </div>
+          <div class="rmcc-width-auto">
+            <ul class="rmcc-iconnav">
+              {% for item in menu_iconnav.get_items %}
+                <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                  <a href="{{ item.link|e('esc_url') }}" target="_blank">
+                    {{ item.title|e('wp_kses_post')}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    {% endif %}
+
+  </div>
+</div>
