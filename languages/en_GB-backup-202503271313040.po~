@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-03-27 13:13+0000\n"
+"PO-Revision-Date: 2025-03-27 13:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -108,7 +108,7 @@ msgstr "kcgltd@gmail.com"
 #: views/temp/site/footer.php:103
 msgctxt "Company: full name"
 msgid "The Big Company LTD"
-msgstr "Kinnegad Combined Community Employment Group CLG"
+msgstr ""
 
 #: views/temp/site/footer.php:87, views/temp/site/header/offcanvas.php:35,
 #: views/temp/site/header/topbar.php:23

@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-03-26 22:23+0000\n"
+"PO-Revision-Date: 2025-03-27 10:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -276,19 +276,19 @@ msgstr ""
 #: views/temp/site/header/topbar.php:11
 msgctxt "Company: address"
 msgid "123 Main Street, Orange County, Ohio, USA"
-msgstr ""
+msgstr "St. Joseph's Hall, Rochfortbridge, Co. Westmeath"
 
 #: views/temp/site/footer.php:82, views/temp/site/header/offcanvas.php:30,
 #: views/temp/site/header/topbar.php:17
 msgctxt "Company: email"
 msgid "admin@example.ie"
-msgstr ""
+msgstr "kcgltd@gmail.com"
 
 #: views/temp/site/footer.php:90, views/temp/site/header/offcanvas.php:36,
 #: views/temp/site/header/topbar.php:23
 msgctxt "Company: phone"
 msgid "032 12 33456"
-msgstr ""
+msgstr "044 922 4476"
 
 #: views/temp/site/footer.php:106, views/temp/site/header/offcanvas.php:46
 msgctxt "Company: full name"
