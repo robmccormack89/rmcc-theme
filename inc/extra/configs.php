@@ -9,6 +9,15 @@
 */
 
 /*
+Maintenance
+Mode
+*/
+
+$configs['maintenance_mode'] = false; // set to true (for logged-out users) or 'all' (for all users)
+// $configs['redirect_to_page'] = 'sample-page'; // use page or post slug/ID here
+// $configs['maintenance_template'] = 'hello.twig'; // only applies when redirect_to_page is unset. defaults to maintenance.twig
+
+/*
 darklight
 mode
 */
