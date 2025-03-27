@@ -20,8 +20,8 @@ Configs &
 Settings
 */
 
-$configs['logo_width'] = '270';
-$configs['logo_height'] = '90';
+$configs['logo_width'] = '80';
+$configs['logo_height'] = '80';
 
 /*
 Enable

@@ -1,0 +1,33 @@
+{% extends 'custom.twig' %}
+
+{% block styles %}
+  {{ parent() }}
+  {% if not fn('is_admin') %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@mjf-styles/public/css/mjf.min.css">
+  {% endif %}
+{% endblock %}
+
+{% block single_content %}
+  {{ parent() }}
+  <div class="mjf-wrap">
+    <div class="mjf-container mjf-container-large mjf-section">
+      <div id="MyJobs">Loading...</div>
+    </div>
+    <div class="mjf-empty"></div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ parent() }}
+  {% if not fn('is_admin') %}
+    <script src="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@mjf-styles/public/js/mjf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@mjf-styles/public/js/api/feed.js"></script>
+    <script>
+      (async function () {
+        var jobsJson = await fetchJobsJson('https://midlandjobs.ie/feeds/standard.xml?limit=400', '/wp-json/midlandjobs/v1/customFeed');
+        const MyJobsObject = new JobBoardFilteredFeed(42, jobsJson);
+        MyJobsObject.renderTheJobs('#MyJobs');
+      })();
+    </script>
+  {% endif %}
+{% endblock %}

@@ -1,9 +1,10 @@
 <div class="rmcc-navbar-left">
-  <a class="rmcc-navbar-item rmcc-logo" href="{{ site.link|e('esc_url') }}">
-    {% if theme.logo %}
-      <img class="rmcc-padding-small" src="{{ theme.logo.src|e('esc_url') }}" width="{{ theme.logo.w }}" height="{{ theme.logo.h }}" alt="{{ theme.logo.alt|e('esc_html') }}">
-    {% else %}
-      {{ site.title|e('esc_html') }}
-    {% endif %}
-  </a>
+  {% if theme.logo %}
+    <div class="header-logo">
+      {% include 'logo.twig' %}
+    </div>
+  {% else %}
+    {{ site.title|e('esc_html') }}
+  {% endif %}
+  {# </a> #}
 </div>

@@ -115,3 +115,56 @@ Basic Theme is built using Timber WP https://github.com/timber/timber
 .rmcc-form-small {
   height: 30px;
 }
+
+
+
+.rmcc-offcanvas-bar {
+  left: -350px;
+  width: 350px;
+}
+
+@media (min-width: 425px) {
+  .rmcc-offcanvas-bar {
+    left: -380px;
+    width: 380px;
+  }
+}
+
+@media (min-width: 640px) {
+  .rmcc-offcanvas-bar {
+    left: -450px;
+    width: 450px;
+  }
+}
+
+
+.logo-img {
+  width: 55px;
+}
+.logo-text-one {
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+}
+.logo-text-two {
+  font-size: .675rem;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.05rem;
+}
+
+.header-logo {
+  padding: 10px;
+}
+
+@media (min-width: 640px) {
+  .logo-img {
+    width: 80px;
+  }
+  .logo-text-one {
+    font-size: 39px;
+  }
+  .logo-text-two {
+    font-size: 0.875rem;
+  }
+}

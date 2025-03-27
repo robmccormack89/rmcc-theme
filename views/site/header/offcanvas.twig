@@ -9,50 +9,69 @@
         <ul class="rmcc-nav rmcc-nav-default">
           <li class="rmcc-nav-header">{{ menu_main.title|e('esc_html') }}</li>
           <li class="rmcc-nav-divider"></li>
-
           {% include 'header/nav-offcanvas.twig' %}
-
-          <li class="rmcc-active">
-            <a href="#">Active</a>
-          </li>
-          <li class="rmcc-parent">
-            <a href="#">Parent</a>
-            <ul class="rmcc-nav-sub">
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-              <li>
-                <a href="#">Sub item</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#js-options">
-              <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: table"></span>Item
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: thumbnails"></span>Item
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: trash"></span>
-              Item
-            </a>
-          </li>
-
         </ul>
 
+        <hr>
+
         <div class="offcanvas-content rmcc-margin">
-          <h3>Title</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h3>Contact us</h3>
+          <div class="rmcc-grid-small rmcc-flex-middle rmcc-text-small" rmcc-grid>
+            <div class="rmcc-width-1-1">
+              <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                <li><span class="rmcc-margin-small-right rmcc-text-purple" rmcc-icon="location"></span></li>
+                <li><span class="rmcc-text-small rmcc-text-emphasis">{{ _x('123 Main Street, Orange County, Ohio, USA', 'Company: address', 'rmcc-theme')|e('esc_html') }}</span></li>
+              </ul>
+            </div>
+            <div class="rmcc-width-1-1">
+              <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                <li><span class="rmcc-margin-small-right rmcc-text-pink" rmcc-icon="mail"></span></li>
+                <li><a class="rmcc-text-small" href="mailto:sendmail@risehand.com">{{ _x('admin@example.ie', 'Company: email', 'rmcc-theme')|e('esc_html') }}</a></li>
+              </ul>
+            </div>
+            <div class="rmcc-width-1-1">
+              <ul class="rmcc-grid-collapse rmcc-flex-middle" rmcc-grid>
+                <li><span class="rmcc-margin-small-right rmcc-text-green" rmcc-icon="receiver"></span></li>
+                <li><a class="rmcc-text-small" href="mailto:sendmail@risehand.com">{{ _x('032 12 33456', 'Company: phone', 'rmcc-theme')|e('esc_html') }}</a></li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       
       </div>
 
-      <div class="rmcc-position-bottom">Hello there...</div>
-
     </div>
   </div>
+
+  
+{# <li class="rmcc-active">
+  <a href="#">Active</a>
+</li>
+<li class="rmcc-parent">
+  <a href="#">Parent</a>
+  <ul class="rmcc-nav-sub">
+    <li>
+      <a href="#">Sub item</a>
+    </li>
+    <li>
+      <a href="#">Sub item</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="#js-options">
+    <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: table"></span>Item
+  </a>
+</li>
+<li>
+  <a href="#">
+    <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: thumbnails"></span>Item
+  </a>
+</li>
+<li>
+  <a href="#">
+    <span class="rmcc-margin-xsmall-right rmcc-icon" rmcc-icon="icon: trash"></span>
+    Item
+  </a>
+</li> #}

@@ -227,16 +227,43 @@ class Block {
     return $html;
   }
   public function block_preview($block){
-    $html = '';
-    if(array_key_exists('backgroundColor', $block)) $html = 'style="background-color: var(--wp--preset--color--' . $block['backgroundColor']  . ') !important;"';
-    if(array_key_exists('gradient', $block)) $html = 'style="background: var(--wp--preset--gradient--' . $block['gradient'] . ') !important;"';
+    $styles = [];
+
+    if(array_key_exists('backgroundColor', $block)) $styles['background-color'] = 'var(--wp--preset--color--' . $block['backgroundColor']  . ') !important';
+    if(array_key_exists('gradient', $block)) $styles['background'] = 'var(--wp--preset--gradient--' . $block['gradient'] . ') !important';
     if(array_key_exists('style', $block)){
       if(array_key_exists('color', $block['style'])){
-        if(array_key_exists('background', $block['style']['color'])) $html = 'style="background-color: ' . $block['style']['color']['background'] . ';"';
-        if(array_key_exists('gradient', $block['style']['color'])) $html = 'style="background: ' . $block['style']['color']['gradient'] . ';"';
+        if(array_key_exists('background', $block['style']['color'])) $styles['background-color'] = $block['style']['color']['background'];
+        if(array_key_exists('gradient', $block['style']['color'])) $styles['background'] = $block['style']['color']['gradient'];
       }
     }
-    return $html;
+
+    // if(array_key_exists('borderColor', $block)) $styles['border-color'] = 'var(--wp--preset--color--' . $block['borderColor']  . ') !important';
+    // if(array_key_exists('borderWidth', $block)) $styles['border-width'] = $block['borderWidth'];
+    // if(array_key_exists('borderRadius', $block)) $styles['border-radius'] = $block['borderRadius'];
+
+    // if(array_key_exists('style', $block)){
+    //   if(array_key_exists('border', $block['style'])){
+    //     if(array_key_exists('width', $block['style']['border'])) $styles['border-width'] = $block['style']['border']['width'];
+    //     if(array_key_exists('color', $block['style']['border'])) $styles['border-color'] = $block['style']['border']['color'];
+    //     if(array_key_exists('radius', $block['style']['border'])) $styles['border-radius'] = $block['style']['border']['radius'];
+    //   }
+    // }
+
+    // print_r('<pre>');
+    // print_r($styles);
+    // print_r('</pre>');
+
+    // print_r('<pre>');
+    // print_r($block);
+    // print_r('</pre>');
+
+    // better html outputting of styles (as arrays)
+    $styles = array_map(function($value, $key) {
+      return $key.':'.$value;
+    }, array_values($styles), array_keys($styles));
+    $styles = 'style="' . implode(';', $styles) . '"';
+    return $styles;
   }
 
 }

@@ -9,6 +9,86 @@
       "padding": true
     },
 
+    "color": {
+      "palette": [
+        {
+          "slug": "rmcc-grey",
+          "color": "#ebe8fc",
+          "name": "RMcC Grey"
+        },
+        {
+          "slug": "rmcc-purple",
+          "color": "#c65fdf",
+          "name": "RMcC Purple"
+        },
+        {
+          "slug": "rmcc-dark-purple",
+          "color": "#ab42c4",
+          "name": "RMcC Dark Purple"
+        },
+        {
+          "slug": "rmcc-blue",
+          "color": "#02bffb",
+          "name": "RMcC Blue"
+        },
+        {
+          "slug": "rmcc-dark-blue",
+          "color": "#27a5fe",
+          "name": "RMcC Dark Blue"
+        },
+        {
+          "slug": "rmcc-navy",
+          "color": "#0c305e",
+          "name": "RMcC Navy"
+        },
+        {
+          "slug": "rmcc-dark-navy",
+          "color": "#0b2b52",
+          "name": "RMcC Dark Navy"
+        },
+        {
+          "slug": "rmcc-green",
+          "color": "#58e09f",
+          "name": "RMcC Green"
+        },
+        {
+          "slug": "rmcc-dark-green",
+          "color": "#3ecc8c",
+          "name": "RMcC Dark Green"
+        },
+        {
+          "slug": "rmcc-pink",
+          "color": "#fc77a5",
+          "name": "RMcC Pink"
+        },
+        {
+          "slug": "rmcc-dark-pink",
+          "color": "#fd3d96",
+          "name": "RMcC Dark Pink"
+        },
+        {
+          "slug": "rmcc-orange",
+          "color": "#fda43d",
+          "name": "RMcC Orange"
+        },
+        {
+          "slug": "rmcc-dark-orange",
+          "color": "#ef9b3c",
+          "name": "RMcC Dark Orange"
+        },
+        {
+          "slug": "rmcc-yellow",
+          "color": "#fdf056",
+          "name": "RMcC Yellow"
+        },
+        {
+          "slug": "rmcc-dark-yellow",
+          "color": "#fec142",
+          "name": "RMcC Dark Yellow"
+        }
+      ]
+    },
+
     "layout": {
       "contentSize": "750px",
       "wideSize": "1200px"

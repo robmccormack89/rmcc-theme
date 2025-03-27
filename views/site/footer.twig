@@ -8,12 +8,9 @@
               <div rmcc-grid>
                 <div class="rmcc-width-4-5@l">
                   <div>
-                    {# <a class="rmcc-logo" href="#">
-                      <img class="rmcc-padding-small" src="public/images/logo-dark.png" width="180" height="60" alt="">
-                    </a> #}
                     <a class="rmcc-logo" href="{{ site.link|e('esc_url') }}">
                       {% if theme.logo %}
-                        <img class="rmcc-padding-small" src="{{ theme.logo.src|e('esc_url') }}" width="270" height="90" alt="{{ theme.logo.alt|e('esc_html') }}">
+                        {% include 'logo.twig' %}
                       {% else %}
                         {{ site.title|e('esc_html') }}
                       {% endif %}
@@ -102,6 +99,10 @@
       </div>
     </div>
   <div class="rmcc-container rmcc-container-xlarge">
-    <div class="rmcc-padding-small rmcc-padding-remove-horizontal rmcc-text-center rmcc-text-small">Copyright © 2025. <span class="rmcc-text-underline rmcc-text-emphasis">{{ _x('The Big Company LTD.', 'Company: full name', 'rmcc-theme')|e('esc_html') }}</span> All Rights Reserved. {{ _x('Company No. 1234567890', 'Company: registration', 'rmcc-theme')|e('esc_html') }}</div>
+    <p class="rmcc-padding-small rmcc-padding-remove-horizontal rmcc-text-center rmcc-text-small">
+      {{ _x('© All Rights Reserved %s', 'Footer: copyright', 'rmcc-theme')|format(now|date('Y'))|e('esc_html') }} - <span class="rmcc-text-emphasis">{{ _x('The Big Company LTD', 'Company: full name', 'rmcc-theme')|e('esc_html') }}</span>.
+      <br>
+      Made by <a href="https://github.com/robmccormack89/" rmcc-tooltip="Check me out on github" target="_blank">robmccormack89 <span rmcc-icon="icon: github"></span></a>
+    </p>
   </div>
 </footer>
