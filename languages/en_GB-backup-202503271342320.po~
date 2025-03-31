@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-03-27 14:06+0000\n"
+"PO-Revision-Date: 2025-03-27 13:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -98,14 +98,12 @@ msgid ""
 "doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore "
 "veritatis et quasi architecto beatae vitae dicta sunt explicabo."
 msgstr ""
-"The Kinnegad Combined Community Employment Scheme which represents 22 "
-"community & voluntary groups across Westmeath, Offaly & Meath."
 
 #: views/temp/site/footer.php:79, views/temp/site/header/offcanvas.php:29,
 #: views/temp/site/header/topbar.php:17
 msgctxt "Company: email"
 msgid "admin@example.ie"
-msgstr "jobs@kcces.ie"
+msgstr "kcgltd@gmail.com"
 
 #: views/temp/site/footer.php:103
 msgctxt "Company: full name"
