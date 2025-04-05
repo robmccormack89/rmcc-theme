@@ -1,0 +1,71 @@
+//
+//
+// 1. set your own custom variables
+//
+//
+
+//
+//
+// 2. overwrite any of uikit's variables
+//
+//
+
+//
+//
+// 3a. import themed variables & mixins from uikit
+// ..for local overwrites use "src/scss/theme/..."
+//
+//
+
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+
+//
+//
+// 3b. Or import default (non-themed) variables & mixins from uikit
+// ..for local overwrites use "src/scss/theme/..."
+//
+//
+
+// @import "../../node_modules/uikit/src/scss/variables.scss";
+// @import "../../node_modules/uikit/src/scss/mixins.scss";
+
+//
+//
+// 4. If importing themed uikit, we now import the themed uikit components
+// ..you dont need this if not using uikit's theme
+// ..the uikit variables we set above will overwrite the ones we imoprt here, neat!
+// ..this file imports the components from the local uikit installed in node_modules
+//
+//
+
+// @import "theme/import-theme.scss"; // select components
+@import "theme/import-theme-all.scss"; // all
+
+//
+//
+// 5. next, we can (optionally) do any custom mixin overwrites
+//
+//
+
+// @import "theme/accordion-mixins.scss";
+
+//
+//
+// 6. now we need to import the main uikit components
+// ..you need this regardless of whether uikit is theme'd or not
+// ..this file imports the components from the local uikit installed in node_modules
+//
+//
+
+// @import "theme/import-components.scss"; // select components
+@import "theme/import-components-all.scss"; // all
+
+//
+//
+// 7. finally, we can now (optionally) import any extra custom scss styles
+// ..the file we import here can also use the custom AND uikit variables set above, also neat!
+//
+//
+
+// @import "theme/custom/_import.scss";
