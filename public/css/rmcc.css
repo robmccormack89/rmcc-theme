@@ -12914,14 +12914,10 @@ a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-und
 }
 
 /* dark light buttons stylings */
-.darklight-btn {
-  margin-top: -2px;
-}
-
 .darklight svg {
   color: #fff;
-  height: 20px;
-  width: 20px;
+  height: 19px;
+  width: 19px;
   stroke: #999;
 }
 
@@ -12931,8 +12927,8 @@ a.dont-underline:hover, a.dont-underline:focus, .dont-underline:hover, .dont-und
 }
 
 .light-btn svg {
-  height: 21px;
-  width: 21px;
+  height: 20px;
+  width: 20px;
 }
 
 .light-btn svg .sun-st {

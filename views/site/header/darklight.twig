@@ -1,8 +1,8 @@
-<div class="darklight rmcc-navbar-item">
-  <a id="darkBtn" class="darklight-btn dark-btn moon-btn">
+<li class="darklight">
+  <a id="darkBtn" class="darklight-btn dark-btn moon-btn" {{ (configs.darklight) ? 'hidden' : null }}>
     <img src="{{theme.link|e('esc_url')}}/public/images/moon.svg" rmcc-svg>
   </a>
-  <a id="lightBtn" class="darklight-btn light-btn sun-btn">
+  <a id="lightBtn" class="darklight-btn light-btn sun-btn" {{ (configs.darklight) ? null : 'hidden' }}>
     <img src="{{theme.link|e('esc_url')}}/public/images/sun.svg" rmcc-svg>
   </a>
-</div>
+</li>

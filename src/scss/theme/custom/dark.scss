@@ -14,6 +14,8 @@
 .rmcc-light .rmcc-background-default {
   background: $global-secondary-background;
 }
+
+
 /* dark muted backgrounds */
 .rmcc-light .rmcc-background-muted,
 .rmcc-light .rmcc-modal-close-full,
@@ -24,10 +26,14 @@
 .rmcc-light .rmcc-comment-primary {
   background-color: $global-emphasis-color;
 }
+
+
 /* links */
 .rmcc-light .rmcc-navbar-dropdown-nav > li > a {
   color: $inverse-global-muted-color;
 }
+
+
 /* links focus/hover */
 .rmcc-light .rmcc-navbar-dropdown-nav > li > a:focus {
   color: $inverse-global-color;
@@ -35,6 +41,8 @@
 .rmcc-light .rmcc-navbar-dropdown-nav > li > a:hover {
   color: $inverse-global-color;
 }
+
+
 /* borders */
 .rmcc-light .theme-border {
   border: 1px solid $inverse-global-border;

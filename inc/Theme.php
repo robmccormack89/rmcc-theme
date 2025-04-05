@@ -296,7 +296,7 @@ class Theme extends Timber {
     );
 
     // darklight
-    if($this->configs['darklight_mode']){
+    if($this->configs['darklight_mode'] && !is_admin()){
       wp_enqueue_script(
         'rmcc-theme-darklight',
         get_template_directory_uri() . '/public/js/darklight.js',
@@ -327,6 +327,9 @@ class Theme extends Timber {
     // globals for twig
     $context['site'] = new Site;
     $context['configs'] = $this->configs;
+
+    // configs.darklight stores current cookie value; configs.darklight_mode stores setting
+    $context['configs']['darklight'] = (array_key_exists('darklight', $_COOKIE));
 
     // wp customizer logo
     $theme_logo_src = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
