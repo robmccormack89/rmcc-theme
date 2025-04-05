@@ -13,15 +13,15 @@
       required 
       maxlength="100" 
       pattern=".*\S+.*" 
-      autocomplete="off" />
+      autocomplete="off">
 
       {# hidden input adds post_type=post to the query_vars when doing a search #}
-      <input type="hidden" name="post_type" value="post" />
+      <input type="hidden" name="post_type" value="post">
     </li>
 
     {# submit button #}
     <li class="search-form-button rmcc-width-auto">
-      <input class="password-btn rmcc-button rmcc-button-primary" type="submit" value="{{ _x('Search', 'Search: form', 'rmcc-theme')|e('esc_html') }}" />
+      <input class="password-btn rmcc-button rmcc-button-primary" type="submit" value="{{ _x('Search', 'Search: form', 'rmcc-theme')|e('esc_html') }}">
     </li>
 
   </div>
