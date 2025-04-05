@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-04-05 15:44+0000\n"
+"PO-Revision-Date: 2025-04-05 15:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
@@ -234,7 +234,7 @@ msgstr ""
 #: views/temp/site/header/nav-offcanvas.php:26
 msgctxt "Footer: copyright"
 msgid "© All Rights Reserved %s"
-msgstr ""
+msgstr "© All Rights Reserved: %s"
 
 #: views/temp/site/footer/footer-copyright.php:2
 msgctxt "Footer: back to home"

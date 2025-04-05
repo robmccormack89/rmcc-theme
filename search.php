@@ -36,6 +36,7 @@ with
 Conditionals
 */
 
+// is the search archive page (search results)
 if (is_search()) {
 
   // set templates & vars
