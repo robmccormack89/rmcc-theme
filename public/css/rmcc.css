@@ -12219,3 +12219,89 @@ iframe[data-rmcc-cover] {
     page-break-after: avoid;
   }
 }
+.break-wrap .rmcc-container-break,
+.gutenberg-editor .rmcc-container-break {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50%;
+  width: 100%;
+}
+
+.dotted-subs {
+  font-size: 1rem;
+}
+
+.dotted-subs > :not(:first-child) {
+  margin-left: 5px;
+}
+
+.dotted-subs > :not(:last-child)::after {
+  content: "•";
+  display: inline-flex;
+  margin-left: 5px;
+  font-weight: 700;
+}
+
+.theme-dark-bg {
+  background: #1e1e1e;
+}
+
+.theme-primary-bg {
+  background-color: #23259c;
+}
+
+.theme-muted-primary-bg {
+  background-color: #454556;
+}
+
+.theme-primary-bg-dark {
+  background-color: #0d0e27;
+}
+
+.rmcc-overlay-faint {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.rmcc-overlay-medium {
+  background: rgba(30, 30, 30, 0.4);
+}
+
+.rmcc-overlay-greypurple {
+  background: rgba(69, 69, 86, 0.45);
+}
+
+.overlay-wrap:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: auto;
+}
+
+.primary-overlay-hover:after,
+.default-overlay-hover:after {
+  background-color: none;
+  transition: 0.5s ease;
+}
+
+.primary-overlay-hover:hover:after {
+  background-color: rgba(34, 34, 34, 0.8);
+}
+
+.default-overlay-hover:hover:after {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.primary-overlay:after {
+  background-color: rgba(34, 34, 34, 0.8);
+}
+
+.default-overlay:after {
+  background-color: rgba(255, 255, 255, 0.8);
+}

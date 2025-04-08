@@ -1,0 +1,115 @@
+{% extends 'base.twig' %}
+
+{% block styles %}
+  {{ parent() }}
+  <link rel='stylesheet' href='{{theme.link}}/public/css/editor.css' type='text/css' media='all' />
+  <style>
+    .rmcc-container-vsmall-outer {
+      max-width: 1030px;
+    }
+    .rmcc-container-vsmall {
+      max-width: 850px;
+    }
+    .rmcc-container-xsmall {
+      max-width: 800px;
+    }
+    figcaption.rmcc-padding-small {
+      padding: 5px;
+    }
+    article.post.item.rmcc-article .rmcc-article-title {
+      font-size: 1.5rem;
+    }
+    .single-excerpt .rmcc-dropcap:first-letter, 
+    .single-excerpt .rmcc-dropcap>p:first-of-type:first-letter {
+      margin-top: -8px;
+      margin-left: -7px;
+    }
+    /* 
+    new
+    */
+    .rmcc-article-title {
+      font-size: 2.23125rem;
+      line-height: 1.2;
+    }
+    @media (min-width: 960px) {
+      .rmcc-article-title {
+        font-size: 3.4rem;
+      }
+    }
+    .single-content {
+      font-size: 1.2rem;
+    }
+    .rmcc-text-lead {
+      font-size: 1.6rem;
+      line-height: 1.41;
+    }
+
+    .rmcc-icon-button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #0000002b;
+      background: none;
+    }
+    .rmcc-icon-button-large {
+      width: 50px;
+      height: 50px;
+      border-radius: 500px;
+    }
+    .rmcc-divider-smaller::after {
+      width: 30px;
+    }
+    .rmcc-sticky-fixed {
+      padding-top: 40px!important;
+    }
+    {# .rmcc-position-top-left.left-outside {
+      left: -75px;
+    }
+    .rmcc-sticky-fixed.rmcc-position-top-left {
+      top: inherit;
+      left: inherit;
+      margin-left: -40px !important;
+    } #}
+  </style>
+{% endblock %}
+
+{% block main %}
+  <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }}" data-template="single.twig">
+
+    {# <div class="" rmcc-grid>
+      <div class="">Main</div>
+    </div> #}
+
+    <div id="hello">
+
+    {% block single_header %}
+      {% include 'single/header.twig' %}
+    {% endblock %}
+
+    {% block single_content %}
+      <div class="single-content rmcc-section-small">
+
+        {% block single_content_lead %}
+          {% if post.post_excerpt and (post.post_type == 'post' or configs.enable_page_excerpts == true) %}
+            <div class="single-excerpt rmcc-container rmcc-container-xsmall rmcc-margin-bottom">
+              <p class="rmcc-text-lead rmcc-dropcap">{{ post.post_excerpt|e('esc_html') }}</p>
+            </div>
+          {% endif %}
+        {% endblock %}
+          
+        {% block single_content_editor %}
+          <div class="content-editor gutenberg-editor">
+            {{ post.content|e('wp_kses_post') }}
+          </div>
+        {% endblock %}
+        
+      </div>
+    {% endblock %}
+
+    </div>
+
+    {% block single_footer %}
+      {% include 'single/footer.twig' %}
+    {% endblock %}
+
+  </article>
+{% endblock %}

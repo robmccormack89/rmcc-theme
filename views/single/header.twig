@@ -1,0 +1,62 @@
+<header class="rmcc-section-small rmcc-padding-remove-bottom" data-template="header.twig">
+  <div class="rmcc-container rmcc-container-vsmall-outer rmcc-position-relative">
+
+    <div class="rmcc-position-fixed" style="top:40px" rmcc-sticky="start: 100vh;">
+
+      <div style="width:fit-content;background:white">
+      
+        <div>
+          <p class="rmcc-margin-remove rmcc-text-small rmcc-text-center rmcc-text-muted">93</p>
+        </div>
+
+        <div class="rmcc-flex rmcc-flex-center">
+          <a href="" class="rmcc-icon-button rmcc-icon-button-large" rmcc-icon="icon:star;ratio:1.5"></a>
+        </div>
+
+        <div class="rmcc-margin-small"><p class="rmcc-margin-remove rmcc-text-small rmcc-text-center">Share</p></div>
+
+        <div class="rmcc-flex rmcc-flex-center">
+          <ul class="rmcc-list rmcc-margin-remove">
+            <li><a href="" class="rmcc-icon-button" rmcc-icon="icon:instagram;ratio:.875"></a></li>
+            <li><a href="" class="rmcc-icon-button" rmcc-icon="icon:facebook;ratio:.875"></a></li>
+            <li><a href="" class="rmcc-icon-button" rmcc-icon="icon:youtube;ratio:.875"></a></li>
+          </ul>
+        </div>
+
+        <div class="rmcc-flex rmcc-flex-center">
+          <hr class="rmcc-divider-small rmcc-divider-smaller rmcc-margin-small-top rmcc-margin-small-bottom">
+        </div>
+
+        <div>
+          <p class="rmcc-margin-remove rmcc-text-small rmcc-text-center">Reply</p>
+        </div>
+
+        <div class="rmcc-margin-small-top">
+          <p class="rmcc-margin-remove rmcc-text-small rmcc-text-center rmcc-text-muted">0</p>
+        </div>
+
+        <div class="rmcc-flex rmcc-flex-center">
+          <a href="" class="rmcc-text-muted" rmcc-icon="icon:comments;ratio:1.2"></a>
+        </div>
+
+      </div>
+    
+    </div>
+
+    <div class="rmcc-container rmcc-container-vsmall">
+    
+      <h1 class="rmcc-article-title rmcc-text-bold rmcc-margin-remove">{{ post.title|e('esc_html') }}</h1>
+
+      {% block single_metas %}
+        {% include 'single/header/metas.twig' %}
+      {% endblock %}
+
+      {% block single_thumb %}
+        {% include 'single/header/thumb.twig' %}
+      {% endblock %}
+
+    </div>
+
+  </div>
+
+</header>

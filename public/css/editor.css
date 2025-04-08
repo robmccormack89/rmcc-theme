@@ -1,0 +1,41 @@
+body {
+  overflow-x: hidden;
+}
+
+/* margins */
+.gutenberg-editor > *
+{
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* widths */
+.gutenberg-editor > *:not(.alignfull):not(.alignwide):not(.rmcc-container-break)
+{
+  max-width: 800px;
+}
+.gutenberg-editor > .alignwide
+{
+  max-width: 1200px;
+}
+
+/* paddings (responsive widths) */
+.gutenberg-editor > *:not(.alignfull):not(.rmcc-container-break)
+{
+  width: calc(100% - 30px);
+}
+
+@media (min-width: 640px) {
+  .gutenberg-editor > *:not(.alignfull):not(.rmcc-container-break)
+  {
+    width: calc(100% - 60px);
+  }
+}
+
+@media (min-width: 960px) {
+  .gutenberg-editor > *:not(.alignfull):not(.rmcc-container-break)
+  {
+    width: calc(100% - 80px);
+  }
+}

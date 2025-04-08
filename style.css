@@ -18,3 +18,16 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Basic Theme is built using Timber WP https://github.com/timber/timber
 */
+
+input.rmcc-form-small {
+  height: 30px;
+}
+a:hover,
+a.dont-underline:hover, a.dont-underline:focus, 
+.dont-underline:hover, .dont-underline:focus,
+.rmcc-link-toggle:focus .rmcc-link, 
+.rmcc-link-toggle:hover .rmcc-link, 
+.rmcc-link:hover
+{
+  text-decoration: none;
+}

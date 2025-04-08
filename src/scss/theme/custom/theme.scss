@@ -1,0 +1,12 @@
+.dotted-subs {
+  font-size: 1rem;
+}
+.dotted-subs>:not(:first-child) {
+  margin-left: 5px;
+}
+.dotted-subs>:not(:last-child)::after {
+  content: "•";
+  display: inline-flex;
+  margin-left: 5px;
+  font-weight: 700;
+}
