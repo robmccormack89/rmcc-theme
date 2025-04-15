@@ -42,7 +42,6 @@ class Theme extends Timber {
     add_action('init', array($this, 'register_widget_areas'));
     add_action('init', array($this, 'register_navigation_menus'));
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
-    add_action('rest_api_init', array($this, 'register_feed_route'));
 
     // Remove tags support from posts
     if (array_key_exists('enable_post_tags', $this->configs) && $this->configs['enable_post_tags'] != true) {
@@ -134,15 +133,6 @@ class Theme extends Timber {
       return;
     }
 
-  }
-
-  // https://somesite.com/wp-json/midlandjobs/v1/customFeed?url=https://midlandjobs.ie/feeds/standard.xml
-  public function register_feed_route() {
-    register_rest_route('midlandjobs/v1', 'customFeed', [
-      'methods'  => \WP_REST_SERVER::READABLE,
-      'permission_callback' => '__return_true',
-      'callback' => 'midlandjobs_feed_api'
-    ]);
   }
 
   /**

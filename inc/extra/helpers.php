@@ -6,7 +6,7 @@ Stuff
 Theme.php
 */
 
-function midlandjobs_feed_api($data) {
+function feed_api($data) {
 
   // we do first some basic error handling
   // url NOT set
