@@ -1,0 +1,39 @@
+{
+  "name": "acf/rmcc-jobfeed",
+  "title": "RMcC Jobfeed",
+  "description": "A jobfeed block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "jobfeed"],
+  "style": ["file:./jobfeed.css"],
+  "__parent": ["acf/rmcc-block"],
+
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "jobfeed.php"
+  },
+
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
+  "supports": {
+    "mode": true,
+    "jsx": false,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": false,
+    "inserter": true,
+    "reusable": true,
+    "lock": true,
+
+    "align": false
+  }
+
+}

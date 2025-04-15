@@ -1,0 +1,7 @@
+{% extends block.is_preview ? 'jobfeed/_preview.twig' : 'jobfeed/_block.twig' %}
+
+{% block block_content %}
+  <p {{block.controls.jobfeed}}>
+    Feed......
+  </p>
+{% endblock %}
