@@ -5,9 +5,9 @@
       {% for item in menu_main.get_items %}
         {% if menu_main.get_items|length > 1 and loop.last %}
           <li class="rmcc-flex rmcc-flex-middle rmcc-visible@s">
-            <button class="rmcc-button rmcc-button-small rmcc-button-danger rmcc-button-purple rmcc-border-rounded" href="{{ item.link|e('esc_url') }}">
+            <a class="rmcc-button rmcc-button-small rmcc-button-danger rmcc-button-purple rmcc-border-rounded" href="{{ item.link|e('esc_url') }}">
               {{ item.title|e('esc_html') }} <span rmcc-icon="icon:arrow-right;ratio:1.2"></span>
-            </button>
+            </a>
           </li>
         {% endif %}
       {% endfor %}
