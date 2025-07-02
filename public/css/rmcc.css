@@ -1855,7 +1855,7 @@ select.rmcc-form-width-xsmall {
 /* Focus */
 .rmcc-radio:focus,
 .rmcc-checkbox:focus {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: hsla(0, 0%, -5%, 0);
   outline: none;
   border-color: #867edf;
 }
@@ -3280,7 +3280,7 @@ select.rmcc-form-width-xsmall {
  * Primary
  */
 .rmcc-alert-primary {
-  background: white;
+  background: hsl(244.9484536082, 60.248447205%, 101.0588235294%);
   color: #867edf;
 }
 
@@ -3731,7 +3731,7 @@ select.rmcc-form-width-xsmall {
 
 /* Focus */
 .rmcc-search-default .rmcc-search-input:focus {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: hsla(0, 0%, -2%, 0);
   border-color: #867edf;
 }
 
@@ -3810,7 +3810,7 @@ select.rmcc-form-width-xsmall {
 
 /* Focus */
 .rmcc-search-medium .rmcc-search-input:focus {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: hsla(0, 0%, -2%, 0);
   border-color: #867edf;
 }
 
@@ -3850,7 +3850,7 @@ select.rmcc-form-width-xsmall {
 
 /* Focus */
 .rmcc-search-large .rmcc-search-input:focus {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: hsla(0, 0%, -2%, 0);
   border-color: #867edf;
 }
 
@@ -4278,7 +4278,7 @@ select.rmcc-form-width-xsmall {
   /* 1 */
   right: -5px;
   transform: translate(0, -100%);
-  color: white;
+  color: hsl(0, 0%, 120%);
 }
 
 .rmcc-modal-close-outside:hover {
@@ -12129,26 +12129,6 @@ iframe[data-rmcc-cover] {
 }
 .rmcc-light .rmcc-logo-inverse, .rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-logo-inverse, .rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-logo-inverse, .rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-logo-inverse, .rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-logo-inverse, .rmcc-card-primary.rmcc-card-body .rmcc-logo-inverse, .rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-logo-inverse, .rmcc-card-secondary.rmcc-card-body .rmcc-logo-inverse, .rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-logo-inverse, .rmcc-overlay-primary .rmcc-logo-inverse, .rmcc-offcanvas-bar .rmcc-logo-inverse {
   display: block;
-}
-.rmcc-light .rmcc-accordion-title::before, .rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-accordion-title::before, .rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-accordion-title::before, .rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-accordion-title::before, .rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-accordion-title::before, .rmcc-card-primary.rmcc-card-body .rmcc-accordion-title::before, .rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-accordion-title::before, .rmcc-card-secondary.rmcc-card-body .rmcc-accordion-title::before, .rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-accordion-title::before, .rmcc-overlay-primary .rmcc-accordion-title::before, .rmcc-offcanvas-bar .rmcc-accordion-title::before {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E");
-}
-.rmcc-light .rmcc-open > .rmcc-accordion-title::before, .rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-open > .rmcc-accordion-title::before, .rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-open > .rmcc-accordion-title::before, .rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-open > .rmcc-accordion-title::before, .rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-open > .rmcc-accordion-title::before, .rmcc-card-primary.rmcc-card-body .rmcc-open > .rmcc-accordion-title::before, .rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-open > .rmcc-accordion-title::before, .rmcc-card-secondary.rmcc-card-body .rmcc-open > .rmcc-accordion-title::before, .rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-open > .rmcc-accordion-title::before, .rmcc-overlay-primary .rmcc-open > .rmcc-accordion-title::before, .rmcc-offcanvas-bar .rmcc-open > .rmcc-accordion-title::before {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba(255, 255, 255, 0.7)%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%3C%2Fsvg%3E");
-}
-.rmcc-light .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-card-primary.rmcc-card-body .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-card-secondary.rmcc-card-body .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-overlay-primary .rmcc-table-striped > tr:nth-of-type(even):last-child, .rmcc-offcanvas-bar .rmcc-table-striped > tr:nth-of-type(even):last-child,
-.rmcc-light .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-section-primary:not(.rmcc-preserve-color) .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-section-secondary:not(.rmcc-preserve-color) .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-tile-primary:not(.rmcc-preserve-color) .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-tile-secondary:not(.rmcc-preserve-color) .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-card-primary.rmcc-card-body .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-card-primary > :not([class*=rmcc-card-media]) .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-card-secondary.rmcc-card-body .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-card-secondary > :not([class*=rmcc-card-media]) .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-overlay-primary .rmcc-table-striped tbody tr:nth-of-type(even):last-child,
-.rmcc-offcanvas-bar .rmcc-table-striped tbody tr:nth-of-type(even):last-child {
-  border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 
 /*

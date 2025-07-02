@@ -276,6 +276,15 @@ class Theme extends Timber {
       false
     );
 
+    // rmcc icons (uikit) js
+    wp_enqueue_script(
+      'rmcc-theme-icons',
+      get_template_directory_uri() . '/public/js/rmcc-icons.min.js',
+      '',
+      '',
+      false
+    );
+
     // theme stylesheet (style.css)
     wp_enqueue_style(
       'rmcc-theme-style',

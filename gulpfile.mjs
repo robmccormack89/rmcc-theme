@@ -66,11 +66,11 @@ gulp.task('pot', gulp.series('compile-twig', 'generate-pot', 'clean'));
 //
 // gulp style
 //
-// "sass": "^1.85.1",
+// "sass": "^1.89.0",
 // "gulp-sass": "^6.0.1",
 // "gulp-postcss": "^10.0.0",
 // "autoprefixer": "^10.4.21",
-// "cssnano": "^7.0.6",
+// "cssnano": "^7.0.7",
 //
 //
 

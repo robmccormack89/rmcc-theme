@@ -168,3 +168,91 @@ Basic Theme is built using Timber WP https://github.com/timber/timber
     font-size: 0.875rem;
   }
 }
+
+
+
+
+.rmcc-iconnav>*>a.rmcc-button-small {
+  padding: 0 15px !important;
+  line-height: 28px !important;
+  font-size: .875rem !important;
+}
+.rmcc-iconnav>*>a.rmcc-button-danger {
+  background-color: #f0506e !important;
+  color: #fff !important;
+  border: 1px solid transparent !important;
+}
+
+
+
+/* jobs light */
+
+/* backgrounds colour */
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-card,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-background-default,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-input, 
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-select, 
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-textarea,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-search-default .mjf-search-input {
+  background-color: #170f3f!important;
+}
+
+/* inputs text & border colorr */
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-input, 
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-select, 
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-textarea,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-search-default .mjf-search-input {
+  border-color: rgba(90, 90, 90, 0.2);
+  color: rgba(255, 255, 255, .7)!important;
+}
+
+/* input placeholder colour */
+.rmcc-light .mjf-wrap .jobs-wrap ::placeholder {
+  color: rgba(255, 255, 255, .7)!important;
+  opacity: 1;
+}
+.rmcc-light .mjf-wrap .jobs-wrap ::-ms-input-placeholder {
+  color: rgba(255, 255, 255, .7)!important;
+}
+
+/* heading colour */
+.rmcc-light .mjf-wrap .jobs-wrap h1,
+.rmcc-light .mjf-wrap .jobs-wrap h2,
+.rmcc-light .mjf-wrap .jobs-wrap h3,
+.rmcc-light .mjf-wrap .jobs-wrap h4,
+.rmcc-light .mjf-wrap .jobs-wrap h5 {
+  color: #fff;
+}
+
+/* text colour */
+.rmcc-light .mjf-wrap .jobs-wrap ,
+.rmcc-light .mjf-wrap .jobs-wrap span.mjf-text-small,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-text-muted,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-pagination>*>*,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-accordion-title,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-form-label,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-input, 
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-select, 
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-textarea,
+.rmcc-light .mjf-wrap .jobs-wrap .mjf-select:not([multiple]):not([size]) option {
+  color: rgba(255, 255, 255, .7)!important;
+}
+
+.mjf-wrap .mjf-empty .mjf-background-primary,
+.mjf-wrap .mjf-empty .mjf-button-primary,
+.mjf-wrap .mjf-empty .mjf-badge {
+  background-color: #170f3f;
+}
+
+/* jobs light MODAL */
+
+/* .rmcc-light .mjf-wrap .mjf-modal-body .mjf-link-heading a, 
+.rmcc-light .mjf-wrap .mjf-modal-body .mjf-link-toggle .mjf-link-heading, 
+.rmcc-light .mjf-wrap .mjf-modal-body a.mjf-link-heading {
+  color: #333!important;
+}
+
+.rmcc-light .mjf-wrap .mjf-modal-body,
+.rmcc-light .mjf-wrap .mjf-modal-body span.mjf-text-small  {
+  color: #666!important;
+} */

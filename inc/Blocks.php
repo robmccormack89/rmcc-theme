@@ -19,18 +19,6 @@ class Blocks {
     add_action('block_categories_all', array($this, 'register_blocks_categories'));
     add_action('enqueue_block_assets', array($this, 'register_blocks_scripts'));
     add_action('init', array($this, 'register_blocks'));
-
-    // feeds for blocks
-    add_action('rest_api_init', array($this, 'register_feed_route'));
-  }
-
-  // https://testwp.com/wp-json/midlandjobs/v1/customFeed?url=https://midlandjobs.ie/feeds/standard.xml
-  public function register_feed_route() {
-    register_rest_route('midlandjobs/v1', 'customFeed', [
-      'methods'  => \WP_REST_SERVER::READABLE,
-      'permission_callback' => '__return_true',
-      'callback' => 'feed_api'
-    ]);
   }
 
   // filter what html tags & attrs are allowed in wp content / wp kses post
@@ -153,6 +141,14 @@ class Blocks {
       wp_enqueue_script(
         'rmcc-theme',
         get_template_directory_uri() . '/public/js/rmcc.min.js',
+        '',
+        '',
+        false
+      );
+      // rmcc icons (uikit) js
+      wp_enqueue_script(
+        'rmcc-theme-icons',
+        get_template_directory_uri() . '/public/js/rmcc-icons.min.js',
         '',
         '',
         false
