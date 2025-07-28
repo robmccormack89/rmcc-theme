@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block single_content %}
-  {# {{ parent() }} #}
+  {{ parent() }}
   <!--FEED: html -->
   <div class="mjf-wrap">
     <div class="jobs-wrap mjf-container mjf-section-small">
@@ -28,7 +28,98 @@
     <script>
       (async function () {
         var jobsJson = await fetchJobsJson('https://feed.midlandjobs.ie/demo/');
-        const MyJobsObject = new JobBoardFilteredFeed(42, jobsJson);
+        var jobsQ = JsonQuery(jobsJson); //Initialize the Query Engine
+        var kinnegadJobs = jobsQ.where({'company': 'Kinnegad Combined Community Employment Scheme'}).exec();
+        const MyJobsObject = new JobBoardFilteredFeed(42, kinnegadJobs, {
+  
+          // counts: true,
+          // search: true,
+
+          pagination: {
+            visiblePages: 3, // set init visible pages within the pagination
+            initPerPage: 3, // set an initial per page count (in case where perPage below is false/not set)
+            perPage: {
+              values: [3, 5] // per page dropdown options
+            },
+          },
+
+          filters: [
+            {
+              key: 'city',
+              singular: 'Town/City',
+              plural: 'Cities',
+              type: 'option',
+              setArray: false,
+              removeTerms: []
+            },
+            {
+              key: 'jobtype',
+              singular: 'Jobtype',
+              plural: 'Jobtypes',
+              type: 'option',
+              setArray: true,
+              removeTerms: []
+            },
+            {
+              key: 'category',
+              singular: 'Category',
+              plural: 'Categories',
+              type: 'checkbox',
+              setArray: true,
+              removeTerms: []
+            }
+          ],
+
+          // pagination: false,
+
+          // filters: [
+          //   {
+          //     key: 'company',
+          //     singular: 'Company',
+          //     plural: 'Companies',
+          //     type: 'option',
+          //     setArray: false,
+          //     removeTerms: []
+          //   },
+          //   {
+          //     key: 'jobtype',
+          //     singular: 'Jobtype',
+          //     plural: 'Jobtypes',
+          //     type: 'option',
+          //     setArray: true,
+          //     removeTerms: []
+          //   },
+          //   {
+          //     key: 'city',
+          //     singular: 'Town/City',
+          //     plural: 'Cities',
+          //     type: 'option',
+          //     setArray: false,
+          //     removeTerms: []
+          //   },
+          //   {
+          //     key: 'remote',
+          //     singular: 'Remote',
+          //     plural: 'Remotes',
+          //     type: 'option',
+          //     setArray: false,
+          //     removeTerms: []
+          //   },
+          //   {
+          //     key: 'category',
+          //     singular: 'Category',
+          //     plural: 'Categories',
+          //     type: 'checkbox',
+          //     setArray: true,
+          //     removeTerms: []
+          //   }
+          // ],
+
+          // counts: false,
+          // search: false,
+          // filters: false
+
+        });
         MyJobsObject.renderTheJobs('#MyJobs');
       })();
     </script>

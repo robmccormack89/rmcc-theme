@@ -1,0 +1,36 @@
+{% extends 'custom.twig' %}
+
+{% block styles %}
+  {{ parent() }}
+  {% if not fn('is_admin') %}
+    <!--FEED: css -->
+    <link href="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@dynamo/public/css/mjf.min.css" rel="stylesheet">
+  {% endif %}
+{% endblock %}
+
+{% block single_content %}
+  {# {{ parent() }} #}
+  <!--FEED: html -->
+  <div class="mjf-wrap">
+    <div class="jobs-wrap mjf-container mjf-section-small">
+      <div id="MyJobs">Loading...</div>
+    </div>
+    <div class="mjf-empty"></div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ parent() }}
+  {% if not fn('is_admin') %}
+    <!--FEED: js (as close to (but above) the closing body tag as possible) -->
+    <script src="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@dynamo/public/js/mjf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@dynamo/public/js/api/feed.js"></script>
+    <script>
+      (async function () {
+        var jobsJson = await fetchJobsJson('https://feed.midlandjobs.ie/demo/');
+        const MyJobsObject = new JobBoardFilteredFeed(42, jobsJson);
+        MyJobsObject.renderTheJobs('#MyJobs');
+      })();
+    </script>
+  {% endif %}
+{% endblock %}

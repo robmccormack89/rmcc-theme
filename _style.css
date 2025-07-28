@@ -178,6 +178,7 @@ Basic Theme is built using Timber WP https://github.com/timber/timber
   font-size: .875rem !important;
 }
 .rmcc-iconnav>*>a.rmcc-button-danger {
+  background-color: #f0506e !important;
   color: #fff !important;
   border: 1px solid transparent !important;
 }
