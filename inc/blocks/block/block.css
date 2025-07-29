@@ -1,0 +1,6 @@
+.rmcc-card.rmcc-height-viewport {
+  height: 100vh;
+}
+.rmcc-card .rmcc-width-1-1.rmcc-inline {
+  min-height: 100%;
+}

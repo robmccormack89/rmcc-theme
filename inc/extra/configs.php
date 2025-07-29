@@ -29,4 +29,10 @@ $configs['enable_post_sharing'] = true;
 $configs['enable_post_paging'] = true;
 $configs['enable_post_author'] = true;
 
+/*
+ACF
+*/
+
+$configs['enable_acf'] = true;
+
 return $configs;
