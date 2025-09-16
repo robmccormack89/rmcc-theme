@@ -34,5 +34,6 @@ ACF
 */
 
 $configs['enable_acf'] = true;
+$configs['hide_acf_menus'] = false;
 
 return $configs;
