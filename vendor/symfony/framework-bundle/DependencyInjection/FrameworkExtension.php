@@ -1086,19 +1086,19 @@ class FrameworkExtension extends Extension
             $transitionCounter = 0;
             foreach ($workflow['transitions'] as $transition) {
                 if ('workflow' === $type) {
-                    $transitionDefinition = new Definition(Workflow\Transition::class, [$transition['name'], $transition['from'], $transition['to']]);
                     $transitionId = \sprintf('.%s.transition.%s', $workflowId, $transitionCounter++);
-                    $container->setDefinition($transitionId, $transitionDefinition);
+                    $container->register($transitionId, Workflow\Transition::class)
+                        ->setArguments([$transition['name'], $transition['from'], $transition['to']]);
                     $transitions[] = new Reference($transitionId);
                     if (isset($transition['guard'])) {
-                        $configuration = new Definition(Workflow\EventListener\GuardExpression::class);
-                        $configuration->addArgument(new Reference($transitionId));
-                        $configuration->addArgument($transition['guard']);
                         $eventName = \sprintf('workflow.%s.guard.%s', $name, $transition['name']);
-                        $guardsConfiguration[$eventName][] = $configuration;
+                        $guardsConfiguration[$eventName][] = new Definition(
+                            Workflow\EventListener\GuardExpression::class,
+                            [new Reference($transitionId), $transition['guard']]
+                        );
                     }
                     if ($transition['metadata']) {
-                        $transitionsMetadataDefinition->addMethodCall('attach', [
+                        $transitionsMetadataDefinition->addMethodCall('offsetSet', [
                             new Reference($transitionId),
                             $transition['metadata'],
                         ]);
@@ -1106,19 +1106,19 @@ class FrameworkExtension extends Extension
                 } elseif ('state_machine' === $type) {
                     foreach ($transition['from'] as $from) {
                         foreach ($transition['to'] as $to) {
-                            $transitionDefinition = new Definition(Workflow\Transition::class, [$transition['name'], $from, $to]);
                             $transitionId = \sprintf('.%s.transition.%s', $workflowId, $transitionCounter++);
-                            $container->setDefinition($transitionId, $transitionDefinition);
+                            $container->register($transitionId, Workflow\Transition::class)
+                                ->setArguments([$transition['name'], $from, $to]);
                             $transitions[] = new Reference($transitionId);
                             if (isset($transition['guard'])) {
-                                $configuration = new Definition(Workflow\EventListener\GuardExpression::class);
-                                $configuration->addArgument(new Reference($transitionId));
-                                $configuration->addArgument($transition['guard']);
                                 $eventName = \sprintf('workflow.%s.guard.%s', $name, $transition['name']);
-                                $guardsConfiguration[$eventName][] = $configuration;
+                                $guardsConfiguration[$eventName][] = new Definition(
+                                    Workflow\EventListener\GuardExpression::class,
+                                    [new Reference($transitionId), $transition['guard']]
+                                );
                             }
                             if ($transition['metadata']) {
-                                $transitionsMetadataDefinition->addMethodCall('attach', [
+                                $transitionsMetadataDefinition->addMethodCall('offsetSet', [
                                     new Reference($transitionId),
                                     $transition['metadata'],
                                 ]);
@@ -1159,7 +1159,7 @@ class FrameworkExtension extends Extension
             $workflow['definition_validators'][] = match ($workflow['type']) {
                 'state_machine' => Workflow\Validator\StateMachineValidator::class,
                 'workflow' => Workflow\Validator\WorkflowValidator::class,
-                 default => throw new \LogicException(\sprintf('Invalid workflow type "%s".', $workflow['type'])),
+                default => throw new \LogicException(\sprintf('Invalid workflow type "%s".', $workflow['type'])),
             };
 
             // Create Workflow
@@ -3320,13 +3320,13 @@ class FrameworkExtension extends Extension
                 throw new LogicException(\sprintf('Compound rate limiter "%s" requires at least one sub-limiter.', $name));
             }
 
-            if (\array_diff($limiterConfig['limiters'], $limiters)) {
+            if (array_diff($limiterConfig['limiters'], $limiters)) {
                 throw new LogicException(\sprintf('Compound rate limiter "%s" requires at least one sub-limiter to be configured.', $name));
             }
 
             $container->register($limiterId = 'limiter.'.$name, CompoundRateLimiterFactory::class)
                 ->addTag('rate_limiter', ['name' => $name])
-                ->addArgument(new IteratorArgument(\array_map(
+                ->addArgument(new IteratorArgument(array_map(
                     static fn (string $name) => new Reference('limiter.'.$name),
                     $limiterConfig['limiters']
                 )))
