@@ -1,0 +1,39 @@
+{% block html_head_container %}
+
+  {% include 'html_head.twig' %}
+    {% block styles %}
+    {% endblock %}
+  </head>
+  {% endblock %}
+
+  <body class="{{ body_class }}" data-template="base.twig">
+
+    {% block header %}
+      {% include 'header.twig' ignore missing %}
+    {% endblock %}
+
+    <main id="Main" role="main">
+      {% block main %}
+        <div class="rmcc-section rmcc-container rmcc-container-xsmall">
+
+          <h1>{{ title|e('esc_html') }}</h1>
+          <p>{{ description|e('esc_html') }}</p>
+
+          {% include (fn('is_404') or fn('get_post_status', post.id) == 'private') ? 'search_form.twig' ignore missing %}
+
+        </div>
+      {% endblock %}
+    </main>
+
+    {% block footer %}
+      {% include 'footer.twig' ignore missing %}
+    {% endblock %}
+
+    {{ fn('wp_footer') }}
+
+    {% block scripts %}
+    {% endblock %}
+
+  </body>
+
+</html>

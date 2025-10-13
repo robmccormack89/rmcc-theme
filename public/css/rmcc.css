@@ -8408,6 +8408,10 @@ ul.rmcc-nav-sub {
 }
 /* Intrinsic Widths
  ========================================================================== */
+.rmcc-width-fit-content {
+  width: fit-content;
+}
+
 .rmcc-width-max-content {
   width: max-content;
 }

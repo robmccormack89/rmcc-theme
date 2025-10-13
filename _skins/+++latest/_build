@@ -1,0 +1,10 @@
+build notes
+
+  - build custom uikit from scss with 'gulp style'
+  - place built css into dist/css
+  - place any built js into dist/js (only necessary for prefixing, scoping doesnt affect the js)
+  - prefix built css as 'rmcc' with 'node build/prefix'
+  - scope built css as 'rmcc-wrap' with 'node build/scope -s "rmcc-wrap"'
+  - if prefixed, js components will be available @ 'rmccUIkit'
+  - if scoped, dont forget to set UIkit.container (or prefixed rmccUIkit.container) to your scope wrapper e.g: 'rmcc-wrap' BEFORE the closing body tag
+  - if scoped, in your built css, dont forget to strip out 'charset "UTF-8";' from inside the scoped wrapper at the top of the css file, and place at top on its own
