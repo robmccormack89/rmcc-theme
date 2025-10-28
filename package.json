@@ -2,7 +2,7 @@
   "name": "rmcc-theme",
   "version": "2.0.0",
   "author": "Robert McCormack <robertmccormack147@gmail.com> (https://github.com/robmccormack89)",
-  "description": "Kilbeggan",
+  "description": "skins",
   "license": "MIT",
   "main": "src/js/uikit.js",
   "style": "public/css/style.css",
@@ -21,11 +21,17 @@
     "icons": "node build/icons",
     "prefix": "node build/prefix",
     "scope": "node build/scope",
-    "scopium": "node build/scope -s \"rmcc-wrap\"",
     "release": "node build/release",
     "watch": "chokidar \"**/*.less\" --initial -i \"node_modules\" -c \"node build/less\"",
+
+    "prefix-me": "node build/prefix",
+    "scope-me": "node build/scope -s \"rmcc-wrap\"",
+
     "gulp": "./node_modules/.bin/gulp",
     "pot": "gulp pot",
+    "scss": "gulp style",
+    "js": "npx webpack",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
