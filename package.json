@@ -4,7 +4,7 @@
   "author": "Robert McCormack <robertmccormack147@gmail.com> (https://github.com/robmccormack89)",
   "description": "skins",
   "license": "MIT",
-  "main": "src/js/uikit.js",
+  "main": "src/js/index.js",
   "style": "public/css/style.css",
   "sideEffects": [
       "*.css",
@@ -13,24 +13,15 @@
   ],
   "keywords": [],
   "scripts": {
-    "build-scss": "node build/scss",
-    "compile": "pnpm compile-less && pnpm compile-js",
-    "compile-js": "node build/build",
-    "compile-less": "pnpm icons && node build/less",
-    "compile-rtl": "pnpm compile-less rtl",
-    "icons": "node build/icons",
     "prefix": "node build/prefix",
     "scope": "node build/scope",
-    "release": "node build/release",
-    "watch": "chokidar \"**/*.less\" --initial -i \"node_modules\" -c \"node build/less\"",
 
     "prefix-me": "node build/prefix",
     "scope-me": "node build/scope -s \"rmcc-wrap\"",
 
     "gulp": "./node_modules/.bin/gulp",
     "pot": "gulp pot",
-    "scss": "gulp style",
-    "js": "npx webpack",
+    "style": "gulp style",
 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,9 +29,6 @@
     "uikit": "3.24.2"
   },
   "devDependencies": {
-    "webpack": "^5.98.0",
-    "webpack-cli": "^6.0.1",
-
     "gulp": "^5.0.1",
     "del": "^8.0.1",
     "gulp-wp-pot": "^2.5.0",
