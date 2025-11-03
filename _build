@@ -1,0 +1,20 @@
+builds
+
+  - build custom uikit from scss with 'gulp style'
+  - place built css into dist/css
+  - place all js (including components) from uikit/dist/js into dist/js
+  - prefix built css as 'rmcc' with 'node build/prefix'
+  - scope built css as 'rmcc-wrap' with 'node build/scope -s "rmcc-wrap"' (this step only applies to css as scoping doesnt affect js)
+  - if prefixed, js components will be available @ 'rmccUIkit'
+  - if scoped, dont forget to set UIkit.container (or prefixed rmccUIkit.container) to your scope wrapper e.g: 'rmcc-wrap' BEFORE the closing body tag
+  - if scoped, in your built css, dont forget to strip out 'charset "UTF-8";' from inside the scoped wrapper at the top of the css file, and place at top on its own
+
+todo: 
+
+  - be able to do js builds ala uikit build processes; building custom uikit js from src & then prefix/scope, rather than copy over js from node_modules/uikit
+
+  - js builds are not necessary at the moment. full js builds ala uikit, can just be built from uikit directly. attempts to incorporate the js builds within my own projects is overly complicated & requires too much editing of the build & core files to be worthwhile. in the future, when i REALLY need to build custom js builds for uikit, i can figure it out. but right now, and because the specific individual componets are included prebuilt in uikit anyways, there is no need to do a complicated custom js build for personal projects only to build js with slective components. the whole purpose is to be able to build the js but with selective components; this can be achieved with the need for a complex custom js build now. juist test out the selective inbuilt components first! you can also try combining them into the same file for simplicity and neatness!
+
+  - selective prebuild components can be used alongside uikit-core.js (this saves space when you know what components you want!)
+
+  - combining uikit-icons.js and selective components js alongside uikit-core.js, in the same file, works properly! this method can now be used to package the main & icons all together into the one file, and include only selective components along with it, therby saving lots of KBs! awesome!
