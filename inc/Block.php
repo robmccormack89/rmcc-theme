@@ -2,7 +2,8 @@
 
 namespace Rmcc;
 
-// this class sets up data like custom classes according to the block's given settings
+// this class sets up data like custom classes & attributes according to a block's given settings
+// these classes & attributes are passed to the specific block via block.controls, where they can be used to define the markup of our custom block's wrapper 
 class Block {
 
   public $break;
@@ -14,15 +15,15 @@ class Block {
   public $preview;
 
   public function __construct($block) {
-    $this->break = $this->block_break($block);
-    $this->container = $this->block_container($block);
-    $this->background = $this->block_background($block);
-    $this->block_wrapper_attributes = $this->block_wrapper_attributes($block);
-    $this->card = $this->block_card($block);
-    $this->content = [];
-    $this->content['wrap'] = $this->block_content_wrap($block);
-    $this->content['position'] = $this->block_content_position($block);
-    $this->preview = $this->block_preview($block);
+    $this->break = $this->block_break($block); // escaping the container, for fullwidth blocks
+    $this->container = $this->block_container($block); // inner container settings; for 'left|center|right' block alignment as well as 'wide|full' width modes
+    $this->background = $this->block_background($block); // background image settings
+    $this->block_wrapper_attributes = $this->block_wrapper_attributes($block); // custom classname as well as other inbuilt block attributes (background settings like colour get added to this wrapper in preview mode!)
+    $this->card = $this->block_card($block); // background colours|overlays, fullheight settings & content alignment settings
+    $this->content = []; // placeholder for the actual content!
+    $this->content['wrap'] = $this->block_content_wrap($block); // just a wide wrapper around the content, depending if align content is set to matrix or not (makes this work properly) 
+    $this->content['position'] = $this->block_content_position($block); // content alignment wrapper for matrix positioning
+    $this->preview = $this->block_preview($block); // this wrapper replaces block_wrapper_attributes in preview mode to allow settings for background colours etc to work properly in previews (using block inline style attributes with css presets)
   }
 
   public function block_break($block) {
@@ -144,7 +145,7 @@ class Block {
     if((array_key_exists('backgroundColor', $block)) || (array_key_exists('gradient', $block))) $bg_class = 'rmcc-background-blank';
     if((array_key_exists('style', $block))){
       if((array_key_exists('color', $block['style']))){
-        if( (array_key_exists('background', $block['style']['color'])) || (array_key_exists('gradient', $block['style']['color'])) ){
+        if((array_key_exists('background', $block['style']['color'])) || (array_key_exists('gradient', $block['style']['color']))){
           $bg_class = 'rmcc-background-blank';
         }
       }
@@ -237,26 +238,6 @@ class Block {
         if(array_key_exists('gradient', $block['style']['color'])) $styles['background'] = $block['style']['color']['gradient'];
       }
     }
-
-    // if(array_key_exists('borderColor', $block)) $styles['border-color'] = 'var(--wp--preset--color--' . $block['borderColor']  . ') !important';
-    // if(array_key_exists('borderWidth', $block)) $styles['border-width'] = $block['borderWidth'];
-    // if(array_key_exists('borderRadius', $block)) $styles['border-radius'] = $block['borderRadius'];
-
-    // if(array_key_exists('style', $block)){
-    //   if(array_key_exists('border', $block['style'])){
-    //     if(array_key_exists('width', $block['style']['border'])) $styles['border-width'] = $block['style']['border']['width'];
-    //     if(array_key_exists('color', $block['style']['border'])) $styles['border-color'] = $block['style']['border']['color'];
-    //     if(array_key_exists('radius', $block['style']['border'])) $styles['border-radius'] = $block['style']['border']['radius'];
-    //   }
-    // }
-
-    // print_r('<pre>');
-    // print_r($styles);
-    // print_r('</pre>');
-
-    // print_r('<pre>');
-    // print_r($block);
-    // print_r('</pre>');
 
     // better html outputting of styles (as arrays)
     $styles = array_map(function($value, $key) {
