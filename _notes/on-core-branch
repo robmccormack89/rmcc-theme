@@ -1,0 +1,12 @@
+core wordpress theme (rmcc-theme)
+only core features, nothing extra
+all other feature branches be branched off & sync with this branch.
+
+new 'latestcore' branch can keep the 'core' branch up-to-date & be used to later create the 'combined' branch
+all other feature branches can stay synced with 'core', but 'combined' can be based off 'latestcore' & other features can be integrated into this manually
+winmerge can be used to check the code changed between 'core' and any feature branch, so this feature can be pulled out and integrated into 'combined' via 'latestcore'
+if we ever update 'core' we would need to update the core code then in all the feature branches, but this should be avoided now using the new 'latestcore' scheme
+'core' from now on should only really be kept in this minimum viable & working state; instead 'latestcore' will be the branch to keep the core code fully up-to-date
+
+'core' serves as the minimum-viable base for all individual branches
+'latestcore' serves as the actual jumping off point for starting new blank (no features) projects. it also serves as the base for the 'combined' branch.

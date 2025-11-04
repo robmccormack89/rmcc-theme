@@ -1,0 +1,25 @@
+...folder base
+_dev/
+_skins/
+node_modules/
+vendor/
+_skins-notes
+.gitignore
+composer.json
+composer.lock
+package-lock.json
+package.json
+
+...new-style-blog-dev
+public/
+src/
+templates/
+views/
+package.json
+style.css
+
+...barebones-ultra
+languages/
+public/
+views/
+style.css
