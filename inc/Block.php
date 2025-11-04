@@ -18,7 +18,7 @@ class Block {
     $this->break = $this->block_break($block); // escaping the container, for fullwidth blocks
     $this->container = $this->block_container($block); // inner container settings; for 'left|center|right' block alignment as well as 'wide|full' width modes
     $this->background = $this->block_background($block); // background image settings
-    $this->block_wrapper_attributes = $this->block_wrapper_attributes($block); // custom classname as well as other inbuilt block attributes (background settings like colour get added to this wrapper in preview mode!)
+    $this->block_wrapper_attributes = $this->block_wrapper_attributes($block); // inbuilt block attributes; custom classname is removed from here and placed into markup via card instead (background settings like colour get added to this wrapper in preview mode!)
     $this->card = $this->block_card($block); // background colours|overlays, fullheight settings & content alignment settings
     $this->content = []; // placeholder for the actual content!
     $this->content['wrap'] = $this->block_content_wrap($block); // just a wide wrapper around the content, depending if align content is set to matrix or not (makes this work properly) 
@@ -121,7 +121,7 @@ class Block {
   public function block_wrapper_attributes($block) {
     $html = wp_kses_data(get_block_wrapper_attributes());
 
-    // remove custom className from get_block_wrapper_attributes (we will put it back in in inner)
+    // remove custom className from get_block_wrapper_attributes (we will put it back in in card)
     if(array_key_exists('className', $block)) {
       $className = esc_html($block['className']);
       if($html && str_contains($html, $className)) $html = str_replace(' '.$className, '', $html);
