@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block main %}
-  <article id="{{ post.id|e('esc_html') }}" class="{{ post.class|e('esc_html') }}" data-template="contained.twig">
+  <article id="{{ post.id|e('esc_html') }}" class="{{ post.class|e('esc_html') }}" data-template="custom.twig">
     
     {% block single_header %}
     {% endblock %}
     
     {% block single_content %}
-      <div class="single-content rmcc-section rmcc-section-small">
+      <div class="single-content">
         {% block single_content_editor %}
           {{ parent() }}
         {% endblock %}
