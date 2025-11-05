@@ -18,7 +18,7 @@ class Demo extends Block {
   }
 
   public function block_card($block) {
-    $classes = ['rmcc-flex', 'flexoo'];
+    $classes = ['rmcc-flex', 'flexoo', 'hellooo'];
     $styles = [];
 
     // if custom className, remove rmcc-card-body (padding) class, & replace with custom className
