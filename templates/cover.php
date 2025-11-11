@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Scratch Template
+ * Template Name: Cover Template
  * Template Post Type: post, page
  *
  * @package Rmcc_Theme
@@ -59,7 +59,7 @@ if (get_post_status($context['post']->ID) != 'private') {
   );
 
   // add the homer template/s to the start of the templates array
-  array_unshift($templates, 'scratch-' . $context['post']->post_type . '.twig', 'scratch.twig', );
+  array_unshift($templates, 'cover-' . $context['post']->post_type . '.twig', 'cover.twig', );
 
   // add new template for password protected singulars (does not work on static front_pages)
   if (post_password_required($context['post'])) array_unshift($templates, 'single_protected.twig');
