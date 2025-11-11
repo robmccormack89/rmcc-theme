@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.8.3" created="2025-11-11 11:15" -->
+	<!-- generator="WordPress/6.8.3" created="2025-11-11 11:48" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Kilbeggan Community Group</title>
 	<link>https://testwp.com</link>
 	<description>Succeeding Together</description>
-	<pubDate>Tue, 11 Nov 2025 11:15:27 +0000</pubDate>
+	<pubDate>Tue, 11 Nov 2025 11:48:45 +0000</pubDate>
 	<language>en-GB</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://testwp.com</wp:base_site_url>
@@ -655,8 +655,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>122</wp:post_id>
 		<wp:post_date><![CDATA[2025-11-10 21:27:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-11-10 21:27:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-11-11 10:55:48]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-11-11 10:55:48]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-11-11 11:40:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-11-11 11:40:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[homepage]]></wp:post_name>
@@ -688,7 +688,7 @@ https://player.vimeo.com/video/523868167
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_a1d1a64929eae8ece8667371880ca162]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1762858559]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1762860638]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
