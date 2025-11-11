@@ -1,0 +1,47 @@
+{
+    "key": "group_691293acc8d1b",
+    "title": "RMcC Icon",
+    "fields": [
+        {
+            "key": "field_691293acbbdee",
+            "label": "Icon slug",
+            "name": "icon_slug",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Insert this...",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "user",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/rmcc-icon"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1762851392
+}
