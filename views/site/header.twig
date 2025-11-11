@@ -1,1 +1,46 @@
-header
+<!-- regular header -->
+<header class="site-header page">
+
+  <div class="rmcc-background-muted upper-header rmcc-visible@l">
+    <div class="rmcc-container rmcc-container-large">
+      <div class="upper-nav rmcc-visible@l" rmcc-grid>
+
+        {# company menu #}
+        <div class="rmcc-width-expand rmcc-visible@l">
+          {% include 'header/company_menu.twig' %}
+        </div>
+
+        {# secondary menu #}
+        <div class="rmcc-width-auto">
+          <div>
+            {% include 'header/secondary_menu.twig' %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <nav class="rmcc-navbar-container rmcc-navbar-transparent rmcc-box-shadow-small">
+    <div class="rmcc-container rmcc-container-large">
+      <div rmcc-navbar="" class="rmcc-navbar rmmcc-margin-small-top">
+
+        {# left logo #}
+        <div class="rmcc-navbar-left pull-left-5">
+          <a class="rmcc-navbar-item rmcc-logo" href="/">
+            <div class="rmcc-grid-collapse rmcc-grid-match rmcc-flex rmcc-flex-middle rmcc-grid" rmcc-grid>
+              {% include 'header/logo.twig' %}
+            </div>
+          </a>
+        </div>
+
+        {# right menu/s #}
+        <div class="rmcc-navbar-right">
+          {% include 'header/main_menu.twig' %}
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+</header>

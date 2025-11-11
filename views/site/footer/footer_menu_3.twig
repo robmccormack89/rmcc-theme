@@ -1,0 +1,14 @@
+{% if fn('has_nav_menu', 'footer_menu_3') %}
+  <div class="rmcc-width-1-2 rmcc-width-1-6@s">
+    <ul class="rmcc-nav rmcc-nav-default">
+      <li class="rmcc-nav-header rmcc-text-bold rmcc-h4 rmcc-margin-remove">{{ menu_footer_3.title|e('esc_html') }}</li>
+      {% for item in menu_footer_3.get_items %}
+        <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+          <a href="{{ item.link|e('esc_url') }}">
+            {{ item.title|e('wp_kses_post')}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

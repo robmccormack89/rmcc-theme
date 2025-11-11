@@ -1,1 +1,161 @@
-footer
+<!-- footer dark bg -->
+<footer class="site-footer rmcc-background-secondary rmcc-light">
+  <div class="rmcc-container rmcc-section">
+
+    <!-- footer top -->
+    <div rmcc-grid>
+
+      <!-- footer top one -->
+      {% include 'footer/footer_menu_1.twig' %}
+
+      <!-- footer top two -->
+      {% include 'footer/footer_menu_2.twig' %}
+
+      <!-- footer top three -->
+      {% include 'footer/footer_menu_3.twig' %}
+
+      <!-- footer top four -->
+      {% include 'footer/footer_menu_4.twig' %}
+
+      <!-- footer top five -->
+      {% include 'footer/footer_col_5.twig' %}
+
+    </div>
+
+    <!-- footer divider -->
+    <hr class="rmcc-margin-medium rmcc-margin-large-top">
+
+    <!-- footer bottom -->
+    <div class="bottom-footer rmcc-grid-collapse rmcc-flex rmcc-flex-middle" rmcc-grid>
+      <div class="rmcc-width-medium@m rmcc-flex rmcc-flex-center rmcc-flex-left@m">{{ _x('© %s Kilbeggan Community Group CLG. All Rights Reserved.', 'Footer: copyright', 'rmcc-theme')|format(now|date('Y'))|e('esc_html') }}</div>
+
+      {# secondary menu #}
+      <div class="rmcc-width-1-1 rmcc-width-expand@m rmcc-flex rmcc-flex-center rmcc-text-center">
+        {% include 'footer/footer_secondary_menu.twig' %}
+      </div>
+
+      {# socials menu #}
+      <div class="rmcc-width-1-1 rmcc-width-small@m rmcc-width-medium@l rmcc-flex rmcc-flex-center rmcc-flex-right@m">
+        {% include 'footer/footer_socials_menu.twig' %}
+      </div>
+
+    </div>
+    
+  </div>
+</footer>
+
+<!-- footer light bg (alt) -->
+<footer class="site-footer rmcc-background-default" hidden>
+  <div class="rmcc-container rmcc-section">
+
+    <!-- footer top -->
+    <div rmcc-grid>
+
+      <!-- footer top one -->
+      <div class="rmcc-width-1-2 rmcc-width-1-6@s">
+        <ul class="rmcc-nav rmcc-nav-default">
+          <li class="rmcc-nav-header rmcc-text-bold rmcc-h4 rmcc-margin-remove">Navigation</li>
+          <li><a href="#">Background</a></li>
+          <li><a href="#">Our Committee</a></li>
+          <li><a href="#">Our Staff</a></li>
+          <li><a href="#">Funding opportunities</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- footer top two -->
+      <div class="rmcc-width-1-2 rmcc-width-1-6@s">
+        <ul class="rmcc-nav rmcc-nav-default">
+          <li class="rmcc-nav-header rmcc-text-bold rmcc-h4 rmcc-margin-remove">Employment</li>
+          <li><a href="#">How to Apply</a></li>
+          <li><a href="#">Local Social Welfare</a></li>
+          <li><a href="#">Job Clubs</a></li>
+          <li><a href="#">Employment Supports</a></li>
+          <li><a href="#">Kilbeggan Jobs</a></li>
+          <li><a href="#">Laois Offaly ETB</a></li>
+        </ul>
+      </div>
+
+      <!-- footer top three -->
+      <div class="rmcc-width-1-2 rmcc-width-1-6@s">
+        <ul class="rmcc-nav rmcc-nav-default">
+          <li class="rmcc-nav-header rmcc-text-bold rmcc-h4 rmcc-margin-remove">Training</li>
+          <li><a href="#">CE Training</a></li>
+          <li><a href="#">QQI Accredited Courses</a></li>
+          <li><a href="#">Other Course providers</a></li>
+          <li><a href="#">Fetchcourses.ie</a></li>
+          <li><a href="#">S.W.E.E.T.S</a></li>
+        </ul>
+      </div>
+
+      <!-- footer top four -->
+      <div class="rmcc-width-1-2 rmcc-width-1-6@s">
+        <ul class="rmcc-nav rmcc-nav-default">
+          <li class="rmcc-nav-header rmcc-text-bold rmcc-h4 rmcc-margin-remove">Community</li>
+          <li><a href="#">News & Events</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Our sites</a></li>
+          <li><a href="#">Our Sponsors</a></li>
+        </ul>
+      </div>
+
+      <!-- footer top five -->
+      <div class="rmcc-width-1-1 rmcc-width-expand@s">
+        <form>
+          <fieldset class="rmcc-fieldset">
+
+            <legend class="rmcc-legend">Subscribe to our newsletter!</legend>
+      
+            <div class="rmcc-margin-small">
+              <input class="rmcc-input rmcc-border-rounded rounded-more" type="text" placeholder="Your Email Address" aria-label="Input">
+            </div>
+        
+            <div class="rmcc-margin-small">
+              <select class="rmcc-select rmcc-border-rounded rounded-more" aria-label="Select">
+                <option>-- Please Select Country --</option>
+                <option>Ireland</option>
+              </select>
+            </div>
+      
+            <div class="rmcc-margin rmcc-flex rmcc-flex-center">
+              <a class="rmcc-button rmcc-button-default rmcc-button-gradient rmcc-border-rounded" href="#">Add me</a>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- footer divider -->
+    <hr class="rmcc-margin-medium rmcc-margin-large-top">
+
+    <!-- footer bottom -->
+    <div class="bottom-footer rmcc-grid-collapse rmcc-flex rmcc-flex-middle" rmcc-grid>
+      <div class="rmcc-width-medium@m rmcc-flex rmcc-flex-center rmcc-flex-left@m">© 2025 Kilbeggan Community Group CLG. All rights reserved.</div>
+      <div class="rmcc-width-1-1 rmcc-width-expand@m rmcc-flex rmcc-flex-center rmcc-text-center">
+        <ul class="rmcc-subnav rmcc-subnav-divider">
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="rmcc-width-1-1 rmcc-width-small@m rmcc-width-medium@l rmcc-flex rmcc-flex-center rmcc-flex-right@m">
+        <ul class="rmcc-iconnav">
+          <li><a href="#" rmcc-icon="icon: facebook"></a></li>
+          <li><a href="#" rmcc-icon="icon: twitter"></a></li>
+          <li><a href="#" rmcc-icon="icon: linkedin"></a></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+<!-- mobile offcanvas -->
+{% include 'footer/mobile_offcanvas.twig' %}
+
+<!-- search popup -->
+{% include 'footer/search_popup.twig' %}

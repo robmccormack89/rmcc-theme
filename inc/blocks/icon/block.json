@@ -1,0 +1,54 @@
+{
+  "name": "acf/rmcc-icon",
+  "title": "RMcC Icon",
+  "description": "A icon block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "icon"],
+  "style": ["file:./icon.css"],
+  "__parent": ["acf/rmcc-block"],
+
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "icon.php"
+  },
+
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
+  "supports": {
+    "mode": true,
+    "jsx": false,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": true,
+    "inserter": true,
+    "reusable": true,
+    "lock": true,
+
+    "align": false,
+
+    "typography": {
+      "lineHeight": true
+    },
+
+    "background": {
+      "backgroundImage": false,
+      "backgroundSize": false
+    },
+    "color": {
+      "text": true,
+      "background": false,
+      "gradients": false
+    }
+    
+  }
+
+}

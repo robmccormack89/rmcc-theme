@@ -31,3 +31,14 @@ a.dont-underline:hover, a.dont-underline:focus,
 {
   text-decoration: none;
 }
+
+.company-menu-mobile-item .rmcc-icon {
+  color: #a1cc3a;
+}
+
+.breakwrap-p {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

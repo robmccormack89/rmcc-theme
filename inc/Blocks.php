@@ -74,10 +74,18 @@ class Blocks {
       'rmcc-accordion' => array(),
       'rmcc-icon' => array(),
       'rmcc-slider' => array(),
+      'rmcc-slideshow' => array(),
+      'rmcc-scroll' => array(),
+      'rmcc-slideshow-item' => array(),
+      'rmcc-slidenav-previous' => array(),
+      'rmcc-slidenav-next' => array(),
+      'rmcc-cover' => array(),
       'rmcc-grid' => array(),
       'rmcc-form' => array(),
       'rmcc-modal' => array(),
       'rmcc-toggle' => array(),
+      'rmcc-height-viewport' => array(),
+      'mjf-grid' => array(),
     );
     $allowedposttags['form'] = $allowed_atts;
     $allowedposttags['button'] = $allowed_atts;
@@ -170,6 +178,16 @@ class Blocks {
   public function register_blocks() {
     register_block_type(__DIR__ . '/blocks/block/block.json');
     register_block_type(__DIR__ . '/blocks/demo/block.json');
+
+    register_block_type(__DIR__ . '/blocks/icon/block.json');
+
+    register_block_type(__DIR__ . '/blocks/hero-wrap/block.json');
+    register_block_type(__DIR__ . '/blocks/hero-top/block.json');
+    register_block_type(__DIR__ . '/blocks/hero-bottom/block.json');
+    register_block_type(__DIR__ . '/blocks/hero-item/block.json');
+
+    register_block_type(__DIR__ . '/blocks/hover-wrap/block.json');
+    register_block_type(__DIR__ . '/blocks/hover-item/block.json');
   }
 
 }

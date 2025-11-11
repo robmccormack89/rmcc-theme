@@ -1,0 +1,10 @@
+{% if fn('has_nav_menu', 'secondary_menu') %}
+  <ul class="rmcc-subnav capitalize rmcc-margin-remove">
+    {% for item in menu_secondary.get_items %}
+      <li><a href="{{ item.link|e('esc_url') }}">{{ item.title|e('wp_kses_post')}}</a></li>
+    {% endfor %}
+    <li>
+      <a class="rmcc-icon rmcc-search-icon" href="#modal-full" rmcc-search-icon="" rmcc-toggle="" aria-label="Open Search" role="button"></a>
+    </li>
+  </ul>
+{% endif %}

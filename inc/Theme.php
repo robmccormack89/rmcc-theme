@@ -179,6 +179,11 @@ class Theme extends Timber {
       get_template_directory_uri() . '/public/css/rmcc.min.css'
     );
 
+    wp_enqueue_style(
+      'kcg',
+      get_template_directory_uri() . '/public/css/kcg.css'
+    );
+
     // rmcc (uikit) js
     wp_enqueue_script(
       'rmcc-theme',
@@ -203,6 +208,12 @@ class Theme extends Timber {
       get_stylesheet_uri()
     );
 
+    // feed
+    // wp_enqueue_style(
+    //   'mjf-feed',
+    //   get_template_directory_uri() . '/public/feed/css/mjf.min.css'
+    // );
+
   }
 
   // register the wp stuff (post_types, taxonomies, widget_areas & navigation_menus)
@@ -215,7 +226,14 @@ class Theme extends Timber {
   public function register_navigation_menus() {
     register_nav_menus(array(
       'main_menu' => _x('Main Menu', 'Menus', 'rmcc-theme'),
-      'iconnav_menu' => _x('Iconnav Menu', 'Menus', 'rmcc-theme'),
+      'secondary_menu' => _x('Secondary Menu', 'Menus', 'rmcc-theme'),
+      'socials_menu' => _x('Socials Menu', 'Menus', 'rmcc-theme'),
+      'company_menu' => _x('Company Menu', 'Menus', 'rmcc-theme'),
+      'footer_menu_1' => _x('Footer Menu 1', 'Menus', 'rmcc-theme'),
+      'footer_menu_2' => _x('Footer Menu 2', 'Menus', 'rmcc-theme'),
+      'footer_menu_3' => _x('Footer Menu 3', 'Menus', 'rmcc-theme'),
+      'footer_menu_4' => _x('Footer Menu 4', 'Menus', 'rmcc-theme'),
+      'buttons_menu' => _x('Buttons Menu', 'Menus', 'rmcc-theme'),
     ));
   }
 
@@ -244,7 +262,14 @@ class Theme extends Timber {
 
     // add menus to the context
     $context['menu_main'] = Timber::get_menu('main_menu', array('depth' => 3));
-    $context['menu_iconnav'] = Timber::get_menu('iconnav_menu', array('depth' => 1));
+    $context['menu_secondary'] = Timber::get_menu('secondary_menu', array('depth' => 1));
+    $context['menu_socials'] = Timber::get_menu('socials_menu', array('depth' => 1));
+    $context['menu_company'] = Timber::get_menu('company_menu', array('depth' => 1));
+    $context['menu_footer_1'] = Timber::get_menu('footer_menu_1', array('depth' => 1));
+    $context['menu_footer_2'] = Timber::get_menu('footer_menu_2', array('depth' => 1));
+    $context['menu_footer_3'] = Timber::get_menu('footer_menu_3', array('depth' => 1));
+    $context['menu_footer_4'] = Timber::get_menu('footer_menu_4', array('depth' => 1));
+    $context['menu_buttons'] = Timber::get_menu('buttons_menu', array('depth' => 1));
 
     // set title & desc to start, in case anything goes wrong.
     $context['title'] = _x('Error: Page not found', '404/Error pages', 'rmcc-theme');

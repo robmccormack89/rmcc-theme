@@ -1,0 +1,11 @@
+{% if fn('has_nav_menu', 'socials_menu') %}
+  <ul class="rmcc-iconnav">
+    {% for item in menu_socials.get_items %}
+      <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+        <a href="{{ item.link|e('esc_url') }}" target="_blank">
+          {{ item.title|e('wp_kses_post')}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

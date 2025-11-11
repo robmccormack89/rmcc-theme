@@ -1,5 +1,19 @@
 <?php
 
+// add_action( 'wp_enqueue_scripts', 'remove_global_styles' );
+// function remove_global_styles(){
+//     wp_dequeue_style( 'global-styles' );
+// }
+
+add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2 );
+function acf_should_wrap_innerblocks( $wrap, $name ) {
+  // You can target specific blocks by name, or return false for all
+  // if ( $name == 'acf/your-block-name' ) {}
+  return false; // Disables the wrapper for this specific block
+  
+  return $wrap; // Keep the default behavior for other blocks
+}
+
 /*
 Breadcrumb
 Stuff

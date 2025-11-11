@@ -1,0 +1,7 @@
+{% extends block.is_preview ? 'hover-wrap/_preview.twig' : 'hover-wrap/_block.twig' %}
+
+{% block block_content %}
+<div class="rmcc-grid-collapse" rmcc-grid>
+  <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
+</div>
+{% endblock %}

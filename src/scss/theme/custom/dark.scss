@@ -52,3 +52,10 @@
 .rmcc-light .theme-border-left {
   border-left: 1px solid $inverse-global-border;
 }
+
+
+// UIKIT LIGHT divider border colour
+.rmcc-light hr,
+hr.rmcc-light {
+  border-top-color: $theme_border_light_color;
+}

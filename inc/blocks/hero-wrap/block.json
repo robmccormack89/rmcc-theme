@@ -1,0 +1,54 @@
+{
+  "name": "acf/rmcc-hero-wrap",
+  "title": "RMcC Hero Wrap",
+  "description": "A hero block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "hero-wrap"],
+  "style": ["file:./hero-wrap.css"],
+  "__parent": ["acf/rmcc-block"],
+
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "hero-wrap.php"
+  },
+
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
+  "supports": {
+    "mode": true,
+    "jsx": true,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": false,
+    "inserter": true,
+    "reusable": true,
+    "lock": true,
+
+    "align": ["full"],
+
+    "typography": {
+      "lineHeight": false
+    },
+
+    "background": {
+      "backgroundImage": false,
+      "backgroundSize": false
+    },
+    "color": {
+      "text": false,
+      "background": false,
+      "gradients": false
+    }
+    
+  }
+
+}

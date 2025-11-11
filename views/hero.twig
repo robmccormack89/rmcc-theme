@@ -1,0 +1,35 @@
+{% extends 'homer.twig' %}
+
+{% block styles %}
+  <link rel='stylesheet' id='mjf-feed-css' href='{{theme.link}}/public/feed/css/mjf.min.css' type='text/css' media='all' />
+{% endblock %}
+
+{% block header %}
+  {{ parent() }}
+{% endblock %}
+
+{% block main %}
+  <article id="{{ post.id|e('esc_html') }}" class="{{ post.class|e('esc_html') }}" data-template="hero.twig">
+    
+    {% block single_header %}
+    {% endblock %}
+    
+    {% block single_content %}
+      <div class="single-content">
+        {% block single_content_editor %}
+          <div class="content-editor gutenberg-editor">
+            {{ post.content|e('wp_kses_post') }}
+          </div>
+        {% endblock %}
+      </div>
+    {% endblock %}
+
+    {% block single_footer %}
+    {% endblock %}
+  
+  </article>
+{% endblock %}
+
+{% block footer %}
+  {{ parent() }}
+{% endblock %}
