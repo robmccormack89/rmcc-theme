@@ -5,12 +5,18 @@
   <div class="rmcc-cover-container shadow rmcc-position-relative rmcc-visible-toggle rmcc-height-large sssmaller">
 
     <!-- bg image/slider -->
-    <img class="gggray" src="{{theme.link}}/public/images/harbour.jpg" alt="" rmcc-cover hidden>
     <div class="hero-slideshow rmcc-position-relative rmcc-light" tabindex="0" rmcc-slideshow="finite: true; autoplay: false; autoplay-interval: 3000; animation: slide">
       <div class="rmcc-slideshow-items rmcc-height-large sssmaller">
-        <img src="{{theme.link}}/public/images/harbour.jpg" class="" alt="" loading="lazy" rmcc-cover>
-        <img src="{{theme.link}}/public/images/pitch.jpg" class="" alt="" loading="lazy" rmcc-cover>
-        <img src="{{theme.link}}/public/images/ballymore.jpg" class="" alt="" loading="lazy" rmcc-cover>
+        {# {% if block.data.gallery|length > 0 %} #}
+          {% for img in block.data.gallery %}
+            {% set img  = get_image(img) %}
+            <img src="{{img.src}}" class="" alt="" loading="lazy" rmcc-cover>
+          {% endfor %}
+        {# {% else %}
+          <img src="{{theme.link}}/public/images/harbour.jpg" class="" alt="" loading="lazy" rmcc-cover>
+          <img src="{{theme.link}}/public/images/pitch.jpg" class="" alt="" loading="lazy" rmcc-cover>
+          <img src="{{theme.link}}/public/images/ballymore.jpg" class="" alt="" loading="lazy" rmcc-cover>
+        {% endif %} #}
       </div>
       <a class="rmcc-position-center-left rmcc-position-center-left-out rmcc-position-small rmcc-hidden-hover rmcc-position-z-index" href rmcc-slidenav-previous rmcc-slideshow-item="previous"></a>
       <a class="rmcc-position-center-right rmcc-position-center-right-out rmcc-position-small rmcc-hidden-hover rmcc-position-z-index" href rmcc-slidenav-next rmcc-slideshow-item="next"></a>
@@ -22,17 +28,11 @@
     <!-- header content -->
     <div class="rmcc-height-1-1 rmcc-width-1-1">
       <div class="rmcc-position-absolute rmcc-position-center rmcc-text-center rmcc-light rrrmcc-margin-large-bottom">
-        {# <div class="rmcc-container rmcc-container-large">
-          <h5 class="rmcc-text-capitalize rmcc-heading-large rmcc-margin-small-bottom">Welcome To</h5>
-          <h1 class="rmcc-heading-large rmcc-margin-remove-top gradient-text-bg">Kilbeggan Community group CLG.</h1>
-        </div>
-        <div class="rmcc-container rmcc-container-small rmcc-margin-top">
-          <p class="rmcc-text-large">Kilbeggan Community Group CLG supports Community Employment participants in Ballinagore, Ballymore, Castletown Geoghegan , Dysart, Horseleap, Kilbeggan, Loughnavalley, Milltownpass, Rosemount, Streamstown and Tyrrellspass.</p>
-          <a class="rmcc-button rmcc-button-default rmcc-button-fat rmcc-text-emphasis rmcc-button-large rmcc-border-rounded rmcc-text-capitalize slight-bold rmcc-margin-top" href="#Jobs" rmcc-scroll>View Jobs</a>
-        </div> #}
+        {{block.data.some_text}}
         <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
       </div>
     </div>
 
   </div>
+
 {% endblock %}

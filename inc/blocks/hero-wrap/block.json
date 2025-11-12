@@ -6,7 +6,6 @@
   "icon": "admin-comments",
   "keywords": ["rmcc", "hero-wrap"],
   "style": ["file:./hero-wrap.css"],
-  "__parent": ["acf/rmcc-block"],
 
   "acf": {
     "mode": "preview",

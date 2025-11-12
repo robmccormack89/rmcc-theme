@@ -14,6 +14,14 @@ function acf_should_wrap_innerblocks( $wrap, $name ) {
   return $wrap; // Keep the default behavior for other blocks
 }
 
+add_filter( 'acf/pre_load_post_id', 'fix_acf_post_id_on_preview', 10, 2 );
+function fix_acf_post_id_on_preview( $null, $post_id ) {
+    if ( is_single( $post_id ) && is_preview() ) {
+        return get_the_ID();
+    }
+    return $null;
+}
+
 /*
 Breadcrumb
 Stuff
