@@ -11,6 +11,14 @@ class HeroTop extends Block {
     $this->hero_top = $this->block_hero_top($block);
   }
 
+  public function block_get_fields(){
+    $fields  = [];
+
+    if(get_field('gallery')) $fields['gallery'] = get_field('gallery');
+
+    return $fields;
+  }
+
   public function block_hero_top($block){
     $classes = ['rmcc-hero-top'];
     $html = 'class="' . implode(' ', $classes) . '"';

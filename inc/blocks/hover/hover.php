@@ -1,6 +1,6 @@
 <?php
 /**
- * RMcC Hover Item template.
+ * RMcC Hover template.
  *
  * @param array $block The block settings and attributes.
  */
@@ -10,7 +10,8 @@ namespace Rmcc;
 $context = Theme::context();
 $context['block'] = $block;
 $context['block']['is_preview'] = $is_preview;
-$context['block']['controls'] = new HoverItem($context['block']);
+$context['block']['controls'] = new Hover($context['block']);
+$context['block']['fields'] = $context['block']['controls']->block_get_fields();
 $context['block']['template'] = array(
   array(
     'core/paragraph',
@@ -46,4 +47,4 @@ $context['block']['template'] = array(
     array()
   ),
 );
-Theme::render('hover-item/block.twig', $context);
+Theme::render('hover/block.twig', $context);

@@ -9,7 +9,7 @@
   "__parent": ["acf/rmcc-block"],
 
   "acf": {
-    "mode": "preview",
+    "blockVersion": 3,
     "renderTemplate": "demo.php"
   },
 

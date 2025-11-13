@@ -11,5 +11,6 @@ $context = Theme::context();
 $context['block'] = $block;
 $context['block']['is_preview'] = $is_preview;
 $context['block']['controls'] = new HeroWrap($context['block']);
+$context['block']['fields'] = $context['block']['controls']->block_get_fields();
 $context['block']['template'] = array();
 Theme::render('hero-wrap/block.twig', $context);

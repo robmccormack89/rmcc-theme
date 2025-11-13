@@ -1,0 +1,4 @@
+.rmcc-slider-items > .acf-innerblocks-container,
+.rmcc-slider-items > .acf-innerblocks-container > .block-editor-block-list__block {
+  display: contents;
+}

@@ -186,8 +186,7 @@ class Blocks {
     register_block_type(__DIR__ . '/blocks/hero-bottom/block.json');
     register_block_type(__DIR__ . '/blocks/hero-item/block.json');
 
-    register_block_type(__DIR__ . '/blocks/hover-wrap/block.json');
-    register_block_type(__DIR__ . '/blocks/hover-item/block.json');
+    register_block_type(__DIR__ . '/blocks/hover/block.json');
   }
 
 }

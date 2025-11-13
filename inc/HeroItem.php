@@ -11,6 +11,11 @@ class HeroItem extends Block {
     $this->hero_item = $this->block_hero_item($block);
   }
 
+  public function block_get_fields(){
+    $fields  = [];
+    return $fields;
+  }
+
   public function block_hero_item($block){
     $classes = ['rmcc-hero-item'];
     $html = 'class="' . implode(' ', $classes) . '"';

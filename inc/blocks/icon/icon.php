@@ -11,4 +11,5 @@ $context = Theme::context();
 $context['block'] = $block;
 $context['block']['is_preview'] = $is_preview;
 $context['block']['controls'] = new Icon($context['block']);
+$context['block']['fields'] = $context['block']['controls']->block_get_fields();
 Theme::render('icon/block.twig', $context);

@@ -9,7 +9,7 @@
   "parent": ["acf/rmcc-hero-bottom"],
 
   "acf": {
-    "mode": "preview",
+    "blockVersion": 3,
     "renderTemplate": "hero-item.php"
   },
 

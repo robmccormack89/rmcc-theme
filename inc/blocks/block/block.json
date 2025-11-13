@@ -8,7 +8,7 @@
   "style": ["file:./block.css"],
 
   "acf": {
-    "mode": "preview",
+    "blockVersion": 3,
     "renderTemplate": "block.php"
   },
 

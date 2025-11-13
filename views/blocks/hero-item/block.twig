@@ -1,18 +1,5 @@
 {% extends block.is_preview ? 'hero-item/_preview.twig' : 'hero-item/_block.twig' %}
 
 {% block block_content %}
-  <div class="rmcc-padding-remove-horizontal">
-    <div class="rmcc-width-1-1 rmcc-height-1-1 rmcc-padding">
-      <div class="rmcc-flex rmcc-flex-bottom" rmcc-grid>
-        {# <div class="rmcc-width-1-1 rmcc-width-3-4@xl">
-          <span class="rmcc-text-bold rmcc-text-emphasis">Who We Are</span>
-          <h2 class="rmcc-text-normal rmcc-margin-remove-top">We work tirelessly alongside our sponsors to help participants gain meaningful & practical work experience.</h2>
-        </div> #}
-        <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
-        {# <div class="rmcc-width-1-1 rmcc-width-expand@xl rmcc-flex rmcc-flex-left rmcc-flex-right@xl">
-          <a class="rmcc-button rmcc-button-default rmcc-button-fat rmcc-border-rounded" href="#">Learn more</a>
-        </div> #}
-      </div>
-    </div>
-  </div>
+  <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
 {% endblock %}

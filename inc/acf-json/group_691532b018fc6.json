@@ -1,34 +1,13 @@
 {
-    "key": "group_6914584a058b1",
-    "title": "RMcC Hero",
+    "key": "group_691532b018fc6",
+    "title": "RMcC Hover",
     "fields": [
         {
-            "key": "field_6914fd64a3e36",
-            "label": "Hero Text",
-            "name": "hero_text",
+            "key": "field_691532b19137e",
+            "label": "Front image",
+            "name": "front_image",
             "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6914584acd2d8",
-            "label": "Gallery",
-            "name": "gallery",
-            "aria-label": "",
-            "type": "gallery",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,8 +18,6 @@
             },
             "return_format": "id",
             "library": "all",
-            "min": "",
-            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -48,7 +25,33 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "insert": "append",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_691532d79137f",
+            "label": "Back image",
+            "name": "back_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
             "preview_size": "medium"
         }
     ],
@@ -57,7 +60,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/rmcc-hero-top"
+                "value": "acf\/rmcc-hover"
             }
         ]
     ],
@@ -69,7 +72,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 1,
+    "show_in_rest": 0,
     "display_title": "",
-    "modified": 1762983672
+    "modified": 1762997562
 }

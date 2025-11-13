@@ -1,38 +1,5 @@
 {% extends block.is_preview ? 'hero-top/_preview.twig' : 'hero-top/_block.twig' %}
 
 {% block block_content %}
-  <!-- header top -->
-  <div class="rmcc-cover-container shadow rmcc-position-relative rmcc-visible-toggle rmcc-height-large sssmaller">
-
-    <!-- bg image/slider -->
-    <div class="hero-slideshow rmcc-position-relative rmcc-light" tabindex="0" rmcc-slideshow="finite: true; autoplay: false; autoplay-interval: 3000; animation: slide">
-      <div class="rmcc-slideshow-items rmcc-height-large sssmaller">
-        {# {% if block.data.gallery|length > 0 %} #}
-          {% for img in block.data.gallery %}
-            {% set img  = get_image(img) %}
-            <img src="{{img.src}}" class="" alt="" loading="lazy" rmcc-cover>
-          {% endfor %}
-        {# {% else %}
-          <img src="{{theme.link}}/public/images/harbour.jpg" class="" alt="" loading="lazy" rmcc-cover>
-          <img src="{{theme.link}}/public/images/pitch.jpg" class="" alt="" loading="lazy" rmcc-cover>
-          <img src="{{theme.link}}/public/images/ballymore.jpg" class="" alt="" loading="lazy" rmcc-cover>
-        {% endif %} #}
-      </div>
-      <a class="rmcc-position-center-left rmcc-position-center-left-out rmcc-position-small rmcc-hidden-hover rmcc-position-z-index" href rmcc-slidenav-previous rmcc-slideshow-item="previous"></a>
-      <a class="rmcc-position-center-right rmcc-position-center-right-out rmcc-position-small rmcc-hidden-hover rmcc-position-z-index" href rmcc-slidenav-next rmcc-slideshow-item="next"></a>
-    </div>
-
-    <!-- overlay -->
-    <div class="rmcc-overlay-primary rmcc-position-cover"></div>
-
-    <!-- header content -->
-    <div class="rmcc-height-1-1 rmcc-width-1-1">
-      <div class="rmcc-position-absolute rmcc-position-center rmcc-text-center rmcc-light rrrmcc-margin-large-bottom">
-        {{block.data.some_text}}
-        <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
-      </div>
-    </div>
-
-  </div>
-
+  <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
 {% endblock %}

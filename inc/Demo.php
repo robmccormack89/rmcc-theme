@@ -11,6 +11,11 @@ class Demo extends Block {
     $this->demo = $this->block_demo($block);
   }
 
+  public function block_get_fields(){
+    $fields  = [];
+    return $fields;
+  }
+
   public function block_demo($block){
     $classes = ['rmcc-demo', 'rmcc-text-center', 'rmcc-margin-remove'];
     $html = 'class="' . implode(' ', $classes) . '"';

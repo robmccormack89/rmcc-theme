@@ -1,16 +1,15 @@
 {
-  "name": "acf/rmcc-hover-wrap",
-  "title": "RMcC Hover Wrap",
+  "name": "acf/rmcc-hover",
+  "title": "RMcC Hover",
   "description": "A hover block built using ACF & Timber/Twig.",
   "category": "rmcc",
   "icon": "admin-comments",
-  "keywords": ["rmcc", "hover-wrap"],
-  "style": ["file:./hover-wrap.css"],
-  "__parent": ["acf/rmcc-block"],
+  "keywords": ["rmcc", "hover"],
+  "style": ["file:./hover.css"],
 
   "acf": {
-    "mode": "preview",
-    "renderTemplate": "hover-wrap.php"
+    "blockVersion": 3,
+    "renderTemplate": "hover.php"
   },
 
   "example": {
@@ -28,12 +27,12 @@
     "multiple": true,
 
     "className": false,
-    "customClassName": false,
+    "customClassName": true,
     "inserter": true,
     "reusable": true,
     "lock": true,
 
-    "align": ["full"],
+    "align": false,
 
     "typography": {
       "lineHeight": false

@@ -6,13 +6,21 @@ class Icon extends Block {
 
   public $icon;
   public $colour;
-  public $outer;
+  public $wrap;
 
   public function __construct($block) {
     parent::__construct($block); // inherit construc of parent class
     $this->icon = $this->block_icon($block);
     $this->colour = $this->block_colour($block);
-    $this->outer = $this->block_outer($block);
+    $this->wrap = $this->block_wrap($block);
+  }
+
+  public function block_get_fields(){
+    $fields  = [];
+
+    if(get_field('icon')) $fields['icon'] = get_field('icon');
+
+    return $fields;
   }
 
   public function block_colour($block){
@@ -38,12 +46,14 @@ class Icon extends Block {
     $styles = array_map(function($value, $key) {
       return $key.':'.$value;
     }, array_values($styles), array_keys($styles));
-    $styles = 'style="' . implode(';', $styles) . '"';
+    $styles = 'style="' . esc_attr(implode(';', $styles)) . '"';
     return $styles;
   }
 
   public function block_icon($block){
     $styles = [];
+
+    // icon ratio (using line-height control)
     $styles['ratio'] = 2;
     if(array_key_exists('style', $block)) {
       if(array_key_exists('typography', $block['style'])) {
@@ -53,30 +63,24 @@ class Icon extends Block {
       }
     }
 
-    $styles['icon'] = 'user';
-    if(array_key_exists('data', $block)) {
-      if(array_key_exists('icon_slug', $block['data'])) {
-        $styles['icon'] = $block['data']['icon_slug'];
-      }
-    }
+    // icon slug (using icon custom field)
+    $styles['icon'] = 'question';
+    if(!empty($this->block_get_fields()['icon'])) $styles['icon'] = $this->block_get_fields()['icon'];
 
     // better html outputting of styles (as arrays)
     $styles = array_map(function($value, $key) {
       return $key.':'.$value;
     }, array_values($styles), array_keys($styles));
-    $styles = 'rmcc-icon="' . implode(';', $styles) . '"';
+    $styles = 'rmcc-icon="' . esc_attr(implode(';', $styles)) . '"';
     return $styles;
   }
 
-  public function block_outer($block){
+  public function block_wrap($block){
     $classes = [];
 
-    if(array_key_exists('className', $block)) {
-      $classes = ['rmcc-icon-block'];
-      $classes[] = esc_html($block['className']);
-    }
+    if(array_key_exists('className', $block)) $classes[] = $block['className'];
 
-    $html = 'class="' . implode(' ', $classes) . '"';
+    $html = 'class="' . esc_attr(implode(' ', $classes)) . '"';
     return $html;
   }
 

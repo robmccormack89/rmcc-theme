@@ -9,7 +9,7 @@
   "parent": ["acf/rmcc-hero-wrap"],
 
   "acf": {
-    "mode": "preview",
+    "blockVersion": 3,
     "renderTemplate": "hero-top.php"
   },
 

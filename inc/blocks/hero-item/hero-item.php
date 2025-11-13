@@ -11,6 +11,7 @@ $context = Theme::context();
 $context['block'] = $block;
 $context['block']['is_preview'] = $is_preview;
 $context['block']['controls'] = new HeroItem($context['block']);
+$context['block']['fields'] = $context['block']['controls']->block_get_fields();
 $context['block']['template'] = array(
   array(
     'core/group',

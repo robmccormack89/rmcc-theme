@@ -11,6 +11,11 @@ class HeroWrap extends Block {
     $this->hero_wrap = $this->block_hero_wrap($block);
   }
 
+  public function block_get_fields(){
+    $fields  = [];
+    return $fields;
+  }
+
   public function block_hero_wrap($block){
     $classes = ['rmcc-hero-wrap'];
     $html = 'class="' . implode(' ', $classes) . '"';

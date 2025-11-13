@@ -8,7 +8,7 @@
   "style": ["file:./hero-wrap.css"],
 
   "acf": {
-    "mode": "preview",
+    "blockVersion": 3,
     "renderTemplate": "hero-wrap.php"
   },
 

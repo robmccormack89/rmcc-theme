@@ -26,6 +26,11 @@ class Block {
     $this->preview = $this->block_preview($block); // this wrapper should replace block_wrapper_attributes in preview mode to allow settings for background colours etc to work properly in previews (using block inline style attributes with css presets)
   }
 
+  public function block_get_fields(){
+    $fields  = [];
+    return $fields;
+  }
+
   public function block_break($block) {
     $classes = ['rmcc-block'];
     if($block['align'] == 'wide' || $block['align'] == 'full' || $block['align'] == 'right' || $block['align'] == 'left' || $block['align'] == 'center') $classes[] = 'rmcc-container-break';

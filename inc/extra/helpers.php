@@ -8,18 +8,10 @@
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2 );
 function acf_should_wrap_innerblocks( $wrap, $name ) {
   // You can target specific blocks by name, or return false for all
-  // if ( $name == 'acf/your-block-name' ) {}
-  return false; // Disables the wrapper for this specific block
-  
+  if ($name == 'acf/rmcc-hero-wrap' || $name == 'acf/rmcc-hero-top' || $name == 'acf/rmcc-hero-bottom' || $name == 'acf/rmcc-hero-item' || $name == 'acf/rmcc-hover-wrap' || $name == 'acf/rmcc-hover-item' || $name == 'acf/rmcc-icon' ) {
+    return false; // Disables the wrapper for this specific block
+  }
   return $wrap; // Keep the default behavior for other blocks
-}
-
-add_filter( 'acf/pre_load_post_id', 'fix_acf_post_id_on_preview', 10, 2 );
-function fix_acf_post_id_on_preview( $null, $post_id ) {
-    if ( is_single( $post_id ) && is_preview() ) {
-        return get_the_ID();
-    }
-    return $null;
 }
 
 /*
