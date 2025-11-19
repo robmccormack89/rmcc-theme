@@ -9,7 +9,7 @@
   <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }}" data-template="single.twig">
 
     {% block single_header %}
-      {% include 'single/header.twig' %}
+      {# {% include 'single/header.twig' %} #}
     {% endblock %}
 
     {% block single_content %}
@@ -34,7 +34,7 @@
     {% endblock %}
 
     {% block single_footer %}
-      {% include 'single/footer.twig' %}
+      {# {% include 'single/footer.twig' %} #}
     {% endblock %}
 
   </article>

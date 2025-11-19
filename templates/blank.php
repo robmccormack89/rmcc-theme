@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Blank Template
+ * Template Name: Blank (No header/footer/padding)
  * Template Post Type: post, page
  *
  * @package Rmcc_Theme

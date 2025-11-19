@@ -9,6 +9,15 @@
 */
 
 /*
+Maintenance
+Mode
+*/
+
+$configs['maintenance_mode'] = false; // set to true (for logged-out users) or 'all' (for all users)
+$configs['redirect_to_page'] = false; // use page or post slug/ID here
+$configs['maintenance_template'] = false; // template slug, defaults to maintenance.twig. only applies when redirect_to_page is unset
+
+/*
 Configs &
 Settings
 */
@@ -34,6 +43,6 @@ ACF
 */
 
 $configs['enable_acf'] = true;
-$configs['hide_acf_menus'] = true;
+$configs['hide_acf_menus'] = false;
 
 return $configs;

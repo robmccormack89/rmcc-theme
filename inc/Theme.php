@@ -46,6 +46,9 @@ class Theme extends Timber {
     add_action('init', array($this, 'register_navigation_menus'));
     add_action('enqueue_block_assets', array($this, 'theme_enqueue_assets'));
 
+    // filter what html tags & attrs are allowed in wp content / wp kses post
+    add_action('init', array($this, 'allowed_html_tags_attrs'), 10);
+
     // Remove tags support from posts
     if (array_key_exists('enable_post_tags', $this->configs) && $this->configs['enable_post_tags'] != true) {
       add_action('init', function () {
@@ -56,6 +59,192 @@ class Theme extends Timber {
       });
     }
 
+    // if maintenance_mode exists in the config
+    if(array_key_exists('maintenance_mode', $this->configs) && !($this->configs['maintenance_mode'] == false)){
+
+      // maintenance_mode is set for ALL users (logged in & not)
+      if(is_string($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == 'all'){
+        add_action('template_redirect', array($this, 'maintenance_mode')); // do the redirect now
+      }
+
+      // regular maintenance_mode is on (only logged out users will be affected)
+      if(is_bool($this->configs['maintenance_mode']) && $this->configs['maintenance_mode'] == true){
+        if(!is_user_logged_in()) add_action('template_redirect', array($this, 'maintenance_mode')); // do the redirect now, but only for non logged in users!
+      }
+
+    }
+
+  }
+
+  public function maintenance_mode() {
+
+    // set vars for conditionals
+    $redirects_exists = (array_key_exists('redirect_to_page', $this->configs));
+    $redirects_is_int = ($redirects_exists && is_int($this->configs['redirect_to_page']));
+    $redirects_is_string = ($redirects_exists && is_string($this->configs['redirect_to_page']));
+    $redirects_is_bool = ($redirects_exists && is_bool($this->configs['redirect_to_page']));
+    $redirects_is_false = ($redirects_is_bool && $this->configs['redirect_to_page'] == false);
+    $redirects_is_empty = ($redirects_is_string && $this->configs['redirect_to_page'] == '');
+    
+    // create the OFF conditional var
+    $redirects_are_off = false;
+    if(!$redirects_exists){
+      $redirects_are_off = true;
+    } else {
+      if($redirects_is_false || $redirects_is_empty){
+        $redirects_are_off = true;
+      }
+    }
+
+    // create the ON conditional var
+    $redirects_are_on = false;
+    if($redirects_exists){
+      if(($redirects_is_int || $redirects_is_string) && !$redirects_is_empty){
+        $redirects_are_on = true;
+      }
+    }
+    
+    // now we do the maintenance_mode stuff for when redirects are OFF (redirects to a default template or one provided seperately)
+    if($redirects_are_off){
+      add_filter('template_include', function(){
+        if(!is_front_page()){
+          wp_redirect(esc_url_raw(home_url()));
+          exit;
+        }
+        $templates = array('maintenance.twig');
+        if(array_key_exists('maintenance_template', $this->configs)) array_unshift($templates, $this->configs['maintenance_template']);
+        $context = Theme::context();
+        Theme::render($templates, $context);
+      }, 10, 1);
+    }
+
+    // now we do the maintenance_mode stuff for when redirects are ON (redirects to a seperate page or post)
+    if($redirects_are_on){
+
+      if($redirects_is_int){
+        $_postObj = get_post($this->configs['redirect_to_page']);
+        if(isset($_postObj) && $_postObj->post_type == 'page') $postObj = $_postObj;
+      } elseif($redirects_is_string) {
+        $postObj = get_page_by_slug($this->configs['redirect_to_page']);
+      }
+
+      if(isset($postObj)){
+        $link = get_permalink($postObj);
+        if(!(is_page($this->configs['redirect_to_page'])) ){
+          wp_redirect(esc_url_raw($link));
+          exit;
+        }
+      }
+
+      return;
+    }
+
+  }
+
+  // filter what html tags & attrs are allowed in wp content / wp kses post
+  public function allowed_html_tags_attrs() {
+    global $allowedposttags;
+    $allowed_atts = array(
+      'align' => array(),
+      'class' => array(),
+      'type' => array(),
+      'id' => array(),
+      'dir' => array(),
+      'lang' => array(),
+      'style' => array(),
+      'xml:lang' => array(),
+      'src' => array(),
+      'alt' => array(),
+      'href' => array(),
+      'rel' => array(),
+      'rev' => array(),
+      'target' => array(),
+      'novalidate' => array(),
+      'type' => array(),
+      'value' => array(),
+      'name' => array(),
+      'tabindex' => array(),
+      'action' => array(),
+      'method' => array(),
+      'for' => array(),
+      'width' => array(),
+      'height' => array(),
+      'data' => array(),
+      'title' => array(),
+      'hidden' => array(),
+      'role' => array(),
+      'aria-live' => array(),
+      'aria-atomic' => array(),
+      'data-status' => array(),
+      'data-template' => array(),
+      'aria-required' => array(),
+      'aria-invalid' => array(),
+      'aria-describedby' => array(),
+      'data-name' => array(),
+      'size' => array(),
+      'role' => array(),
+      'aria-hidden' => array(),
+      'focusable' => array(),
+      'role' => array(),
+      'viewBox' => array(),
+      'fill' => array(),
+      'd' => array(),
+      'data-nanogallery2' => array(),
+      'rmcc-slider-parallax' => array(),
+      'rmcc-accordion' => array(),
+      'rmcc-icon' => array(),
+      'rmcc-slider' => array(),
+      'rmcc-slideshow' => array(),
+      'rmcc-scroll' => array(),
+      'rmcc-slideshow-item' => array(),
+      'rmcc-slidenav-previous' => array(),
+      'rmcc-slidenav-next' => array(),
+      'rmcc-cover' => array(),
+      'rmcc-grid' => array(),
+      'rmcc-form' => array(),
+      'rmcc-modal' => array(),
+      'rmcc-toggle' => array(),
+      'rmcc-height-viewport' => array(),
+      'mjf-grid' => array(),
+    );
+    $allowedposttags['form'] = $allowed_atts;
+    $allowedposttags['button'] = $allowed_atts;
+    $allowedposttags['cite'] = $allowed_atts;
+    $allowedposttags['svg'] = $allowed_atts;
+    $allowedposttags['path'] = $allowed_atts;
+    $allowedposttags['label'] = $allowed_atts;
+    $allowedposttags['input'] = $allowed_atts;
+    $allowedposttags['textarea'] = $allowed_atts;
+    $allowedposttags['iframe'] = $allowed_atts;
+    $allowedposttags['script'] = $allowed_atts;
+    $allowedposttags['style'] = $allowed_atts;
+    $allowedposttags['strong'] = $allowed_atts;
+    $allowedposttags['small'] = $allowed_atts;
+    $allowedposttags['table'] = $allowed_atts;
+    $allowedposttags['span'] = $allowed_atts;
+    $allowedposttags['abbr'] = $allowed_atts;
+    $allowedposttags['code'] = $allowed_atts;
+    $allowedposttags['pre'] = $allowed_atts;
+    $allowedposttags['div'] = $allowed_atts;
+    $allowedposttags['img'] = $allowed_atts;
+    $allowedposttags['h1'] = $allowed_atts;
+    $allowedposttags['h2'] = $allowed_atts;
+    $allowedposttags['h3'] = $allowed_atts;
+    $allowedposttags['h4'] = $allowed_atts;
+    $allowedposttags['h5'] = $allowed_atts;
+    $allowedposttags['h6'] = $allowed_atts;
+    $allowedposttags['ol'] = $allowed_atts;
+    $allowedposttags['ul'] = $allowed_atts;
+    $allowedposttags['li'] = $allowed_atts;
+    $allowedposttags['em'] = $allowed_atts;
+    $allowedposttags['hr'] = $allowed_atts;
+    $allowedposttags['br'] = $allowed_atts;
+    $allowedposttags['tr'] = $allowed_atts;
+    $allowedposttags['td'] = $allowed_atts;
+    $allowedposttags['p'] = $allowed_atts;
+    $allowedposttags['a'] = $allowed_atts;
+    $allowedposttags['b'] = $allowed_atts;
+    $allowedposttags['i'] = $allowed_atts;
   }
 
   // theme supports & assets

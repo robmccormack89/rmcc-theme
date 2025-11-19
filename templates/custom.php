@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Custom Template
+ * Template Name: Custom (Unpadded content)
  * Template Post Type: post, page
  *
  * @package Rmcc_Theme

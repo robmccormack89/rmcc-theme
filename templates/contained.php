@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Contained Template
+ * Template Name: Contained (Padded content)
  * Template Post Type: post, page
  *
  * @package Rmcc_Theme

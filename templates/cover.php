@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Template Name: Cover Template
+ * Template Name: Cover (Overhanging header)
  * Template Post Type: post, page
  *
  * @package Rmcc_Theme
