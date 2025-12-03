@@ -1,9 +1,4 @@
-Blocks:
-
- - Jobs block: with options
-
 Site:
- - Pages & content
+ - Pages & content (Possible projects/testimonials/sites/sponsors CPTs)
  - Working blog
- - Possible projects/testimonials/sites/sponsors CPTs with related blocks to display would be good
  - Updated translations

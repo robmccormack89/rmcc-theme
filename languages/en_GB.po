@@ -16,79 +16,19 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-07-24 11:48+0000\n"
+"PO-Revision-Date: 2025-12-03 22:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (UK)\n"
 "Language: en_GB\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.28"
 
-#: archive.php:88
-msgctxt "Archives"
-msgid "Tag: "
-msgstr ""
-
-#: archive.php:78
-msgctxt "Archives"
-msgid "Year: "
-msgstr ""
-
-#: archive.php:68
-msgctxt "Archives"
-msgid "Month: "
-msgstr ""
-
-#: archive.php:58
-msgctxt "Archives"
-msgid "Day: "
-msgstr ""
-
-#: archive.php:47
-msgctxt "Archives"
-msgid "Author: "
-msgstr ""
-
-#: search.php:44
-msgctxt "Search: results"
-msgid "Search results"
-msgstr ""
-
-#: search.php:45
-msgctxt "Search: results"
-msgid "You have searched for:"
-msgstr ""
-
-#: inc/Theme.php:217
-msgctxt "Menus"
-msgid "Main Menu"
-msgstr ""
-
-#: inc/Theme.php:218
-msgctxt "Menus"
-msgid "Iconnav Menu"
-msgstr ""
-
-#: inc/Theme.php:241
-msgctxt "Theme Featured Image - src"
-msgid "https://picsum.photos/1920/1200"
-msgstr ""
-
-#: inc/Theme.php:242
-msgctxt "Theme Featured Image - alt"
-msgid "Alt"
-msgstr ""
-
-#: inc/Theme.php:243
-msgctxt "Theme Featured Image - caption"
-msgid "Caption"
-msgstr ""
-
-#: inc/Theme.php:250
+#: inc/Theme.php:464
 msgctxt "404/Error pages"
 msgid "Error: Page not found"
 msgstr ""
 
-#: inc/Theme.php:251
+#: inc/Theme.php:465
 msgctxt "404/Error pages"
 msgid ""
 "Sorry, there has been an error locating a resource for your query. Try "
@@ -102,101 +42,159 @@ msgid ""
 "try again."
 msgstr ""
 
-#: views/temp/archive/pagination.php:8
-msgctxt "Archive: pagination"
-msgid "Newer posts"
+#: archive.php:47
+msgctxt "Archives"
+msgid "Author: "
 msgstr ""
 
-#: views/temp/archive/pagination.php:26
-msgctxt "Archive: pagination"
-msgid "Older posts"
+#: archive.php:58
+msgctxt "Archives"
+msgid "Day: "
 msgstr ""
 
-#: views/temp/archive/tease.php:23
-msgctxt "Tease: date"
-msgid "%s ago"
+#: archive.php:68
+msgctxt "Archives"
+msgid "Month: "
 msgstr ""
 
-#: views/temp/archive/tease.php:35
-msgctxt "Tease: comments"
-msgid "Comments"
+#: archive.php:88
+msgctxt "Archives"
+msgid "Tag: "
 msgstr ""
 
-#: views/temp/archive/tease.php:55
-msgctxt "Tease: read more"
-msgid "Read more"
+#: archive.php:78
+msgctxt "Archives"
+msgid "Year: "
 msgstr ""
 
-#: views/temp/single/author.php:11
-msgctxt "Single: author"
-msgid "Posted by %s"
+#: templates/blank.php:4
+msgid "Blank (No header/footer/padding)"
 msgstr ""
 
-#: views/temp/single/author.php:20
-msgctxt "Single: author"
-msgid "Actions"
+#: templates/coming-soon.php:4
+msgid "Coming Soon"
 msgstr ""
 
-#: views/temp/single/author.php:21
-msgctxt "Single: author"
-msgid "More articles by this author"
-msgstr ""
-
-#: views/temp/single/comments.php:2
-msgctxt "Single: comments"
-msgid "Comments"
-msgstr ""
-
-#: views/temp/single/comments.php:34
-msgctxt "Single: comments"
-msgid "Leave a new comment"
-msgstr ""
-
-#: views/temp/single/meta.php:8
-msgctxt "Single: meta date"
-msgid "%s ago"
-msgstr ""
-
-#: views/temp/single/pagination.php:7
-msgctxt "Single: pagination"
-msgid "Newer article"
-msgstr ""
-
-#: views/temp/single/pagination.php:18
-msgctxt "Single: pagination"
-msgid "Older article"
-msgstr ""
-
-#: views/temp/single/share.php:1
-msgctxt "Single: share"
-msgid "Share this post:"
-msgstr ""
-
-#: views/temp/site/footer.php:9
-msgctxt "Footer: to top"
-msgid "Scroll to Top"
-msgstr ""
-
-#: views/temp/site/password_form.php:3
-msgctxt "Password protected content: message"
+#: views/temp/coming_soon.php:1
+msgctxt "Coming Soon mode"
 msgid ""
-"This content is password protected. To view it please enter your password "
-"below:"
+"Website is under development & coming soon. Please check back again later."
 msgstr ""
 
-#: views/temp/site/password_form.php:11, views/temp/site/password_form.php:20
-msgctxt "Password protected content: form placeholder"
-msgid "Password"
+#: templates/contained.php:4
+msgid "Contained (Padded content)"
 msgstr ""
 
-#: views/temp/site/password_form.php:30, views/temp/site/password_form.php:31
+#: templates/cover.php:4
+msgid "Cover (Overhanging header)"
+msgstr ""
+
+#: templates/custom.php:4
+msgid "Custom (Unpadded content)"
+msgstr ""
+
+#: views/temp/site/footer.php:30,
+#: views/temp/site/footer/mobile_offcanvas.php:128
+msgctxt "Footer: copyright"
+msgid "© %s Kilbeggan Community Group CLG. All Rights Reserved."
+msgstr ""
+
+#: views/temp/blocks/jobs/block.php:5
+msgctxt "Jobs: loading text"
+msgid "Loading..."
+msgstr ""
+
+#: views/temp/blocks/jobs/_preview.php:2
+msgctxt "Jobs: preview text"
+msgid "Your jobs will appear here on the published version of this page..."
+msgstr ""
+
+#: templates/maintenance.php:4
+msgid "Maintenance Mode"
+msgstr ""
+
+#: views/temp/maintenance.php:1
+msgctxt "Maintenance mode"
+msgid ""
+"We are currently undergoing routine maintenance. Please try back in a few "
+"minutes."
+msgstr ""
+
+#: inc/Theme.php:425
+msgctxt "Menus"
+msgid "Buttons Menu"
+msgstr ""
+
+#: inc/Theme.php:420
+msgctxt "Menus"
+msgid "Company Menu"
+msgstr ""
+
+#: inc/Theme.php:421
+msgctxt "Menus"
+msgid "Footer Menu 1"
+msgstr ""
+
+#: inc/Theme.php:422
+msgctxt "Menus"
+msgid "Footer Menu 2"
+msgstr ""
+
+#: inc/Theme.php:423
+msgctxt "Menus"
+msgid "Footer Menu 3"
+msgstr ""
+
+#: inc/Theme.php:424
+msgctxt "Menus"
+msgid "Footer Menu 4"
+msgstr ""
+
+#: inc/Theme.php:417
+msgctxt "Menus"
+msgid "Main Menu"
+msgstr ""
+
+#: inc/Theme.php:418
+msgctxt "Menus"
+msgid "Secondary Menu"
+msgstr ""
+
+#: inc/Theme.php:419
+msgctxt "Menus"
+msgid "Socials Menu"
+msgstr ""
+
+#: views/temp/site/footer/mobile_offcanvas.php:8
+msgctxt "Navs: homepage title"
+msgid "Home"
+msgstr ""
+
+#: views/temp/site/footer/mobile_offcanvas.php:4
+msgctxt "Navs: mobile menu title"
+msgid "Mobile Menu"
+msgstr ""
+
+#: views/temp/site/header/main_menu.php:52
+msgctxt "Navs: mobile menu toggle"
+msgid "Menu"
+msgstr ""
+
+#: views/temp/site/password_form.php:32, views/temp/site/password_form.php:33
 msgctxt "Password protected content: button text"
 msgid "Enter"
 msgstr ""
 
-#: views/temp/site/search_form.php:11, views/temp/site/header/nav-search.php:9
-msgctxt "Search: form"
-msgid "Start typing..."
+#: views/temp/site/password_form.php:13, views/temp/site/password_form.php:22
+msgctxt "Password protected content: form placeholder"
+msgid "Password"
+msgstr ""
+
+#: views/temp/site/password_form.php:5
+msgctxt "Password protected content: message"
+msgid ""
+"This content is password protected. To view it please enter your password "
+"below:"
 msgstr ""
 
 #: views/temp/site/search_form.php:24
@@ -204,63 +202,52 @@ msgctxt "Search: form"
 msgid "Search"
 msgstr ""
 
-#: views/temp/single/comments/comment.php:24
-msgctxt "Single: comments"
-msgid "Edit"
-msgstr ""
-
-#: views/temp/single/comments/comment.php:35
-msgctxt "Single: comments"
-msgid "Reply"
-msgstr ""
-
-#: views/temp/single/comments/comment.php:37
-msgctxt "Single: comments"
-msgid "Reply to"
-msgstr ""
-
-#: views/temp/single/comments/form.php:14
-msgctxt "Single: comments"
-msgid "Your name"
-msgstr ""
-
-#: views/temp/single/comments/form.php:18
-msgctxt "Single: comments"
-msgid "Your email"
-msgstr ""
-
-#: views/temp/single/comments/form.php:25
-msgctxt "Single: comments"
-msgid "Your website address (including http:// or https://)"
-msgstr ""
-
-#: views/temp/single/comments/form.php:29
-msgctxt "Single: comments"
-msgid "Leave a message..."
-msgstr ""
-
-#: views/temp/single/comments/form.php:34
-msgctxt "Single: comments"
-msgid "Send"
-msgstr ""
-
-#: views/temp/single/comments/form.php:35
-msgctxt "Single: comments"
-msgid "Clear"
-msgstr ""
-
-#: views/temp/site/footer/footer-copyright.php:2,
-#: views/temp/site/header/nav-offcanvas.php:26
-msgctxt "Footer: copyright"
-msgid "© All Rights Reserved %s"
-msgstr "© %s. All Rights Reserved."
-
-#: views/temp/site/footer/footer-copyright.php:2
-msgctxt "Footer: back to home"
-msgid "Return to Homepage"
-msgstr ""
-
-#: views/temp/site/header/nav-search.php:9
+#: views/temp/site/search_form.php:11
 msgctxt "Search: form"
-msgid "Start typing & press enter..."
+msgid "Start typing..."
+msgstr ""
+
+#: views/temp/site/footer/search_popup.php:5
+msgctxt "Search: placeholder text"
+msgid "Start typing..."
+msgstr ""
+
+#: search.php:44
+msgctxt "Search: results"
+msgid "Search results"
+msgstr ""
+
+#: search.php:45
+msgctxt "Search: results"
+msgid "You have searched for:"
+msgstr ""
+
+#: views/temp/archive/tease.php:34
+msgctxt "Tease: comments"
+msgid "Comments"
+msgstr ""
+
+#: views/temp/archive/tease.php:22
+msgctxt "Tease: date"
+msgid "%s ago"
+msgstr ""
+
+#: views/temp/archive/tease.php:54
+msgctxt "Tease: read more"
+msgid "Read more"
+msgstr ""
+
+#: inc/Theme.php:449
+msgctxt "Theme Featured Image - alt"
+msgid "Alt"
+msgstr ""
+
+#: inc/Theme.php:450
+msgctxt "Theme Featured Image - caption"
+msgid "Caption"
+msgstr ""
+
+#: inc/Theme.php:448
+msgctxt "Theme Featured Image - src"
+msgid "https://picsum.photos/1920/1200"
 msgstr ""

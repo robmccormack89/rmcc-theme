@@ -14,11 +14,11 @@
 //
 //
 
-import gulp from 'gulp'
+import gulp from 'gulp';
 import {deleteSync} from 'del';
-import wpPot from 'gulp-wp-pot'
-import replace from 'gulp-replace'
-import rename from 'gulp-rename'
+import wpPot from 'gulp-wp-pot';
+import replace from 'gulp-replace';
+import rename from 'gulp-rename';
 
 const config = {
   "text_domain"       : "rmcc-theme",

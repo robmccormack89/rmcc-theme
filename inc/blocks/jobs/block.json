@@ -1,0 +1,40 @@
+{
+  "name": "acf/rmcc-jobs",
+  "title": "RMcC Jobs",
+  "description": "A jobs block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "jobs"],
+  "style": ["file:./jobs.css"],
+  "__parent": ["acf/rmcc-block"],
+
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "jobs.php"
+  },
+
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
+  "supports": {
+    "mode": true,
+    "jsx": false,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": false,
+    "inserter": true,
+    "reusable": true,
+    "lock": true,
+
+    "align": false
+    
+  }
+
+}

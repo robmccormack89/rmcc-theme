@@ -1,0 +1,23 @@
+{% extends block.is_preview ? 'jobs/_preview.twig' : 'jobs/_block.twig' %}
+
+{% block block_content %}
+  <div class="jobs-container rmcc-section-small">
+    <div id="MyJobs">{{ _x('Loading...', 'Jobs: loading text', 'rmcc-theme') }}</div>
+  </div>
+  <div class="rmcc-empty"></div>
+  <script id="main-template" type="text/html">
+    <div rmcc-grid>
+      <div class="sidebar rmcc-width-1-4@l">
+        <fieldset class="rmcc-fieldset">
+          <div id="FiltersCount"></div>
+          <div id="FiltersDivider"></div>
+          <div id="FiltersList"></div>
+        </fieldset>
+      </div>
+      <div class="rmcc-width-3-4@l">
+        <div id="FiltersTopBar"></div>
+        <div id="FiltersJobsWrap"></div>
+      </div>
+    </div>
+  </script>
+{% endblock %}

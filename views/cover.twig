@@ -1,9 +1,5 @@
 {% extends 'single.twig' %}
 
-{% block styles %}
-  <link rel='stylesheet' id='mjf-feed-css' href='{{theme.link}}/public/feed/css/mjf.min.css' type='text/css' media='all' />
-{% endblock %}
-
 {% block header %}
   <!-- overhang header -->
   <header class="site-header homer">
@@ -73,7 +69,8 @@
 {% endblock %}
 
 {% block footer %}
-  <!-- footer dark bg -->
+
+  <!-- alt curved footer with dark bg -->
   <footer class="site-footer curved-upper rmcc-background-secondary rmcc-light">
     <div class="rmcc-container rmcc-section">
 
@@ -124,45 +121,5 @@
 
   <!-- search popup -->
   {% include 'footer/search_popup.twig' %}
-  
-  <script src="{{theme.link}}/public/feed/js/mjf.min.js"></script>
-  <script src="{{theme.link}}/public/feed/js/feed.js"></script>
-  <script>
-    (async function () {
-      var jobsJson = await fetchJobsJson('https://feed.midlandjobs.ie/demo/');
-      var jobsQ = JsonQuery(jobsJson); //Initialize the Query Engine
-      var kilbegganJobs = jobsQ.where({'company': 'Kilbeggan Community Group'}).exec();
-      const MyJobsObject = new JobBoardFilteredFeed(42, kilbegganJobs, {
 
-        pagination: {
-          visiblePages: 3, // set init visible pages within the pagination
-          initPerPage: 3, // set an initial per page count (in case where perPage below is false/not set)
-          perPage: {
-            values: [3, 5] // per page dropdown options
-          },
-        },
-
-        filters: [
-          {
-            key: 'city',
-            singular: 'Town/City',
-            plural: 'Cities',
-            type: 'option',
-            setArray: false,
-            removeTerms: []
-          },
-          {
-            key: 'category',
-            singular: 'Category',
-            plural: 'Categories',
-            type: 'checkbox',
-            setArray: true,
-            removeTerms: []
-          }
-        ],
-
-      });
-      MyJobsObject.renderTheJobs('#MyJobs');
-    })();
-  </script>
 {% endblock %}
