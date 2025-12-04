@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.9" created="2025-12-04 09:09" -->
+	<!-- generator="WordPress/6.9" created="2025-12-04 15:48" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -28,26 +28,26 @@
 <channel>
 	<title>Kilbeggan Community Group</title>
 	<link>https://testwp.com</link>
-	<description>Succeding Together</description>
-	<pubDate>Thu, 04 Dec 2025 09:09:39 +0000</pubDate>
+	<description>Succeeding Together</description>
+	<pubDate>Thu, 04 Dec 2025 15:48:32 +0000</pubDate>
 	<language>en-GB</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://testwp.com</wp:base_site_url>
 	<wp:base_blog_url>https://testwp.com</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[robmccormack89]]></wp:author_login><wp:author_email><![CDATA[robertmccormack147@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[robmccormack89]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[rob]]></wp:author_login><wp:author_email><![CDATA[robertmccormack147@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[rob]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
 				
 	<generator>https://wordpress.org/?v=6.9</generator>
 
 		<item>
 		<title><![CDATA[Headers]]></title>
-		<link>https://testwp.com/?page_id=1344</link>
+		<link>https://testwp.com/headers/</link>
 		<pubDate>Wed, 19 Nov 2025 10:53:23 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1344</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"400px"},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/12/pexels-reinaldo-31100323.jpg","id":1686,"source":"file","title":"pexels-reinaldo-31100323"},"backgroundSize":"cover"},"color":{"gradient":"linear-gradient(135deg,rgba(75,235,221,0.68) 0%,rgba(151,119,209,0.76) 19%,rgba(207,41,185,0.8) 41%,rgba(237,43,130,0.78) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)"}},"alignContent":"center center","name":"acf/rmcc-block","data":[],"align":"full","mode":"preview","className":"helloCustomClassy"} -->
+		<content:encoded><![CDATA[<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"400px"},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/12/pexels-reinaldo-31100323.jpg","id":1686,"source":"file","title":"pexels-reinaldo-31100323"},"backgroundSize":"cover"},"color":{"gradient":"linear-gradient(135deg,rgba(75,235,221,0.68) 0%,rgba(151,119,209,0.76) 19%,rgba(207,41,185,0.8) 41%,rgba(237,43,130,0.78) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)"}},"alignContent":"center center","name":"acf/rmcc-block","data":[],"align":"full","mode":"preview","className":"helloCustomClassy","metadata":{"patternName":"core/block/1862","name":"Purpley Header"}} -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","className":"rmcc-heading-small rmcc-margin-remove-bottom","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
 <h2 class="wp-block-heading has-text-align-center rmcc-heading-small rmcc-margin-remove-bottom has-white-color has-text-color has-link-color"><strong>Purpley Header</strong></h2>
@@ -59,7 +59,7 @@
 <!-- /wp:group -->
 <!-- /wp:acf/rmcc-block -->
 
-<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":""},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/12/pexels-reinaldo-31100323.jpg","id":1686,"source":"file","title":"pexels-reinaldo-31100323"},"backgroundSize":"cover","backgroundAttachment":"fixed"},"color":{"gradient":"linear-gradient(135deg,rgba(255,206,166,0.79) 1%,rgba(255,46,46,0.84) 50%,rgb(107,0,62) 100%)"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview","fullHeight":true} -->
+<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":""},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/12/pexels-reinaldo-31100323.jpg","id":1686,"source":"file","title":"pexels-reinaldo-31100323"},"backgroundSize":"cover","backgroundAttachment":"fixed"},"color":{"gradient":"linear-gradient(135deg,rgba(255,206,166,0.79) 1%,rgba(255,46,46,0.84) 50%,rgb(107,0,62) 100%)"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview","fullHeight":true,"metadata":{"patternName":"core/block/1863","name":"Reddish Header"}} -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","className":"rmcc-heading-small rmcc-margin-remove-bottom","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
 <h2 class="wp-block-heading has-text-align-center rmcc-heading-small rmcc-margin-remove-bottom has-white-color has-text-color has-link-color"><strong>Reddish Header</strong></h2>
@@ -71,7 +71,7 @@
 <!-- /wp:group -->
 <!-- /wp:acf/rmcc-block -->
 
-<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"400px"},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/12/pexels-reinaldo-31100323.jpg","id":1686,"source":"file","title":"pexels-reinaldo-31100323"},"backgroundSize":"cover"},"color":{"gradient":"linear-gradient(135deg,rgba(3,3,130,0.76) 0%,rgb(40,116,252) 100%)"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview"} -->
+<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"400px"},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/12/pexels-reinaldo-31100323.jpg","id":1686,"source":"file","title":"pexels-reinaldo-31100323"},"backgroundSize":"cover"},"color":{"gradient":"linear-gradient(135deg,rgba(3,3,130,0.76) 0%,rgb(40,116,252) 100%)"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview","metadata":{"patternName":"core/block/1864","name":"Bluey Header"}} -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","className":"rmcc-heading-small rmcc-margin-remove-bottom","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
 <h2 class="wp-block-heading has-text-align-center rmcc-heading-small rmcc-margin-remove-bottom has-white-color has-text-color has-link-color"><strong>Bluey Header</strong></h2>
@@ -100,12 +100,12 @@
 		<wp:post_id>1344</wp:post_id>
 		<wp:post_date><![CDATA[2025-11-19 10:53:23]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-11-19 10:53:23]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:55:00]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:55:00]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 13:20:17]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 13:20:17]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[headers]]></wp:post_name>
-		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
@@ -124,10 +124,10 @@
 		<title><![CDATA[Homepage]]></title>
 		<link>https://testwp.com/</link>
 		<pubDate>Mon, 10 Nov 2025 21:27:08 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=122</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:group {"align":"full","layout":{"type":"default"}} -->
+		<content:encoded><![CDATA[<!-- wp:group {"metadata":{"patternName":"core/block/1847","name":"Hero group"},"align":"full","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull"><!-- wp:acf/rmcc-hero-wrap {"name":"acf/rmcc-hero-wrap","mode":"preview"} -->
 <!-- wp:acf/rmcc-hero-top {"name":"acf/rmcc-hero-top","data":{"gallery":["1619","1617"],"_gallery":"field_6914584acd2d8"},"mode":"preview"} -->
 <!-- wp:group {"className":"rmcc-container rmcc-container-large","layout":{"type":"default"}} -->
@@ -205,7 +205,7 @@
 <!-- /wp:acf/rmcc-hero-wrap --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","className":"rmcc-section rmcc-container","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"patternName":"core/block/1848","name":"Icon grid Group"},"align":"full","className":"rmcc-section rmcc-container","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull rmcc-section rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
 <h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">What is the Community Employment Scheme?</h1>
 <!-- /wp:heading -->
@@ -281,7 +281,7 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","className":"rmcc-section ","backgroundColor":"muted-grey","layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"patternName":"core/block/1849","name":"Grey BG info Group"},"align":"full","className":"rmcc-section ","backgroundColor":"muted-grey","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull rmcc-section  has-muted-grey-background-color has-background"><!-- wp:group {"className":"rmcc-container","layout":{"type":"constrained"}} -->
 <div class="wp-block-group rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
 <h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">Who is eligible for a CE scheme?</h1>
@@ -329,13 +329,13 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"gradient":"blue-to-green"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-blue-to-green-gradient-background has-background wp-element-button">Visit site</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-blue-to-green-gradient-background has-background wp-element-button"><strong>Visit site</strong></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","className":"rmcc-section rmcc-container","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"patternName":"core/block/1850","name":"Video block Group"},"align":"full","className":"rmcc-section rmcc-container","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull rmcc-section rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
 <h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">What is the Community Employment Scheme?</h1>
 <!-- /wp:heading -->
@@ -351,7 +351,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:embed --></div>
 <!-- /wp:group -->
 
-<!-- wp:columns {"align":"full","style":{"spacing":{"blockGap":{"top":"0","left":"0"},"margin":{"top":"0","bottom":"0"}}}} -->
+<!-- wp:columns {"metadata":{"patternName":"core/block/1851","name":"Hover tiles 1 group"},"align":"full","style":{"spacing":{"blockGap":{"top":"0","left":"0"},"margin":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-columns alignfull" style="margin-top:0;margin-bottom:0"><!-- wp:column {"verticalAlignment":"stretch","width":"100%","layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-stretch" style="flex-basis:100%"><!-- wp:acf/rmcc-hover {"name":"acf/rmcc-hover","data":{"front_image":"","_front_image":"field_691532b19137e","back_image":"","_back_image":"field_691532d79137f"},"className":"rmcc-overlay rmcc-overlay-primary blue faint"} -->
 <!-- wp:paragraph {"className":"rmcc-text-meta rmcc-text-lead rmcc-text-uppercase rmcc-margin-small-bottom"} -->
@@ -393,7 +393,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:columns {"align":"full","style":{"spacing":{"blockGap":{"top":"0","left":"0"},"margin":{"top":"0","bottom":"0"}}}} -->
+<!-- wp:columns {"metadata":{"patternName":"core/block/1852","name":"Hover tiles 2 Group"},"align":"full","style":{"spacing":{"blockGap":{"top":"0","left":"0"},"margin":{"top":"0","bottom":"0"}}}} -->
 <div class="wp-block-columns alignfull" style="margin-top:0;margin-bottom:0"><!-- wp:column {"verticalAlignment":"stretch","width":"100%","layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-stretch" style="flex-basis:100%"><!-- wp:acf/rmcc-hover {"name":"acf/rmcc-hover","data":{"front_image":"","_front_image":"field_691532b19137e","back_image":"","_back_image":"field_691532d79137f"},"className":"rmcc-overlay rmcc-overlay-primary gradient"} -->
 <!-- wp:paragraph {"className":"rmcc-text-meta rmcc-text-lead rmcc-text-uppercase rmcc-margin-small-bottom"} -->
@@ -435,7 +435,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
-<!-- wp:group {"align":"full","className":"rmcc-section rmcc-container rmcc-container-large","layout":{"type":"default"}} -->
+<!-- wp:group {"metadata":{"patternName":"core/block/1853","name":"Jobs feed Group"},"align":"full","className":"rmcc-section rmcc-container rmcc-container-large","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull rmcc-section rmcc-container rmcc-container-large"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
 <h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">What roles are currently available?</h1>
 <!-- /wp:heading -->
@@ -447,17 +447,13 @@ https://player.vimeo.com/video/523868167
 <!-- wp:group {"align":"full","className":"rmcc-container rmcc-container-small","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull rmcc-container rmcc-container-small"><!-- wp:acf/rmcc-jobs {"name":"acf/rmcc-jobs"} /--></div>
 <!-- /wp:group --></div>
-<!-- /wp:group -->
-
-<!-- wp:paragraph -->
-<p></p>
-<!-- /wp:paragraph -->]]></content:encoded>
+<!-- /wp:group -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1671</wp:post_id>
 		<wp:post_date><![CDATA[2025-11-10 21:27:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-11-10 21:27:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-03 22:46:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-03 22:46:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 14:00:56]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 14:00:56]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[homepage]]></wp:post_name>
@@ -489,7 +485,7 @@ https://player.vimeo.com/video/523868167
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_a1d1a64929eae8ece8667371880ca162]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1764800924]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1764856853]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
@@ -500,7 +496,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[News & Events]]></title>
 		<link>https://testwp.com/community/news-events/</link>
 		<pubDate>Wed, 19 Nov 2025 11:04:18 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1685</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -508,8 +504,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1685</wp:post_id>
 		<wp:post_date><![CDATA[2025-11-19 11:04:18]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-11-19 11:04:18]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:04:19]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:04:19]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-11-19 11:04:18]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-11-19 11:04:18]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[news-events]]></wp:post_name>
@@ -532,7 +528,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Disclaimer]]></title>
 		<link>https://testwp.com/disclaimer/</link>
 		<pubDate>Thu, 04 Dec 2025 00:53:58 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1715</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -540,8 +536,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1715</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:53:58]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:53:58]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:22:09]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:22:09]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:53:58]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:53:58]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[disclaimer]]></wp:post_name>
@@ -564,7 +560,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Background]]></title>
 		<link>https://testwp.com/about-us/background/</link>
 		<pubDate>Thu, 04 Dec 2025 00:57:34 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1721</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -572,8 +568,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1721</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:57:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:57:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:57:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:57:34]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:34]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[background]]></wp:post_name>
@@ -596,7 +592,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Our Staff]]></title>
 		<link>https://testwp.com/about-us/our-staff/</link>
 		<pubDate>Thu, 04 Dec 2025 00:56:38 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1722</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -604,8 +600,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1722</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:56:38]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:56:38]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:57:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:56:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:56:38]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-staff]]></wp:post_name>
@@ -624,7 +620,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Our Committee]]></title>
 		<link>https://testwp.com/about-us/our-committee/</link>
 		<pubDate>Thu, 04 Dec 2025 00:56:46 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1723</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -632,8 +628,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1723</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:56:46]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:56:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:57:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:56:46]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:56:46]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-committee]]></wp:post_name>
@@ -652,7 +648,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Funding Opportunities]]></title>
 		<link>https://testwp.com/about-us/funding-opportunities/</link>
 		<pubDate>Thu, 04 Dec 2025 00:56:54 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1724</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -660,8 +656,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1724</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:56:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:56:54]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:57:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:56:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:56:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[funding-opportunities]]></wp:post_name>
@@ -680,7 +676,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[About us]]></title>
 		<link>https://testwp.com/about-us/</link>
 		<pubDate>Thu, 04 Dec 2025 00:57:17 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1728</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -688,8 +684,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1728</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:57:17]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:57:17]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:30:05]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:30:05]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:57:17]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:17]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[about-us]]></wp:post_name>
@@ -712,7 +708,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Employment]]></title>
 		<link>https://testwp.com/employment/</link>
 		<pubDate>Thu, 04 Dec 2025 00:58:45 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1731</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -736,7 +732,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Latest Jobs]]></title>
 		<link>https://testwp.com/employment/latest-jobs/</link>
 		<pubDate>Thu, 04 Dec 2025 00:58:54 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1732</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -744,8 +740,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1732</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:58:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:58:54]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:58:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:58:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[latest-jobs]]></wp:post_name>
@@ -764,7 +760,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[How to Apply]]></title>
 		<link>https://testwp.com/employment/how-to-apply/</link>
 		<pubDate>Thu, 04 Dec 2025 00:59:04 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1733</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -772,8 +768,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1733</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:04]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:04]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:59:04]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:04]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[how-to-apply]]></wp:post_name>
@@ -792,7 +788,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Employment Supports]]></title>
 		<link>https://testwp.com/employment/employment-supports/</link>
 		<pubDate>Thu, 04 Dec 2025 00:59:16 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1734</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -800,8 +796,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1734</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:16]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:59:16]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:16]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[employment-supports]]></wp:post_name>
@@ -820,7 +816,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Local Social Welfare]]></title>
 		<link>https://testwp.com/employment/local-social-welfare/</link>
 		<pubDate>Thu, 04 Dec 2025 00:59:32 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1735</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -828,8 +824,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1735</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:32]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:59:32]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:32]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[local-social-welfare]]></wp:post_name>
@@ -848,7 +844,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Laois Offaly ETB]]></title>
 		<link>https://testwp.com/employment/laois-offaly-etb/</link>
 		<pubDate>Thu, 04 Dec 2025 00:59:44 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1736</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -856,8 +852,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1736</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:59:44]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:44]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[laois-offaly-etb]]></wp:post_name>
@@ -876,7 +872,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Jobs Clubs]]></title>
 		<link>https://testwp.com/employment/jobs-clubs/</link>
 		<pubDate>Thu, 04 Dec 2025 00:59:52 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1737</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -884,8 +880,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1737</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:52]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:52]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 00:59:52]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:52]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[jobs-clubs]]></wp:post_name>
@@ -904,7 +900,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Training]]></title>
 		<link>https://testwp.com/training/</link>
 		<pubDate>Thu, 04 Dec 2025 01:00:56 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1745</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -928,7 +924,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[CE Training]]></title>
 		<link>https://testwp.com/training/ce-training/</link>
 		<pubDate>Thu, 04 Dec 2025 01:00:44 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1746</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -936,8 +932,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1746</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:00:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:00:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:00:44]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:44]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[ce-training]]></wp:post_name>
@@ -956,7 +952,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[QQI-accredited Courses]]></title>
 		<link>https://testwp.com/training/qqi-accredited-courses/</link>
 		<pubDate>Thu, 04 Dec 2025 01:01:06 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1747</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -964,8 +960,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1747</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:01:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:06]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:01:06]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:06]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[qqi-accredited-courses]]></wp:post_name>
@@ -984,7 +980,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Other course providers]]></title>
 		<link>https://testwp.com/training/other-course-providers/</link>
 		<pubDate>Thu, 04 Dec 2025 01:01:16 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1748</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -992,8 +988,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1748</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:01:16]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:01:16]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:16]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[other-course-providers]]></wp:post_name>
@@ -1012,7 +1008,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Privacy Policy]]></title>
 		<link>https://testwp.com/privacy-policy/</link>
 		<pubDate>Thu, 04 Dec 2025 01:21:36 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=3</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading -->
@@ -1116,7 +1112,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Cookie Policy]]></title>
 		<link>https://testwp.com/cookie-policy/</link>
 		<pubDate>Thu, 04 Dec 2025 01:21:36 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1716</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1144,7 +1140,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Sitemap]]></title>
 		<link>https://testwp.com/sitemap/</link>
 		<pubDate>Thu, 04 Dec 2025 01:21:36 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1717</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1172,7 +1168,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Fetchcourses.ie]]></title>
 		<link>https://testwp.com/training/fetchcourses-ie/</link>
 		<pubDate>Thu, 04 Dec 2025 01:01:31 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1749</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1180,8 +1176,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1749</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:01:31]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:31]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:01:31]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:31]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[fetchcourses-ie]]></wp:post_name>
@@ -1200,7 +1196,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[S.W.E.E.T.S]]></title>
 		<link>https://testwp.com/training/s-w-e-e-t-s/</link>
 		<pubDate>Thu, 04 Dec 2025 01:01:41 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1751</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1208,8 +1204,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1751</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:01:41]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:41]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:03]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:03]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:01:41]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:41]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[s-w-e-e-t-s]]></wp:post_name>
@@ -1228,7 +1224,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Community]]></title>
 		<link>https://testwp.com/community/</link>
 		<pubDate>Thu, 04 Dec 2025 01:02:39 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1757</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1252,7 +1248,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Projects]]></title>
 		<link>https://testwp.com/community/projects/</link>
 		<pubDate>Thu, 04 Dec 2025 01:02:50 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1758</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1260,8 +1256,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1758</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:02:50]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:02:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:02:50]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:50]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[projects]]></wp:post_name>
@@ -1280,7 +1276,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Testimonials]]></title>
 		<link>https://testwp.com/community/testimonials/</link>
 		<pubDate>Thu, 04 Dec 2025 01:03:02 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1759</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1288,8 +1284,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1759</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:03:02]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:02]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:03:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:02]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[testimonials]]></wp:post_name>
@@ -1308,7 +1304,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Our Sites]]></title>
 		<link>https://testwp.com/community/our-sites/</link>
 		<pubDate>Thu, 04 Dec 2025 01:03:11 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1760</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1316,8 +1312,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1760</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:03:11]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:11]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:03:11]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:11]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-sites]]></wp:post_name>
@@ -1336,7 +1332,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Our Sponsors]]></title>
 		<link>https://testwp.com/community/our-sponsors/</link>
 		<pubDate>Thu, 04 Dec 2025 01:03:19 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1761</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1344,8 +1340,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1761</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:03:19]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:19]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:45]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 01:03:19]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:19]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-sponsors]]></wp:post_name>
@@ -1364,7 +1360,7 @@ https://player.vimeo.com/video/523868167
 		<title><![CDATA[Contact]]></title>
 		<link>https://testwp.com/contact/</link>
 		<pubDate>Thu, 04 Dec 2025 01:12:47 +0000</pubDate>
-		<dc:creator><![CDATA[robmccormack89]]></dc:creator>
+		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1787</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -1379,6 +1375,256 @@ https://player.vimeo.com/video/523868167
 		<wp:post_name><![CDATA[contact]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[Block tests]]></title>
+		<link>https://testwp.com/block-tests/</link>
+		<pubDate>Thu, 04 Dec 2025 10:24:59 +0000</pubDate>
+		<dc:creator><![CDATA[rob]]></dc:creator>
+		<guid isPermaLink="false">https://testwp.com/?page_id=1855</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"300px"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview","backgroundColor":"muted-grey","metadata":{"categories":[],"patternName":"core/block/1864","name":"Bluey Header"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textAlign":"center","className":"rmcc-heading-small rmcc-margin-remove-bottom","style":{"elements":{"link":{"color":{"text":"var:preset|color|text-dark"}}}},"textColor":"text-dark"} -->
+<h2 class="wp-block-heading has-text-align-center rmcc-heading-small rmcc-margin-remove-bottom has-text-dark-color has-text-color has-link-color"><strong>Block Tests</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"rmcc-margin-remove-bottom rmcc-text-lead","style":{"elements":{"link":{"color":{"text":"var:preset|color|text-dark"}}}},"textColor":"text-dark"} -->
+<p class="has-text-align-center rmcc-margin-remove-bottom rmcc-text-lead has-text-dark-color has-text-color has-link-color">ACF Blocks is a premium feature found only in&nbsp;<a href="https://www.advancedcustomfields.com/pro/">ACF PRO</a>. You will also need a WordPress site where you have access to the&nbsp;<code>wp-content</code>&nbsp;directory. We highly recommend using&nbsp;<a href="https://localwp.com/">Local</a>&nbsp;or another WordPress development environment to create a sandbox site so you can experiment in complete safety.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- /wp:acf/rmcc-block -->
+
+<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1848","name":"Icon grid Group"},"align":"full","className":"rmcc-section rmcc-container","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull rmcc-section rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
+<h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">What is the Community Employment Scheme?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"rmcc-text-lead slight-bold breakwrap-p","textColor":"text-dark"} -->
+<p class="has-text-align-center rmcc-text-lead slight-bold breakwrap-p has-text-dark-color has-text-color">Community Employment is an employment programme funded by the&nbsp;<span class="nice-blue text-underline"><strong>Department of Employment Affairs and Social Protection</strong></span>, which helps long-term unemployed people to re-enter the active workforce by offering part-time and temporary placements within local voluntary communities and organisations. The benefits of partcicpating in a CE scheme include:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"align":"full"} -->
+<div class="wp-block-columns alignfull"><!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:acf/rmcc-icon {"name":"acf/rmcc-icon","data":{"icon":"user","_icon":"field_691293acbbdee"},"mode":"preview","className":"rmcc-text-center","textColor":"icon-green","style":{"elements":{"link":{"color":{"text":"var:preset|color|icon-green"}}},"typography":{"lineHeight":"3"}}} /-->
+
+<!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">Practical Experience</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"text-slightly-larger"} -->
+<p class="has-text-align-center text-slightly-larger">CE Scheme participants gain meaningful practical experience to enhance &amp; develop their technical &amp; personal skills.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:acf/rmcc-icon {"name":"acf/rmcc-icon","data":{"icon":"file-edit","_icon":"field_691293acbbdee"},"mode":"preview","className":"rmcc-text-center","textColor":"icon-green","style":{"elements":{"link":{"color":{"text":"var:preset|color|icon-green"}}},"typography":{"lineHeight":"3"}}} /-->
+
+<!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">Training Opportunities</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"text-slightly-larger"} -->
+<p class="has-text-align-center text-slightly-larger">Each participant designs an&nbsp;<strong>Individual Training Plan (ILP)</strong>&nbsp;which links work experience with both job-specific &amp; progression training.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:columns {"align":"full"} -->
+<div class="wp-block-columns alignfull"><!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:acf/rmcc-icon {"name":"acf/rmcc-icon","data":{"icon":"star","_icon":"field_691293acbbdee"},"mode":"preview","className":"rmcc-text-center","textColor":"icon-green","style":{"elements":{"link":{"color":{"text":"var:preset|color|icon-green"}}},"typography":{"lineHeight":"3"}}} /-->
+
+<!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">QQI-Accredited Courses</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"text-slightly-larger"} -->
+<p class="has-text-align-center text-slightly-larger">Participants can avail of the opportunity to achieve major, QQI-accredited (up to level 6) awards which are tailored to suit the needs &amp; career goals of any individual.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:acf/rmcc-icon {"name":"acf/rmcc-icon","data":{"icon":"forward","_icon":"field_691293acbbdee"},"mode":"preview","className":"rmcc-text-center","textColor":"icon-green","style":{"elements":{"link":{"color":{"text":"var:preset|color|icon-green"}}},"typography":{"lineHeight":"3"}}} /-->
+
+<!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">Future Employment</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"text-slightly-larger"} -->
+<p class="has-text-align-center text-slightly-larger">Participants are encouraged to seek further employment upon completion, where they can make use of the new skills &amp; qualifications they have gained during placement.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:spacer {"height":"30px"} -->
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:heading {"textAlign":"center","level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h3 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">To see our currently available CE scheme placements:</h3>
+<!-- /wp:heading -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"textAlign":"center","textColor":"white","gradient":"blue-to-green","className":"is-style-fill","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"fontSize":"medium"} -->
+<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-white-color has-blue-to-green-gradient-background has-text-color has-background has-link-color has-medium-font-size has-text-align-center has-custom-font-size wp-element-button" href="/"><strong>View Jobs</strong></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1849","name":"Grey BG info Group"},"align":"full","className":"rmcc-section ","backgroundColor":"muted-grey","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull rmcc-section  has-muted-grey-background-color has-background"><!-- wp:group {"className":"rmcc-container","layout":{"type":"constrained"}} -->
+<div class="wp-block-group rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
+<h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">Who is eligible for a CE scheme?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"rmcc-text-lead slight-bold breakwrap-p","textColor":"text-dark"} -->
+<p class="has-text-align-center rmcc-text-lead slight-bold breakwrap-p has-text-dark-color has-text-color">In order to be eligible for C.E. a person must be in receipt of a qualifying social welfare payment for at least 6 months. There are also the following age-qualifications:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:columns {"align":"full"} -->
+<div class="wp-block-columns alignfull"><!-- wp:column {"verticalAlignment":"top"} -->
+<div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">Aged 21 – 55 years:</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">In general, all CE placements for new entrants between 21 &amp; 55 years will be for 1 year. However, if a CE participant is working towards achieving a major award/industry-recognized equivalent, their time on CE can be extended by up to 2 further years to complete this award.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">Aged 55 and over:</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Following 12 months in receipt of a qualifying social welfare payment, new entrants aged 55 years and over can remain on CE for a maximum of 3 consecutive years. It will be possible to re-qualify for CE after 12 months on a qualifying payment.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:heading {"textAlign":"center","level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|text-primary"}}}},"textColor":"text-primary"} -->
+<h4 class="wp-block-heading has-text-align-center has-text-primary-color has-text-color has-link-color">Aged 62 years and over:</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center">Under the Service Support Stream, Community Employment participants aged 62 years and over who meet the eligibility requirements may stay continuously on CE up to the age at which they qualify for a State pension providing that their are places available.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center"><strong>For further information about Community Employment eligibility requirements:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"gradient":"blue-to-green"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-blue-to-green-gradient-background has-background wp-element-button">Visit site</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1850","name":"Video block Group"},"align":"full","className":"rmcc-section rmcc-container","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull rmcc-section rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","textColor":"text-primary"} -->
+<h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color">What is the Community Employment Scheme?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"breakwrap-p","textColor":"text-dark"} -->
+<p class="has-text-align-center breakwrap-p has-text-dark-color has-text-color"><strong>Watch this video from the Department of Social Protection on the benefits of Community Employment in your area</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://player.vimeo.com/video/523868167","type":"video","providerNameSlug":"vimeo","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://player.vimeo.com/video/523868167
+</div></figure>
+<!-- /wp:embed --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1904","name":"Grey BG text Group"},"align":"full","className":"rmcc-section ","backgroundColor":"muted-grey","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull rmcc-section  has-muted-grey-background-color has-background"><!-- wp:group {"className":"rmcc-container","layout":{"type":"constrained"}} -->
+<div class="wp-block-group rmcc-container"><!-- wp:heading {"textAlign":"center","level":1,"align":"full","style":{"typography":{"fontSize":"52px"}},"textColor":"text-primary"} -->
+<h1 class="wp-block-heading alignfull has-text-align-center has-text-primary-color has-text-color" style="font-size:52px">Unlock Real-Time Insights from Your Mission-Critical Data</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"rmcc-text-lead slight-bold breakwrap-p"} -->
+<p class="has-text-align-center rmcc-text-lead slight-bold breakwrap-p">MariaDB Enterprise is more than just a world-class transactional database. It’s a complete platform for modern data analytics. Go from transaction to insight faster than ever with powerful, scalable and cost-effective solutions designed for any workload.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center","className":"rmcc-text-lead slight-bold breakwrap-p"} -->
+<p class="has-text-align-center rmcc-text-lead slight-bold breakwrap-p">In a data-driven world, the ability to analyze information as it’s created is a critical competitive advantage. Yet, many organizations are still hampered by the traditional divide between their transactional (OLTP) and analytical (OLAP) systems. Moving data via slow, complex and error-prone ETL pipelines results in stale data, architectural complexity and missed opportunities. You need a solution that can handle both, seamlessly.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center"><strong>For further information about Community Employment eligibility requirements:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"text-dark","className":"is-style-fill","style":{"border":{"width":"5px"}}} -->
+<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-text-dark-background-color has-background wp-element-button" style="border-width:5px"><strong>Learn more</strong></a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"gradient":"blue-to-green"} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-blue-to-green-gradient-background has-background wp-element-button"><strong>Visit site</strong></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1855</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-04 10:24:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-04 10:24:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 14:24:24]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 14:24:24]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[block-tests]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[templates/custom.php]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_oembed_a1d1a64929eae8ece8667371880ca162]]></wp:meta_key>
+		<wp:meta_value><![CDATA[<iframe src="https://player.vimeo.com/video/523868167?dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_oembed_time_a1d1a64929eae8ece8667371880ca162]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1764858211]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[LIR Training]]></title>
+		<link>https://testwp.com/training/lir-training/</link>
+		<pubDate>Thu, 04 Dec 2025 14:11:06 +0000</pubDate>
+		<dc:creator><![CDATA[rob]]></dc:creator>
+		<guid isPermaLink="false">https://testwp.com/?page_id=1901</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1901</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-04 14:11:06]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-04 14:11:06]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-04 14:11:06]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-04 14:11:06]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[lir-training]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>1745</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>

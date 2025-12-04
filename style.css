@@ -42,3 +42,7 @@ a.dont-underline:hover, a.dont-underline:focus,
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+.rmcc-navbar-transparent.rmcc-box-shadow-small {
+  box-shadow: 0 0px 25px -15px rgba(0, 0, 0, .08);
+}
