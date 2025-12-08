@@ -31,12 +31,12 @@ Disable
 Stuff
 */
 
-$configs['enable_post_tags'] = true;
-$configs['enable_page_excerpts'] = true;
-$configs['enable_post_comments'] = true;
-$configs['enable_post_sharing'] = true;
-$configs['enable_post_paging'] = true;
-$configs['enable_post_author'] = true;
+$configs['enable_post_tags'] = false;
+$configs['enable_page_excerpts'] = false;
+$configs['enable_post_comments'] = false;
+$configs['enable_post_sharing'] = false;
+$configs['enable_post_paging'] = false;
+$configs['enable_post_author'] = false;
 
 /*
 ACF

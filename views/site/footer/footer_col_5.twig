@@ -1,6 +1,6 @@
 <div class="rmcc-width-1-1 rmcc-width-expand@s">
 
-  <form hidden>
+  {# <form hidden>
     <fieldset class="rmcc-fieldset">
 
       <legend class="rmcc-legend">Subscribe to our newsletter!</legend>
@@ -21,48 +21,24 @@
       </div>
 
     </fieldset>
-  </form>
+  </form> #}
 
   <p class="rmcc-text-bold rmcc-h3 rmcc-margin-remove rmcc-text-center rmcc-text-uppercase">Contact us</p>
-
-<div class="rmcc-card rmcc-card-primary rmcc-card-body" style="
-		    margin-top: 15px;
-		    padding: 25px 0px 20px 45px;
-		    border-radius: 4rem;
-		    background-color: rgba(255,255,255,.1);
-        border: 1px solid #ffffff5c;
-		    /* box-shadow: 0px 0px 15px rgb(0 0 0 / 42%); */
-		">
-	<div>
-		<ul class="rmcc-nav rmcc-nav-default" rmcc-nav style="font-size: 1.1rem;">
-
-      {# company menu #}
-      {# {% if fn('has_nav_menu', 'company_menu') %}
-        {% for item in menu_company.get_items %}
-          <li class="company-menu-mobile-item {% if loop.first %}rmcc-margin-top{% endif %}">
-            {% if item.link != '#' %}<a href="{{ item.link|e('esc_url') }}" class="rmcc-link-reset">{% endif %}
-              {{ item.title|e('wp_kses_post')}}
-            {% if item.link != '#' %}</a>{% endif %}
-          </li>
-        {% endfor %}
-      {% endif %} #}
-
-			<li class="company-menu-mobile-item ">
-				<span class="rmcc-margin-small-right rmcc-icon" rmcc-icon="location"></span>Kilbeggan, Co. Westmeath
-			</li>
-			<li class="company-menu-mobile-item ">
-				<a href="mailto:info@kilbeggancommunitygroup.ie" class="rmcc-link-reset">
-					<span class="rmcc-margin-small-right rmcc-icon" rmcc-icon="mail"></span>info@kilbeggancommunitygroup.ie
-				</a>
-			</li>
-			<li class="company-menu-mobile-item ">
-				<a href="tel:057%209332711" class="rmcc-link-reset">
-					<span class="rmcc-margin-small-right rmcc-icon" rmcc-icon="icon:receiver;ratio:.95"></span>057 9332711
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
+  <div class="footer-contact-card rmcc-card rmcc-card-primary rmcc-card-body">
+    <div>
+      <ul class="footer-contact-nav rmcc-nav rmcc-nav-default" rmcc-nav>
+        {% if fn('has_nav_menu', 'company_menu') %}
+          {% for item in menu_company.get_items %}
+            <li class="company-menu-mobile-item">
+              {% if item.link != '#' %}<a href="{{ item.link|e('esc_url') }}" class="rmcc-link-reset">{% endif %}
+                {{ item.title|e('wp_kses_post')}}
+              {% if item.link != '#' %}</a>{% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
 
 
 </div>

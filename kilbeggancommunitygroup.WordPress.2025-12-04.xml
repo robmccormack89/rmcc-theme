@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.9" created="2025-12-04 15:48" -->
+	<!-- generator="WordPress/6.9" created="2025-12-08 15:37" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Kilbeggan Community Group</title>
 	<link>https://testwp.com</link>
 	<description>Succeeding Together</description>
-	<pubDate>Thu, 04 Dec 2025 15:48:32 +0000</pubDate>
+	<pubDate>Mon, 08 Dec 2025 15:37:34 +0000</pubDate>
 	<language>en-GB</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://testwp.com</wp:base_site_url>
@@ -147,7 +147,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"white","className":"is-style-outline","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"width":"7px"}},"fontSize":"medium"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-medium-font-size has-custom-font-size wp-element-button" style="border-width:7px"><strong>View Jobs</strong></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-medium-font-size has-custom-font-size wp-element-button" href="https://testwp.com/employment/latest-jobs/" style="border-width:7px"><strong>View Jobs</strong></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -170,7 +170,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","width":"33.33%","layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:33.33%"><!-- wp:buttons {"layout":{"type":"flex","verticalAlignment":"bottom","justifyContent":"right","flexWrap":"wrap"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"textAlign":"center","textColor":"white","className":"is-style-outline","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"width":"5px"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-text-align-center wp-element-button" style="border-width:5px"><strong>Learn more</strong></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-text-align-center wp-element-button" href="https://testwp.com/about-us/" style="border-width:5px"><strong>Learn more</strong></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -194,7 +194,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","width":"33.33%","layout":{"type":"default"}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:33.33%"><!-- wp:buttons {"layout":{"type":"flex","verticalAlignment":"bottom","justifyContent":"right","flexWrap":"wrap"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"textAlign":"center","textColor":"white","className":"is-style-outline","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"border":{"width":"5px"}}} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-text-align-center wp-element-button" style="border-width:5px"><strong>Learn more</strong></a></div>
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-white-color has-text-color has-link-color has-text-align-center wp-element-button" href="https://testwp.com/community/our-sponsors/" style="border-width:5px"><strong>Learn more</strong></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -276,7 +276,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"textAlign":"center","textColor":"white","gradient":"blue-to-green","className":"is-style-fill","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"fontSize":"medium"} -->
-<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-white-color has-blue-to-green-gradient-background has-text-color has-background has-link-color has-medium-font-size has-text-align-center has-custom-font-size wp-element-button" href="/"><strong>View Jobs</strong></a></div>
+<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-white-color has-blue-to-green-gradient-background has-text-color has-background has-link-color has-medium-font-size has-text-align-center has-custom-font-size wp-element-button" href="https://testwp.com/employment/latest-jobs/"><strong>View Jobs</strong></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -328,8 +328,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"gradient":"blue-to-green"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-blue-to-green-gradient-background has-background wp-element-button"><strong>Visit site</strong></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"textColor":"white","gradient":"blue-to-green","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-blue-to-green-gradient-background has-text-color has-background has-link-color wp-element-button" href="https://www.citizensinformation.ie/en/employment/unemployment-and-redundancy/employment-support-schemes/community-employment-scheme/"><strong>Learn more</strong></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -367,7 +367,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><a href="/">Learn more<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: forward; ratio: 2"></span></a></p>
+<p class="has-large-font-size"><a href="https://testwp.com/about-us/">Learn more<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: forward; ratio: 2"></span></a></p>
 <!-- /wp:paragraph -->
 <!-- /wp:acf/rmcc-hover --></div>
 <!-- /wp:column -->
@@ -387,7 +387,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><a href="/">Learn more<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: forward; ratio: 2"></span></a></p>
+<p class="has-large-font-size"><a href="https://testwp.com/training/">Learn more<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: forward; ratio: 2"></span></a></p>
 <!-- /wp:paragraph -->
 <!-- /wp:acf/rmcc-hover --></div>
 <!-- /wp:column --></div>
@@ -409,7 +409,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><a href="/">Learn more<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: forward; ratio: 2"></span></a></p>
+<p class="has-large-font-size"><a href="https://testwp.com/community/our-sponsors/">Learn more<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: forward; ratio: 2"></span></a></p>
 <!-- /wp:paragraph -->
 <!-- /wp:acf/rmcc-hover --></div>
 <!-- /wp:column -->
@@ -429,7 +429,7 @@ https://player.vimeo.com/video/523868167
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size"><a href="/">Contact us<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: mail; ratio: 2"></span></a></p>
+<p class="has-large-font-size"><a href="https://testwp.com/about-us/contact/">Contact us<span class="rmcc-margin-left rmcc-icon" rmcc-icon="icon: mail; ratio: 2"></span></a></p>
 <!-- /wp:paragraph -->
 <!-- /wp:acf/rmcc-hover --></div>
 <!-- /wp:column --></div>
@@ -452,8 +452,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1671</wp:post_id>
 		<wp:post_date><![CDATA[2025-11-10 21:27:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-11-10 21:27:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 14:00:56]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 14:00:56]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 14:57:37]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 14:57:37]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[homepage]]></wp:post_name>
@@ -485,7 +485,7 @@ https://player.vimeo.com/video/523868167
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_a1d1a64929eae8ece8667371880ca162]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1764856853]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1765205875]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[footnotes]]></wp:meta_key>
@@ -531,13 +531,23 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1715</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>The information contained in this website is for general information purposes only. The information is provided by us and whilst we endeavour to keep the information up-to-date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Through this website you are able to link to other website which are not under our control. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.<br>Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1715</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:53:58]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:53:58]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:53:58]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:53:58]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 10:05:16]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 10:05:16]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[disclaimer]]></wp:post_name>
@@ -563,13 +573,27 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1721</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Kilbeggan Community Group CLG&nbsp;was formed in 1995. Initially the group supported a number of sponsor groups located in Kilbeggan town, this was later extended to include sponsor groups in Horseleap, Rosemount, Streamstown and Tyrrellspass.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>2013 saw a substantial increase in the number of sponsor groups working with Kilbeggan Community Group CLG including Ballinagore, Ballymore, Castletown-Geoghan, Dysart, Loughnavalley , Milltownpass, Rosemount, Streamstown. Tyrrellspass &amp; Horseleap.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group&nbsp;CLG is one of over one thousand Community Employment Schemes in operation across the country.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Below is a excellent video by the Department of Social Protection on the benefits of Community Employment in your area.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1721</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:57:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:57:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:57:34]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:34]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:07:22]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:07:22]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[background]]></wp:post_name>
@@ -595,13 +619,63 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1722</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>There are three staff in the Kilbeggan Community Group&nbsp;CLG office.&nbsp;The C.E. Supervisor, &nbsp;C.E. Assistant Supervisor and Administrator who look after the day&nbsp;to day running of the scheme.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Our Staff</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/plugins/js_composer/assets/vc/no_image.png" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Sean</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>C.E. Supervisor</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>085 252 3154</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/plugins/js_composer/assets/vc/no_image.png" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Davina</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Assistant C.E. Supervisor</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>085 716 5730</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/plugins/js_composer/assets/vc/no_image.png" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Administrator/Bookkeeper</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>057 9332711</strong></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1722</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:56:38]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:56:38]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:56:38]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:56:38]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:08:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:08:14]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-staff]]></wp:post_name>
@@ -623,44 +697,94 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1723</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>The Management Committee is comprised of interested local volunteers who oversee and manage the operation of the organization.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Committee Members</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><strong>Member Name</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Bernie McCarthy</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Role</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Chairperson</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Representing</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Tidy Towns</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Member Name</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Owen Duffy</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Role</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Treasurer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Representing</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Community Representative</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Member Name</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kathleen Grennan</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Role</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Company Secretary</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Representing</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Community Representative</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1723</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:56:46]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:56:46]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:56:46]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:56:46]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:07:52]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:07:52]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-committee]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1728</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Funding Opportunities]]></title>
-		<link>https://testwp.com/about-us/funding-opportunities/</link>
-		<pubDate>Thu, 04 Dec 2025 00:56:54 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1724</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1724</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 00:56:54]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 00:56:54]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:56:54]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:56:54]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[funding-opportunities]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>1728</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -679,13 +803,101 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1728</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:image {"id":397} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/06/KCG-02-1.jpg" alt="" class="wp-image-397"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Who are we:</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group is an umbrella body which represents 24 community and voluntary groups across South Westmeath. We work tirelessly alongside sponsors to help participants of the scheme gain meaningful practical experience, achieve relevant qualifications and training and offer them support and guidance as they work towards achieving their goals and developing their careers.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>What is the Community Employment Scheme:</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Community Employment is an employment programme funded by the Department of Social Protection (DSP), which helps long-term unemployed people to re-enter the active workforce by offering part-time and temporary placements within local&nbsp;<a href="http://kilbeggancommunitygroup.ie/about-us/our-sponsors/">voluntary communities and organisations</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By doing this they are providing the participants with meaningful practical experience and training opportunities to enhance and develop their technical and personal skills. Participants can avail of the possibility of studying to achieve major awards up to level 6 which are QQI accredited and tailored to suit the needs and career goals of any individual. After completing their placement, participants are encouraged to seek employment elsewhere based on the experience, the development of new skills and the qualifications they have gained.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Below is a excellent video by the Department of Social Protection on the benefits of Community Employment in your area.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:embed {"url":"https://player.vimeo.com/video/523868167?h=845d3588b5\u0026dnt=1\u0026app_id=122963","type":"video","providerNameSlug":"vimeo"} -->
+<figure class="wp-block-embed is-type-video is-provider-vimeo wp-block-embed-vimeo"><div class="wp-block-embed__wrapper">
+https://player.vimeo.com/video/523868167?h=845d3588b5&amp;dnt=1&amp;app_id=122963
+</div></figure>
+<!-- /wp:embed -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Who is eligible:</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In order to be eligible for CE a person must be in receipt of a qualifying&nbsp;<a href="http://www.citizensinformation.ie/en/social_welfare/social_welfare_payments/">social welfare payment</a>&nbsp;for at least 12 months.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Duration:</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong>Aged 21 – 55 years:</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In general, all CE placements for new entrants between 21 and 55 years will be for one year. However, if a CE participant is working towards achieving a major award/industry recognised equivalent, their time on CE can be extended by up to 2 further years to complete this award. No extension will be given beyond 3 years&nbsp; (4 years for those on Disability-linked payments).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong>Aged 55 and over:</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Following 12 months in receipt of a qualifying social welfare payment, new entrants aged 55 years and over can remain on CE for a maximum of 3 consecutive years. It will be possible to re-qualify for CE after a further 12 months on a qualifying Social Welfare payment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong>Aged 60 years and over:</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Under the Service Support Stream Pilot Initiative, CE participants aged 60 years and over who meet the eligibility requirements may stay continuously on CE up to the state pension age. This is subject to a suitable placement being available and the agreement of the sponsoring organisation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":5} -->
+<h5 class="wp-block-heading">To find out if you are eligible you can contact your local Intreo office. Find your local Intreo office&nbsp;<a href="http://kilbeggancommunitygroup.ie/vacancies/local-social-welfare/" target="_blank" rel="noreferrer noopener">HERE.</a></h5>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":88,"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="http://www.welfare.ie/en/Pages/List-of-Social-Welfare-Local-and-Branch-Offices-by-County.aspx" target="_blank" rel="noreferrer noopener"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/intreo_logo1-e1460919288749.jpg" alt="Intreo logo" class="wp-image-88"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"align":"center"} -->
+<figure class="wp-block-image aligncenter"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2022/07/DSP-logo-4.png" alt="This image has an empty alt attribute; its file name is DSP-logo-4.png"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><br><strong>OUR AREA</strong><br>Kilbeggan Community Group Ltd. supports Community Employment participants in Ballinagore, Ballymore, Castletown Geoghegan, Dysart, Horseleap, Kilbeggan, Loughnavalley, Rahugh, Rosemount, Streamstown and Tyrrellspass.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><br><strong>OUR PARTICIPANTS</strong><br>Kilbeggan Community Group Ltd. has approval for 45 C.E. places across our C.E. scheme. We offer a variety of job placements including; environmental worker, care-taker, administration and day care worker/ club coordinator positions.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1728</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:57:17]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:57:17]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:57:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:57:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 13:18:20]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 13:18:20]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[about-us]]></wp:post_name>
@@ -702,6 +914,14 @@ https://player.vimeo.com/video/523868167
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[templates/contained.php]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_oembed_d7970ad03ce53b34bf011a94e363a75c]]></wp:meta_key>
+		<wp:meta_value><![CDATA[<iframe title="Community Employment - INTREO" src="https://player.vimeo.com/video/523868167?h=845d3588b5&amp;dnt=1&amp;app_id=122963" width="500" height="281" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_oembed_time_d7970ad03ce53b34bf011a94e363a75c]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1765199903]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -735,13 +955,29 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1732</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"250px"},"background":{"backgroundImage":{"url":"https://testwp.com/wp-content/uploads/2025/11/pitch.jpg","id":1619,"source":"file","title":"pitch"},"backgroundSize":"cover"},"color":{"background":"#25233bed"}},"alignContent":"center center","name":"acf/rmcc-block","data":[],"align":"full","mode":"preview","metadata":{"categories":[],"patternName":"core/block/1941","name":"Bluey Header"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":1,"className":"gradient-text-bg rmcc-heading-small rmcc-margin-remove-bottom","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"73px"}},"textColor":"white"} -->
+<h1 class="wp-block-heading has-text-align-center gradient-text-bg rmcc-heading-small rmcc-margin-remove-bottom has-white-color has-text-color has-link-color" style="font-size:73px"><strong>Latest Jobs</strong></h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"align":"center","className":"rmcc-margin-remove-bottom rmcc-text-lead","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"36px"}},"textColor":"white"} -->
+<p class="has-text-align-center rmcc-margin-remove-bottom rmcc-text-lead has-white-color has-text-color has-link-color" style="font-size:36px">Browse the latest available <strong>Kilbeggan Community Group</strong> community employment scheme placements via <a href="https://midlandjobs.ie" target="_blank" rel="noreferrer noopener">midlandjobs.ie</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- /wp:acf/rmcc-block -->
+
+<!-- wp:group {"metadata":{"categories":[],"patternName":"core/block/1853","name":"Jobs feed Group"},"align":"full","className":"rmcc-section-small rmcc-section-muted","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull rmcc-section-small rmcc-section-muted"><!-- wp:group {"align":"full","className":"rmcc-container rmcc-container-small","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull rmcc-container rmcc-container-small"><!-- wp:acf/rmcc-jobs {"name":"acf/rmcc-jobs","data":[]} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1732</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:58:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:58:54]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:58:54]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:58:54]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 14:15:29]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 14:15:29]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[latest-jobs]]></wp:post_name>
@@ -755,6 +991,10 @@ https://player.vimeo.com/video/523868167
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[templates/custom.php]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[How to Apply]]></title>
@@ -763,13 +1003,35 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1733</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Before applying please contact your local Intreo office to check your eligibility, to see a list of your local Intreo offices please click<a href="http://kilbeggancommunitygroup.ie/vacancies/local-social-welfare/" target="_blank" rel="noreferrer noopener">&nbsp;here.</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Download application form in PDF here.<a href="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/06/CE-Application-Form.pdf">&nbsp;CE Application Form</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Download application form in Word here.&nbsp;<a href="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/06/CE-Application-Form.doc">CE Application Form</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":88} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/intreo_logo1-e1460919288749.jpg" alt="Intreo logo" class="wp-image-88"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":90} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/solaslogo1-300x107.png" alt="solaslogo1" class="wp-image-90"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":1360} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2024/02/download.png" alt="" class="wp-image-1360"/></figure>
+<!-- /wp:image -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1733</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:04]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:04]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:59:04]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:04]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:08:52]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:08:52]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[how-to-apply]]></wp:post_name>
@@ -791,13 +1053,15 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1734</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Kilbeggan Community Group CLG tries to keep local people informed of local and Community Employment job opportunities. If you would like to learn more about any of the vacancies you see advertised on this site, please contact us on 057 9332711 or 085 2523154</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1734</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:16]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:59:16]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:16]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 10:04:31]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 10:04:31]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[employment-supports]]></wp:post_name>
@@ -819,44 +1083,46 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1735</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>If you wish to learn more about&nbsp;Community Employment&nbsp;you may visit your&nbsp;local Intreo Centre/ Employment Services Office for more information.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Below is a list of the local Intreo Centre/ Employment Services Offices.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://www.welfare.ie/en/Pages/office/Social-Welfare-Branch-Office-Castlepollard.aspx" target="_blank" rel="noreferrer noopener"><strong>Social Welfare Branch Office – Castlepollard</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The Square, Castlepollard, Co. Westmeath<br>Telephone: (044) 9662230<br>Opening Hours: 9.30am – 12.00pm, 2.00pm – 4.00pm</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://www.welfare.ie/en/Pages/office/Intreo-Centre-Mullingar.aspx" target="_blank" rel="noreferrer noopener"><strong>Intreo Centre – Mullingar&nbsp;</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Blackhall Street, Mullingar, Co. Westmeath&nbsp;<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><br>Telephone: (076) 6285100<br>Opening Hours: 9.15am – 5.00pm</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://www.welfare.ie/en/Pages/office/Intreo-Centre-Athlone.aspx" target="_blank" rel="noreferrer noopener"><strong>Intreo Centre – Athlone</strong></a><br>Government Offices, Grace Park Road, Athlone, Co. Westmeath<br>Telephone: (090) 6449600<br>Opening Hours: 9.15am – 5.00pm</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="http://www.welfare.ie/en/Pages/office/Intreo-Centre-Tullamore.aspx" target="_blank" rel="noreferrer noopener">Intreo Centre Tullamore</a></strong><br>Castle Buildings, Tara Street, Tullamore, Co. Offaly<br>Telephone: (057) 9318500<br>Opening Hours: 9.30am – 4.00pm (Monday – Thursday)<br>10.30am – 4.00pm (Friday)</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1735</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:32]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:59:32]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:32]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:09:41]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:09:41]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[local-social-welfare]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1731</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Laois Offaly ETB]]></title>
-		<link>https://testwp.com/employment/laois-offaly-etb/</link>
-		<pubDate>Thu, 04 Dec 2025 00:59:44 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1736</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1736</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 00:59:44]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:59:44]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:44]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[laois-offaly-etb]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>1731</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -875,13 +1141,157 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1737</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Have you found yourself looking for a job recently? Would you like some support in finding a good fit?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Job Clubs provide&nbsp;formal training for 4 weeks, Monday – Friday to people looking for work. They also provide people with one on one support to people who are unable to participate in the programme.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Job Clubs&nbsp;provide assistance with:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>CV Preparation</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Application Letters</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Application Forms</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Online Applications</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Job Searching Techniques</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Interview Preparation</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>There are Job Clubs running in&nbsp;Mullingar and Tullamore.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Local Job Clubs</h4>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong><a href="http://www.offalyldc.ie/index.php/job-club-tullamore-birr.html" target="_blank" rel="noreferrer noopener">Tullamore Job Club</a></strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Millennium House</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Main St., Tullamore</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Co. Offaly</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Tel:</strong>&nbsp;057 9322 850</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Email:</strong>&nbsp;mfinlay@offalyldc.ie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>cgarvey@offalyldc.ie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://www.facebook.com/TullamoreJobClub/?fref=ts">Tullamore Job Club Facebook Page</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong><a href="http://www.westcd.ie/service-projects/jobs-club" target="_blank" rel="noreferrer noopener">Mullingar Job Club</a></strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Enterprise Technology and Innovation Centre</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Clonmore Business Park</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Mullingar</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Co. Westmeath</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Tel:&nbsp;</strong>044 9348571</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Email:&nbsp;</strong>info@westcd.ie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/westmeathjobclub/"><strong>&nbsp;Westmeath Jobs Club Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><a href="https://www.inou.ie/directory/jb/1332338713428736809.html">Athlone Jobs Club</a></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Athlone Job Club</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Business Development Centre</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Ball Alley Lane</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Athlone</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Co. Westmeath</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Tel:</strong>&nbsp;(090) 649 4555</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Email:</strong>&nbsp;nbreslin@westcd.ie; dpiggott@westcd.ie</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/westmeathjobclub/"><strong>Athlone Job Club Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1737</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 00:59:52]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 00:59:52]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 00:59:52]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 00:59:52]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:09:57]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:09:57]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[jobs-clubs]]></wp:post_name>
@@ -903,13 +1313,55 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1745</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Training is an integral part of Community Employment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Each learner on CE designs an Individual Training Plan (ILP) which outlines work experience and both job specific and progression training.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Job Specific Training</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>All participants are required to participate in basic Health and Safety training in line with our Health and Safety measures.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Participants also complete additional job specific training which support them in carrying out their duties while on the scheme. Some of the job specific training opportunities we offer participants are; Hand Held Pesticide Application, Web Authoring; Patient Moving and Payroll – Manual and Computerised.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Progression Training</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group strives to offer CE participants a wide range of training opportunities which are consistent with their specific career goals.QQI Accredited</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The majority of training provided by Kilbeggan Community Group is QQI accredited. Kilbeggan Community Group C.E. participants partake&nbsp; in a number of QQI Level 3,4,5 &amp; 6 courses including;&nbsp; Horticulture, Information Technology, Business Administration, Health Care Support and Employability Skills.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":97,"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/qqi-lgo-300x93.jpg" alt="qqi-lgo" class="wp-image-97"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>SOLAS and RSA Accredited</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group tries to source other accredited courses which will support the participant’s long term career goals. For example, SOLAS accredited training in Construction Skills such as the course in&nbsp; Mobile Access Tower Operations. We also source Road Safety Authority accredited training such as driver CPC training.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1745</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:00:56]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:00:56]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:56]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:56]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 12:58:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 12:58:14]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[training]]></wp:post_name>
@@ -927,13 +1379,55 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1746</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Training is an integral part of Community Employment.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Each learner on CE designs an Individual Training Plan (ILP) which outlines work experience and both job specific and progression training.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Job Specific Training</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>All participants are required to participate in basic Health and Safety training in line with our Health and Safety measures.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Participants also complete additional job specific training which support them in carrying out their duties while on the scheme. Some of the job specific training opportunities we offer participants are; Hand Held Pesticide Application, Web Authoring; Patient Moving and Payroll – Manual and Computerised.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><strong>Progression Training</strong></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group strives to offer CE participants a wide range of training opportunities which are consistent with their specific career goals.QQI Accredited</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The majority of training provided by Kilbeggan Community Group is QQI accredited. Kilbeggan Community Group C.E. participants partake&nbsp; in a number of QQI Level 3,4,5 &amp; 6 courses including;&nbsp; Horticulture, Information Technology, Business Administration, Health Care Support and Employability Skills.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":97,"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/qqi-lgo-300x93.jpg" alt="qqi-lgo" class="wp-image-97"/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>SOLAS and RSA Accredited</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group tries to source other accredited courses which will support the participant’s long term career goals. For example, SOLAS accredited training in Construction Skills such as the course in&nbsp; Mobile Access Tower Operations. We also source Road Safety Authority accredited training such as driver CPC training.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1746</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:00:44]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:00:44]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:00:44]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:00:44]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:10:44]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:10:44]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[ce-training]]></wp:post_name>
@@ -955,13 +1449,131 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1747</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>To see a list of QQI accredited training courses please click&nbsp;<a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards">here</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community group are here to assist you in achieving your goals and gaining employment with a reputable organisation. We help to tailor each major award to suit the needs of the individual participant. The list below are a sample of just some the awards you can develop or upskill while on the Community Employment Scheme. For more information&nbsp;<a href="http://kilbeggancommunitygroup.ie/contact-us/">contact us</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Major awards are comprised of a compilation of minor awards, to see an example of how major awards can be tailored to suit the needs of any individual who participates in the C.E. Scheme please click<a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards#" target="_blank" rel="noreferrer noopener">&nbsp;here.</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards#" target="_blank" rel="noreferrer noopener"><strong>LEVEL 3 MAJOR AWARDS:</strong></a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=3M0935" target="_blank" rel="noreferrer noopener">Employability Skills</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards#" target="_blank" rel="noreferrer noopener"><strong>LEVEL 4 MAJOR AWARDS:</strong></a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=4M0857" target="_blank" rel="noreferrer noopener">Employment Skills</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=4M4966" target="_blank" rel="noreferrer noopener">Sports and recreation</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=4M2070" target="_blank" rel="noreferrer noopener">Office Skills</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=4M1994" target="_blank" rel="noreferrer noopener">Horticulture</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards#" target="_blank" rel="noreferrer noopener"><strong>LEVEL 5 MAJOR AWARDS:</strong></a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M2468" target="_blank" rel="noreferrer noopener">Business Administration</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M2102" target="_blank" rel="noreferrer noopener">Business Studies</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M2786" target="_blank" rel="noreferrer noopener">Community Care</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M3050" target="_blank" rel="noreferrer noopener">Community Development</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M2586" target="_blank" rel="noreferrer noopener">Horticulture</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M2069" target="_blank" rel="noreferrer noopener">Marketing</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M1997" target="_blank" rel="noreferrer noopener">Office Administration</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M5148" target="_blank" rel="noreferrer noopener">Outdoor Sport and Recreation</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M5146" target="_blank" rel="noreferrer noopener">Sports, Recreation and Exercise</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=5M5011" target="_blank" rel="noreferrer noopener">Tourism with Business</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><a href="http://qsearch.qqi.ie/WebPart/Search?searchtype=awards#" target="_blank" rel="noreferrer noopener"><strong>LEVEL 6 MAJOR AWARDS:</strong></a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M5013" target="_blank" rel="noreferrer noopener">Administration</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M4985" target="_blank" rel="noreferrer noopener">Business</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M3674" target="_blank" rel="noreferrer noopener">Community Development</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M0695" target="_blank" rel="noreferrer noopener">Computer Systems and Networks</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M4334" target="_blank" rel="noreferrer noopener">Horticulture</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M4587" target="_blank" rel="noreferrer noopener">Management</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M5147" target="_blank" rel="noreferrer noopener">Sports, Recreation and Exercise</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://qsearch.qqi.ie/WebPart/AwardDetails?awardCode=6M5012" target="_blank" rel="noreferrer noopener">Tourism with Business</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1747</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:01:06]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:06]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:01:06]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:06]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:13:08]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:13:08]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[qqi-accredited-courses]]></wp:post_name>
@@ -977,24 +1589,110 @@ https://player.vimeo.com/video/523868167
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Other course providers]]></title>
-		<link>https://testwp.com/training/other-course-providers/</link>
-		<pubDate>Thu, 04 Dec 2025 01:01:16 +0000</pubDate>
+		<title><![CDATA[Community]]></title>
+		<link>https://testwp.com/community/</link>
+		<pubDate>Thu, 04 Dec 2025 01:02:39 +0000</pubDate>
 		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1748</guid>
+		<guid isPermaLink="false">https://testwp.com/?page_id=1757</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Kilbeggan Community Group does its utmost to create a vibrant local community in South Westmeath. Kilbeggan Community Group&nbsp;CLG is an umbrella body which represents 25 community and voluntary groups. The groups provide a broad range of community services and run a number of exciting events.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As a Community Employment scheme, Kilbeggan Community Group CLG&nbsp;supports local community and voluntary groups in carrying out much needed tasks within the community. It also has the benefit of supporting&nbsp;long-term unemployed people to re-enter the active workforce by offering part-time and temporary placements within their local communities.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It provides people with an opportunity to enhance and develop their technical and personal skills. After completing their placement, participants are encouraged to seek employment elsewhere based on the experience</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>The Sponsors</strong><br>The CE programme is sponsored by community groups wishing to benefit the local community. Typically sponsor groups&nbsp; are involved in not-for-profit activities.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":91} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/dsp_logo1-1-300x114.jpg" alt="dsp_logo1" class="wp-image-91"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":88} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/intreo_logo1-e1460919288749.jpg" alt="Intreo logo" class="wp-image-88"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:image {"id":90} -->
+<figure class="wp-block-image"><img src="http://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/solaslogo1-300x107.png" alt="solaslogo1" class="wp-image-90"/></figure>
+<!-- /wp:image -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1748</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:01:16]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:16]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:01:16]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:16]]></wp:post_modified_gmt>
+		<wp:post_id>1757</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-04 01:02:39]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-04 01:02:39]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 10:05:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 10:05:54]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[other-course-providers]]></wp:post_name>
+		<wp:post_name><![CDATA[community]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1745</wp:post_parent>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[Projects]]></title>
+		<link>https://testwp.com/community/projects/</link>
+		<pubDate>Thu, 04 Dec 2025 01:02:50 +0000</pubDate>
+		<dc:creator><![CDATA[rob]]></dc:creator>
+		<guid isPermaLink="false">https://testwp.com/?page_id=1758</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Kilbeggan Community Group runs a variety of projects throughout the year, which provide participants with an opportunity to enhance and develop their technical and personal skills  in a practical setting. Learner engage in landscaping projects, block laying exercises and painting and tiling work.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1758</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-04 01:02:50]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-04 01:02:50]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:17:32]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:17:32]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[projects]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>1757</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Our Sites]]></title>
+		<link>https://testwp.com/community/our-sites/</link>
+		<pubDate>Thu, 04 Dec 2025 01:03:11 +0000</pubDate>
+		<dc:creator><![CDATA[rob]]></dc:creator>
+		<guid isPermaLink="false">https://testwp.com/?page_id=1760</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Kilbeggan Community Group&nbsp;CLG is sponsored by 25 community and voluntary groups across South Westmeath.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The groups&nbsp;are located in a number of towns and villages including;&nbsp;<strong>Ballinagore, Ballymore, Castletown Geoghegan, Dysart, Horseleap, Kilbeggan, Loughnavalley, Rosemount, Streamstown&nbsp;</strong>and<strong>&nbsp;Tyrrellspass.&nbsp;</strong></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1760</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-04 01:03:11]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:11]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:15:54]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:15:54]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[our-sites]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>1757</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
@@ -1137,211 +1835,241 @@ https://player.vimeo.com/video/523868167
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[Sitemap]]></title>
-		<link>https://testwp.com/sitemap/</link>
-		<pubDate>Thu, 04 Dec 2025 01:21:36 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1717</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1717</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:21:36]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:21:36]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:21:36]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:21:36]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[sitemap]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Fetchcourses.ie]]></title>
-		<link>https://testwp.com/training/fetchcourses-ie/</link>
-		<pubDate>Thu, 04 Dec 2025 01:01:31 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1749</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1749</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:01:31]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:31]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:01:31]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:31]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[fetchcourses-ie]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1745</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[S.W.E.E.T.S]]></title>
-		<link>https://testwp.com/training/s-w-e-e-t-s/</link>
-		<pubDate>Thu, 04 Dec 2025 01:01:41 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1751</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1751</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:01:41]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:01:41]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:01:41]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:01:41]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[s-w-e-e-t-s]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1745</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Community]]></title>
-		<link>https://testwp.com/community/</link>
-		<pubDate>Thu, 04 Dec 2025 01:02:39 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1757</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1757</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:02:39]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:02:39]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:39]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:39]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[community]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title><![CDATA[Projects]]></title>
-		<link>https://testwp.com/community/projects/</link>
-		<pubDate>Thu, 04 Dec 2025 01:02:50 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1758</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1758</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:02:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:02:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:02:50]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:02:50]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[projects]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1757</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Testimonials]]></title>
-		<link>https://testwp.com/community/testimonials/</link>
-		<pubDate>Thu, 04 Dec 2025 01:03:02 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1759</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1759</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:03:02]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:02]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:02]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:02]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[testimonials]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1757</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Our Sites]]></title>
-		<link>https://testwp.com/community/our-sites/</link>
-		<pubDate>Thu, 04 Dec 2025 01:03:11 +0000</pubDate>
-		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1760</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1760</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 01:03:11]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:11]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:11]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:11]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[our-sites]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1757</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
 		<title><![CDATA[Our Sponsors]]></title>
 		<link>https://testwp.com/community/our-sponsors/</link>
 		<pubDate>Thu, 04 Dec 2025 01:03:19 +0000</pubDate>
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1761</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Kilbeggan Community Group works closely with it’s sponsors to provide meaningful work placements.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Kilbeggan Community Group CLG is sponsored by 24 community and voluntary groups across South Westmeath. The groups work tirelessly alongside the local community to deliver a range of services and create vibrant towns and villages. Typically sponsor groups are involved in not-for-profit activities. The Sponsor groups benefit from additional human resources to deliver their services.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Our sponsors are located in a number of towns and villages across south Westmeath;&nbsp;<strong>Ballinagore, Ballymore, Castletown Geoghegan, Dysart, Horseleap, Kilbeggan, Loughnavalley, Rosemount, Streamstown and Tyrrellspass.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Our Sponsors</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2024/09/ballinagore-tidy-towns-225x300.jpeg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Ballinagore Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/ballymorecc2-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Ballymore Community Centre</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://www.facebook.com/Ballymore-Community-Centre-157478227606563/?fref=ts" target="_blank" rel="noreferrer noopener">Ballymore Community Centre Facebook Page</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2024/09/ballymore-tidy-towns-225x300.jpeg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Ballymore Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/07/Image-136x150.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Kilbeggan Parish Centre</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2024/09/kilbeggan-ptch-putt-300x169.jpeg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Kilbeggan Pitch and Putt</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://www.facebook.com/Kilbeggan-pitchandputt-1275278925816773/?fref=ts" target="_blank" rel="noreferrer noopener">Kilbeggan Pitch and Putt Facebook Page</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/2500KilbegganRaceslogo.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Kilbeggan Racecourse</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/KilbegganRaces/?fref=ts" target="_blank" rel="noreferrer noopener"><strong>Kilbeggan Races Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://www.kilbegganraces.com/" target="_blank" rel="noreferrer noopener"><strong>Kilbeggan Races Website</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/BCDL-Friendship-Club2-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Castletown Geoghegan Development Group</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/Castletown-Geoghegan-GAA-134x150.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Castletown Geoghegan G.A.A.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/st.malachys.gaa?fref=ts" target="_blank" rel="noreferrer noopener"><strong>St. Malachys G.A.A. Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="http://www.stmalachys.ie/" target="_blank" rel="noreferrer noopener"><strong>St. Malachys G.A.A. Website</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/kilbIMG_1427-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Kilbeggan Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/Kilbeggan-Tidy-Towns-912757675500392/?fref=ts" target="_blank" rel="noreferrer noopener"><strong>Kilbeggan Tidy Towns Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/08/home03-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Loughnavalley Tidy Towns/ Development Group</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/cgpIMG_1408-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Castletown Geoghegan Parochial</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/dysIMG_1414-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Dysart Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/horIMG_1395-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Horseleap/ Streamstown Development Association</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/rahIMG_1836-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Rosemount Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/plugins/js_composer/assets/vc/no_image.png" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Streamstown and Rosemount Wednesday/ Thursday Club</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/horettIMG_1529-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Horseleap Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2024/09/kilbeggan-harbour-300x225.jpeg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Kilbeggan Harbour Development</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/08/IMG_2334-300x214.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Kilbeggan Mens Shed</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/Club-Crest-Tyrrellspass-300x300.png" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Tyrrellspass G.A.A.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/gaa.tyrrellspass?fref=ts" target="_blank" rel="noreferrer noopener"><strong>Tyrrellspass G.A.A. Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/04/Tyrrellspass-Logo-2.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Tyrrellspass Tidy Towns</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://www.facebook.com/TyrrellspassTidyTowns/?fref=ts" target="_blank" rel="noreferrer noopener"><strong>Tyrrellspass Tidy Towns Facebook Page</strong></a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="https://kilbeggancommunitygroup.ie/wp-content/uploads/2016/08/Westmeath-Ladies-300x215.jpg" alt=""/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p><strong>Westmeath Ladies Gaelic Football Association</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="https://www.facebook.com/westmeathladies.gaa/?fref=ts" target="_blank" rel="noreferrer noopener">Westmeath Ladies Gaelic Football Association Facebook Page</a></strong></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1761</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:03:19]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:03:19]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:03:19]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:03:19]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 09:14:51]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 09:14:51]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[our-sponsors]]></wp:post_name>
@@ -1358,28 +2086,78 @@ https://player.vimeo.com/video/523868167
 							</item>
 					<item>
 		<title><![CDATA[Contact]]></title>
-		<link>https://testwp.com/contact/</link>
+		<link>https://testwp.com/about-us/contact/</link>
 		<pubDate>Thu, 04 Dec 2025 01:12:47 +0000</pubDate>
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1787</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>For further information please don’t hesitate to contact us via phone, a visit or by dropping us an email.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Telephone:&nbsp;</strong>057 9332711 (085) 2523154</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Email: kcgltd@gmail.com</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><a href="http://www.facebook.com/kilbeggancommunitygroupltd" target="_blank" rel="noreferrer noopener">Connect with us on Facebook</a></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Address:</strong><br>Kilbeggan Community Group&nbsp;CLG</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Upper Main Street,<br>Kilbeggan,<br>Co. Westmeath</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Eircode</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>N91-TFF9</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Opening Hours:</strong><br>Monday – Thursday: 9.00am -5.00pm<br>Friday : 9.00am – 4.00pm</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We are located across the road from Larrigy’s pub, on Upper Main Street, Kilbeggan.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Find us on the Map:</strong></p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>1787</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 01:12:47]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 01:12:47]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 01:12:47]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 01:12:47]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 14:50:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 14:50:35]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[contact]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
+		<wp:post_parent>1728</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														</item>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 					<item>
 		<title><![CDATA[Block tests]]></title>
 		<link>https://testwp.com/block-tests/</link>
@@ -1387,7 +2165,7 @@ https://player.vimeo.com/video/523868167
 		<dc:creator><![CDATA[rob]]></dc:creator>
 		<guid isPermaLink="false">https://testwp.com/?page_id=1855</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"300px"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview","backgroundColor":"muted-grey","metadata":{"categories":[],"patternName":"core/block/1864","name":"Bluey Header"}} -->
+		<content:encoded><![CDATA[<!-- wp:acf/rmcc-block {"style":{"spacing":{"margin":{"bottom":"0rem","top":"0rem"},"blockGap":"20px"},"dimensions":{"minHeight":"300px"}},"alignContent":"center center","name":"acf/rmcc-block","align":"full","mode":"preview","backgroundColor":"muted-grey","metadata":{"categories":[],"patternName":"core/block/1941","name":"Greyish Header"}} -->
 <!-- wp:group {"style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"center","className":"rmcc-heading-small rmcc-margin-remove-bottom","style":{"elements":{"link":{"color":{"text":"var:preset|color|text-dark"}}}},"textColor":"text-dark"} -->
 <h2 class="wp-block-heading has-text-align-center rmcc-heading-small rmcc-margin-remove-bottom has-text-dark-color has-text-color has-link-color"><strong>Block Tests</strong></h2>
@@ -1578,8 +2356,8 @@ https://player.vimeo.com/video/523868167
 		<wp:post_id>1855</wp:post_id>
 		<wp:post_date><![CDATA[2025-12-04 10:24:59]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-12-04 10:24:59]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 14:24:24]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 14:24:24]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 14:24:10]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 14:24:10]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[block-tests]]></wp:post_name>
@@ -1603,33 +2381,67 @@ https://player.vimeo.com/video/523868167
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_oembed_time_a1d1a64929eae8ece8667371880ca162]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1764858211]]></wp:meta_value>
+		<wp:meta_value><![CDATA[1765201529]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[LIR Training]]></title>
-		<link>https://testwp.com/training/lir-training/</link>
-		<pubDate>Thu, 04 Dec 2025 14:11:06 +0000</pubDate>
+		<title><![CDATA[Testimonials]]></title>
+		<link>https://testwp.com/community/testimonials/</link>
+		<pubDate>Mon, 08 Dec 2025 09:14:18 +0000</pubDate>
 		<dc:creator><![CDATA[rob]]></dc:creator>
-		<guid isPermaLink="false">https://testwp.com/?page_id=1901</guid>
+		<guid isPermaLink="false">https://testwp.com/?page_id=1916</guid>
 		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>The CE Scheme has a range of different benefits for those who are eligible to participate, no matter what goals our participants are working towards, we are here to assist them in all aspects. Below are some testimonials from different outlooks from those who are currently working on the scheme, why they decided to apply and what they have achieved in doing so.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong>Alan Tuite – Environmental worker Ballymore Tidy Towns</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I decided to take part in the CE Scheme for the training benefits and to get help in getting back into the work force. There is also an aspect of mental health involved in partaking in the CE Scheme, I did it for my own head, it is a great relief to get out of the house and do something, keeping active within a job and socialising with the people I work with. I feel like throughout my time on the scheme I have made an impact on the community, I have been heavily involved in the tidy towns and it has given me a great sense of purpose. I really enjoy working in Ballymore and I love the people, everyone gets involved and there is a great sense of community throughout. A typical day would involve anything from litter picking, mowing lawns and of course not forgetting to put my level 3 horticulture training to use and attending to the flowerbeds and shrubs. It was the best phone call I ever got, being told I was accepted onto the scheme, I’ve learnt so much and it has given me the experience and the confidence to get back into the work force. It was a tremendous boost for me mentally, and I would definitely recommend anyone who is struggling to get back into the work force to give it a shot, it’s a foot in the door, a sense of worth and along with training, a sense of pride and achievement.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong>Deirdre Corroon – Administrator for Westmeath Ladies Gaelic Football Association</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I decided to take part in the CE Scheme because I was already involved within Westmeath Ladies Gaelic Football, volunteering. As I was unemployed I was eligible for the scheme and it was important for me to have work and get out and do something, especially something I already had an interest in. When I started I did not know anything about the training that I would be able to do within the scheme so that was a fantastic surprise. I have been working towards achieving a level 6 major award in Administration which has been tailored specifically to suit me and the skills I wanted to develop for the career I wanted to work towards. I think this is a fantastic opportunity to be given, especially younger people who want to work and train towards their career goals as it gives them a chance to experience the job as well as train to develop their career in it. While I was training I was offered the opportunity to do some part time tutoring in one of the training providers that I had previously obtained some of my awards in. I am still finishing off some modules to complete my major award but since starting the scheme I have gained confidence, and I feel like I have already gotten my foot in the door towards achieving full time employment for when I finish up my time here. I am looking forward to what the future has in store for me, career wise and I would recommend to anybody who are eligible to participate in the CE Scheme.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading"><strong>Kim Allen – Office Administrator Kilbeggan Racecourse</strong></h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I previously completed a level 8 honours degree in Athlone Institute of Technology in Business but I found that employers nowadays want a lot of experience which I didn’t have. I applied for the CE Scheme to build my experience and increase my chances of future employment. I am only on the scheme a short while now, but the work I have been doing and the experience I have been gaining has made a huge impact on me both personally and professionally. I am more confident and I am also getting to learn on the job which is a great head start for when I work towards my level 6 major award in Business Management throughout my time here. We have a plan made out to work towards developing my skills to compliment my honours degree so when I finish up I have not only my original degree, but a major award with components that are backed up by my experience within the office here at Kilbeggan Racecourse. I feel that the CE Scheme is of huge benefit to me and I am excited to work towards my true potential. I would recommend it to anybody who is eligible, it’s one of the best things I have done.</p>
+<!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1901</wp:post_id>
-		<wp:post_date><![CDATA[2025-12-04 14:11:06]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-12-04 14:11:06]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-12-04 14:11:06]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-12-04 14:11:06]]></wp:post_modified_gmt>
+		<wp:post_id>1916</wp:post_id>
+		<wp:post_date><![CDATA[2025-12-08 09:14:18]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-12-08 09:14:18]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-12-08 14:41:56]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-12-08 14:41:56]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[lir-training]]></wp:post_name>
+		<wp:post_name><![CDATA[testimonials]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>1745</wp:post_parent>
+		<wp:post_parent>1757</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														</item>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
 				</channel>
 </rss>
 	

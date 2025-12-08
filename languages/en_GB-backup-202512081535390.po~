@@ -26,7 +26,7 @@ msgstr ""
 #: inc/Theme.php:464
 msgctxt "404/Error pages"
 msgid "Error: Page not found"
-msgstr ""
+msgstr "Error: Page not found!"
 
 #: inc/Theme.php:465
 msgctxt "404/Error pages"

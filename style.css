@@ -46,3 +46,15 @@ a.dont-underline:hover, a.dont-underline:focus,
 .rmcc-navbar-transparent.rmcc-box-shadow-small {
   box-shadow: 0 0px 25px -15px rgba(0, 0, 0, .08);
 }
+
+.footer-contact-card {
+  margin-top: 15px;
+  padding: 25px 0px 20px 45px;
+  border-radius: 4rem;
+  background-color: rgba(255,255,255,.1);
+  border: 1px solid #ffffff5c;
+}
+
+.site-footer .rmcc-nav-default.footer-contact-nav {
+  font-size: 1.1rem !important;
+}
