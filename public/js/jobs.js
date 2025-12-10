@@ -1,5 +1,5 @@
 (async function () {
-  var jobsJson = await fetchJobsJson('https://feed.midlandjobs.ie/demo/');
+  var jobsJson = await fetchJobsJson('https://feed.midlandjobs.ie/kilbeggan/');
   var jobsQ = JsonQuery(jobsJson); //Initialize the Query Engine
   var kilbegganJobs = jobsQ.where({'company': 'Kilbeggan Community Group'}).exec();
   const MyJobsObject = new JobBoardFilteredFeed(42, kilbegganJobs, {
