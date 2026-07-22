@@ -245,6 +245,7 @@ class Theme extends Timber {
     $allowedposttags['a'] = $allowed_atts;
     $allowedposttags['b'] = $allowed_atts;
     $allowedposttags['i'] = $allowed_atts;
+    $allowedposttags['midland-jobs-feed'] = $allowed_atts;
   }
 
   // theme supports & assets
