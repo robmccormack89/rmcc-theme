@@ -9,9 +9,6 @@ node_modules/
 compilation_cache
 compilation_cache/
 
-_dev
-_dev/
-
 inc/lib/plugins
 inc/lib/plugins/
 inc/lib/acf
