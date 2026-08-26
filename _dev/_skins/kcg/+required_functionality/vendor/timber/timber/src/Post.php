@@ -17,6 +17,7 @@ use WP_Post;
  * example of what it’s like to work with this object in your code.
  *
  * @api
+ * @phpstan-consistent-constructor
  * @example
  *
  * **single.php**
@@ -92,6 +93,11 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
     protected $_prev = [];
 
     /**
+     * @var array Stores the results of the ancestors of the post as Timber\Posts
+     */
+    protected $_ancestors;
+
+    /**
      * @var string Stores the CSS classes for the post (ex: "post post-type-book post-123")
      */
     protected $_css_class;
@@ -163,6 +169,117 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
      *      database, ex: "hello-world"
      */
     public $slug;
+
+    /**
+     * The post's slug.
+     *
+     * @var string
+     */
+    public $post_name;
+
+    /**
+     * The post's GMT publication time.
+     *
+     * @var string
+     */
+    public $post_date_gmt;
+
+    /**
+     * Whether comments are allowed.
+     *
+     * @var string
+     */
+    public $comment_status;
+
+    /**
+     * Whether pings are allowed.
+     *
+     * @var string
+     */
+    public $ping_status;
+
+    /**
+     * The post's password in plain text.
+     *
+     * @var string
+     */
+    public $post_password;
+
+    /**
+     * URLs queued to be pinged.
+     *
+     * @var string
+     */
+    public $to_ping;
+
+    /**
+     * URLs that have been pinged.
+     *
+     * @var string
+     */
+    public $pinged;
+
+    /**
+     * The post's local modified time.
+     *
+     * @var string
+     */
+    public $post_modified;
+
+    /**
+     * The post's GMT modified time.
+     *
+     * @var string
+     */
+    public $post_modified_gmt;
+
+    /**
+     * A utility DB field for post content.
+     *
+     * @var string
+     */
+    public $post_content_filtered;
+
+    /**
+     * The unique identifier for a post, not necessarily a URL, used as the feed GUID.
+     *
+     * @var string
+     */
+    public $guid;
+
+    /**
+     * A field used for ordering posts.
+     *
+     * @var int
+     */
+    public $menu_order;
+
+    /**
+     * An attachment's mime type.
+     *
+     * @since 3.5.0
+     * @var string
+     */
+    public $post_mime_type;
+
+    /**
+     * Cached comment count.
+     *
+     * A numeric string, for compatibility reasons. Protected visibility to make
+     * Twig use the comment_count() method first.
+     *
+     * @var string
+     */
+    protected $comment_count;
+
+    /**
+     * Stores the post object's sanitization level.
+     *
+     * Does not correspond to a DB field.
+     *
+     * @var string
+     */
+    public $filter;
 
     /**
      * @var string Stores the PostType object for the post.
@@ -649,15 +766,6 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
             'taxonomy' => $taxonomies,
         ]);
 
-        if (!$merge) {
-            // get results segmented out per taxonomy
-            $queries = $this->partition_tax_queries($query, $taxonomies);
-            $termGroups = Timber::get_terms($queries);
-
-            // zip 'em up with the right keys
-            return \array_combine($taxonomies, $termGroups);
-        }
-
         return Timber::get_terms($query, $options);
     }
 
@@ -720,7 +828,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
          *
          * This filter is used by the ACF Integration.
          *
-         * @see   \Timber\Post::field_object()
+         * @see   Post::field_object()
          * @since 1.6.0
          *
          * @param mixed        $value      The value.
@@ -752,7 +860,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
      *
      * @api
      * @deprecated 2.0.0, use `{{ post.meta('field_name') }}` instead.
-     * @see \Timber\Post::meta()
+     * @see Post::meta()
      *
      * @param string $field_name The field name for which you want to get the value.
      * @return mixed The meta field value.
@@ -832,7 +940,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
      *
      * @internal
      * @param string $class additional classes you want to add.
-     * @see \Timber\Post::$_css_class
+     * @see Post::$_css_class
      * @example
      * ```twig
      * <article class="{{ post.class }}">
@@ -857,6 +965,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
      */
     public function get_method_values(): array
     {
+        $ret['ancestors'] = $this->ancestors();
         $ret['author'] = $this->author();
         $ret['categories'] = $this->categories();
         $ret['category'] = $this->category();
@@ -876,6 +985,33 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
         $ret['thumbnail'] = $this->thumbnail();
         $ret['title'] = $this->title();
         return $ret;
+    }
+
+    /**
+     * Returns an array of ancestors of the post as Timber\Posts
+     * (or other class as you define).
+     *
+     * @api
+     * @example
+     * ```twig
+     * {% if post.ancestors is not empty %}
+     *     Here are the ancestor pages:
+     *     {% for ancestor in post.ancestors %}
+     *         <a href="{{ ancestor.link }}">{{ ancestor.title }}</a>
+     *     {% endfor %}
+     * {% endif %}
+     * ```
+     * @return PostCollectionInterface
+     */
+    public function ancestors()
+    {
+        if (isset($this->_ancestors)) {
+            return $this->_ancestors;
+        }
+
+        $ancestors = $this->factory()->from(\array_reverse(\get_post_ancestors($this->ID)));
+
+        return $this->_ancestors = \is_iterable($ancestors) ? $ancestors : new PostArrayObject([]);
     }
 
     /**
@@ -923,7 +1059,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
          * } );
          * ```
          *
-         * @see   \Timber\Post::authors()
+         * @see   Post::authors()
          * @since 1.1.4
          *
          * @param array        $authors An array of User objects. Default: User object for `post_author`.
@@ -1033,7 +1169,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
          * } );
          * ```
          *
-         * @see   \Timber\Post::children()
+         * @see   Post::children()
          * @since 2.1.0
          *
          * @param array        $arguments An array of arguments for the `get_children` function.
@@ -1286,7 +1422,7 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
         $content = $this->content_handle_no_teaser_block($content);
         $content = \apply_filters('the_content', ($content));
 
-        if ($len == -1 && $page == 0) {
+        if ($len == -1 && $page == 0 && !$remove_blocks) {
             $this->___content = $content;
         }
 
@@ -1963,28 +2099,6 @@ class Post extends CoreEntity implements DatedInterface, Setupable, Stringable
     protected function get_entity_name()
     {
         return 'post';
-    }
-
-    /**
-     * Given a base query and a list of taxonomies, return a list of queries
-     * each of which queries for one of the taxonomies.
-     * @example
-     * ```
-     * $this->partition_tax_queries(["object_ids" => [123]], ["a", "b"]);
-     *
-     * // result:
-     * // [
-     * //   ["object_ids" => [123], "taxonomy" => ["a"]],
-     * //   ["object_ids" => [123], "taxonomy" => ["b"]],
-     * // ]
-     * ```
-     * @internal
-     */
-    private function partition_tax_queries(array $query, array $taxonomies): array
-    {
-        return \array_map(fn (string $tax): array => \array_merge($query, [
-            'taxonomy' => [$tax],
-        ]), $taxonomies);
     }
 
     /**

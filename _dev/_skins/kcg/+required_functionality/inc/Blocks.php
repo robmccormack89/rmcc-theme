@@ -41,20 +41,14 @@ class Blocks {
             false
           );
 
-          if(is_page('some-page')) {
-
-          } else {
-
-            // rmcc jobs feed init js
-            wp_enqueue_script(
-              'rmcc-theme-jobs-init',
-              get_template_directory_uri() . '/public/js/jobs.js',
-              '',
-              '',
-              false
-            );
-
-          }
+          // rmcc jobs feed init js
+          wp_enqueue_script(
+            'rmcc-theme-jobs-init',
+            get_template_directory_uri() . '/public/js/jobs.js',
+            '',
+            '',
+            false
+          );
 
         }
       }

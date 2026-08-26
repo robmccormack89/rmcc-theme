@@ -59,14 +59,14 @@ class TextHelper
          * allowed tags. Instead of passing the allowed tags every time you use `trim_words()` (or `{{ text|truncate }}`
          * in Twig), you can use this filter to set the allowed tags.
          *
-         * @see \Timber\TextHelper::trim_words()
+         * @see TextHelper::trim_words()
          * @since 0.21.9
          *
          * @param string $allowed_tags Allowed tags, separated by one whitespace.
          *                             Default `p a span b i br blockquote`.
          */
         $allowed_tags_array = \explode(' ', (string) \apply_filters('timber/trim_words/allowed_tags', $allowed_tags));
-        $allowed_tags_array = \array_filter($allowed_tags_array, fn($value) => $value !== '');
+        $allowed_tags_array = \array_filter($allowed_tags_array, fn ($value) => $value !== '');
         $allowed_tag_string = '<' . \implode('><', $allowed_tags_array) . '>';
 
         $text = \strip_tags($text, $allowed_tag_string);

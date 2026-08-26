@@ -83,34 +83,34 @@ class TranslationExtractCommand extends Command
                 new InputOption('as-tree', null, InputOption::VALUE_REQUIRED, 'Dump the messages as a tree-like structure: The given value defines the level where to switch to inline YAML'),
             ])
             ->setHelp(<<<'EOF'
-The <info>%command.name%</info> command extracts translation strings from templates
-of a given bundle or the default translations directory. It can display them or merge
-the new ones into the translation files.
+                The <info>%command.name%</info> command extracts translation strings from templates
+                of a given bundle or the default translations directory. It can display them or merge
+                the new ones into the translation files.
 
-When new translation strings are found it can automatically add a prefix to the translation
-message. However, if the <comment>--no-fill</comment> option is used, the <comment>--prefix</comment>
-option has no effect, since the translation values are left empty.
+                When new translation strings are found it can automatically add a prefix to the translation
+                message. However, if the <info>--no-fill</info> option is used, the <info>--prefix</info>
+                option has no effect, since the translation values are left empty.
 
-Example running against a Bundle (AcmeBundle)
+                Example running against a Bundle (AcmeBundle)
 
-  <info>php %command.full_name% --dump-messages en AcmeBundle</info>
-  <info>php %command.full_name% --force --prefix="new_" fr AcmeBundle</info>
+                  <info>php %command.full_name% --dump-messages en AcmeBundle</info>
+                  <info>php %command.full_name% --force --prefix="new_" fr AcmeBundle</info>
 
-Example running against default messages directory
+                Example running against default messages directory
 
-  <info>php %command.full_name% --dump-messages en</info>
-  <info>php %command.full_name% --force --prefix="new_" fr</info>
+                  <info>php %command.full_name% --dump-messages en</info>
+                  <info>php %command.full_name% --force --prefix="new_" fr</info>
 
-You can sort the output with the <comment>--sort</> flag:
+                You can sort the output with the <info>--sort</> flag:
 
-    <info>php %command.full_name% --dump-messages --sort=asc en AcmeBundle</info>
-    <info>php %command.full_name% --force --sort=desc fr</info>
+                    <info>php %command.full_name% --dump-messages --sort=asc en AcmeBundle</info>
+                    <info>php %command.full_name% --force --sort=desc fr</info>
 
-You can dump a tree-like structure using the yaml format with <comment>--as-tree</> flag:
+                You can dump a tree-like structure using the yaml format with <info>--as-tree</> flag:
 
-    <info>php %command.full_name% --force --format=yaml --as-tree=3 en AcmeBundle</info>
+                    <info>php %command.full_name% --force --format=yaml --as-tree=3 en AcmeBundle</info>
 
-EOF
+                EOF
             )
         ;
     }
@@ -199,7 +199,7 @@ EOF
             : new MergeOperation($currentCatalogue, $extractedCatalogue);
 
         // Exit if no messages found.
-        if (!\count($operation->getDomains())) {
+        if (!$operation->getDomains()) {
             $errorIo->warning('No translation messages were found.');
 
             return 0;
@@ -228,8 +228,8 @@ EOF
 
                 $list = array_merge(
                     array_diff($allKeys, $newKeys),
-                    array_map(fn ($id) => \sprintf('<fg=green>%s</>', $id), $newKeys),
-                    array_map(fn ($id) => \sprintf('<fg=red>%s</>', $id), array_keys($operation->getObsoleteMessages($domain)))
+                    array_map(static fn ($id) => \sprintf('<fg=green>%s</>', $id), $newKeys),
+                    array_map(static fn ($id) => \sprintf('<fg=red>%s</>', $id), array_keys($operation->getObsoleteMessages($domain)))
                 );
 
                 $domainMessagesCount = \count($list);
@@ -494,9 +494,11 @@ EOF
 
     private function removeNoFillTranslations(MessageCatalogueInterface $operation): void
     {
-        foreach ($operation->all('messages') as $key => $message) {
-            if (str_starts_with($message, self::NO_FILL_PREFIX)) {
-                $operation->set($key, '', 'messages');
+        foreach ($operation->getDomains() as $domain) {
+            foreach ($operation->all($domain) as $key => $message) {
+                if (str_starts_with($message, self::NO_FILL_PREFIX)) {
+                    $operation->set($key, '', $domain);
+                }
             }
         }
     }

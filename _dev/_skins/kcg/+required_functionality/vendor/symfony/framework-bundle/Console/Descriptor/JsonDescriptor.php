@@ -173,7 +173,7 @@ class JsonDescriptor extends Descriptor
             throw new RuntimeException('The deprecation file does not exist, please try warming the cache first.');
         }
 
-        $logs = unserialize(file_get_contents($containerDeprecationFilePath));
+        $logs = unserialize(file_get_contents($containerDeprecationFilePath), ['allowed_classes' => false]);
 
         $formattedLogs = [];
         $remainingCount = 0;
@@ -248,7 +248,7 @@ class JsonDescriptor extends Descriptor
     {
         $data = [
             'class' => (string) $definition->getClass(),
-            'public' => $definition->isPublic() && !$definition->isPrivate(),
+            'public' => $definition->isPublic(),
             'synthetic' => $definition->isSynthetic(),
             'lazy' => $definition->isLazy(),
             'shared' => $definition->isShared(),
@@ -288,7 +288,7 @@ class JsonDescriptor extends Descriptor
         }
 
         $calls = $definition->getMethodCalls();
-        if (\count($calls) > 0) {
+        if ($calls) {
             $data['calls'] = [];
             foreach ($calls as $callData) {
                 $data['calls'][] = $callData[0];
@@ -297,7 +297,7 @@ class JsonDescriptor extends Descriptor
 
         if (!$omitTags) {
             $data['tags'] = [];
-            foreach ($this->sortTagsByPriority($definition->getTags()) as $tagName => $tagData) {
+            foreach ($this->sortTagsByPriority($container ? $this->resolvePriorityServiceTags($container, $definition) : $definition->getTags()) as $tagName => $tagData) {
                 foreach ($tagData as $parameters) {
                     $data['tags'][] = ['name' => $tagName, 'parameters' => $parameters];
                 }
@@ -313,7 +313,7 @@ class JsonDescriptor extends Descriptor
     {
         return [
             'service' => (string) $alias,
-            'public' => $alias->isPublic() && !$alias->isPrivate(),
+            'public' => $alias->isPublic(),
         ];
     }
 
@@ -329,7 +329,7 @@ class JsonDescriptor extends Descriptor
                 $data[] = $l;
             }
         } else {
-            $registeredListeners = \array_key_exists('events', $options) ? array_combine($options['events'], array_map(fn ($event) => $eventDispatcher->getListeners($event), $options['events'])) : $eventDispatcher->getListeners();
+            $registeredListeners = \array_key_exists('events', $options) ? array_combine($options['events'], array_map(static fn ($event) => $eventDispatcher->getListeners($event), $options['events'])) : $eventDispatcher->getListeners();
             ksort($registeredListeners);
 
             foreach ($registeredListeners as $eventListened => $eventListeners) {

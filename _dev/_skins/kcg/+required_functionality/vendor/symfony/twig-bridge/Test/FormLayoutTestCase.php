@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormRenderer;
 use Symfony\Component\Form\FormRendererInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\Test\FormIntegrationTestCase;
-use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Security\Csrf\CsrfTokenManager;
 use Twig\Environment;
 use Twig\Extension\ExtensionInterface;
 use Twig\Loader\FilesystemLoader;
@@ -45,24 +45,28 @@ abstract class FormLayoutTestCase extends FormIntegrationTestCase
         }
 
         $rendererEngine = new TwigRendererEngine($this->getThemes(), $environment);
-        $this->renderer = new FormRenderer($rendererEngine, $this->createMock(CsrfTokenManagerInterface::class));
+        $this->renderer = new FormRenderer($rendererEngine, new CsrfTokenManager());
         $this->registerTwigRuntimeLoader($environment, $this->renderer);
     }
 
     protected function assertMatchesXpath($html, $expression, $count = 1): void
     {
-        $dom = new \DOMDocument('UTF-8');
+        $dom = new \DOMDocument('1.0', 'UTF-8');
 
         try {
             // Wrap in <root> node so we can load HTML with multiple tags at
             // the top level
-            $dom->loadXML('<root>'.$html.'</root>');
+            $loaded = $dom->loadXML('<root>'.$html.'</root>');
         } catch (\Exception $e) {
             $this->fail(\sprintf(
                 "Failed loading HTML:\n\n%s\n\nError: %s",
                 $html,
                 $e->getMessage()
             ));
+        }
+
+        if (!$loaded) {
+            $this->fail(\sprintf("Failed loading HTML:\n\n%s", $html));
         }
         $xpath = new \DOMXPath($dom);
         $nodeList = $xpath->evaluate('/root'.$expression);

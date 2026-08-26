@@ -53,18 +53,19 @@ class EventDispatcherDebugCommand extends Command
                 new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw description'),
             ])
             ->setHelp(<<<'EOF'
-The <info>%command.name%</info> command displays all configured listeners:
+                The <info>%command.name%</info> command displays all configured listeners:
 
-  <info>php %command.full_name%</info>
+                  <info>php %command.full_name%</info>
 
-To get specific listeners for an event, specify its name:
+                To get specific listeners for an event, specify its name:
 
-  <info>php %command.full_name% kernel.request</info>
+                  <info>php %command.full_name% kernel.request</info>
 
-The <info>--format</info> option specifies the format of the command output:
+                The <info>--format</info> option specifies the format of the command output:
 
-  <info>php %command.full_name% --format=json</info>
-EOF
+                  <info>php %command.full_name% --format=json</info>
+
+                EOF
             )
         ;
     }
@@ -92,7 +93,7 @@ EOF
             } else {
                 // if there is no direct match, try find partial matches
                 $events = $this->searchForEvent($dispatcher, $event);
-                if (0 === \count($events)) {
+                if (!$events) {
                     $io->getErrorStyle()->warning(\sprintf('The event "%s" does not have any registered listeners.', $event));
 
                     return 0;

@@ -13,3 +13,8 @@ inc/lib/plugins
 inc/lib/plugins/
 inc/lib/acf
 inc/lib/acf/
+
+_dev/_skins/kcg/+required_functionality/inc/lib/plugins
+_dev/_skins/kcg/+required_functionality/inc/lib/plugins/
+_dev/_skins/kcg/+required_functionality/inc/lib/acf
+_dev/_skins/kcg/+required_functionality/inc/lib/acf/

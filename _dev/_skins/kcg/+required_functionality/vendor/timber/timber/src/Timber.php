@@ -42,7 +42,22 @@ use WP_User;
  */
 class Timber
 {
-    public static $version = '2.3.3'; // x-release-please-version
+    public const VERSION = '2.5.1'; // x-release-please-version
+
+    /**
+     * Minimum WordPress version Timber is tested against.
+     *
+     * Use the same shape WordPress reports for its own version: a major release is
+     * `6.8` (not `6.8.0`). version_compare() treats a missing segment as lower than an
+     * explicit `.0`, so `6.8.0` would wrongly flag a site running the `6.8` release.
+     */
+    public const MINIMUM_WP_VERSION = '6.8';
+
+    /**
+     * @deprecated 2.5.0 Use {@see Timber::VERSION} instead.
+     * @var string
+     */
+    public static $version = self::VERSION;
 
     public static $locations;
 
@@ -718,6 +733,21 @@ class Timber
      * ] );
      * ```
      *
+     * This example shows how to get terms grouped by taxonomy. Note that you need to set the `merge` option to `false` for this.
+     * ```php
+     * // Get terms grouped by taxonomy. The result is an associative array where
+     * // each key is a taxonomy name and the value is an array of Term objects.
+     * $terms_by_taxonomy = Timber::get_terms( [
+     *   'taxonomy' => [ 'category', 'post_tag' ],
+     * ], [ 'merge' => false ] );
+     *
+     * foreach ( $terms_by_taxonomy as $taxonomy => $terms ) {
+     *   foreach ( $terms as $term ) {
+     *     // ...
+     *   }
+     * }
+     * ```
+     *
      * @param string|array $args    A string or array identifying the taxonomy or
      *                              `WP_Term_Query` args. Numeric strings are treated as term IDs;
      *                              non-numeric strings are treated as taxonomy names. Numeric
@@ -726,9 +756,14 @@ class Timber
      *                              and accept any valid parameters to that constructor.
      *                              Default `null`, which will get terms from all queryable
      *                              taxonomies.
-     * @param array        $options Optional. None are currently supported. Default empty array.
+     * @param array        $options {
+     *     Optional. An array of options for the function.
      *
-     * @return iterable
+     *     @type bool $merge Whether the resulting array is grouped by taxonomy (`false`) or merged into a single flat array (`true`). Default `true`.
+     * }
+     *
+     * @return iterable|array An iterable of Term objects, or an array of iterables grouped by
+     *                        taxonomy name when `merge` is `false`.
      */
     public static function get_terms($args = null, array $options = []): iterable
     {
@@ -739,7 +774,7 @@ class Timber
 
         $factory = new TermFactory();
 
-        return $factory->from($args);
+        return $factory->from($args, $options);
     }
 
     /**
@@ -1272,7 +1307,7 @@ class Timber
              * first time. That’s why you should add this filter before you call
              * `Timber::context()`.
              *
-             * @see \Timber\Timber::context()
+             * @see Timber::context()
              * @since 0.21.7
              * @example
              * ```php
@@ -1470,7 +1505,6 @@ class Timber
                     'timber/compile/data'
                 );
             }
-
             $output = $loader->render($file, $data, $expires, $cache_mode);
         } else {
             if (\is_array($filenames)) {
@@ -1516,6 +1550,60 @@ class Timber
         \do_action_deprecated('timber_compile_done', [], '2.0.0', 'timber/compile/done');
 
         return $output;
+    }
+
+    /**
+     * Compiles a Twig block from a Twig file.
+     *
+     * Passes data to a Twig file and returns the output of a specific block.
+     *
+     * @api
+     * @param string         $block_name     The name of the block to render.
+     * @param array|string   $filenames      Name or full path of the Twig file to render. If this is an array of file
+     *                                       names or paths, Timber will render the first file that exists.
+     * @param array          $data           Optional. An array of data to use in Twig template.
+     * @param string|array|null $caller      Optional. A value produced by a `LocationManager` method to control
+     *                                       template lookup. Pass either `LocationManager::get_calling_script_dir()`
+     *                                       (string path) or `LocationManager::get_locations()` (array of search
+     *                                       locations). When `null`, Timber will default to
+     *                                       `LocationManager::get_calling_script_dir(1)`.
+     * @param bool|int|array $expires        Optional. In seconds. Use false to disable cache altogether. When passed an
+     *                                       array, the first value is used for non-logged in visitors, the second for users.
+     *                                       Default false.
+     * @param string         $cache_mode     Optional. Any of the cache mode constants defined in Timber\Loader.
+     * @return bool|string                   The rendered block output or false on failure.
+     *
+     * @example
+     * ```php
+     * $context = Timber::context();
+     *
+     * $output = Timber::compile_twig_block( 'content', 'index.twig', $context );
+     * ```
+     */
+    public static function compile_twig_block($block_name, $filenames, $data = [], $caller = null, $expires = false, $cache_mode = Loader::CACHE_USE_DEFAULT)
+    {
+        if (!\defined('TIMBER_LOADED')) {
+            self::init();
+        }
+
+        if ($caller === null) {
+            $caller = LocationManager::get_calling_script_dir(1);
+        }
+        $block_loader = new TwigBlockLoader($caller, $block_name);
+        $file = $block_loader->choose_template($filenames);
+
+        if ($file !== false) {
+            if (\is_null($data)) {
+                $data = [];
+            }
+            return $block_loader->render($file, $data, $expires, $cache_mode);
+        } else {
+            if (\is_array($filenames)) {
+                $filenames = \implode(", ", $filenames);
+            }
+            Helper::error_log('Error loading your template files: ' . $filenames . '. Make sure one of these files exists.');
+            return false;
+        }
     }
 
     /**
@@ -1572,7 +1660,7 @@ class Timber
         /**
          * Filters the compiled result before it is returned.
          *
-         * @see \Timber\Timber::fetch()
+         * @see Timber::fetch()
          * @since 0.16.7
          * @deprecated 2.0.0 use timber/compile/result
          *
@@ -1612,6 +1700,38 @@ class Timber
     {
         $output = self::compile($filenames, $data, $expires, $cache_mode, true);
         echo $output;
+    }
+
+    /**
+     * Renders a Twig block from a Twig file.
+     *
+     * Passes data to a Twig file and echoes the output of a specific block.
+     *
+     * @api
+     * @param string         $block_name     The name of the block to render.
+     * @param array|string   $filenames      Name or full path of the Twig file to render. If this is an array of file
+     *                                       names or paths, Timber will render the first file that exists.
+     * @param array          $data           Optional. An array of data to use in Twig template.
+     * @param string|array|null $caller      Optional. A value produced by a `LocationManager` method to control
+     *                                       template lookup. Pass either `LocationManager::get_calling_script_dir()`
+     *                                       (string path) or `LocationManager::get_locations()` (array of search
+     *                                       locations). When `null`, Timber will default to
+     *                                       `LocationManager::get_calling_script_dir(1)`.
+     * @param bool|int|array $expires        Optional. In seconds. Use false to disable cache altogether. When passed an
+     *                                       array, the first value is used for non-logged in visitors, the second for users.
+     *                                       Default false.
+     * @param string         $cache_mode     Optional. Any of the cache mode constants defined in Timber\Loader.
+     *
+     * @example
+     * ```php
+     * $context = Timber::context();
+     *
+     * Timber::render_twig_block( 'success', 'toasts.twig', $context );
+     * ```
+     */
+    public static function render_twig_block(string $block_name, $filenames, array $data = [], $caller = null, $expires = false, $cache_mode = Loader::CACHE_USE_DEFAULT)
+    {
+        echo self::compile_twig_block($block_name, $filenames, $data, $caller, $expires, $cache_mode);
     }
 
     /**

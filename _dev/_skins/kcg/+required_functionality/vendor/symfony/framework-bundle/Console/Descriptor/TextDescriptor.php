@@ -38,6 +38,18 @@ use Symfony\Component\Routing\RouteCollection;
  */
 class TextDescriptor extends Descriptor
 {
+    private const VERB_COLORS = [
+        'ANY' => 'default',
+        'GET' => 'blue',
+        'QUERY' => 'blue',
+        'HEAD' => 'magenta',
+        'OPTIONS' => 'blue',
+        'POST' => 'green',
+        'PUT' => 'yellow',
+        'PATCH' => 'yellow',
+        'DELETE' => 'red',
+    ];
+
     public function __construct(
         private ?FileLinkFormatter $fileLinkFormatter = null,
     ) {
@@ -45,38 +57,64 @@ class TextDescriptor extends Descriptor
 
     protected function describeRouteCollection(RouteCollection $routes, array $options = []): void
     {
-        $showControllers = isset($options['show_controllers']) && $options['show_controllers'];
+        $showAliases = $options['show_aliases'] ?? false;
+        $showControllers = $options['show_controllers'] ?? false;
+        $rawOutput = isset($options['raw_text']) && $options['raw_text'];
 
-        $tableHeaders = ['Name', 'Method', 'Scheme', 'Host', 'Path'];
+        $tableRows = [];
+        $shouldShowScheme = false;
+        $shouldShowHost = false;
+        foreach ($routes->all() as $name => $route) {
+            $controller = $route->getDefault('_controller');
+
+            $scheme = $route->getSchemes() ? implode('|', $route->getSchemes()) : 'ANY';
+            $shouldShowScheme = $shouldShowScheme || 'ANY' !== $scheme;
+
+            $host = '' !== $route->getHost() ? $route->getHost() : 'ANY';
+            $shouldShowHost = $shouldShowHost || 'ANY' !== $host;
+
+            $row = [
+                'Name' => $name,
+                'Methods' => $this->formatMethods($route->getMethods()),
+                'Scheme' => $scheme,
+                'Host' => $host,
+                'Path' => $route->getPath(),
+            ];
+
+            if ($showControllers) {
+                $controllerText = $controller ? $this->formatCallable($controller) : '';
+                $row['Controller'] = $controller && !$rawOutput ? $this->formatControllerLink($controller, $controllerText, $options['container'] ?? null) : $controllerText;
+            }
+
+            if ($showAliases) {
+                $row['Aliases'] = implode('|', $this->getReverseAliases($routes)[$name] ?? []);
+            }
+
+            $tableRows[] = $row;
+        }
+
+        $tableHeaders = ['Name', 'Method'];
+
+        if ($shouldShowScheme) {
+            $tableHeaders[] = 'Scheme';
+        } else {
+            array_walk($tableRows, static function (&$row) { unset($row['Scheme']); });
+        }
+
+        if ($shouldShowHost) {
+            $tableHeaders[] = 'Host';
+        } else {
+            array_walk($tableRows, static function (&$row) { unset($row['Host']); });
+        }
+
+        $tableHeaders[] = 'Path';
+
         if ($showControllers) {
             $tableHeaders[] = 'Controller';
         }
 
-        if ($showAliases = $options['show_aliases'] ?? false) {
+        if ($showAliases) {
             $tableHeaders[] = 'Aliases';
-        }
-
-        $tableRows = [];
-        foreach ($routes->all() as $name => $route) {
-            $controller = $route->getDefault('_controller');
-
-            $row = [
-                $name,
-                $route->getMethods() ? implode('|', $route->getMethods()) : 'ANY',
-                $route->getSchemes() ? implode('|', $route->getSchemes()) : 'ANY',
-                '' !== $route->getHost() ? $route->getHost() : 'ANY',
-                $this->formatControllerLink($controller, $route->getPath(), $options['container'] ?? null),
-            ];
-
-            if ($showControllers) {
-                $row[] = $controller ? $this->formatControllerLink($controller, $this->formatCallable($controller), $options['container'] ?? null) : '';
-            }
-
-            if ($showAliases) {
-                $row[] = implode('|', ($reverseAliases ??= $this->getReverseAliases($routes))[$name] ?? []);
-            }
-
-            $tableRows[] = $row;
         }
 
         if (isset($options['output'])) {
@@ -90,9 +128,12 @@ class TextDescriptor extends Descriptor
 
     protected function describeRoute(Route $route, array $options = []): void
     {
+        $rawOutput = isset($options['raw_text']) && $options['raw_text'];
+
         $defaults = $route->getDefaults();
         if (isset($defaults['_controller'])) {
-            $defaults['_controller'] = $this->formatControllerLink($defaults['_controller'], $this->formatCallable($defaults['_controller']), $options['container'] ?? null);
+            $controllerText = $this->formatCallable($defaults['_controller']);
+            $defaults['_controller'] = $rawOutput ? $controllerText : $this->formatControllerLink($defaults['_controller'], $controllerText, $options['container'] ?? null);
         }
 
         $tableHeaders = ['Property', 'Value'];
@@ -103,7 +144,7 @@ class TextDescriptor extends Descriptor
             ['Host', '' !== $route->getHost() ? $route->getHost() : 'ANY'],
             ['Host Regex', '' !== $route->getHost() ? $route->compile()->getHostRegex() : ''],
             ['Scheme', $route->getSchemes() ? implode('|', $route->getSchemes()) : 'ANY'],
-            ['Method', $route->getMethods() ? implode('|', $route->getMethods()) : 'ANY'],
+            ['Method', $this->formatMethods($route->getMethods())],
             ['Requirements', $route->getRequirements() ? $this->formatRouterConfig($route->getRequirements()) : 'NO CUSTOM'],
             ['Class', $route::class],
             ['Defaults', $this->formatRouterConfig($defaults)],
@@ -195,9 +236,15 @@ class TextDescriptor extends Descriptor
 
         $options['output']->title($title);
 
-        $serviceIds = isset($options['tag']) && $options['tag']
-            ? $this->sortTaggedServicesByPriority($container->findTaggedServiceIds($options['tag']))
-            : $this->sortServiceIds($container->getServiceIds());
+        $services = [];
+        if (isset($options['tag']) && $options['tag']) {
+            foreach (array_keys($container->findTaggedServiceIds($options['tag'])) as $serviceId) {
+                $services[$serviceId] = $this->resolvePriorityServiceTags($container, $container->getDefinition($serviceId), $options['tag']);
+            }
+            $serviceIds = $this->sortTaggedServicesByPriority($services);
+        } else {
+            $serviceIds = $this->sortServiceIds($container->getServiceIds());
+        }
         $maxTags = [];
 
         if (isset($options['filter'])) {
@@ -219,7 +266,7 @@ class TextDescriptor extends Descriptor
                     continue;
                 }
                 if ($showTag) {
-                    $tags = $definition->getTag($showTag);
+                    $tags = $services[$serviceId];
                     foreach ($tags as $tag) {
                         foreach ($tag as $key => $value) {
                             if (!isset($maxTags[$key])) {
@@ -250,7 +297,7 @@ class TextDescriptor extends Descriptor
             $styledServiceId = $rawOutput ? $serviceId : \sprintf('<fg=cyan>%s</fg=cyan>', OutputFormatter::escape($serviceId));
             if ($definition instanceof Definition) {
                 if ($showTag) {
-                    foreach ($this->sortByPriority($definition->getTag($showTag)) as $key => $tag) {
+                    foreach ($this->sortByPriority($services[$serviceId]) as $key => $tag) {
                         $tagValues = [];
                         foreach ($tagsNames as $tagName) {
                             if (\is_array($tagValue = $tag[$tagName] ?? '')) {
@@ -295,7 +342,7 @@ class TextDescriptor extends Descriptor
         $tableRows[] = ['Class', $definition->getClass() ?: '-'];
 
         $omitTags = isset($options['omit_tags']) && $options['omit_tags'];
-        if (!$omitTags && ($tags = $definition->getTags())) {
+        if (!$omitTags && ($tags = $container ? $this->resolvePriorityServiceTags($container, $definition) : $definition->getTags())) {
             $tagInformation = [];
             foreach ($tags as $tagName => $tagData) {
                 foreach ($tagData as $tagParameters) {
@@ -316,7 +363,7 @@ class TextDescriptor extends Descriptor
         $tableRows[] = ['Tags', $tagInformation];
 
         $calls = $definition->getMethodCalls();
-        if (\count($calls) > 0) {
+        if ($calls) {
             $callInformation = [];
             foreach ($calls as $call) {
                 $callInformation[] = $call[0];
@@ -324,7 +371,7 @@ class TextDescriptor extends Descriptor
             $tableRows[] = ['Calls', implode(', ', $callInformation)];
         }
 
-        $tableRows[] = ['Public', $definition->isPublic() && !$definition->isPrivate() ? 'yes' : 'no'];
+        $tableRows[] = ['Public', $definition->isPublic() ? 'yes' : 'no'];
         $tableRows[] = ['Synthetic', $definition->isSynthetic() ? 'yes' : 'no'];
         $tableRows[] = ['Lazy', $definition->isLazy() ? 'yes' : 'no'];
         $tableRows[] = ['Shared', $definition->isShared() ? 'yes' : 'no'];
@@ -400,7 +447,7 @@ class TextDescriptor extends Descriptor
             return;
         }
 
-        $logs = unserialize(file_get_contents($containerDeprecationFilePath));
+        $logs = unserialize(file_get_contents($containerDeprecationFilePath), ['allowed_classes' => false]);
         if (0 === \count($logs)) {
             $options['output']->success('There are no deprecations in the logs!');
 
@@ -419,7 +466,7 @@ class TextDescriptor extends Descriptor
 
     protected function describeContainerAlias(Alias $alias, array $options = [], ?ContainerBuilder $container = null): void
     {
-        if ($alias->isPublic() && !$alias->isPrivate()) {
+        if ($alias->isPublic()) {
             $options['output']->comment(\sprintf('This service is a <info>public</info> alias for the service <info>%s</info>', (string) $alias));
         } else {
             $options['output']->comment(\sprintf('This service is a <comment>private</comment> alias for the service <info>%s</info>', (string) $alias));
@@ -528,7 +575,7 @@ class TextDescriptor extends Descriptor
         } else {
             $title .= ' Grouped by Event';
             // Try to see if "events" exists
-            $registeredListeners = \array_key_exists('events', $options) ? array_combine($options['events'], array_map(fn ($event) => $eventDispatcher->getListeners($event), $options['events'])) : $eventDispatcher->getListeners();
+            $registeredListeners = \array_key_exists('events', $options) ? array_combine($options['events'], array_map(static fn ($event) => $eventDispatcher->getListeners($event), $options['events'])) : $eventDispatcher->getListeners();
         }
 
         $options['output']->title($title);
@@ -576,6 +623,24 @@ class TextDescriptor extends Descriptor
         return trim($configAsString);
     }
 
+    /**
+     * @param array<string> $methods
+     */
+    private function formatMethods(array $methods): string
+    {
+        if (!$methods) {
+            $methods = ['ANY'];
+        }
+
+        return implode('|', array_map(
+            static fn (string $method): string => \sprintf('<fg=%s>%s</>', self::VERB_COLORS[$method] ?? 'default', $method),
+            $methods
+        ));
+    }
+
+    /**
+     * @param (callable():ContainerBuilder)|null $getContainer
+     */
     private function formatControllerLink(mixed $controller, string $anchorText, ?callable $getContainer = null): string
     {
         if (null === $this->fileLinkFormatter) {

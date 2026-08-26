@@ -12,6 +12,7 @@ use WP_Term;
  * Terms: WordPress has got 'em, you want 'em. Categories. Tags. Custom Taxonomies. You don't care,
  * you're a fiend. Well let's get this under control:
  *
+ * @phpstan-consistent-constructor
  * @api
  * @example
  * ```php
@@ -70,6 +71,66 @@ class Term extends CoreEntity implements Stringable
      * @var string the WordPress taxonomy slug (ex: `post_tag` or `actors`)
      */
     public $taxonomy;
+
+    /**
+     * Term ID.
+     *
+     * @var int
+     */
+    public $term_id;
+
+    /**
+     * The term's slug.
+     *
+     * @var string
+     */
+    public $slug;
+
+    /**
+     * The term's term_group.
+     *
+     * @var int
+     */
+    public $term_group;
+
+    /**
+     * Term Taxonomy ID.
+     *
+     * @var int
+     */
+    public $term_taxonomy_id;
+
+    /**
+     * The term's description.
+     *
+     * Protected visibility to make Twig use the description() method first.
+     *
+     * @var string
+     */
+    protected $description;
+
+    /**
+     * ID of a term's parent term.
+     *
+     * @var int
+     */
+    public $parent;
+
+    /**
+     * Cached object count for this term.
+     *
+     * @var int
+     */
+    public $count;
+
+    /**
+     * Stores the term object's sanitization level.
+     *
+     * Does not correspond to a database field.
+     *
+     * @var string
+     */
+    public $filter;
 
     /**
      * @internal
@@ -262,7 +323,9 @@ class Term extends CoreEntity implements Stringable
     }
 
     /**
-     * Return the description of the term
+     * Returns the description of the term.
+     *
+     * Strips any surrounding `<p></p>` tags from the description.
      *
      * @api
      * @return string
@@ -335,7 +398,7 @@ class Term extends CoreEntity implements Stringable
         /**
          * Filters the link to the term archive page.
          *
-         * @see   \Timber\Term::link()
+         * @see   Term::link()
          * @since 0.21.9
          *
          * @param string       $link The link.
@@ -363,7 +426,7 @@ class Term extends CoreEntity implements Stringable
      *
      * @api
      * @deprecated 2.0.0, use `{{ term.meta('field_name') }}` instead.
-     * @see \Timber\Term::meta()
+     * @see Term::meta()
      *
      * @param string $field_name The field name for which you want to get the value.
      * @return mixed The meta field value.
@@ -407,7 +470,7 @@ class Term extends CoreEntity implements Stringable
          * }, 10, 2 );
          * ```
          *
-         * @see   \Timber\Term::path()
+         * @see   Term::path()
          * @since 0.21.9
          *
          * @param string       $rel  The relative link.
