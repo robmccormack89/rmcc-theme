@@ -1,0 +1,17 @@
+<div id="{{ block.anchor|default(block.id)|e('esc_html') }}" {{block.controls.break}}>
+  <div {{block.controls.container}}>
+    <div {{block.controls.background}}>
+      <div {{block.controls.block_wrapper_attributes}}>
+        <div {{block.controls.card}}>
+          <div {{block.controls.content.wrap}}>
+            <div {{block.controls.content.position}}>
+              {% block block_content %}
+                Nothing here....
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+{# main menu #}
+{% if fn('has_nav_menu', 'main_menu') %}
+  <ul class="rmcc-navbar-nav rmcc-navbar-nav-primary rmcc-visible@l">
+    {% for item in menu_main.get_items|slice(0,-1) %}
+      {% if item.children %}
+        <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+          <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}<span class="rmcc-margin-xsmall-left" rmcc-icon="icon: chevron-down; ratio: .875"></span></a>
+            <div class="rmcc-navbar-dropdown">
+              <ul class="rmcc-nav rmcc-navbar-dropdown-nav">
+              {% for child in item.children %}
+                <li class="{{ child.classes|join(' ')|e('esc_html') }}">
+                  <a href="{{ child.link|e('esc_url') }}">
+                    {{ child.title|e('esc_html') }}
+                    {% if child.children %}<span class="rmcc-margin-xsmall-left" rmcc-icon="icon: chevron-right; ratio: .75"></span>{% endif %}
+                  </a>
+                  {% if child.children %}
+                    <div rmcc-dropdown="pos: right-top">
+                      <ul class="rmcc-nav rmcc-dropdown-nav">
+                        {% for third in child.children %}
+                          <li class="{{ third.classes|join(' ')|e('esc_html') }}">
+                            <a href="{{ third.link|e('esc_url') }}">{{ third.title|e('esc_html') }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% else %}
+        <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+          <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{# contact menu (last item of main menu) #}
+{% if fn('has_nav_menu', 'main_menu') %}
+  {% set last_item = menu_main.get_items|last %}
+  <div class="rmcc-navbar-item rmcc-visible@l">
+    <a class="rmcc-button rmcc-button-danger rmcc-button-gradient rmcc-button-small rmcc-border-rounded rmcc-text-capitalize" href="{{ last_item.link|e('esc_url') }}">{{ last_item.title|e('esc_html') }}</a>
+  </div>
+{% endif %}
+
+{# mobile menu toggle #}
+{% if fn('has_nav_menu', 'main_menu') %}
+  <a class="rmcc-navbar-toggle rmcc-navbar-toggle-animate rmcc-icon rmcc-navbar-toggle-icon rmcc-hidden@l" href="#offcanvas-nav" rmcc-toggle="" role="button" rmcc-navbar-toggle-icon="" aria-label="Open menu">
+    {{_x('Menu', 'Navs: mobile menu toggle', 'rmcc-theme')|e('esc_html')}} 
+  </a>
+{% endif %}

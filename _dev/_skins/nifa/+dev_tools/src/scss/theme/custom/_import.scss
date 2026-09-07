@@ -1,0 +1,12 @@
+// 2. import the theme components
+
+@import "container.scss"; // classes for breaking the container; for things like gutenberg. keep this first for simplicity
+
+@import "backgrounds.scss"; // custom theme classes for coloured backgrounds & overlays
+@import "borders.scss"; // custom theme classes for borders & dividers
+@import "loaders.scss"; // custom theme classes for animated loaders
+@import "position.scss"; // custom theme classes for positional stuff
+
+@import "theme.scss"; // extra theme-related fixins & gubbins!
+
+// @import "dark.scss"; // the dark theme! this allows for dark/light modes. keep this last as it may modify stuff from above

@@ -1,0 +1,49 @@
+{
+  "name": "acf/rmcc-demo",
+  "title": "RMcC Demo",
+  "description": "A demo block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "demo"],
+  "style": ["file:./demo.css"],
+  "__parent": ["acf/rmcc-block"],
+
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "demo.php"
+  },
+
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
+  "supports": {
+    "mode": true,
+    "jsx": false,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": false,
+    "inserter": true,
+    "reusable": true,
+    "lock": true,
+
+    "align": false,
+
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "color": {
+      "background": true,
+      "gradients": true
+    }
+    
+  }
+
+}

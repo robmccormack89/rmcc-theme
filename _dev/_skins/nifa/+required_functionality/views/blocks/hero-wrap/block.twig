@@ -1,0 +1,10 @@
+{% extends block.is_preview ? 'hero-wrap/_preview.twig' : 'hero-wrap/_block.twig' %}
+
+{% block block_content %}
+<!-- underlying hero -->
+<div class="hero-bg hero-gradient-bg">
+  <div class="dots">
+    <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
+  </div>
+</div>
+{% endblock %}

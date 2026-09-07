@@ -1,0 +1,83 @@
+{% extends 'base.twig' %}
+
+{% block styles %}
+  {{ parent() }}
+  <link rel='stylesheet' id='theme-editor-css' href='{{theme.link}}/public/css/editor.css' type='text/css' media='all' />
+{% endblock %}
+
+{% block main %}
+  <article id="{{ post.id|e('esc_html') }}" class="rmcc-article {{ post.class|e('esc_html') }}" data-template="single.twig">
+
+    {% block single_header %}
+      {# {% include 'single/header.twig' %} #}
+    {% endblock %}
+
+    {% block single_content %}
+      <div class="single-content rmcc-background-default rmcc-section rmcc-section-small">
+
+        {% block single_content_lead %}
+          {% if post.post_excerpt and (post.post_type == 'post' or configs.enable_page_excerpts == true) %}
+            <div class="single-excerpt rmcc-container rmcc-container-xsmall rmcc-margin-bottom">
+              <p class="rmcc-text-lead rmcc-dropcap">{{ post.post_excerpt|e('esc_html') }}</p>
+              <hr class="rmcc-divider-small">
+            </div>
+          {% endif %}
+        {% endblock %}
+        
+        {% block single_content_editor %}
+          <div class="content-editor gutenberg-editor">
+            {{ post.content|e('wp_kses_post') }}
+          </div>
+        {% endblock %}
+        
+      </div>
+    {% endblock %}
+
+    {% block single_footer %}
+      {# {% include 'single/footer.twig' %} #}
+    {% endblock %}
+
+  </article>
+{% endblock %}
+
+{% block scripts %}
+  {# <script src="https://cdn.jsdelivr.net/gh/midlandjobs/insite-feeds@rmcc/public/js/rmcc/api/feed.js"></script> #}
+  {# <script>
+    (async function () {
+      var jobsJson = await fetchJobsJson('https://feed.midlandjobs.ie/demo/');
+      var jobsQ = JsonQuery(jobsJson); //Initialize the Query Engine
+      var kilbegganJobs = jobsQ.where({'company': 'Kilbeggan Community Group'}).exec();
+      const MyJobsObject = new JobBoardFilteredFeed(42, kilbegganJobs, {
+
+        pagination: {
+          visiblePages: 3, // set init visible pages within the pagination
+          initPerPage: 3, // set an initial per page count (in case where perPage below is false/not set)
+          perPage: {
+            values: [3, 5] // per page dropdown options
+          },
+        },
+
+        filters: [
+          {
+            key: 'city',
+            singular: 'Town/City',
+            plural: 'Cities',
+            type: 'option',
+            setArray: false,
+            removeTerms: []
+          },
+          {
+            key: 'category',
+            singular: 'Category',
+            plural: 'Categories',
+            type: 'checkbox',
+            setArray: true,
+            removeTerms: []
+          }
+        ],
+
+      });
+      MyJobsObject.renderTheJobs('#MyJobs');
+    })();
+  </script> #}
+{% endblock %}

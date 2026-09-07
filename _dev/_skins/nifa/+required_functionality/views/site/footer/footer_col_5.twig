@@ -1,0 +1,44 @@
+<div class="rmcc-width-1-1 rmcc-width-expand@s">
+
+  {# <form hidden>
+    <fieldset class="rmcc-fieldset">
+
+      <legend class="rmcc-legend">Subscribe to our newsletter!</legend>
+
+      <div class="rmcc-margin-small">
+        <input class="rmcc-input rmcc-border-rounded rounded-more" type="text" placeholder="Your Email Address" aria-label="Input">
+      </div>
+  
+      <div class="rmcc-margin-small">
+        <select class="rmcc-select rmcc-border-rounded rounded-more" aria-label="Select">
+          <option>-- Please Select Country --</option>
+          <option>Ireland</option>
+        </select>
+      </div>
+
+      <div class="rmcc-margin rmcc-flex rmcc-flex-center">
+        <a class="rmcc-button rmcc-button-default rmcc-button-gradient rmcc-border-rounded" href="#">Add me</a>
+      </div>
+
+    </fieldset>
+  </form> #}
+
+  <p class="rmcc-text-bold rmcc-h3 rmcc-margin-remove rmcc-text-center rmcc-text-uppercase">Contact us</p>
+  <div class="footer-contact-card rmcc-card rmcc-card-primary rmcc-card-body">
+    <div>
+      <ul class="footer-contact-nav rmcc-nav rmcc-nav-default" rmcc-nav>
+        {% if fn('has_nav_menu', 'company_menu') %}
+          {% for item in menu_company.get_items %}
+            <li class="company-menu-mobile-item">
+              {% if item.link != '#' %}<a href="{{ item.link|e('esc_url') }}" class="rmcc-link-reset">{% endif %}
+                {{ item.title|e('wp_kses_post')}}
+              {% if item.link != '#' %}</a>{% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+
+
+</div>

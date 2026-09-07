@@ -1,0 +1,9 @@
+<div id="modal-full" class="rmcc-modal-full rmcc-modal" rmcc-modal>
+  <div class="rmcc-modal-dialog rmcc-flex rmcc-flex-center rmcc-flex-middle" rmcc-height-viewport role="dialog" aria-modal="true">
+    <button class="rmcc-modal-close-full rmcc-icon rmcc-close" type="button" rmcc-close aria-label="Close"></button>
+    <form class="rmcc-search rmcc-search-large" role="search" method="get" action="{{ site.url|e('esc_url') }}" accept-charset="utf-8" novalidate="novalidate">
+      <input class="rmcc-search-input rmcc-text-center" placeholder="{{ _x('Start typing...', 'Search: placeholder text', 'rmcc-theme')|e('esc_html') }}" type="text" name="s" maxlength="300" pattern=".*\S+.*" autocomplete="off" value required aria-label="Search" autofocus>
+      <input type="hidden" name="post_type" value="post" />
+    </form>
+  </div>
+</div>

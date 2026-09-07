@@ -1,0 +1,21 @@
+<div class="rmcc-hover-block rmcc-inline-clip rmcc-transition-toggle rmcc-light" tabindex="0">
+  <div>
+    {% if block.fields.front_image %}
+      {% set front_img  = get_image(block.fields.front_image) %}
+      <img src="{{front_img.src}}" class="rmcc-height-large cover" width="1800" height="1800" alt="{{front_img.alt}}">
+    {% else %}
+      <img src="{{theme.link}}/public/images/resource-card.jpg" class="rmcc-height-large cover" width="1800" height="1800" alt="">
+    {% endif %}
+    <div class="rmcc-position-cover {{block.controls.classes|join(' ')|esc_attr}}">
+      <div class="rmcc-position-top-left rmcc-padding-large rmcc-width-1-1">
+        <div class="rmcc-position-relative">
+          <div class="rmcc-width-5-6">
+            {% block block_content %}
+              <InnerBlocks template="{{ fn('wp_json_encode', block.template)|esc_attr }}" />
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

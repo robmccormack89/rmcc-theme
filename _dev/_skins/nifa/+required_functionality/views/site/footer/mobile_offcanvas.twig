@@ -1,0 +1,132 @@
+<div id="offcanvas-nav" rmcc-offcanvas="overlay: true">
+  <div class="rmcc-offcanvas-bar">
+    <ul class="rmcc-nav rmcc-nav-default" rmcc-nav>
+      <li class="rmcc-nav-header rmcc-text-bold rmcc-position-relative">{{ _x('Mobile Menu', 'Navs: mobile menu title', 'rmcc-theme')|e('esc_html') }} <button class="rmcc-offcanvas-close" type="button" rmcc-close></button></li>
+      <div class="gradient-bar divider"></div>
+
+      <li class="{% if fn('is_front_page') %}rmcc-active{% endif %}">
+        <a href="/">{{ _x('Home', 'Navs: homepage title', 'rmcc-theme')|e('esc_html') }}</a>
+      </li>
+
+      {# footer_menu_1 #}
+      {% if fn('has_nav_menu', 'footer_menu_1') %}
+        <li class="rmcc-parent">
+          <a href="#">{{ menu_footer_1.title|e('esc_html') }} <span class="rmcc-phantom-nav-accordion-icon"></span></a>
+          <ul class="rmcc-nav-sub">
+            {% for item in menu_footer_1.get_items %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.link|e('esc_url') }}">
+                  {{ item.title|e('wp_kses_post')}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+      {# footer_menu_2 #}
+      {% if fn('has_nav_menu', 'footer_menu_2') %}
+        <li class="rmcc-parent">
+          <a href="#">{{ menu_footer_2.title|e('esc_html') }} <span class="rmcc-phantom-nav-accordion-icon"></span></a>
+          <ul class="rmcc-nav-sub">
+            {% for item in menu_footer_2.get_items %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.link|e('esc_url') }}">
+                  {{ item.title|e('wp_kses_post')}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+      {# footer_menu_3 #}
+      {% if fn('has_nav_menu', 'footer_menu_3') %}
+        <li class="rmcc-parent">
+          <a href="#">{{ menu_footer_3.title|e('esc_html') }} <span class="rmcc-phantom-nav-accordion-icon"></span></a>
+          <ul class="rmcc-nav-sub">
+            {% for item in menu_footer_3.get_items %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.link|e('esc_url') }}">
+                  {{ item.title|e('wp_kses_post')}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+      {# footer_menu_4 #}
+      {% if fn('has_nav_menu', 'footer_menu_4') %}
+        <li class="rmcc-parent">
+          <a href="#">{{ menu_footer_4.title|e('esc_html') }} <span class="rmcc-phantom-nav-accordion-icon"></span></a>
+          <ul class="rmcc-nav-sub">
+            {% for item in menu_footer_4.get_items %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.link|e('esc_url') }}">
+                  {{ item.title|e('wp_kses_post')}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+      {# secondary menu #}
+      {% if fn('has_nav_menu', 'secondary_menu') %}
+        <li class="rmcc-parent">
+          <a href="#">{{ menu_secondary.title|e('esc_html') }} <span class="rmcc-phantom-nav-accordion-icon"></span></a>
+          <ul class="rmcc-nav-sub">
+            {% for item in menu_secondary.get_items %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.link|e('esc_url') }}">
+                  {{ item.title|e('wp_kses_post')}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+      {# company menu #}
+      {% if fn('has_nav_menu', 'company_menu') %}
+        {% for item in menu_company.get_items %}
+          <li class="company-menu-mobile-item {% if loop.first %}rmcc-margin-top{% endif %}">
+            {% if item.link != '#' %}<a href="{{ item.link|e('esc_url') }}" class="rmcc-link-reset">{% endif %}
+              {{ item.title|e('wp_kses_post')}}
+            {% if item.link != '#' %}</a>{% endif %}
+          </li>
+        {% endfor %}
+      {% endif %}
+
+    </ul>
+
+    {# buttons menu #}
+    {% if fn('has_nav_menu', 'buttons_menu') %}
+      <div class="rmcc-margin-top">
+        {% for item in menu_buttons.get_items %}
+          <a class="rmcc-button {{ item.classes|join(' ')|e('esc_html') }}" href="{{ item.link|e('esc_url') }}">{{ item.title|e('wp_kses_post')}}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="rmcc-position-bottom rmcc-position-small">
+      <div class="rmcc-flex rmcc-flex-center">
+        {# socials menu #}
+        {% if fn('has_nav_menu', 'socials_menu') %}
+          <ul class="rmcc-iconnav">
+            {% for item in menu_socials.get_items %}
+              <li class="{{ item.classes|join(' ')|e('esc_html') }}">
+                <a href="{{ item.link|e('esc_url') }}" target="_blank">
+                  {{ item.title|e('wp_kses_post')}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <p class="rmcc-text-center rmcc-text-small rmcc-margin-remove-bottom">{{ _x('© %s Kilbeggan Community Group CLG. All Rights Reserved.', 'Footer: copyright', 'rmcc-theme')|format(now|date('Y'))|e('esc_html') }}</p>
+    </div>
+
+  </div>
+</div>

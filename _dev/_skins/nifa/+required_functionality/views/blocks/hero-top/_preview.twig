@@ -1,0 +1,31 @@
+<div class="rmcc-cover-container shadow rmcc-position-relative rmcc-visible-toggle rmcc-height-large sssmaller">
+
+  <!-- bg image/slider -->
+  {% if block.fields.gallery|length > 0 %}
+    <div class="hero-slideshow rmcc-position-relative rmcc-light" tabindex="0" rmcc-slideshow="finite: true; autoplay: false; autoplay-interval: 3000; animation: slide">
+      <div class="rmcc-slideshow-items rmcc-height-large sssmaller">
+        {% for img in block.fields.gallery %}
+          {% set img  = get_image(img) %}
+          <img src="{{img.src}}" class="" alt="" loading="lazy" rmcc-cover>
+        {% endfor %}
+      </div>
+      <a class="rmcc-position-center-left rmcc-position-center-left-out rmcc-position-small rmcc-hidden-hover rmcc-position-z-index" href rmcc-slidenav-previous rmcc-slideshow-item="previous"></a>
+      <a class="rmcc-position-center-right rmcc-position-center-right-out rmcc-position-small rmcc-hidden-hover rmcc-position-z-index" href rmcc-slidenav-next rmcc-slideshow-item="next"></a>
+    </div>
+  {% else %}
+    <img src="{{theme.link}}/public/images/harbour.jpg" alt="" rmcc-cover>
+  {% endif %}
+
+  <!-- overlay -->
+  <div class="rmcc-overlay-primary rmcc-position-cover"></div>
+
+  <!-- header content -->
+  <div class="rmcc-height-1-1 rmcc-width-1-1">
+    <div class="rmcc-position-absolute rmcc-position-center rmcc-text-center rmcc-light rrrmcc-margin-large-bottom">
+      {% block block_content %}
+        Nothing here....
+      {% endblock %}
+    </div>
+  </div>
+
+</div>

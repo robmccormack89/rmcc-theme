@@ -1,0 +1,5 @@
+{% extends block.is_preview ? 'icon/_preview.twig' : 'icon/_block.twig' %}
+
+{% block block_content %}
+  <span {{block.controls.colour}} {{block.controls.icon}}></span>
+{% endblock %}

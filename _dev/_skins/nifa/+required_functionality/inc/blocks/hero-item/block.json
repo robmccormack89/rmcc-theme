@@ -1,0 +1,54 @@
+{
+  "name": "acf/rmcc-hero-item",
+  "title": "RMcC Hero Item",
+  "description": "A hero block built using ACF & Timber/Twig.",
+  "category": "rmcc",
+  "icon": "admin-comments",
+  "keywords": ["rmcc", "hero-item"],
+  "style": ["file:./hero-item.css"],
+  "parent": ["acf/rmcc-hero-bottom"],
+
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "hero-item.php"
+  },
+
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+
+  "supports": {
+    "mode": true,
+    "jsx": true,
+
+    "html": true,
+    "anchor": false,
+    "multiple": true,
+
+    "className": false,
+    "customClassName": false,
+    "inserter": true,
+    "reusable": true,
+    "lock": true,
+
+    "align": false,
+
+    "typography": {
+      "lineHeight": false
+    },
+
+    "background": {
+      "backgroundImage": false,
+      "backgroundSize": false
+    },
+    "color": {
+      "text": false,
+      "background": false,
+      "gradients": false
+    }
+    
+  }
+
+}
