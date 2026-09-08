@@ -36,4 +36,4 @@ if (class_exists('Timber\Timber')) new Rmcc\Theme;
   acf load-in with checks
 
 */
-// require get_template_directory() . '/inc/extra/acf_init.php';
+require get_template_directory() . '/inc/extra/acf_init.php';

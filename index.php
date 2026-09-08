@@ -1,4 +1,7 @@
 <?php
+
+
+
 /**
  *
  * The main blog template file

@@ -49,6 +49,10 @@ class Theme extends Timber {
     // filter html tags & attrs allowed in wp kses post (content area)
     add_action('init', array($this, 'allowed_html_tags_attrs'), 10);
 
+    // temp
+    remove_action( 'wp_footer', 'the_block_template_skip_link' );
+    remove_action( 'wp_enqueue_scripts', 'wp_enqueue_block_template_skip_link' );
+
     // Remove tags support from posts
     if (array_key_exists('enable_post_tags', $this->configs) && $this->configs['enable_post_tags'] != true) {
       add_action('init', function () {
@@ -299,7 +303,6 @@ class Theme extends Timber {
     load_textdomain('rmcc-theme', get_template_directory() . '/languages/en_GB.mo');
 
     // allow icon for yoast breads
-    if (yoast_breadcrumb_enabled()) add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
 
     // post comments
     if (!$this->configs['enable_post_comments']) add_filter('comments_array', 'disable_comments_hide_existing_comments', 10, 2);

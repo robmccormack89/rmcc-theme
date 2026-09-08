@@ -5,7 +5,7 @@
 //     wp_dequeue_style( 'global-styles' );
 // }
 
-add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2 );
+// add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2 );
 function acf_should_wrap_innerblocks( $wrap, $name ) {
   // You can target specific blocks by name, or return false for all
   if ($name == 'acf/rmcc-hero-wrap' || $name == 'acf/rmcc-hero-top' || $name == 'acf/rmcc-hero-bottom' || $name == 'acf/rmcc-hero-item' || $name == 'acf/rmcc-hover-wrap' || $name == 'acf/rmcc-hover-item' || $name == 'acf/rmcc-icon' ) {
