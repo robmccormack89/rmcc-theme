@@ -7,26 +7,23 @@
   "main": "src/js/index.js",
   "style": "public/css/style.css",
   "sideEffects": [
-      "*.css",
-      "./src/js/*.js",
-      "./dist/**/*.js"
+    "*.css",
+    "./src/js/*.js",
+    "./dist/**/*.js"
   ],
   "keywords": [],
   "scripts": {
     "prefix": "node build/prefix",
     "scope": "node build/scope",
-
     "prefix-me": "node build/prefix",
     "scope-me": "node build/scope -s \"rmcc-wrap\"",
-
     "gulp": "./node_modules/.bin/gulp",
     "pot": "gulp pot",
     "style": "gulp style",
-
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "uikit": "3.24.2"
+    "uikit": "3.25.21"
   },
   "devDependencies": {
     "gulp": "^5.0.1",
@@ -34,13 +31,11 @@
     "gulp-wp-pot": "^2.5.0",
     "gulp-rename": "^2.1.0",
     "gulp-replace": "^1.1.4",
-
     "sass": "^1.93.2",
     "gulp-sass": "^6.0.1",
     "gulp-postcss": "^10.0.0",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.1",
-
     "@eslint/js": "^9.19.0",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-replace": "^6.0.1",
@@ -70,5 +65,9 @@
     "semver": "^7.7.1",
     "strip-css-comments": "^5.0.0",
     "svgo": "^4.0.0"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "esbuild@0.25.12": true
   }
 }
